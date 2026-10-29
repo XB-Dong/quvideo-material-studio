@@ -329,7 +329,7 @@ components:
         code:
           type: string
           description: INVALID_ARGUMENT, UNAUTHENTICATED, NOT_FOUND, FILE_TOO_LARGE, UNSUPPORTED_MEDIA, ORIGIN_FORBIDDEN, INTERNAL_ERROR
-        message: { type: string, description: Understandable safe message, no stack trace }
+        message: { type: string, description: "Understandable safe message, no stack trace" }
         requestId: { type: string }
         fieldErrors:
           type: object
