@@ -1,0 +1,43 @@
+import { chromium } from 'playwright';
+import fs from 'node:fs/promises';
+import net from 'node:net';
+import { gzipSync } from 'node:zlib';
+const base = process.env.BASE_URL || 'http://localhost:3000';
+const relay = net.createServer(client => { const upstream=net.connect(3000,process.env.RELAY_HOST||'host.docker.internal'); client.pipe(upstream); upstream.pipe(client); client.on('error',()=>upstream.destroy()); upstream.on('error',()=>client.destroy()); });
+await new Promise(resolve=>relay.listen(3000,'127.0.0.1',resolve));
+const output = process.env.OUTPUT_DIR || '/evidence';
+await fs.mkdir(output, { recursive: true });
+const browser = await chromium.launch({ executablePath: '/usr/bin/chromium-browser', headless: true, args: ['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'] });
+const results = [];
+for (let run = 1; run <= 3; run++) {
+  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 1, reducedMotion: 'no-preference' });
+  const page = await context.newPage();
+  await page.addInitScript(() => {
+    window.__measurement = { cls: 0, shifts: [], longTasks: [], frameIntervals: [] };
+    new PerformanceObserver(list => { for (const e of list.getEntries()) if (!e.hadRecentInput) { window.__measurement.cls += e.value; window.__measurement.shifts.push({ value: e.value, at: e.startTime }); } }).observe({ type: 'layout-shift', buffered: true });
+    new PerformanceObserver(list => { for (const e of list.getEntries()) window.__measurement.longTasks.push({ at: e.startTime, duration: e.duration, attribution: e.attribution.map(a => ({ type:a.name, containerType:a.containerType, containerSrc:a.containerSrc })) }); }).observe({ type: 'longtask', buffered: true });
+    let before; const record = t => { if (before !== undefined) window.__measurement.frameIntervals.push(t-before); before=t; if (performance.now()<10000) requestAnimationFrame(record); }; requestAnimationFrame(record);
+  });
+  const session = await context.newCDPSession(page);
+  await session.send('Network.enable');
+  await session.send('Network.setCacheDisabled', { cacheDisabled: true });
+  const responseById = new Map(), network = [], bodies = [], errors = [];
+  session.on('Network.responseReceived', ({ requestId, type, response }) => responseById.set(requestId,{ url:response.url.replace(base,''),type,status:response.status,mime:response.mimeType,encoding:response.headers['Content-Encoding']||response.headers['content-encoding']||null }));
+  session.on('Network.loadingFinished', e => { const response=responseById.get(e.requestId); if(response) network.push({...response, encodedDataLength:e.encodedDataLength}); });
+  page.on('pageerror', e => errors.push(e.message));
+  page.on('response', response => { if(response.request().resourceType()==='script') bodies.push(response.body().then(b=>({url:response.url().replace(base,''), decodedBytes:b.length,normalizedGzipBytes:gzipSync(b,{level:9}).length})).catch(e=>({url:response.url().replace(base,''),error:e.message}))); });
+  await page.goto(base, { waitUntil:'networkidle', timeout:30000 });
+  await page.locator('.template-card').first().waitFor({ timeout:15000 });
+  await page.waitForTimeout(8000);
+  const metrics = await page.evaluate(() => ({...window.__measurement,resources:performance.getEntriesByType('resource').map(r=>({path:new URL(r.name).pathname,initiator:r.initiatorType,encodedBodySize:r.encodedBodySize,decodedBodySize:r.decodedBodySize,transferSize:r.transferSize})),width:innerWidth,scrollWidth:document.documentElement.scrollWidth,bodyBackground:getComputedStyle(document.body).backgroundColor}));
+  const scripts=await Promise.all(bodies);
+  await page.screenshot({path:`${output}/run-${run}.png`, fullPage:true});
+  results.push({run,metrics,scripts,network,errors,scriptNormalizedGzipBytes:scripts.reduce((n,s)=>n+(s.normalizedGzipBytes||0),0),imageEncodedBytes:metrics.resources.filter(r=>r.initiator==='img').reduce((n,r)=>n+r.encodedBodySize,0)});
+  await context.close();
+}
+const median = values => [...values].sort((a,b)=>a-b)[Math.floor(values.length/2)];
+const report={ capturedAt:new Date().toISOString(), testedCommit:process.env.TESTED_COMMIT||null, browser:await browser.version(),conditions:{viewport:'1440x1000',dpr:1,cache:'new context + Network.setCacheDisabled each run',network:'unthrottled localhost TCP relay to Docker host bridge',cpu:'unthrottled',renderer:'headless Chromium / ANGLE SwiftShader software WebGL',observation:'8 seconds after networkidle; no pointer interaction',imageState:'server cache may be warm; client cache disabled',compression:'actual CDP/ResourceTiming encoded sizes plus script gzip(level9) normalization; not a bundle-estimator claim'},median:{scriptNormalizedGzipBytes:median(results.map(r=>r.scriptNormalizedGzipBytes)),imageEncodedBytes:median(results.map(r=>r.imageEncodedBytes)),cls:median(results.map(r=>r.metrics.cls)),longTaskCount:median(results.map(r=>r.metrics.longTasks.length))},runs:results};
+await fs.writeFile(`${output}/measurement.json`, JSON.stringify(report,null,2));
+console.log(JSON.stringify({browser:report.browser,median:report.median,runs:results.map(r=>({run:r.run,errors:r.errors,cls:r.metrics.cls,longTasks:r.metrics.longTasks.length}))},null,2));
+await browser.close();
+relay.close();
