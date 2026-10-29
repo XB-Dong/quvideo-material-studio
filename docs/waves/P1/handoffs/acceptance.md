@@ -30,3 +30,5 @@
 - failedChecks保留CI1 functional27/4、多个非法Electric截图窗口、原be43同步loss长任务，以及原无GL环境测量；基础设施不算产品Red。针对Electric采样相同原因两次无效后记录有界新方法：像素计数留浏览器内、截图/生命周期/性能分离；CI固定等待及失败污染已用fresh/finally和真实零资源条件修正，不删断言/不扩产品时长。
 - 独立G02在实际环境与边界内签署通过，见evidence/acceptance/COMFORT-SIGNOFF.md；物理硬件性能/物理Windows最小化不冒称已测。真实浏览器trusted hidden分支已验证。CI2尚由Leader跟踪。无开放Acceptance blocking/major，旧性能major以最终默认真软件证据复验处置。
 - traces包含合成身份Cookie可能性，保持ignored *.zip不入Git；JSON已核对不含Cookie/authorization，任务/身份均合成。结束后由Leader确认需要忽略工件再app归档。
+
+- pointer媒体澄清：旧375综合case实际coarse=false（保留JSON），不据hasTouch推断coarse；补touch-only首载及真实tap分类/模板两页，actual coarse=true/fine=false/hover=false/maxTouchPoints1、GL0/Orbit0/RAF0、scrollWidth375、steadyexecuted不变，exit0，证据final-716518-touch。COMFORT及测试名已纠正。

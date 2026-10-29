@@ -6,7 +6,7 @@
 
 ## 环境和执行
 
-所有浏览器/应用安装、运行和检查在Docker Linux容器内完成；未在宿主安装项目依赖或执行应用。默认测试为1440×1000、DPR1、无CPU/网络节流、Chromium149.0.7827.53、Playwright1.58.2。375×812为触屏/coarse；另补1280×900。使用实际localhost:3000同Origin TCP转发，未绕过业务身份/CSRF。工具版本见tests/p1/package-lock.json与Dockerfile。
+所有浏览器/应用安装、运行和检查在Docker Linux容器内完成；未在宿主安装项目依赖或执行应用。默认测试为1440×1000、DPR1、无CPU/网络节流、Chromium149.0.7827.53、Playwright1.58.2。375×812旧综合测试配置hasTouch/isMobile，但执行page.mouse.move后实际coarse=false；它只证明该375混合输入路径，不当作coarse证据。独立touch-only补测实际coarse=true/fine=false/hover=false/maxTouchPoints=1；另补1280×900。使用实际localhost:3000同Origin TCP转发，未绕过业务身份/CSRF。工具版本见tests/p1/package-lock.json与Dockerfile。
 
 浏览器镜像material-p1-browser:gpu ID `sha256:4c5d985c59a8b4f49ab92da300f865fdf3b580a340021377601c4b4daebbeea6`；空白页实际WebGL2可用，renderer为ANGLE/Vulkan SwiftShader Device (Subzero)。前后基线复用同一驱动/依赖层。headed镜像`sha256:f95b4a9396dcc86e3886f619dd3bd550103ccc5ffb7f7bf8fab0b62412d0fe64`增加Xvfb，不冒充物理GPU。
 
@@ -20,8 +20,8 @@
 | 原生cursor、键盘focus与对话框 | pass。final-716518-1280/layout.json两页cursor=auto、Tab focus-visible=true、outline=solid。desktop/reduce/mobile实际dialog Escape后焦点返回；结果预览Escape关闭。 |
 | 点击/输入/Tab/滚动不阻塞 | pass（默认实测环境）。默认无截图性能脚本实际覆盖hero/四页签/CTA，交互阶段1435.3ms以后无longtask；主GL调用0；最大RAF间隔16.8ms。真实上传/连续提交/恢复查询/预览操作完成。初始197/95ms两长任务单列，不冒称整个页面零长任务。 |
 | 无持续闪烁、动画不过度占位 | pass。逐项真实组件draw与Orbit位移；完整页面截图与trace本地观察；Electric仅600ms窗口/独立冷却后触发。强制软件读回会扰动时序，只作功能性证据。 |
-| 手动静态、系统reduce、运行时切换和刷新 | pass。default22/0；final-716518-ci-isolated31/0。切换前live GPU>0，切后GPU0/Orbit0/RAFpending0且250ms executed不变；刷新静态偏好保留。reduce首载及运行时零GL。 |
-| 375px/coarse和桌面1280/1440 | pass。final-716518-default截图/JSON与final-716518-1280两页补充。scrollWidth<=viewport；小屏上传位/按钮/记录可操作，不依赖hover；coarse不分配效果GL。 |
+| 手动静态、系统reduce、运行时切换和刷新 | pass。default22/0；final-716518-ci-isolated31/0。切换前live GPU>0，切后GPU0/Orbit0/RAFpending0且250ms executed不变；刷新静态偏好保留。reduce首载及运行时零GL。coarse由独立touch-only实际媒体查询证明，旧mobile测试不证明coarse。 |
+| 375px/coarse和桌面1280/1440 | pass。final-716518-default截图/JSON与final-716518-1280两页补充。旧mobile实际coarse=false，仅证明375混合输入布局。final-716518-touch/touch.json独立375真coarse首载及touchscreen.tap分类→模板正文：coarse=true/fine=false/hover=false/maxTouchPoints=1，GL分配0/Orbit0/RAFpending0；路由后250ms RAFexecuted保持2不再执行。scrollWidth375，无mouse事件，不依赖hover。 |
 | 离屏/后台/静态资源释放 | pass。ci-isolated每项fresh page，切前真实active GPU，等待真实释放后断言GL0；后台另由final-716518-native原生Chrome/Xvfb同windowId双tab自然切换，trusted visibilitychange hidden后Orbit0/GL0/RAFpending0，回到app恢复Orbit。没有注入hidden或合成事件。 |
 | 页签/卸载/弹窗/身份与旧请求 | pass。四页签切换旧owner释放且peakAllocated1；原P0 use-tasks/identity保护代码未改，Root最终31前端行为测试含卸载/身份/401/旧请求版本保护通过。真实多任务、刷新、503恢复和终态停止轮询独立浏览器通过。P0行为测试证据属于Root运行，未冒称由本Agent重跑。 |
 | 至多两个系统、一个已分配存活GL | pass。Orbit SVG与单个active owner并存，实际peakAllocated=1；六GL逐项实际draw>0并记录owner，Electric接管独立记录。静态0RAF/GL，无额外并行Canvas owner。 |
@@ -50,3 +50,6 @@ final-716518-default-performance独立默认无截图/trace采样：主GL0，交
 Xvfb首版xvfb-run挂起、Playwright focus emulation导致无法自然hidden的尝试不是产品Red；raw CDP取消框架页管理后有界双tab成功。正式run-headed.sh首次因Windows CRLF sh退出1，转LF后6.79秒两模式通过，根目录gitattributes已规定LF。未删除原失败场景/报告。
 
 本签署仅Independent Acceptance的已验环境/范围。独立Reviewer负责G01和REV-05最终处置，Leader负责最终CI2/精确集成commit、私有交付和整体P1完成。无自动下一波/公网发布/交卷。
+
+
+补充澄清（2026-10-30T01:22+08:00）：旧综合mobile case的hasTouch配置不能代替实际pointer媒体值，原JSON coarse=false保留。新touch.mjs全程仅touchscreen.tap、无page.mouse.move，实际coarse=true并断言，不将模拟器配置当观测事实。4.71秒独立执行exit0。主综合case更名为actual media and GPU allocation audit，避免继续暗示它验证coarse。

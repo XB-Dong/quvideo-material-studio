@@ -26,3 +26,5 @@ measurement.json记录每次原始资源、响应状态、JS gzip归一值、图
 原生后台验证（不使用 Playwright 的 focus emulation）：先 `docker build -t material-p1-browser:headed -f tests/p1/Dockerfile.headed tests/p1`，再用相同 evidence 挂载及 TESTED_COMMIT，`docker run --rm --network material-studio_default --mount "type=bind,source=$outputPath,target=/evidence" -e RELAY_HOST=frontend -e TESTED_COMMIT material-p1-browser:headed`。Dockerfile使用有界10秒的Xvfb socket就绪检查；raw CDP确认app/control同windowId，Target.activateTarget自然切tab，记录browser-trusted visibilitychange和真实GPU/Orbit/RAF释放与恢复；不改document.hidden或派发合成事件。每个CDP请求10秒超时。它证明容器原生浏览器后台生命周期，不证明物理Windows最小化或硬件GPU性能。
 
 `node layout.mjs` 是1280×900两页补充检查：真实scrollWidth、原生cursor、Tab的focus-visible/outline与截图；同样只在上述容器运行。正式Dockerfile.headed默认继承README首先构建的material-p1-browser:1.58.2；本次已建测试环境实际复用了material-p1-browser:gpu同一依赖层，不要求干净用户预先有gpu标签。
+
+`node touch.mjs`提供独立375 touch-only核验：配置hasTouch/isMobile后必须实际断言pointer:coarse true/fine false/hover false与maxTouchPoints，首载起全程只touchscreen.tap，不用mouse移动改变主要输入类型；检查分类→模板正文、GL/Orbit/RAF静态和375无溢出。原accept.mjs的375混合输入实际媒体值保留报告，不能单以hasTouch声称coarse已验。
