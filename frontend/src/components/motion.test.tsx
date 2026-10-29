@@ -143,3 +143,13 @@ describe("dialog exit lifecycle", () => {
     expect(close).not.toHaveBeenCalled();
   });
 });
+
+
+describe("GPU boundary",()=>{
+ afterEach(()=>vi.restoreAllMocks());
+ it("releases an owned canvas on removal even if the child did not register cleanup",async()=>{
+ const {SafeEffect}=await import("./creative/showcase");const lose=vi.fn();const context={getExtension:()=>({loseContext:lose})} as unknown as WebGL2RenderingContext;
+ vi.spyOn(HTMLCanvasElement.prototype,"getContext").mockReturnValue(context);
+ const view=render(<SafeEffect><canvas aria-label="owned canvas"/></SafeEffect>);view.unmount();expect(lose).toHaveBeenCalledTimes(1);
+ });
+});

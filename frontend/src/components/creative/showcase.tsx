@@ -3,6 +3,7 @@ import {
   lazy,
   Suspense,
   Component,
+  createRef,
   useEffect,
   useRef,
   useState,
@@ -18,16 +19,56 @@ const Orbit = lazy(() => import("../react-bits/OrbitImages")),
   Ripple = lazy(() => import("../react-bits/RippleDistortion")),
   Halftone = lazy(() => import("../react-bits/HalftoneReveal")),
   Pixel = lazy(() => import("../react-bits/PixelTrail"));
-class SafeEffect extends Component<
+export class SafeEffect extends Component<
   { children: ReactNode },
   { failed: boolean }
 > {
   state = { failed: false };
+  root = createRef<HTMLDivElement>();
+  canvases = new Set<HTMLCanvasElement>();
+  observer: MutationObserver | null = null;
   static getDerivedStateFromError() {
     return { failed: true };
   }
+  gather = (node: Node) => {
+    if (node instanceof HTMLCanvasElement) this.canvases.add(node);
+    if (node instanceof Element)
+      node.querySelectorAll("canvas").forEach((c) => this.canvases.add(c));
+  };
+  release = () => {
+    this.canvases.forEach((canvas) => {
+      try {
+        const gl = canvas.getContext("webgl2") || canvas.getContext("webgl");
+        gl?.getExtension("WEBGL_lose_context")?.loseContext();
+      } catch {}
+    });
+    this.canvases.clear();
+  };
+  componentDidMount() {
+    if (!this.root.current) return;
+    this.gather(this.root.current);
+    this.observer = new MutationObserver((records) => {
+      records.forEach((record) => record.addedNodes.forEach(this.gather));
+      if (this.state.failed) this.release();
+    });
+    this.observer.observe(this.root.current, {
+      childList: true,
+      subtree: true,
+    });
+  }
+  componentDidCatch() {
+    this.release();
+  }
+  componentWillUnmount() {
+    this.observer?.disconnect();
+    this.release();
+  }
   render() {
-    return this.state.failed ? null : this.props.children;
+    return (
+      <div ref={this.root} style={{ display: "contents" }}>
+        {this.state.failed ? null : this.props.children}
+      </div>
+    );
   }
 }
 export function PublicImage({
@@ -70,7 +111,7 @@ export function CreativeShowcase({
     [galleryVisible, setGalleryVisible] = useState(false),
     [heroVisible, setHeroVisible] = useState(false),
     [tab, setTab] = useState(0),
-    [degraded, setDegraded] = useState(false);
+    [degraded, setDegraded] = useState<string[]>([]);
   const hero = useRef<HTMLElement>(null),
     gallery = useRef<HTMLElement>(null),
     idle = useRef<ReturnType<typeof setTimeout> | null>(null),
@@ -114,12 +155,18 @@ export function CreativeShowcase({
     let raf = 0,
       start = 0,
       frames = 0;
+    const warmup = performance.now() + 1000;
     const tick = (time: number) => {
+      if (time < warmup) {
+        raf = requestAnimationFrame(tick);
+        return;
+      }
       if (!start) start = time;
       frames++;
       if (time - start > 2200) {
         if ((frames / (time - start)) * 1000 < 45) {
-          setDegraded(true);
+          setDegraded((old) => (old.includes(owner) ? old : [...old, owner]));
+          setOwner(null);
           return;
         }
         start = time;
@@ -131,13 +178,19 @@ export function CreativeShowcase({
     return () => cancelAnimationFrame(raf);
   }, [enabled, owner]);
   useEffect(() => {
-    const lost = () => setDegraded(true);
+    const lost = () => {
+      setOwner(null);
+      if (owner)
+        setDegraded((old) => (old.includes(owner) ? old : [...old, owner]));
+    };
     document.addEventListener("webglcontextlost", lost, true);
     return () => document.removeEventListener("webglcontextlost", lost, true);
-  }, []);
-  const active = enabled && fine && !degraded;
+  }, [owner]);
+  useEffect(()=>{if(!enabled){if(idle.current)clearTimeout(idle.current);setOwner(null)}},[enabled]);
+  const active = enabled && fine;
   const current =
     active &&
+    !degraded.includes(owner || "") &&
     (owner === "glow" || owner === "electric" ? heroVisible : galleryVisible)
       ? owner
       : null;

@@ -1613,3 +1613,8 @@ dialog.modal-closing {
     max-width: 315px;
   }
 }
+
+.electric-slot .electric-border {
+  width: 100%;
+  height: 100%;
+}
