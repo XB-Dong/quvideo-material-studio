@@ -1,18 +1,18 @@
 {
-  "checkedAt": "2026-10-29T22:35:39+08:00",
-  "specVersion": "P1-1.1.0",
+  "checkedAt": "2026-10-29T22:49:18+08:00",
+  "specVersion": "P1-1.2.0",
   "files": [
     {
       "path": "docs/waves/P1/ACCEPTANCE.md",
-      "sha256": "ef241899e148afbb67c94d63706b595ed7b20b55dca63ec2b5d140849ded3818"
+      "sha256": "36f7c8eddf1f8e266e1795d02f6e43de6253cc834f541f3c13b91e73e949c752"
     },
     {
       "path": "docs/waves/P1/CONTEXT-MAP.md",
-      "sha256": "b09721ad194c771e0e63cf8757da12f1d273605d361d96edc1d913c72550125e"
+      "sha256": "0b3dcd21ad472f88dab62416a0c131fc11ee589d9f0b44341439a7916d408764"
     },
     {
       "path": "docs/waves/P1/PLAN.md",
-      "sha256": "75dc821231fc6baa0a4ce5dd67a053b1aecbda9ea7b9bc26b137f7c6f516d559"
+      "sha256": "349f722634513de65480d32b5318aaf848baabbaf4c16b825d029704ed56f739"
     },
     {
       "path": "docs/waves/P1/references/assets/abstract.jpg",
@@ -32,15 +32,15 @@
     },
     {
       "path": "docs/waves/P1/references/contrast-check.json",
-      "sha256": "b38d2790b71ff77edec7a25ebe6c041998ba4680a71b2e03f7afdd709dccc3e6"
+      "sha256": "080a20ae5fe529ea9bcf0fc2fe97b5c7e019f1f76c9c568eee1368aa49f0b2ae"
     },
     {
       "path": "docs/waves/P1/references/creative-scene-map.svg",
-      "sha256": "29e4954c1ddb1c13598ea05d20d3cccef597cdea14465a9e821f9c80d7557f06"
+      "sha256": "ecea3975b977afee875916447a4b872e23b24ccfce7c47c347695e46e8b5feac"
     },
     {
       "path": "docs/waves/P1/references/direction-board.svg",
-      "sha256": "ce131b3a3e1d8f5424c4602f01c800ffd8c9999655b1be30a337af4e45c97a87"
+      "sha256": "b3774c351ad745b5bdcd27fb9d1a28323b1f9b273b96cffd9d43e06b469e90a9"
     },
     {
       "path": "docs/waves/P1/references/manifest.json",
@@ -52,7 +52,7 @@
     },
     {
       "path": "docs/waves/P1/references/README.md",
-      "sha256": "8de4a6aaf8c5c5dcfc4023978ac622fd72cfc0bbd93c58d68eeece2b3120f7b5"
+      "sha256": "2959c84aec711199f8c7b4922f16c04a5514791d14c02d7b397e4c1aa5b67494"
     },
     {
       "path": "docs/waves/P1/ROLES.md",
@@ -60,59 +60,63 @@
     },
     {
       "path": "docs/waves/P1/tasks/P1-ACCEPT.md",
-      "sha256": "d71d61e477f9cd11a04ad2f01c719da5b69764a639d3a44df781edfc4b5bf779"
+      "sha256": "e3a4d10496858b20833b9ac412c046e12d633982681540e758884aaecfbad388"
     },
     {
       "path": "docs/waves/P1/tasks/P1-ASSET.md",
-      "sha256": "d7f31b9500ae319635ec490d85637d8919a2fa1e39900a218911d002ed179d11"
+      "sha256": "907c801e3b15d2a727cfa3d4297fff16ab9510beff06a564fc1ceb449d31ef2e"
     },
     {
       "path": "docs/waves/P1/tasks/P1-BASE.md",
-      "sha256": "a9068c97d8cd789ccc6e26d4f6b6e0888cc12dd4893b6835e0ba8ca3f27c036d"
+      "sha256": "6e6967cf21aa8fa6c0d450841dbc65c1577c58faa25d4369f211748b30967123"
     },
     {
       "path": "docs/waves/P1/tasks/P1-CREATIVE.md",
-      "sha256": "9bed7a04baf8853ad72d1f29736540225ef67d4459e1d7f41c890ea1a34b0683"
+      "sha256": "b214a7488aa9fc73f0bd37d8f65824d68df23931ddade3eb21448972f81f7ee0"
     },
     {
       "path": "docs/waves/P1/tasks/P1-DELIVERY.md",
-      "sha256": "006f91b3bb1be81e2528d9608b1b74e9533d561ea0a74086d1c3588b8e872517"
+      "sha256": "d3b9528a830a52f611a73a2ab72adcc75fd71c0e607bc9858e2486c9e3584392"
     },
     {
       "path": "docs/waves/P1/tasks/P1-DIRECTION.md",
-      "sha256": "e6acd5c2584a17903063cdbd5af8cb5cc75b8fdfef25e0f00abe0db880064841"
+      "sha256": "c39816a31dc1af679dcc991a414299cce27164ef3807b50b7b7b09d9031d5ddb"
     },
     {
       "path": "docs/waves/P1/tasks/P1-MOTION.md",
-      "sha256": "bd8d7b511ba6ff705fa9642f112b7679e0359c4ec517d4e7a5143042c7ebe7bb"
+      "sha256": "387568c9573aeab0e6fde2d2796a40a942946402fd2f833931c7be60587aa96e"
     },
     {
       "path": "docs/waves/P1/tasks/P1-REVIEW.md",
-      "sha256": "b3b13e2786b335b9f4164b7a43bed76ebb4c35f1d5c1864151340ea170425f21"
+      "sha256": "d4b3533ef5b50c74aade32873d7860a0dd57967b644d69ff3d54a99c1ded05c6"
     },
     {
       "path": "docs/waves/P1/tasks/P1-VISUAL.md",
-      "sha256": "81abb0d3a6261ea85c626e60e423186d9cd4de7cac339ba00c336f9c6baaa442"
+      "sha256": "11b1a24c920c9641c1a9cbe1812fd5e1f60c04b6c2ecd2eaf89690e5a76d519c"
     },
     {
       "path": "specs/p1/assets.md",
-      "sha256": "80a92f21ea279abf3defae0ace1eb6e6ed0bab87f9199374ca3739ec29277be7"
+      "sha256": "fa86fefa5357c56bc078a4dd87d167980bb845516dce8c4eb4bb192d0aca6a8a"
     },
     {
       "path": "specs/p1/design.md",
-      "sha256": "c6d26cf4a1f1dd97a130785aaf2ef2609bcc958688b51370c1bf660c286e3593"
+      "sha256": "5a213014640de5b265afcd235b2880c0387e3fcf7aab546e64d478ed18fc71f3"
     },
     {
       "path": "specs/p1/motion.md",
-      "sha256": "546585ddf4805399fffcb907469c0e51ac1659863620b30626c13cf3bca9c1e0"
+      "sha256": "ffedf1d830cddf0d4801f799479fd6e4b77ff723a238213ba31d72050a11ad39"
     },
     {
       "path": "specs/p1/react-bits.md",
-      "sha256": "06e9fc33dc9c7f29f7faad22563169ee0c78193c5deaa90fd478d8efcc453217"
+      "sha256": "6d24c9a0ef42c32bbb80f520bf7a3c25ca6a140a95a77932d59da17191e50f29"
     },
     {
       "path": "specs/p1/requirements.md",
-      "sha256": "a06d63bc772a691f73f60f307cec8b2afadc47c44284ad75fd3c881f6fb32f5d"
+      "sha256": "dbd3f360d2b8d73391d5804725a643f6264c0265f748c3fbfabce86befbb5688"
+    },
+    {
+      "path": "docs/waves/P1/references/direction-board.png",
+      "sha256": "681da4789c534b510b6e8c5afd269338799f91f697f0ecb2b7a049e435299474"
     }
   ],
   "hashMode": "repository content: UTF-8 text CRLF normalized to LF; binary unchanged"

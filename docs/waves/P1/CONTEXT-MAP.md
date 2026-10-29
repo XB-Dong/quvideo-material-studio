@@ -7,7 +7,7 @@
 | File | Purpose | Changes Needed |
 | --- | --- | --- |
 | docs/waves/P1/、specs/p1/ | 准备与规格 | 计划、视觉方向、素材清单、动效、角色、任务、验收与状态 |
-| frontend/src/app/globals.css | 未来P1主题与响应式 | 现有823行，青柠强调色；改为统一蓝紫token、动效分层和减弱规则 |
+| frontend/src/app/globals.css | 未来P1主题与响应式 | 现有823行，青柠强调色；改为浅中性底色、蓝紫细节的token、动效分层和减弱规则 |
 | frontend/src/components/catalog.tsx | 未来P1列表 | 分类、封面、入场、hover/focus与图像加载 |
 | frontend/src/components/studio.tsx | 未来P1制作 | 上传反馈、布局、提交按钮动画；保持UploadSlot/Maker生命周期 |
 | frontend/src/components/history.tsx | 未来P1历史 | 按task.id稳定key进行卡片/状态动画；保持请求错误分离 |

@@ -8,7 +8,7 @@
 - role: Leader
 - baseCommit: 07300db74eefe5d8d1ecf979de314450bf5f2a78
 - baseCommitMeaning: P0 sealed preparation anchor; Leader replaces with exact active integrated commit and records revision before dispatch
-- specVersion: P1-1.1.0
+- specVersion: P1-1.2.0
 - requirementIds: P1-CREATIVE-01, P1-REVIEW-01, P1-VIS-01, P1-VIS-02, P1-MOTION-01, P1-UX-01
 - dependencies: P1-BASE
 - requestedModel: inherit_current_session
@@ -41,7 +41,9 @@ Write only assigned paths. Shared dependencies/CI/contracts need recorded Leader
 
 ## Acceptance
 
-- Direction board and specifications agree on blue-violet hierarchy, source credit and full page scope.
+- Use porcelain/white/light-neutral backgrounds, charcoal text and blue-violet fine lines, borders, icons and sparse action accents. No dark theme, page-wide blue-purple wash, neon glow or black Canvas fallback blocks. Verify actual effects and contrast in the light interface.
+
+- Direction board and specifications agree on light-neutral hierarchy with restrained blue-violet accents, source credit and full page scope.
 - Selected photo pages/license and manifest match actual production candidates.
 - No redundant per-component approval is required within the user-started approved direction.
 

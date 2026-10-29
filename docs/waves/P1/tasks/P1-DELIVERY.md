@@ -8,7 +8,7 @@
 - role: Leader
 - baseCommit: 07300db74eefe5d8d1ecf979de314450bf5f2a78
 - baseCommitMeaning: P0 sealed preparation anchor; Leader replaces with exact active integrated commit and records revision before dispatch
-- specVersion: P1-1.1.0
+- specVersion: P1-1.2.0
 - requirementIds: P1-CREATIVE-01, P1-REVIEW-01, P1-DEL-01, P1-REG-01
 - dependencies: P1-REVIEW, P1-ACCEPT
 - requestedModel: inherit_current_session

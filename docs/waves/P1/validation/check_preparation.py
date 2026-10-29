@@ -18,7 +18,7 @@ def field(text, name):
 
 def main():
     state = json.loads((WAVE / "state.json").read_text(encoding="utf-8"))
-    assert state["specVersion"] == "P1-1.1.0"
+    assert state["specVersion"] == "P1-1.2.0"
     assert state["executionAuthorized"] is False
     assert state["activeDevelopmentAgents"] == []
     assert state["motionInstalled"] is False and state["productionAssetsChanged"] is False
@@ -29,7 +29,7 @@ def main():
     graph = {}
     for name, text in tasks.items():
         assert field(text, "taskId") == field(text, "rootTaskId") == name
-        assert field(text, "specVersion") == "P1-1.1.0"
+        assert field(text, "specVersion") == "P1-1.2.0"
         assert field(text, "baseCommit") == BASE
         assert field(text, "status") == "prepared_not_dispatched"
         assert field(text, "requestedModel") == "inherit_current_session"
@@ -61,6 +61,16 @@ def main():
     assert len(audit["components"]) == 7
     assert sum(len(c["files"]) for c in audit["components"]) == 14
     assert audit["oglCandidate"]["license"] == "Unlicense"
+    contrast = json.loads((WAVE / "references/contrast-check.json").read_text(encoding="utf-8"))
+    def luminance(color):
+        srgb = [int(color[i:i+2], 16) / 255 for i in (1, 3, 5)]
+        linear = [c / 12.92 if c <= .04045 else ((c + .055) / 1.055) ** 2.4 for c in srgb]
+        return sum(c * w for c, w in zip(linear, [.2126, .7152, .0722]))
+    for pair in contrast["checks"]:
+        low, high = sorted([luminance(pair["foreground"]), luminance(pair["background"])])
+        ratio = (high + .05) / (low + .05)
+        assert abs(ratio - pair["ratio"]) < 1e-8 and ratio >= pair["threshold"]
+    assert (WAVE / "references/direction-board.png").read_bytes()[:8] == b"\x89PNG\r\n\x1a\n"
     for svg in (WAVE / "references").glob("*.svg"): ET.parse(svg)
     docs = list(WAVE.rglob("*.md")) + list((ROOT / "specs/p1").glob("*.md"))
     docs += [ROOT / n for n in ["README.md", "NEXT-WAVES.md", "THIRD-PARTY-NOTICES.md", "docs/decisions/0006-p1-preparation.md", "docs/decisions/0007-p1-react-bits.md", "docs/README.md", "docs/waves/README.md", "docs/agents/README.md"]]
@@ -80,6 +90,6 @@ def main():
     subprocess.run(["git", "diff", "--exit-code", BASE, "--", *product_paths], cwd=ROOT, check=True, capture_output=True)
     untracked = subprocess.check_output(["git", "ls-files", "--others", "--exclude-standard"], cwd=ROOT, text=True)
     assert not any(p.startswith(("frontend/", "backend/", "tests/", ".github/")) for p in untracked.splitlines())
-    print(json.dumps({"result":"pass","specVersion":"P1-1.1.0","preparedTasks":len(tasks),"requirements":len(requirements),"candidateAssets":4,"reactBitsComponents":7,"registryFiles":14,"dependencyGraph":"acyclic","relativeLinks":"valid","svgXML":"valid","productUnchangedFrom":BASE,"runtimeChecks":"not_run_for_P1","executionAuthorized":False}, ensure_ascii=False, indent=2))
+    print(json.dumps({"result":"pass","specVersion":"P1-1.2.0","preparedTasks":len(tasks),"requirements":len(requirements),"candidateAssets":4,"reactBitsComponents":7,"registryFiles":14,"contrastPairs":len(contrast["checks"]),"dependencyGraph":"acyclic","relativeLinks":"valid","svgXML":"valid","productUnchangedFrom":BASE,"runtimeChecks":"not_run_for_P1","executionAuthorized":False}, ensure_ascii=False, indent=2))
 
 if __name__ == "__main__": main()

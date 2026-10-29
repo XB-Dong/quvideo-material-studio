@@ -1,10 +1,10 @@
 # P1 验收矩阵与取证计划
 
-版本P1-1.1.0。当前全部产品项not_run；P0的通过是基线，不是P1结果。准备检查只验证计划与来源工件。每条证据须带commit、环境、时间、命令/操作、预期/实际与限制。
+版本P1-1.2.0。当前全部产品项not_run；P0的通过是基线，不是P1结果。准备检查只验证计划与来源工件。每条证据须带commit、环境、时间、命令/操作、预期/实际与限制。
 
 | 要求 | 场景/检查 | 主要任务 | 预期门槛 | 状态 |
 | --- | --- | --- | --- | --- |
-| VIS-01 | V01三页两弹窗/主题一致 | VISUAL | token一致，层级/留白/状态清晰；普通文字4.5:1，大字3:1 | not_run |
+| VIS-01 | V01三页两弹窗/主题一致 | VISUAL | 瓷白/白/浅灰大面板，蓝紫只作小面积细节；token一致，层级/留白/状态清晰；普通文字4.5:1，大字3:1 | not_run |
 | VIS-02 | A01四模板封面/成功图/来源 | ASSET | 本地可用，裁切不伤主体，正确MIME，许可/哈希/尺寸/预算可追踪 | not_run |
 | MOTION-01 | M01–M10逐项操作 | MOTION | 分类/hover/focus/press/上传/新卡/阶段/弹窗均有反馈；快速连续操作无残留 | not_run |
 | MOTION-02 | V02装饰/运行/加载 | MOTION | 蓝紫氛围不挡交互，真实状态驱动，不假百分比 | not_run |
@@ -16,9 +16,9 @@
 | REG-01 | R01原16前端测试+新增动效用例 | VISUAL、MOTION | 原行为全部通过；卸载/身份/401/提交锁/版本保护不退化 | not_run |
 | REG-01 | R02原12Java+8API | ASSET、ACCEPT | 顺序/失败/归属等通过；新资源key/MIME可预览 | not_run |
 | REG-01 | R03旧结果/迁移回滚 | ASSET、ACCEPT | 新旧数据均可读；旧结果升级前后SHA一致，V1/V2不变；成套快照恢复含Flyway历史，P0→P1→回滚P0→再次P1可重做 | not_run |
-| CREATIVE-01 | RB01–RB07七项真实操作 | CREATIVE、REVIEW | 正常桌面逐项触发并录制；不是上游demo/全关效果；局部、蓝紫、目的明确 | not_run |
+| CREATIVE-01 | RB01–RB07七项真实操作 | CREATIVE、REVIEW | 正常桌面逐项触发并录制；不是上游demo/全关效果；在浅色实页自然融合，无黑底Canvas块/过曝，目的明确 | not_run |
 | CREATIVE-01、QUALITY-01 | C01资源互斥/切换/恢复 | CREATIVE、ACCEPT | 同视口≤2活跃系统、≤1已分配存活WebGL；Electric接管前释放旧context，离屏/后台/静态/卸载清理 | not_run |
-| REVIEW-01 | G01独立创意/美学 | REVIEW | 构图层级、创意贴合、色彩、节奏、克制留白各≥4/5，独立签署 | not_run |
+| REVIEW-01 | G01独立创意/美学 | REVIEW | 构图层级、创意贴合、浅色与蓝紫比例、节奏、克制留白各≥4/5，独立签署 | not_run |
 | REVIEW-01 | G02独立使用舒适度 | ACCEPT | 下方全部舒适项通过，独立签署；无开放blocking/major | not_run |
 | DEL-01 | D01干净Compose/CI/README/报告 | DELIVERY | 真实CI通过，应用/来源/使用/预算/限制/回滚/验收SHA完整 | not_run |
 

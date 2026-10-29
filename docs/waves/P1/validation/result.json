@@ -1,6 +1,6 @@
 {
   "result": "pass",
-  "specVersion": "P1-1.1.0",
+  "specVersion": "P1-1.2.0",
   "preparedTasks": 9,
   "requirements": 10,
   "candidateAssets": 4,
@@ -12,9 +12,10 @@
   "productUnchangedFrom": "07300db74eefe5d8d1ecf979de314450bf5f2a78",
   "runtimeChecks": "not_run_for_P1",
   "executionAuthorized": false,
-  "checkedAt": "2026-10-29T22:35:39+08:00",
+  "checkedAt": "2026-10-29T22:49:18+08:00",
   "command": "python docs/waves/P1/validation/check_preparation.py",
   "exitCode": 0,
   "environment": "Windows PowerShell / Python standard library / Git; preparation documents only",
-  "independentReviewRef": "docs/waves/P1/reviews/preparation-review.md"
+  "independentReviewRef": "docs/waves/P1/reviews/preparation-review.md",
+  "contrastPairs": 13
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "waveId": "P1",
-  "specVersion": "P1-1.1.0",
+  "specVersion": "P1-1.2.0",
   "status": "ready_for_user_start",
   "executionAuthorized": false,
   "executionStartedAt": null,
@@ -27,7 +27,7 @@
   "productChecks": "not_run_for_P1",
   "performanceBaseline": null,
   "preparationValidation": "passed",
-  "independentPreparationReview": "passed_no_open_blocking_or_major",
+  "independentPreparationReview": "passed_P1_1_2_0_no_open_blocking_or_major",
   "tasks": [
     {
       "taskId": "P1-BASE",
@@ -103,6 +103,7 @@
     10,
     14
   ],
-  "preparationCompletedAt": "2026-10-29T22:22:24+08:00",
-  "independentPreparationReviewRef": "docs/waves/P1/reviews/preparation-review.md"
+  "preparationCompletedAt": "2026-10-29T22:49:18+08:00",
+  "independentPreparationReviewRef": "docs/waves/P1/reviews/preparation-review.md",
+  "visualDirection": "light_neutral_backgrounds_with_blue_violet_details"
 }

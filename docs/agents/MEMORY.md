@@ -2,7 +2,7 @@
 
 - P1 copy rule: effects blend into the interface; no visible effect/component names, technical annotations or hover/mouse-experience instructions. Content navigation, essential actions/status and accessibility labels remain.
 
-- 2026-10-29 P1 scope: seven React Bits components are mandatory, aesthetics and comfort need separate independent passes. Prepared P1-1.1.0 with nine tasks; follow react-bits.md and state.json. Preparation approved, actual product gates not_run, executionAuthorized=false.
+- 2026-10-29 P1 scope: light neutral backgrounds/white panels, blue-violet lines, borders, icons and restrained accents; seven React Bits components are mandatory, aesthetics and comfort need separate independent passes. Prepared P1-1.2.0 with nine tasks; follow react-bits.md and state.json. Preparation approved, actual product gates not_run, executionAuthorized=false.
 
 - Latest instruction, 2026-10-29 evening: user requests all P1 preparation before execution. P0 completed/sealed07300db; no P1 execution authorization. Candidate resources and direction board live under docs/waves/P1/references only. Load P1 plan/state/roles before any dispatch.
 - Latest instruction, 2026-10-29 17:15+08:00: the user explicitly started P0 development. Decision 0005 supersedes the earlier preparation-only authorization. Root Compose and CI exist; Docker Linux daemon started successfully. Product checks are still pending until evidence is recorded.

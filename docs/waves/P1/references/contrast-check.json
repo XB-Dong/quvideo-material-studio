@@ -1,46 +1,111 @@
 {
+  "specVersion": "P1-1.2.0",
   "method": "WCAG relative luminance, opaque sRGB pairs only",
   "checks": [
     {
       "name": "正文/页面",
-      "foreground": "#F4F5FF",
-      "background": "#0B1020",
-      "ratio": 17.44638808494611,
+      "foreground": "#202433",
+      "background": "#F7F8FC",
+      "ratio": 14.532826978431524,
+      "threshold": 4.5,
+      "passed": true
+    },
+    {
+      "name": "正文/面板",
+      "foreground": "#202433",
+      "background": "#FFFFFF",
+      "ratio": 15.423382617254333,
+      "threshold": 4.5,
+      "passed": true
+    },
+    {
+      "name": "辅助/页面",
+      "foreground": "#626B7C",
+      "background": "#F7F8FC",
+      "ratio": 5.05625469991291,
       "threshold": 4.5,
       "passed": true
     },
     {
       "name": "辅助/面板",
-      "foreground": "#B8C0DD",
-      "background": "#141A30",
-      "ratio": 9.524818861901066,
+      "foreground": "#626B7C",
+      "background": "#FFFFFF",
+      "ratio": 5.366096421761975,
       "threshold": 4.5,
       "passed": true
     },
     {
-      "name": "按钮/紫端",
+      "name": "主按钮白字",
       "foreground": "#FFFFFF",
-      "background": "#7050D9",
-      "ratio": 5.471080853835268,
+      "background": "#4F63D8",
+      "ratio": 5.111027847195611,
       "threshold": 4.5,
       "passed": true
     },
     {
-      "name": "按钮/蓝端",
-      "foreground": "#FFFFFF",
-      "background": "#3157BF",
-      "ratio": 6.469123911108394,
+      "name": "链接/面板",
+      "foreground": "#4654B4",
+      "background": "#FFFFFF",
+      "ratio": 6.588017768007873,
       "threshold": 4.5,
       "passed": true
     },
     {
-      "name": "强调/面板",
-      "foreground": "#B6A2FF",
-      "background": "#141A30",
-      "ratio": 7.86861811655829,
+      "name": "选中项/浅紫底",
+      "foreground": "#4654B4",
+      "background": "#F3F2FC",
+      "ratio": 5.934688616177382,
+      "threshold": 4.5,
+      "passed": true
+    },
+    {
+      "name": "控件边界/页面",
+      "foreground": "#818C9F",
+      "background": "#F7F8FC",
+      "ratio": 3.1991089751434307,
+      "threshold": 3,
+      "passed": true
+    },
+    {
+      "name": "控件边界/白面板",
+      "foreground": "#818C9F",
+      "background": "#FFFFFF",
+      "ratio": 3.395146851411474,
+      "threshold": 3,
+      "passed": true
+    },
+    {
+      "name": "focus/页面",
+      "foreground": "#4654B4",
+      "background": "#F7F8FC",
+      "ratio": 6.207621552887022,
+      "threshold": 3,
+      "passed": true
+    },
+    {
+      "name": "成功/面板",
+      "foreground": "#237452",
+      "background": "#FFFFFF",
+      "ratio": 5.688805017822206,
+      "threshold": 4.5,
+      "passed": true
+    },
+    {
+      "name": "失败/面板",
+      "foreground": "#B83952",
+      "background": "#FFFFFF",
+      "ratio": 5.60723760613163,
+      "threshold": 4.5,
+      "passed": true
+    },
+    {
+      "name": "警告/面板",
+      "foreground": "#856220",
+      "background": "#FFFFFF",
+      "ratio": 5.577335221528674,
       "threshold": 4.5,
       "passed": true
     }
   ],
-  "limits": "Not a gradient/alpha/photo text or live page audit"
+  "limits": "Not a gradient/alpha/photo text/Canvas or live page audit; decorative border is not the essential control boundary"
 }

@@ -8,7 +8,7 @@
 - role: Frontend Visual/Creative/Motion
 - baseCommit: 07300db74eefe5d8d1ecf979de314450bf5f2a78
 - baseCommitMeaning: P0 sealed preparation anchor; Leader replaces with exact active integrated commit and records revision before dispatch
-- specVersion: P1-1.1.0
+- specVersion: P1-1.2.0
 - requirementIds: P1-CREATIVE-01, P1-VIS-01, P1-UX-01, P1-REG-01
 - dependencies: P1-BASE, P1-DIRECTION
 - requestedModel: inherit_current_session
@@ -29,7 +29,7 @@ Read AGENTS.md, CONSTITUTION.md, docs/agents/PROTOCOL.md, docs/waves/P1/PLAN.md,
 
 ## Goal
 
-Implement unified blue-violet tokens, three pages, two dialogs and full interaction states with one frontend writer. Continue to read live Java data and preserve all existing lifecycle rules.
+Implement light-neutral tokens with restrained blue-violet details, three pages, two dialogs and full interaction states with one frontend writer. Continue to read live Java data and preserve all existing lifecycle rules.
 
 ## Allowed write paths
 
@@ -45,6 +45,8 @@ Implement unified blue-violet tokens, three pages, two dialogs and full interact
 Write only assigned paths. Shared dependencies/CI/contracts need recorded Leader ownership transfer. Do not edit protected P0 API/query/session/submission generation logic to accommodate animation. A broad test directory does not authorize rewriting existing tests to conceal failure. Read-only relevant source access is allowed.
 
 ## Acceptance
+
+- Use porcelain/white/light-neutral backgrounds, charcoal text and blue-violet fine lines, borders, icons and sparse action accents. No dark theme, page-wide blue-purple wash, neon glow or black Canvas fallback blocks. Verify actual effects and contrast in the light interface.
 
 - No user-visible effect/component names, technical annotations, parameters or hover/mouse-experience instructions. Name gallery tabs by image subject; retain necessary actions, state/errors, accessibility labels and motion controls. Technical mappings belong only in development documents.
 
