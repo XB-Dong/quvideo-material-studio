@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { useIdentity } from "./providers";
+import { MotionToggle } from "./motion/preferences";
+
 export function Modal({
   title,
   children,
@@ -14,8 +16,10 @@ export function Modal({
   const ref = useRef<HTMLDialogElement>(null);
   useEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
-    ref.current?.showModal();
-    return () => previous?.focus();
+    if (ref.current && !ref.current.open) ref.current.showModal();
+    return () => {
+      if (previous?.isConnected) previous.focus();
+    };
   }, []);
   return (
     <dialog
@@ -51,9 +55,10 @@ export function Shell({ children }: { children: React.ReactNode }) {
             映作<span className="brand-caption">MATERIAL STUDIO</span>
           </span>
         </Link>
-        <nav>
+        <nav aria-label="主导航">
           <Link href="/">探索模板</Link>
           <Link href="/history">我的作品</Link>
+          <MotionToggle />
           <button className="identity-button" onClick={() => setOpen(true)}>
             <span className="avatar">◉</span>
             {session?.displayName || "连接身份中"}

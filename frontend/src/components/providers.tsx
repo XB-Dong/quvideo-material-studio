@@ -18,6 +18,8 @@ import {
   currentSessionGeneration,
 } from "../lib/session-generation";
 import type { Session } from "../lib/types";
+import { MotionPreferences } from "./motion/preferences";
+
 type Identity = {
   session: Session | null;
   error: string | null;
@@ -36,7 +38,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
   );
   return (
     <QueryClientProvider client={client}>
-      <IdentityProvider>{children}</IdentityProvider>
+      <IdentityProvider>
+        <MotionPreferences>{children}</MotionPreferences>
+      </IdentityProvider>
     </QueryClientProvider>
   );
 }
