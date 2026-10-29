@@ -1,0 +1,19 @@
+{
+  "testedCommit": "c30c77ccf3b9f94739a6068f4a14e0f9c0866658",
+  "checkedAt": "2026-10-30T00:23:50+08:00",
+  "lintExitCode": 0,
+  "typecheckExitCode": 0,
+  "testExitCode": 0,
+  "tests": 31,
+  "originalTests": 16,
+  "runnerBuildExitCode": 0,
+  "reviewFinding": "P1-REV-05",
+  "disposition": "source repair submitted; independent active initial-frame visual recheck required before closure",
+  "changes": [
+    "canvas opacity zero until resize and first full draw",
+    "2px masked edge ring plus clipping, stable label above effect",
+    "radius12 and reduced white-hot light core while preserving real shader animation",
+    "generic/unavailable renderer identity static fallback; known hardware unchanged; no production force override"
+  ],
+  "limits": "unit tests/build cannot prove no visual obstruction; default software no-GL must not substitute functional shader screenshots"
+}

@@ -1,0 +1,96 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 842B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 74B done
+#3 DONE 0.0s
+
+#4 [deps 1/4] FROM docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34
+#4 resolve docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 3.30kB 0.0s done
+#5 DONE 0.0s
+
+#6 [deps 2/4] WORKDIR /app
+#6 CACHED
+
+#7 [deps 3/4] COPY package*.json ./
+#7 CACHED
+
+#8 [deps 4/4] RUN npm ci
+#8 CACHED
+
+#9 [test 1/1] COPY . .
+#9 CACHED
+
+#10 [build 1/1] RUN npm run build
+#10 0.650 
+#10 0.650 > material-studio@1.0.0 build
+#10 0.650 > next build
+#10 0.650 
+#10 1.367 ▲ Next.js 16.4.3 (Turbopack)
+#10 1.508 ✓ Running next.config.ts took 138ms
+#10 1.532 
+#10 1.576   Creating an optimized production build ...
+#10 6.159 ✓ Compiled successfully in 4.6s
+#10 6.165   Running TypeScript ...
+#10 6.240 
+#10 6.240   We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+#10 6.241   The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+#10 6.241 
+#10 6.241   	- include was updated to add '.next/dev/types/**/*.ts'
+#10 6.241 
+#10 11.80   Finished TypeScript in 5.6s ...
+#10 11.81   Collecting page data using 8 workers ...
+#10 13.32   Generating static pages using 8 workers (0/4) ...
+#10 14.57   Generating static pages using 8 workers (1/4) 
+#10 14.57   Generating static pages using 8 workers (2/4) 
+#10 14.57   Generating static pages using 8 workers (3/4) 
+#10 14.57 ✓ Generating static pages using 8 workers (4/4) in 1259ms
+#10 14.59   Finalizing page optimization ...
+#10 14.86 
+#10 14.86 Route (app)
+#10 14.86 ┌ ○ /
+#10 14.86 ├ ○ /_not-found
+#10 14.86 ├ ƒ /api/[...path]
+#10 14.86 ├ ○ /history
+#10 14.86 ├ ƒ /media/[...path]
+#10 14.86 └ ƒ /templates/[id]
+#10 14.86 
+#10 14.86 
+#10 14.86 ○  (Static)   prerendered as static content
+#10 14.86 ƒ  (Dynamic)  server-rendered on demand
+#10 14.86 
+#10 DONE 15.1s
+
+#11 [runner 3/6] RUN addgroup -g 1001 -S app && adduser -S app -u 1001 -G app
+#11 CACHED
+
+#12 [runner 4/6] COPY --from=build --chown=app:app /app/.next/standalone ./
+#12 DONE 0.5s
+
+#13 [runner 5/6] COPY --from=build --chown=app:app /app/.next/static ./.next/static
+#13 DONE 0.1s
+
+#14 [runner 6/6] COPY --from=build --chown=app:app /app/public ./public
+#14 DONE 0.1s
+
+#15 exporting to image
+#15 exporting layers
+#15 exporting layers 2.3s done
+#15 exporting manifest sha256:c159a92cbeab6852dd2d5ad9320d92ec639621f05e7b953e85dabaa8cf4dcbf0 0.0s done
+#15 exporting config sha256:131fb079bcadd29e38736628346e3a5f8fe719fe7117a302b493fd4b4b07de68 0.0s done
+#15 exporting attestation manifest sha256:8761d27680092f066f7e45604874ae5302399527b3539d0aa0221a4ad6fec423 0.0s done
+#15 exporting manifest list sha256:44989612dde86949da8b65c173f0e3a9369647052cc0ce4e8932027be664c581 0.0s done
+#15 naming to docker.io/library/material-p1-frontend-preview:latest done
+#15 unpacking to docker.io/library/material-p1-frontend-preview:latest
+#15 unpacking to docker.io/library/material-p1-frontend-preview:latest 0.5s done
+#15 DONE 2.9s

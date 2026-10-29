@@ -7,3 +7,5 @@
 局部SafeEffect边界记录canvas并在卸载前释放context，覆盖上游未返回cleanup的失败路径；FPS跳过首秒初始化、按owner局部降级。Dither/Ripple/Halftone图片未就绪时透明显示底层poster；Dither/Halftone半径使用像素，限制容器范围。Motion候选库未被产品import，M01–M10采用CSS/React状态触发。
 
 默认GPU策略：单次具名Blob Worker以1×1 OffscreenCanvas/caveat=true预检真实renderer，排除SwiftShader等软件renderer，先确认探针GL释放再授main owner；Worker不支持/失败/超时只回静态图片，不在main创建慢探针。正常硬件六源实际创建带caveat=true（OGL显式预创建canvas后交Renderer）。没有生产强制开关。局部performance.measure只记录探针与真实release耗时，不发送/保存用户数据。软件功能fixture和默认舒适分开由独立验收记录，前者不冒充硬件性能。
+
+Electric额外首帧适配：resize/首次完整draw前透明，产品层外缘环形裁剪保护文字；保留原shader动态，light热芯混白比例0.85降至0.15，与浅色细蓝紫边缘相符。实际多帧图由独立Reviewer复核。

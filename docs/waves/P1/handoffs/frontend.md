@@ -43,3 +43,10 @@ Root决定有界修复为单次Worker能力预检，提交ade2cbda5cce0626cf419d
 容器lint/type、30tests（原24+能力策略6）以及runner生产构建通过；详见gpu-policy-checks.json和两份txt证据。新增测试验证无主线程GL探针、软件拒绝、release确认、缓存、abort清理、超时/无Worker静态。中途因测试把URL替换为非构造对象导致6个基础设施错误，改保留原URL构造能力的测试桩后全过；不作为产品行为Red。
 
 真实默认舒适/强制软件功能/正常硬件释放测量仍待Acceptance/Root，源码层修正并不自动关闭原major。local performance entries提供yingzuo-gpu-probe详情和yingzuo-effect-release耗时，不外发数据。此前8688代码与证据为历史基线，此段补充最新实现，保护区仍未修改。
+
+
+## Electric活跃首帧修复
+
+独立Reviewer实际active-electric截图发现约226×176白矩形覆盖CTA/相邻说明（P1-REV-05 major）；已实际view_image核对，尺寸对应上游64px MARGIN扩展canvas，而非凭默认软件静态页面规避。提交c30c77ccf3b9f94739a6068f4a14e0f9c0866658：初始化/resize直到首次完整draw前opacity0；产品Electric可见层限定约2px环形mask+overflow裁剪，CTA文字单独上层，borderRadius12；保留真实shader动画，light热芯降低过白。与Acceptance约定functional模式0/30/90/180/350ms初始活跃多帧复验，Reviewer再关major。
+
+同提交落实generic/unavailable renderer保守static（worker实际分类器复用同一纯函数），不在main重新拒绝明确functional fixture已确认released的allowed消息；软件字段保留。31tests/lint/type及runner构建全过，原16测试无修改；见electric-fix-checks.json及两份原始txt。actual视觉复核/默认舒适签署仍独立执行，本文不自行关闭REV-05。
