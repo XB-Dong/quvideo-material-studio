@@ -22,9 +22,13 @@ export function Catalog() {
         { signal },
       ),
   });
+  const showcaseTemplates = useQuery({
+    queryKey: ["templates", ""],
+    queryFn: ({ signal }) => api<Template[]>("/api/templates", { signal }),
+  });
   return (
     <Shell>
-      <CreativeShowcase templates={templates.data || []}>
+      <CreativeShowcase templates={showcaseTemplates.data || []}>
         <div className="section-top" id="templates">
           <h2>探索灵感</h2>
           <span className="muted">为你的每一种想象</span>

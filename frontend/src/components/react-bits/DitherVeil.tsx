@@ -468,6 +468,7 @@ const DitherVeil = ({
     const gl = renderer.gl;
     const canvas = gl.canvas;
     canvas.style.display = 'block';
+    canvas.style.opacity = '0';
     canvas.style.width = '100%';
     canvas.style.height = '100%';
     container.appendChild(canvas);
@@ -773,6 +774,7 @@ const DitherVeil = ({
     img.onload = () => {
       image = img;
       imageTexture.image = img;
+      canvas.style.opacity = '1';
       try {
         if (samplerContext) {
           const edge = measureEdge(samplerContext, img);

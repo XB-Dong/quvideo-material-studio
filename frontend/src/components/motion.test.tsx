@@ -11,6 +11,7 @@ import {
   MotionToggle,
   useMotionPreferences,
 } from "./motion/preferences";
+import { Modal } from "./shell";
 let reduced = false;
 let listeners: Set<() => void>;
 function Probe() {
@@ -94,5 +95,51 @@ describe("motion preferences", () => {
     fireEvent(document, new Event("visibilitychange"));
     expect(screen.getByText("moving")).toBeInTheDocument();
     expect(localStorage.getItem("yingzuo-static")).toBeNull();
+  });
+});
+
+describe("dialog exit lifecycle", () => {
+  beforeEach(() => {
+    Object.defineProperty(HTMLDialogElement.prototype,"showModal",{configurable:true,value:vi.fn(function(this:HTMLDialogElement){this.setAttribute("open","")})});
+    Object.defineProperty(HTMLDialogElement.prototype,"close",{configurable:true,value:vi.fn(function(this:HTMLDialogElement){this.removeAttribute("open")})});
+  });
+  afterEach(() => {
+    vi.useRealTimers();
+    vi.restoreAllMocks();
+    delete (HTMLDialogElement.prototype as Partial<HTMLDialogElement>).showModal;
+    delete (HTMLDialogElement.prototype as Partial<HTMLDialogElement>).close;
+  });
+  it("closes at the 120ms bound without losing its accessible name", () => {
+    vi.useFakeTimers();
+    const close = vi.fn();
+    render(
+      <MotionPreferences>
+        <Modal title="作品预览" onClose={close}>
+          图片
+        </Modal>
+      </MotionPreferences>,
+    );
+    expect(
+      screen.getByRole("dialog", { name: "作品预览" }),
+    ).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "关闭对话框" }));
+    expect(close).not.toHaveBeenCalled();
+    act(() => vi.advanceTimersByTime(120));
+    expect(close).toHaveBeenCalledTimes(1);
+  });
+  it("cancels pending exit on route unmount", () => {
+    vi.useFakeTimers();
+    const close = vi.fn();
+    const v = render(
+      <MotionPreferences>
+        <Modal title="作品预览" onClose={close}>
+          图片
+        </Modal>
+      </MotionPreferences>,
+    );
+    fireEvent.click(screen.getByRole("button", { name: "关闭对话框" }));
+    v.unmount();
+    act(() => vi.advanceTimersByTime(200));
+    expect(close).not.toHaveBeenCalled();
   });
 });

@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useId } from "react";
 import { useIdentity } from "./providers";
-import { MotionToggle } from "./motion/preferences";
+import { MotionToggle, useMotionPreferences } from "./motion/preferences";
 
 export function Modal({
   title,
@@ -14,28 +14,47 @@ export function Modal({
   onClose: () => void;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
+  const titleId = useId();
+  const { enabled } = useMotionPreferences();
+  const [closing, setClosing] = useState(false);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const close = () => {
+    if (closing) return;
+    if (!enabled) {
+      onClose();
+      return;
+    }
+    setClosing(true);
+    timer.current = setTimeout(() => {
+      ref.current?.close();
+      onClose();
+    }, 120);
+  };
   useEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
     if (ref.current && !ref.current.open) ref.current.showModal();
     return () => {
+      if (timer.current) clearTimeout(timer.current);
       if (previous?.isConnected) previous.focus();
     };
   }, []);
   return (
     <dialog
       ref={ref}
-      onCancel={onClose}
+      aria-labelledby={titleId}
+      className={closing ? "modal-closing" : undefined}
+      onCancel={(event) => {
+        event.preventDefault();
+        ref.current?.close();
+        onClose();
+      }}
       onClick={(e) => {
-        if (e.target === ref.current) onClose();
+        if (e.target === ref.current) close();
       }}
     >
       <div className="modal-heading">
-        <h2>{title}</h2>
-        <button
-          className="icon-button"
-          aria-label="关闭对话框"
-          onClick={onClose}
-        >
+        <h2 id={titleId}>{title}</h2>
+        <button className="icon-button" aria-label="关闭对话框" onClick={close}>
           ×
         </button>
       </div>

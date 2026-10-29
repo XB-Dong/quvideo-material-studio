@@ -269,6 +269,7 @@ const RippleDistortion = ({
     canvas.style.width = '100%';
     canvas.style.height = '100%';
     canvas.style.display = 'block';
+    canvas.style.opacity = '0';
     mount.appendChild(canvas);
 
     const imageTexture = new Texture(gl, {
@@ -286,6 +287,7 @@ const RippleDistortion = ({
     image.onload = () => {
       if (disposed) return;
       imageTexture.image = image;
+      canvas.style.opacity = '1';
       compositeUniforms.uTextureSize.value = [image.naturalWidth || 1, image.naturalHeight || 1];
     };
     image.src = src;

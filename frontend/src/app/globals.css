@@ -1559,3 +1559,57 @@ dialog::backdrop {
     scroll-behavior: auto !important;
   }
 }
+
+.status {
+  animation: label-in 160ms both;
+}
+.upload-label img {
+  animation: label-in 160ms both;
+}
+.submission-message {
+  animation: label-in 150ms both;
+}
+dialog.modal-closing {
+  animation: dialog-out 120ms both;
+}
+@keyframes label-in {
+  from {
+    opacity: 0.65;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes dialog-out {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+.template-card {
+  animation: card-in 220ms both;
+}
+.task-card .status {
+  transition: background 160ms;
+}
+
+.gallery-frame {
+  height: 420px;
+  max-width: 315px;
+}
+.gallery-poster {
+  object-fit: contain;
+}
+@media (max-width: 600px) {
+  .gallery-frame {
+    height: auto;
+    aspect-ratio: 3/4;
+    width: 100%;
+    max-width: 315px;
+  }
+}

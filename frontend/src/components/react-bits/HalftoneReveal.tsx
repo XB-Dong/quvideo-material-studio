@@ -488,6 +488,7 @@ const HalftoneReveal = ({
       preserveDrawingBuffer: false
     });
     if (!container || !canvas || !gl) return undefined;
+    canvas.style.opacity = '0';
 
     const maskProgram = link(gl, MASK);
     const viewProgram = link(gl, VIEW);
@@ -773,6 +774,7 @@ const HalftoneReveal = ({
     image.decoding = 'async';
     image.onload = () => {
       if (!alive) return;
+      canvas.style.opacity = '1';
       gl.bindTexture(gl.TEXTURE_2D, imageTexture);
       gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);

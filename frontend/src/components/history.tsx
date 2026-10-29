@@ -119,7 +119,10 @@ function HistoryContent({
               <div className="task-info">
                 <div>
                   <h3>{t.templateTitle}</h3>
-                  <span className={"status " + t.status.toLowerCase()}>
+                  <span
+                    key={t.status + ":" + t.stage}
+                    className={"status " + t.status.toLowerCase()}
+                  >
                     {
                       {
                         QUEUED: "排队中",

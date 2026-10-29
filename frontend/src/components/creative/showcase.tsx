@@ -130,6 +130,11 @@ export function CreativeShowcase({
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
   }, [enabled, owner]);
+  useEffect(() => {
+    const lost = () => setDegraded(true);
+    document.addEventListener("webglcontextlost", lost, true);
+    return () => document.removeEventListener("webglcontextlost", lost, true);
+  }, []);
   const active = enabled && fine && !degraded;
   const current =
     active &&
@@ -358,9 +363,13 @@ export function CreativeShowcase({
                     {tab === 0 ? (
                       <Dither
                         src={selected.coverUrl}
+                        fit="contain"
                         inkColor="#4654b4"
                         paperColor="#f7f8fc"
-                        revealRadius={0.12}
+                        revealRadius={Math.min(
+                          32,
+                          (gallery.current?.clientWidth || 315) * 0.1,
+                        )}
                         linger={0.3}
                         wander={false}
                         clickBurst={false}
@@ -378,9 +387,13 @@ export function CreativeShowcase({
                     ) : tab === 2 ? (
                       <Halftone
                         src={selected.coverUrl}
+                        fit="contain"
                         inkColor="#4654b4"
                         paperColor="#f7f8fc"
-                        revealRadius={0.12}
+                        revealRadius={Math.min(
+                          32,
+                          (gallery.current?.clientWidth || 315) * 0.1,
+                        )}
                         linger={0.3}
                         wander={false}
                         clickBurst={false}
