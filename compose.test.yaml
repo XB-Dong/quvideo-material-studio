@@ -61,6 +61,8 @@ services:
       RELAY_HOST: frontend
       OUTPUT_DIR: /evidence
       TESTED_COMMIT: ${TESTED_COMMIT:-working-tree}
+      FORCE_GPU_FUNCTIONAL: ${FORCE_GPU_FUNCTIONAL:-0}
+      WAIT_PREFLIGHT: "1"
     volumes:
       - ${P1_EVIDENCE_DIR:-./runtime/p1-browser}:/evidence
     depends_on:

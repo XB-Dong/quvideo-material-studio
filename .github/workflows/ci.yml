@@ -53,6 +53,14 @@ jobs:
         env:
           TESTED_COMMIT: ${{ github.sha }}
         run: docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-check accept.mjs
+      - name: Explicit software functional coverage of GPU effects
+        env:
+          TESTED_COMMIT: ${{ github.sha }}
+        run: docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e FORCE_GPU_FUNCTIONAL=1 -e OUTPUT_DIR=/evidence/functional browser-check accept.mjs
+      - name: Default capability policy interaction measurements
+        env:
+          TESTED_COMMIT: ${{ github.sha }}
+        run: docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/interaction browser-check interact.mjs
       - name: Browser performance measurements
         env:
           TESTED_COMMIT: ${{ github.sha }}
@@ -62,8 +70,8 @@ jobs:
         with:
           name: browser-evidence
           path: |
-            runtime/p1-browser/*.json
-            runtime/p1-browser/*.png
+            runtime/p1-browser/**/*.json
+            runtime/p1-browser/**/*.png
           retention-days: 7
       - name: Collect service logs
         if: always()
