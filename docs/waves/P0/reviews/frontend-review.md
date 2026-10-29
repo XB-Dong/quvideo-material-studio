@@ -27,3 +27,14 @@
 模板/媒体同源转发保留 Cookie、Origin、状态码并关闭缓存；上传有独立槽位版本、abort、卸载与 ObjectURL 清理；任务缓存带 userId/taskId，version/终态合并防倒退；活跃列表分页发现、各任务终态停轮询、查询错误和后台失败分离均已有实现与针对性测试。本次未发现上述两项之外的额外阻断或重大问题。
 
 前端 13 项测试/lint/type/build 的既有结果来自实现角色，不能归为本审核的执行证据；实际浏览器界面、断网恢复、键盘/焦点和窄屏待独立操作。两项发现已上报 Leader，等待处置和修复提交复核。
+
+## 修复独立复核
+
+2026-10-29，独立读取准确修复提交 406a48e6e872cbd559fd9a1d10c6dfd3ae466aae（包括源码 diff 和三项新增回归），结论如下：
+
+| 发现 | 修复与回归 | 处置 |
+| --- | --- | --- |
+| FE-REV-01 | api 在请求开始捕获 session generation，401 body 结束后校验请求未 abort 且 generation 仍当前；失效事件携带 generation，Provider 再次校验并在重连/失效/清理时递增。session-lifecycle.test.tsx 新增“旧 401 body 延迟到重连后”和“已 abort 请求的晚到 401”两项回归，使用真实 api 函数而非将它整体 mock 掉 | 源码与回归设计独立复核通过，采纳并关闭 |
+| FE-REV-02 | Maker 在身份变化时 abort/null pending、递增 submissionGeneration、释放锁和 submitting、清空旧素材；success/catch/finally 均有身份 epoch 与提交 generation 约束。新增 deferred 旧 POST → 身份失效/重连 → 新 POST → 旧响应晚到回归，断言旧 finally 不解锁新提交 | 源码与回归设计独立复核通过，采纳并关闭 |
+
+本次没有发现上述修复引入的新阻断或重大问题。Frontend 实现者报告总计 16 测试及生产构建通过；本角色本次只做准确提交的源码/测试审阅，没有重复执行其测试，运行结论应引用实现者/Leader 对应证据。实际浏览器、网络故障界面和键盘/小屏仍由 Leader 后续验收，不能以本记录替代。
