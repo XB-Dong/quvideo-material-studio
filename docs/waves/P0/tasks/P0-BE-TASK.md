@@ -6,7 +6,7 @@
 - rootTaskId: P0-BE-TASK
 - role: Backend
 - status: prepared_not_dispatched
-- baseCommit: abdf231d4c03dfe89fd6617cc459518cbdaddc69
+- baseCommit: 0d2627243e1a8e86eb33f5f975d202cf56d135b3
 - baseCommitMeaning: preparation specification anchor; Leader must rebase packet to exact integrated SHA and record revision before dispatch
 - specVersion: 1.0.0
 - requirementIds: R-01, R-04, R-05, R-06, R-09, R-10

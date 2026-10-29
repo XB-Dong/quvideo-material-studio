@@ -6,7 +6,7 @@
 - rootTaskId: P0-FE-CATALOG
 - role: Frontend
 - status: prepared_not_dispatched
-- baseCommit: abdf231d4c03dfe89fd6617cc459518cbdaddc69
+- baseCommit: 0d2627243e1a8e86eb33f5f975d202cf56d135b3
 - baseCommitMeaning: preparation specification anchor; Leader must rebase packet to exact integrated SHA and record revision before dispatch
 - specVersion: 1.0.0
 - requirementIds: R-02, R-03, R-10, R-11
