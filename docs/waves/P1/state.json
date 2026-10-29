@@ -16,8 +16,8 @@
   "acceptanceCommit": null,
   "activeDevelopmentAgents": [
     "p1_frontend",
-    "p1_assets",
-    "p1_acceptance"
+    "p1_acceptance",
+    "p1_review"
   ],
   "maxNativeWorkers": 3,
   "modelPolicy": "inherit_current_session",
@@ -26,10 +26,10 @@
   "actualReasoningEffort": null,
   "modelVerificationStatus": "not_verified",
   "motionCandidate": "14.7.1",
-  "motionInstalled": true,
-  "productionAssetsChanged": false,
+  "motionInstalled": false,
+  "productionAssetsChanged": true,
   "productChecks": "not_run_for_P1",
-  "performanceBaseline": "collection_delegated_to_independent_acceptance_P0_deployment_unchanged",
+  "performanceBaseline": "Alpine_static_reference_retained; GPU_capable_browser_P0_P1_remeasurement_in_progress",
   "preparationValidation": "passed",
   "independentPreparationReview": "passed_P1_1_2_0_no_open_blocking_or_major",
   "tasks": [
@@ -51,32 +51,37 @@
     {
       "taskId": "P1-ASSET",
       "rootTaskId": "P1-ASSET",
-      "status": "in_progress",
+      "status": "completed",
       "repairCount": 0,
       "baseCommit": "7997279301ce28c1bf1ee5e15d971aa7243a645c",
       "startedAt": "2026-10-29T23:01:15+08:00",
-      "owner": "p1_assets"
+      "owner": "p1_assets",
+      "implementationCommit": "39eb7d5eaf5f49864a25abd29653b2642fadabed",
+      "evidence": "docs/waves/P1/evidence/assets/HANDOFF.md"
     },
     {
       "taskId": "P1-VISUAL",
       "rootTaskId": "P1-VISUAL",
-      "status": "in_progress",
+      "status": "implemented_pending_independent_acceptance",
       "repairCount": 0,
       "baseCommit": "7997279301ce28c1bf1ee5e15d971aa7243a645c",
       "startedAt": "2026-10-29T23:01:15+08:00",
-      "owner": "p1_frontend"
+      "owner": "p1_frontend",
+      "implementationCommit": "21d376ee92db77a314a322c5ad68dbef5a5fc1a8"
     },
     {
       "taskId": "P1-CREATIVE",
       "rootTaskId": "P1-CREATIVE",
-      "status": "prepared_not_dispatched",
-      "repairCount": 0
+      "status": "in_progress",
+      "repairCount": 0,
+      "owner": "p1_frontend"
     },
     {
       "taskId": "P1-MOTION",
       "rootTaskId": "P1-MOTION",
-      "status": "prepared_not_dispatched",
-      "repairCount": 0
+      "status": "in_progress",
+      "repairCount": 0,
+      "owner": "p1_frontend"
     },
     {
       "taskId": "P1-ACCEPT",
@@ -89,8 +94,9 @@
     {
       "taskId": "P1-REVIEW",
       "rootTaskId": "P1-REVIEW",
-      "status": "prepared_not_dispatched",
-      "repairCount": 0
+      "status": "in_progress",
+      "repairCount": 0,
+      "owner": "p1_review"
     },
     {
       "taskId": "P1-DELIVERY",
@@ -99,7 +105,7 @@
       "repairCount": 0
     }
   ],
-  "nextAction": "parallel_VISUAL_ASSET_and_browser_baseline",
+  "nextAction": "GPU_capable_browser_rebaseline_and_candidate_review",
   "oglCandidate": "1.0.11",
   "reactBitsComponents": [
     "Dither Veil",
@@ -125,5 +131,7 @@
   "executionStartCommit": "00348c37f95fb6011250418171f54a4698f853e2",
   "sourceFreezeRef": "docs/waves/P1/evidence/leader-baseline/source-freeze.json",
   "baselineContainerChecks": "16_frontend_12_java_8_api_passed",
-  "dispatchRule": "isolated edits allowed while P0 browser baseline is collected; no P1 deployment until baseline freeze"
+  "dispatchRule": "isolated edits allowed while P0 browser baseline is collected; no P1 deployment until baseline freeze",
+  "oglInstalled": true,
+  "motionDecision": "CSS_transitions_and_React_lifecycle; unused_Motion_removed"
 }

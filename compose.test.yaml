@@ -51,3 +51,18 @@ services:
     depends_on:
       frontend:
         condition: service_healthy
+
+  browser-check:
+    profiles: [test]
+    build:
+      context: ./tests/p1
+    environment:
+      BASE_URL: http://localhost:3000
+      RELAY_HOST: frontend
+      OUTPUT_DIR: /evidence
+      TESTED_COMMIT: ${TESTED_COMMIT:-working-tree}
+    volumes:
+      - ${P1_EVIDENCE_DIR:-./runtime/p1-browser}:/evidence
+    depends_on:
+      frontend:
+        condition: service_healthy

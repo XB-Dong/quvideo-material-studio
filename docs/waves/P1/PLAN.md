@@ -18,7 +18,7 @@
 
 | 顺序 | 任务 | Owner | 依赖与门槛 |
 | --- | --- | --- | --- |
-| R0 | P1-BASE | Leader | 用户启动；P0同环境性能/包体、回归基线；验证锁定Motion14.7.1/OGL1.0.11候选与组件来源 |
+| R0 | P1-BASE | Leader | 用户启动；P0同环境性能/包体、回归基线；验证锁定OGL1.0.11与组件来源，普通过渡采用CSS/React |
 | R0 | P1-DIRECTION | Leader | 启动后冻结布局、七效果/双门槛、来源、预算与唯一文件owner |
 | R1并行 | P1-ASSET | Asset Integration | BASE+DIRECTION；JPEG封面/PNG结果、V3/allowlist/公开demo MIME、旧结果兼容与回滚再升级 |
 | R1 | P1-VISUAL | Frontend | BASE+DIRECTION；浅色tokens/完整布局/组件状态/静态画廊骨架，读取Java真实coverUrl |

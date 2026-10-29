@@ -1,4 +1,4 @@
-name: P0 checks
+name: Checks
 
 on:
   push:
@@ -49,6 +49,22 @@ jobs:
         env:
           TESTED_COMMIT: ${{ github.sha }}
         run: docker compose -f compose.yaml -f compose.test.yaml run --build --rm api-check
+      - name: Independent browser acceptance
+        env:
+          TESTED_COMMIT: ${{ github.sha }}
+        run: docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-check accept.mjs
+      - name: Browser performance measurements
+        env:
+          TESTED_COMMIT: ${{ github.sha }}
+        run: docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps browser-check measure.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-evidence
+          path: |
+            runtime/p1-browser/*.json
+            runtime/p1-browser/*.png
+          retention-days: 7
       - name: Collect service logs
         if: always()
         run: docker compose logs --no-color > compose.log

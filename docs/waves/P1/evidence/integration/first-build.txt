@@ -1,0 +1,255 @@
+ Image material-studio-backend Building 
+ Image material-studio-frontend Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.19kB 0.0s done
+#1 DONE 0.0s
+
+#2 [frontend internal] load build definition from Dockerfile
+#2 transferring dockerfile: 842B done
+#2 DONE 0.0s
+
+#3 [backend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 834B done
+#3 DONE 0.0s
+
+#4 [backend internal] load metadata for docker.io/library/eclipse-temurin:21-jre-jammy@sha256:9603446cf51296842eab342514857cf7ab55a8891cd564e6c68ec237fae65a16
+#4 DONE 0.1s
+
+#5 [backend internal] load metadata for docker.io/library/maven:3.9.11-eclipse-temurin-21@sha256:6fdc855a6ed81d288ca7ca37ac6ff5e9308b612485c0801d70b25a858c83d237
+#5 DONE 0.1s
+
+#6 [frontend internal] load metadata for docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34
+#6 DONE 0.1s
+
+#7 [frontend internal] load .dockerignore
+#7 transferring context: 74B done
+#7 DONE 0.0s
+
+#8 [backend internal] load .dockerignore
+#8 transferring context: 58B done
+#8 DONE 0.0s
+
+#9 [frontend deps 1/4] FROM docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34
+#9 resolve docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34 0.0s done
+#9 DONE 0.0s
+
+#10 [backend internal] load build context
+#10 DONE 0.0s
+
+#11 [backend source 1/5] FROM docker.io/library/maven:3.9.11-eclipse-temurin-21@sha256:6fdc855a6ed81d288ca7ca37ac6ff5e9308b612485c0801d70b25a858c83d237
+#11 resolve docker.io/library/maven:3.9.11-eclipse-temurin-21@sha256:6fdc855a6ed81d288ca7ca37ac6ff5e9308b612485c0801d70b25a858c83d237 0.0s done
+#11 DONE 0.0s
+
+#12 [backend runtime 1/4] FROM docker.io/library/eclipse-temurin:21-jre-jammy@sha256:9603446cf51296842eab342514857cf7ab55a8891cd564e6c68ec237fae65a16
+#12 resolve docker.io/library/eclipse-temurin:21-jre-jammy@sha256:9603446cf51296842eab342514857cf7ab55a8891cd564e6c68ec237fae65a16 0.0s done
+#12 DONE 0.0s
+
+#13 [frontend internal] load build context
+#13 transferring context: 579.93kB 0.0s done
+#13 DONE 0.1s
+
+#14 [frontend deps 2/4] WORKDIR /app
+#14 CACHED
+
+#15 [frontend deps 3/4] COPY package*.json ./
+#15 CACHED
+
+#16 [frontend deps 4/4] RUN npm ci
+#16 CACHED
+
+#17 [frontend test 1/1] COPY . .
+#17 DONE 0.0s
+
+#10 [backend internal] load build context
+#10 transferring context: 3.01MB 0.1s done
+#10 DONE 0.2s
+
+#18 [backend source 2/5] WORKDIR /app
+#18 CACHED
+
+#19 [backend source 3/5] COPY pom.xml .
+#19 CACHED
+
+#20 [backend source 4/5] RUN mvn -B dependency:go-offline
+#20 CACHED
+
+#21 [backend source 5/5] COPY src ./src
+#21 DONE 0.0s
+
+#22 [frontend build 1/1] RUN npm run build
+#22 0.391 
+#22 0.391 > material-studio@1.0.0 build
+#22 0.391 > next build
+#22 0.391 
+#22 0.836 ▲ Next.js 16.4.3 (Turbopack)
+#22 0.872 ✓ Running next.config.ts took 36ms
+#22 0.883 
+#22 0.908   Creating an optimized production build ...
+#22 4.299 ✓ Compiled successfully in 3.4s
+#22 4.303   Running TypeScript ...
+#22 4.314 
+#22 4.314   We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+#22 4.314   The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+#22 4.314 
+#22 4.314   	- include was updated to add '.next/dev/types/**/*.ts'
+#22 4.316 
+#22 8.386   Finished TypeScript in 4.1s ...
+#22 8.389   Collecting page data using 8 workers ...
+#22 9.172   Generating static pages using 8 workers (0/4) ...
+#22 ...
+
+#23 [backend build 1/1] RUN mvn -B -DskipTests package
+#23 2.019 [INFO] Scanning for projects...
+#23 2.397 [INFO] 
+#23 2.397 [INFO] --------------------< com.quvideo:material-studio >---------------------
+#23 2.397 [INFO] Building material-studio 1.0.0
+#23 2.397 [INFO]   from pom.xml
+#23 2.398 [INFO] --------------------------------[ jar ]---------------------------------
+#23 3.951 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-jdbc/3.5.16/spring-boot-starter-jdbc-3.5.16.pom
+#23 8.095 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-jdbc/3.5.16/spring-boot-starter-jdbc-3.5.16.pom (2.5 kB at 591 B/s)
+#23 8.107 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/zaxxer/HikariCP/6.3.3/HikariCP-6.3.3.pom
+#23 8.351 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/zaxxer/HikariCP/6.3.3/HikariCP-6.3.3.pom (29 kB at 118 kB/s)
+#23 8.356 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/6.2.19/spring-jdbc-6.2.19.pom
+#23 8.834 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/6.2.19/spring-jdbc-6.2.19.pom (2.4 kB at 5.0 kB/s)
+#23 8.849 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-tx/6.2.19/spring-tx-6.2.19.pom
+#23 9.104 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-tx/6.2.19/spring-tx-6.2.19.pom (2.2 kB at 8.7 kB/s)
+#23 9.134 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.21.4/jackson-dataformat-toml-2.21.4.pom
+#23 9.383 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.21.4/jackson-dataformat-toml-2.21.4.pom (3.8 kB at 15 kB/s)
+#23 9.386 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.21.4/jackson-dataformats-text-2.21.4.pom
+#23 9.738 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformats-text/2.21.4/jackson-dataformats-text-2.21.4.pom (3.5 kB at 9.9 kB/s)
+#23 9.774 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.17.8/byte-buddy-1.17.8.pom
+#23 ...
+
+#22 [frontend build 1/1] RUN npm run build
+#22 9.971   Generating static pages using 8 workers (1/4) 
+#22 9.980   Generating static pages using 8 workers (2/4) 
+#22 9.981   Generating static pages using 8 workers (3/4) 
+#22 9.981 ✓ Generating static pages using 8 workers (4/4) in 809ms
+#22 9.985   Finalizing page optimization ...
+#22 10.13 
+#22 10.13 Route (app)
+#22 10.13 ┌ ○ /
+#22 10.13 ├ ○ /_not-found
+#22 10.13 ├ ƒ /api/[...path]
+#22 10.13 ├ ○ /history
+#22 10.13 ├ ƒ /media/[...path]
+#22 10.13 └ ƒ /templates/[id]
+#22 10.13 
+#22 10.13 
+#22 10.13 ○  (Static)   prerendered as static content
+#22 10.13 ƒ  (Dynamic)  server-rendered on demand
+#22 10.13 
+#22 DONE 10.2s
+
+#24 [frontend runner 3/6] RUN addgroup -g 1001 -S app && adduser -S app -u 1001 -G app
+#24 CACHED
+
+#23 [backend build 1/1] RUN mvn -B -DskipTests package
+#23 10.05 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.17.8/byte-buddy-1.17.8.pom (19 kB at 70 kB/s)
+#23 10.05 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.17.8/byte-buddy-parent-1.17.8.pom
+#23 10.29 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.17.8/byte-buddy-parent-1.17.8.pom (66 kB at 274 kB/s)
+#23 ...
+
+#25 [frontend runner 4/6] COPY --from=build --chown=app:app /app/.next/standalone ./
+#25 DONE 0.2s
+
+#26 [frontend runner 5/6] COPY --from=build --chown=app:app /app/.next/static ./.next/static
+#26 DONE 0.0s
+
+#23 [backend build 1/1] RUN mvn -B -DskipTests package
+#23 10.32 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.pom
+#23 10.54 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.pom (14 kB at 64 kB/s)
+#23 ...
+
+#27 [frontend runner 6/6] COPY --from=build --chown=app:app /app/public ./public
+#27 DONE 0.1s
+
+#23 [backend build 1/1] RUN mvn -B -DskipTests package
+#23 10.58 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-jdbc/3.5.16/spring-boot-starter-jdbc-3.5.16.jar
+#23 10.85 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-jdbc/3.5.16/spring-boot-starter-jdbc-3.5.16.jar (4.8 kB at 18 kB/s)
+#23 10.85 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/zaxxer/HikariCP/6.3.3/HikariCP-6.3.3.jar
+#23 10.85 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/6.2.19/spring-jdbc-6.2.19.jar
+#23 10.85 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-tx/6.2.19/spring-tx-6.2.19.jar
+#23 10.86 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.21.4/jackson-dataformat-toml-2.21.4.jar
+#23 10.86 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/2.0.18/slf4j-api-2.0.18.jar
+#23 11.70 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/6.2.19/spring-jdbc-6.2.19.jar (476 kB at 559 kB/s)
+#23 11.70 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.17.8/byte-buddy-1.17.8.jar
+#23 11.81 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.21.4/jackson-dataformat-toml-2.21.4.jar (58 kB at 61 kB/s)
+#23 11.81 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.jar
+#23 11.91 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/zaxxer/HikariCP/6.3.3/HikariCP-6.3.3.jar (172 kB at 163 kB/s)
+#23 12.26 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/2.0.18/slf4j-api-2.0.18.jar (70 kB at 50 kB/s)
+#23 12.40 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.jar (367 kB at 238 kB/s)
+#23 ...
+
+#28 [frontend] exporting to image
+#28 exporting layers 1.6s done
+#28 exporting manifest sha256:07cf70e8f56d602f6302c55648cc7a011eb7c178c3ce0003a4a6a7690af247ad 0.0s done
+#28 exporting config sha256:048bfaa6180d34ced24555e39663ae4ef5da6f9f614a9180cb3fb679060adb7f 0.0s done
+#28 exporting attestation manifest sha256:124454b13d64f22be8bec08cdf83ed5f4d8cbc4fb7fd73c5f24981193a2a2a67 0.0s done
+#28 exporting manifest list sha256:b9456e9f0bf17c06caf685e440f271490a5ef9f6a1ad08073b8e83dbceb5ddd4 0.0s done
+#28 naming to docker.io/library/material-studio-frontend:latest done
+#28 unpacking to docker.io/library/material-studio-frontend:latest 0.4s done
+#28 DONE 2.2s
+
+#29 [frontend] resolving provenance for metadata file
+#29 DONE 0.0s
+
+#23 [backend build 1/1] RUN mvn -B -DskipTests package
+#23 13.07 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-tx/6.2.19/spring-tx-6.2.19.jar (290 kB at 131 kB/s)
+#23 13.28 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.17.8/byte-buddy-1.17.8.jar (9.0 MB at 3.7 MB/s)
+#23 13.29 [INFO] 
+#23 13.29 [INFO] --- resources:3.3.1:resources (default-resources) @ material-studio ---
+#23 13.38 [INFO] Copying 1 resource from src/main/resources to target/classes
+#23 13.39 [INFO] Copying 15 resources from src/main/resources to target/classes
+#23 13.40 [INFO] 
+#23 13.40 [INFO] --- compiler:3.14.1:compile (default-compile) @ material-studio ---
+#23 13.50 [INFO] Recompiling the module because of changed source code.
+#23 13.50 [INFO] Compiling 12 source files with javac [debug parameters release 21] to target/classes
+#23 14.42 [INFO] 
+#23 14.42 [INFO] --- resources:3.3.1:testResources (default-testResources) @ material-studio ---
+#23 14.42 [INFO] skip non existing resourceDirectory /app/src/test/resources
+#23 14.42 [INFO] 
+#23 14.42 [INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ material-studio ---
+#23 14.43 [INFO] Recompiling the module because of changed dependency.
+#23 14.43 [INFO] Compiling 3 source files with javac [debug parameters release 21] to target/test-classes
+#23 14.83 [INFO] 
+#23 14.83 [INFO] --- surefire:3.5.6:test (default-test) @ material-studio ---
+#23 14.98 [INFO] Tests are skipped.
+#23 14.98 [INFO] 
+#23 14.98 [INFO] --- jar:3.4.2:jar (default-jar) @ material-studio ---
+#23 15.18 [INFO] Building jar: /app/target/app.jar
+#23 15.26 [INFO] 
+#23 15.26 [INFO] --- spring-boot:3.5.16:repackage (repackage) @ material-studio ---
+#23 15.64 [INFO] Replacing main artifact /app/target/app.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+#23 15.64 [INFO] The original artifact has been renamed to /app/target/app.jar.original
+#23 15.65 [INFO] ------------------------------------------------------------------------
+#23 15.65 [INFO] BUILD SUCCESS
+#23 15.65 [INFO] ------------------------------------------------------------------------
+#23 15.65 [INFO] Total time:  13.654 s
+#23 15.65 [INFO] Finished at: 2026-10-29T15:14:03Z
+#23 15.65 [INFO] ------------------------------------------------------------------------
+#23 DONE 15.8s
+
+#30 [backend runtime 2/4] RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf /var/lib/apt/lists/* && groupadd -g 10001 studio && useradd -u 10001 -g studio studio && mkdir -p /data/materials && chown studio:studio /data/materials
+#30 CACHED
+
+#31 [backend runtime 3/4] WORKDIR /app
+#31 CACHED
+
+#32 [backend runtime 4/4] COPY --from=build /app/target/app.jar app.jar
+#32 DONE 0.1s
+
+#33 [backend] exporting to image
+#33 exporting layers 0.6s done
+#33 exporting manifest sha256:a99af02a3a4e527d3b6fc0c0d6912158268ac14ab24836e6747f59c25e8b1e9a 0.0s done
+#33 exporting config sha256:61abc88088e5a62bf23aaff5334e0b887f3decb0d7340de663f6050494700e84 0.0s done
+#33 exporting attestation manifest sha256:2b5b5ae1bc6ef537909c26268ca7889b97a577138c6a35b62b27083238078e70 0.0s done
+#33 exporting manifest list sha256:81e7f6d4334e2520111a3a3c9548f015388aa6b9aa2dba50a829cc811d2945db 0.0s done
+#33 naming to docker.io/library/material-studio-backend:latest done
+#33 unpacking to docker.io/library/material-studio-backend:latest 0.1s done
+#33 DONE 0.9s
+
+#34 [backend] resolving provenance for metadata file
+#34 DONE 0.0s
+ Image material-studio-frontend Built 
+ Image material-studio-backend Built 
