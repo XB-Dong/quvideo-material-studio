@@ -5,7 +5,7 @@
 - taskId: P0-BE-CATALOG
 - rootTaskId: P0-BE-CATALOG
 - role: Backend
-- status: prepared_not_dispatched
+- status: in_progress
 - baseCommit: 0d2627243e1a8e86eb33f5f975d202cf56d135b3
 - baseCommitMeaning: preparation specification anchor; Leader must rebase packet to exact integrated SHA and record revision before dispatch
 - specVersion: 1.0.0
