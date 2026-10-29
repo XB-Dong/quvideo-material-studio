@@ -139,6 +139,10 @@ paths:
       description: Current user only, sorted by createdAt DESC and id DESC. Opaque cursor, no-store.
       parameters:
         - in: query
+          name: activeOnly
+          description: Filter to QUEUED or RUNNING tasks; follow nextCursor until exhausted to restore all active tasks
+          schema: { type: boolean, default: false }
+        - in: query
           name: cursor
           schema: { type: string }
         - in: query

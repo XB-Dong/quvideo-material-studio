@@ -1,0 +1,49 @@
+# P0-REVIEW
+
+- waveId: P0
+- roundId: assigned at dispatch
+- taskId: P0-REVIEW
+- rootTaskId: P0-REVIEW
+- role: Reviewer
+- status: prepared_not_dispatched
+- baseCommit: abdf231d4c03dfe89fd6617cc459518cbdaddc69
+- baseCommitMeaning: preparation specification anchor; Leader must rebase packet to exact integrated SHA and record revision before dispatch
+- specVersion: 1.0.0
+- requirementIds: R-03, R-04, R-05, R-06, R-07, R-08, R-09, R-10, R-12
+- dependencies: P0-BE-TASK, P0-FE-TASK, P0-ACCEPT
+- requestedModel: inherit current session
+- requestedReasoningEffort: inherit current session
+- actualProvider: null
+- actualModel: null
+- actualReasoningEffort: null
+- modelVerificationStatus: not_verified
+- modelEvidenceRef: null
+- contextMode: self-contained task packet plus required specifications
+- initialFocusedBudgetMinutes: 60
+- cumulativeRepairCount: 0
+- sameRootCauseReassessmentAfter: 2 unsuccessful repairs
+- reviewer: Leader disposition, not author self-certification
+
+## Goal
+
+Independently read the integrated code, contracts and evidence. Focus on commit-before-dispatch, failure interruption, stale response/version guards, private media and lifecycle cleanup. Read product files without modifying them.
+
+## Required context
+
+Read AGENTS.md, CONSTITUTION.md, docs/agents/PROTOCOL.md, docs/agents/MEMORY.md, docs/waves/P0/PLAN.md, docs/waves/P0/state.json, specs/api.yaml, specs/architecture.md, specs/data-model.md, specs/task-lifecycle.md, specs/frontend-state.md, specs/ui.md and specs/acceptance.md. Read your role definition in docs/agents/. Execution is not authorized by this file.
+
+## Allowed write paths
+
+- docs/waves/P0/reviews/
+
+Do not edit other paths or another worker's files. Shared dependencies, contracts, migration numbers, Compose and CI need recorded Leader ownership transfer even if a broad directory appears above. Read-only access to relevant repository code is allowed.
+
+## Acceptance
+
+- Findings include exact location, trigger, expected/actual, severity and evidence limits.
+- Distinguish static review from actual browser operations. No external/cross-model claims.
+- Leader dispositions and verifies accepted fixes; unresolved blocking/major defects prevent completed status.
+
+## Handoff
+
+Use docs/waves/P0/handoffs/TEMPLATE.md. Include exact implementation/tested SHA, changed paths, requirement mapping, actual commands/environment/timestamps/results, evidence, failed checks and limits. Preserve rootTaskId and cumulative repairs. Stop at scope/budget boundary and hand off; do not begin later tasks without assignment.

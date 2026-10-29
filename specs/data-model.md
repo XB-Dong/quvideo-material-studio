@@ -17,10 +17,10 @@ status=QUEUED/RUNNING/SUCCEEDED/FAILED；stage 与 failed_stage 仅允许 ASSET_
 
 创建任务时预建三条 NOT_STARTED 步骤；开始/完成阶段时与 tasks 在同一事务更新。终态更新使用条件 WHERE status IN ('QUEUED','RUNNING') 或 version 条件防止覆盖；RUNNING 的 stage 推进只允许顺序，任何终态不得回退。即使执行器是单线程，也要通过条件更新避免迟到回调。
 
-历史列表按 created_at DESC,id DESC 稳定排序，采用游标分页，单页默认 20、最多 50。任务查询提供完整 steps 和 version，历史列表可返回同样结构以简化缓存。无删除任务或资产接口，孤立上传在本题可保留并说明占盘限制。
+历史列表按 created_at DESC,id DESC 稳定排序，采用游标分页，单页默认 20、最多 50。activeOnly=true 时仅返回 QUEUED/RUNNING，同样带游标，前端读取全部活跃页以恢复跟踪。任务查询提供完整 steps 和 version，历史列表返回同样结构以简化缓存。无删除任务或资产接口，孤立上传在本题可保留并说明占盘限制。
 
 ## 初始化与素材
 
-后端迁移管理 users/sessions 以外的结构和分类/模板种子，匿名用户运行时创建。准备四个模板：旅行明信片（创意，2图）、宠物肖像（宠物，1图）、三格故事（创意，3图）、光影头像（人像，1图）。使用原创合成 JPEG/PNG；生成脚本、封面、示例上传、预置结果入仓库。不能依赖付费、内部服务或浏览器 blob URL。
+后端迁移创建全部表结构，包括 users/sessions，并初始化分类/模板种子；匿名用户与会话记录在运行时插入，不预置固定身份。准备四个模板：旅行明信片（创意，2图）、宠物肖像（宠物，1图）、三格故事（创意，3图）、光影头像（人像，1图）。使用原创合成 JPEG/PNG；生成脚本、封面、示例上传、预置结果入仓库。不能依赖付费、内部服务或浏览器 blob URL。
 
 迁移文件放 backend/src/main/resources/db/migration/，版本唯一、Leader 分配；采用 Flyway（MySQL 支持模块需匹配版本）。迁移首次初始化数据库，后续重启不覆盖任务。不要同时让 MySQL init 脚本和 Flyway 创建相同表。必须真实 MySQL 验证，H2 不替代 MySQL 兼容性证据。

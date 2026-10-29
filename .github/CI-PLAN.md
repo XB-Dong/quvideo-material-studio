@@ -1,0 +1,3 @@
+# Planned CI checks
+
+No product workflow exists during preparation. P0-BOOT owns .github/workflows/ci.yml, triggered on push and pull_request. Required final checks: frontend npm ci, lint, typecheck, unit/component tests and build; backend mvn -B verify with Java tests, JAR build and real-MySQL integration. All dependency installation and execution must be available in containers. Do not use missing-source conditions or continue-on-error to report skipped product checks as passing. Archive bounded test reports without credentials. Exact package versions, lockfile and tested commit are mandatory.
