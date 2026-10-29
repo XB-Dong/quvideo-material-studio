@@ -2,6 +2,7 @@ import { chromium } from 'playwright';
 import fs from 'node:fs/promises';
 import net from 'node:net';
 import { gzipSync } from 'node:zlib';
+import {evaluateBudgets,assertBudgets,FROZEN_P0_JS_GZIP_BYTES} from './budgets.mjs';
 const base = process.env.BASE_URL || 'http://localhost:3000';
 const relay = net.createServer(client => { const upstream=net.connect(3000,process.env.RELAY_HOST||'host.docker.internal'); client.pipe(upstream); upstream.pipe(client); client.on('error',()=>upstream.destroy()); upstream.on('error',()=>client.destroy()); });
 await new Promise(resolve=>relay.listen(3000,'127.0.0.1',resolve));
@@ -40,7 +41,9 @@ for (let run = 1; run <= 3; run++) {
 }
 const median = values => [...values].sort((a,b)=>a-b)[Math.floor(values.length/2)];
 const report={ capturedAt:new Date().toISOString(), testedCommit:process.env.TESTED_COMMIT||null, browser:await browser.version(),conditions:{viewport:'1440x1000',dpr:1,cache:'new context + Network.setCacheDisabled each run',network:'unthrottled localhost TCP relay to Docker host bridge',cpu:'unthrottled',requestedRenderer:'headless Chromium / ANGLE SwiftShader software WebGL',observedWebGL,observation:'8 seconds after networkidle; no pointer interaction',imageState:'server cache may be warm; client cache disabled',compression:'actual CDP/ResourceTiming encoded sizes plus script gzip(level9) normalization; not a bundle-estimator claim'},median:{scriptNormalizedGzipBytes:median(results.map(r=>r.scriptNormalizedGzipBytes)),imageEncodedBytes:median(results.map(r=>r.imageEncodedBytes)),cls:median(results.map(r=>r.metrics.cls)),longTaskCount:median(results.map(r=>r.metrics.longTasks.length))},runs:results};
+report.budgets=evaluateBudgets(report,Number(process.env.BASELINE_JS_GZIP_BYTES??FROZEN_P0_JS_GZIP_BYTES));
 await fs.writeFile(`${output}/measurement.json`, JSON.stringify(report,null,2));
 console.log(JSON.stringify({browser:report.browser,median:report.median,runs:results.map(r=>({run:r.run,errors:r.errors,cls:r.metrics.cls,longTasks:r.metrics.longTasks.length}))},null,2));
 await browser.close();
 relay.close();
+assertBudgets(report.budgets);

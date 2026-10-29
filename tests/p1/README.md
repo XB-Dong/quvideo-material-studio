@@ -28,3 +28,5 @@ measurement.json记录每次原始资源、响应状态、JS gzip归一值、图
 `node layout.mjs` 是1280×900两页补充检查：真实scrollWidth、原生cursor、Tab的focus-visible/outline与截图；同样只在上述容器运行。正式Dockerfile.headed默认继承README首先构建的material-p1-browser:1.58.2；本次已建测试环境实际复用了material-p1-browser:gpu同一依赖层，不要求干净用户预先有gpu标签。
 
 `node touch.mjs`提供独立375 touch-only核验：配置hasTouch/isMobile后必须实际断言pointer:coarse true/fine false/hover false与maxTouchPoints，首载起全程只touchscreen.tap，不用mouse移动改变主要输入类型；检查分类→模板正文、GL/Orbit/RAF静态和375无溢出。原accept.mjs的375混合输入实际媒体值保留报告，不能单以hasTouch声称coarse已验。
+
+测量预算现在为真实退出门槛：measure.mjs先写完整原始measurement.json（含每轮budget检查、冻结P0 JS156375B，或显式BASELINE_JS_GZIP_BYTES），再对每轮image<=800KiB、CLS<=0.1、pageerror0、JS相对基线增加<=35KiB断言，任一失败exit1，不按中位数取代原值。不去重图片、不改8秒/禁缓存条件。`node check-budgets.mjs <measurement.json> <budget-evaluation.json>`可在容器重算旧报告并先保存结果；旧报告不可改写。accept.mjs另有真实lazy总gzip<=120KiB独立检查，先写lazy-scripts.json后断言，因此功能检查现增加为32项。
