@@ -1,0 +1,69 @@
+{
+  "label": "P0 all production client JS chunks, not initial route network payload",
+  "sourceCommit": "07300db74eefe5d8d1ecf979de314450bf5f2a78",
+  "gzipLevel": 9,
+  "totalBytes": 643791,
+  "totalGzipBytes": 202001,
+  "files": [
+    {
+      "path": ".next/static/chunks/0cz1d0mv5g_q7.js",
+      "bytes": 112594,
+      "gzipBytes": 39520
+    },
+    {
+      "path": ".next/static/chunks/0umf92h1sb77c.js",
+      "bytes": 13822,
+      "gzipBytes": 3516
+    },
+    {
+      "path": ".next/static/chunks/11kc1-56nqxbh.js",
+      "bytes": 2746,
+      "gzipBytes": 1236
+    },
+    {
+      "path": ".next/static/chunks/15rcapaeie51o.js",
+      "bytes": 10152,
+      "gzipBytes": 4174
+    },
+    {
+      "path": ".next/static/chunks/1x6obpmlu1_c2.js",
+      "bytes": 5361,
+      "gzipBytes": 1974
+    },
+    {
+      "path": ".next/static/chunks/1yad__y_yrnyg.js",
+      "bytes": 168347,
+      "gzipBytes": 46246
+    },
+    {
+      "path": ".next/static/chunks/2l6ku41-hsyds.js",
+      "bytes": 15904,
+      "gzipBytes": 6106
+    },
+    {
+      "path": ".next/static/chunks/2r4s4h5xul1n-.js",
+      "bytes": 28739,
+      "gzipBytes": 7618
+    },
+    {
+      "path": ".next/static/chunks/2snip7o-fwu4u.js",
+      "bytes": 18223,
+      "gzipBytes": 7222
+    },
+    {
+      "path": ".next/static/chunks/2wzgopqnaurea.js",
+      "bytes": 28053,
+      "gzipBytes": 8638
+    },
+    {
+      "path": ".next/static/chunks/3wbm-994r45kr.js",
+      "bytes": 229820,
+      "gzipBytes": 71809
+    },
+    {
+      "path": ".next/static/chunks/turbopack-3-ry682tkyiqk.js",
+      "bytes": 10030,
+      "gzipBytes": 3942
+    }
+  ]
+}

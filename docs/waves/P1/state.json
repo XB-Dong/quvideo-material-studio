@@ -11,10 +11,12 @@
   "authorizationScope": "implement_verify_review_integrate_and_deliver_P1_1_2_0",
   "preparationBaseCommit": "07300db74eefe5d8d1ecf979de314450bf5f2a78",
   "p0AcceptanceCommit": "4dd397f2f5b2cb74ca21aba08482d0cae5b0a0de",
-  "dispatchBaseCommit": "eb8df6661bc4da4f4946e1eb79d730e43200844a",
+  "dispatchBaseCommit": "7997279301ce28c1bf1ee5e15d971aa7243a645c",
   "implementationCommit": null,
   "acceptanceCommit": null,
   "activeDevelopmentAgents": [
+    "p1_frontend",
+    "p1_assets",
     "p1_acceptance"
   ],
   "maxNativeWorkers": 3,
@@ -49,14 +51,20 @@
     {
       "taskId": "P1-ASSET",
       "rootTaskId": "P1-ASSET",
-      "status": "prepared_not_dispatched",
-      "repairCount": 0
+      "status": "in_progress",
+      "repairCount": 0,
+      "baseCommit": "7997279301ce28c1bf1ee5e15d971aa7243a645c",
+      "startedAt": "2026-10-29T23:01:15+08:00",
+      "owner": "p1_assets"
     },
     {
       "taskId": "P1-VISUAL",
       "rootTaskId": "P1-VISUAL",
-      "status": "prepared_not_dispatched",
-      "repairCount": 0
+      "status": "in_progress",
+      "repairCount": 0,
+      "baseCommit": "7997279301ce28c1bf1ee5e15d971aa7243a645c",
+      "startedAt": "2026-10-29T23:01:15+08:00",
+      "owner": "p1_frontend"
     },
     {
       "taskId": "P1-CREATIVE",
@@ -91,7 +99,7 @@
       "repairCount": 0
     }
   ],
-  "nextAction": "dispatch_visual_and_assets_on_frozen_dependencies",
+  "nextAction": "parallel_VISUAL_ASSET_and_browser_baseline",
   "oglCandidate": "1.0.11",
   "reactBitsComponents": [
     "Dither Veil",
