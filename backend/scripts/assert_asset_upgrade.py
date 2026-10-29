@@ -3,6 +3,7 @@
 import sys, os, json, time, hashlib, http.cookiejar
 from pathlib import Path
 
+sys.dont_write_bytecode = True
 sys.path.insert(0, "/workspace/tests")
 from test_api import Client, sample_png
 
