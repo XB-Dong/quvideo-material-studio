@@ -18,4 +18,3 @@ COPY --from=build --chown=app:app /app/public ./public
 USER app
 EXPOSE 3000
 CMD ["node","server.js"]
-
