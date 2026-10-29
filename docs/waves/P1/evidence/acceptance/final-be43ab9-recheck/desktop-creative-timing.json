@@ -1,0 +1,316 @@
+{
+  "longTasks": [
+    {
+      "at": 52.30000000074506,
+      "duration": 103,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 163.10000000149012,
+      "duration": 50,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 703,
+      "duration": 117,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 4670.89999999851,
+      "duration": 133,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 5121.199999999255,
+      "duration": 97,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 5240.800000000745,
+      "duration": 85,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 7164.60000000149,
+      "duration": 97,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 9762.199999999255,
+      "duration": 61,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 12974.39999999851,
+      "duration": 59,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 15713.699999999255,
+      "duration": 147,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 16314.199999999255,
+      "duration": 251,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 17018.5,
+      "duration": 194,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 20780.60000000149,
+      "duration": 88,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 22889.5,
+      "duration": 78,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 22994.800000000745,
+      "duration": 106,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 23297.5,
+      "duration": 66,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 25295.800000000745,
+      "duration": 113,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 25792.699999999255,
+      "duration": 112,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 27736.89999999851,
+      "duration": 69,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 28009.699999999255,
+      "duration": 129,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "label": "glow",
+      "event": "start",
+      "at": 4155
+    },
+    {
+      "label": "glow",
+      "event": "end",
+      "at": 7299.39999999851
+    },
+    {
+      "label": "dither",
+      "event": "start",
+      "at": 10567.199999999255
+    },
+    {
+      "label": "dither",
+      "event": "end",
+      "at": 12367.10000000149
+    },
+    {
+      "label": "ripple",
+      "event": "start",
+      "at": 12522.89999999851
+    },
+    {
+      "label": "ripple",
+      "event": "end",
+      "at": 14603.39999999851
+    },
+    {
+      "label": "halftone",
+      "event": "start",
+      "at": 14794.39999999851
+    },
+    {
+      "label": "halftone",
+      "event": "end",
+      "at": 18730.800000000745
+    },
+    {
+      "label": "pixel",
+      "event": "start",
+      "at": 18866.39999999851
+    },
+    {
+      "label": "pixel",
+      "event": "end",
+      "at": 20754.699999999255
+    },
+    {
+      "label": "pixel-before-offscreen",
+      "event": "start",
+      "at": 20907.300000000745
+    },
+    {
+      "label": "pixel-before-offscreen",
+      "event": "end",
+      "at": 22822.5
+    },
+    {
+      "label": "pixel-before-visibility",
+      "event": "start",
+      "at": 23169.300000000745
+    },
+    {
+      "label": "pixel-before-visibility",
+      "event": "end",
+      "at": 25289
+    },
+    {
+      "label": "pixel-before-reduce",
+      "event": "start",
+      "at": 25609.800000000745
+    },
+    {
+      "label": "pixel-before-reduce",
+      "event": "end",
+      "at": 27703.39999999851
+    },
+    {
+      "label": "pixel-before-context-loss",
+      "event": "start",
+      "at": 27909.5
+    },
+    {
+      "label": "pixel-before-context-loss",
+      "event": "end",
+      "at": 29898.10000000149
+    }
+  ]
+}

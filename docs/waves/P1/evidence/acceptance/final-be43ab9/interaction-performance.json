@@ -1,0 +1,188 @@
+{
+  "testedCommit": "be43ab9ee1c70b0fc648978b99f0e944015c0c67",
+  "capturedAt": "2026-10-29T15:49:57.821Z",
+  "browser": "149.0.7827.53",
+  "conditions": "1440x1000; no screenshots/tracing, unthrottled CPU/network; actual SwiftShader software renderer; GL calls wrapped only to time >5ms calls; initialization and steady phases retained",
+  "longTasks": [
+    {
+      "at": 144.39999999850988,
+      "duration": 71
+    },
+    {
+      "at": 648.5999999977648,
+      "duration": 122
+    },
+    {
+      "at": 1575.800000000745,
+      "duration": 60
+    },
+    {
+      "at": 2662.39999999851,
+      "duration": 135
+    },
+    {
+      "at": 7694.300000000745,
+      "duration": 58
+    },
+    {
+      "at": 9271.5,
+      "duration": 76
+    }
+  ],
+  "glCalls": [
+    {
+      "method": "getContext",
+      "at": 1577.3999999985099,
+      "duration": 30.400000002235174,
+      "owner": "glow"
+    },
+    {
+      "method": "loseContext",
+      "at": 2664.300000000745,
+      "duration": 131.29999999701977
+    },
+    {
+      "method": "getContext",
+      "at": 3137,
+      "duration": 9.699999999254942,
+      "owner": "electric"
+    },
+    {
+      "method": "getProgramParameter",
+      "at": 3152.300000000745,
+      "duration": 11.599999997764826,
+      "owner": "electric"
+    },
+    {
+      "method": "loseContext",
+      "at": 3434.800000000745,
+      "duration": 22.699999999254942
+    },
+    {
+      "method": "getContext",
+      "at": 3991.5,
+      "duration": 10,
+      "owner": "gallery-0"
+    },
+    {
+      "method": "texImage2D",
+      "at": 4071.199999999255,
+      "duration": 7.699999999254942,
+      "owner": "gallery-0"
+    },
+    {
+      "method": "loseContext",
+      "at": 4687.800000000745,
+      "duration": 17.399999998509884
+    },
+    {
+      "method": "getContext",
+      "at": 5261.199999999255,
+      "duration": 7.199999999254942,
+      "owner": "gallery-1"
+    },
+    {
+      "method": "texImage2D",
+      "at": 5300.300000000745,
+      "duration": 8,
+      "owner": "gallery-1"
+    },
+    {
+      "method": "loseContext",
+      "at": 5989.5,
+      "duration": 14
+    },
+    {
+      "method": "getContext",
+      "at": 6641.599999997765,
+      "duration": 7.100000001490116,
+      "owner": "gallery-2"
+    },
+    {
+      "method": "getShaderParameter",
+      "at": 6652.599999997765,
+      "duration": 6.200000002980232,
+      "owner": "gallery-2"
+    },
+    {
+      "method": "texImage2D",
+      "at": 6677.599999997765,
+      "duration": 5.600000001490116,
+      "owner": "gallery-2"
+    },
+    {
+      "method": "loseContext",
+      "at": 7695.300000000745,
+      "duration": 56.099999997764826
+    },
+    {
+      "method": "getContext",
+      "at": 8258.5,
+      "duration": 7.699999999254942,
+      "owner": "gallery-3"
+    },
+    {
+      "method": "texImage2D",
+      "at": 8302.699999999255,
+      "duration": 7,
+      "owner": "gallery-3"
+    },
+    {
+      "method": "loseContext",
+      "at": 9271.89999999851,
+      "duration": 76
+    }
+  ],
+  "phases": [
+    {
+      "label": "glow",
+      "event": "start",
+      "at": 1253.5
+    },
+    {
+      "label": "glow",
+      "event": "end",
+      "at": 2636.699999999255
+    },
+    {
+      "label": "dither",
+      "event": "start",
+      "at": 3675.89999999851
+    },
+    {
+      "label": "dither",
+      "event": "end",
+      "at": 4670
+    },
+    {
+      "label": "ripple",
+      "event": "start",
+      "at": 4945.89999999851
+    },
+    {
+      "label": "ripple",
+      "event": "end",
+      "at": 5970.39999999851
+    },
+    {
+      "label": "halftone",
+      "event": "start",
+      "at": 6324.199999999255
+    },
+    {
+      "label": "halftone",
+      "event": "end",
+      "at": 7672.699999999255
+    },
+    {
+      "label": "pixel",
+      "event": "start",
+      "at": 7946
+    },
+    {
+      "label": "pixel",
+      "event": "end",
+      "at": 9249.39999999851
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+[
+  {
+    "label": "glow",
+    "gpu": [
+      {
+        "id": 1,
+        "live": true,
+        "connected": true,
+        "width": 1360,
+        "height": 385
+      }
+    ],
+    "peak": 1,
+    "owners": [
+      "glow",
+      "glow"
+    ],
+    "canvases": [
+      {
+        "width": 1360,
+        "height": 385,
+        "connected": true
+      }
+    ]
+  },
+  {
+    "label": "dither",
+    "gpu": [
+      {
+        "id": 1,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 2,
+        "live": true,
+        "connected": true,
+        "width": 315,
+        "height": 420
+      }
+    ],
+    "peak": 1,
+    "owners": [
+      "gallery-0",
+      "gallery-0"
+    ],
+    "canvases": [
+      {
+        "width": 315,
+        "height": 420,
+        "connected": true
+      }
+    ]
+  },
+  {
+    "label": "ripple",
+    "gpu": [
+      {
+        "id": 1,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 2,
+        "live": false,
+        "connected": false,
+        "width": 315,
+        "height": 420
+      },
+      {
+        "id": 3,
+        "live": true,
+        "connected": true,
+        "width": 315,
+        "height": 420
+      }
+    ],
+    "peak": 1,
+    "owners": [
+      "gallery-1",
+      "gallery-1"
+    ],
+    "canvases": [
+      {
+        "width": 315,
+        "height": 420,
+        "connected": true
+      }
+    ]
+  },
+  {
+    "label": "halftone",
+    "gpu": [
+      {
+        "id": 1,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 2,
+        "live": false,
+        "connected": false,
+        "width": 315,
+        "height": 420
+      },
+      {
+        "id": 3,
+        "live": false,
+        "connected": false,
+        "width": 315,
+        "height": 420
+      },
+      {
+        "id": 4,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 5,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 6,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 7,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 8,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 9,
+        "live": true,
+        "connected": true,
+        "width": 315,
+        "height": 420
+      }
+    ],
+    "peak": 1,
+    "owners": [
+      "gallery-2",
+      "gallery-2"
+    ],
+    "canvases": [
+      {
+        "width": 315,
+        "height": 420,
+        "connected": true
+      }
+    ]
+  },
+  {
+    "label": "pixel",
+    "gpu": [
+      {
+        "id": 1,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 2,
+        "live": false,
+        "connected": false,
+        "width": 315,
+        "height": 420
+      },
+      {
+        "id": 3,
+        "live": false,
+        "connected": false,
+        "width": 315,
+        "height": 420
+      },
+      {
+        "id": 4,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 5,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 6,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 7,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 8,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "id": 9,
+        "live": false,
+        "connected": false,
+        "width": 315,
+        "height": 420
+      },
+      {
+        "id": 10,
+        "live": true,
+        "connected": true,
+        "width": 315,
+        "height": 420
+      }
+    ],
+    "peak": 1,
+    "owners": [
+      "gallery-3",
+      "gallery-3"
+    ],
+    "canvases": [
+      {
+        "width": 315,
+        "height": 420,
+        "connected": true
+      }
+    ]
+  }
+]

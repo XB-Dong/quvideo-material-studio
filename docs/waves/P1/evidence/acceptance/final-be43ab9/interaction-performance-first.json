@@ -1,0 +1,37 @@
+{
+  "testedCommit": "be43ab9ee1c70b0fc648978b99f0e944015c0c67",
+  "capturedAt": null,
+  "provenance": "Reconstructed from exact tool outputs after the second run overwrote the default JSON filename; no timestamp invented. Second run raw JSON is interaction-performance.json.",
+  "longTasks": [
+    {
+      "at": 51.5,
+      "duration": 104
+    },
+    {
+      "at": 735.8999999985099,
+      "duration": 97
+    },
+    {
+      "at": 1661,
+      "duration": 65
+    },
+    {
+      "at": 2736.39999999851,
+      "duration": 144
+    },
+    {
+      "at": 4084.800000000745,
+      "duration": 57
+    },
+    {
+      "at": 7868.89999999851,
+      "duration": 51
+    },
+    {
+      "at": 9457.699999999255,
+      "duration": 88
+    }
+  ],
+  "slowGLCallsOver50ms": [],
+  "instrumentationLimit": "First run timed compile/link/parameter/texture/draw methods, not getContext or loseContext; second run added exact context lifecycle timings."
+}

@@ -1,0 +1,21 @@
+import {chromium} from 'playwright';
+import fs from 'node:fs/promises';
+import net from 'node:net';
+const output=process.env.OUTPUT_DIR||'/evidence';await fs.mkdir(output,{recursive:true});
+const base=process.env.BASE_URL||'http://localhost:3000';
+const relay=net.createServer(c=>{const u=net.connect(3000,process.env.RELAY_HOST||'host.docker.internal');c.pipe(u);u.pipe(c);c.on('error',()=>u.destroy());u.on('error',()=>c.destroy());});await new Promise(r=>relay.listen(3000,'127.0.0.1',r));
+const browser=await chromium.launch({executablePath:process.env.CHROMIUM_EXECUTABLE_PATH,headless:true,args:['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+const page=await browser.newPage({viewport:{width:1440,height:1000},deviceScaleFactor:1});
+await page.addInitScript(()=>{
+ window.__audit={longTasks:[],glCalls:[],phases:[]};
+ new PerformanceObserver(list=>{for(const t of list.getEntries())window.__audit.longTasks.push({at:t.startTime,duration:t.duration});}).observe({type:'longtask',buffered:true});
+ const seen=new WeakSet(),old=HTMLCanvasElement.prototype.getContext;
+ HTMLCanvasElement.prototype.getContext=function(name,...args){const started=performance.now();const gl=old.call(this,name,...args);if(String(name).startsWith('webgl'))window.__audit.glCalls.push({method:'getContext',at:started,duration:performance.now()-started,owner:document.querySelector('[data-owner]:not([data-owner=none])')?.getAttribute('data-owner')});if(gl&&String(name).startsWith('webgl')&&!seen.has(gl)){seen.add(gl);const getExtension=gl.getExtension;gl.getExtension=function(name){const ext=getExtension.call(gl,name);if(ext&&name==='WEBGL_lose_context'&&!ext.__timed){const lose=ext.loseContext;ext.loseContext=function(){const start=performance.now();try{return lose.call(ext);}finally{window.__audit.glCalls.push({method:'loseContext',at:start,duration:performance.now()-start});}};ext.__timed=true;}return ext;};for(const key of ['compileShader','linkProgram','getProgramParameter','getShaderParameter','getUniformLocation','texImage2D','drawArrays','drawElements','readPixels','finish','flush']){const method=gl[key];gl[key]=function(...parameters){const start=performance.now();try{return method.apply(gl,parameters);}finally{const duration=performance.now()-start;if(duration>5)window.__audit.glCalls.push({method:key,at:start,duration,owner:document.querySelector('[data-owner]:not([data-owner=none])')?.getAttribute('data-owner')});}};}}return gl;};
+});
+await page.goto(base,{waitUntil:'networkidle'});await page.locator('.template-card').first().waitFor();
+const hero=page.getByRole('region',{name:'创作引导'}),panel=page.locator('#gallery-panel'),tabs=page.getByRole('tablist',{name:'作品题材'});
+async function move(region,label){await region.scrollIntoViewIfNeeded();const box=await region.boundingBox();await page.evaluate(label=>window.__audit.phases.push({label,event:'start',at:performance.now()}),label);for(let i=0;i<22;i++){await page.mouse.move(box.x+box.width*(.35+i%7*.04),box.y+box.height*(.35+i%3*.04));await page.waitForTimeout(30);}await page.evaluate(label=>window.__audit.phases.push({label,event:'end',at:performance.now()}),label);await page.mouse.move(10,10);await page.waitForTimeout(150);}
+await move(hero,'glow');await page.getByRole('link',{name:'开始创作',exact:true}).focus();await page.waitForTimeout(700);
+for(const [i,name] of ['创意','旅行','人像','宠物'].entries()){await tabs.scrollIntoViewIfNeeded();await tabs.getByRole('tab',{name,exact:true}).click();await move(panel,['dither','ripple','halftone','pixel'][i]);}
+const data=await page.evaluate(()=>window.__audit);await fs.writeFile(`${output}/interaction-performance.json`,JSON.stringify({testedCommit:process.env.TESTED_COMMIT,capturedAt:new Date().toISOString(),browser:await browser.version(),conditions:'1440x1000; no screenshots/tracing, unthrottled CPU/network; actual SwiftShader software renderer; GL calls wrapped only to time >5ms calls; initialization and steady phases retained',...data},null,2));
+console.log(JSON.stringify({longTasks:data.longTasks,slowGL:data.glCalls.filter(c=>c.duration>50)},null,2));await browser.close();relay.close();
