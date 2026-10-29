@@ -2,10 +2,10 @@
   "schemaVersion": "1.0.0",
   "waveId": "P0",
   "specVersion": "1.0.0",
-  "status": "ready_for_user_start",
-  "executionAuthorized": false,
-  "authorizationScope": "prepare_documents_and_private_repository_then_report_before_P0",
-  "executionStartedAt": null,
+  "status": "running",
+  "executionAuthorized": true,
+  "authorizationScope": "execute_P0_implementation_verification_and_delivery",
+  "executionStartedAt": "2026-10-29T17:17:02.046541+08:00",
   "deadline": null,
   "timezone": "Asia/Shanghai",
   "repository": "https://github.com/XB-Dong/quvideo-material-studio",
@@ -21,21 +21,61 @@
   "actualModel": null,
   "actualReasoningEffort": null,
   "modelVerificationStatus": "not_verified",
-  "productChecks": "not_run",
+  "productChecks": "pending",
   "preparationValidation": "passed_document_and_repository_checks_only",
   "independentPreparationReview": "passed_no_remaining_blocking_or_major_findings",
   "reviewEvidence": "docs/waves/P0/reviews/preparation-review.md",
   "validationEvidence": "docs/audit/validation.md",
   "runtimePrerequisite": "Docker CLI exists but local Linux daemon unavailable; verify during P0 R0",
   "tasks": [
-    {"taskId": "P0-BOOT", "rootTaskId": "P0-BOOT", "status": "prepared_not_dispatched", "repairCount": 0},
-    {"taskId": "P0-BE-CATALOG", "rootTaskId": "P0-BE-CATALOG", "status": "prepared_not_dispatched", "repairCount": 0},
-    {"taskId": "P0-FE-CATALOG", "rootTaskId": "P0-FE-CATALOG", "status": "prepared_not_dispatched", "repairCount": 0},
-    {"taskId": "P0-BE-TASK", "rootTaskId": "P0-BE-TASK", "status": "prepared_not_dispatched", "repairCount": 0},
-    {"taskId": "P0-FE-TASK", "rootTaskId": "P0-FE-TASK", "status": "prepared_not_dispatched", "repairCount": 0},
-    {"taskId": "P0-ACCEPT", "rootTaskId": "P0-ACCEPT", "status": "prepared_not_dispatched", "repairCount": 0},
-    {"taskId": "P0-REVIEW", "rootTaskId": "P0-REVIEW", "status": "prepared_not_dispatched", "repairCount": 0},
-    {"taskId": "P0-DELIVERY", "rootTaskId": "P0-DELIVERY", "status": "prepared_not_dispatched", "repairCount": 0}
+    {
+      "taskId": "P0-BOOT",
+      "rootTaskId": "P0-BOOT",
+      "status": "in_progress",
+      "repairCount": 0
+    },
+    {
+      "taskId": "P0-BE-CATALOG",
+      "rootTaskId": "P0-BE-CATALOG",
+      "status": "prepared_not_dispatched",
+      "repairCount": 0
+    },
+    {
+      "taskId": "P0-FE-CATALOG",
+      "rootTaskId": "P0-FE-CATALOG",
+      "status": "prepared_not_dispatched",
+      "repairCount": 0
+    },
+    {
+      "taskId": "P0-BE-TASK",
+      "rootTaskId": "P0-BE-TASK",
+      "status": "prepared_not_dispatched",
+      "repairCount": 0
+    },
+    {
+      "taskId": "P0-FE-TASK",
+      "rootTaskId": "P0-FE-TASK",
+      "status": "prepared_not_dispatched",
+      "repairCount": 0
+    },
+    {
+      "taskId": "P0-ACCEPT",
+      "rootTaskId": "P0-ACCEPT",
+      "status": "prepared_not_dispatched",
+      "repairCount": 0
+    },
+    {
+      "taskId": "P0-REVIEW",
+      "rootTaskId": "P0-REVIEW",
+      "status": "prepared_not_dispatched",
+      "repairCount": 0
+    },
+    {
+      "taskId": "P0-DELIVERY",
+      "rootTaskId": "P0-DELIVERY",
+      "status": "prepared_not_dispatched",
+      "repairCount": 0
+    }
   ],
-  "nextAction": "wait_for_explicit_user_start_of_P0"
+  "nextAction": "R0_bootstrap_with_partitioned_ownership"
 }

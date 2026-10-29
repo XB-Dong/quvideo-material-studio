@@ -2,7 +2,7 @@
 
 ## Current authorization
 
-The user authorized preparation up to, but not including, P0 execution on 2026-10-29. Write and review specifications, role/task packets, repository metadata and preparation evidence; commit and push these to the private repository. Stop and report when preparation is ready. Do not implement product code, install project dependencies, start development agents, create development worktrees, run application containers, migrate databases, deploy, schedule background work or begin P0 without an explicit user start instruction.
+The user explicitly started P0 development on 2026-10-29. Execute the approved P0 scope through implementation, necessary dependency installation, native multi-agent development, isolated managed worktrees, local containers, testing, integration, CI and final delivery. No per-task confirmation is required. Stop after the P0 delivery report; do not submit the exam, publish the repository or begin P1 automatically. See docs/decisions/0005-p0-start.md for bootstrap file ownership.
 
 ## Read before work
 
@@ -28,4 +28,4 @@ Store no credentials, user uploads, databases, caches, third-party tools or unre
 
 ## Completion
 
-Only Leader integrates and signs the final report after verifying the integrated commit. All R-01 through R-13 and the chosen R-14 Compose delivery are P0 scope. Do not move mandatory work to P1. P0 is completed only with implementation and required runtime evidence; otherwise report partial or blocked truthfully. No public deployment, exam submission, messages to recruiters, paid services or post-P0 iteration is implied. Preparation ends at ready_for_user_start, with executionAuthorized=false.
+Only Leader integrates and signs the final report after verifying the integrated commit. All R-01 through R-13 and the chosen R-14 Compose delivery are P0 scope. Do not move mandatory work to P1. P0 is completed only with implementation and required runtime evidence; otherwise report partial or blocked truthfully. No public deployment, exam submission, messages to recruiters, paid services or post-P0 iteration is implied.
