@@ -13,6 +13,10 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import { api } from "../lib/api";
+import {
+  advanceSessionGeneration,
+  currentSessionGeneration,
+} from "../lib/session-generation";
 import type { Session } from "../lib/types";
 type Identity = {
   session: Session | null;
@@ -45,7 +49,8 @@ function IdentityProvider({ children }: { children: React.ReactNode }) {
   const retry = useCallback(() => setAttempt((x) => x + 1), []);
   useEffect(() => {
     const controller = new AbortController();
-    const generation = ++epoch.current;
+    const generation = advanceSessionGeneration();
+    epoch.current = generation;
     setSession(null);
     setError(null);
     client.cancelQueries({ queryKey: ["personal"] });
@@ -56,10 +61,16 @@ function IdentityProvider({ children }: { children: React.ReactNode }) {
           setSession(s);
       })
       .catch((e) => {
-        if (!controller.signal.aborted) setError(e.message);
+        if (!controller.signal.aborted && epoch.current === generation)
+          setError(e.message);
       });
-    const expire = () => {
-      epoch.current++;
+    const expire = (event: Event) => {
+      if (
+        (event as CustomEvent<{ generation: number }>).detail?.generation !==
+        currentSessionGeneration()
+      )
+        return;
+      epoch.current = advanceSessionGeneration();
       setSession(null);
       setError("会话已失效，请重新连接身份");
       client.cancelQueries({ queryKey: ["personal"] });
@@ -67,6 +78,7 @@ function IdentityProvider({ children }: { children: React.ReactNode }) {
     };
     window.addEventListener("session-expired", expire);
     return () => {
+      advanceSessionGeneration();
       controller.abort();
       window.removeEventListener("session-expired", expire);
     };

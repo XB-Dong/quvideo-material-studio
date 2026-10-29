@@ -6,9 +6,11 @@ import {
   fireEvent,
   waitFor,
   cleanup,
+  act,
 } from "@testing-library/react";
 import { Maker } from "./studio";
-import { Providers } from "./providers";
+import { Providers, useIdentity } from "./providers";
+import { currentSessionGeneration } from "../lib/session-generation";
 import { api } from "../lib/api";
 import type { Template } from "../lib/types";
 vi.mock("../lib/api", async (original) => ({
@@ -65,6 +67,78 @@ function defaults(path: string) {
   };
 }
 describe("task submission", () => {
+  it("releases an old user's pending submission and ignores its stale finally", async () => {
+    let identity = 0;
+    let posts = 0;
+    let firstSignal: AbortSignal | undefined;
+    let resolveOld!: (value: unknown) => void;
+    let resolveNew!: (value: unknown) => void;
+    request.mockImplementation(async (path, init) => {
+      if (path === "/api/session")
+        return {
+          ...defaults(path),
+          userId: ++identity === 1 ? "user-a" : "user-b",
+        };
+      if (path === "/api/tasks") {
+        if (++posts === 1) {
+          firstSignal = init?.signal as AbortSignal;
+          return new Promise((resolve) => (resolveOld = resolve));
+        }
+        return new Promise((resolve) => (resolveNew = resolve));
+      }
+      return defaults(path);
+    });
+    function Reconnect() {
+      const { retry } = useIdentity();
+      return <button onClick={retry}>Reconnect</button>;
+    }
+    render(
+      <Providers>
+        <Reconnect />
+        <Maker template={template} />
+      </Providers>,
+    );
+    await waitFor(() =>
+      expect(screen.getByLabelText("选择第1张图片")).toBeEnabled(),
+    );
+    const upload = async () => {
+      fireEvent.change(screen.getByLabelText("选择第1张图片"), {
+        target: { files: [new File(["x"], "ok.png", { type: "image/png" })] },
+      });
+      await waitFor(() =>
+        expect(screen.getByRole("button", { name: /开始制作/ })).toBeEnabled(),
+      );
+    };
+    await upload();
+    fireEvent.click(screen.getByRole("button", { name: /开始制作/ }));
+    await screen.findByRole("button", { name: /正在提交/ });
+    act(() =>
+      window.dispatchEvent(
+        new CustomEvent("session-expired", {
+          detail: { generation: currentSessionGeneration() },
+        }),
+      ),
+    );
+    await waitFor(() => expect(firstSignal?.aborted).toBe(true));
+    fireEvent.click(screen.getByRole("button", { name: "Reconnect" }));
+    await waitFor(() =>
+      expect(screen.getByLabelText("选择第1张图片")).toBeEnabled(),
+    );
+    await upload();
+    fireEvent.click(screen.getByRole("button", { name: /开始制作/ }));
+    await waitFor(() => expect(posts).toBe(2));
+    await act(async () =>
+      resolveOld({ id: "old-task", status: "QUEUED", version: 1 }),
+    );
+    expect(screen.getByRole("button", { name: /正在提交/ })).toBeDisabled();
+    expect(
+      screen.queryByText("任务已受理，你可以继续创建作品。"),
+    ).not.toBeInTheDocument();
+    await act(async () =>
+      resolveNew({ id: "new-task", status: "QUEUED", version: 1 }),
+    );
+    expect(screen.getByRole("button", { name: /开始制作/ })).toBeEnabled();
+  });
   it("unlocks after acceptance and allows a second independent task", async () => {
     let count = 0;
     request.mockImplementation(async (path) =>
