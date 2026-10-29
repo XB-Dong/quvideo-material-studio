@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: ${JAVA_DB_URL:jdbc:mysql://localhost:3306/material_studio?connectionTimeZone=UTC}
+    username: ${JAVA_DB_USERNAME:material_app}
+    password: ${JAVA_DB_PASSWORD:local-demo-change-me}
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 6MB
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+server:
+  shutdown: graceful
