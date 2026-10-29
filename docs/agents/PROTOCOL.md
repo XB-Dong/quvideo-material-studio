@@ -20,6 +20,6 @@ Track repairs under the original rootTaskId. After two unsuccessful repairs of t
 
 ## Time and integration
 
-Use the active wave's estimated effort and explicitly confirmed deadline, if any. P0's historical24-hour estimate is not a P1 deadline; P1 estimates10–14 focused hours after the seven-component increment including verification and delivery. Leader records actual start and effort after authorization and adjusts scheduling without deleting mandatory requirements. If time runs out, issue a truthful partial report.
+Use the active wave's estimated effort and explicitly confirmed deadline, if any. P0's historical24-hour estimate is not a P1 deadline; P1 estimates10–14 focused hours including verification and delivery. Leader records actual start and effort after authorization and adjusts scheduling without deleting mandatory requirements. If time runs out, issue a truthful partial report.
 
 Only Leader integrates. Check precise consumer compatibility, changed paths and task tests before merging. Re-run relevant checks on the integrated commit, then broader required CI/Compose acceptance. Archive completed worktrees using app lifecycle tools only after preserving needed evidence. Leader alone signs final completion; P0 is not started by a preparation review.

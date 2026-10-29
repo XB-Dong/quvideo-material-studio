@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-10-29T22:22:24+08:00",
+  "checkedAt": "2026-10-29T22:33:20+08:00",
   "specVersion": "P1-1.1.0",
   "files": [
     {
       "path": "docs/waves/P1/ACCEPTANCE.md",
-      "sha256": "307c66b6240c2adefb59a8a2cf69ef6c0531ee5514284f3bce4869d3602b332f"
+      "sha256": "eb7631255f9f624db39e62bc78b7c1851330175c9b719dd7c8b59d63504eca7f"
     },
     {
       "path": "docs/waves/P1/CONTEXT-MAP.md",
@@ -12,7 +12,7 @@
     },
     {
       "path": "docs/waves/P1/PLAN.md",
-      "sha256": "f9b6e11f405c492ec277538833cee5c2d4c6b23075bd09bc9084d7eb6c02bc41"
+      "sha256": "465173069c5baac4bb9e8fa762aff187138991c9d1dfb4d7751753cd122a80df"
     },
     {
       "path": "docs/waves/P1/references/assets/abstract.jpg",
@@ -72,7 +72,7 @@
     },
     {
       "path": "docs/waves/P1/tasks/P1-CREATIVE.md",
-      "sha256": "64c2f6897e423270dce3c44f77aa44061feeba59a1065e330ed7662dada1e91a"
+      "sha256": "78890980fe2f7ceaf6b7ff9736beba1025d5b71c82f9c6b85073c56c3db1065b"
     },
     {
       "path": "docs/waves/P1/tasks/P1-DELIVERY.md",
@@ -80,7 +80,7 @@
     },
     {
       "path": "docs/waves/P1/tasks/P1-DIRECTION.md",
-      "sha256": "4bdb44f8ec438d3ad4a6cded7f255104f5b3b813b7d627bf493f7a9548968bb4"
+      "sha256": "e6acd5c2584a17903063cdbd5af8cb5cc75b8fdfef25e0f00abe0db880064841"
     },
     {
       "path": "docs/waves/P1/tasks/P1-MOTION.md",
@@ -108,11 +108,11 @@
     },
     {
       "path": "specs/p1/react-bits.md",
-      "sha256": "12cec1c8931b6e4347ca22103bb555b5afdc2035c4616e462204eecbb87c552c"
+      "sha256": "465dd6290053353412e47de8683c12c465e8cef57b3fb5b2e5abf7d28785564f"
     },
     {
       "path": "specs/p1/requirements.md",
-      "sha256": "e9b91db85e5f2a507026020acdff426d0264383c640eec2095fb06764b5b1ec2"
+      "sha256": "497f3d8e22678be24111020974efa9ab65aa1cdab8bb60759c461310d797ec0a"
     }
   ],
   "hashMode": "repository content: UTF-8 text CRLF normalized to LF; binary unchanged"

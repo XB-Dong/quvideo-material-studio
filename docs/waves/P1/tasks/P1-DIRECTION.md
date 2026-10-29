@@ -49,6 +49,6 @@ Write only assigned paths. Shared dependencies/CI/contracts need recorded Leader
 
 Use docs/waves/P1/handoffs/TEMPLATE.md. Include exact implementation/tested SHA, changed paths, requirement mapping, environment, commands/operations, times, exit codes, source/asset metadata, failed checks, findings and limits. Preserve rootTaskId and cumulative repairs. No unsupported runtime/model claims.
 
-## Increment-specific freeze
+## Direction freeze
 
 Freeze seven placements in specs/p1/react-bits.md, static-first layouts, two active systems/one WebGL maximum, lazy-load and fallback controls. Reviewer aesthetics and Acceptance comfort require separate signoffs; all seven must be demonstrable in normal desktop mode. Threshold changes require measured evidence and recorded specification revision.

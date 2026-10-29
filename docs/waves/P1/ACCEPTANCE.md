@@ -10,7 +10,7 @@
 | MOTION-02 | V02装饰/运行/加载 | MOTION | 蓝紫氛围不挡交互，真实状态驱动，不假百分比 | not_run |
 | UX-01 | U01桌面1280/1440及375 | VISUAL、ACCEPT | 无横向溢出，触控/Tab/预览Esc/焦点返回、长错误可读 | not_run |
 | QUALITY-01 | U02系统reduce/手动静态/实时切换 | MOTION、ACCEPT | 装饰停止，大幅运动消失；重要状态仍即时可读，偏好刷新保留 | not_run |
-| QUALITY-01 | P01包体与加载 | BASE、ACCEPT | 同条件前后比较，新增路由JS gzip目标≤35KiB；全部延后创意JS增量目标≤120KiB（含Motion/OGL/适配）；首视口公开图含Orbit/poster目标≤800KiB | not_run |
+| QUALITY-01 | P01包体与加载 | BASE、ACCEPT | 同条件前后比较，新增路由JS gzip目标≤35KiB；全部延后创意JS新增体积目标≤120KiB（含Motion/OGL/适配）；首视口公开图含Orbit/poster目标≤800KiB | not_run |
 | QUALITY-01 | P02流畅度/布局稳定 | ACCEPT | 无可见卡顿，交互动画不产生>50ms归因长任务；CLS目标≤0.1；记录实际trace | not_run |
 | REG-01 | R01原16前端测试+新增动效用例 | VISUAL、MOTION | 原行为全部通过；卸载/身份/401/提交锁/版本保护不退化 | not_run |
 | REG-01 | R02原12Java+8API | ASSET、ACCEPT | 顺序/失败/归属等通过；新资源key/MIME可预览 | not_run |

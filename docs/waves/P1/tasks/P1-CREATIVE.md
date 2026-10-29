@@ -54,7 +54,7 @@ Write only assigned paths. Shared dependencies/CI/contracts need recorded Leader
 - RB01–RB07 all demonstrable on normal desktop; use only public images, never distort private uploads/results or replace native cursor/focus.
 - At most two active motion systems and one allocated/live WebGL context; ownership transfer must dispose/unmount the previous context before creating the next (pausing RAF is insufficient); tabs mount one effect, pause/degrade on idle/offscreen/background/reduce/static/coarse-pointer as specified. Resource cleanup is immediate on unmount or preference changes.
 - Source notice and MIT + Commons Clause retained; registry vs commit equivalence explicitly verified or source revision recorded separately. No unreviewed CLI script execution.
-- Measure initial JS +35KiB and total lazy creative increment +120KiB budgets including Motion/OGL/adapters, image +800KiB first viewport budget. Record actual numbers and unresolved risks.
+- Measure initial JS +35KiB and total added lazy creative JS +120KiB budgets including Motion/OGL/adapters, image +800KiB first viewport budget. Record actual numbers and unresolved risks.
 - Implement meaningful controller/cleanup/fallback tests; provide actual component interaction evidence for later independent aesthetics/comfort review. Passing static mode alone is insufficient.
 
 ## Handoff

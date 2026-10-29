@@ -1,6 +1,6 @@
 # P1 React Bits 创意编排与双重验收
 
-版本P1-1.1.0。用户增量要求：合理丰富地使用React Bits，特别是Dither Veil、Glow Cursor、Ripple Distortion、Halftone Reveal、Orbit Images、Pixel Trail、Electric Border；同时保证美学与使用舒适度。七种均为本波必需创意，不能仅全部关闭后声称舒适通过。
+版本P1-1.1.0。P1创意目标：合理丰富地使用React Bits，特别是Dither Veil、Glow Cursor、Ripple Distortion、Halftone Reveal、Orbit Images、Pixel Trail、Electric Border；同时保证美学与使用舒适度。七种均为本波必需创意，不能仅全部关闭后声称舒适通过。
 
 ## 来源与接入基线
 
@@ -41,7 +41,7 @@ React Bits当前[许可](https://github.com/DavidHDev/react-bits/blob/e12c22192a
 
 WebGL画布DPR上限1.5，活动像素目标≤1MP，离屏停止；context lost或持续明显掉帧时局部回退原图，不能卡住主表单。可见且交互时FPS连续2秒低于45作为起始降级阈值，先排除标签后台和初始化阶段；实际阈值在BASE同环境测试后冻结。运行数据只用于当前页面局部控制。
 
-首屏增加的JS gzip目标仍≤35KiB；延后加载的全部创意增量总目标≤120KiB，必须测真实构建（含OGL/Motion/适配器），不得仅报首屏隐藏总成本。首屏图片预算800KiB包含Orbit/体验poster；复用已加载URL并按视口懒加载。无可归因的>50ms特效长任务、无阻塞点击/滚动/Tab、无持续闪烁为硬性舒适检查。
+相对P0，首屏新增JS gzip目标≤35KiB；延后加载的全部创意JS新增体积总目标≤120KiB，必须测真实构建（含OGL/Motion/适配器），不得仅报首屏隐藏总成本。首屏图片预算800KiB包含Orbit/体验poster；复用已加载URL并按视口懒加载。无可归因的>50ms特效长任务、无阻塞点击/滚动/Tab、无持续闪烁为硬性舒适检查。
 
 ## 双门槛审核
 
