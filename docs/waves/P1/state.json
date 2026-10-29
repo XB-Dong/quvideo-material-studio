@@ -11,10 +11,12 @@
   "authorizationScope": "implement_verify_review_integrate_and_deliver_P1_1_2_0",
   "preparationBaseCommit": "07300db74eefe5d8d1ecf979de314450bf5f2a78",
   "p0AcceptanceCommit": "4dd397f2f5b2cb74ca21aba08482d0cae5b0a0de",
-  "dispatchBaseCommit": null,
+  "dispatchBaseCommit": "eb8df6661bc4da4f4946e1eb79d730e43200844a",
   "implementationCommit": null,
   "acceptanceCommit": null,
-  "activeDevelopmentAgents": [],
+  "activeDevelopmentAgents": [
+    "p1_acceptance"
+  ],
   "maxNativeWorkers": 3,
   "modelPolicy": "inherit_current_session",
   "actualProvider": null,
@@ -22,10 +24,10 @@
   "actualReasoningEffort": null,
   "modelVerificationStatus": "not_verified",
   "motionCandidate": "14.7.1",
-  "motionInstalled": false,
+  "motionInstalled": true,
   "productionAssetsChanged": false,
   "productChecks": "not_run_for_P1",
-  "performanceBaseline": null,
+  "performanceBaseline": "collection_delegated_to_independent_acceptance_P0_deployment_unchanged",
   "preparationValidation": "passed",
   "independentPreparationReview": "passed_P1_1_2_0_no_open_blocking_or_major",
   "tasks": [
@@ -39,9 +41,10 @@
     {
       "taskId": "P1-DIRECTION",
       "rootTaskId": "P1-DIRECTION",
-      "status": "in_progress",
+      "status": "completed",
       "repairCount": 0,
-      "startedAt": "2026-10-29T22:52:38+08:00"
+      "startedAt": "2026-10-29T22:52:38+08:00",
+      "completedAt": "2026-10-29T22:58:53+08:00"
     },
     {
       "taskId": "P1-ASSET",
@@ -70,8 +73,10 @@
     {
       "taskId": "P1-ACCEPT",
       "rootTaskId": "P1-ACCEPT",
-      "status": "prepared_not_dispatched",
-      "repairCount": 0
+      "status": "baseline_and_test_design",
+      "repairCount": 0,
+      "baseCommit": "eb8df6661bc4da4f4946e1eb79d730e43200844a",
+      "owner": "p1_acceptance"
     },
     {
       "taskId": "P1-REVIEW",
@@ -86,7 +91,7 @@
       "repairCount": 0
     }
   ],
-  "nextAction": "BASE_baseline_and_dependency_freeze_then_R1_dispatch",
+  "nextAction": "dispatch_visual_and_assets_on_frozen_dependencies",
   "oglCandidate": "1.0.11",
   "reactBitsComponents": [
     "Dither Veil",
@@ -109,5 +114,8 @@
   "independentPreparationReviewRef": "docs/waves/P1/reviews/preparation-review.md",
   "visualDirection": "light_neutral_backgrounds_with_blue_violet_details",
   "authorizationSource": "human: 启动P1",
-  "executionStartCommit": "00348c37f95fb6011250418171f54a4698f853e2"
+  "executionStartCommit": "00348c37f95fb6011250418171f54a4698f853e2",
+  "sourceFreezeRef": "docs/waves/P1/evidence/leader-baseline/source-freeze.json",
+  "baselineContainerChecks": "16_frontend_12_java_8_api_passed",
+  "dispatchRule": "isolated edits allowed while P0 browser baseline is collected; no P1 deployment until baseline freeze"
 }

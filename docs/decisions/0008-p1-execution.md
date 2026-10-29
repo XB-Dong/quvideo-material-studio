@@ -7,3 +7,5 @@
 Leader先完成P0容器检查、可比性能基线及Motion/OGL/source锁定，再派发写入。所有worker在主checkout外的app-managed worktree和codex/分支；容器测试使用独立project/image名，不能覆盖主环境。共享state/specs/依赖/CI由Leader写。精确派发SHA通过消息和state记录，可覆盖准备包中的P0锚点；消费前复核。
 
 主环境升级前保留P0镜像和匹配数据库/文件快照；P0→P1→快照回滚P0→再次P1优先在独立验收project执行。最终实际美学和舒适均独立签署、无开放blocking/major、CI/Compose/P0回归通过才完成。实际模型路由无独立证据仍为null。
+
+BASE容器16/12/8检查、依赖安装/导入与14源码哈希核对已通过。浏览器性能采集由独立Acceptance使用仍为P0的主站完成；隔离工作树可同时写实现以减少等待，BASE在采集归档前保持in_progress，P1集成部署必须等P0三次基线冻结。该调度安排不改变前后测量条件或验收门槛。

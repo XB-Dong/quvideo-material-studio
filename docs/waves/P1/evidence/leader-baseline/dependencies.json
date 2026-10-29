@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-29T22:58:53+08:00",
+  "baseCommit": "eb8df6661bc4da4f4946e1eb79d730e43200844a",
+  "motion": "14.7.1",
+  "ogl": "1.0.11",
+  "containerImage": "material-p1-deps:locked",
+  "npmCiExitCode": 0,
+  "importExitCode": 0,
+  "importActual": {
+    "react": "19.3.1",
+    "motionExports": "object",
+    "motionConfig": "function",
+    "oglRenderer": "function"
+  },
+  "lockChanges": "two exact direct dependencies and required transitives; existing Next/React/Query versions unchanged",
+  "runtimeLimits": "imports tested; actual visual/Canvas behavior requires integrated browser acceptance"
+}
