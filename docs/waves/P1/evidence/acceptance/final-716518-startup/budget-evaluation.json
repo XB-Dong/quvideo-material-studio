@@ -1,0 +1,100 @@
+{
+  "testedCommit": "716518e6087fbb0ec17abf55b4b68f00cd327a84",
+  "evaluatedAt": "2026-10-29T17:35:37.638Z",
+  "sourceReport": "/evidence/measurement.json",
+  "limits": {
+    "baselineJsGzipBytes": 156375,
+    "maxAdditionalJsGzipBytes": 35840,
+    "maxImageEncodedBytes": 819200,
+    "maxCls": 0.1,
+    "maxPageErrors": 0
+  },
+  "rule": "Every individual observed run must pass; image requests remain counted as actually transferred, without URL deduplication or median substitution",
+  "checks": [
+    {
+      "run": 1,
+      "metric": "imageEncodedBytes",
+      "actual": 280189,
+      "limit": 819200,
+      "pass": true
+    },
+    {
+      "run": 1,
+      "metric": "cls",
+      "actual": 0.00016423611111111112,
+      "limit": 0.1,
+      "pass": true
+    },
+    {
+      "run": 1,
+      "metric": "pageErrors",
+      "actual": 0,
+      "limit": 0,
+      "pass": true
+    },
+    {
+      "run": 1,
+      "metric": "additionalJsGzipBytes",
+      "actual": 11815,
+      "limit": 35840,
+      "pass": true
+    },
+    {
+      "run": 2,
+      "metric": "imageEncodedBytes",
+      "actual": 519086,
+      "limit": 819200,
+      "pass": true
+    },
+    {
+      "run": 2,
+      "metric": "cls",
+      "actual": 0.00015758623288001543,
+      "limit": 0.1,
+      "pass": true
+    },
+    {
+      "run": 2,
+      "metric": "pageErrors",
+      "actual": 0,
+      "limit": 0,
+      "pass": true
+    },
+    {
+      "run": 2,
+      "metric": "additionalJsGzipBytes",
+      "actual": 11815,
+      "limit": 35840,
+      "pass": true
+    },
+    {
+      "run": 3,
+      "metric": "imageEncodedBytes",
+      "actual": 757983,
+      "limit": 819200,
+      "pass": true
+    },
+    {
+      "run": 3,
+      "metric": "cls",
+      "actual": 0.0001707908347800926,
+      "limit": 0.1,
+      "pass": true
+    },
+    {
+      "run": 3,
+      "metric": "pageErrors",
+      "actual": 0,
+      "limit": 0,
+      "pass": true
+    },
+    {
+      "run": 3,
+      "metric": "additionalJsGzipBytes",
+      "actual": 11815,
+      "limit": 35840,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

@@ -60,3 +60,5 @@ Xvfb首版xvfb-run挂起、Playwright focus emulation导致无法自然hidden的
 ACCEPT-BUDGET-02，major，位置首页实际公开图请求预算。GitHub Actions40919563180/head e62444d104f2e4e58a497103ad8865cafb5f4948，独立runner三轮图片996880/996880/757983B，13/13/10个真实图片请求；最大996880>819200，且transferSize/CDP证明真实传输，不是仅资源列表缓存重复。CI功能22/31绿不代表预算绿。新证据ci2-budget/measurement.json及Root integration/ci2-browser-summary.json。
 
 Leader有界修复仅四JPEG编码86/4:4:4→82/4:2:0，尺寸480×640/裁切/颜色/PNG/业务/前端不改；预算800KiB不变，考虑四组hero目标<750KiB留余量。收到新精确部署SHA与healthy通知前不采样。复验default22、functional31、startup三轮与无截图interact，touch/native可快跑，界面新截图供Reviewer；源代码相同部分可明确引用旧31FE及精确Electric五帧等价证据，不伪造新SHA下重跑。
+
+预算guard补强（4c37d7b）：measure先写完整measurement与每轮断言值，再真实失败退出。check-budgets对CI2原报告重算已明确exit1；该Red依据真实996880B，不是人为构造样本。旧本地原报告重算exit0只是验证各轮判定差别，不解除当前pending。lazy实际总gzip<=120KiB也成独立退出门槛，后续functional应32项。

@@ -34,3 +34,5 @@
 - pointer媒体澄清：旧375综合case实际coarse=false（保留JSON），不据hasTouch推断coarse；补touch-only首载及真实tap分类/模板两页，actual coarse=true/fine=false/hover=false/maxTouchPoints1、GL0/Orbit0/RAF0、scrollWidth375、steadyexecuted不变，exit0，证据final-716518-touch。COMFORT及测试名已纠正。
 
 - 封存前CI2审计新finding ACCEPT-BUDGET-02 major：图片996880/996880/757983B超过800KiB，真实13/13/10次请求；原本地pass保留但G02整体改asset_budget_recheck_pending。等待仅JPEG编码修复新appSHA后复验，未提前采样。
+
+- 预算漏检修复工具4c37d7b68783db166f0916c43982ebfa1f241056：每轮image/CLS/pageerror/相对冻结P0 JS均为真实exit1门槛，先保存完整原值和各轮budget再断言，lazy另增真实<=120KiB检查（功能现32项）。Docker node--check exit0；纯报告CLI重算CI2 budget-evaluation.json真实exit1，旧本地budget-evaluation.json exit0；未改旧measurement、未新采老产品、不按中位/去重取巧。
