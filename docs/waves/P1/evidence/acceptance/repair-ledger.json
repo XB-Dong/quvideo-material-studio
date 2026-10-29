@@ -1,0 +1,75 @@
+{
+  "rootTaskId": "P1-ACCEPT",
+  "definition": "Recorded root-cause reassessments and bounded approaches; not a fabricated count of every command or product-author repair. Earlier exact totals unavailable remain null.",
+  "totalAllCommandAttempts": null,
+  "records": [
+    {
+      "cause": "Browser image lacks split SwiftShader package",
+      "kind": "infrastructure",
+      "recordedBoundedResolutionCount": 1,
+      "behavioralRed": false,
+      "evidence": [
+        "../baseline/README.md",
+        "../baseline/gpu-supported/measurement.json"
+      ],
+      "resolution": "Install chromium-swiftshader; blank actual WebGL2/renderer probe before valid rebaseline; old unavailable results retained"
+    },
+    {
+      "cause": "Software synchronous main-thread loseContext long tasks",
+      "kind": "product major ACCEPT-PERF-01",
+      "acceptanceRole": "Independent discovery and default-path remeasurement; Frontend authored policy fix",
+      "evidence": [
+        "final-be43ab9-recheck/interaction-performance.json",
+        "final-716518-default-performance/interaction-performance.json"
+      ],
+      "resolution": "Worker preflight declines software; final default mainGL0 and interaction longtasks0; forced software remains functionality-only"
+    },
+    {
+      "cause": "Electric intrusive readback/screenshot overhead crosses product600ms window",
+      "kind": "test instrument",
+      "recordedFailedRuns": 4,
+      "evidence": [
+        "final-716518-functional/acceptance.json",
+        "final-716518-functional-legal/acceptance.json",
+        "final-716518-functional-compositor/acceptance.json",
+        "ci-40915531767/functional-failed.json"
+      ],
+      "reassessment": "After first2 failed approaches, keep RGBA counters/signatures in browser, separate compositor screenshots from live-resource assertions; independent cooled activation per offset gives legal local fiveframe. CI1 screenshot still too expensive, therefore dedicated explicit compositor mode and normalCI actual native draw/RGBA; no product duration change.",
+      "verified": [
+        "final-716518-functional-verified/electric-compositor-sequence.json",
+        "final-716518-ci-isolated/electric-compositor-sequence.json"
+      ]
+    },
+    {
+      "cause": "reduce fixed wait and failed-case state contaminate following cases",
+      "kind": "test isolation",
+      "recordedBoundedResolutionCount": 1,
+      "evidence": [
+        "ci-40915531767/functional-failed.json",
+        "final-716518-ci-isolated/acceptance.json"
+      ],
+      "resolution": "fresh page per lifecycle case, finally media/preference cleanup, bounded actualGL/Orbit/RAF zero wait preserving before-active/nonvacuous assertions"
+    },
+    {
+      "cause": "native hidden not observable under framework focus emulation",
+      "kind": "infrastructure",
+      "exactPriorCommandCount": null,
+      "recordedApproaches": [
+        "xvfb-run readiness hang",
+        "direct Xvfb plus Playwright page remains visible",
+        "Root diagnosed Playwright focus emulation and wrote rawCDP native same-window tabs; Acceptance independently reran2 modes"
+      ],
+      "resolution": "bounded Xvfb socket readiness; rawCDP no framework page focus; trusted native events and zero resources verified",
+      "evidence": [
+        "final-716518-native/native-visibility.json"
+      ]
+    },
+    {
+      "cause": "run-headed shell CRLF",
+      "kind": "infrastructure",
+      "recordedFailedRuns": 1,
+      "recordedBoundedResolutionCount": 1,
+      "resolution": "writeLF, root gitattributes eolLF, rerunexit0; not productRed"
+    }
+  ]
+}

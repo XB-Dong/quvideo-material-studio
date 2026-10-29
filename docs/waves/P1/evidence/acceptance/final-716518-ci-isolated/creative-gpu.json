@@ -1,0 +1,420 @@
+[
+  {
+    "label": "glow",
+    "gpu": [
+      {
+        "id": 1,
+        "live": true,
+        "connected": true,
+        "width": 1360,
+        "height": 385,
+        "draws": 815,
+        "pixels": null
+      }
+    ],
+    "peak": 1,
+    "owners": [
+      "glow",
+      "glow"
+    ],
+    "canvases": [
+      {
+        "width": 1360,
+        "height": 385,
+        "connected": true
+      }
+    ]
+  },
+  {
+    "label": "electric",
+    "gpu": [
+      {
+        "id": 1,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1,
+        "draws": 1162,
+        "pixels": null
+      },
+      {
+        "id": 2,
+        "live": false,
+        "connected": false,
+        "width": 263,
+        "height": 176,
+        "draws": 3,
+        "pixels": {
+          "width": 263,
+          "height": 176,
+          "nonzero": 8618,
+          "colored": 2105,
+          "transparent": 37670,
+          "transparentFraction": 0.8138178361562391,
+          "liveAtCapture": true,
+          "ownerAtCapture": "electric",
+          "captureAt": 10399.599999997765,
+          "signatures": [
+            1284847014,
+            3681429245,
+            3286968417
+          ],
+          "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+        }
+      }
+    ],
+    "peak": 1,
+    "owners": [
+      "none",
+      "none"
+    ]
+  },
+  {
+    "label": "dither",
+    "gpu": [
+      {
+        "id": 1,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1,
+        "draws": 1162,
+        "pixels": null
+      },
+      {
+        "id": 2,
+        "live": false,
+        "connected": false,
+        "width": 129,
+        "height": 129,
+        "draws": 4,
+        "pixels": {
+          "width": 263,
+          "height": 176,
+          "nonzero": 8618,
+          "colored": 2105,
+          "transparent": 37670,
+          "transparentFraction": 0.8138178361562391,
+          "liveAtCapture": true,
+          "ownerAtCapture": "electric",
+          "captureAt": 10399.599999997765,
+          "signatures": [
+            1284847014,
+            3681429245,
+            3286968417
+          ],
+          "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+        }
+      },
+      {
+        "id": 3,
+        "live": true,
+        "connected": true,
+        "width": 315,
+        "height": 420,
+        "draws": 96,
+        "pixels": null
+      }
+    ],
+    "peak": 1,
+    "owners": [
+      "gallery-0",
+      "gallery-0"
+    ],
+    "canvases": [
+      {
+        "width": 315,
+        "height": 420,
+        "connected": true
+      }
+    ]
+  },
+  {
+    "label": "ripple",
+    "gpu": [
+      {
+        "id": 1,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1,
+        "draws": 1162,
+        "pixels": null
+      },
+      {
+        "id": 2,
+        "live": false,
+        "connected": false,
+        "width": 129,
+        "height": 129,
+        "draws": 4,
+        "pixels": {
+          "width": 263,
+          "height": 176,
+          "nonzero": 8618,
+          "colored": 2105,
+          "transparent": 37670,
+          "transparentFraction": 0.8138178361562391,
+          "liveAtCapture": true,
+          "ownerAtCapture": "electric",
+          "captureAt": 10399.599999997765,
+          "signatures": [
+            1284847014,
+            3681429245,
+            3286968417
+          ],
+          "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+        }
+      },
+      {
+        "id": 3,
+        "live": false,
+        "connected": false,
+        "width": 315,
+        "height": 420,
+        "draws": 126,
+        "pixels": null
+      },
+      {
+        "id": 4,
+        "live": true,
+        "connected": true,
+        "width": 315,
+        "height": 420,
+        "draws": 54,
+        "pixels": null
+      }
+    ],
+    "peak": 1,
+    "owners": [
+      "gallery-1",
+      "gallery-1"
+    ],
+    "canvases": [
+      {
+        "width": 315,
+        "height": 420,
+        "connected": true
+      }
+    ]
+  },
+  {
+    "label": "halftone",
+    "gpu": [
+      {
+        "id": 1,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1,
+        "draws": 1162,
+        "pixels": null
+      },
+      {
+        "id": 2,
+        "live": false,
+        "connected": false,
+        "width": 129,
+        "height": 129,
+        "draws": 4,
+        "pixels": {
+          "width": 263,
+          "height": 176,
+          "nonzero": 8618,
+          "colored": 2105,
+          "transparent": 37670,
+          "transparentFraction": 0.8138178361562391,
+          "liveAtCapture": true,
+          "ownerAtCapture": "electric",
+          "captureAt": 10399.599999997765,
+          "signatures": [
+            1284847014,
+            3681429245,
+            3286968417
+          ],
+          "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+        }
+      },
+      {
+        "id": 3,
+        "live": false,
+        "connected": false,
+        "width": 315,
+        "height": 420,
+        "draws": 126,
+        "pixels": null
+      },
+      {
+        "id": 4,
+        "live": false,
+        "connected": false,
+        "width": 315,
+        "height": 420,
+        "draws": 71,
+        "pixels": null
+      },
+      {
+        "id": 5,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1,
+        "draws": 10,
+        "pixels": null
+      },
+      {
+        "id": 6,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1,
+        "draws": 6,
+        "pixels": null
+      },
+      {
+        "id": 7,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1,
+        "draws": 8,
+        "pixels": null
+      },
+      {
+        "id": 8,
+        "live": true,
+        "connected": true,
+        "width": 315,
+        "height": 420,
+        "draws": 38,
+        "pixels": null
+      }
+    ],
+    "peak": 1,
+    "owners": [
+      "gallery-2",
+      "gallery-2"
+    ],
+    "canvases": [
+      {
+        "width": 315,
+        "height": 420,
+        "connected": true
+      }
+    ]
+  },
+  {
+    "label": "pixel",
+    "gpu": [
+      {
+        "id": 1,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1,
+        "draws": 1162,
+        "pixels": null
+      },
+      {
+        "id": 2,
+        "live": false,
+        "connected": false,
+        "width": 129,
+        "height": 129,
+        "draws": 4,
+        "pixels": {
+          "width": 263,
+          "height": 176,
+          "nonzero": 8618,
+          "colored": 2105,
+          "transparent": 37670,
+          "transparentFraction": 0.8138178361562391,
+          "liveAtCapture": true,
+          "ownerAtCapture": "electric",
+          "captureAt": 10399.599999997765,
+          "signatures": [
+            1284847014,
+            3681429245,
+            3286968417
+          ],
+          "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+        }
+      },
+      {
+        "id": 3,
+        "live": false,
+        "connected": false,
+        "width": 315,
+        "height": 420,
+        "draws": 126,
+        "pixels": null
+      },
+      {
+        "id": 4,
+        "live": false,
+        "connected": false,
+        "width": 315,
+        "height": 420,
+        "draws": 71,
+        "pixels": null
+      },
+      {
+        "id": 5,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1,
+        "draws": 10,
+        "pixels": null
+      },
+      {
+        "id": 6,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1,
+        "draws": 6,
+        "pixels": null
+      },
+      {
+        "id": 7,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1,
+        "draws": 8,
+        "pixels": null
+      },
+      {
+        "id": 8,
+        "live": false,
+        "connected": false,
+        "width": 315,
+        "height": 420,
+        "draws": 62,
+        "pixels": null
+      },
+      {
+        "id": 9,
+        "live": true,
+        "connected": true,
+        "width": 315,
+        "height": 420,
+        "draws": 29,
+        "pixels": null
+      }
+    ],
+    "peak": 1,
+    "owners": [
+      "gallery-3",
+      "gallery-3"
+    ],
+    "canvases": [
+      {
+        "width": 315,
+        "height": 420,
+        "connected": true
+      }
+    ]
+  }
+]

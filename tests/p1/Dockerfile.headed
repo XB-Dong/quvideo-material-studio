@@ -1,4 +1,4 @@
-ARG BROWSER_IMAGE=material-p1-browser:gpu
+ARG BROWSER_IMAGE=material-p1-browser:1.58.2
 FROM ${BROWSER_IMAGE}
 RUN apk add --no-cache xvfb-run
 COPY native-visibility.mjs run-headed.sh ./

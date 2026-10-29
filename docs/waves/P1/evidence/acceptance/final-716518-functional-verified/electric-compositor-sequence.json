@@ -1,0 +1,108 @@
+{
+  "clip": {
+    "x": 0,
+    "y": 312.5,
+    "width": 355.03125,
+    "height": 188
+  },
+  "attempts": [
+    {
+      "intendedMs": 0,
+      "attempt": 1,
+      "captureStartMs": 136,
+      "captureEndMs": 476,
+      "valid": true
+    },
+    {
+      "intendedMs": 30,
+      "attempt": 1,
+      "captureStartMs": 99,
+      "captureEndMs": 628,
+      "valid": false
+    },
+    {
+      "intendedMs": 30,
+      "attempt": 2,
+      "captureStartMs": 116,
+      "captureEndMs": 555,
+      "valid": true
+    },
+    {
+      "intendedMs": 90,
+      "attempt": 1,
+      "captureStartMs": 104,
+      "captureEndMs": 384,
+      "valid": true
+    },
+    {
+      "intendedMs": 180,
+      "attempt": 1,
+      "captureStartMs": 186,
+      "captureEndMs": 366,
+      "valid": true
+    },
+    {
+      "intendedMs": 350,
+      "attempt": 1,
+      "captureStartMs": 358,
+      "captureEndMs": 468,
+      "valid": true
+    }
+  ],
+  "frames": [
+    {
+      "intendedMs": 0,
+      "actualMs": 476,
+      "captureStartMs": 136,
+      "captureEndMs": 476
+    },
+    {
+      "intendedMs": 30,
+      "actualMs": 555,
+      "captureStartMs": 116,
+      "captureEndMs": 555
+    },
+    {
+      "intendedMs": 90,
+      "actualMs": 384,
+      "captureStartMs": 104,
+      "captureEndMs": 384
+    },
+    {
+      "intendedMs": 180,
+      "actualMs": 366,
+      "captureStartMs": 186,
+      "captureEndMs": 366
+    },
+    {
+      "intendedMs": 350,
+      "actualMs": 468,
+      "captureStartMs": 358,
+      "captureEndMs": 468
+    }
+  ],
+  "differences": [
+    {
+      "from": 0,
+      "to": 30,
+      "changedPixels": 281
+    },
+    {
+      "from": 30,
+      "to": 90,
+      "changedPixels": 245
+    },
+    {
+      "from": 90,
+      "to": 180,
+      "changedPixels": 297
+    },
+    {
+      "from": 180,
+      "to": 350,
+      "changedPixels": 384
+    }
+  ],
+  "conditions": "Independent warm activation per offset after >=2.2s cooldown; native alpha readback disabled for these compositor samples; source 600ms duration unchanged",
+  "limits": "Screenshots perturb timing; not comfort latency data"
+}

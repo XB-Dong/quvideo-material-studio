@@ -1,0 +1,1809 @@
+{
+  "testedCommit": "716518e6087fbb0ec17abf55b4b68f00cd327a84",
+  "capturedAt": "2026-10-29T16:29:15.719Z",
+  "browser": "149.0.7827.53",
+  "observedWebGL": {
+    "supported": true,
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+  },
+  "executionMode": "simulated-hardware-preflight_actual-software-driver_functional-only",
+  "actualSoftware": true,
+  "gpuFunctionalCases": "executed",
+  "checks": [
+    {
+      "name": "desktop: catalog content",
+      "status": "pass",
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyBackground": "rgb(247, 248, 252)",
+        "bodyText": "映\n映作\nMATERIAL STUDIO\n探索模板\n我的作品\n动态效果\n◉\n创作者 d16b73\n\nMADE OF YOUR MOMENTS\n\n把日常，变成\n值得留住的作品。\n\n选一张模板，让你的照片有新的表达。\n\n开始创作\n↗\n浏览模板\n暂停\n探索灵感\n为你的每一种想象\n全部模板\n创意图片\n人像\n宠物\n2 张图片\n01 / 创作模板\n旅行明信片\n↗\n\n把旅途中的两个片刻，收进一张明信片。上传两张图片，体验模拟制作。\n\n1 张图片\n02 / 创作模板\n宠物肖像\n↗\n\n为你的小伙伴留下一张特别的肖像。上传一张图片，模拟生成温暖插画。\n\n3 张图片\n03 / 创作模板\n三格故事\n↗\n\n三个瞬间，一段自己的故事。上传三张图片，模拟生成故事海报。\n\n1 张图片\n04 / 创作模板\n光影头像\n↗\n\n在色彩和光影之间，发现新的自己。上传一张图片，模拟生成头像。\n\n灵感作品\n创意\n旅行\n人像\n宠物\n映作工作室 让每一份灵感，都有自己的画面。\n模拟制作演示 · 无真实 AI 调用"
+      }
+    },
+    {
+      "name": "desktop: category interaction",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: released preflight allows functional branch",
+      "status": "pass",
+      "details": {
+        "forceFunctional": true,
+        "preflight": [
+          {
+            "actual": {
+              "kind": "yingzuo-gpu-capability",
+              "allowed": false,
+              "released": true,
+              "reason": "software-renderer",
+              "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+              "probeMs": 1190,
+              "releaseMs": 19.5
+            },
+            "fixtureApplied": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "desktop: Orbit actual movement and pause",
+      "status": "pass",
+      "details": {
+        "before": {
+          "x": 1092.699951171875,
+          "y": 281.9800109863281,
+          "width": 82.40625,
+          "height": 82.40625
+        },
+        "after": {
+          "x": 1104.0899658203125,
+          "y": 285.8500061035156,
+          "width": 82.40625,
+          "height": 82.40625
+        }
+      }
+    },
+    {
+      "name": "desktop: Glow actual active canvas",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: Electric actual active canvas",
+      "status": "fail",
+      "message": "Electric did not visibly change compositor pixels in late active frames"
+    },
+    {
+      "name": "desktop: four actual gallery effects and unique GPU allocation",
+      "status": "pass",
+      "details": [
+        {
+          "label": "glow",
+          "gpu": [
+            {
+              "id": 1,
+              "live": true,
+              "connected": true,
+              "width": 1360,
+              "height": 385,
+              "draws": 813,
+              "pixels": null
+            }
+          ],
+          "peak": 1,
+          "owners": [
+            "glow",
+            "glow"
+          ],
+          "canvases": [
+            {
+              "width": 1360,
+              "height": 385,
+              "connected": true
+            }
+          ]
+        },
+        {
+          "label": "electric",
+          "gpu": [
+            {
+              "id": 1,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 1086,
+              "pixels": null
+            },
+            {
+              "id": 2,
+              "live": true,
+              "connected": true,
+              "width": 263,
+              "height": 176,
+              "draws": 2,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8556,
+                "colored": 2099,
+                "transparent": 37732,
+                "transparentFraction": 0.8151572761838921,
+                "signatures": [
+                  3353769552,
+                  455101792
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            }
+          ],
+          "peak": 1,
+          "owners": [
+            "electric",
+            "electric"
+          ]
+        },
+        {
+          "label": "dither",
+          "gpu": [
+            {
+              "id": 1,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 1086,
+              "pixels": null
+            },
+            {
+              "id": 2,
+              "live": false,
+              "connected": false,
+              "width": 129,
+              "height": 129,
+              "draws": 4,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8423,
+                "colored": 2061,
+                "transparent": 37865,
+                "transparentFraction": 0.8180305910819219,
+                "signatures": [
+                  3353769552,
+                  455101792,
+                  1041592556
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            },
+            {
+              "id": 3,
+              "live": false,
+              "connected": false,
+              "width": 129,
+              "height": 129,
+              "draws": 16,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8676,
+                "colored": 2137,
+                "transparent": 37612,
+                "transparentFraction": 0.8125648116142413,
+                "signatures": [
+                  533321582,
+                  2180291506,
+                  3704057881,
+                  1266890788,
+                  1610673048
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            },
+            {
+              "id": 4,
+              "live": true,
+              "connected": true,
+              "width": 315,
+              "height": 420,
+              "draws": 82,
+              "pixels": null
+            }
+          ],
+          "peak": 1,
+          "owners": [
+            "gallery-0",
+            "gallery-0"
+          ],
+          "canvases": [
+            {
+              "width": 315,
+              "height": 420,
+              "connected": true
+            }
+          ]
+        },
+        {
+          "label": "ripple",
+          "gpu": [
+            {
+              "id": 1,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 1086,
+              "pixels": null
+            },
+            {
+              "id": 2,
+              "live": false,
+              "connected": false,
+              "width": 129,
+              "height": 129,
+              "draws": 4,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8423,
+                "colored": 2061,
+                "transparent": 37865,
+                "transparentFraction": 0.8180305910819219,
+                "signatures": [
+                  3353769552,
+                  455101792,
+                  1041592556
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            },
+            {
+              "id": 3,
+              "live": false,
+              "connected": false,
+              "width": 129,
+              "height": 129,
+              "draws": 16,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8676,
+                "colored": 2137,
+                "transparent": 37612,
+                "transparentFraction": 0.8125648116142413,
+                "signatures": [
+                  533321582,
+                  2180291506,
+                  3704057881,
+                  1266890788,
+                  1610673048
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            },
+            {
+              "id": 4,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 118,
+              "pixels": null
+            },
+            {
+              "id": 5,
+              "live": true,
+              "connected": true,
+              "width": 315,
+              "height": 420,
+              "draws": 55,
+              "pixels": null
+            }
+          ],
+          "peak": 1,
+          "owners": [
+            "gallery-1",
+            "gallery-1"
+          ],
+          "canvases": [
+            {
+              "width": 315,
+              "height": 420,
+              "connected": true
+            }
+          ]
+        },
+        {
+          "label": "halftone",
+          "gpu": [
+            {
+              "id": 1,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 1086,
+              "pixels": null
+            },
+            {
+              "id": 2,
+              "live": false,
+              "connected": false,
+              "width": 129,
+              "height": 129,
+              "draws": 4,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8423,
+                "colored": 2061,
+                "transparent": 37865,
+                "transparentFraction": 0.8180305910819219,
+                "signatures": [
+                  3353769552,
+                  455101792,
+                  1041592556
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            },
+            {
+              "id": 3,
+              "live": false,
+              "connected": false,
+              "width": 129,
+              "height": 129,
+              "draws": 16,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8676,
+                "colored": 2137,
+                "transparent": 37612,
+                "transparentFraction": 0.8125648116142413,
+                "signatures": [
+                  533321582,
+                  2180291506,
+                  3704057881,
+                  1266890788,
+                  1610673048
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            },
+            {
+              "id": 4,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 118,
+              "pixels": null
+            },
+            {
+              "id": 5,
+              "live": false,
+              "connected": false,
+              "width": 315,
+              "height": 420,
+              "draws": 74,
+              "pixels": null
+            },
+            {
+              "id": 6,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 12,
+              "pixels": null
+            },
+            {
+              "id": 7,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 10,
+              "pixels": null
+            },
+            {
+              "id": 8,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 8,
+              "pixels": null
+            },
+            {
+              "id": 9,
+              "live": true,
+              "connected": true,
+              "width": 315,
+              "height": 420,
+              "draws": 38,
+              "pixels": null
+            }
+          ],
+          "peak": 1,
+          "owners": [
+            "gallery-2",
+            "gallery-2"
+          ],
+          "canvases": [
+            {
+              "width": 315,
+              "height": 420,
+              "connected": true
+            }
+          ]
+        },
+        {
+          "label": "pixel",
+          "gpu": [
+            {
+              "id": 1,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 1086,
+              "pixels": null
+            },
+            {
+              "id": 2,
+              "live": false,
+              "connected": false,
+              "width": 129,
+              "height": 129,
+              "draws": 4,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8423,
+                "colored": 2061,
+                "transparent": 37865,
+                "transparentFraction": 0.8180305910819219,
+                "signatures": [
+                  3353769552,
+                  455101792,
+                  1041592556
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            },
+            {
+              "id": 3,
+              "live": false,
+              "connected": false,
+              "width": 129,
+              "height": 129,
+              "draws": 16,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8676,
+                "colored": 2137,
+                "transparent": 37612,
+                "transparentFraction": 0.8125648116142413,
+                "signatures": [
+                  533321582,
+                  2180291506,
+                  3704057881,
+                  1266890788,
+                  1610673048
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            },
+            {
+              "id": 4,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 118,
+              "pixels": null
+            },
+            {
+              "id": 5,
+              "live": false,
+              "connected": false,
+              "width": 315,
+              "height": 420,
+              "draws": 74,
+              "pixels": null
+            },
+            {
+              "id": 6,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 12,
+              "pixels": null
+            },
+            {
+              "id": 7,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 10,
+              "pixels": null
+            },
+            {
+              "id": 8,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 8,
+              "pixels": null
+            },
+            {
+              "id": 9,
+              "live": false,
+              "connected": false,
+              "width": 315,
+              "height": 420,
+              "draws": 62,
+              "pixels": null
+            },
+            {
+              "id": 10,
+              "live": true,
+              "connected": true,
+              "width": 315,
+              "height": 420,
+              "draws": 28,
+              "pixels": null
+            }
+          ],
+          "peak": 1,
+          "owners": [
+            "gallery-3",
+            "gallery-3"
+          ],
+          "canvases": [
+            {
+              "width": 315,
+              "height": 420,
+              "connected": true
+            }
+          ]
+        },
+        {
+          "label": "pixel-before-offscreen",
+          "gpu": [
+            {
+              "id": 1,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 1086,
+              "pixels": null
+            },
+            {
+              "id": 2,
+              "live": false,
+              "connected": false,
+              "width": 129,
+              "height": 129,
+              "draws": 4,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8423,
+                "colored": 2061,
+                "transparent": 37865,
+                "transparentFraction": 0.8180305910819219,
+                "signatures": [
+                  3353769552,
+                  455101792,
+                  1041592556
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            },
+            {
+              "id": 3,
+              "live": false,
+              "connected": false,
+              "width": 129,
+              "height": 129,
+              "draws": 16,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8676,
+                "colored": 2137,
+                "transparent": 37612,
+                "transparentFraction": 0.8125648116142413,
+                "signatures": [
+                  533321582,
+                  2180291506,
+                  3704057881,
+                  1266890788,
+                  1610673048
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            },
+            {
+              "id": 4,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 118,
+              "pixels": null
+            },
+            {
+              "id": 5,
+              "live": false,
+              "connected": false,
+              "width": 315,
+              "height": 420,
+              "draws": 74,
+              "pixels": null
+            },
+            {
+              "id": 6,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 12,
+              "pixels": null
+            },
+            {
+              "id": 7,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 10,
+              "pixels": null
+            },
+            {
+              "id": 8,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 8,
+              "pixels": null
+            },
+            {
+              "id": 9,
+              "live": false,
+              "connected": false,
+              "width": 315,
+              "height": 420,
+              "draws": 62,
+              "pixels": null
+            },
+            {
+              "id": 10,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 40,
+              "pixels": null
+            },
+            {
+              "id": 11,
+              "live": true,
+              "connected": true,
+              "width": 315,
+              "height": 420,
+              "draws": 39,
+              "pixels": null
+            }
+          ],
+          "peak": 1,
+          "owners": [
+            "gallery-3",
+            "gallery-3"
+          ],
+          "canvases": [
+            {
+              "width": 315,
+              "height": 420,
+              "connected": true
+            }
+          ]
+        },
+        {
+          "label": "pixel-before-visibility",
+          "gpu": [
+            {
+              "id": 1,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 1086,
+              "pixels": null
+            },
+            {
+              "id": 2,
+              "live": false,
+              "connected": false,
+              "width": 129,
+              "height": 129,
+              "draws": 4,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8423,
+                "colored": 2061,
+                "transparent": 37865,
+                "transparentFraction": 0.8180305910819219,
+                "signatures": [
+                  3353769552,
+                  455101792,
+                  1041592556
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            },
+            {
+              "id": 3,
+              "live": false,
+              "connected": false,
+              "width": 129,
+              "height": 129,
+              "draws": 16,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8676,
+                "colored": 2137,
+                "transparent": 37612,
+                "transparentFraction": 0.8125648116142413,
+                "signatures": [
+                  533321582,
+                  2180291506,
+                  3704057881,
+                  1266890788,
+                  1610673048
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            },
+            {
+              "id": 4,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 118,
+              "pixels": null
+            },
+            {
+              "id": 5,
+              "live": false,
+              "connected": false,
+              "width": 315,
+              "height": 420,
+              "draws": 74,
+              "pixels": null
+            },
+            {
+              "id": 6,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 12,
+              "pixels": null
+            },
+            {
+              "id": 7,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 10,
+              "pixels": null
+            },
+            {
+              "id": 8,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 8,
+              "pixels": null
+            },
+            {
+              "id": 9,
+              "live": false,
+              "connected": false,
+              "width": 315,
+              "height": 420,
+              "draws": 62,
+              "pixels": null
+            },
+            {
+              "id": 10,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 40,
+              "pixels": null
+            },
+            {
+              "id": 11,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 52,
+              "pixels": null
+            },
+            {
+              "id": 12,
+              "live": true,
+              "connected": true,
+              "width": 315,
+              "height": 420,
+              "draws": 36,
+              "pixels": null
+            }
+          ],
+          "peak": 1,
+          "owners": [
+            "gallery-3",
+            "gallery-3"
+          ],
+          "canvases": [
+            {
+              "width": 315,
+              "height": 420,
+              "connected": true
+            }
+          ]
+        },
+        {
+          "label": "pixel-before-reduce",
+          "gpu": [
+            {
+              "id": 1,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 1086,
+              "pixels": null
+            },
+            {
+              "id": 2,
+              "live": false,
+              "connected": false,
+              "width": 129,
+              "height": 129,
+              "draws": 4,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8423,
+                "colored": 2061,
+                "transparent": 37865,
+                "transparentFraction": 0.8180305910819219,
+                "signatures": [
+                  3353769552,
+                  455101792,
+                  1041592556
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            },
+            {
+              "id": 3,
+              "live": false,
+              "connected": false,
+              "width": 129,
+              "height": 129,
+              "draws": 16,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8676,
+                "colored": 2137,
+                "transparent": 37612,
+                "transparentFraction": 0.8125648116142413,
+                "signatures": [
+                  533321582,
+                  2180291506,
+                  3704057881,
+                  1266890788,
+                  1610673048
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            },
+            {
+              "id": 4,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 118,
+              "pixels": null
+            },
+            {
+              "id": 5,
+              "live": false,
+              "connected": false,
+              "width": 315,
+              "height": 420,
+              "draws": 74,
+              "pixels": null
+            },
+            {
+              "id": 6,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 12,
+              "pixels": null
+            },
+            {
+              "id": 7,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 10,
+              "pixels": null
+            },
+            {
+              "id": 8,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 8,
+              "pixels": null
+            },
+            {
+              "id": 9,
+              "live": false,
+              "connected": false,
+              "width": 315,
+              "height": 420,
+              "draws": 62,
+              "pixels": null
+            },
+            {
+              "id": 10,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 40,
+              "pixels": null
+            },
+            {
+              "id": 11,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 52,
+              "pixels": null
+            },
+            {
+              "id": 12,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 44,
+              "pixels": null
+            },
+            {
+              "id": 13,
+              "live": true,
+              "connected": true,
+              "width": 315,
+              "height": 420,
+              "draws": 38,
+              "pixels": null
+            }
+          ],
+          "peak": 1,
+          "owners": [
+            "gallery-3",
+            "gallery-3"
+          ],
+          "canvases": [
+            {
+              "width": 315,
+              "height": 420,
+              "connected": true
+            }
+          ]
+        },
+        {
+          "label": "pixel-before-context-loss",
+          "gpu": [
+            {
+              "id": 1,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 1086,
+              "pixels": null
+            },
+            {
+              "id": 2,
+              "live": false,
+              "connected": false,
+              "width": 129,
+              "height": 129,
+              "draws": 4,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8423,
+                "colored": 2061,
+                "transparent": 37865,
+                "transparentFraction": 0.8180305910819219,
+                "signatures": [
+                  3353769552,
+                  455101792,
+                  1041592556
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            },
+            {
+              "id": 3,
+              "live": false,
+              "connected": false,
+              "width": 129,
+              "height": 129,
+              "draws": 16,
+              "pixels": {
+                "width": 263,
+                "height": 176,
+                "nonzero": 8676,
+                "colored": 2137,
+                "transparent": 37612,
+                "transparentFraction": 0.8125648116142413,
+                "signatures": [
+                  533321582,
+                  2180291506,
+                  3704057881,
+                  1266890788,
+                  1610673048
+                ],
+                "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+              }
+            },
+            {
+              "id": 4,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 118,
+              "pixels": null
+            },
+            {
+              "id": 5,
+              "live": false,
+              "connected": false,
+              "width": 315,
+              "height": 420,
+              "draws": 74,
+              "pixels": null
+            },
+            {
+              "id": 6,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 12,
+              "pixels": null
+            },
+            {
+              "id": 7,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 10,
+              "pixels": null
+            },
+            {
+              "id": 8,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 8,
+              "pixels": null
+            },
+            {
+              "id": 9,
+              "live": false,
+              "connected": false,
+              "width": 315,
+              "height": 420,
+              "draws": 62,
+              "pixels": null
+            },
+            {
+              "id": 10,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 40,
+              "pixels": null
+            },
+            {
+              "id": 11,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 52,
+              "pixels": null
+            },
+            {
+              "id": 12,
+              "live": false,
+              "connected": false,
+              "width": 1,
+              "height": 1,
+              "draws": 44,
+              "pixels": null
+            },
+            {
+              "id": 13,
+              "live": false,
+              "connected": false,
+              "width": 315,
+              "height": 420,
+              "draws": 46,
+              "pixels": null
+            },
+            {
+              "id": 14,
+              "live": true,
+              "connected": true,
+              "width": 315,
+              "height": 420,
+              "draws": 39,
+              "pixels": null
+            }
+          ],
+          "peak": 1,
+          "owners": [
+            "gallery-3",
+            "gallery-3"
+          ],
+          "canvases": [
+            {
+              "width": 315,
+              "height": 420,
+              "connected": true
+            }
+          ]
+        },
+        {
+          "label": "pixel-before-static",
+          "gpu": [
+            {
+              "id": 1,
+              "live": true,
+              "connected": true,
+              "width": 315,
+              "height": 420,
+              "draws": 30,
+              "pixels": null
+            }
+          ],
+          "peak": 1,
+          "owners": [
+            "gallery-3",
+            "gallery-3"
+          ],
+          "canvases": [
+            {
+              "width": 315,
+              "height": 420,
+              "connected": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "desktop: offscreen releases active GPU",
+      "status": "pass",
+      "details": [
+        {
+          "id": 1,
+          "live": false,
+          "connected": false,
+          "width": 1,
+          "height": 1,
+          "draws": 1086,
+          "pixels": null
+        },
+        {
+          "id": 2,
+          "live": false,
+          "connected": false,
+          "width": 129,
+          "height": 129,
+          "draws": 4,
+          "pixels": {
+            "width": 263,
+            "height": 176,
+            "nonzero": 8423,
+            "colored": 2061,
+            "transparent": 37865,
+            "transparentFraction": 0.8180305910819219,
+            "signatures": [
+              3353769552,
+              455101792,
+              1041592556
+            ],
+            "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+          }
+        },
+        {
+          "id": 3,
+          "live": false,
+          "connected": false,
+          "width": 129,
+          "height": 129,
+          "draws": 16,
+          "pixels": {
+            "width": 263,
+            "height": 176,
+            "nonzero": 8676,
+            "colored": 2137,
+            "transparent": 37612,
+            "transparentFraction": 0.8125648116142413,
+            "signatures": [
+              533321582,
+              2180291506,
+              3704057881,
+              1266890788,
+              1610673048
+            ],
+            "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+          }
+        },
+        {
+          "id": 4,
+          "live": false,
+          "connected": false,
+          "width": 1,
+          "height": 1,
+          "draws": 118,
+          "pixels": null
+        },
+        {
+          "id": 5,
+          "live": false,
+          "connected": false,
+          "width": 315,
+          "height": 420,
+          "draws": 74,
+          "pixels": null
+        },
+        {
+          "id": 6,
+          "live": false,
+          "connected": false,
+          "width": 1,
+          "height": 1,
+          "draws": 12,
+          "pixels": null
+        },
+        {
+          "id": 7,
+          "live": false,
+          "connected": false,
+          "width": 1,
+          "height": 1,
+          "draws": 10,
+          "pixels": null
+        },
+        {
+          "id": 8,
+          "live": false,
+          "connected": false,
+          "width": 1,
+          "height": 1,
+          "draws": 8,
+          "pixels": null
+        },
+        {
+          "id": 9,
+          "live": false,
+          "connected": false,
+          "width": 315,
+          "height": 420,
+          "draws": 62,
+          "pixels": null
+        },
+        {
+          "id": 10,
+          "live": false,
+          "connected": false,
+          "width": 1,
+          "height": 1,
+          "draws": 40,
+          "pixels": null
+        },
+        {
+          "id": 11,
+          "live": false,
+          "connected": false,
+          "width": 1,
+          "height": 1,
+          "draws": 52,
+          "pixels": null
+        }
+      ]
+    },
+    {
+      "name": "desktop: controlled visibility event releases active GPU",
+      "status": "pass",
+      "details": {
+        "visibility": "hidden",
+        "gpu": [
+          {
+            "id": 1,
+            "live": false,
+            "connected": false,
+            "width": 1,
+            "height": 1,
+            "draws": 1086,
+            "pixels": null
+          },
+          {
+            "id": 2,
+            "live": false,
+            "connected": false,
+            "width": 129,
+            "height": 129,
+            "draws": 4,
+            "pixels": {
+              "width": 263,
+              "height": 176,
+              "nonzero": 8423,
+              "colored": 2061,
+              "transparent": 37865,
+              "transparentFraction": 0.8180305910819219,
+              "signatures": [
+                3353769552,
+                455101792,
+                1041592556
+              ],
+              "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+            }
+          },
+          {
+            "id": 3,
+            "live": false,
+            "connected": false,
+            "width": 129,
+            "height": 129,
+            "draws": 16,
+            "pixels": {
+              "width": 263,
+              "height": 176,
+              "nonzero": 8676,
+              "colored": 2137,
+              "transparent": 37612,
+              "transparentFraction": 0.8125648116142413,
+              "signatures": [
+                533321582,
+                2180291506,
+                3704057881,
+                1266890788,
+                1610673048
+              ],
+              "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+            }
+          },
+          {
+            "id": 4,
+            "live": false,
+            "connected": false,
+            "width": 1,
+            "height": 1,
+            "draws": 118,
+            "pixels": null
+          },
+          {
+            "id": 5,
+            "live": false,
+            "connected": false,
+            "width": 315,
+            "height": 420,
+            "draws": 74,
+            "pixels": null
+          },
+          {
+            "id": 6,
+            "live": false,
+            "connected": false,
+            "width": 1,
+            "height": 1,
+            "draws": 12,
+            "pixels": null
+          },
+          {
+            "id": 7,
+            "live": false,
+            "connected": false,
+            "width": 1,
+            "height": 1,
+            "draws": 10,
+            "pixels": null
+          },
+          {
+            "id": 8,
+            "live": false,
+            "connected": false,
+            "width": 1,
+            "height": 1,
+            "draws": 8,
+            "pixels": null
+          },
+          {
+            "id": 9,
+            "live": false,
+            "connected": false,
+            "width": 315,
+            "height": 420,
+            "draws": 62,
+            "pixels": null
+          },
+          {
+            "id": 10,
+            "live": false,
+            "connected": false,
+            "width": 1,
+            "height": 1,
+            "draws": 40,
+            "pixels": null
+          },
+          {
+            "id": 11,
+            "live": false,
+            "connected": false,
+            "width": 1,
+            "height": 1,
+            "draws": 52,
+            "pixels": null
+          },
+          {
+            "id": 12,
+            "live": false,
+            "connected": false,
+            "width": 1,
+            "height": 1,
+            "draws": 44,
+            "pixels": null
+          }
+        ],
+        "limit": "Controlled browser event fixture; headless pages remain visible under real tab switching, so not an OS-background claim"
+      }
+    },
+    {
+      "name": "desktop: runtime system reduce releases active GPU",
+      "status": "pass",
+      "details": [
+        {
+          "id": 1,
+          "live": false,
+          "connected": false,
+          "width": 1,
+          "height": 1,
+          "draws": 1086,
+          "pixels": null
+        },
+        {
+          "id": 2,
+          "live": false,
+          "connected": false,
+          "width": 129,
+          "height": 129,
+          "draws": 4,
+          "pixels": {
+            "width": 263,
+            "height": 176,
+            "nonzero": 8423,
+            "colored": 2061,
+            "transparent": 37865,
+            "transparentFraction": 0.8180305910819219,
+            "signatures": [
+              3353769552,
+              455101792,
+              1041592556
+            ],
+            "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+          }
+        },
+        {
+          "id": 3,
+          "live": false,
+          "connected": false,
+          "width": 129,
+          "height": 129,
+          "draws": 16,
+          "pixels": {
+            "width": 263,
+            "height": 176,
+            "nonzero": 8676,
+            "colored": 2137,
+            "transparent": 37612,
+            "transparentFraction": 0.8125648116142413,
+            "signatures": [
+              533321582,
+              2180291506,
+              3704057881,
+              1266890788,
+              1610673048
+            ],
+            "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+          }
+        },
+        {
+          "id": 4,
+          "live": false,
+          "connected": false,
+          "width": 1,
+          "height": 1,
+          "draws": 118,
+          "pixels": null
+        },
+        {
+          "id": 5,
+          "live": false,
+          "connected": false,
+          "width": 315,
+          "height": 420,
+          "draws": 74,
+          "pixels": null
+        },
+        {
+          "id": 6,
+          "live": false,
+          "connected": false,
+          "width": 1,
+          "height": 1,
+          "draws": 12,
+          "pixels": null
+        },
+        {
+          "id": 7,
+          "live": false,
+          "connected": false,
+          "width": 1,
+          "height": 1,
+          "draws": 10,
+          "pixels": null
+        },
+        {
+          "id": 8,
+          "live": false,
+          "connected": false,
+          "width": 1,
+          "height": 1,
+          "draws": 8,
+          "pixels": null
+        },
+        {
+          "id": 9,
+          "live": false,
+          "connected": false,
+          "width": 315,
+          "height": 420,
+          "draws": 62,
+          "pixels": null
+        },
+        {
+          "id": 10,
+          "live": false,
+          "connected": false,
+          "width": 1,
+          "height": 1,
+          "draws": 40,
+          "pixels": null
+        },
+        {
+          "id": 11,
+          "live": false,
+          "connected": false,
+          "width": 1,
+          "height": 1,
+          "draws": 52,
+          "pixels": null
+        },
+        {
+          "id": 12,
+          "live": false,
+          "connected": false,
+          "width": 1,
+          "height": 1,
+          "draws": 44,
+          "pixels": null
+        },
+        {
+          "id": 13,
+          "live": false,
+          "connected": false,
+          "width": 315,
+          "height": 420,
+          "draws": 46,
+          "pixels": null
+        }
+      ]
+    },
+    {
+      "name": "desktop: controlled context loss retains content and controls",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: live static switch and refresh persistence",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: multiple tasks, request error recovery, true failure and refresh",
+      "status": "pass",
+      "details": {
+        "taskIds": [
+          "1e2050e9-7f76-4a30-a409-7046f861b621",
+          "564b1830-0b4f-4226-907e-f96d81f43bed",
+          "df4dff8f-6c4a-428b-ab79-82192e905b49"
+        ],
+        "outcomes": [
+          {
+            "id": "1e2050e9-7f76-4a30-a409-7046f861b621",
+            "status": "SUCCEEDED",
+            "stage": "FINALIZE",
+            "failedStage": null
+          },
+          {
+            "id": "564b1830-0b4f-4226-907e-f96d81f43bed",
+            "status": "SUCCEEDED",
+            "stage": "FINALIZE",
+            "failedStage": null
+          },
+          {
+            "id": "df4dff8f-6c4a-428b-ab79-82192e905b49",
+            "status": "FAILED",
+            "stage": "GENERATE",
+            "failedStage": "GENERATE"
+          }
+        ],
+        "injectedQueryFailures": 1,
+        "stoppedTaskPollCount": 14
+      }
+    },
+    {
+      "name": "desktop: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: runtime errors",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: catalog content",
+      "status": "pass",
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyBackground": "rgb(247, 248, 252)",
+        "bodyText": "映\n映作\nMATERIAL STUDIO\n探索模板\n我的作品\n静态模式\n◉\n创作者 06e4b6\n\nMADE OF YOUR MOMENTS\n\n把日常，变成\n值得留住的作品。\n\n选一张模板，让你的照片有新的表达。\n\n开始创作\n↗\n浏览模板\n探索灵感\n为你的每一种想象\n全部模板\n创意图片\n人像\n宠物\n2 张图片\n01 / 创作模板\n旅行明信片\n↗\n\n把旅途中的两个片刻，收进一张明信片。上传两张图片，体验模拟制作。\n\n1 张图片\n02 / 创作模板\n宠物肖像\n↗\n\n为你的小伙伴留下一张特别的肖像。上传一张图片，模拟生成温暖插画。\n\n3 张图片\n03 / 创作模板\n三格故事\n↗\n\n三个瞬间，一段自己的故事。上传三张图片，模拟生成故事海报。\n\n1 张图片\n04 / 创作模板\n光影头像\n↗\n\n在色彩和光影之间，发现新的自己。上传一张图片，模拟生成头像。\n\n灵感作品\n创意\n旅行\n人像\n宠物\n映作工作室 让每一份灵感，都有自己的画面。\n模拟制作演示 · 无真实 AI 调用"
+      }
+    },
+    {
+      "name": "reduce: reduced/coarse mode allocates no effect GPU",
+      "status": "pass",
+      "details": {
+        "gpu": [],
+        "orbit": 0,
+        "reduce": true,
+        "coarse": false
+      }
+    },
+    {
+      "name": "reduce: category interaction",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: runtime errors",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: catalog content",
+      "status": "pass",
+      "details": {
+        "width": 375,
+        "scrollWidth": 375,
+        "bodyBackground": "rgb(247, 248, 252)",
+        "bodyText": "映\n映作\n我的作品\n动态效果\n◉\n创作者 d4cdfe\n\nMADE OF YOUR MOMENTS\n\n把日常，变成\n值得留住的作品。\n\n选一张模板，让你的照片有新的表达。\n\n开始创作\n↗\n浏览模板\n探索灵感\n全部模板\n创意图片\n人像\n宠物\n2 张图片\n旅行明信片\n↗\n\n把旅途中的两个片刻，收进一张明信片。上传两张图片，体验模拟制作。\n\n1 张图片\n宠物肖像\n↗\n\n为你的小伙伴留下一张特别的肖像。上传一张图片，模拟生成温暖插画。\n\n3 张图片\n三格故事\n↗\n\n三个瞬间，一段自己的故事。上传三张图片，模拟生成故事海报。\n\n1 张图片\n光影头像\n↗\n\n在色彩和光影之间，发现新的自己。上传一张图片，模拟生成头像。\n\n灵感作品\n创意\n旅行\n人像\n宠物\n映作工作室\n模拟制作演示 · 无真实 AI 调用"
+      }
+    },
+    {
+      "name": "mobile: reduced/coarse mode allocates no effect GPU",
+      "status": "pass",
+      "details": {
+        "gpu": [],
+        "orbit": 0,
+        "reduce": false,
+        "coarse": false
+      }
+    },
+    {
+      "name": "mobile: category interaction",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: runtime errors",
+      "status": "pass"
+    }
+  ],
+  "scope": "Independent browser checks; only actual passing scenarios verified, not an aesthetic score or complete comfort signoff",
+  "missing": [
+    "actual interaction performance/trace",
+    "actual background-tab event and attribution-qualified interaction performance",
+    "upgrade/rollback evidence"
+  ]
+}

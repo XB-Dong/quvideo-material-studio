@@ -1,0 +1,459 @@
+{
+  "longTasks": [
+    {
+      "at": 60.29999999701977,
+      "duration": 101,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 168,
+      "duration": 51,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 678.7999999970198,
+      "duration": 116,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 5979.5,
+      "duration": 119,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 7910.199999999255,
+      "duration": 122,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 10510.79999999702,
+      "duration": 59,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 10807.89999999851,
+      "duration": 74,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 13536,
+      "duration": 77,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 16444.39999999851,
+      "duration": 57,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 19332.199999999255,
+      "duration": 75,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 22328,
+      "duration": 51,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 25017.699999999255,
+      "duration": 51,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 27727.39999999851,
+      "duration": 72,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 29772.39999999851,
+      "duration": 86,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 30284,
+      "duration": 67,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 32692.699999999255,
+      "duration": 192,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 33336,
+      "duration": 116,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 33904.599999997765,
+      "duration": 135,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 34493.599999997765,
+      "duration": 148,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 35094.29999999702,
+      "duration": 133,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 35683.599999997765,
+      "duration": 139,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 36274.29999999702,
+      "duration": 83,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 36810,
+      "duration": 106,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 37370.39999999851,
+      "duration": 67,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 37889.599999997765,
+      "duration": 61,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 39933.89999999851,
+      "duration": 160,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 41678.79999999702,
+      "duration": 92,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 41778.5,
+      "duration": 126,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 42071.39999999851,
+      "duration": 54,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 43660.89999999851,
+      "duration": 90,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 44112.79999999702,
+      "duration": 117,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 45657.89999999851,
+      "duration": 82,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 45957.5,
+      "duration": 123,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "label": "glow",
+      "event": "start",
+      "at": 5520.39999999851
+    },
+    {
+      "label": "glow",
+      "event": "end",
+      "at": 8056.5
+    },
+    {
+      "label": "dither",
+      "event": "start",
+      "at": 28348.39999999851
+    },
+    {
+      "label": "dither",
+      "event": "end",
+      "at": 29701.89999999851
+    },
+    {
+      "label": "ripple",
+      "event": "start",
+      "at": 29878.29999999702
+    },
+    {
+      "label": "ripple",
+      "event": "end",
+      "at": 31688.599999997765
+    },
+    {
+      "label": "halftone",
+      "event": "start",
+      "at": 31813.89999999851
+    },
+    {
+      "label": "halftone",
+      "event": "end",
+      "at": 38049.099999997765
+    },
+    {
+      "label": "pixel",
+      "event": "start",
+      "at": 38105.79999999702
+    },
+    {
+      "label": "pixel",
+      "event": "end",
+      "at": 39856.5
+    },
+    {
+      "label": "pixel-before-offscreen",
+      "event": "start",
+      "at": 39872.199999999255
+    },
+    {
+      "label": "pixel-before-offscreen",
+      "event": "end",
+      "at": 41543.89999999851
+    },
+    {
+      "label": "pixel-before-visibility",
+      "event": "start",
+      "at": 41942
+    },
+    {
+      "label": "pixel-before-visibility",
+      "event": "end",
+      "at": 43650.29999999702
+    },
+    {
+      "label": "pixel-before-reduce",
+      "event": "start",
+      "at": 43951.79999999702
+    },
+    {
+      "label": "pixel-before-reduce",
+      "event": "end",
+      "at": 45621.599999997765
+    },
+    {
+      "label": "pixel-before-context-loss",
+      "event": "start",
+      "at": 45823.599999997765
+    },
+    {
+      "label": "pixel-before-context-loss",
+      "event": "end",
+      "at": 47485.199999999255
+    }
+  ]
+}

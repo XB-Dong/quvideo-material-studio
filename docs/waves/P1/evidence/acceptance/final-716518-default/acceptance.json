@@ -1,0 +1,207 @@
+{
+  "testedCommit": "716518e6087fbb0ec17abf55b4b68f00cd327a84",
+  "capturedAt": "2026-10-29T16:27:00.219Z",
+  "browser": "149.0.7827.53",
+  "observedWebGL": {
+    "supported": true,
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+  },
+  "executionMode": "default-product-capability-policy",
+  "actualSoftware": true,
+  "gpuFunctionalCases": "expected default software fallback; seven paths require separate functional fixture",
+  "checks": [
+    {
+      "name": "desktop: catalog content",
+      "status": "pass",
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyBackground": "rgb(247, 248, 252)",
+        "bodyText": "映\n映作\nMATERIAL STUDIO\n探索模板\n我的作品\n动态效果\n◉\n创作者 237291\n\nMADE OF YOUR MOMENTS\n\n把日常，变成\n值得留住的作品。\n\n选一张模板，让你的照片有新的表达。\n\n开始创作\n↗\n浏览模板\n暂停\n探索灵感\n为你的每一种想象\n全部模板\n创意图片\n人像\n宠物\n2 张图片\n01 / 创作模板\n旅行明信片\n↗\n\n把旅途中的两个片刻，收进一张明信片。上传两张图片，体验模拟制作。\n\n1 张图片\n02 / 创作模板\n宠物肖像\n↗\n\n为你的小伙伴留下一张特别的肖像。上传一张图片，模拟生成温暖插画。\n\n3 张图片\n03 / 创作模板\n三格故事\n↗\n\n三个瞬间，一段自己的故事。上传三张图片，模拟生成故事海报。\n\n1 张图片\n04 / 创作模板\n光影头像\n↗\n\n在色彩和光影之间，发现新的自己。上传一张图片，模拟生成头像。\n\n灵感作品\n创意\n旅行\n人像\n宠物\n映作工作室 让每一份灵感，都有自己的画面。\n模拟制作演示 · 无真实 AI 调用"
+      }
+    },
+    {
+      "name": "desktop: category interaction",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: default software fallback retains SVG and zero main GPU",
+      "status": "pass",
+      "details": {
+        "gpu": [],
+        "preflight": [
+          {
+            "actual": {
+              "kind": "yingzuo-gpu-capability",
+              "allowed": false,
+              "released": true,
+              "reason": "software-renderer",
+              "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+              "probeMs": 871.8999999985099,
+              "releaseMs": 19.099999997764826
+            },
+            "fixtureApplied": false
+          }
+        ],
+        "measures": [
+          {
+            "kind": "yingzuo-gpu-capability",
+            "allowed": false,
+            "released": true,
+            "reason": "software-renderer",
+            "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+            "probeMs": 871.8999999985099,
+            "releaseMs": 19.099999997764826
+          }
+        ],
+        "orbitBefore": {
+          "x": 1065.550048828125,
+          "y": 256.16998291015625,
+          "width": 82.40625,
+          "height": 82.40625
+        },
+        "orbitAfter": {
+          "x": 1068.72998046875,
+          "y": 264.3500061035156,
+          "width": 82.40625,
+          "height": 82.40625
+        }
+      }
+    },
+    {
+      "name": "desktop: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: multiple tasks, request error recovery, true failure and refresh",
+      "status": "pass",
+      "details": {
+        "taskIds": [
+          "6c18749f-d3b0-4309-a409-0a14af4cb4e8",
+          "a91b17b5-e753-4777-9fb6-8e1779a36179",
+          "fc4c59a6-1d6a-446d-a9b2-08e8d8a8c6e2"
+        ],
+        "outcomes": [
+          {
+            "id": "6c18749f-d3b0-4309-a409-0a14af4cb4e8",
+            "status": "SUCCEEDED",
+            "stage": "FINALIZE",
+            "failedStage": null
+          },
+          {
+            "id": "a91b17b5-e753-4777-9fb6-8e1779a36179",
+            "status": "SUCCEEDED",
+            "stage": "FINALIZE",
+            "failedStage": null
+          },
+          {
+            "id": "fc4c59a6-1d6a-446d-a9b2-08e8d8a8c6e2",
+            "status": "FAILED",
+            "stage": "GENERATE",
+            "failedStage": "GENERATE"
+          }
+        ],
+        "injectedQueryFailures": 1,
+        "stoppedTaskPollCount": 15
+      }
+    },
+    {
+      "name": "desktop: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: runtime errors",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: catalog content",
+      "status": "pass",
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyBackground": "rgb(247, 248, 252)",
+        "bodyText": "映\n映作\nMATERIAL STUDIO\n探索模板\n我的作品\n静态模式\n◉\n创作者 267641\n\nMADE OF YOUR MOMENTS\n\n把日常，变成\n值得留住的作品。\n\n选一张模板，让你的照片有新的表达。\n\n开始创作\n↗\n浏览模板\n探索灵感\n为你的每一种想象\n全部模板\n创意图片\n人像\n宠物\n2 张图片\n01 / 创作模板\n旅行明信片\n↗\n\n把旅途中的两个片刻，收进一张明信片。上传两张图片，体验模拟制作。\n\n1 张图片\n02 / 创作模板\n宠物肖像\n↗\n\n为你的小伙伴留下一张特别的肖像。上传一张图片，模拟生成温暖插画。\n\n3 张图片\n03 / 创作模板\n三格故事\n↗\n\n三个瞬间，一段自己的故事。上传三张图片，模拟生成故事海报。\n\n1 张图片\n04 / 创作模板\n光影头像\n↗\n\n在色彩和光影之间，发现新的自己。上传一张图片，模拟生成头像。\n\n灵感作品\n创意\n旅行\n人像\n宠物\n映作工作室 让每一份灵感，都有自己的画面。\n模拟制作演示 · 无真实 AI 调用"
+      }
+    },
+    {
+      "name": "reduce: reduced/coarse mode allocates no effect GPU",
+      "status": "pass",
+      "details": {
+        "gpu": [],
+        "orbit": 0,
+        "reduce": true,
+        "coarse": false
+      }
+    },
+    {
+      "name": "reduce: category interaction",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: runtime errors",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: catalog content",
+      "status": "pass",
+      "details": {
+        "width": 375,
+        "scrollWidth": 375,
+        "bodyBackground": "rgb(247, 248, 252)",
+        "bodyText": "映\n映作\n我的作品\n动态效果\n◉\n创作者 914f34\n\nMADE OF YOUR MOMENTS\n\n把日常，变成\n值得留住的作品。\n\n选一张模板，让你的照片有新的表达。\n\n开始创作\n↗\n浏览模板\n探索灵感\n全部模板\n创意图片\n人像\n宠物\n2 张图片\n旅行明信片\n↗\n\n把旅途中的两个片刻，收进一张明信片。上传两张图片，体验模拟制作。\n\n1 张图片\n宠物肖像\n↗\n\n为你的小伙伴留下一张特别的肖像。上传一张图片，模拟生成温暖插画。\n\n3 张图片\n三格故事\n↗\n\n三个瞬间，一段自己的故事。上传三张图片，模拟生成故事海报。\n\n1 张图片\n光影头像\n↗\n\n在色彩和光影之间，发现新的自己。上传一张图片，模拟生成头像。\n\n灵感作品\n创意\n旅行\n人像\n宠物\n映作工作室\n模拟制作演示 · 无真实 AI 调用"
+      }
+    },
+    {
+      "name": "mobile: reduced/coarse mode allocates no effect GPU",
+      "status": "pass",
+      "details": {
+        "gpu": [],
+        "orbit": 0,
+        "reduce": false,
+        "coarse": false
+      }
+    },
+    {
+      "name": "mobile: category interaction",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: runtime errors",
+      "status": "pass"
+    }
+  ],
+  "scope": "Independent browser checks; only actual passing scenarios verified, not an aesthetic score or complete comfort signoff",
+  "missing": [
+    "actual interaction performance/trace",
+    "actual background-tab event and attribution-qualified interaction performance",
+    "upgrade/rollback evidence"
+  ]
+}

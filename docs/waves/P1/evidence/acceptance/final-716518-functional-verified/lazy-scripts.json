@@ -1,0 +1,42 @@
+{
+  "scope": "Scripts requested after first catalog load during all creative interactions, including route-independent shared lazy code; compare actual build inventory for complete budget",
+  "scripts": [
+    {
+      "path": "/_next/static/chunks/12j1iyfyl867v.js",
+      "gzipBytes": 7036
+    },
+    {
+      "path": "/_next/static/chunks/3q82-9u6314jz.js",
+      "gzipBytes": 7496
+    },
+    {
+      "path": "/_next/static/chunks/34ulurzqao46o.js",
+      "gzipBytes": 6468
+    },
+    {
+      "path": "/_next/static/chunks/2ozbmf7dyqtzp.js",
+      "gzipBytes": 14617
+    },
+    {
+      "path": "/_next/static/chunks/2aned25s_8gs-.js",
+      "gzipBytes": 3652
+    },
+    {
+      "path": "/_next/static/chunks/405pgm16c4uy7.js",
+      "gzipBytes": 7400
+    },
+    {
+      "path": "/_next/static/chunks/32oou99fxghdj.js",
+      "gzipBytes": 6163
+    },
+    {
+      "path": "http://localhost:3000/be5d3ac8-aff0-4d1b-bd60-854caa0eec00",
+      "gzipBytes": 765
+    },
+    {
+      "path": "http://localhost:3000/19b47b2a-3e9a-416e-8214-c898275c2ecf",
+      "gzipBytes": 765
+    }
+  ],
+  "totalGzipBytes": 54362
+}

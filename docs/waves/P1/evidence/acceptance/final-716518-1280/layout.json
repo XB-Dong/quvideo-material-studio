@@ -1,0 +1,26 @@
+{
+  "testedCommit": "716518e6087fbb0ec17abf55b4b68f00cd327a84",
+  "capturedAt": "2026-10-29T17:17:19.564Z",
+  "browser": "149.0.7827.53",
+  "conditions": "1280x900 default production capability policy; unthrottled container SwiftShader",
+  "checks": [
+    {
+      "name": "catalog",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "cursor": "auto",
+      "focused": "A",
+      "focusVisible": true,
+      "outline": "solid"
+    },
+    {
+      "name": "studio",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "cursor": "auto",
+      "focused": "A",
+      "focusVisible": true,
+      "outline": "solid"
+    }
+  ]
+}
