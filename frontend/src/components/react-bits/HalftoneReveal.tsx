@@ -482,6 +482,7 @@ const HalftoneReveal = ({
     const container = containerRef.current;
     const canvas = canvasRef.current;
     const gl = canvas?.getContext('webgl2', {
+      failIfMajorPerformanceCaveat: true,
       alpha: false,
       antialias: false,
       depth: false,

@@ -413,6 +413,7 @@ const GlowCursor = ({
     const container = containerRef.current;
     const canvas = canvasRef.current;
     const gl = canvas?.getContext('webgl2', {
+      failIfMajorPerformanceCaveat: true,
       alpha: true,
       premultipliedAlpha: true,
       antialias: false,

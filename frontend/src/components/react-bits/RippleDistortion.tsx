@@ -259,7 +259,11 @@ const RippleDistortion = ({
       window.matchMedia &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const renderer = new Renderer({
+    const precreatedCanvas=document.createElement("canvas");
+    const initialContext=precreatedCanvas.getContext("webgl2",{failIfMajorPerformanceCaveat:true,alpha:false,antialias:false});
+    if(!initialContext)return undefined;
+    rememberContext(precreatedCanvas,initialContext);
+    const renderer = new Renderer({canvas:precreatedCanvas,
       alpha: false,
       antialias: false,
       dpr: Math.min(window.devicePixelRatio || 1, 1.5)

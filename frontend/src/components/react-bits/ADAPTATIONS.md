@@ -5,3 +5,5 @@
 适配：外层独立偏好/可见性/互斥/idle控制；WebGL卸载主动loseContext；DPR上限1.5、Electric像素预算1MP；Pixel点数上限24；浅色颜色与props由产品适配层提供。原源码保留，第三方文件独立关闭lint规则，产品控制器正常lint/测试。实际运行验收由独立Acceptance完成。
 
 局部SafeEffect边界记录canvas并在卸载前释放context，覆盖上游未返回cleanup的失败路径；FPS跳过首秒初始化、按owner局部降级。Dither/Ripple/Halftone图片未就绪时透明显示底层poster；Dither/Halftone半径使用像素，限制容器范围。Motion候选库未被产品import，M01–M10采用CSS/React状态触发。
+
+默认GPU策略：单次具名Blob Worker以1×1 OffscreenCanvas/caveat=true预检真实renderer，排除SwiftShader等软件renderer，先确认探针GL释放再授main owner；Worker不支持/失败/超时只回静态图片，不在main创建慢探针。正常硬件六源实际创建带caveat=true（OGL显式预创建canvas后交Renderer）。没有生产强制开关。局部performance.measure只记录探针与真实release耗时，不发送/保存用户数据。软件功能fixture和默认舒适分开由独立验收记录，前者不冒充硬件性能。

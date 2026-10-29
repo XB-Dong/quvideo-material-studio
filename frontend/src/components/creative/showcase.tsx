@@ -11,6 +11,7 @@ import {
 } from "react";
 import Link from "next/link";
 import type { Template } from "../../lib/types";
+import { assessGpu } from "./gpu-policy";
 import { releaseContext } from "../react-bits/context-lifecycle";
 import { useMotionPreferences } from "../motion/preferences";
 const Orbit = lazy(() => import("../react-bits/OrbitImages")),
@@ -100,6 +101,7 @@ export function CreativeShowcase({
   children: ReactNode;
 }) {
   const { enabled } = useMotionPreferences();
+  const [gpuAllowed, setGpuAllowed] = useState(false);
   const [fine, setFine] = useState(false),
     [desktop, setDesktop] = useState(false),
     [owner, setOwner] = useState<string | null>(null),
@@ -189,7 +191,16 @@ export function CreativeShowcase({
       setOwner(null);
     }
   }, [enabled]);
-  const active = enabled && fine;
+  useEffect(() => {
+    if (!enabled || !fine) return;
+    const controller = new AbortController();
+    assessGpu(controller.signal).then((result) => {
+      if (!controller.signal.aborted)
+        setGpuAllowed(result.allowed && result.released);
+    });
+    return () => controller.abort();
+  }, [enabled, fine]);
+  const active = enabled && fine && gpuAllowed;
   const current =
     active &&
     !degraded.includes(owner || "") &&
@@ -228,6 +239,7 @@ export function CreativeShowcase({
         aria-label="创作引导"
         ref={hero}
         data-owner={current || "none"}
+        data-gpu-state={gpuAllowed ? "eligible" : "static"}
         onPointerMove={(e) => {
           if ((e.target as HTMLElement).closest("a,button,input")) return;
           wake("glow", 480);
@@ -353,13 +365,13 @@ export function CreativeShowcase({
             </div>
           )}
           {enabled && desktop && (
-          <button
-            className="orbit-pause"
-            aria-pressed={paused}
-            onClick={() => setPaused(!paused)}
-          >
-            {paused ? "继续" : "暂停"}
-          </button>
+            <button
+              className="orbit-pause"
+              aria-pressed={paused}
+              onClick={() => setPaused(!paused)}
+            >
+              {paused ? "继续" : "暂停"}
+            </button>
           )}
         </div>
       </section>

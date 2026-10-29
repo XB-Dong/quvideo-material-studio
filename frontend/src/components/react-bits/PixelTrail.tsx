@@ -352,6 +352,7 @@ export default function PixelTrail({
     const canvas = canvasRef.current;
     if (!container || !canvas) return undefined;
     const gl = canvas.getContext('webgl2', {
+      failIfMajorPerformanceCaveat: true,
       alpha: true,
       premultipliedAlpha: true,
       antialias: false,

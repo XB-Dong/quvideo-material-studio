@@ -465,7 +465,11 @@ const DitherVeil = ({
     if (!container) return undefined;
 
     const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    const renderer = new Renderer({ dpr: Math.min(window.devicePixelRatio || 1, 1.5), alpha: false, antialias: false });
+    const precreatedCanvas=document.createElement("canvas");
+    const initialContext=precreatedCanvas.getContext("webgl2",{failIfMajorPerformanceCaveat:true,alpha:false,antialias:false});
+    if(!initialContext)return undefined;
+    rememberContext(precreatedCanvas,initialContext);
+    const renderer = new Renderer({canvas:precreatedCanvas, dpr: Math.min(window.devicePixelRatio || 1, 1.5), alpha: false, antialias: false });
     const gl = renderer.gl;
     rememberContext(gl.canvas, gl);
     const canvas = gl.canvas;

@@ -9,7 +9,17 @@ export function rememberContext(
 export function releaseContext(canvas: HTMLCanvasElement) {
   const context = contexts.get(canvas);
   contexts.delete(canvas);
+  if (!context) return;
+  const started = performance.now();
   try {
-    context?.getExtension("WEBGL_lose_context")?.loseContext();
-  } catch {}
+    context.getExtension("WEBGL_lose_context")?.loseContext();
+  } catch {
+  } finally {
+    try {
+      performance.measure("yingzuo-effect-release", {
+        start: started,
+        end: performance.now(),
+      });
+    } catch {}
+  }
 }

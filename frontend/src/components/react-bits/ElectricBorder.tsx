@@ -527,6 +527,7 @@ const ElectricBorder = ({
     if (!container || !canvas) return;
 
     const gl = canvas.getContext('webgl2', {
+      failIfMajorPerformanceCaveat: true,
       alpha: true,
       premultipliedAlpha: true,
       antialias: false,
