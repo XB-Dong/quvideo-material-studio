@@ -1,0 +1,60 @@
+ Image material-studio-api-check Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 611B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 277B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12.12-slim@sha256:f3fa41d74a768c2fce8016b98c191ae8c1bacd8f1152870a3f9f87d350920b7c
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 59.01kB 0.0s done
+#5 DONE 0.0s
+
+#6 [1/3] FROM docker.io/library/python:3.12.12-slim@sha256:f3fa41d74a768c2fce8016b98c191ae8c1bacd8f1152870a3f9f87d350920b7c
+#6 resolve docker.io/library/python:3.12.12-slim@sha256:f3fa41d74a768c2fce8016b98c191ae8c1bacd8f1152870a3f9f87d350920b7c 0.0s done
+#6 DONE 0.0s
+
+#7 [2/3] WORKDIR /tests
+#7 CACHED
+
+#8 [3/3] COPY . .
+#8 DONE 0.0s
+
+#9 exporting to image
+#9 exporting layers 0.1s done
+#9 exporting manifest sha256:c65ba692622d38165d6528078b2c4794fb1398367da8060d3e23591ba23594f5 0.0s done
+#9 exporting config sha256:d19e2026b130894721b55e894d8d20d6283bc0d7d52e354b0d5cdcae4bb27663
+#9 exporting config sha256:d19e2026b130894721b55e894d8d20d6283bc0d7d52e354b0d5cdcae4bb27663 0.0s done
+#9 exporting attestation manifest sha256:8875d3298ef712513134238b023173b5945d0739cda6b8fed8f1668483988290 0.0s done
+#9 exporting manifest list sha256:baab5abb0f8171e121fc626d74cc75735aa4e9b2d2321d51e4c0e69052046440 0.0s done
+#9 naming to docker.io/library/material-studio-api-check:latest done
+#9 unpacking to docker.io/library/material-studio-api-check:latest 0.0s done
+#9 DONE 0.2s
+
+#10 resolving provenance for metadata file
+#10 DONE 0.0s
+ Image material-studio-api-check Built
+ Container material-studio-api-check-run-4bb4f88f493b Creating
+ Container material-studio-api-check-run-4bb4f88f493b Created
+{"baseUrl": "http://frontend:3000", "testedCommit": "a2505ecdedf04ad432476d5bdfb1eda02e0fe926", "startedAt": "2026-10-29T17:38:32Z"}
+test_01_public_catalog_categories_and_local_images (test_api.ApiAcceptance.test_01_public_catalog_categories_and_local_images) ... ok
+test_02_identity_is_backend_cookie_and_reused (test_api.ApiAcceptance.test_02_identity_is_backend_cookie_and_reused) ... ok
+test_03_upload_actual_file_validation_and_private_read (test_api.ApiAcceptance.test_03_upload_actual_file_validation_and_private_read) ... ok
+test_04_submit_parameter_validation_and_origin (test_api.ApiAcceptance.test_04_submit_parameter_validation_and_origin) ... ok
+test_05_accepts_before_generation_and_executes_without_queries (test_api.ApiAcceptance.test_05_accepts_before_generation_and_executes_without_queries) ... ok
+test_06_each_failure_stops_subsequent_steps (test_api.ApiAcceptance.test_06_each_failure_stops_subsequent_steps) ... ok
+test_07_multiple_tasks_active_pagination_and_history_refresh (test_api.ApiAcceptance.test_07_multiple_tasks_active_pagination_and_history_refresh) ... ok
+test_08_foreign_tasks_assets_results_are_private (test_api.ApiAcceptance.test_08_foreign_tasks_assets_results_are_private) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 11.875s
+
+OK

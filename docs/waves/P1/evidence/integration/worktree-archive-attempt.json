@@ -1,0 +1,44 @@
+{
+  "recordedAt": "2026-10-30T01:49:57.1195378+08:00",
+  "status": "retained_due_to_active_task_lock",
+  "ignoredEvidencePreservedOutsideGit": true,
+  "manualDeletionPerformed": false,
+  "results": [
+    {
+      "root": "C:\\Users\\dongx\\.codex\\worktrees\\p1-frontend\\杭州小影AIcoding",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"type\":\"error\",\"message\":\"Another active task still uses this worktree.\"}"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "root": "C:\\Users\\dongx\\.codex\\worktrees\\p1-assets\\杭州小影AIcoding",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"type\":\"error\",\"message\":\"Another active task still uses this worktree.\"}"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "root": "C:\\Users\\dongx\\.codex\\worktrees\\p1-acceptance\\杭州小影AIcoding",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"type\":\"error\",\"message\":\"Another active task still uses this worktree.\"}"
+          }
+        ],
+        "isError": true
+      }
+    }
+  ]
+}

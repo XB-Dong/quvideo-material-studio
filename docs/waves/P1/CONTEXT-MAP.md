@@ -15,6 +15,9 @@
 | frontend/src/components/providers.tsx | 未来P1动效配置 | 只增加隔离的动效Provider；不重建身份Provider或QueryClient |
 | frontend/src/components/react-bits/、creative/、motion/ | 未来P1创意适配 | 七组件源/完整许可、本地适配、互斥控制器、惰性加载、偏好与资源清理；同一Frontend写入 |
 | backend/src/main/java/com/quvideo/studio/Api.java、FilesService.java | 未来P1公开资源 | demo现在硬编码image/png；JPEG封面必须允许key+明确MIME最小适配，私有结果PNG不变 |
+| frontend/src/components/creative/gpu-policy.ts | GPU能力探测 | 单次Worker/OffscreenCanvas、实际renderer分类、释放确认/缓存/abort/timeout，软件与未知默认静态 |
+| frontend/src/components/react-bits/context-lifecycle.ts | GPU资源边界 | 仅登记真实创建的GL，WeakMap释放不创建额外context；本地性能记录 |
+| tests/p1/ | 独立浏览器验证 | 默认软件舒适与明确能力fixture七功能分开；真实资源/位移/像素/释放/性能证据 |
 | frontend/package.json、package-lock.json | 未来P1依赖 | Motion/OGL候选及七组件源码启动时验证并锁定；Leader单写 |
 | backend/src/main/resources/demo/ 与 V3迁移 | 未来P1素材接入 | 新资源与新key；保留旧结果文件及V1/V2，不更改业务API |
 | tests/、.github/workflows/、README | 未来P1验收交付 | 添加动效/图像/可访问性门槛，保留全部P0检查 |

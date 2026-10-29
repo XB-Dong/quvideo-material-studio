@@ -1,0 +1,19 @@
+{
+  "runId": 40915531767,
+  "url": "https://github.com/XB-Dong/quvideo-material-studio/actions/runs/40915531767",
+  "headSha": "43213a799893a60f8335d2f52fc30c91ed431ce3",
+  "conclusion": "failure",
+  "frontend": "success",
+  "backend": "success",
+  "integration": "failure",
+  "defaultBrowser": {
+    "pass": 22,
+    "fail": 0
+  },
+  "functionalBrowser": {
+    "pass": 27,
+    "fail": 4
+  },
+  "causeStatus": "under independent acceptance analysis; original failures retained",
+  "source": "GitHub REST jobs and downloaded browser-evidence artifact; credentials and ZIP excluded"
+}

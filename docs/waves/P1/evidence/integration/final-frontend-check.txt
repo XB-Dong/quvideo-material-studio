@@ -1,0 +1,81 @@
+ Image material-studio-frontend-check Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 661B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 842B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 74B done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 5.14kB 0.0s done
+#5 DONE 0.0s
+
+#6 [deps 1/4] FROM docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34
+#6 resolve docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34 0.0s done
+#6 DONE 0.0s
+
+#7 [deps 2/4] WORKDIR /app
+#7 CACHED
+
+#8 [deps 3/4] COPY package*.json ./
+#8 CACHED
+
+#9 [deps 4/4] RUN npm ci
+#9 CACHED
+
+#10 [test 1/1] COPY . .
+#10 DONE 0.0s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 41.7s done
+#11 exporting manifest sha256:137dd56824dbda91b4da24e462319d49e21f93c290c1f94014d8091caf1b39ba 0.0s done
+#11 exporting config sha256:76b25cdb18c5911494dfa44101fcf5b7328595f3d30d719a4cf134d5b3411690 0.0s done
+#11 exporting attestation manifest sha256:8c20689949c1d21448fde811552807851002b26599e436cadb39ef800ddc9d5a 0.0s done
+#11 exporting manifest list sha256:b0faf2622ca42040209817d419c0e02a78920632a219e7c36578e079402d2c3f 0.0s done
+#11 naming to docker.io/library/material-studio-frontend-check:latest done
+#11 unpacking to docker.io/library/material-studio-frontend-check:latest
+#11 unpacking to docker.io/library/material-studio-frontend-check:latest 8.7s done
+#11 DONE 50.6s
+
+#12 resolving provenance for metadata file
+#12 DONE 0.0s
+ Image material-studio-frontend-check Built
+ Container material-studio-frontend-check-run-5de65f2a1459 Creating
+ Container material-studio-frontend-check-run-5de65f2a1459 Created
+
+> material-studio@1.0.0 lint
+> eslint .
+
+
+> material-studio@1.0.0 typecheck
+> tsc --noEmit
+
+
+> material-studio@1.0.0 test
+> vitest --run
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/app[39m
+
+ [32m✓[39m src/components/gpu-policy.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 98[2mms[22m[39m
+ [32m✓[39m src/lib/use-tasks.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[32m 92[2mms[22m[39m
+ [32m✓[39m src/components/upload.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 106[2mms[22m[39m
+ [32m✓[39m src/lib/session-lifecycle.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 157[2mms[22m[39m
+ [32m✓[39m src/components/motion.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 371[2mms[22m[39m
+ [32m✓[39m src/components/submission.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 515[2mms[22m[39m
+   [32m✓[39m task submission [2m(4)[22m
+     [33m[2m✓[22m[39m releases an old user's pending submission and ignores its stale finally[33m 344[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m6 passed[39m[22m[90m (6)[39m
+[2m      Tests [22m [1m[32m31 passed[39m[22m[90m (31)[39m
+[2m   Start at [22m 16:47:46
+[2m   Duration [22m 2.39s[2m (environment 41%, transform 25%, tests 13%, import 12%, setup 10%, worker 1%)[22m

@@ -1,27 +1,27 @@
 # P1 验收矩阵与取证计划
 
-版本P1-1.2.0。当前全部产品项not_run；P0的通过是基线，不是P1结果。准备检查只验证计划与来源工件。每条证据须带commit、环境、时间、命令/操作、预期/实际与限制。
+版本P1-1.2.0。最终产品/验收源码a2505ecdedf04ad432476d5bdfb1eda02e0fe926完成独立双门槛与带预算守卫的CI三项；ACCEPT-BUDGET-02经新本地/CI逐轮实测关闭，见Leader最终处置。本矩阵的passed限定于报告中的实际环境，物理硬件GPU性能及Windows/IAB最小化未测。历史not_run/失败记录保留；P0旧通过不替代本次回归。
 
 | 要求 | 场景/检查 | 主要任务 | 预期门槛 | 状态 |
 | --- | --- | --- | --- | --- |
-| VIS-01 | V01三页两弹窗/主题一致 | VISUAL | 瓷白/白/浅灰大面板，蓝紫只作小面积细节；token一致，层级/留白/状态清晰；普通文字4.5:1，大字3:1 | not_run |
-| VIS-02 | A01四模板封面/成功图/来源 | ASSET | 本地可用，裁切不伤主体，正确MIME，许可/哈希/尺寸/预算可追踪 | not_run |
-| MOTION-01 | M01–M10逐项操作 | MOTION | 分类/hover/focus/press/上传/新卡/阶段/弹窗均有反馈；快速连续操作无残留 | not_run |
-| MOTION-02 | V02装饰/运行/加载 | MOTION | 蓝紫氛围不挡交互，真实状态驱动，不假百分比 | not_run |
-| VIS-01、CREATIVE-01 | T01前端文案巡检 | VISUAL、CREATIVE、REVIEW | 全部页面/弹窗/悬停态无特效名、技术说明或体验引导；画廊按作品内容命名；必要操作/状态/无障碍文案完整 | not_run |
-| UX-01 | U01桌面1280/1440及375 | VISUAL、ACCEPT | 无横向溢出，触控/Tab/预览Esc/焦点返回、长错误可读 | not_run |
-| QUALITY-01 | U02系统reduce/手动静态/实时切换 | MOTION、ACCEPT | 装饰停止，大幅运动消失；重要状态仍即时可读，偏好刷新保留 | not_run |
-| QUALITY-01 | P01包体与加载 | BASE、ACCEPT | 同条件前后比较，新增路由JS gzip目标≤35KiB；全部延后创意JS新增体积目标≤120KiB（含Motion/OGL/适配）；首视口公开图含Orbit/poster目标≤800KiB | not_run |
-| QUALITY-01 | P03 Worker能力检测/默认软件降级 | CREATIVE、ACCEPT | probe不阻塞主线程，软件/异常/超时静态GPU；正常能力与软件功能fixture明确区分，资源释放和七功能均有独立证据 | not_run |
-| QUALITY-01 | P02流畅度/布局稳定 | ACCEPT | 无可见卡顿，交互动画不产生>50ms归因长任务；CLS目标≤0.1；记录实际trace | not_run |
-| REG-01 | R01原16前端测试+新增动效用例 | VISUAL、MOTION | 原行为全部通过；卸载/身份/401/提交锁/版本保护不退化 | not_run |
-| REG-01 | R02原12Java+8API | ASSET、ACCEPT | 顺序/失败/归属等通过；新资源key/MIME可预览 | not_run |
-| REG-01 | R03旧结果/迁移回滚 | ASSET、ACCEPT | 新旧数据均可读；旧结果升级前后SHA一致，V1/V2不变；成套快照恢复含Flyway历史，P0→P1→回滚P0→再次P1可重做 | not_run |
-| CREATIVE-01 | RB01–RB07七项真实操作 | CREATIVE、REVIEW | 正常桌面逐项触发并录制；不是上游demo/全关效果；在浅色实页自然融合，无黑底Canvas块/过曝，目的明确 | not_run |
-| CREATIVE-01、QUALITY-01 | C01资源互斥/切换/恢复 | CREATIVE、ACCEPT | 同视口≤2活跃系统、≤1已分配存活WebGL；Electric接管前释放旧context，离屏/后台/静态/卸载清理 | not_run |
-| REVIEW-01 | G01独立创意/美学 | REVIEW | 构图层级、创意贴合、浅色与蓝紫比例、节奏、克制留白各≥4/5，独立签署 | not_run |
-| REVIEW-01 | G02独立使用舒适度 | ACCEPT | 下方全部舒适项通过，独立签署；无开放blocking/major | not_run |
-| DEL-01 | D01干净Compose/CI/README/报告 | DELIVERY | 真实CI通过，应用/来源/使用/预算/限制/回滚/验收SHA完整 | not_run |
+| VIS-01 | V01三页两弹窗/主题一致 | VISUAL | 瓷白/白/浅灰大面板，蓝紫只作小面积细节；token一致，层级/留白/状态清晰；普通文字4.5:1，大字3:1 | passed |
+| VIS-02 | A01四模板封面/成功图/来源 | ASSET | 本地可用，裁切不伤主体，正确MIME，许可/哈希/尺寸/预算可追踪 | passed |
+| MOTION-01 | M01–M10逐项操作 | MOTION | 分类/hover/focus/press/上传/新卡/阶段/弹窗均有反馈；快速连续操作无残留 | passed |
+| MOTION-02 | V02装饰/运行/加载 | MOTION | 蓝紫氛围不挡交互，真实状态驱动，不假百分比 | passed |
+| VIS-01、CREATIVE-01 | T01前端文案巡检 | VISUAL、CREATIVE、REVIEW | 全部页面/弹窗/悬停态无特效名、技术说明或体验引导；画廊按作品内容命名；必要操作/状态/无障碍文案完整 | passed |
+| UX-01 | U01桌面1280/1440及375 | VISUAL、ACCEPT | 无横向溢出，触控/Tab/预览Esc/焦点返回、长错误可读 | passed |
+| QUALITY-01 | U02系统reduce/手动静态/实时切换 | MOTION、ACCEPT | 装饰停止，大幅运动消失；重要状态仍即时可读，偏好刷新保留 | passed |
+| QUALITY-01 | P01包体与加载 | BASE、ACCEPT | 同条件前后比较，新增路由JS gzip目标≤35KiB；全部延后创意JS新增体积目标≤120KiB（含Motion/OGL/适配）；首视口公开图含Orbit/poster目标≤800KiB | passed |
+| QUALITY-01 | P03 Worker能力检测/默认软件降级 | CREATIVE、ACCEPT | probe不阻塞主线程，软件/异常/超时静态GPU；正常能力与软件功能fixture明确区分，资源释放和七功能均有独立证据 | passed |
+| QUALITY-01 | P02流畅度/布局稳定 | ACCEPT | 无可见卡顿，交互动画不产生>50ms归因长任务；CLS目标≤0.1；记录实际trace | passed |
+| REG-01 | R01原16前端测试+新增动效用例 | VISUAL、MOTION | 原行为全部通过；卸载/身份/401/提交锁/版本保护不退化 | passed |
+| REG-01 | R02原12Java+8API | ASSET、ACCEPT | 顺序/失败/归属等通过；新资源key/MIME可预览 | passed |
+| REG-01 | R03旧结果/迁移回滚 | ASSET、ACCEPT | 新旧数据均可读；旧结果升级前后SHA一致，V1/V2不变；成套快照恢复含Flyway历史，P0→P1→回滚P0→再次P1可重做 | passed |
+| CREATIVE-01 | RB01–RB07七项真实操作 | CREATIVE、REVIEW | 正常桌面逐项触发并录制；不是上游demo/全关效果；在浅色实页自然融合，无黑底Canvas块/过曝，目的明确 | passed |
+| CREATIVE-01、QUALITY-01 | C01资源互斥/切换/恢复 | CREATIVE、ACCEPT | 同视口≤2活跃系统、≤1已分配存活WebGL；Electric接管前释放旧context，离屏/后台/静态/卸载清理 | passed |
+| REVIEW-01 | G01独立创意/美学 | REVIEW | 构图层级、创意贴合、浅色与蓝紫比例、节奏、克制留白各≥4/5，独立签署 | passed |
+| REVIEW-01 | G02独立使用舒适度 | ACCEPT | 下方全部舒适项通过，独立签署；无开放blocking/major | passed |
+| DEL-01 | D01干净Compose/CI/README/报告 | DELIVERY | 真实CI通过，应用/来源/使用/预算/限制/回滚/验收SHA完整 | passed |
 
 ## 性能取证
 
@@ -47,7 +47,7 @@ P0没有可比的性能/包体测量，P1-BASE必须在07300db代码/同一浏�
 | RB06 Pixel Trail | 宠物作品面板移动，上限24粒子 | 尾迹≤450ms、离开释放、不拦截滚动 |
 | RB07 Electric Border | 指定CTA hover/focus，≤600ms且冷却≥2s | 提交中停；原focus仍清晰；Glow上下文先释放再接管，结束后反序恢复 |
 
-所有数字为项目待验证的起始规格，不能冒充上游原生支持或本轮实测。改阈值需记录实际测量/原因/规格修订，并重新审核双门槛。
+上述数值是项目起始契约；实际操作/取证时间与测量条件见独立原值，不将目标offset或源码阈值等同于实测延迟。改阈值需记录实际测量/原因/规格修订，并重新审核双门槛。
 
 ## 双门槛签署清单
 
@@ -58,3 +58,16 @@ P0没有可比的性能/包体测量，P1-BASE必须在07300db代码/同一浏�
 先记录有创意的正常模式，再测静态/降级，两者都要通过。Leader复核两份独立签署、处置并复验所有blocking/major；准备文件的只读审阅不构成产品G01/G02通过。
 
 默认能力策略下检查实际交互长任务与舒适度；软件强制功能fixture的已知慢driver不用于宣称舒适通过。真实硬件性能无实测则标未验证，不能用worker模拟消息冒充实际硬件。后台document事件fixture与真实OS标签隐藏也分别标注。
+
+## 实际证据索引
+
+- [集成回归](evidence/integration/final-checks.json)：31前端、15Java/MySQL、8API及生产构建/启动。
+- [G01独立美学](reviews/implementation-review.md)：五维各4/5，REV-01～05关闭。
+- [G02独立舒适](evidence/acceptance/COMFORT-SIGNOFF.md)：默认22/0、最终功能32/0、1280/1440/375、真实coarse触屏、原生后台、图形异常与完整业务。
+- [合法Electric五帧](evidence/acceptance/final-716518-functional-verified/electric-compositor-sequence.json)：保留无效attempt；不是同一次激活连续录像。常规CI的RGBA功能证据与专用精确截图模式分开。
+- [同环境P0](evidence/baseline/gpu-supported/measurement.json)、[P1三轮](evidence/acceptance/final-a2505ec-startup/measurement.json)、[默认无截图交互](evidence/acceptance/final-a2505ec-default-performance/interaction-performance.json)、[延后脚本](evidence/acceptance/final-a2505ec-functional/lazy-scripts.json)。
+- [真实原生后台](evidence/acceptance/final-a2505ec-native/native-visibility.json)、[真实coarse触屏](evidence/acceptance/final-a2505ec-touch/touch.json)：浏览器实际值，不根据配置推断；物理Windows最小化另记未验证。
+- [素材与匹配回滚](evidence/assets/UPGRADE-VERIFICATION.md)、[旧27文件字节核对](evidence/integration/historical-file-byte-check.txt)。
+- [失败与有界修正](evidence/acceptance/repair-ledger.json)、[最终交付报告](REPORT.md)：CI精确commit/链接由Leader记录。
+
+最终闭环：[Leader处置](reviews/leader-disposition.md)、[新资产集成](evidence/integration/cover-optimized-checks.json)、[CI预算原值](evidence/integration/ci3-measurement.json)。原716518合法Electric五帧/1280按执行代码未变边界引用，其他新source复验见FINAL-a2505ec.json。

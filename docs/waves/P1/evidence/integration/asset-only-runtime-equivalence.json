@@ -1,0 +1,19 @@
+{
+  "previousAppSource": "716518e6087fbb0ec17abf55b4b68f00cd327a84",
+  "newAppSource": "a2505ecdedf04ad432476d5bdfb1eda02e0fe926",
+  "checkedAt": "2026-10-30T01:39:58.6805615+08:00",
+  "runtimeChanges": [
+    "backend/src/main/resources/demo/pet-p1-cover.jpg",
+    "backend/src/main/resources/demo/portrait-p1-cover.jpg",
+    "backend/src/main/resources/demo/postcard-p1-cover.jpg",
+    "backend/src/main/resources/demo/story-p1-cover.jpg"
+  ],
+  "frontendJavaAndSQLExecutableDifferences": [],
+  "unchangedRegressionEvidence": "31 frontend tests at716518 apply to identical executable code; new CI repeats them; new15 Java+8API explicitly reexecuted",
+  "encoding": "same480x640/crop/source; q82 progressive4:2:0",
+  "resultAndLegacyPngs": "unchanged; asset13-file hash evidence",
+  "toolChanges": [
+    "backend/scripts/prepare_p1_assets.py"
+  ],
+  "source": "git diff and cover-budget-optimization.json"
+}

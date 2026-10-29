@@ -1,0 +1,237 @@
+{
+  "testedCommit": "716518e6087fbb0ec17abf55b4b68f00cd327a84",
+  "capturedAt": "2026-10-29T17:09:51.795Z",
+  "browser": "Chrome/149.0.7827.53",
+  "environment": "Headed Chromium in container Xvfb; raw CDP, no Playwright focus emulation; same-window native tabs activated by Target.activateTarget; no visibility override or dispatched event",
+  "results": [
+    {
+      "mode": "default-policy",
+      "windows": {
+        "app": {
+          "windowId": 1145561517,
+          "bounds": {
+            "left": 20,
+            "top": 20,
+            "width": 1050,
+            "height": 980,
+            "windowState": "normal"
+          }
+        },
+        "control": {
+          "windowId": 1145561517,
+          "bounds": {
+            "left": 20,
+            "top": 20,
+            "width": 1050,
+            "height": 980,
+            "windowState": "normal"
+          }
+        }
+      },
+      "before": {
+        "visibility": "visible",
+        "hidden": false,
+        "orbit": 1,
+        "mainGPU": 0,
+        "events": [],
+        "preflight": [
+          {
+            "actual": {
+              "kind": "yingzuo-gpu-capability",
+              "allowed": false,
+              "released": true,
+              "reason": "software-renderer",
+              "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+              "probeMs": 1042,
+              "releaseMs": 82.30000000074506
+            },
+            "fixtureApplied": false
+          }
+        ],
+        "rafPending": 1,
+        "rafExecuted": 7
+      },
+      "hidden": {
+        "visibility": "hidden",
+        "hidden": true,
+        "orbit": 0,
+        "mainGPU": 0,
+        "events": [
+          {
+            "state": "hidden",
+            "hidden": true,
+            "trusted": true,
+            "at": 1430.3999999985099
+          }
+        ],
+        "preflight": [
+          {
+            "actual": {
+              "kind": "yingzuo-gpu-capability",
+              "allowed": false,
+              "released": true,
+              "reason": "software-renderer",
+              "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+              "probeMs": 1042,
+              "releaseMs": 82.30000000074506
+            },
+            "fixtureApplied": false
+          }
+        ],
+        "rafPending": 0,
+        "rafExecuted": 7
+      },
+      "restored": {
+        "visibility": "visible",
+        "hidden": false,
+        "orbit": 1,
+        "mainGPU": 0,
+        "events": [
+          {
+            "state": "hidden",
+            "hidden": true,
+            "trusted": true,
+            "at": 1430.3999999985099
+          },
+          {
+            "state": "visible",
+            "hidden": false,
+            "trusted": true,
+            "at": 1451.699999999255
+          }
+        ],
+        "preflight": [
+          {
+            "actual": {
+              "kind": "yingzuo-gpu-capability",
+              "allowed": false,
+              "released": true,
+              "reason": "software-renderer",
+              "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+              "probeMs": 1042,
+              "releaseMs": 82.30000000074506
+            },
+            "fixtureApplied": false
+          }
+        ],
+        "rafPending": 1,
+        "rafExecuted": 7
+      }
+    },
+    {
+      "mode": "actual-software-driver_simulated-preflight_functional-only",
+      "windows": {
+        "app": {
+          "windowId": 1145561520,
+          "bounds": {
+            "left": 20,
+            "top": 20,
+            "width": 1050,
+            "height": 980,
+            "windowState": "normal"
+          }
+        },
+        "control": {
+          "windowId": 1145561520,
+          "bounds": {
+            "left": 20,
+            "top": 20,
+            "width": 1050,
+            "height": 980,
+            "windowState": "normal"
+          }
+        }
+      },
+      "before": {
+        "visibility": "visible",
+        "hidden": false,
+        "orbit": 1,
+        "mainGPU": 1,
+        "events": [],
+        "preflight": [
+          {
+            "actual": {
+              "kind": "yingzuo-gpu-capability",
+              "allowed": false,
+              "released": true,
+              "reason": "software-renderer",
+              "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+              "probeMs": 444,
+              "releaseMs": 28.199999999254942
+            },
+            "fixtureApplied": true
+          }
+        ],
+        "rafPending": 3,
+        "rafExecuted": 50
+      },
+      "hidden": {
+        "visibility": "hidden",
+        "hidden": true,
+        "orbit": 0,
+        "mainGPU": 0,
+        "events": [
+          {
+            "state": "hidden",
+            "hidden": true,
+            "trusted": true,
+            "at": 1439.300000000745
+          }
+        ],
+        "preflight": [
+          {
+            "actual": {
+              "kind": "yingzuo-gpu-capability",
+              "allowed": false,
+              "released": true,
+              "reason": "software-renderer",
+              "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+              "probeMs": 444,
+              "releaseMs": 28.199999999254942
+            },
+            "fixtureApplied": true
+          }
+        ],
+        "rafPending": 0,
+        "rafExecuted": 53
+      },
+      "restored": {
+        "visibility": "visible",
+        "hidden": false,
+        "orbit": 1,
+        "mainGPU": 1,
+        "events": [
+          {
+            "state": "hidden",
+            "hidden": true,
+            "trusted": true,
+            "at": 1439.300000000745
+          },
+          {
+            "state": "visible",
+            "hidden": false,
+            "trusted": true,
+            "at": 1947.0999999977648
+          }
+        ],
+        "preflight": [
+          {
+            "actual": {
+              "kind": "yingzuo-gpu-capability",
+              "allowed": false,
+              "released": true,
+              "reason": "software-renderer",
+              "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+              "probeMs": 444,
+              "releaseMs": 28.199999999254942
+            },
+            "fixtureApplied": true
+          }
+        ],
+        "rafPending": 3,
+        "rafExecuted": 55
+      }
+    }
+  ],
+  "limits": "Not physical Windows/IAB minimize or hardware GPU performance; allowed-message fixture preserves actual software renderer"
+}

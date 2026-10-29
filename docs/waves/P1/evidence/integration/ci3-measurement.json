@@ -1,0 +1,2797 @@
+{
+  "capturedAt": "2026-10-29T17:46:46.245Z",
+  "testedCommit": "a2505ecdedf04ad432476d5bdfb1eda02e0fe926",
+  "browser": "149.0.7827.53",
+  "conditions": {
+    "viewport": "1440x1000",
+    "dpr": 1,
+    "cache": "new context + Network.setCacheDisabled each run",
+    "network": "unthrottled localhost TCP relay to Docker host bridge",
+    "cpu": "unthrottled",
+    "requestedRenderer": "headless Chromium / ANGLE SwiftShader software WebGL",
+    "observedWebGL": {
+      "supported": true,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+    },
+    "observation": "8 seconds after networkidle; no pointer interaction",
+    "imageState": "server cache may be warm; client cache disabled",
+    "compression": "actual CDP/ResourceTiming encoded sizes plus script gzip(level9) normalization; not a bundle-estimator claim"
+  },
+  "median": {
+    "scriptNormalizedGzipBytes": 168190,
+    "imageEncodedBytes": 182616,
+    "cls": 0.00015174500265239198,
+    "longTaskCount": 4
+  },
+  "runs": [
+    {
+      "run": 1,
+      "metrics": {
+        "cls": 0.00017091848114390433,
+        "shifts": [
+          {
+            "value": 0.00017091848114390433,
+            "at": 879.7000000000116
+          }
+        ],
+        "longTasks": [
+          {
+            "at": 110.5,
+            "duration": 103,
+            "attribution": [
+              {
+                "type": "unknown",
+                "containerType": "window",
+                "containerSrc": ""
+              }
+            ]
+          },
+          {
+            "at": 250.20000000001164,
+            "duration": 110,
+            "attribution": [
+              {
+                "type": "unknown",
+                "containerType": "window",
+                "containerSrc": ""
+              }
+            ]
+          },
+          {
+            "at": 625.6000000000349,
+            "duration": 252,
+            "attribution": [
+              {
+                "type": "unknown",
+                "containerType": "window",
+                "containerSrc": ""
+              }
+            ]
+          },
+          {
+            "at": 882,
+            "duration": 168,
+            "attribution": [
+              {
+                "type": "unknown",
+                "containerType": "window",
+                "containerSrc": ""
+              }
+            ]
+          }
+        ],
+        "frameIntervals": [
+          116.6,
+          33.400000000000034,
+          183.29999999999995,
+          16.600000000000023,
+          16.69999999999999,
+          50.00000000000006,
+          16.699999999999932,
+          166.70000000000005,
+          299.9,
+          333.29999999999995,
+          83.29999999999995,
+          216.70000000000005,
+          216.70000000000005,
+          50,
+          50,
+          66.59999999999991,
+          33.30000000000018,
+          33.40000000000009,
+          33.29999999999973,
+          33.30000000000018,
+          33.40000000000009,
+          16.59999999999991,
+          50,
+          16.799999999999727,
+          33.20000000000027,
+          33.40000000000009,
+          33.29999999999973,
+          33.40000000000009,
+          33.30000000000018,
+          33.29999999999973,
+          33.40000000000009,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          16.699999999999818,
+          33.19999999999982,
+          33.40000000000009,
+          33.40000000000009,
+          33.30000000000018,
+          33.29999999999973,
+          33.30000000000018,
+          33.29999999999973,
+          33.40000000000009,
+          16.59999999999991,
+          33.40000000000009,
+          33.30000000000018,
+          33.40000000000009,
+          33.29999999999973,
+          33.30000000000018,
+          33.40000000000009,
+          33.29999999999973,
+          33.30000000000018,
+          16.699999999999818,
+          33.40000000000009,
+          33.19999999999982,
+          33.40000000000009,
+          33.30000000000018,
+          33.29999999999973,
+          33.30000000000018,
+          33.40000000000009,
+          33.29999999999973,
+          33.30000000000018,
+          16.800000000000182,
+          33.29999999999973,
+          33.30000000000018,
+          33.29999999999973,
+          33.30000000000018,
+          33.40000000000009,
+          33.29999999999973,
+          33.30000000000018,
+          16.699999999999818,
+          66.70000000000027,
+          50,
+          66.69999999999982,
+          49.90000000000009,
+          66.69999999999982,
+          66.69999999999982,
+          50,
+          33.400000000000546,
+          33.19999999999982,
+          33.399999999999636,
+          16.600000000000364,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.400000000000546,
+          33.29999999999927,
+          33.30000000000018,
+          16.699999999999818,
+          33.30000000000018,
+          33.400000000000546,
+          33.19999999999982,
+          33.399999999999636,
+          33.30000000000018,
+          33.399999999999636,
+          33.20000000000073,
+          33.399999999999636,
+          16.600000000000364,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.399999999999636,
+          33.20000000000073,
+          33.399999999999636,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          16.699999999999818,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          16.699999999999818,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.19999999999982,
+          33.400000000000546,
+          33.30000000000018,
+          16.699999999999818,
+          33.399999999999636,
+          33.19999999999982,
+          33.400000000000546,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          16.699999999999818,
+          49.900000000000546,
+          16.699999999999818,
+          33.399999999999636,
+          33.19999999999982,
+          33.400000000000546,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.29999999999927,
+          50,
+          33.400000000000546,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          16.600000000000364,
+          33.29999999999927,
+          33.400000000000546,
+          33.30000000000018,
+          33.399999999999636,
+          33.19999999999982,
+          33.400000000000546,
+          33.399999999999636,
+          16.600000000000364,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.29999999999927,
+          33.400000000000546,
+          33.30000000000018,
+          16.599999999999454,
+          33.400000000000546,
+          33.29999999999927,
+          33.400000000000546,
+          33.30000000000018,
+          33.29999999999927,
+          33.30000000000018,
+          16.699999999999818,
+          33.400000000000546,
+          49.899999999999636,
+          16.699999999999818,
+          33.30000000000018,
+          33.30000000000018,
+          33.5,
+          33.19999999999982,
+          33.400000000000546,
+          33.29999999999927,
+          33.30000000000018,
+          16.699999999999818,
+          33.30000000000018,
+          33.400000000000546,
+          33.29999999999927,
+          33.400000000000546,
+          33.30000000000018,
+          33.29999999999927,
+          33.30000000000018,
+          16.699999999999818,
+          33.400000000000546,
+          33.30000000000018,
+          33.29999999999927,
+          33.30000000000018,
+          33.400000000000546,
+          33.29999999999927,
+          33.30000000000109,
+          33.399999999999636,
+          16.600000000000364,
+          33.399999999999636,
+          33.29999999999927,
+          33.30000000000109,
+          33.399999999999636,
+          33.29999999999927,
+          33.30000000000109,
+          16.599999999998545,
+          33.400000000001455,
+          33.399999999999636,
+          33.19999999999891,
+          33.400000000001455,
+          33.29999999999927,
+          33.399999999999636,
+          33.30000000000109,
+          16.69999999999891,
+          33.30000000000109,
+          33.29999999999927,
+          33.399999999999636,
+          33.30000000000109,
+          33.29999999999927,
+          33.399999999999636,
+          33.30000000000109,
+          50,
+          33.399999999999636,
+          33.19999999999891,
+          33.30000000000109,
+          33.399999999999636,
+          33.29999999999927,
+          33.400000000001455,
+          33.29999999999927,
+          33.399999999999636,
+          33.30000000000109,
+          33.29999999999927,
+          33.29999999999927,
+          16.700000000000728,
+          33.29999999999927,
+          33.30000000000109,
+          33.399999999999636,
+          33.29999999999927,
+          33.400000000001455,
+          33.29999999999927,
+          33.29999999999927,
+          16.700000000000728,
+          33.29999999999927,
+          33.30000000000109,
+          33.399999999999636,
+          33.29999999999927,
+          33.400000000001455
+        ],
+        "resources": [
+          {
+            "path": "/_next/static/chunks/3_l18w-7bpg38.css",
+            "initiator": "link",
+            "encodedBodySize": 5292,
+            "decodedBodySize": 21068,
+            "transferSize": 5592
+          },
+          {
+            "path": "/_next/static/chunks/1x6obpmlu1_c2.js",
+            "initiator": "link",
+            "encodedBodySize": 1975,
+            "decodedBodySize": 5361,
+            "transferSize": 2275
+          },
+          {
+            "path": "/_next/static/chunks/2r4s4h5xul1n-.js",
+            "initiator": "script",
+            "encodedBodySize": 7624,
+            "decodedBodySize": 28739,
+            "transferSize": 7924
+          },
+          {
+            "path": "/_next/static/chunks/3wbm-994r45kr.js",
+            "initiator": "script",
+            "encodedBodySize": 71969,
+            "decodedBodySize": 229820,
+            "transferSize": 72269
+          },
+          {
+            "path": "/_next/static/chunks/1yad__y_yrnyg.js",
+            "initiator": "script",
+            "encodedBodySize": 46366,
+            "decodedBodySize": 168347,
+            "transferSize": 46666
+          },
+          {
+            "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+            "initiator": "script",
+            "encodedBodySize": 3940,
+            "decodedBodySize": 10030,
+            "transferSize": 4240
+          },
+          {
+            "path": "/_next/static/chunks/0umf92h1sb77c.js",
+            "initiator": "script",
+            "encodedBodySize": 3514,
+            "decodedBodySize": 13822,
+            "transferSize": 3814
+          },
+          {
+            "path": "/_next/static/chunks/3tlm476wmcof-.js",
+            "initiator": "script",
+            "encodedBodySize": 9101,
+            "decodedBodySize": 29339,
+            "transferSize": 9401
+          },
+          {
+            "path": "/_next/static/chunks/1ojf9aq0snvdd.js",
+            "initiator": "script",
+            "encodedBodySize": 5542,
+            "decodedBodySize": 14043,
+            "transferSize": 5842
+          },
+          {
+            "path": "/_next/static/chunks/1rwfzy70nyqjw.js",
+            "initiator": "script",
+            "encodedBodySize": 7382,
+            "decodedBodySize": 18646,
+            "transferSize": 7682
+          },
+          {
+            "path": "/icon.svg",
+            "initiator": "other",
+            "encodedBodySize": 264,
+            "decodedBodySize": 264,
+            "transferSize": 564
+          },
+          {
+            "path": "/api/categories",
+            "initiator": "fetch",
+            "encodedBodySize": 108,
+            "decodedBodySize": 108,
+            "transferSize": 408
+          },
+          {
+            "path": "/api/templates",
+            "initiator": "fetch",
+            "encodedBodySize": 1277,
+            "decodedBodySize": 1277,
+            "transferSize": 1577
+          },
+          {
+            "path": "/api/session",
+            "initiator": "fetch",
+            "encodedBodySize": 127,
+            "decodedBodySize": 127,
+            "transferSize": 427
+          },
+          {
+            "path": "/",
+            "initiator": "fetch",
+            "encodedBodySize": 164,
+            "decodedBodySize": 164,
+            "transferSize": 464
+          },
+          {
+            "path": "/history",
+            "initiator": "fetch",
+            "encodedBodySize": 183,
+            "decodedBodySize": 214,
+            "transferSize": 483
+          },
+          {
+            "path": "/_next/static/chunks/0t_e7ro7a4tgv.css",
+            "initiator": "link",
+            "encodedBodySize": 608,
+            "decodedBodySize": 1483,
+            "transferSize": 908
+          },
+          {
+            "path": "/_next/static/chunks/0wn0r87ywrmd_.js",
+            "initiator": "script",
+            "encodedBodySize": 5784,
+            "decodedBodySize": 14033,
+            "transferSize": 6084
+          },
+          {
+            "path": "/history",
+            "initiator": "fetch",
+            "encodedBodySize": 1509,
+            "decodedBodySize": 3640,
+            "transferSize": 1809
+          },
+          {
+            "path": "/",
+            "initiator": "fetch",
+            "encodedBodySize": 1463,
+            "decodedBodySize": 3403,
+            "transferSize": 1763
+          },
+          {
+            "path": "/media/demo/postcard-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 46077,
+            "decodedBodySize": 46077,
+            "transferSize": 46377
+          },
+          {
+            "path": "/media/demo/pet-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 42971,
+            "decodedBodySize": 42971,
+            "transferSize": 43271
+          },
+          {
+            "path": "/media/demo/story-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 66128,
+            "decodedBodySize": 66128,
+            "transferSize": 66428
+          },
+          {
+            "path": "/media/demo/portrait-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 27440,
+            "decodedBodySize": 27440,
+            "transferSize": 27740
+          },
+          {
+            "path": "/_next/static/chunks/1uvk236_lk6j3.js",
+            "initiator": "script",
+            "encodedBodySize": 4534,
+            "decodedBodySize": 10941,
+            "transferSize": 4834
+          },
+          {
+            "path": "/templates/demo-postcard",
+            "initiator": "fetch",
+            "encodedBodySize": 213,
+            "decodedBodySize": 310,
+            "transferSize": 513
+          },
+          {
+            "path": "/templates/demo-pet",
+            "initiator": "fetch",
+            "encodedBodySize": 209,
+            "decodedBodySize": 305,
+            "transferSize": 509
+          },
+          {
+            "path": "/templates/demo-story",
+            "initiator": "fetch",
+            "encodedBodySize": 211,
+            "decodedBodySize": 307,
+            "transferSize": 511
+          },
+          {
+            "path": "/templates/demo-portrait",
+            "initiator": "fetch",
+            "encodedBodySize": 217,
+            "decodedBodySize": 310,
+            "transferSize": 517
+          },
+          {
+            "path": "/templates/demo-postcard",
+            "initiator": "fetch",
+            "encodedBodySize": 800,
+            "decodedBodySize": 1179,
+            "transferSize": 1100
+          },
+          {
+            "path": "/templates/demo-pet",
+            "initiator": "fetch",
+            "encodedBodySize": 799,
+            "decodedBodySize": 1174,
+            "transferSize": 1099
+          },
+          {
+            "path": "/templates/demo-story",
+            "initiator": "fetch",
+            "encodedBodySize": 798,
+            "decodedBodySize": 1176,
+            "transferSize": 1098
+          },
+          {
+            "path": "/templates/demo-portrait",
+            "initiator": "fetch",
+            "encodedBodySize": 798,
+            "decodedBodySize": 1179,
+            "transferSize": 1098
+          }
+        ],
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyBackground": "rgb(247, 248, 252)"
+      },
+      "scripts": [
+        {
+          "url": "/_next/static/chunks/1x6obpmlu1_c2.js",
+          "decodedBytes": 5361,
+          "normalizedGzipBytes": 1974
+        },
+        {
+          "url": "/_next/static/chunks/2r4s4h5xul1n-.js",
+          "decodedBytes": 28739,
+          "normalizedGzipBytes": 7618
+        },
+        {
+          "url": "/_next/static/chunks/0umf92h1sb77c.js",
+          "decodedBytes": 13822,
+          "normalizedGzipBytes": 3516
+        },
+        {
+          "url": "/_next/static/chunks/3tlm476wmcof-.js",
+          "decodedBytes": 29339,
+          "normalizedGzipBytes": 9086
+        },
+        {
+          "url": "/_next/static/chunks/1ojf9aq0snvdd.js",
+          "decodedBytes": 14043,
+          "normalizedGzipBytes": 5541
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "decodedBytes": 10030,
+          "normalizedGzipBytes": 3942
+        },
+        {
+          "url": "/_next/static/chunks/1yad__y_yrnyg.js",
+          "decodedBytes": 168347,
+          "normalizedGzipBytes": 46246
+        },
+        {
+          "url": "/_next/static/chunks/3wbm-994r45kr.js",
+          "decodedBytes": 229820,
+          "normalizedGzipBytes": 71809
+        },
+        {
+          "url": "/_next/static/chunks/1rwfzy70nyqjw.js",
+          "decodedBytes": 18646,
+          "normalizedGzipBytes": 7377
+        },
+        {
+          "url": "/_next/static/chunks/0wn0r87ywrmd_.js",
+          "decodedBytes": 14033,
+          "normalizedGzipBytes": 5784
+        },
+        {
+          "url": "/_next/static/chunks/1uvk236_lk6j3.js",
+          "decodedBytes": 10941,
+          "normalizedGzipBytes": 4532
+        },
+        {
+          "url": "blob:/da977672-958c-4bea-8d6e-c86ec1dc25e7",
+          "decodedBytes": 1522,
+          "normalizedGzipBytes": 765
+        }
+      ],
+      "network": [
+        {
+          "url": "/_next/static/chunks/1x6obpmlu1_c2.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 2371
+        },
+        {
+          "url": "/",
+          "type": "Document",
+          "status": 200,
+          "mime": "text/html",
+          "encoding": "gzip",
+          "encodedDataLength": 3450
+        },
+        {
+          "url": "/_next/static/chunks/3_l18w-7bpg38.css",
+          "type": "Stylesheet",
+          "status": 200,
+          "mime": "text/css",
+          "encoding": "gzip",
+          "encodedDataLength": 5675
+        },
+        {
+          "url": "/_next/static/chunks/2r4s4h5xul1n-.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 8021
+        },
+        {
+          "url": "/_next/static/chunks/0umf92h1sb77c.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 3910
+        },
+        {
+          "url": "/_next/static/chunks/3tlm476wmcof-.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 9498
+        },
+        {
+          "url": "/_next/static/chunks/1ojf9aq0snvdd.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 5939
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 4336
+        },
+        {
+          "url": "/_next/static/chunks/1yad__y_yrnyg.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 46788
+        },
+        {
+          "url": "/_next/static/chunks/3wbm-994r45kr.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 72416
+        },
+        {
+          "url": "/_next/static/chunks/1rwfzy70nyqjw.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 7779
+        },
+        {
+          "url": "/icon.svg",
+          "type": "Other",
+          "status": 200,
+          "mime": "image/svg+xml",
+          "encoding": null,
+          "encodedDataLength": 569
+        },
+        {
+          "url": "/_next/static/chunks/0t_e7ro7a4tgv.css",
+          "type": "Stylesheet",
+          "status": 200,
+          "mime": "text/css",
+          "encoding": "gzip",
+          "encodedDataLength": 989
+        },
+        {
+          "url": "/api/session",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "application/json",
+          "encoding": null,
+          "encodedDataLength": 660
+        },
+        {
+          "url": "/api/categories",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "application/json",
+          "encoding": null,
+          "encodedDataLength": 480
+        },
+        {
+          "url": "/api/templates",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "application/json",
+          "encoding": null,
+          "encodedDataLength": 1650
+        },
+        {
+          "url": "/history?_rsc=5CB68i4pnAekjehf",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 591
+        },
+        {
+          "url": "/?_rsc=5CB68i4pnAekjehf",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 572
+        },
+        {
+          "url": "/_next/static/chunks/0wn0r87ywrmd_.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 6181
+        },
+        {
+          "url": "/media/demo/postcard-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 46469
+        },
+        {
+          "url": "/history?_rsc=slXvbtRVQed3BeV4",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 1918
+        },
+        {
+          "url": "/media/demo/story-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 66512
+        },
+        {
+          "url": "/media/demo/pet-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 43348
+        },
+        {
+          "url": "/media/demo/portrait-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 27817
+        },
+        {
+          "url": "/?_rsc=8nTjltbQWvg6NcbE",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 1872
+        },
+        {
+          "url": "/_next/static/chunks/1uvk236_lk6j3.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 4931
+        },
+        {
+          "url": "/templates/demo-postcard?_rsc=5CB68i4pnAekjehf",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 592
+        },
+        {
+          "url": "/templates/demo-pet?_rsc=5CB68i4pnAekjehf",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 588
+        },
+        {
+          "url": "/templates/demo-postcard?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 1193
+        },
+        {
+          "url": "/templates/demo-pet?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 1192
+        },
+        {
+          "url": "/templates/demo-story?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 1191
+        },
+        {
+          "url": "/templates/demo-portrait?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 1191
+        }
+      ],
+      "errors": [],
+      "scriptNormalizedGzipBytes": 168190,
+      "imageEncodedBytes": 182616
+    },
+    {
+      "run": 2,
+      "metrics": {
+        "cls": 0.0001268705391589506,
+        "shifts": [
+          {
+            "value": 0.0001268705391589506,
+            "at": 793.4000000000233
+          }
+        ],
+        "longTasks": [
+          {
+            "at": 99.70000000001164,
+            "duration": 69,
+            "attribution": [
+              {
+                "type": "unknown",
+                "containerType": "window",
+                "containerSrc": ""
+              }
+            ]
+          },
+          {
+            "at": 186.40000000002328,
+            "duration": 82,
+            "attribution": [
+              {
+                "type": "unknown",
+                "containerType": "window",
+                "containerSrc": ""
+              }
+            ]
+          },
+          {
+            "at": 502.20000000001164,
+            "duration": 289,
+            "attribution": [
+              {
+                "type": "unknown",
+                "containerType": "window",
+                "containerSrc": ""
+              }
+            ]
+          }
+        ],
+        "frameIntervals": [
+          83.30000000000001,
+          50,
+          166.7,
+          16.600000000000023,
+          66.69999999999999,
+          16.599999999999966,
+          316.70000000000005,
+          50,
+          216.69999999999993,
+          50,
+          16.600000000000136,
+          133.39999999999986,
+          33.299999999999955,
+          16.700000000000045,
+          33.299999999999955,
+          33.30000000000018,
+          33.299999999999955,
+          33.399999999999864,
+          33.30000000000018,
+          33.399999999999864,
+          33.299999999999955,
+          33.30000000000018,
+          83.29999999999995,
+          33.399999999999864,
+          33.30000000000018,
+          33.299999999999955,
+          33.399999999999864,
+          16.600000000000136,
+          33.399999999999864,
+          33.30000000000018,
+          33.399999999999864,
+          33.299999999999955,
+          33.30000000000018,
+          33.299999999999955,
+          33.399999999999864,
+          33.30000000000018,
+          33.29999999999973,
+          33.30000000000018,
+          16.699999999999818,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.40000000000009,
+          33.29999999999973,
+          33.40000000000009,
+          33.30000000000018,
+          16.699999999999818,
+          33.30000000000018,
+          33.29999999999973,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          16.699999999999818,
+          33.40000000000009,
+          33.29999999999973,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          16.59999999999991,
+          33.40000000000009,
+          33.40000000000009,
+          33.19999999999982,
+          33.40000000000009,
+          33.30000000000018,
+          33.399999999999636,
+          16.600000000000364,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.29999999999973,
+          33.40000000000009,
+          66.59999999999991,
+          50.09999999999991,
+          50,
+          66.60000000000036,
+          83.29999999999973,
+          33.30000000000018,
+          33.40000000000009,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.29999999999973,
+          33.40000000000009,
+          33.30000000000018,
+          16.699999999999818,
+          33.30000000000018,
+          33.29999999999973,
+          33.30000000000018,
+          33.40000000000009,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          16.599999999999454,
+          33.400000000000546,
+          33.30000000000018,
+          33.29999999999927,
+          33.400000000000546,
+          33.30000000000018,
+          33.29999999999927,
+          33.400000000000546,
+          33.30000000000018,
+          16.699999999999818,
+          33.30000000000018,
+          33.29999999999927,
+          33.30000000000018,
+          33.400000000000546,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          16.699999999999818,
+          49.899999999999636,
+          16.800000000000182,
+          33.19999999999982,
+          33.400000000000546,
+          33.399999999999636,
+          33.19999999999982,
+          33.30000000000018,
+          33.399999999999636,
+          16.700000000000728,
+          33.29999999999927,
+          33.400000000000546,
+          33.30000000000018,
+          33.29999999999927,
+          33.400000000000546,
+          33.30000000000018,
+          33.29999999999927,
+          16.700000000000728,
+          33.29999999999927,
+          33.400000000000546,
+          33.30000000000018,
+          33.29999999999927,
+          33.400000000000546,
+          33.30000000000018,
+          33.29999999999927,
+          33.400000000000546,
+          16.599999999999454,
+          33.30000000000018,
+          33.400000000000546,
+          33.29999999999927,
+          33.30000000000018,
+          33.400000000000546,
+          33.29999999999927,
+          16.700000000000728,
+          33.29999999999927,
+          50,
+          50,
+          33.30000000000018,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          16.699999999999818,
+          33.30000000000018,
+          33.400000000000546,
+          33.19999999999982,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.400000000000546,
+          16.599999999999454,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.400000000000546,
+          33.19999999999982,
+          33.399999999999636,
+          16.699999999999818,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.20000000000073,
+          33.399999999999636,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.30000000000018,
+          16.699999999999818,
+          33.399999999999636,
+          33.20000000000073,
+          33.399999999999636,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.30000000000018,
+          33.30000000000018,
+          16.799999999999272,
+          33.20000000000073,
+          33.399999999999636,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.20000000000073,
+          33.399999999999636,
+          16.699999999999818,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          16.699999999999818,
+          33.19999999999982,
+          33.5,
+          33.20000000000073,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.29999999999927,
+          16.700000000000728,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          16.600000000000364,
+          33.399999999999636,
+          33.29999999999927,
+          33.400000000001455,
+          33.29999999999927,
+          33.29999999999927,
+          33.400000000001455,
+          33.29999999999927,
+          49.899999999999636,
+          50.100000000000364,
+          33.29999999999927,
+          33.30000000000109,
+          33.399999999999636,
+          16.600000000000364,
+          50,
+          16.69999999999891,
+          33.30000000000109,
+          33.399999999999636,
+          33.20000000000073,
+          33.399999999999636,
+          33.29999999999927,
+          33.399999999999636,
+          16.600000000000364,
+          33.399999999999636,
+          33.30000000000109,
+          33.29999999999927,
+          33.399999999999636,
+          33.30000000000109,
+          33.29999999999927,
+          16.700000000000728,
+          50,
+          50,
+          33.29999999999927,
+          33.399999999999636,
+          33.30000000000109,
+          33.29999999999927,
+          33.399999999999636,
+          33.30000000000109,
+          33.29999999999927,
+          33.399999999999636,
+          16.600000000000364,
+          33.30000000000109,
+          33.399999999999636
+        ],
+        "resources": [
+          {
+            "path": "/_next/static/chunks/3_l18w-7bpg38.css",
+            "initiator": "link",
+            "encodedBodySize": 5292,
+            "decodedBodySize": 21068,
+            "transferSize": 5592
+          },
+          {
+            "path": "/_next/static/chunks/1x6obpmlu1_c2.js",
+            "initiator": "link",
+            "encodedBodySize": 1975,
+            "decodedBodySize": 5361,
+            "transferSize": 2275
+          },
+          {
+            "path": "/_next/static/chunks/2r4s4h5xul1n-.js",
+            "initiator": "script",
+            "encodedBodySize": 7624,
+            "decodedBodySize": 28739,
+            "transferSize": 7924
+          },
+          {
+            "path": "/_next/static/chunks/3wbm-994r45kr.js",
+            "initiator": "script",
+            "encodedBodySize": 71969,
+            "decodedBodySize": 229820,
+            "transferSize": 72269
+          },
+          {
+            "path": "/_next/static/chunks/1yad__y_yrnyg.js",
+            "initiator": "script",
+            "encodedBodySize": 46366,
+            "decodedBodySize": 168347,
+            "transferSize": 46666
+          },
+          {
+            "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+            "initiator": "script",
+            "encodedBodySize": 3940,
+            "decodedBodySize": 10030,
+            "transferSize": 4240
+          },
+          {
+            "path": "/_next/static/chunks/0umf92h1sb77c.js",
+            "initiator": "script",
+            "encodedBodySize": 3514,
+            "decodedBodySize": 13822,
+            "transferSize": 3814
+          },
+          {
+            "path": "/_next/static/chunks/3tlm476wmcof-.js",
+            "initiator": "script",
+            "encodedBodySize": 9101,
+            "decodedBodySize": 29339,
+            "transferSize": 9401
+          },
+          {
+            "path": "/_next/static/chunks/1ojf9aq0snvdd.js",
+            "initiator": "script",
+            "encodedBodySize": 5542,
+            "decodedBodySize": 14043,
+            "transferSize": 5842
+          },
+          {
+            "path": "/_next/static/chunks/1rwfzy70nyqjw.js",
+            "initiator": "script",
+            "encodedBodySize": 7382,
+            "decodedBodySize": 18646,
+            "transferSize": 7682
+          },
+          {
+            "path": "/icon.svg",
+            "initiator": "other",
+            "encodedBodySize": 264,
+            "decodedBodySize": 264,
+            "transferSize": 564
+          },
+          {
+            "path": "/api/categories",
+            "initiator": "fetch",
+            "encodedBodySize": 108,
+            "decodedBodySize": 108,
+            "transferSize": 408
+          },
+          {
+            "path": "/api/templates",
+            "initiator": "fetch",
+            "encodedBodySize": 1277,
+            "decodedBodySize": 1277,
+            "transferSize": 1577
+          },
+          {
+            "path": "/api/session",
+            "initiator": "fetch",
+            "encodedBodySize": 127,
+            "decodedBodySize": 127,
+            "transferSize": 427
+          },
+          {
+            "path": "/",
+            "initiator": "fetch",
+            "encodedBodySize": 164,
+            "decodedBodySize": 164,
+            "transferSize": 464
+          },
+          {
+            "path": "/history",
+            "initiator": "fetch",
+            "encodedBodySize": 183,
+            "decodedBodySize": 214,
+            "transferSize": 483
+          },
+          {
+            "path": "/_next/static/chunks/0t_e7ro7a4tgv.css",
+            "initiator": "link",
+            "encodedBodySize": 608,
+            "decodedBodySize": 1483,
+            "transferSize": 908
+          },
+          {
+            "path": "/_next/static/chunks/0wn0r87ywrmd_.js",
+            "initiator": "script",
+            "encodedBodySize": 5784,
+            "decodedBodySize": 14033,
+            "transferSize": 6084
+          },
+          {
+            "path": "/",
+            "initiator": "fetch",
+            "encodedBodySize": 1463,
+            "decodedBodySize": 3403,
+            "transferSize": 1763
+          },
+          {
+            "path": "/media/demo/postcard-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 46077,
+            "decodedBodySize": 46077,
+            "transferSize": 46377
+          },
+          {
+            "path": "/media/demo/pet-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 42971,
+            "decodedBodySize": 42971,
+            "transferSize": 43271
+          },
+          {
+            "path": "/media/demo/story-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 66128,
+            "decodedBodySize": 66128,
+            "transferSize": 66428
+          },
+          {
+            "path": "/media/demo/portrait-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 27440,
+            "decodedBodySize": 27440,
+            "transferSize": 27740
+          },
+          {
+            "path": "/history",
+            "initiator": "fetch",
+            "encodedBodySize": 1509,
+            "decodedBodySize": 3640,
+            "transferSize": 1809
+          },
+          {
+            "path": "/templates/demo-postcard",
+            "initiator": "fetch",
+            "encodedBodySize": 213,
+            "decodedBodySize": 310,
+            "transferSize": 513
+          },
+          {
+            "path": "/templates/demo-pet",
+            "initiator": "fetch",
+            "encodedBodySize": 209,
+            "decodedBodySize": 305,
+            "transferSize": 509
+          },
+          {
+            "path": "/templates/demo-story",
+            "initiator": "fetch",
+            "encodedBodySize": 211,
+            "decodedBodySize": 307,
+            "transferSize": 511
+          },
+          {
+            "path": "/_next/static/chunks/1uvk236_lk6j3.js",
+            "initiator": "script",
+            "encodedBodySize": 4534,
+            "decodedBodySize": 10941,
+            "transferSize": 4834
+          },
+          {
+            "path": "/templates/demo-portrait",
+            "initiator": "fetch",
+            "encodedBodySize": 217,
+            "decodedBodySize": 310,
+            "transferSize": 517
+          },
+          {
+            "path": "/templates/demo-postcard",
+            "initiator": "fetch",
+            "encodedBodySize": 801,
+            "decodedBodySize": 1179,
+            "transferSize": 1101
+          },
+          {
+            "path": "/templates/demo-pet",
+            "initiator": "fetch",
+            "encodedBodySize": 797,
+            "decodedBodySize": 1174,
+            "transferSize": 1097
+          },
+          {
+            "path": "/templates/demo-story",
+            "initiator": "fetch",
+            "encodedBodySize": 799,
+            "decodedBodySize": 1176,
+            "transferSize": 1099
+          },
+          {
+            "path": "/templates/demo-portrait",
+            "initiator": "fetch",
+            "encodedBodySize": 798,
+            "decodedBodySize": 1179,
+            "transferSize": 1098
+          }
+        ],
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyBackground": "rgb(247, 248, 252)"
+      },
+      "scripts": [
+        {
+          "url": "/_next/static/chunks/1x6obpmlu1_c2.js",
+          "decodedBytes": 5361,
+          "normalizedGzipBytes": 1974
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "decodedBytes": 10030,
+          "normalizedGzipBytes": 3942
+        },
+        {
+          "url": "/_next/static/chunks/0umf92h1sb77c.js",
+          "decodedBytes": 13822,
+          "normalizedGzipBytes": 3516
+        },
+        {
+          "url": "/_next/static/chunks/2r4s4h5xul1n-.js",
+          "decodedBytes": 28739,
+          "normalizedGzipBytes": 7618
+        },
+        {
+          "url": "/_next/static/chunks/1yad__y_yrnyg.js",
+          "decodedBytes": 168347,
+          "normalizedGzipBytes": 46246
+        },
+        {
+          "url": "/_next/static/chunks/1ojf9aq0snvdd.js",
+          "decodedBytes": 14043,
+          "normalizedGzipBytes": 5541
+        },
+        {
+          "url": "/_next/static/chunks/3tlm476wmcof-.js",
+          "decodedBytes": 29339,
+          "normalizedGzipBytes": 9086
+        },
+        {
+          "url": "/_next/static/chunks/1rwfzy70nyqjw.js",
+          "decodedBytes": 18646,
+          "normalizedGzipBytes": 7377
+        },
+        {
+          "url": "/_next/static/chunks/3wbm-994r45kr.js",
+          "decodedBytes": 229820,
+          "normalizedGzipBytes": 71809
+        },
+        {
+          "url": "/_next/static/chunks/0wn0r87ywrmd_.js",
+          "decodedBytes": 14033,
+          "normalizedGzipBytes": 5784
+        },
+        {
+          "url": "blob:/e98ad039-a881-47de-9e31-3632f3607ce3",
+          "decodedBytes": 1522,
+          "normalizedGzipBytes": 765
+        },
+        {
+          "url": "/_next/static/chunks/1uvk236_lk6j3.js",
+          "decodedBytes": 10941,
+          "normalizedGzipBytes": 4532
+        }
+      ],
+      "network": [
+        {
+          "url": "/",
+          "type": "Document",
+          "status": 200,
+          "mime": "text/html",
+          "encoding": "gzip",
+          "encodedDataLength": 3450
+        },
+        {
+          "url": "/_next/static/chunks/1x6obpmlu1_c2.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 2371
+        },
+        {
+          "url": "/_next/static/chunks/3_l18w-7bpg38.css",
+          "type": "Stylesheet",
+          "status": 200,
+          "mime": "text/css",
+          "encoding": "gzip",
+          "encodedDataLength": 5675
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 4336
+        },
+        {
+          "url": "/_next/static/chunks/0umf92h1sb77c.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 3910
+        },
+        {
+          "url": "/_next/static/chunks/2r4s4h5xul1n-.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 8021
+        },
+        {
+          "url": "/_next/static/chunks/1yad__y_yrnyg.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 46788
+        },
+        {
+          "url": "/_next/static/chunks/1ojf9aq0snvdd.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 5939
+        },
+        {
+          "url": "/_next/static/chunks/3tlm476wmcof-.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 9498
+        },
+        {
+          "url": "/_next/static/chunks/1rwfzy70nyqjw.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 7779
+        },
+        {
+          "url": "/_next/static/chunks/3wbm-994r45kr.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 72416
+        },
+        {
+          "url": "/icon.svg",
+          "type": "Other",
+          "status": 200,
+          "mime": "image/svg+xml",
+          "encoding": null,
+          "encodedDataLength": 569
+        },
+        {
+          "url": "/api/categories",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "application/json",
+          "encoding": null,
+          "encodedDataLength": 480
+        },
+        {
+          "url": "/_next/static/chunks/0t_e7ro7a4tgv.css",
+          "type": "Stylesheet",
+          "status": 200,
+          "mime": "text/css",
+          "encoding": "gzip",
+          "encodedDataLength": 989
+        },
+        {
+          "url": "/api/templates",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "application/json",
+          "encoding": null,
+          "encodedDataLength": 1650
+        },
+        {
+          "url": "/api/session",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "application/json",
+          "encoding": null,
+          "encodedDataLength": 660
+        },
+        {
+          "url": "/_next/static/chunks/0wn0r87ywrmd_.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 6181
+        },
+        {
+          "url": "/?_rsc=5CB68i4pnAekjehf",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 572
+        },
+        {
+          "url": "/history?_rsc=5CB68i4pnAekjehf",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 591
+        },
+        {
+          "url": "/?_rsc=8nTjltbQWvg6NcbE",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 1872
+        },
+        {
+          "url": "/media/demo/story-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 66512
+        },
+        {
+          "url": "/media/demo/pet-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 43348
+        },
+        {
+          "url": "/media/demo/postcard-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 46469
+        },
+        {
+          "url": "/history?_rsc=slXvbtRVQed3BeV4",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 1918
+        },
+        {
+          "url": "/media/demo/portrait-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 27817
+        },
+        {
+          "url": "/templates/demo-story?_rsc=5CB68i4pnAekjehf",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 590
+        },
+        {
+          "url": "/_next/static/chunks/1uvk236_lk6j3.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 4931
+        },
+        {
+          "url": "/templates/demo-portrait?_rsc=5CB68i4pnAekjehf",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 596
+        },
+        {
+          "url": "/templates/demo-story?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 1192
+        }
+      ],
+      "errors": [],
+      "scriptNormalizedGzipBytes": 168190,
+      "imageEncodedBytes": 182616
+    },
+    {
+      "run": 3,
+      "metrics": {
+        "cls": 0.00015174500265239198,
+        "shifts": [
+          {
+            "value": 0.00015174500265239198,
+            "at": 628.7000000000116
+          }
+        ],
+        "longTasks": [
+          {
+            "at": 90,
+            "duration": 56,
+            "attribution": [
+              {
+                "type": "unknown",
+                "containerType": "window",
+                "containerSrc": ""
+              }
+            ]
+          },
+          {
+            "at": 166.80000000004657,
+            "duration": 86,
+            "attribution": [
+              {
+                "type": "unknown",
+                "containerType": "window",
+                "containerSrc": ""
+              }
+            ]
+          },
+          {
+            "at": 307.6000000000349,
+            "duration": 73,
+            "attribution": [
+              {
+                "type": "unknown",
+                "containerType": "window",
+                "containerSrc": ""
+              }
+            ]
+          },
+          {
+            "at": 817.6000000000349,
+            "duration": 320,
+            "attribution": [
+              {
+                "type": "unknown",
+                "containerType": "window",
+                "containerSrc": ""
+              }
+            ]
+          }
+        ],
+        "frameIntervals": [
+          66.7,
+          16.69999999999999,
+          316.6,
+          16.69999999999999,
+          100.10000000000002,
+          233.29999999999995,
+          633.1999999999999,
+          33.40000000000009,
+          116.70000000000005,
+          33.299999999999955,
+          33.299999999999955,
+          50,
+          33.40000000000009,
+          83.29999999999995,
+          16.59999999999991,
+          33.30000000000018,
+          33.399999999999864,
+          33.299999999999955,
+          33.40000000000009,
+          33.299999999999955,
+          33.299999999999955,
+          33.40000000000009,
+          16.59999999999991,
+          33.30000000000018,
+          33.40000000000009,
+          33.29999999999973,
+          33.40000000000009,
+          33.30000000000018,
+          33.29999999999973,
+          33.40000000000009,
+          33.30000000000018,
+          16.699999999999818,
+          49.90000000000009,
+          16.699999999999818,
+          33.40000000000009,
+          33.30000000000018,
+          33.29999999999973,
+          33.40000000000009,
+          33.30000000000018,
+          33.29999999999973,
+          33.30000000000018,
+          16.699999999999818,
+          33.30000000000018,
+          33.29999999999973,
+          33.40000000000009,
+          33.30000000000018,
+          33.29999999999973,
+          33.40000000000009,
+          33.30000000000018,
+          50.09999999999991,
+          33.19999999999982,
+          50.100000000000364,
+          33.29999999999973,
+          33.30000000000018,
+          50,
+          50,
+          66.69999999999982,
+          66.59999999999991,
+          33.40000000000009,
+          33.30000000000018,
+          33.29999999999973,
+          33.40000000000009,
+          33.30000000000018,
+          33.40000000000009,
+          33.29999999999973,
+          33.30000000000018,
+          16.699999999999818,
+          33.30000000000018,
+          33.29999999999973,
+          33.40000000000009,
+          33.30000000000018,
+          33.29999999999973,
+          33.40000000000009,
+          33.20000000000027,
+          16.799999999999727,
+          33.30000000000018,
+          33.29999999999973,
+          33.30000000000018,
+          33.40000000000009,
+          33.29999999999973,
+          33.30000000000018,
+          33.399999999999636,
+          16.700000000000728,
+          33.29999999999927,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          16.600000000000364,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.400000000000546,
+          33.29999999999927,
+          16.600000000000364,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          16.699999999999818,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.20000000000073,
+          33.399999999999636,
+          16.600000000000364,
+          33.29999999999927,
+          33.400000000000546,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          49.900000000000546,
+          50.099999999999454,
+          16.600000000000364,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          16.699999999999818,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          16.600000000000364,
+          33.29999999999927,
+          33.400000000000546,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          33.30000000000018,
+          33.29999999999927,
+          33.30000000000018,
+          33.5,
+          33.30000000000018,
+          16.600000000000364,
+          33.399999999999636,
+          33.19999999999982,
+          33.5,
+          33.19999999999982,
+          33.400000000000546,
+          33.30000000000018,
+          33.29999999999927,
+          33.400000000000546,
+          33.30000000000018,
+          33.29999999999927,
+          16.700000000000728,
+          33.29999999999927,
+          33.400000000000546,
+          33.30000000000018,
+          33.29999999999927,
+          33.400000000000546,
+          33.30000000000018,
+          33.29999999999927,
+          16.700000000000728,
+          33.29999999999927,
+          33.30000000000018,
+          33.400000000000546,
+          33.29999999999927,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          16.700000000000728,
+          33.29999999999927,
+          33.400000000000546,
+          33.30000000000018,
+          33.29999999999927,
+          33.30000000000018,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.30000000000018,
+          16.699999999999818,
+          33.30000000000018,
+          33.399999999999636,
+          33.30000000000018,
+          33.400000000000546,
+          33.29999999999927,
+          33.400000000000546,
+          33.30000000000018,
+          33.19999999999982,
+          33.399999999999636,
+          33.30000000000018,
+          33.399999999999636,
+          33.400000000000546,
+          33.19999999999982,
+          33.30000000000018,
+          66.80000000000018,
+          33.29999999999927,
+          16.600000000000364,
+          33.29999999999927,
+          33.400000000001455,
+          33.399999999999636,
+          33.29999999999927,
+          33.399999999999636,
+          33.20000000000073,
+          33.29999999999927,
+          33.400000000001455,
+          16.69999999999891,
+          33.30000000000109,
+          33.29999999999927,
+          33.29999999999927,
+          33.400000000001455,
+          33.29999999999927,
+          33.29999999999927,
+          16.700000000000728,
+          33.29999999999927,
+          33.30000000000109,
+          33.399999999999636,
+          33.29999999999927,
+          33.400000000001455,
+          33.399999999999636,
+          33.19999999999891,
+          33.30000000000109,
+          33.399999999999636,
+          16.700000000000728,
+          33.29999999999927,
+          33.399999999999636,
+          33.30000000000109,
+          33.29999999999927,
+          33.399999999999636,
+          33.30000000000109,
+          33.29999999999927,
+          16.700000000000728,
+          33.29999999999927,
+          33.399999999999636,
+          33.20000000000073,
+          33.399999999999636,
+          33.399999999999636,
+          33.20000000000073,
+          33.399999999999636,
+          33.29999999999927,
+          16.700000000000728,
+          33.29999999999927,
+          33.400000000001455,
+          33.29999999999927,
+          33.29999999999927,
+          33.30000000000109
+        ],
+        "resources": [
+          {
+            "path": "/_next/static/chunks/3_l18w-7bpg38.css",
+            "initiator": "link",
+            "encodedBodySize": 5292,
+            "decodedBodySize": 21068,
+            "transferSize": 5592
+          },
+          {
+            "path": "/_next/static/chunks/1x6obpmlu1_c2.js",
+            "initiator": "link",
+            "encodedBodySize": 1975,
+            "decodedBodySize": 5361,
+            "transferSize": 2275
+          },
+          {
+            "path": "/_next/static/chunks/2r4s4h5xul1n-.js",
+            "initiator": "script",
+            "encodedBodySize": 7624,
+            "decodedBodySize": 28739,
+            "transferSize": 7924
+          },
+          {
+            "path": "/_next/static/chunks/3wbm-994r45kr.js",
+            "initiator": "script",
+            "encodedBodySize": 71969,
+            "decodedBodySize": 229820,
+            "transferSize": 72269
+          },
+          {
+            "path": "/_next/static/chunks/1yad__y_yrnyg.js",
+            "initiator": "script",
+            "encodedBodySize": 46366,
+            "decodedBodySize": 168347,
+            "transferSize": 46666
+          },
+          {
+            "path": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+            "initiator": "script",
+            "encodedBodySize": 3940,
+            "decodedBodySize": 10030,
+            "transferSize": 4240
+          },
+          {
+            "path": "/_next/static/chunks/0umf92h1sb77c.js",
+            "initiator": "script",
+            "encodedBodySize": 3514,
+            "decodedBodySize": 13822,
+            "transferSize": 3814
+          },
+          {
+            "path": "/_next/static/chunks/3tlm476wmcof-.js",
+            "initiator": "script",
+            "encodedBodySize": 9101,
+            "decodedBodySize": 29339,
+            "transferSize": 9401
+          },
+          {
+            "path": "/_next/static/chunks/1ojf9aq0snvdd.js",
+            "initiator": "script",
+            "encodedBodySize": 5542,
+            "decodedBodySize": 14043,
+            "transferSize": 5842
+          },
+          {
+            "path": "/_next/static/chunks/1rwfzy70nyqjw.js",
+            "initiator": "script",
+            "encodedBodySize": 7382,
+            "decodedBodySize": 18646,
+            "transferSize": 7682
+          },
+          {
+            "path": "/icon.svg",
+            "initiator": "other",
+            "encodedBodySize": 264,
+            "decodedBodySize": 264,
+            "transferSize": 564
+          },
+          {
+            "path": "/api/categories",
+            "initiator": "fetch",
+            "encodedBodySize": 108,
+            "decodedBodySize": 108,
+            "transferSize": 408
+          },
+          {
+            "path": "/api/templates",
+            "initiator": "fetch",
+            "encodedBodySize": 1277,
+            "decodedBodySize": 1277,
+            "transferSize": 1577
+          },
+          {
+            "path": "/api/session",
+            "initiator": "fetch",
+            "encodedBodySize": 127,
+            "decodedBodySize": 127,
+            "transferSize": 427
+          },
+          {
+            "path": "/",
+            "initiator": "fetch",
+            "encodedBodySize": 164,
+            "decodedBodySize": 164,
+            "transferSize": 464
+          },
+          {
+            "path": "/history",
+            "initiator": "fetch",
+            "encodedBodySize": 183,
+            "decodedBodySize": 214,
+            "transferSize": 483
+          },
+          {
+            "path": "/_next/static/chunks/0t_e7ro7a4tgv.css",
+            "initiator": "link",
+            "encodedBodySize": 608,
+            "decodedBodySize": 1483,
+            "transferSize": 908
+          },
+          {
+            "path": "/_next/static/chunks/0wn0r87ywrmd_.js",
+            "initiator": "script",
+            "encodedBodySize": 5784,
+            "decodedBodySize": 14033,
+            "transferSize": 6084
+          },
+          {
+            "path": "/media/demo/postcard-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 46077,
+            "decodedBodySize": 46077,
+            "transferSize": 46377
+          },
+          {
+            "path": "/media/demo/pet-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 42971,
+            "decodedBodySize": 42971,
+            "transferSize": 43271
+          },
+          {
+            "path": "/media/demo/story-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 66128,
+            "decodedBodySize": 66128,
+            "transferSize": 66428
+          },
+          {
+            "path": "/history",
+            "initiator": "fetch",
+            "encodedBodySize": 1509,
+            "decodedBodySize": 3640,
+            "transferSize": 1809
+          },
+          {
+            "path": "/",
+            "initiator": "fetch",
+            "encodedBodySize": 1463,
+            "decodedBodySize": 3403,
+            "transferSize": 1763
+          },
+          {
+            "path": "/media/demo/postcard-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 46077,
+            "decodedBodySize": 46077,
+            "transferSize": 46377
+          },
+          {
+            "path": "/media/demo/pet-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 42971,
+            "decodedBodySize": 42971,
+            "transferSize": 43271
+          },
+          {
+            "path": "/media/demo/portrait-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 27440,
+            "decodedBodySize": 27440,
+            "transferSize": 27740
+          },
+          {
+            "path": "/media/demo/story-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 66128,
+            "decodedBodySize": 66128,
+            "transferSize": 66428
+          },
+          {
+            "path": "/templates/demo-postcard",
+            "initiator": "fetch",
+            "encodedBodySize": 213,
+            "decodedBodySize": 310,
+            "transferSize": 513
+          },
+          {
+            "path": "/templates/demo-pet",
+            "initiator": "fetch",
+            "encodedBodySize": 209,
+            "decodedBodySize": 305,
+            "transferSize": 509
+          },
+          {
+            "path": "/_next/static/chunks/1uvk236_lk6j3.js",
+            "initiator": "script",
+            "encodedBodySize": 4534,
+            "decodedBodySize": 10941,
+            "transferSize": 4834
+          },
+          {
+            "path": "/templates/demo-story",
+            "initiator": "fetch",
+            "encodedBodySize": 211,
+            "decodedBodySize": 307,
+            "transferSize": 511
+          },
+          {
+            "path": "/templates/demo-portrait",
+            "initiator": "fetch",
+            "encodedBodySize": 217,
+            "decodedBodySize": 310,
+            "transferSize": 517
+          },
+          {
+            "path": "/templates/demo-postcard",
+            "initiator": "fetch",
+            "encodedBodySize": 801,
+            "decodedBodySize": 1179,
+            "transferSize": 1101
+          },
+          {
+            "path": "/templates/demo-pet",
+            "initiator": "fetch",
+            "encodedBodySize": 795,
+            "decodedBodySize": 1174,
+            "transferSize": 1095
+          },
+          {
+            "path": "/templates/demo-story",
+            "initiator": "fetch",
+            "encodedBodySize": 798,
+            "decodedBodySize": 1176,
+            "transferSize": 1098
+          },
+          {
+            "path": "/templates/demo-portrait",
+            "initiator": "fetch",
+            "encodedBodySize": 798,
+            "decodedBodySize": 1179,
+            "transferSize": 1098
+          },
+          {
+            "path": "/media/demo/postcard-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 46077,
+            "decodedBodySize": 46077,
+            "transferSize": 46377
+          },
+          {
+            "path": "/media/demo/pet-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 42971,
+            "decodedBodySize": 42971,
+            "transferSize": 43271
+          },
+          {
+            "path": "/media/demo/story-p1-cover.jpg",
+            "initiator": "img",
+            "encodedBodySize": 66128,
+            "decodedBodySize": 66128,
+            "transferSize": 66428
+          }
+        ],
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyBackground": "rgb(247, 248, 252)"
+      },
+      "scripts": [
+        {
+          "url": "/_next/static/chunks/1x6obpmlu1_c2.js",
+          "decodedBytes": 5361,
+          "normalizedGzipBytes": 1974
+        },
+        {
+          "url": "/_next/static/chunks/2r4s4h5xul1n-.js",
+          "decodedBytes": 28739,
+          "normalizedGzipBytes": 7618
+        },
+        {
+          "url": "/_next/static/chunks/0umf92h1sb77c.js",
+          "decodedBytes": 13822,
+          "normalizedGzipBytes": 3516
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "decodedBytes": 10030,
+          "normalizedGzipBytes": 3942
+        },
+        {
+          "url": "/_next/static/chunks/1ojf9aq0snvdd.js",
+          "decodedBytes": 14043,
+          "normalizedGzipBytes": 5541
+        },
+        {
+          "url": "/_next/static/chunks/3tlm476wmcof-.js",
+          "decodedBytes": 29339,
+          "normalizedGzipBytes": 9086
+        },
+        {
+          "url": "/_next/static/chunks/3wbm-994r45kr.js",
+          "decodedBytes": 229820,
+          "normalizedGzipBytes": 71809
+        },
+        {
+          "url": "/_next/static/chunks/1yad__y_yrnyg.js",
+          "decodedBytes": 168347,
+          "normalizedGzipBytes": 46246
+        },
+        {
+          "url": "/_next/static/chunks/1rwfzy70nyqjw.js",
+          "decodedBytes": 18646,
+          "normalizedGzipBytes": 7377
+        },
+        {
+          "url": "blob:/a0d32f19-70ab-4892-8bdc-72ab3a094750",
+          "decodedBytes": 1522,
+          "normalizedGzipBytes": 765
+        },
+        {
+          "url": "/_next/static/chunks/0wn0r87ywrmd_.js",
+          "decodedBytes": 14033,
+          "normalizedGzipBytes": 5784
+        },
+        {
+          "url": "/_next/static/chunks/1uvk236_lk6j3.js",
+          "decodedBytes": 10941,
+          "normalizedGzipBytes": 4532
+        }
+      ],
+      "network": [
+        {
+          "url": "/_next/static/chunks/3_l18w-7bpg38.css",
+          "type": "Stylesheet",
+          "status": 200,
+          "mime": "text/css",
+          "encoding": "gzip",
+          "encodedDataLength": 5675
+        },
+        {
+          "url": "/_next/static/chunks/1x6obpmlu1_c2.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 2371
+        },
+        {
+          "url": "/",
+          "type": "Document",
+          "status": 200,
+          "mime": "text/html",
+          "encoding": "gzip",
+          "encodedDataLength": 3450
+        },
+        {
+          "url": "/_next/static/chunks/2r4s4h5xul1n-.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 8021
+        },
+        {
+          "url": "/_next/static/chunks/0umf92h1sb77c.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 3910
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 4336
+        },
+        {
+          "url": "/_next/static/chunks/1ojf9aq0snvdd.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 5939
+        },
+        {
+          "url": "/_next/static/chunks/3tlm476wmcof-.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 9498
+        },
+        {
+          "url": "/_next/static/chunks/3wbm-994r45kr.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 72416
+        },
+        {
+          "url": "/_next/static/chunks/1yad__y_yrnyg.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 46788
+        },
+        {
+          "url": "/_next/static/chunks/1rwfzy70nyqjw.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 7779
+        },
+        {
+          "url": "/icon.svg",
+          "type": "Other",
+          "status": 200,
+          "mime": "image/svg+xml",
+          "encoding": null,
+          "encodedDataLength": 569
+        },
+        {
+          "url": "/api/categories",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "application/json",
+          "encoding": null,
+          "encodedDataLength": 480
+        },
+        {
+          "url": "/api/templates",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "application/json",
+          "encoding": null,
+          "encodedDataLength": 1650
+        },
+        {
+          "url": "/api/session",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "application/json",
+          "encoding": null,
+          "encodedDataLength": 660
+        },
+        {
+          "url": "/history?_rsc=5CB68i4pnAekjehf",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 591
+        },
+        {
+          "url": "/_next/static/chunks/0t_e7ro7a4tgv.css",
+          "type": "Stylesheet",
+          "status": 200,
+          "mime": "text/css",
+          "encoding": "gzip",
+          "encodedDataLength": 989
+        },
+        {
+          "url": "/media/demo/pet-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 43356
+        },
+        {
+          "url": "/?_rsc=5CB68i4pnAekjehf",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 572
+        },
+        {
+          "url": "/media/demo/postcard-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 46462
+        },
+        {
+          "url": "/_next/static/chunks/0wn0r87ywrmd_.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 6181
+        },
+        {
+          "url": "/media/demo/story-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 66512
+        },
+        {
+          "url": "/media/demo/postcard-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 46454
+        },
+        {
+          "url": "/history?_rsc=slXvbtRVQed3BeV4",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 1918
+        },
+        {
+          "url": "/?_rsc=8nTjltbQWvg6NcbE",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 1872
+        },
+        {
+          "url": "/media/demo/pet-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 43348
+        },
+        {
+          "url": "/media/demo/portrait-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 27817
+        },
+        {
+          "url": "/media/demo/story-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 66512
+        },
+        {
+          "url": "/_next/static/chunks/1uvk236_lk6j3.js",
+          "type": "Script",
+          "status": 200,
+          "mime": "application/javascript",
+          "encoding": "gzip",
+          "encodedDataLength": 4931
+        },
+        {
+          "url": "/templates/demo-portrait?_rsc=5CB68i4pnAekjehf",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 596
+        },
+        {
+          "url": "/templates/demo-postcard?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 1194
+        },
+        {
+          "url": "/templates/demo-story?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 1191
+        },
+        {
+          "url": "/templates/demo-portrait?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "Fetch",
+          "status": 200,
+          "mime": "text/x-component",
+          "encoding": "gzip",
+          "encodedDataLength": 1191
+        },
+        {
+          "url": "/media/demo/postcard-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 46494
+        },
+        {
+          "url": "/media/demo/pet-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 43348
+        },
+        {
+          "url": "/media/demo/story-p1-cover.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime": "image/jpeg",
+          "encoding": null,
+          "encodedDataLength": 66512
+        }
+      ],
+      "errors": [],
+      "scriptNormalizedGzipBytes": 168190,
+      "imageEncodedBytes": 492968
+    }
+  ],
+  "budgets": {
+    "limits": {
+      "baselineJsGzipBytes": 156375,
+      "maxAdditionalJsGzipBytes": 35840,
+      "maxImageEncodedBytes": 819200,
+      "maxCls": 0.1,
+      "maxPageErrors": 0
+    },
+    "rule": "Every individual observed run must pass; image requests remain counted as actually transferred, without URL deduplication or median substitution",
+    "checks": [
+      {
+        "run": 1,
+        "metric": "imageEncodedBytes",
+        "actual": 182616,
+        "limit": 819200,
+        "pass": true
+      },
+      {
+        "run": 1,
+        "metric": "cls",
+        "actual": 0.00017091848114390433,
+        "limit": 0.1,
+        "pass": true
+      },
+      {
+        "run": 1,
+        "metric": "pageErrors",
+        "actual": 0,
+        "limit": 0,
+        "pass": true
+      },
+      {
+        "run": 1,
+        "metric": "additionalJsGzipBytes",
+        "actual": 11815,
+        "limit": 35840,
+        "pass": true
+      },
+      {
+        "run": 2,
+        "metric": "imageEncodedBytes",
+        "actual": 182616,
+        "limit": 819200,
+        "pass": true
+      },
+      {
+        "run": 2,
+        "metric": "cls",
+        "actual": 0.0001268705391589506,
+        "limit": 0.1,
+        "pass": true
+      },
+      {
+        "run": 2,
+        "metric": "pageErrors",
+        "actual": 0,
+        "limit": 0,
+        "pass": true
+      },
+      {
+        "run": 2,
+        "metric": "additionalJsGzipBytes",
+        "actual": 11815,
+        "limit": 35840,
+        "pass": true
+      },
+      {
+        "run": 3,
+        "metric": "imageEncodedBytes",
+        "actual": 492968,
+        "limit": 819200,
+        "pass": true
+      },
+      {
+        "run": 3,
+        "metric": "cls",
+        "actual": 0.00015174500265239198,
+        "limit": 0.1,
+        "pass": true
+      },
+      {
+        "run": 3,
+        "metric": "pageErrors",
+        "actual": 0,
+        "limit": 0,
+        "pass": true
+      },
+      {
+        "run": 3,
+        "metric": "additionalJsGzipBytes",
+        "actual": 11815,
+        "limit": 35840,
+        "pass": true
+      }
+    ],
+    "pass": true
+  }
+}

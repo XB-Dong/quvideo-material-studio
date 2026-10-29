@@ -1,0 +1,38 @@
+{
+  "testedProductCommit": "716518e6087fbb0ec17abf55b4b68f00cd327a84",
+  "recordedAt": "2026-10-30T00:48:18.8596815+08:00",
+  "execution": "Docker Linux containers only",
+  "frontend": {
+    "tests": 31,
+    "typecheckExitCode": 0,
+    "lintExitCode": 0,
+    "originalTests": 16,
+    "log": "final-frontend-check.txt",
+    "exitCode": 0
+  },
+  "backend": {
+    "verifyAndPackageExitCode": 0,
+    "mysql": "8.4.13",
+    "originalTests": 12,
+    "log": "final-java-check.txt",
+    "tests": 15
+  },
+  "api": {
+    "log": "final-api-check.txt",
+    "exitCode": 0,
+    "tests": 8,
+    "noDependenciesRecreated": true
+  },
+  "productionBuild": {
+    "logs": [
+      "visual-final-build.txt",
+      "visual-final-deploy.txt"
+    ],
+    "exitCode": 0
+  },
+  "protectedP0Lib": "git diff 07300db..716518 -- frontend/src/lib is empty",
+  "limitations": [
+    "does not replace independent browser/aesthetic/comfort gates",
+    "GitHub CI result recorded separately"
+  ]
+}

@@ -2,23 +2,19 @@
   "schemaVersion": "1.0.0",
   "waveId": "P1",
   "specVersion": "P1-1.2.0",
-  "status": "in_progress",
+  "status": "completed",
   "executionAuthorized": true,
   "executionStartedAt": "2026-10-29T22:52:38+08:00",
-  "executionCompletedAt": null,
+  "executionCompletedAt": "2026-10-30T01:52:15.1733709+08:00",
   "deadline": null,
   "timezone": "Asia/Shanghai",
   "authorizationScope": "implement_verify_review_integrate_and_deliver_P1_1_2_0",
   "preparationBaseCommit": "07300db74eefe5d8d1ecf979de314450bf5f2a78",
   "p0AcceptanceCommit": "4dd397f2f5b2cb74ca21aba08482d0cae5b0a0de",
   "dispatchBaseCommit": "7997279301ce28c1bf1ee5e15d971aa7243a645c",
-  "implementationCommit": null,
-  "acceptanceCommit": null,
-  "activeDevelopmentAgents": [
-    "p1_frontend",
-    "p1_acceptance",
-    "p1_review"
-  ],
+  "implementationCommit": "a2505ecdedf04ad432476d5bdfb1eda02e0fe926",
+  "acceptanceCommit": "a2505ecdedf04ad432476d5bdfb1eda02e0fe926",
+  "activeDevelopmentAgents": [],
   "maxNativeWorkers": 3,
   "modelPolicy": "inherit_current_session",
   "actualProvider": null,
@@ -28,17 +24,18 @@
   "motionCandidate": "14.7.1",
   "motionInstalled": false,
   "productionAssetsChanged": true,
-  "productChecks": "not_run_for_P1",
-  "performanceBaseline": "Alpine_static_reference_retained; GPU_capable_browser_P0_P1_remeasurement_in_progress",
+  "productChecks": "31_frontend_lint_type_build_15_java_mysql_package_8_api; default22_functional32_native2_actual_coarse_touch; every_run_budgets_passed; CI3_all3jobs_success",
+  "performanceBaseline": "P0_07300db_and_P1_716518_same_Chromium_SwiftShader_three_runs_completed",
   "preparationValidation": "passed",
   "independentPreparationReview": "passed_P1_1_2_0_no_open_blocking_or_major",
   "tasks": [
     {
       "taskId": "P1-BASE",
       "rootTaskId": "P1-BASE",
-      "status": "in_progress",
+      "status": "completed",
       "repairCount": 0,
-      "startedAt": "2026-10-29T22:52:38+08:00"
+      "startedAt": "2026-10-29T22:52:38+08:00",
+      "completedAt": "2026-10-30T01:26:55.8747673+08:00"
     },
     {
       "taskId": "P1-DIRECTION",
@@ -52,60 +49,73 @@
       "taskId": "P1-ASSET",
       "rootTaskId": "P1-ASSET",
       "status": "completed",
-      "repairCount": 0,
+      "repairCount": 2,
       "baseCommit": "7997279301ce28c1bf1ee5e15d971aa7243a645c",
       "startedAt": "2026-10-29T23:01:15+08:00",
       "owner": "p1_assets",
-      "implementationCommit": "39eb7d5eaf5f49864a25abd29653b2642fadabed",
-      "evidence": "docs/waves/P1/evidence/assets/HANDOFF.md"
+      "implementationCommit": "a2505ecdedf04ad432476d5bdfb1eda02e0fe926",
+      "evidence": "docs/waves/P1/evidence/assets/HANDOFF.md",
+      "completedAt": "2026-10-30T01:52:15.1733709+08:00"
     },
     {
       "taskId": "P1-VISUAL",
       "rootTaskId": "P1-VISUAL",
-      "status": "implemented_pending_independent_acceptance",
-      "repairCount": 0,
+      "status": "completed",
+      "repairCount": null,
       "baseCommit": "7997279301ce28c1bf1ee5e15d971aa7243a645c",
       "startedAt": "2026-10-29T23:01:15+08:00",
       "owner": "p1_frontend",
-      "implementationCommit": "21d376ee92db77a314a322c5ad68dbef5a5fc1a8"
+      "implementationCommit": "21d376ee92db77a314a322c5ad68dbef5a5fc1a8",
+      "repairEvidence": "docs/waves/P1/evidence/acceptance/repair-ledger.json; docs/waves/P1/handoffs/frontend.md; docs/waves/P1/reviews/implementation-review.md",
+      "completedAt": "2026-10-30T01:26:55.8747673+08:00"
     },
     {
       "taskId": "P1-CREATIVE",
       "rootTaskId": "P1-CREATIVE",
-      "status": "in_progress",
-      "repairCount": 0,
-      "owner": "p1_frontend"
+      "status": "completed",
+      "repairCount": null,
+      "owner": "p1_frontend",
+      "repairEvidence": "docs/waves/P1/evidence/acceptance/repair-ledger.json; docs/waves/P1/handoffs/frontend.md; docs/waves/P1/reviews/implementation-review.md",
+      "implementationCommit": "716518e6087fbb0ec17abf55b4b68f00cd327a84",
+      "completedAt": "2026-10-30T01:26:55.8747673+08:00"
     },
     {
       "taskId": "P1-MOTION",
       "rootTaskId": "P1-MOTION",
-      "status": "in_progress",
-      "repairCount": 0,
-      "owner": "p1_frontend"
+      "status": "completed",
+      "repairCount": null,
+      "owner": "p1_frontend",
+      "repairEvidence": "docs/waves/P1/evidence/acceptance/repair-ledger.json; docs/waves/P1/handoffs/frontend.md; docs/waves/P1/reviews/implementation-review.md",
+      "implementationCommit": "716518e6087fbb0ec17abf55b4b68f00cd327a84",
+      "completedAt": "2026-10-30T01:26:55.8747673+08:00"
     },
     {
       "taskId": "P1-ACCEPT",
       "rootTaskId": "P1-ACCEPT",
-      "status": "baseline_and_test_design",
-      "repairCount": 0,
+      "status": "completed",
+      "repairCount": null,
       "baseCommit": "eb8df6661bc4da4f4946e1eb79d730e43200844a",
-      "owner": "p1_acceptance"
+      "owner": "p1_acceptance",
+      "repairEvidence": "docs/waves/P1/evidence/acceptance/repair-ledger.json; docs/waves/P1/handoffs/frontend.md; docs/waves/P1/reviews/implementation-review.md",
+      "completedAt": "2026-10-30T01:52:15.1733709+08:00"
     },
     {
       "taskId": "P1-REVIEW",
       "rootTaskId": "P1-REVIEW",
-      "status": "in_progress",
+      "status": "completed",
       "repairCount": 0,
-      "owner": "p1_review"
+      "owner": "p1_review",
+      "completedAt": "2026-10-30T01:52:15.1733709+08:00"
     },
     {
       "taskId": "P1-DELIVERY",
       "rootTaskId": "P1-DELIVERY",
-      "status": "prepared_not_dispatched",
-      "repairCount": 0
+      "status": "completed",
+      "repairCount": 0,
+      "completedAt": "2026-10-30T01:52:15.1733709+08:00"
     }
   ],
-  "nextAction": "implement_worker_capability_policy_then_independent_default_and_functional_retest",
+  "nextAction": "stop_after_P1_delivery_no_automatic_next_wave",
   "oglCandidate": "1.0.11",
   "reactBitsComponents": [
     "Dither Veil",
@@ -117,9 +127,9 @@
     "Electric Border"
   ],
   "reactBitsAudit": "docs/waves/P1/references/reactbits-audit.json",
-  "creativeImplementationStarted": false,
-  "aestheticGate": "not_run",
-  "comfortGate": "not_run",
+  "creativeImplementationStarted": true,
+  "aestheticGate": "passed_on_a250_5_dimensions_each4_of5",
+  "comfortGate": "passed_on_a250_in_actual_environment; CI3_budget_closed_by_Leader",
   "focusedEffortEstimateHours": [
     10,
     14
@@ -134,6 +144,18 @@
   "dispatchRule": "isolated edits allowed while P0 browser baseline is collected; no P1 deployment until baseline freeze",
   "oglInstalled": true,
   "motionDecision": "CSS_transitions_and_React_lifecycle; unused_Motion_removed",
-  "gpuPerformanceFinding": "open: measured SwiftShader loseContext 131/56/76ms; worker_preflight_and_default_software_fallback_in_progress",
-  "gpuPolicyDecision": "docs/decisions/0009-gpu-comfort-policy.md"
+  "gpuPerformanceFinding": "ACCEPT-PERF-01_closed_for_default_software_policy: mainGL0_and_interaction_longtasks0; forced_software_functional_and_physical_hardware_performance_not_claimed",
+  "gpuPolicyDecision": "docs/decisions/0009-gpu-comfort-policy.md",
+  "independentAestheticReviewRef": "docs/waves/P1/reviews/implementation-review.md",
+  "independentComfortReviewRef": "docs/waves/P1/evidence/acceptance/COMFORT-SIGNOFF.md",
+  "ciCandidateCommit": "a2505ecdedf04ad432476d5bdfb1eda02e0fe926",
+  "ciRunUrl": "https://github.com/XB-Dong/quvideo-material-studio/actions/runs/40923131462",
+  "preparationValidationMeaning": "historical_preparation_snapshot_only; preparation_validator_is_not_an_execution_gate",
+  "repairAccountingNote": "Preparation zero placeholders removed where total exact repair count was not continuously recorded; original root task IDs and concrete findings/failed runs remain in handoffs, review and repair ledger. Infrastructure is not product behavioral Red.",
+  "reportCommitMeaning": "The commit containing this final state is the report/source seal; use git rev-parse HEAD or the archive filename. CI acceptance SHA is separate, product runtime source remains 716518.",
+  "executionWallMinutesAtSeal": 179.6,
+  "effortMeaning": "AI session wall clock to source/report seal; parallel agent times not summed; human effort unknown; subsequent seal-CI confirmation and cleanup tracked outside this immutable commit",
+  "leaderDispositionRef": "docs/waves/P1/reviews/leader-disposition.md",
+  "cleanupStatus": "main3healthy; P0_reference_and_mysqltest_stopped; 3worktrees_retained_due_to_app_active_task_lock; ignored_evidence_copied_and_hash_verified_outsideGit",
+  "imageBudgetFinding": "ACCEPT-BUDGET-02_closed: CI2_996880_retained; JPEG_only_fix; new_local_max446891; CI3max492968; all_runs_original800KiB_guard_passed"
 }

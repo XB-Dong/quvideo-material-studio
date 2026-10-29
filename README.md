@@ -2,9 +2,7 @@
 
 小影科技 2027 校招全栈开发笔试项目，作者董信步。浏览模板、上传图片、提交后台制作任务，在等待期间继续使用网站，最后从个人历史预览结果。制作使用可控的模拟器，不调用真实 AI。
 
-P0 已完成，验收 commit 为 4dd397f2f5b2cb74ca21aba08482d0cae5b0a0de；[GitHub CI 三任务通过](https://github.com/XB-Dong/quvideo-material-studio/actions/runs/40854073869)。后续封存提交只更新交付文档，应用源码与验收版本一致。详见 [P0 报告](docs/waves/P0/REPORT.md)和[验收矩阵](docs/waves/P0/ACCEPTANCE.md)。下一阶段浅色背景、蓝紫细节、优质素材及交互动画要求已记录在 [NEXT-WAVES](NEXT-WAVES.md)，尚未启动。
-
-P1启动前准备入口：[计划](docs/waves/P1/PLAN.md)、[方向与素材板](docs/waves/P1/references/README.md)、[角色与所有权](docs/waves/P1/ROLES.md)、[验收](docs/waves/P1/ACCEPTANCE.md)、[七创意与双门槛](specs/p1/react-bits.md)、[准备报告](docs/waves/P1/PREPARATION-REPORT.md)。候选资源仅放在文档准备目录，运行中的P0素材/页面未替换。
+P1已完成浅色界面、蓝紫细节、四套本地照片、七项创意和操作状态反馈，独立美学/舒适门槛及图片预算守卫通过；验收commit为a2505ecdedf04ad432476d5bdfb1eda02e0fe926，[CI三项通过](https://github.com/XB-Dong/quvideo-material-studio/actions/runs/40923131462)。核心Java异步制作、身份隔离和持久化流程沿用P0。实际验证版本、环境与限制见[P1报告](docs/waves/P1/REPORT.md)及[验收矩阵](docs/waves/P1/ACCEPTANCE.md)。[P1计划](docs/waves/P1/PLAN.md)、[角色分工](docs/waves/P1/ROLES.md)、[独立审核](docs/waves/P1/reviews/implementation-review.md)保留执行依据。P0历史验收commit为4dd397f2f5b2cb74ca21aba08482d0cae5b0a0de，见[P0报告](docs/waves/P0/REPORT.md)。
 
 ## 一条命令启动
 
@@ -22,6 +20,8 @@ docker compose up --build
 | --- | --- |
 | 前端 | Next.js 16.4.3 App Router、React/react-dom 19.3.1、TypeScript 5.9.3 |
 | 客户端状态 | TanStack Query 5.105.0 |
+| 图形与动效 | OGL 1.0.11；操作过渡使用CSS和React生命周期，七视觉组件来自React Bits TS-CSS适配 |
+| 图形验收工具 | Playwright 1.58.2；实际Chromium/SwiftShader版本随每次容器证据记录 |
 | 前端工具 | Vitest 5.0.5、RTL 16.3.2、ESLint 9.39.2 |
 | 前端运行时 | Node.js 22.22.0-alpine |
 | 后端 | Java 21、Spring Boot 3.5.16、MyBatis Starter 3.0.5 |
@@ -36,13 +36,14 @@ backend/               Java 服务、MyBatis SQL、Flyway、图片、生成脚�
 tests/                 独立 API 黑盒验收及容器入口
 specs/                 OpenAPI、数据、状态机、前端生命周期、UI 与验收规格
 docs/requirements/     题目 R-01～R-14 和参考图
-docs/waves/P0/         计划、任务包、状态、交接、审核与证据
+docs/waves/P0/         P0历史记录
+docs/waves/P1/         当前计划、任务包、状态、交接、审核与实际证据
 compose.yaml           frontend、backend、mysql 与持久卷
 compose.test.yaml      前端检查、Java/MySQL 检查、独立 API 验收
 .github/workflows/     push / pull_request / 手动 CI
 ```
 
-Java 提供全部业务与持久化。浏览器的 /api/* 和 /media/* 由 Next 在请求时转发至 backend:8080，保留会话、状态码和内容类型，个人数据不缓存。后端 JDBC 连接 mysql:3306；数据库 schema 和分类/模板由 Flyway V1/V2 初始化，再次启动不会重置任务。数据库与文件分别持久化于 mysql-data、material-files 命名卷。
+Java 提供全部业务与持久化。浏览器的 /api/* 和 /media/* 由 Next 在请求时转发至 backend:8080，保留会话、状态码和内容类型，个人数据不缓存。后端 JDBC 连接 mysql:3306；数据库 schema 和分类/模板由 Flyway V1/V2初始化、V3升级本地图片key，再次启动不会重置任务。数据库与文件分别持久化于 mysql-data、material-files 命名卷。
 
 ## 容器内构建和测试
 
@@ -67,6 +68,35 @@ docker compose -f compose.yaml -f compose.test.yaml stop mysql-test
 frontend-check 实际执行 npm ci（镜像构建）及 npm run lint、npm run typecheck、npm test -- --run。backend-check 执行 mvn -B verify，测试包含真实 MySQL，不以 H2 替代。生产 JAR 镜像打包阶段不重复运行数据库测试，CI 的 Java verify 是独立必需门槛。源码包保留全部检查配置。
 
 [GitHub Actions](https://github.com/XB-Dong/quvideo-material-studio/actions) 对 push/PR 执行前端检查/生产构建、Java verify，以及完整三服务 API 验收。具体运行是否通过以对应 commit 的实际记录为准，不把配置存在当作执行通过。
+
+## P1视觉与浏览器验收
+
+以瓷白/白色面板和炭灰文字为主，蓝紫用于细线、图标、选中态及少量操作。正常硬件绘图路径使用七项React Bits创意；软件/未知renderer、Worker不可用、减少动态效果或手动静态时安全降级。页面保留“动态效果/静态模式”开关和可运行时的环绕暂停，不展示组件技术名或鼠标体验说明。
+
+GPU能力预检使用一次有界Worker+OffscreenCanvas，确认probe释放后才启用主GPU；软件绘图默认不创建六个主线程GPU装饰，保留图片、SVG环绕和CSS反馈。这个选择来自实际测得的软件driver释放卡顿；[决定0009](docs/decisions/0009-gpu-comfort-policy.md)保留原因和测试边界，不将功能强制模式冒充软件舒适通过。真实硬件性能及真实OS后台切换未覆盖时在报告标未验证。
+
+```sh
+# 以实际部署源码SHA替换，验收应用必须已健康
+export TESTED_COMMIT='<exact-40-character-deployed-sha>'
+# 默认真实能力策略：页面、键盘、业务与软件降级
+docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-check accept.mjs
+# 明确的独立软件功能fixture：模拟硬件允许消息，执行真实七图形路径/互斥/释放
+docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e FORCE_GPU_FUNCTIONAL=1 -e OUTPUT_DIR=/evidence/functional browser-check accept.mjs
+# 单独采集Electric合法600ms窗口五帧；与常规功能读回分开
+docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e FORCE_GPU_FUNCTIONAL=1 -e EXACT_ELECTRIC_SEQUENCE=1 -e OUTPUT_DIR=/evidence/exact browser-check accept.mjs
+# 默认交互性能及同环境三轮startup；不强制软件绘图
+docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/interaction browser-check interact.mjs
+docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps browser-check measure.mjs
+```
+
+PowerShell设置环境用`$env:TESTED_COMMIT='<exact-sha>'`。默认证据写runtime/p1-browser（Git忽略），可用P1_EVIDENCE_DIR指定绝对目录。trace ZIP可能包含本次合成匿名会话，不入Git或普通CI源码工件。运行工具时Chromium/字体/SwiftShader均在容器；前后比较复用同一浏览器依赖镜像，实际driver、默认/fixture、编码传输与gzip归一值分别记录。[工具说明](tests/p1/README.md)提供准确条件。
+
+四模板生产JPEG封面与真PNG结果已内置Java资源，图片运行不外链。原图、作者/许可及转换hash见[生产清单](docs/waves/P1/evidence/assets/production-manifest.json)。重做衍生图可在容器运行：
+
+```sh
+docker build -f backend/scripts/Dockerfile.assets -t material-p1-assets-tool .
+docker run --rm --mount type=bind,source="$(pwd)",target=/workspace material-p1-assets-tool
+```
 
 ## 配置
 
@@ -165,7 +195,7 @@ docker compose exec -T mysql sh -c 'exec mysqldump -uroot -p"$MYSQL_ROOT_PASSWOR
 docker compose exec -T backend tar -C /data/materials -czf - . > material-files.tgz
 ```
 
-完整一致备份应先停止受理/停止 backend，再导出 DB；文件卷可由临时 helper 容器读取（示例见 [交付说明](docs/delivery.md)）。上述在线导出适合无任务写入时的演示备份。回滚先停受理、保留证据并切回上一镜像；仅 schema 向后兼容时直接回退代码，否则恢复匹配时间点 DB 和文件卷后启动对应版本。不得通过删除命名卷来回滚。本地合成备份恢复的实际证据在 P0 报告中，不能等同生产演练。
+完整一致备份应先停止受理/停止 backend，再导出 DB；文件卷可由临时 helper 容器读取（示例见 [交付说明](docs/delivery.md)）。上述在线导出适合无任务写入时的演示备份。回滚先停受理、保留证据并切回上一镜像；仅 schema 向后兼容时直接回退代码，否则恢复匹配时间点 DB 和文件卷后启动对应版本。不得通过删除命名卷来回滚。P1回退不能只换旧镜像：V3新图片key与旧后端白名单不匹配，须恢复配套数据库/文件快照（含Flyway历史）后再启动P0；恢复文件必须供UID/GID10001:10001读取。完整P0→P1→回滚P0→再次P1的隔离实测见[P1升级验证](docs/waves/P1/evidence/assets/UPGRADE-VERIFICATION.md)，不是生产演练。
 
 ## 实际投入、AI 工作流与来源
 
@@ -173,6 +203,9 @@ docker compose exec -T backend tar -C /data/materials -czf - . > material-files.
 
 使用 Codex：Leader 拆解规格与任务，前后端在独立 worktree 实现并自测，独立 Agent 审核/黑盒验收，Leader 复现处置、合入及容器验证。真实修正例：审阅发现最终阶段成功与任务成功分属两个事务，DB 故障会产生矛盾状态；修为原子提交并增加故障回滚测试。另发现旧401与提交锁身份竞态，修为请求身份 generation 与提交代数保护并补回归。详见 [审核记录](docs/waves/P0/reviews/backend-review.md)、[前端审核](docs/waves/P0/reviews/frontend-review.md)和交接证据。未提交私人聊天、账号或全部提示词。
 
-业务代码由本项目实现；开发方法参考 ccagent/classroom-annotator。示例图片为仓库 Python 标准库脚本生成的原创程序图形，封面和结果均可离线使用；原题截图仅作布局参考。框架、工具和来源见 [THIRD-PARTY-NOTICES](THIRD-PARTY-NOTICES.md)。不用付费或内部服务。
+业务流程由本项目实现；P1复用的图形源码及照片按来源清单保留许可。开发方法参考 ccagent/classroom-annotator。P0原创程序图继续保留，P1使用来源清单中的四套照片衍生图，封面和结果均可离线使用；原题截图仅作布局参考。框架、工具和来源见 [THIRD-PARTY-NOTICES](THIRD-PARTY-NOTICES.md)。不用付费或内部服务。
 
 私有仓库交付需由作者授予评估者读取或生成 `git archive --format=zip --output=<仓库外路径>/source.zip HEAD`；源码包保留 CI、迁移和本地素材，不含 .env、依赖缓存或运行卷。最终交卷由用户在原沟通渠道完成。
+
+
+P1继续采用Leader+唯一Frontend写入者、Asset、Acceptance及席位释放后的Reviewer。一个实际AI修正闭环：独立测量定位SwiftShader `loseContext`超过50ms，Frontend改为Worker能力预检与默认软件降级；另一次美学审阅发现Electric首帧白块，修为透明就绪帧和窄边环后做多帧复核。结果以独立证据及CI为准，不提交私人聊天或凭据。P1实际墙钟、并行方式及人工未知见[P1报告](docs/waves/P1/REPORT.md)。

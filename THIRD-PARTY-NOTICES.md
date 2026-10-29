@@ -19,11 +19,10 @@
 
 后端四张 600×900 原创程序生成 PNG 在 backend/src/main/resources/demo/，用于封面、示例上传和预置结果；生成器 backend/scripts/generate_demo.py 只使用 Python 标准库，没有外部照片或付费资源。Docker 基础镜像为官方 Node、Maven/Temurin、MySQL、Python，Dockerfile/Compose 锁定 digest。
 
-若 P1 改用外部素材，逐项登记资源页、许可、作者、获取日期和使用位置，保存离线文件；P0没有采用外部照片。P1准备阶段下载的候选仅位于docs/waves/P1/references/assets/，尚未替换产品图。
+## P1产品素材与图形源码
 
+四张具体Unsplash许可照片已接入本地Java资源：Shutter Speed雪山（2026-01-04）、Joe Caione白犬（2018-08-15）、Tiko Giorgadze霓虹人像（2018-02-25）、Pawel Czerwinski蓝紫流体（2020-12-08）。原始资源页、下载URL、作者、获取日期和源SHA见[原图清单](docs/waves/P1/references/manifest.json)，生产JPEG/PNG的实际尺寸、字节、裁切焦点与hash见[生产清单](docs/waves/P1/evidence/assets/production-manifest.json)。各具体页已核对[Unsplash License](https://unsplash.com/license)，未采用Unsplash+；作者不代表代言本项目。产品运行不外链。转换开发工具Pillow11.3.0（MIT-CMU）只在工具容器，不进入Java依赖。P0原创四PNG与V1/V2仍保留。
 
-## P1 准备候选（尚未接入产品）
+七项React Bits组件已按TS-CSS源码接入frontend/src/components/react-bits/，版权David Haz，完整[MIT + Commons Clause License Condition v1.0](frontend/src/components/react-bits/LICENSE.md)随源码保留，不能简称纯MIT。原始14文件hash、registry源URL及独立GitHub许可提交见[源冻结](docs/waves/P1/evidence/leader-baseline/source-freeze.json)，本地适配见[ADAPTATIONS](frontend/src/components/react-bits/ADAPTATIONS.md)。registry与GitHub内容等价性没有自动断言；本项目将组件集成为应用，不单独分发组件/工具库。
 
-2026-10-29保存四张具体Unsplash许可照片，仅用于本仓库的P1方向评审：Shutter Speed的雪山（2026-01-04）、Joe Caione的白犬（2018-08-15）、Tiko Giorgadze的霓虹人像（2018-02-25）、Pawel Czerwinski的蓝紫抽象（2020-12-08）。具体源页、下载URL、作者、日期、SHA256、尺寸和用途见[候选清单](docs/waves/P1/references/manifest.json)，各页许可已核对[Unsplash License](https://unsplash.com/license)。未采用Unsplash+；作者与本项目无代言关系。生产衍生图待P1-ASSET转换后补全记录。
-
-React Bits七组件当前仅只读研究官方registry，未复制产品源码；源提交、每文件哈希、变体与依赖见[审计记录](docs/waves/P1/references/reactbits-audit.json)。[上游许可](https://github.com/DavidHDev/react-bits/blob/e12c22192ac7b4b452c5e2feb9b586d74765d696/LICENSE.md)为MIT + Commons Clause License Condition v1.0，版权David Haz，不能简称纯MIT；P1实现时将完整许可/版权随集成源码保存、记录修改，不单独分发组件或工具包。Motion14.7.1（MIT）与OGL1.0.11（Unlicense）为候选，尚未安装；启动后验证锁定并登记实际采用版本与完整许可。
+实际图形依赖OGL1.0.11为Unlicense，准确版本/完整包完整性在frontend/package-lock.json及原NPM包。普通动效采用CSS+React；曾验证的Motion候选已因无实际import而移除。验收用Playwright1.58.2（Apache-2.0）、Alpine Chromium/SwiftShader及Noto CJK等包在独立工具镜像安装，不作为前端产品包或外链资源；准确浏览器和driver按各次报告记录，包许可随原发行包提供。

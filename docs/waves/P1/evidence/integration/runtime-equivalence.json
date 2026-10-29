@@ -1,0 +1,10 @@
+{
+  "applicationSourceCommit": "716518e6087fbb0ec17abf55b4b68f00cd327a84",
+  "ciCandidateCommit": "e62444d104f2e4e58a497103ad8865cafb5f4948",
+  "runtimeSourceDifferences": [],
+  "documentationOnlyDifferences": [
+    "frontend/src/components/react-bits/ADAPTATIONS.md"
+  ],
+  "command": "git diff --name-only <application> <candidate> -- frontend backend; only .md differences",
+  "checkedAt": "2026-10-30T01:15:50.1697356+08:00"
+}

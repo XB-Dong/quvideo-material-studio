@@ -1,0 +1,42 @@
+{
+  "runId": 40919563180,
+  "headSha": "e62444d104f2e4e58a497103ad8865cafb5f4948",
+  "scope": "GitHub Linux runner, separate environment from local paired P0/P1 benchmark",
+  "reports": [
+    {
+      "exactElectricSequence": false,
+      "pass": 22,
+      "fail": 0,
+      "mode": "default-product-capability-policy"
+    },
+    {
+      "exactElectricSequence": false,
+      "pass": 31,
+      "fail": 0,
+      "mode": "simulated-hardware-preflight_actual-software-driver_functional-only"
+    }
+  ],
+  "measurement": {
+    "imageRuns": [
+      {
+        "run": 1,
+        "imageEncodedBytes": 996880
+      },
+      {
+        "run": 2,
+        "imageEncodedBytes": 996880
+      },
+      {
+        "run": 3,
+        "imageEncodedBytes": 757983
+      }
+    ],
+    "pageErrors": [],
+    "median": {
+      "scriptNormalizedGzipBytes": 168190,
+      "imageEncodedBytes": 996880,
+      "cls": 0.00015758623288001543,
+      "longTaskCount": 3
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # 后续阶段规划
 
-P0已完成并封存07300db。P1统一规划浅色背景与蓝紫细节、优质素材、七项创意效果、操作动效与双重验收。现已建立[P1计划](docs/waves/P1/PLAN.md)、[视觉/素材参考](docs/waves/P1/references/README.md)、[角色](docs/waves/P1/ROLES.md)、任务、验收和状态；仍等待用户明确启动P1。
+P0已完成并封存07300db。用户已启动P1，按[P1计划](docs/waves/P1/PLAN.md)和[角色](docs/waves/P1/ROLES.md)执行浅色背景与蓝紫细节、优质素材、七项创意、操作动效与双重验收。实际实现、验证版本和限制以[P1报告](docs/waves/P1/REPORT.md)及[state](docs/waves/P1/state.json)为准；本文件保留宏观范围与推进顺序，不自动启动P1之后的工作。
 
 ## P1 前端视觉与交互提升
 

@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-30T00:05:45+08:00",
+  "applicationSourceCommit": "be43ab9ee1c70b0fc648978b99f0e944015c0c67",
+  "surface": "Codex IAB via cua_repl",
+  "viewport": "1440x1000 temporary override",
+  "before": {
+    "visibility": "visible",
+    "orbitNodes": 1,
+    "staticMode": false,
+    "heroOwner": "none",
+    "canvasCount": 0
+  },
+  "afterSelectingAgentBlankTab": {
+    "visibility": "visible",
+    "orbitNodes": 1,
+    "staticMode": false,
+    "heroOwner": "none",
+    "canvasCount": 0
+  },
+  "conclusion": "IAB backend keeps original document visible; real OS/tab-hidden transition not verified here. Do not label this a background-cleanup pass. Controlled visibility fixture and actual offscreen/unmount tests are separate evidence.",
+  "visualObservation": "Light backgrounds, charcoal hierarchy and three orbit images only; no duplicated static trio. Native screenshot observed after reloading deployed build."
+}

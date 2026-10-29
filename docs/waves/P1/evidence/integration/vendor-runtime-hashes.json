@@ -1,0 +1,82 @@
+{
+  "sourceCommit": "716518e6087fbb0ec17abf55b4b68f00cd327a84",
+  "hashMode": "UTF-8 CRLF normalized to LF",
+  "originalRegistryFreeze": "docs/waves/P1/evidence/leader-baseline/source-freeze.json",
+  "files": [
+    {
+      "path": "frontend/src/components/react-bits/context-lifecycle.ts",
+      "bytes": 726,
+      "sha256": "bac48555918b75a2eb49fe71a8fd692f3ffd3823a21c301c6cd190c9885bde69"
+    },
+    {
+      "path": "frontend/src/components/react-bits/DitherVeil.css",
+      "bytes": 113,
+      "sha256": "e26d3a59edcabc0b117f832abff3b3d99ac5855e1275a842c6d58bf0f585fc76"
+    },
+    {
+      "path": "frontend/src/components/react-bits/DitherVeil.tsx",
+      "bytes": 27452,
+      "sha256": "527698ceaa7d1e3f9386ce390053a7a994069a39dab0956715d737c2a94f8517"
+    },
+    {
+      "path": "frontend/src/components/react-bits/ElectricBorder.css",
+      "bytes": 173,
+      "sha256": "3ac01db2b8d158c653c9f726c208326818b3b29c7187dc310064fe5a15310979"
+    },
+    {
+      "path": "frontend/src/components/react-bits/ElectricBorder.tsx",
+      "bytes": 29785,
+      "sha256": "cc882a23f7a74aa099c15a612e4896e4491dc8b35ecabcc772c4a4f8acb16f24"
+    },
+    {
+      "path": "frontend/src/components/react-bits/GlowCursor.css",
+      "bytes": 338,
+      "sha256": "02bec034b47fd7f43d20f74845fb24c332a4353a48d44e9150ad0759327e5654"
+    },
+    {
+      "path": "frontend/src/components/react-bits/GlowCursor.tsx",
+      "bytes": 35057,
+      "sha256": "b4985bf9d25b37ca0c4dd5d27b29e0898c9afe64410a1d9dfc3725fd5500f98c"
+    },
+    {
+      "path": "frontend/src/components/react-bits/HalftoneReveal.css",
+      "bytes": 206,
+      "sha256": "51c09de2dcbaee1810a55a4784ce0f1c328c063cc9bf8c267c9b6cdcfb8392e1"
+    },
+    {
+      "path": "frontend/src/components/react-bits/HalftoneReveal.tsx",
+      "bytes": 31008,
+      "sha256": "77f79d1d15a5440f4e2b15772d8d0f2fb4d6281dd739bc721a3dffa0b0e5c202"
+    },
+    {
+      "path": "frontend/src/components/react-bits/OrbitImages.css",
+      "bytes": 1788,
+      "sha256": "e648040230adb6f08d51fd91583b009e8d9b577c7128c42354cbee1fc4191643"
+    },
+    {
+      "path": "frontend/src/components/react-bits/OrbitImages.tsx",
+      "bytes": 30404,
+      "sha256": "7cff2d9b3370badb7b35ac460102a10f8e4f55f63793ccc0bc2543ab285fc6f7"
+    },
+    {
+      "path": "frontend/src/components/react-bits/PixelTrail.css",
+      "bytes": 54,
+      "sha256": "17dc6aee5d947c1f8f34d2a15ff8c50b8dd51b2dbb643f50c6e6106ee38d1cfa"
+    },
+    {
+      "path": "frontend/src/components/react-bits/PixelTrail.tsx",
+      "bytes": 26402,
+      "sha256": "3ce47b8a25a305c0845c2ccbc0db6c3f2e6628764f9640c6e6a52270ad655ad4"
+    },
+    {
+      "path": "frontend/src/components/react-bits/RippleDistortion.css",
+      "bytes": 196,
+      "sha256": "3a7ecc6d99d604a7ee29f8a6ff3f84aece179a5cdc85d981b81179532170c852"
+    },
+    {
+      "path": "frontend/src/components/react-bits/RippleDistortion.tsx",
+      "bytes": 15521,
+      "sha256": "8997c80aa64104a5b850ad85d765c8ab1cad1391d158598315b6166553168205"
+    }
+  ]
+}

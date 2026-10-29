@@ -1,0 +1,6 @@
+{
+  "recordedAt": "2026-10-30T01:53:31.9725794+08:00",
+  "filesNormalized": 18,
+  "normalization": "Only trailing horizontal whitespace, trailing empty EOF lines and CRLF in Leader text command logs; all events, values, failures and outputs retained",
+  "measurementJsonAndBinaryEvidence": "untouched"
+}

@@ -1,0 +1,26 @@
+{
+  "testedProductCommit": "a2505ecdedf04ad432476d5bdfb1eda02e0fe926",
+  "recordedAt": "2026-10-30T01:39:58.7091901+08:00",
+  "backend": {
+    "log": "cover-optimized-java-check.txt",
+    "exitCode": 0,
+    "tests": 15
+  },
+  "api": {
+    "log": "cover-optimized-api-check.txt",
+    "exitCode": 0,
+    "tests": 8
+  },
+  "frontend": {
+    "executablesUnchangedFrom": "716518e6087fbb0ec17abf55b4b68f00cd327a84",
+    "reference": "final-frontend-check.txt",
+    "newCiReexecutes": true,
+    "tests": 31
+  },
+  "buildExitCode": 0,
+  "deployExitCode": 0,
+  "logs": [
+    "cover-optimized-build.txt",
+    "cover-optimized-deploy.txt"
+  ]
+}

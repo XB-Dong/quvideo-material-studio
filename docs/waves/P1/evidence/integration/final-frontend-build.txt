@@ -1,0 +1,107 @@
+ Image material-studio-backend Building
+ Image material-studio-frontend Building
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.17kB 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 842B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 74B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [deps 1/4] FROM docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34
+#6 resolve docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34 0.0s done
+#6 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 588.79kB 0.0s done
+#5 DONE 0.1s
+
+#7 [deps 2/4] WORKDIR /app
+#7 CACHED
+
+#8 [deps 3/4] COPY package*.json ./
+#8 CACHED
+
+#9 [deps 4/4] RUN npm ci
+#9 CACHED
+
+#10 [test 1/1] COPY . .
+#10 DONE 0.1s
+
+#11 [build 1/1] RUN npm run build
+#11 0.412
+#11 0.412 > material-studio@1.0.0 build
+#11 0.412 > next build
+#11 0.412
+#11 0.768 ▲ Next.js 16.4.3 (Turbopack)
+#11 0.802 ✓ Running next.config.ts took 33ms
+#11 0.813
+#11 0.831   Creating an optimized production build ...
+#11 2.983 ✓ Compiled successfully in 2.1s
+#11 2.986   Running TypeScript ...
+#11 3.005
+#11 3.007   We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+#11 3.007   The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+#11 3.007
+#11 3.007   	- include was updated to add '.next/dev/types/**/*.ts'
+#11 3.007
+#11 6.419   Finished TypeScript in 3.4s ...
+#11 6.422   Collecting page data using 8 workers ...
+#11 7.278   Generating static pages using 8 workers (0/4) ...
+#11 8.299   Generating static pages using 8 workers (1/4)
+#11 8.299   Generating static pages using 8 workers (2/4)
+#11 8.313   Generating static pages using 8 workers (3/4)
+#11 8.313 ✓ Generating static pages using 8 workers (4/4) in 1036ms
+#11 8.319   Finalizing page optimization ...
+#11 8.507
+#11 8.510 Route (app)
+#11 8.510 ┌ ○ /
+#11 8.510 ├ ○ /_not-found
+#11 8.510 ├ ƒ /api/[...path]
+#11 8.510 ├ ○ /history
+#11 8.510 ├ ƒ /media/[...path]
+#11 8.510 └ ƒ /templates/[id]
+#11 8.510
+#11 8.510
+#11 8.510 ○  (Static)   prerendered as static content
+#11 8.510 ƒ  (Dynamic)  server-rendered on demand
+#11 8.510
+#11 DONE 8.6s
+
+#12 [runner 3/6] RUN addgroup -g 1001 -S app && adduser -S app -u 1001 -G app
+#12 CACHED
+
+#13 [runner 4/6] COPY --from=build --chown=app:app /app/.next/standalone ./
+#13 DONE 0.3s
+
+#14 [runner 5/6] COPY --from=build --chown=app:app /app/.next/static ./.next/static
+#14 DONE 0.1s
+
+#15 [runner 6/6] COPY --from=build --chown=app:app /app/public ./public
+#15 DONE 0.1s
+
+#16 exporting to image
+#16 exporting layers
+#16 exporting layers 1.6s done
+#16 exporting manifest sha256:22d64acd8228e7fa99ba0ed869401be6cf4a5abc0bce81dc935b96b005369de3 0.0s done
+#16 exporting config sha256:cd569657f28710d4f8feef90961a62f458a7f98826e2387e2624dfee7d44532b 0.0s done
+#16 exporting attestation manifest sha256:f4082b3ed25d8a7373ebc2084c2793592ae86ddec12453921a2c83195122b958 0.0s done
+#16 exporting manifest list sha256:b88c9510c90ed963dfa82db9c1237522d48c64b2114dd7e5d86807d5e3be1416 0.0s done
+#16 naming to docker.io/library/material-studio-frontend:latest done
+#16 unpacking to docker.io/library/material-studio-frontend:latest
+#16 unpacking to docker.io/library/material-studio-frontend:latest 0.4s done
+#16 DONE 2.1s
+
+#17 resolving provenance for metadata file
+#17 DONE 0.0s
+ Image material-studio-frontend Built

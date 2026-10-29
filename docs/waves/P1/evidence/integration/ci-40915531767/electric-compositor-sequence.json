@@ -1,0 +1,28 @@
+{
+  "clip": {
+    "x": 0,
+    "y": 312.5,
+    "width": 355.03125,
+    "height": 188
+  },
+  "attempts": [
+    {
+      "intendedMs": 0,
+      "attempt": 1,
+      "captureStartMs": 197,
+      "captureEndMs": 1090,
+      "valid": false
+    },
+    {
+      "intendedMs": 0,
+      "attempt": 2,
+      "captureStartMs": 178,
+      "captureEndMs": 766,
+      "valid": false
+    }
+  ],
+  "frames": [],
+  "differences": [],
+  "conditions": "Independent warm activation per offset after >=2.2s cooldown; native alpha readback disabled for these compositor samples; source 600ms duration unchanged",
+  "limits": "Screenshots perturb timing; not comfort latency data"
+}

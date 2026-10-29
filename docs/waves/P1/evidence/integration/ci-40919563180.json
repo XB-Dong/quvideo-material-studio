@@ -1,0 +1,174 @@
+{
+  "recordedAt": "2026-10-30T01:26:43.0329657+08:00",
+  "runId": 40919563180,
+  "url": "https://github.com/XB-Dong/quvideo-material-studio/actions/runs/40919563180",
+  "headSha": "e62444d104f2e4e58a497103ad8865cafb5f4948",
+  "status": "completed",
+  "conclusion": "success",
+  "repositoryPrivate": true,
+  "source": "Authenticated GitHub REST metadata; credentials excluded",
+  "jobs": [
+    {
+      "id": 123608787324,
+      "name": "backend",
+      "status": "completed",
+      "conclusion": "success",
+      "htmlUrl": "https://github.com/XB-Dong/quvideo-material-studio/actions/runs/40919563180/job/123608787324",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Java tests, real MySQL integration and package in container",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Preserve test database logs",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Clean test services",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 123608787892,
+      "name": "frontend",
+      "status": "completed",
+      "conclusion": "success",
+      "htmlUrl": "https://github.com/XB-Dong/quvideo-material-studio/actions/runs/40919563180/job/123608787892",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Lint, typecheck and behavior tests in container",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Production build in container",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 123610101423,
+      "name": "integration",
+      "status": "completed",
+      "conclusion": "success",
+      "htmlUrl": "https://github.com/XB-Dong/quvideo-material-studio/actions/runs/40919563180/job/123610101423",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Start clean full stack",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Independent API acceptance through frontend proxy",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Independent browser acceptance",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Explicit software functional coverage of GPU effects",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Default capability policy interaction measurements",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Browser performance measurements",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Collect service logs",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Clean isolated CI services",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ]
+}
