@@ -90,6 +90,7 @@ public class Tasks {
   }
 
   Map<String, Object> view(Map<String, Object> task) {
+    task = new HashMap<>(task);
     String id = (String) task.get("id");
     String key = (String) task.remove("resultKey");
     task.remove("userId");
@@ -103,6 +104,7 @@ public class Tasks {
         db.steps(id).stream()
             .map(
                 step -> {
+                  step = new HashMap<>(step);
                   for (String field : List.of("startedAt", "completedAt", "failureReason"))
                     step.putIfAbsent(field, null);
                   Api.times(step);

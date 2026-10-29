@@ -37,6 +37,7 @@ class DatabaseIntegrationTest {
   @Autowired Identity identity;
   @Autowired TransactionTemplate tx;
   @Autowired Processing processing;
+  @Autowired org.springframework.transaction.PlatformTransactionManager manager;
 
   String user() {
     var m = identity.ensure(new MockHttpServletRequest(), new MockHttpServletResponse());
@@ -187,5 +188,32 @@ class DatabaseIntegrationTest {
     assertEquals("QUEUE_FULL", db.taskById(rejected[0]).get("failureCode"));
     assertEquals("SUCCEEDED", waitDone(owner, first).get("status"));
     assertEquals("SUCCEEDED", waitDone(owner, second).get("status"));
+  }
+
+  @Test
+  void finalCompletionRollsBackStepAndPersistsFailure() throws Exception {
+    String owner = user();
+    String id = UUID.randomUUID().toString();
+    tx.executeWithoutResult(
+        s -> {
+          db.task(id, owner, "demo-pet", "test", "{}");
+          for (String stage : Simulation.STAGES) db.step(id, stage);
+        });
+    Db failing = org.mockito.Mockito.mock(Db.class, org.mockito.AdditionalAnswers.delegatesTo(db));
+    org.mockito.Mockito.doThrow(new IllegalStateException("injected final persistence failure"))
+        .when(failing)
+        .success(org.mockito.ArgumentMatchers.eq(id), org.mockito.ArgumentMatchers.anyString());
+    Processing isolated = new Processing(failing, files, manager, 1);
+    try {
+      new Pipeline(isolated, (task, stage) -> {}, ms -> {})
+          .run(id, Simulation.resolve(null, 0, 0, 0, true));
+      var task = db.taskById(id);
+      assertEquals("FAILED", task.get("status"));
+      assertEquals("FINALIZE", task.get("failedStage"));
+      assertEquals("FAILED", db.steps(id).get(2).get("status"));
+      assertNull(task.get("resultKey"));
+    } finally {
+      isolated.shutdown();
+    }
   }
 }

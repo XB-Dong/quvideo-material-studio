@@ -42,7 +42,7 @@ public class Pipeline {
           return;
         }
         action.execute(id, stage);
-        store.end(id, stage);
+        if (!stage.equals("FINALIZE")) store.end(id, stage);
       }
       store.success(id);
     } catch (InterruptedException e) {

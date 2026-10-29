@@ -75,7 +75,13 @@ public class Processing implements Pipeline.Store, ApplicationRunner {
   }
 
   public void success(String id) {
-    tx.executeWithoutResult(s -> db.success(id, id + "-result.png"));
+    tx.executeWithoutResult(
+        s -> {
+          if (db.endStep(id, "FINALIZE") != 1)
+            throw new IllegalStateException("Final step completion rejected");
+          if (db.success(id, id + "-result.png") != 1)
+            throw new IllegalStateException("Task completion rejected");
+        });
   }
 
   public void fail(String id, String code, String reason) {

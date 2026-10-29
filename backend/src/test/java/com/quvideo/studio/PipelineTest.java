@@ -54,11 +54,10 @@ class PipelineTest {
             "end:GENERATE",
             "begin:FINALIZE",
             "execute:FINALIZE",
-            "end:FINALIZE",
             "success"),
         store.events);
     p.run("task", sim(null));
-    assertEquals(10, store.events.size());
+    assertEquals(9, store.events.size());
     assertEquals("SUCCEEDED", store.status);
   }
 
