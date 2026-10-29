@@ -1,0 +1,332 @@
+openapi: 3.0.3
+info:
+  title: Material Studio Java API
+  version: 1.0.0
+  description: Preparation contract. All business execution and persistence belong to Java.
+servers:
+  - url: http://localhost:3000
+    description: Same-origin Next proxy to Java
+security:
+  - sessionCookie: []
+paths:
+  /api/session:
+    post:
+      operationId: ensureSession
+      security: []
+      description: Reuse valid session or create an anonymous user and set HttpOnly material_session cookie.
+      responses:
+        '200':
+          description: Current or newly created session; Cache-Control no-store
+          headers:
+            Set-Cookie:
+              schema: { type: string }
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Session' }
+        '403': { $ref: '#/components/responses/Error' }
+    get:
+      operationId: getSession
+      responses:
+        '200':
+          description: Current identity; does not create a user
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Session' }
+        '401': { $ref: '#/components/responses/Error' }
+  /api/categories:
+    get:
+      operationId: listCategories
+      security: []
+      responses:
+        '200':
+          description: Template categories
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  required: [id, title]
+                  properties:
+                    id: { type: string }
+                    title: { type: string }
+  /api/templates:
+    get:
+      operationId: listTemplates
+      security: []
+      parameters:
+        - in: query
+          name: categoryId
+          schema: { type: string }
+      responses:
+        '200':
+          description: Templates, empty array if no matches
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Template' }
+  /api/templates/{templateId}:
+    parameters:
+      - $ref: '#/components/parameters/TemplateId'
+    get:
+      operationId: getTemplate
+      security: []
+      responses:
+        '200':
+          description: Template details
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Template' }
+        '404': { $ref: '#/components/responses/Error' }
+  /api/assets:
+    post:
+      operationId: uploadAsset
+      description: One file per request. Validate template policy, magic bytes, decoding and ownership. Commit only after atomic storage.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [templateId, file]
+              properties:
+                templateId: { type: string }
+                file: { type: string, format: binary }
+      responses:
+        '201':
+          description: Server-readable asset stored
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Asset' }
+        '400': { $ref: '#/components/responses/Error' }
+        '401': { $ref: '#/components/responses/Error' }
+        '404': { $ref: '#/components/responses/Error' }
+        '413': { $ref: '#/components/responses/Error' }
+        '415': { $ref: '#/components/responses/Error' }
+  /api/tasks:
+    post:
+      operationId: createTask
+      description: Validate and commit task before dispatch. Return without waiting for generation. No automatic POST retry or idempotency guarantee.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [templateId, assetIds]
+              properties:
+                templateId: { type: string }
+                assetIds:
+                  type: array
+                  uniqueItems: true
+                  minItems: 1
+                  description: Exact template count; array index is the upload slot
+                  items: { type: string, format: uuid }
+                simulation: { $ref: '#/components/schemas/Simulation' }
+      responses:
+        '202':
+          description: Accepted persistent task; dispatch rejection is represented by a FAILED Task with QUEUE_FULL
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Task' }
+        '400': { $ref: '#/components/responses/Error' }
+        '401': { $ref: '#/components/responses/Error' }
+        '404': { $ref: '#/components/responses/Error' }
+    get:
+      operationId: listMyTasks
+      description: Current user only, sorted by createdAt DESC and id DESC. Opaque cursor, no-store.
+      parameters:
+        - in: query
+          name: cursor
+          schema: { type: string }
+        - in: query
+          name: limit
+          schema: { type: integer, minimum: 1, maximum: 50, default: 20 }
+      responses:
+        '200':
+          description: Persisted personal history
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items, nextCursor]
+                properties:
+                  items:
+                    type: array
+                    items: { $ref: '#/components/schemas/Task' }
+                  nextCursor: { type: string, nullable: true }
+        '400': { $ref: '#/components/responses/Error' }
+        '401': { $ref: '#/components/responses/Error' }
+  /api/tasks/{taskId}:
+    parameters:
+      - $ref: '#/components/parameters/TaskId'
+    get:
+      operationId: getMyTask
+      description: Read-only snapshot; never drives execution. Include monotonically increasing version.
+      responses:
+        '200':
+          description: Current user's task, no-store
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Task' }
+        '401': { $ref: '#/components/responses/Error' }
+        '404': { $ref: '#/components/responses/Error' }
+  /media/demo/{key}:
+    parameters:
+      - in: path
+        name: key
+        required: true
+        schema: { type: string }
+    get:
+      operationId: getPublicDemoImage
+      security: []
+      description: Allowlisted seed image key, never arbitrary filesystem paths
+      responses:
+        '200': { $ref: '#/components/responses/Image' }
+        '404': { $ref: '#/components/responses/Error' }
+  /media/assets/{assetId}:
+    parameters:
+      - in: path
+        name: assetId
+        required: true
+        schema: { type: string, format: uuid }
+    get:
+      operationId: getMyAssetImage
+      responses:
+        '200': { $ref: '#/components/responses/Image' }
+        '401': { $ref: '#/components/responses/Error' }
+        '404': { $ref: '#/components/responses/Error' }
+  /media/results/{taskId}:
+    parameters:
+      - $ref: '#/components/parameters/TaskId'
+    get:
+      operationId: getMyResultImage
+      description: Own SUCCEEDED task only, private no-store
+      responses:
+        '200': { $ref: '#/components/responses/Image' }
+        '401': { $ref: '#/components/responses/Error' }
+        '404': { $ref: '#/components/responses/Error' }
+components:
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: material_session
+  parameters:
+    TemplateId:
+      in: path
+      name: templateId
+      required: true
+      schema: { type: string }
+    TaskId:
+      in: path
+      name: taskId
+      required: true
+      schema: { type: string, format: uuid }
+  responses:
+    Error:
+      description: Standard request error; must not be interpreted as task execution failure
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    Image:
+      description: Image bytes; nosniff. Private resources use no-store and require current session.
+      content:
+        image/png:
+          schema: { type: string, format: binary }
+        image/jpeg:
+          schema: { type: string, format: binary }
+  schemas:
+    Session:
+      type: object
+      required: [userId, displayName, expiresAt]
+      properties:
+        userId: { type: string, format: uuid }
+        displayName: { type: string }
+        expiresAt: { type: string, format: date-time }
+    Template:
+      type: object
+      required: [id, title, categoryId, coverUrl, description, requiredImageCount, acceptedMimeTypes, maxFileSizeBytes]
+      properties:
+        id: { type: string }
+        title: { type: string }
+        categoryId: { type: string }
+        coverUrl: { type: string, description: Same-origin relative URL }
+        description: { type: string }
+        requiredImageCount: { type: integer, minimum: 1 }
+        acceptedMimeTypes:
+          type: array
+          items: { type: string, enum: [image/jpeg, image/png] }
+        maxFileSizeBytes: { type: integer, format: int64, minimum: 1 }
+    Asset:
+      type: object
+      required: [id, url, mimeType, sizeBytes, width, height]
+      properties:
+        id: { type: string, format: uuid }
+        url: { type: string, example: /media/assets/00000000-0000-0000-0000-000000000001 }
+        mimeType: { type: string }
+        sizeBytes: { type: integer, format: int64 }
+        width: { type: integer }
+        height: { type: integer }
+    Stage:
+      type: string
+      enum: [ASSET_CHECK, GENERATE, FINALIZE]
+    Step:
+      type: object
+      required: [stage, status, startedAt, completedAt, failureReason]
+      properties:
+        stage: { $ref: '#/components/schemas/Stage' }
+        status: { type: string, enum: [NOT_STARTED, RUNNING, SUCCEEDED, FAILED] }
+        startedAt: { type: string, format: date-time, nullable: true }
+        completedAt: { type: string, format: date-time, nullable: true }
+        failureReason: { type: string, nullable: true }
+    Task:
+      type: object
+      required: [id, templateId, templateTitle, status, stage, failedStage, failureCode, failureReason, resultUrl, version, createdAt, updatedAt, startedAt, completedAt, steps]
+      properties:
+        id: { type: string, format: uuid }
+        templateId: { type: string }
+        templateTitle: { type: string }
+        status: { type: string, enum: [QUEUED, RUNNING, SUCCEEDED, FAILED] }
+        stage: { type: string, nullable: true, enum: [ASSET_CHECK, GENERATE, FINALIZE, null] }
+        failedStage: { type: string, nullable: true, enum: [ASSET_CHECK, GENERATE, FINALIZE, null] }
+        failureCode: { type: string, nullable: true }
+        failureReason: { type: string, nullable: true }
+        resultUrl: { type: string, nullable: true, description: Only non-null after success; current user's media endpoint }
+        version: { type: integer, format: int64, minimum: 1 }
+        createdAt: { type: string, format: date-time }
+        updatedAt: { type: string, format: date-time }
+        startedAt: { type: string, format: date-time, nullable: true }
+        completedAt: { type: string, format: date-time, nullable: true }
+        steps:
+          type: array
+          minItems: 3
+          maxItems: 3
+          items: { $ref: '#/components/schemas/Step' }
+    Simulation:
+      type: object
+      additionalProperties: false
+      description: Optional, only accepted when SIMULATION_CONTROLS_ENABLED=true. Missing fields use server defaults, snapshotted at acceptance.
+      properties:
+        failAt: { type: string, nullable: true, enum: [ASSET_CHECK, GENERATE, FINALIZE, null] }
+        delayMs:
+          type: object
+          additionalProperties: false
+          properties:
+            assetCheck: { type: integer, minimum: 0, maximum: 30000 }
+            generate: { type: integer, minimum: 0, maximum: 30000 }
+            finalize: { type: integer, minimum: 0, maximum: 30000 }
+    Error:
+      type: object
+      required: [code, message, requestId]
+      properties:
+        code:
+          type: string
+          description: INVALID_ARGUMENT, UNAUTHENTICATED, NOT_FOUND, FILE_TOO_LARGE, UNSUPPORTED_MEDIA, ORIGIN_FORBIDDEN, INTERNAL_ERROR
+        message: { type: string, description: Understandable safe message, no stack trace }
+        requestId: { type: string }
+        fieldErrors:
+          type: object
+          additionalProperties: { type: string }
