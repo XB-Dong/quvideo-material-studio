@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Material Studio Java API
   version: 1.0.0
-  description: Preparation contract. All business execution and persistence belong to Java.
+  description: All business execution and persistence belong to Java. Same-origin Next proxy preserves the Java contract.
 servers:
   - url: http://localhost:3000
     description: Same-origin Next proxy to Java

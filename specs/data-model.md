@@ -1,13 +1,13 @@
 # 数据模型规格
 
-版本：1.0.0。MySQL 8.4、InnoDB、utf8mb4；所有时间保存 UTC 并以 ISO 8601 返回，页面按本地时区展示。UUID 由后端生成并使用一致的字符串格式。下列为迁移设计，尚无实际 SQL。
+版本：1.0.0。MySQL 8.4、InnoDB、utf8mb4；所有时间保存 UTC 并以 ISO 8601 返回，页面按本地时区展示。UUID 由后端生成并使用一致的字符串格式。实际结构见 backend/src/main/resources/db/migration/V1__schema.sql，种子见 V2__templates.sql。
 
 | 表 | 关键字段 | 约束与索引 |
 | --- | --- | --- |
 | users | id, display_name, created_at | id 主键；不存真实邮箱密码 |
-| sessions | id, user_id, token_hash, expires_at, created_at | token_hash 唯一；user_id 外键；不存明文 token |
+| sessions | token_hash, user_id, expires_at | token_hash 主键；user_id 外键；不存明文 token |
 | categories | id, title, sort_order | id 主键 |
-| templates | id, category_id, title, description, cover_key, required_image_count, accepted_mime_types, max_file_size_bytes, result_key, sort_order | category 外键；required_image_count>0；种子图可访问 |
+| templates | id, category_id, title, description, cover_key, required_image_count, max_file_size_bytes, result_key, sort_order | category 外键；种子要求 1/2/3 图；JPEG/PNG 作为服务器统一规则在 API 返回 acceptedMimeTypes |
 | assets | id, user_id, storage_key, original_name, mime_type, size_bytes, width, height, created_at | user 外键；storage_key 唯一；原名仅展示并转义 |
 | tasks | id, user_id, template_id, template_title, status, stage, failed_stage, failure_code, failure_reason, result_key, version, simulation_json, created_at, started_at, completed_at, updated_at | (user_id,created_at,id) 历史索引；status 索引；version 从 1 单调递增 |
 | task_assets | task_id, asset_id, slot_index | (task_id,slot_index) 主键；(task_id,asset_id) 唯一；快照关联不可变 |
