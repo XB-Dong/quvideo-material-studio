@@ -182,6 +182,7 @@ export function Maker({ template: t }: { template: Template }) {
   const locked = useRef(false);
   const alive = useRef(true);
   const pending = useRef<AbortController | null>(null);
+  const submissionGeneration = useRef(0);
   useEffect(() => {
     alive.current = true;
     return () => {
@@ -190,6 +191,11 @@ export function Maker({ template: t }: { template: Template }) {
     };
   }, []);
   useEffect(() => {
+    pending.current?.abort();
+    pending.current = null;
+    submissionGeneration.current++;
+    locked.current = false;
+    setSubmitting(false);
     setSlots(
       Array.from({ length: t.requiredImageCount }, () => ({ status: "EMPTY" })),
     );
@@ -202,6 +208,7 @@ export function Maker({ template: t }: { template: Template }) {
     setSubmitting(true);
     setMessage("");
     const startEpoch = epoch.current;
+    const startGeneration = ++submissionGeneration.current;
     const userId = session.userId;
     const abort = new AbortController();
     pending.current = abort;
@@ -215,7 +222,12 @@ export function Maker({ template: t }: { template: Template }) {
         }),
         signal: abort.signal,
       });
-      if (alive.current && epoch.current === startEpoch) {
+      if (
+        alive.current &&
+        !abort.signal.aborted &&
+        epoch.current === startEpoch &&
+        submissionGeneration.current === startGeneration
+      ) {
         client.setQueryData<Task[]>(["personal", userId, "created"], (old) => [
           ...(old || []),
           task,
@@ -226,6 +238,7 @@ export function Maker({ template: t }: { template: Template }) {
       if (
         alive.current &&
         epoch.current === startEpoch &&
+        submissionGeneration.current === startGeneration &&
         !abort.signal.aborted
       )
         setMessage(
@@ -234,8 +247,15 @@ export function Maker({ template: t }: { template: Template }) {
             : "提交结果未确认，请先刷新右侧记录，避免重复提交。",
         );
     } finally {
-      locked.current = false;
-      if (alive.current) setSubmitting(false);
+      if (
+        alive.current &&
+        epoch.current === startEpoch &&
+        submissionGeneration.current === startGeneration
+      ) {
+        pending.current = null;
+        locked.current = false;
+        setSubmitting(false);
+      }
     }
   };
   return (
