@@ -19,3 +19,6 @@ measurement.json记录每次原始资源、响应状态、JS gzip归一值、图
 
 
 图形环境要求：Alpine Chromium将SwiftShader拆为独立chromium-swiftshader包，必须显式安装。只写--use-angle=swiftshader启动参数不代表WebGL可用；采集前用空白页原生getContext(webgl2)和UNMASKED_RENDERER_WEBGL验证实际能力，measure.mjs会保存observedWebGL。旧未安装驱动的基线保留但不能用于有图形效果时的公平性能比较。当前GPU环境Chromium149.0.7827.53、SwiftShader真实renderer已实测，P0/P1需复用同一image和相同参数。
+
+
+常规 CI 的 Electric 用同步原生 draw 后的 RGBA 样本证明真实存活时绘制、彩色边缘、连续签名变化与大于80%透明区域；该功能性读回会扰动软件渲染，不用于舒适/性能签署。精确600ms合成器五帧以 `EXACT_ELECTRIC_SEQUENCE=1` 单独采集，默认CI报告明确标记未采集；不能用普通CI替代该独立视觉证据。生命周期每项用新的页面状态，finally恢复媒体/偏好，最多5秒等待真实GPU/Orbit/RAF释放；该功能等待上限不是产品效果时长或舒适延迟承诺。
