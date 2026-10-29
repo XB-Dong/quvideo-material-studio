@@ -1,8 +1,20 @@
 # P1 独立使用舒适度签署
 
-签署角色：Test/Acceptance（原生子Agent p1_acceptance，非前端作者、非美学Reviewer）。rootTaskId P1-ACCEPT；specVersion P1-1.2.0。实际应用源码 **716518e6087fbb0ec17abf55b4b68f00cd327a84**；采集日期2026-10-30（Asia/Shanghai；JSON保留UTC原值）。实际模型路由未知null。
+签署角色：Test/Acceptance（原生子Agent p1_acceptance，非前端作者、非美学Reviewer）。rootTaskId P1-ACCEPT；specVersion P1-1.2.0。最终应用源码 **a2505ecdedf04ad432476d5bdfb1eda02e0fe926**；716518e6087fbb0ec17abf55b4b68f00cd327a84为保留的历史阶段；采集日期2026-10-30（Asia/Shanghai；JSON保留UTC原值）。实际模型路由未知null。
 
-**当前状态：asset_budget_recheck_pending，G02整体签署暂停。** 原716本地清单及功能证据保留；远端CI2新实测图片996880/996880/757983B，前两轮超过800KiB，形成开放major ACCEPT-BUDGET-02。以下历史本地通过不再代表全预算通过，待JPEG优化新SHA复验后重新签署。 此签署不代替独立美学G01、远端CI最终结果或Leader交付签署。真实软件默认路径与七创意功能路径分别验证，不能互相代替。
+**当前结论：新资产应用a2505ecdedf04ad432476d5bdfb1eda02e0fe926的独立本地G02复验通过；ACCEPT-BUDGET-02状态local_recheck_pass_ci3_pending。** 新版真实预算守卫本地三轮全通过，CI3仍由Leader独立确认；不把CI2绿色当预算通过，CI2原始Red永久保留。此签署仅实际环境内舒适验收，非整体交付/CI/美学签署。
+
+## 新资产最终复验（a2505ec）
+
+本轮2026-10-30T01:39–01:42+08:00，同镜像4c5d985c/Chromium149/1440×1000/8秒/冷context禁缓存，无CPU网络节流，顺序执行无并发浏览器/构建。default22/0，functional32/0（包含lazy预算新检查），native原生trusted hidden双模式0资源并恢复，touch-only实际coarse=true/fine=false/hover=false/maxTouchPoints1且GL/Orbit/RAF0，均exit0。actual source与原始结果见FINAL-a2505ec.json及各final-a2505ec目录。
+
+startup图片每轮446891/182616/403920B，最大446891<819200；JS每轮168190B，相对冻结P0增加11815B<35840；CLS每轮0.00015149103612075617/0.00015784019941165125/0.00016423611111111112；pageerrors0。measure先落完整原值再每轮guard，真实exit0。lazy本轮57422B<122880（实际请求包括独立生命周期页的Worker），不是沿用旧54362B。Electric实际draw3/colored2222/透明80.64%/三个变化签名、liveAtCapture=true；普通CI明确没有重采精确五帧。
+
+新默认无截图/trace交互：主GL调用0，1085ms开始的交互阶段longtask0/maxRAF16.8ms；初始化113/85ms长任务与全程最大RAF316.6ms单列，不把初始化隐藏成全程无卡顿。默认Worker实际software拒绝、released=true，主页面GPU0；功能fixture不用于性能。
+
+独立git diff --quiet比较716与a250：前端执行文件（除ADAPTATIONS说明）、Java代码、迁移、PNG均相同exit0。仅四JPEG有产品字节变化。新1440/375 catalog/studio/结果截图与touch图供Reviewer实际复核；1280布局与精确Electric五帧明确引用716同代码等价证据，未冒称重跑。Root已回报新source15Java/8API exit0；原31FE行为测试引用执行代码等价证据，不冒称本Agent重跑。CI3仍需Leader实际结果。
+
+以下保留716阶段详细清单、CI1/CI2失败与修正过程，属于历史已验事实；当前结论以上述新source复验为准。 此签署不代替独立美学G01、远端CI最终结果或Leader交付签署。真实软件默认路径与七创意功能路径分别验证，不能互相代替。
 
 ## 环境和执行
 

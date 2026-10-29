@@ -1,0 +1,154 @@
+{
+  "testedCommit": "a2505ecdedf04ad432476d5bdfb1eda02e0fe926",
+  "previousCommit": "716518e6087fbb0ec17abf55b4b68f00cd327a84",
+  "defaultChecks": {
+    "pass": 22,
+    "fail": 0
+  },
+  "functionalChecks": {
+    "pass": 32,
+    "fail": 0
+  },
+  "nativeVisibilityModes": 2,
+  "touchActualCoarse": true,
+  "startupBudgets": {
+    "limits": {
+      "baselineJsGzipBytes": 156375,
+      "maxAdditionalJsGzipBytes": 35840,
+      "maxImageEncodedBytes": 819200,
+      "maxCls": 0.1,
+      "maxPageErrors": 0
+    },
+    "rule": "Every individual observed run must pass; image requests remain counted as actually transferred, without URL deduplication or median substitution",
+    "checks": [
+      {
+        "run": 1,
+        "metric": "imageEncodedBytes",
+        "actual": 446891,
+        "limit": 819200,
+        "pass": true
+      },
+      {
+        "run": 1,
+        "metric": "cls",
+        "actual": 0.00015149103612075617,
+        "limit": 0.1,
+        "pass": true
+      },
+      {
+        "run": 1,
+        "metric": "pageErrors",
+        "actual": 0,
+        "limit": 0,
+        "pass": true
+      },
+      {
+        "run": 1,
+        "metric": "additionalJsGzipBytes",
+        "actual": 11815,
+        "limit": 35840,
+        "pass": true
+      },
+      {
+        "run": 2,
+        "metric": "imageEncodedBytes",
+        "actual": 182616,
+        "limit": 819200,
+        "pass": true
+      },
+      {
+        "run": 2,
+        "metric": "cls",
+        "actual": 0.00015784019941165125,
+        "limit": 0.1,
+        "pass": true
+      },
+      {
+        "run": 2,
+        "metric": "pageErrors",
+        "actual": 0,
+        "limit": 0,
+        "pass": true
+      },
+      {
+        "run": 2,
+        "metric": "additionalJsGzipBytes",
+        "actual": 11815,
+        "limit": 35840,
+        "pass": true
+      },
+      {
+        "run": 3,
+        "metric": "imageEncodedBytes",
+        "actual": 403920,
+        "limit": 819200,
+        "pass": true
+      },
+      {
+        "run": 3,
+        "metric": "cls",
+        "actual": 0.00016423611111111112,
+        "limit": 0.1,
+        "pass": true
+      },
+      {
+        "run": 3,
+        "metric": "pageErrors",
+        "actual": 0,
+        "limit": 0,
+        "pass": true
+      },
+      {
+        "run": 3,
+        "metric": "additionalJsGzipBytes",
+        "actual": 11815,
+        "limit": 35840,
+        "pass": true
+      }
+    ],
+    "pass": true
+  },
+  "imageRuns": [
+    446891,
+    182616,
+    403920
+  ],
+  "scriptRuns": [
+    168190,
+    168190,
+    168190
+  ],
+  "clsRuns": [
+    0.00015149103612075617,
+    0.00015784019941165125,
+    0.00016423611111111112
+  ],
+  "interaction": {
+    "firstPhaseAt": 1085,
+    "longTasksAfterFirstPhase": [],
+    "mainGLCalls": 0,
+    "maxRafGapAfterFirstPhase": 16.800000000000182,
+    "initialLongTasks": [
+      {
+        "at": 27,
+        "duration": 113
+      },
+      {
+        "at": 642.5,
+        "duration": 85
+      }
+    ],
+    "maxRafGapIncludingInitialization": 316.6
+  },
+  "equivalence": {
+    "verification": "git diff --quiet716..a250 -- frontend/src excluding ADAPTATIONS.md, backend/src/main/java, backend/src/main/resources/db, demo/*.png",
+    "exitCode": 0,
+    "changedProductAssets": "4coverJPEGs only",
+    "reuseEvidence": [
+      "final-716518-functional-verified/electric-compositor-sequence.json",
+      "final-716518-1280/layout.json"
+    ],
+    "notClaimedReexecuted": "exactElectric600ms compositor fiveframes and1280screenshots"
+  },
+  "remoteCi3": "Leader tracks separately; not assumed green"
+}

@@ -1,0 +1,59 @@
+{
+  "scope": "Scripts requested after first catalog load during all creative interactions, including route-independent shared lazy code; compare actual build inventory for complete budget",
+  "scripts": [
+    {
+      "path": "/_next/static/chunks/12j1iyfyl867v.js",
+      "gzipBytes": 7036
+    },
+    {
+      "path": "/_next/static/chunks/3q82-9u6314jz.js",
+      "gzipBytes": 7496
+    },
+    {
+      "path": "/_next/static/chunks/34ulurzqao46o.js",
+      "gzipBytes": 6468
+    },
+    {
+      "path": "/_next/static/chunks/2ozbmf7dyqtzp.js",
+      "gzipBytes": 14617
+    },
+    {
+      "path": "/_next/static/chunks/2aned25s_8gs-.js",
+      "gzipBytes": 3652
+    },
+    {
+      "path": "/_next/static/chunks/405pgm16c4uy7.js",
+      "gzipBytes": 7400
+    },
+    {
+      "path": "/_next/static/chunks/32oou99fxghdj.js",
+      "gzipBytes": 6163
+    },
+    {
+      "path": "http://localhost:3000/096facae-62ee-4c67-b6af-775665229c0a",
+      "gzipBytes": 765
+    },
+    {
+      "path": "http://localhost:3000/1703c618-6d85-4e47-99aa-22adba5d3cf3",
+      "gzipBytes": 765
+    },
+    {
+      "path": "http://localhost:3000/f1d01991-f3ff-47a5-896b-2799b704d160",
+      "gzipBytes": 765
+    },
+    {
+      "path": "http://localhost:3000/9be74ee8-bc37-4f61-92c5-c64ffd6b22ed",
+      "gzipBytes": 765
+    },
+    {
+      "path": "http://localhost:3000/18fa8d64-c999-4808-b767-29b16c17b9b8",
+      "gzipBytes": 765
+    },
+    {
+      "path": "http://localhost:3000/5b391fe8-b017-40a8-8a6e-c86ba633f4e8",
+      "gzipBytes": 765
+    }
+  ],
+  "totalGzipBytes": 57422,
+  "maxGzipBytes": 122880
+}

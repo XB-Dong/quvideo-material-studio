@@ -1,0 +1,27 @@
+{
+  "longTasks": [
+    {
+      "at": 66.30000000074506,
+      "duration": 87,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "label": "pixel-before-context-loss",
+      "event": "start",
+      "at": 891.8000000007451
+    },
+    {
+      "label": "pixel-before-context-loss",
+      "event": "end",
+      "at": 1980.199999999255
+    }
+  ]
+}

@@ -36,3 +36,11 @@
 - 封存前CI2审计新finding ACCEPT-BUDGET-02 major：图片996880/996880/757983B超过800KiB，真实13/13/10次请求；原本地pass保留但G02整体改asset_budget_recheck_pending。等待仅JPEG编码修复新appSHA后复验，未提前采样。
 
 - 预算漏检修复工具4c37d7b68783db166f0916c43982ebfa1f241056：每轮image/CLS/pageerror/相对冻结P0 JS均为真实exit1门槛，先保存完整原值和各轮budget再断言，lazy另增真实<=120KiB检查（功能现32项）。Docker node--check exit0；纯报告CLI重算CI2 budget-evaluation.json真实exit1，旧本地budget-evaluation.json exit0；未改旧measurement、未新采老产品、不按中位/去重取巧。
+
+
+## 四JPEG优化后的最终复验
+
+- 实际新产品a2505ecdedf04ad432476d5bdfb1eda02e0fe926；2026-10-30T01:39–01:42+08:00，同镜像/冷缓存/8秒条件，顺序运行；前端执行代码、Java、迁移、PNG与716 git diff quiet exit0，变更仅四JPEG及说明。
+- default22/0、functional32/0、native2模式/0、touch实际coarse true；startup三轮真实guard exit0，images446891/182616/403920最大446891<819200，JS168190增11815，lazy57422<122880，CLS小于.001且pageerrors0。默认无截图交互从1085ms开始0长任务/主GL0/RAFmax16.8，初始化113/85ms长任务及全程RAFmax316.6单列。
+- 精确Electric五帧/1280引用716同代码等价证据，没声称重跑；新1440/375/结果截图已给独立Reviewer。REV05实际旧白块图final-be43ab9-recheck/active-electric.png单独保留。
+- G02当前新source本地重签，ACCEPT-BUDGET-02 local_recheck_pass_ci3_pending；CI2Red和716原结果全部保留，远端CI3与最终整体交付仍由Leader确认。新证据总索引FINAL-a2505ec.json，详细范围COMFORT-SIGNOFF.md。

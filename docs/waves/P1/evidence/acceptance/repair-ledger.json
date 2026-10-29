@@ -74,7 +74,7 @@
     {
       "cause": "CI2 real repeated image transfers exceed first viewport800KiB",
       "kind": "product asset budget major ACCEPT-BUDGET-02",
-      "status": "asset_budget_recheck_pending",
+      "status": "local_recheck_pass_ci3_pending",
       "evidence": [
         "ci2-budget/measurement.json"
       ],
@@ -84,7 +84,17 @@
         996880,
         757983
       ],
-      "resolution": "Pending Leader-dispatched4JPEG-only bounded encoding optimization; no budget relaxation; wait new deployed appSHA before repeat checks"
+      "resolution": "Four JPEG-only optimization; unchanged dimensions/crop. Real every-run guard passes new32functional/default22/startup3; default no-screenshot/native/touch reverified; remoteCI3 remains separately pending.",
+      "newAppSource": "a2505ecdedf04ad432476d5bdfb1eda02e0fe926",
+      "localNewImageRuns": [
+        446891,
+        182616,
+        403920
+      ],
+      "newEvidence": [
+        "FINAL-a2505ec.json",
+        "final-a2505ec-startup/measurement.json"
+      ]
     }
   ]
 }

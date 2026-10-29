@@ -1,0 +1,48 @@
+{
+  "status": "not_collected_in_standard_CI_mode",
+  "reason": "Exact 600ms compositor sequence is a separate explicit evidence mode; normal CI verifies actual draw and changing live framebuffer pixels",
+  "exactEvidenceMode": "EXACT_ELECTRIC_SEQUENCE=1",
+  "drawEvidence": {
+    "gpu": [
+      {
+        "id": 1,
+        "live": false,
+        "connected": false,
+        "width": 1,
+        "height": 1,
+        "draws": 969,
+        "pixels": null
+      },
+      {
+        "id": 2,
+        "live": true,
+        "connected": true,
+        "width": 263,
+        "height": 176,
+        "draws": 3,
+        "pixels": {
+          "width": 263,
+          "height": 176,
+          "nonzero": 8963,
+          "colored": 2222,
+          "transparent": 37325,
+          "transparentFraction": 0.806364500518493,
+          "liveAtCapture": true,
+          "ownerAtCapture": "electric",
+          "captureAt": 7708.10000000149,
+          "signatures": [
+            2882129027,
+            2398646201,
+            2188538578
+          ],
+          "note": "Synchronous readback only for functionality; excluded from comfort latency measurements"
+        }
+      }
+    ],
+    "peak": 1,
+    "owners": [
+      "electric",
+      "electric"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "testedCommit": "a2505ecdedf04ad432476d5bdfb1eda02e0fe926",
+  "capturedAt": "2026-10-29T17:42:28.281Z",
+  "browser": "149.0.7827.53",
+  "conditions": "375x812 hasTouch/isMobile; only touchscreen.tap, never mouse movement; actual media values asserted, not inferred from configuration",
+  "initial": {
+    "coarse": true,
+    "fine": false,
+    "hover": false,
+    "maxTouchPoints": 1,
+    "gpuAllocated": 0,
+    "gpuLive": 0,
+    "orbit": 0,
+    "rafPending": 0,
+    "rafExecuted": 0,
+    "width": 375,
+    "scrollWidth": 375
+  },
+  "studio": {
+    "coarse": true,
+    "fine": false,
+    "hover": false,
+    "maxTouchPoints": 1,
+    "gpuAllocated": 0,
+    "gpuLive": 0,
+    "orbit": 0,
+    "rafPending": 0,
+    "rafExecuted": 2,
+    "width": 375,
+    "scrollWidth": 375
+  },
+  "steady": {
+    "coarse": true,
+    "fine": false,
+    "hover": false,
+    "maxTouchPoints": 1,
+    "gpuAllocated": 0,
+    "gpuLive": 0,
+    "orbit": 0,
+    "rafPending": 0,
+    "rafExecuted": 2,
+    "width": 375,
+    "scrollWidth": 375
+  },
+  "pass": true
+}
