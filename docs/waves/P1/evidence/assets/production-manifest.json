@@ -1,0 +1,139 @@
+{
+  "tool": "Pillow 11.3.0",
+  "imagePolicy": "RGB; no recolor; results preserve full framing",
+  "baseCommit": "7997279301ce28c1bf1ee5e15d971aa7243a645c",
+  "assets": [
+    {
+      "templateId": "demo-postcard",
+      "kind": "cover",
+      "key": "postcard-p1-cover.jpg",
+      "mimeType": "image/jpeg",
+      "width": 480,
+      "height": 640,
+      "bytes": 55356,
+      "sha256": "418f5364df2b1beb54147e8c6c4f5b2d7de0dd5ef1e76458d3b7e91674f0ae65",
+      "sourceSha256": "2633727e37fd865835089a11f56d2e19e37f5c4e8e35b7148490e9dc373d4d44",
+      "sourceUrl": "https://unsplash.com/photos/snow-covered-mountains-under-a-pink-sky-gH2wZOYK-KQ",
+      "author": "Shutter Speed",
+      "license": "Unsplash License",
+      "cropCenter": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "templateId": "demo-postcard",
+      "kind": "result",
+      "key": "postcard-p1-result.png",
+      "mimeType": "image/png",
+      "width": 960,
+      "height": 640,
+      "bytes": 612429,
+      "sha256": "fe1fc5c546b26b2f87aabdade9cd7633a59f391ee7e3299ebe29d4e23ee0f136",
+      "sourceSha256": "2633727e37fd865835089a11f56d2e19e37f5c4e8e35b7148490e9dc373d4d44",
+      "sourceUrl": "https://unsplash.com/photos/snow-covered-mountains-under-a-pink-sky-gH2wZOYK-KQ",
+      "author": "Shutter Speed",
+      "license": "Unsplash License",
+      "cropCenter": null
+    },
+    {
+      "templateId": "demo-pet",
+      "kind": "cover",
+      "key": "pet-p1-cover.jpg",
+      "mimeType": "image/jpeg",
+      "width": 480,
+      "height": 640,
+      "bytes": 62962,
+      "sha256": "4ec3421dec611bb3f58da2c498b572042eb7f4955b49d451011b4f47bf63b9ae",
+      "sourceSha256": "be26f3bc9edb9a3abeb29c092ffbf3a88fa12ab8c038156d24cafaae7dde889d",
+      "sourceUrl": "https://unsplash.com/photos/shallow-focus-photography-of-white-shih-tzu-puppy-running-on-the-grass-qO-PIF84Vxg",
+      "author": "Joe Caione",
+      "license": "Unsplash License",
+      "cropCenter": [
+        0.84,
+        0.5
+      ]
+    },
+    {
+      "templateId": "demo-pet",
+      "kind": "result",
+      "key": "pet-p1-result.png",
+      "mimeType": "image/png",
+      "width": 960,
+      "height": 640,
+      "bytes": 664653,
+      "sha256": "767bad36607f21adc40c2bcefbe1a5e970ccba43da822d92b487e18ddb66699c",
+      "sourceSha256": "be26f3bc9edb9a3abeb29c092ffbf3a88fa12ab8c038156d24cafaae7dde889d",
+      "sourceUrl": "https://unsplash.com/photos/shallow-focus-photography-of-white-shih-tzu-puppy-running-on-the-grass-qO-PIF84Vxg",
+      "author": "Joe Caione",
+      "license": "Unsplash License",
+      "cropCenter": null
+    },
+    {
+      "templateId": "demo-portrait",
+      "kind": "cover",
+      "key": "portrait-p1-cover.jpg",
+      "mimeType": "image/jpeg",
+      "width": 480,
+      "height": 640,
+      "bytes": 41292,
+      "sha256": "37a82ff47ff600bf6eae22f326c08a318144981d1525fc48dae94ca60fbd9c1b",
+      "sourceSha256": "fb8dbf07ee48e2bc7780002cc8c3cebd5b60f34ca15318dc469c9975257d6434",
+      "sourceUrl": "https://unsplash.com/photos/woman-face-with-purple-lights-N19l9MJCpFQ",
+      "author": "Tiko Giorgadze",
+      "license": "Unsplash License",
+      "cropCenter": [
+        0.85,
+        0.5
+      ]
+    },
+    {
+      "templateId": "demo-portrait",
+      "kind": "result",
+      "key": "portrait-p1-result.png",
+      "mimeType": "image/png",
+      "width": 960,
+      "height": 639,
+      "bytes": 357471,
+      "sha256": "9f9ad530fa14e28762aa258d1e43f8096d96c5a97f461fbe39a47c1d106490dd",
+      "sourceSha256": "fb8dbf07ee48e2bc7780002cc8c3cebd5b60f34ca15318dc469c9975257d6434",
+      "sourceUrl": "https://unsplash.com/photos/woman-face-with-purple-lights-N19l9MJCpFQ",
+      "author": "Tiko Giorgadze",
+      "license": "Unsplash License",
+      "cropCenter": null
+    },
+    {
+      "templateId": "demo-story",
+      "kind": "cover",
+      "key": "story-p1-cover.jpg",
+      "mimeType": "image/jpeg",
+      "width": 480,
+      "height": 640,
+      "bytes": 120579,
+      "sha256": "2eed78f2f5fcfad19a25f42a4db35236b87c1844e0487e33a722b53c794bda56",
+      "sourceSha256": "e38185f8f05dbbd882afd8a058488ad8fb9d3ff2e8f104a97ae801420ff6b2bf",
+      "sourceUrl": "https://unsplash.com/photos/purple-and-blue-abstract-painting-vBc7xy65us8",
+      "author": "Pawel Czerwinski",
+      "license": "Unsplash License",
+      "cropCenter": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "templateId": "demo-story",
+      "kind": "result",
+      "key": "story-p1-result.png",
+      "mimeType": "image/png",
+      "width": 640,
+      "height": 960,
+      "bytes": 1012019,
+      "sha256": "f9ff1ca6eb6bd67669f0029062cd2071e21532cdd4364f0f254fddd2c4aebff5",
+      "sourceSha256": "e38185f8f05dbbd882afd8a058488ad8fb9d3ff2e8f104a97ae801420ff6b2bf",
+      "sourceUrl": "https://unsplash.com/photos/purple-and-blue-abstract-painting-vBc7xy65us8",
+      "author": "Pawel Czerwinski",
+      "license": "Unsplash License",
+      "cropCenter": null
+    }
+  ]
+}

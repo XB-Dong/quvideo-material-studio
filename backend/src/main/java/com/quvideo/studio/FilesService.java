@@ -28,9 +28,28 @@ public class FilesService {
     return p;
   }
 
+  private static final Map<String, String> DEMO_TYPES = Map.ofEntries(
+      Map.entry("postcard.png", "image/png"),
+      Map.entry("postcard-p1-cover.jpg", "image/jpeg"),
+      Map.entry("postcard-p1-result.png", "image/png"),
+      Map.entry("pet.png", "image/png"),
+      Map.entry("pet-p1-cover.jpg", "image/jpeg"),
+      Map.entry("pet-p1-result.png", "image/png"),
+      Map.entry("story.png", "image/png"),
+      Map.entry("story-p1-cover.jpg", "image/jpeg"),
+      Map.entry("story-p1-result.png", "image/png"),
+      Map.entry("portrait.png", "image/png"),
+      Map.entry("portrait-p1-cover.jpg", "image/jpeg"),
+      Map.entry("portrait-p1-result.png", "image/png"));
+
+  String demoMime(String key) {
+    String type = key == null ? null : DEMO_TYPES.get(key);
+    if (type == null) throw Problem.missing();
+    return type;
+  }
+
   byte[] demo(String key) throws IOException {
-    if (!Set.of("postcard.png", "pet.png", "story.png", "portrait.png").contains(key))
-      throw Problem.missing();
+    demoMime(key);
     try (InputStream in = getClass().getResourceAsStream("/demo/" + key)) {
       if (in == null) throw Problem.missing();
       return in.readAllBytes();

@@ -113,7 +113,7 @@ public class Api {
 
   @GetMapping("/media/demo/{key}")
   public ResponseEntity<byte[]> demo(@PathVariable String key) throws IOException {
-    return image(files.demo(key), "image/png");
+    return image(files.demo(key), files.demoMime(key));
   }
 
   @GetMapping("/media/assets/{id}")
