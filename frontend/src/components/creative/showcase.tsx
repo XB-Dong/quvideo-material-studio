@@ -352,6 +352,7 @@ export function CreativeShowcase({
               </SafeEffect>
             </div>
           )}
+          {enabled && desktop && (
           <button
             className="orbit-pause"
             aria-pressed={paused}
@@ -359,6 +360,7 @@ export function CreativeShowcase({
           >
             {paused ? "继续" : "暂停"}
           </button>
+          )}
         </div>
       </section>
       {children}
