@@ -46,6 +46,8 @@ Write only assigned paths. Shared dependencies/CI/contracts need recorded Leader
 
 ## Acceptance
 
+- No user-visible effect/component names, technical annotations, parameters or hover/mouse-experience instructions. Name gallery tabs by image subject; retain necessary actions, state/errors, accessibility labels and motion controls. Technical mappings belong only in development documents.
+
 - Desktop1280/1440 and375 layouts, contrast, focus, image/error/empty/loading states meet design spec.
 - Keep UploadSlot/Maker identity/submission guards, stable task.id and existing query boundaries.
 - Run focused tests and full frontend checks in containers; hand off ownership before motion task.
@@ -56,4 +58,4 @@ Use docs/waves/P1/handoffs/TEMPLATE.md. Include exact implementation/tested SHA,
 
 ## Creative layout handoff
 
-Prepare the compact hero, plain template grid and four-tab inspiration area with static posters and a visible motion toggle. Preserve core flow access and page density; the same writer proceeds to P1-CREATIVE. Do not add continuous decorative background movement.
+Prepare the compact hero, plain template grid and four-tab image gallery with static posters and a visible motion toggle. Preserve core flow access and page density; the same writer proceeds to P1-CREATIVE. Do not add continuous decorative background movement.

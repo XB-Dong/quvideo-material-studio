@@ -51,6 +51,8 @@ Write only assigned paths. Shared dependencies/CI/contracts need recorded Leader
 
 ## Acceptance
 
+- No user-visible effect/component names, technical annotations, parameters or hover/mouse-experience instructions. Name gallery tabs by image subject; retain necessary actions, state/errors, accessibility labels and motion controls. Technical mappings belong only in development documents.
+
 - RB01–RB07 all demonstrable on normal desktop; use only public images, never distort private uploads/results or replace native cursor/focus.
 - At most two active motion systems and one allocated/live WebGL context; ownership transfer must dispose/unmount the previous context before creating the next (pausing RAF is insufficient); tabs mount one effect, pause/degrade on idle/offscreen/background/reduce/static/coarse-pointer as specified. Resource cleanup is immediate on unmount or preference changes.
 - Source notice and MIT + Commons Clause retained; registry vs commit equivalence explicitly verified or source revision recorded separately. No unreviewed CLI script execution.

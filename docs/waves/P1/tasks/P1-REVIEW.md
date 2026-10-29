@@ -39,6 +39,8 @@ Write only assigned paths. Shared dependencies/CI/contracts need recorded Leader
 
 ## Acceptance
 
+- No user-visible effect/component names, technical annotations, parameters or hover/mouse-experience instructions. Name gallery tabs by image subject; retain necessary actions, state/errors, accessibility labels and motion controls. Technical mappings belong only in development documents.
+
 - Independently score hierarchy/composition, creative fit, color consistency, motion rhythm and restraint/space: each must be ≥4/5. Observe all seven effects in the integrated UI, not only screenshots or upstream demos.
 - Sign aesthetics separately from Acceptance comfort. Both must pass with no open blocking/major; disabling every effect does not satisfy creativity.
 - Findings have location, trigger, expected/actual, severity and evidence limits.

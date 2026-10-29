@@ -8,6 +8,7 @@
 | VIS-02 | A01四模板封面/成功图/来源 | ASSET | 本地可用，裁切不伤主体，正确MIME，许可/哈希/尺寸/预算可追踪 | not_run |
 | MOTION-01 | M01–M10逐项操作 | MOTION | 分类/hover/focus/press/上传/新卡/阶段/弹窗均有反馈；快速连续操作无残留 | not_run |
 | MOTION-02 | V02装饰/运行/加载 | MOTION | 蓝紫氛围不挡交互，真实状态驱动，不假百分比 | not_run |
+| VIS-01、CREATIVE-01 | T01前端文案巡检 | VISUAL、CREATIVE、REVIEW | 全部页面/弹窗/悬停态无特效名、技术说明或体验引导；画廊按作品内容命名；必要操作/状态/无障碍文案完整 | not_run |
 | UX-01 | U01桌面1280/1440及375 | VISUAL、ACCEPT | 无横向溢出，触控/Tab/预览Esc/焦点返回、长错误可读 | not_run |
 | QUALITY-01 | U02系统reduce/手动静态/实时切换 | MOTION、ACCEPT | 装饰停止，大幅运动消失；重要状态仍即时可读，偏好刷新保留 | not_run |
 | QUALITY-01 | P01包体与加载 | BASE、ACCEPT | 同条件前后比较，新增路由JS gzip目标≤35KiB；全部延后创意JS新增体积目标≤120KiB（含Motion/OGL/适配）；首视口公开图含Orbit/poster目标≤800KiB | not_run |
@@ -37,12 +38,12 @@ P0没有可比的性能/包体测量，P1-BASE必须在07300db代码/同一浏�
 
 | 场景 | 正常桌面真实动作 | 退化/结束核验 |
 | --- | --- | --- |
-| RB01 Dither Veil | 进入色彩显影面板移动指针，观察局部点阵显色 | 切页签立刻卸载，静态显示完整原图 |
+| RB01 Dither Veil | 进入创意作品面板移动指针，观察局部点阵显色 | 切页签立刻卸载，静态显示完整原图 |
 | RB02 Glow Cursor | hero留白移动后停指针，柔光衰减≤500ms | 进入操作区/弹窗隐藏释放；原生光标保留，触屏无依赖 |
-| RB03 Ripple Distortion | 水面涟漪页签移动，局部位移目标≤6px | ≤600ms平复；文字不动，真实结果不扭曲 |
-| RB04 Halftone Reveal | 网点印刷页签局部显影280–400ms | 原图/键盘静态替代，切页签释放context |
+| RB03 Ripple Distortion | 旅行作品页签移动，局部位移目标≤6px | ≤600ms平复；文字不动，真实结果不扭曲 |
+| RB04 Halftone Reveal | 人像作品页签局部显影280–400ms | 原图/键盘静态替代，切页签释放context |
 | RB05 Orbit Images | hero观察≥30s周期、悬停/聚焦/暂停按钮 | ≤900px叠卡、reduce/后台/离屏停止；主入口不被推走 |
-| RB06 Pixel Trail | 像素笔触面板移动，上限24粒子 | 尾迹≤450ms、离开释放、不拦截滚动 |
+| RB06 Pixel Trail | 宠物作品面板移动，上限24粒子 | 尾迹≤450ms、离开释放、不拦截滚动 |
 | RB07 Electric Border | 指定CTA hover/focus，≤600ms且冷却≥2s | 提交中停；原focus仍清晰；Glow上下文先释放再接管，结束后反序恢复 |
 
 所有数字为项目待验证的起始规格，不能冒充上游原生支持或本轮实测。改阈值需记录实际测量/原因/规格修订，并重新审核双门槛。

@@ -1,5 +1,7 @@
 # Verified Project Memory
 
+- P1 copy rule: effects blend into the interface; no visible effect/component names, technical annotations or hover/mouse-experience instructions. Content navigation, essential actions/status and accessibility labels remain.
+
 - 2026-10-29 P1 scope: seven React Bits components are mandatory, aesthetics and comfort need separate independent passes. Prepared P1-1.1.0 with nine tasks; follow react-bits.md and state.json. Preparation approved, actual product gates not_run, executionAuthorized=false.
 
 - Latest instruction, 2026-10-29 evening: user requests all P1 preparation before execution. P0 completed/sealed07300db; no P1 execution authorization. Candidate resources and direction board live under docs/waves/P1/references only. Load P1 plan/state/roles before any dispatch.

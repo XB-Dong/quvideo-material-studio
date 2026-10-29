@@ -42,6 +42,8 @@ Write only assigned paths. Shared dependencies/CI/contracts need recorded Leader
 
 ## Acceptance
 
+- No user-visible effect/component names, technical annotations, parameters or hover/mouse-experience instructions. Name gallery tabs by image subject; retain necessary actions, state/errors, accessibility labels and motion controls. Technical mappings belong only in development documents.
+
 - RB01–RB07 and V/U/M/A/P/R/D cases in ACCEPTANCE are linked to actual tested commits; new tests do not replace original12Java/16frontend/8API.
 - Independently sign every comfort gate, including readable text, native cursor/focus, unblocked actions/scroll, no flashing, preference and context-loss cleanup, concurrency, total performance and full P0 regression. An aesthetics score cannot override a failed comfort gate.
 - Browser evidence covers actual seven effects and motion/keyboard/mobile and cannot be substituted by JSDOM screenshots.
