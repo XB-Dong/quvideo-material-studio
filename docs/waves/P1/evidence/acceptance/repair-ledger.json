@@ -70,6 +70,21 @@
       "recordedFailedRuns": 1,
       "recordedBoundedResolutionCount": 1,
       "resolution": "writeLF, root gitattributes eolLF, rerunexit0; not productRed"
+    },
+    {
+      "cause": "CI2 real repeated image transfers exceed first viewport800KiB",
+      "kind": "product asset budget major ACCEPT-BUDGET-02",
+      "status": "asset_budget_recheck_pending",
+      "evidence": [
+        "ci2-budget/measurement.json"
+      ],
+      "localEarlierMaximumBytes": 757983,
+      "ci2ImageRuns": [
+        996880,
+        996880,
+        757983
+      ],
+      "resolution": "Pending Leader-dispatched4JPEG-only bounded encoding optimization; no budget relaxation; wait new deployed appSHA before repeat checks"
     }
   ]
 }

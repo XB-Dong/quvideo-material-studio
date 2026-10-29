@@ -2,7 +2,7 @@
 
 签署角色：Test/Acceptance（原生子Agent p1_acceptance，非前端作者、非美学Reviewer）。rootTaskId P1-ACCEPT；specVersion P1-1.2.0。实际应用源码 **716518e6087fbb0ec17abf55b4b68f00cd327a84**；采集日期2026-10-30（Asia/Shanghai；JSON保留UTC原值）。实际模型路由未知null。
 
-**结论：在下列实际验证环境与明确边界内，G02舒适清单通过；未发现开放的blocking/major。** 此签署不代替独立美学G01、远端CI最终结果或Leader交付签署。真实软件默认路径与七创意功能路径分别验证，不能互相代替。
+**当前状态：asset_budget_recheck_pending，G02整体签署暂停。** 原716本地清单及功能证据保留；远端CI2新实测图片996880/996880/757983B，前两轮超过800KiB，形成开放major ACCEPT-BUDGET-02。以下历史本地通过不再代表全预算通过，待JPEG优化新SHA复验后重新签署。 此签署不代替独立美学G01、远端CI最终结果或Leader交付签署。真实软件默认路径与七创意功能路径分别验证，不能互相代替。
 
 ## 环境和执行
 
@@ -26,7 +26,7 @@
 | 页签/卸载/弹窗/身份与旧请求 | pass。四页签切换旧owner释放且peakAllocated1；原P0 use-tasks/identity保护代码未改，Root最终31前端行为测试含卸载/身份/401/旧请求版本保护通过。真实多任务、刷新、503恢复和终态停止轮询独立浏览器通过。P0行为测试证据属于Root运行，未冒称由本Agent重跑。 |
 | 至多两个系统、一个已分配存活GL | pass。Orbit SVG与单个active owner并存，实际peakAllocated=1；六GL逐项实际draw>0并记录owner，Electric接管独立记录。静态0RAF/GL，无额外并行Canvas owner。 |
 | 图形不可用/context lost/降级 | pass。真实软件能力检测静态退化、保留SVG/业务；功能fixture内原生WEBGL_lose_context后真实GL释放、poster完整、页签仍操作。低FPS策略的边界/取消由前端行为测试验证；软件renderer未被误当硬件。 |
-| 前后包体/图片/CLS与交互trace | pass，原值如下。默认无截图交互性能和强制功能读回分开。trace.zip仅本地忽略，不入Git以免包含合成匿名Cookie。 |
+| 前后包体/图片/CLS与交互trace | asset_budget_recheck_pending：CI2图片前两轮996880B超过800KiB；原本地三轮只描述本地事实，不覆盖此失败。原值如下。默认无截图交互性能和强制功能读回分开。trace.zip仅本地忽略，不入Git以免包含合成匿名Cookie。 |
 | P0全部回归及升级/回滚 | pass，采用并核对Root的integration/final-checks.json：31前端含原16、15Java含原12、8API均exit0；源码protected lib diff为空。Asset隔离四阶段真实旧结果SHA一致、恢复Flyway1/2后再升级1/2/3，upgrade-observations.json/UPGRADE-VERIFICATION.md保留首次权限失败和修正。不是将P0旧通过当本次通过。 |
 
 ## 七创意与Electric证据
@@ -53,3 +53,10 @@ Xvfb首版xvfb-run挂起、Playwright focus emulation导致无法自然hidden的
 
 
 补充澄清（2026-10-30T01:22+08:00）：旧综合mobile case的hasTouch配置不能代替实际pointer媒体值，原JSON coarse=false保留。新touch.mjs全程仅touchscreen.tap、无page.mouse.move，实际coarse=true并断言，不将模拟器配置当观测事实。4.71秒独立执行exit0。主综合case更名为actual media and GPU allocation audit，避免继续暗示它验证coarse。
+
+
+## CI2预算新发现（封存前审计）
+
+ACCEPT-BUDGET-02，major，位置首页实际公开图请求预算。GitHub Actions40919563180/head e62444d104f2e4e58a497103ad8865cafb5f4948，独立runner三轮图片996880/996880/757983B，13/13/10个真实图片请求；最大996880>819200，且transferSize/CDP证明真实传输，不是仅资源列表缓存重复。CI功能22/31绿不代表预算绿。新证据ci2-budget/measurement.json及Root integration/ci2-browser-summary.json。
+
+Leader有界修复仅四JPEG编码86/4:4:4→82/4:2:0，尺寸480×640/裁切/颜色/PNG/业务/前端不改；预算800KiB不变，考虑四组hero目标<750KiB留余量。收到新精确部署SHA与healthy通知前不采样。复验default22、functional31、startup三轮与无截图interact，touch/native可快跑，界面新截图供Reviewer；源代码相同部分可明确引用旧31FE及精确Electric五帧等价证据，不伪造新SHA下重跑。

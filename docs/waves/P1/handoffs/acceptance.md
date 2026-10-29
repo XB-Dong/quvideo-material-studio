@@ -32,3 +32,5 @@
 - traces包含合成身份Cookie可能性，保持ignored *.zip不入Git；JSON已核对不含Cookie/authorization，任务/身份均合成。结束后由Leader确认需要忽略工件再app归档。
 
 - pointer媒体澄清：旧375综合case实际coarse=false（保留JSON），不据hasTouch推断coarse；补touch-only首载及真实tap分类/模板两页，actual coarse=true/fine=false/hover=false/maxTouchPoints1、GL0/Orbit0/RAF0、scrollWidth375、steadyexecuted不变，exit0，证据final-716518-touch。COMFORT及测试名已纠正。
+
+- 封存前CI2审计新finding ACCEPT-BUDGET-02 major：图片996880/996880/757983B超过800KiB，真实13/13/10次请求；原本地pass保留但G02整体改asset_budget_recheck_pending。等待仅JPEG编码修复新appSHA后复验，未提前采样。
