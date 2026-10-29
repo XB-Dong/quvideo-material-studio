@@ -2,13 +2,13 @@
   "schemaVersion": "1.0.0",
   "waveId": "P1",
   "specVersion": "P1-1.2.0",
-  "status": "ready_for_user_start",
-  "executionAuthorized": false,
-  "executionStartedAt": null,
+  "status": "in_progress",
+  "executionAuthorized": true,
+  "executionStartedAt": "2026-10-29T22:52:38+08:00",
   "executionCompletedAt": null,
   "deadline": null,
   "timezone": "Asia/Shanghai",
-  "authorizationScope": "prepare_P1_documents_references_candidates_and_review_only",
+  "authorizationScope": "implement_verify_review_integrate_and_deliver_P1_1_2_0",
   "preparationBaseCommit": "07300db74eefe5d8d1ecf979de314450bf5f2a78",
   "p0AcceptanceCommit": "4dd397f2f5b2cb74ca21aba08482d0cae5b0a0de",
   "dispatchBaseCommit": null,
@@ -32,14 +32,16 @@
     {
       "taskId": "P1-BASE",
       "rootTaskId": "P1-BASE",
-      "status": "prepared_not_dispatched",
-      "repairCount": 0
+      "status": "in_progress",
+      "repairCount": 0,
+      "startedAt": "2026-10-29T22:52:38+08:00"
     },
     {
       "taskId": "P1-DIRECTION",
       "rootTaskId": "P1-DIRECTION",
-      "status": "prepared_not_dispatched",
-      "repairCount": 0
+      "status": "in_progress",
+      "repairCount": 0,
+      "startedAt": "2026-10-29T22:52:38+08:00"
     },
     {
       "taskId": "P1-ASSET",
@@ -84,7 +86,7 @@
       "repairCount": 0
     }
   ],
-  "nextAction": "wait_for_explicit_user_P1_start_then_BASE_and_DIRECTION",
+  "nextAction": "BASE_baseline_and_dependency_freeze_then_R1_dispatch",
   "oglCandidate": "1.0.11",
   "reactBitsComponents": [
     "Dither Veil",
@@ -105,5 +107,7 @@
   ],
   "preparationCompletedAt": "2026-10-29T22:49:18+08:00",
   "independentPreparationReviewRef": "docs/waves/P1/reviews/preparation-review.md",
-  "visualDirection": "light_neutral_backgrounds_with_blue_violet_details"
+  "visualDirection": "light_neutral_backgrounds_with_blue_violet_details",
+  "authorizationSource": "human: 启动P1",
+  "executionStartCommit": "00348c37f95fb6011250418171f54a4698f853e2"
 }

@@ -1,5 +1,7 @@
 # Verified Project Memory
 
+- Latest human instruction 2026-10-29T22:52:38+08:00: 启动P1. Execute P1-1.2.0 through implementation, container checks, independent aesthetics/comfort gates and private delivery. Preparation-only instructions are historical. Exact base and worker ownership must be dispatched explicitly.
+
 - P1 copy rule: effects blend into the interface; no visible effect/component names, technical annotations or hover/mouse-experience instructions. Content navigation, essential actions/status and accessibility labels remain.
 
 - 2026-10-29 P1 scope: light neutral backgrounds/white panels, blue-violet lines, borders, icons and restrained accents; seven React Bits components are mandatory, aesthetics and comfort need separate independent passes. Prepared P1-1.2.0 with nine tasks; follow react-bits.md and state.json. Preparation approved, actual product gates not_run, executionAuthorized=false.

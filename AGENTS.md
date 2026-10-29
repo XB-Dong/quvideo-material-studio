@@ -2,7 +2,7 @@
 
 ## Current authorization
 
-P0 is completed and sealed at 07300db74eefe5d8d1ecf979de314450bf5f2a78. On 2026-10-29 the user requested all preparation before P1 starts. Current authorization: inspect the P0 baseline, research public design references, prepare licensed candidate assets and a direction board, write/review P1 specifications, tasks and acceptance, then commit/push and report. Do not implement P1, install its dependencies, create development worktrees, start development agents, migrate data, rebuild/restart the product or begin P1 without the user's explicit start. A read-only preparation reviewer may inspect documents. Do not submit the exam or publish the private repository.
+P0 is completed and sealed at 07300db74eefe5d8d1ecf979de314450bf5f2a78. On 2026-10-29T22:52:38+08:00 the user explicitly instructed “启动P1”. P1 implementation, dependency installation in containers, managed development worktrees, native subagents, local builds/tests/browser verification, migrations with matched backups, integration and private-repository delivery are authorized through completion of P1-1.2.0. Follow the light-background/blue-violet-detail direction and seven creative components with independent aesthetics and comfort gates. No public deployment, exam submission or automatic next wave is authorized. The latest human instruction supersedes preparation-only statements in historical artifacts. Exact dispatch messages override preparation-anchor metadata and must be recorded in state/handoffs.
 
 ## Read before work
 
