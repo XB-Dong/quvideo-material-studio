@@ -15,4 +15,4 @@ docker run --rm --mount "type=bind,source=$outputPath,target=/evidence" -e TESTE
 measurement.json记录每次原始资源、响应状态、JS gzip归一值、图片encoded body、CLS条目、长任务条目及截图；不得把初始加载长任务直接归因于特效。静态首页基线不能证明七项创意、交互流畅或舒适门槛通过。最终采集必须先确认部署SHA及运行环境未变化。
 
 
-`node accept.mjs`提供独立浅色/内容/布局/分类/键盘dialog/制作页/空历史/不存在模板检查。Docker入口可覆盖为`docker run ... material-p1-browser:1.58.2 accept.mjs`；同样需要OUTPUT_DIR挂载和精确TESTED_COMMIT。它会输出acceptance.json和desktop/reduce/mobile截图，失败退出1。报告明确列出尚未覆盖的七组件互动、资源/偏好生命周期、多任务/请求异常/真实失败、性能与迁移；这些未完成前不构成舒适门槛全过。
+`node accept.mjs`提供独立浅色/内容/布局/分类/键盘dialog/制作页/空历史/不存在模板检查。Docker入口可覆盖为`docker run ... material-p1-browser:1.58.2 accept.mjs`；同样需要OUTPUT_DIR挂载和精确TESTED_COMMIT。它会输出acceptance.json和desktop/reduce/mobile截图，失败退出1。脚本还包含四画廊/hero/CTA互动、GPU唯一性/静态清理、真实上传多任务/查询异常恢复/指定后台失败/终态停轮询。后台/离屏/context-lost、实际交互性能和迁移仍需独立取证；所有P1脚本都须在集成部署上实际运行后才有通过结论，脚本存在不构成舒适门槛全过。

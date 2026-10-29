@@ -12,3 +12,10 @@
 - 新accept.mjs已在容器用node --check做语法检查；最终P1集成环境尚未交接，因此尚未执行且不声称通过。
 - unresolved: 仍需七创意实际演示、资源/偏好/请求生命周期、多任务与失败区分、同条件P1性能、升级回滚/重升级及完整舒适签署。需Leader给集成SHA与允许运行的URL后补全。
 - cumulativeRepairCount:0（无行为Red/修复循环）；浏览器依赖安装不是行为测试。
+
+
+## 验收脚本准备交接
+
+5c189045025e56d788ee8809a2bb73e54c2fe8cf、2b1dfcbec56c314da9e9c60183a5dd15c7c1baf4、18dc31cf54516ddc7bf15633f8476e5455394b57形成accept.mjs。除desktop/reduce/mobile基础页面外，已编排七创意区域/CTA/四页签的操作序列、原生WebGL分配探针、静态资源释放/刷新持久化、延后JS请求gzip清单、独立DOM上传/连续两任务、指定查询503保留旧状态/恢复、后台GENERATE真实失败、刷新恢复/结果预览/终态停轮询。
+
+当前只在容器执行node --check，尚未收到P1部署SHA/URL，因此这些P1场景全部not_run，不能据脚本存在签舒适通过。完整门槛还需后台/离屏/context-lost、同条件前后性能和迁移/回滚等证据。Playwright trace.zip默认被Git忽略，可本地检查真实操作过程，可能含合成匿名Cookie，不强制提交Git；截图/净化报告用于入库证据。
