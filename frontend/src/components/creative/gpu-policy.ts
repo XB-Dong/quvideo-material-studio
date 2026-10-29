@@ -16,9 +16,30 @@ const unsupported = (reason: string): GpuAssessment => ({
   probeMs: 0,
   releaseMs: 0,
 });
-const workerSource = `self.onmessage=()=>{
+export function classifyGpuRenderer(
+  renderer: string,
+  debugInfoAvailable: boolean,
+) {
+  if (
+    /swiftshader|llvmpipe|softpipe|software|lavapipe|basic render/i.test(
+      renderer,
+    )
+  )
+    return { allowed: false, reason: "software-renderer" };
+  if (
+    !debugInfoAvailable ||
+    !renderer.trim() ||
+    !/angle|nvidia|intel|amd|radeon|apple|adreno|mali|powervr|direct3d|vulkan|opengl|mesa/i.test(
+      renderer,
+    )
+  )
+    return { allowed: false, reason: "unrecognized-renderer" };
+  return { allowed: true, reason: "hardware-capable" };
+}
+const workerSource = `const classifyRenderer = ${classifyGpuRenderer.toString()};
+self.onmessage=()=>{
  const start=performance.now();let gl=null;let renderer="";let allowed=false;let reason="unsupported";let releaseMs=0;
- try{const canvas=new OffscreenCanvas(1,1);gl=canvas.getContext("webgl2",{failIfMajorPerformanceCaveat:true,alpha:false,antialias:false});if(gl){const info=gl.getExtension("WEBGL_debug_renderer_info");renderer=String(gl.getParameter(info?info.UNMASKED_RENDERER_WEBGL:gl.RENDERER));allowed=!/swiftshader|llvmpipe|softpipe|software|lavapipe|basic render/i.test(renderer);reason=allowed?"hardware-capable":"software-renderer";}}
+ try{const canvas=new OffscreenCanvas(1,1);gl=canvas.getContext("webgl2",{failIfMajorPerformanceCaveat:true,alpha:false,antialias:false});if(gl){const info=gl.getExtension("WEBGL_debug_renderer_info");renderer=String(gl.getParameter(info?info.UNMASKED_RENDERER_WEBGL:gl.RENDERER));const decision=classifyRenderer(renderer,!!info);allowed=decision.allowed;reason=decision.reason;}}
  catch{reason="unsupported";allowed=false;}
  const done=()=>{const released=!gl||gl.isContextLost();self.postMessage({kind:"yingzuo-gpu-capability",allowed:allowed&&released,released,reason:released?reason:"release-unconfirmed",renderer,probeMs:performance.now()-start,releaseMs});self.close()};
  if(gl){try{const releaseStart=performance.now();gl.getExtension("WEBGL_lose_context")?.loseContext();releaseMs=performance.now()-releaseStart;}catch{allowed=false;reason="release-error";}if(!gl.isContextLost()){const wait=()=>{if(gl.isContextLost()||performance.now()-start>1500){done();return;}setTimeout(wait,10)};setTimeout(wait,0);return;}}done();

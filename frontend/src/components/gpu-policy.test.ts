@@ -1,5 +1,5 @@
 import { beforeEach, afterEach, it, expect, vi } from "vitest";
-const NativeURL=URL;
+const NativeURL = URL;
 class TestWorker {
   static instances: TestWorker[] = [];
   onmessage: ((event: MessageEvent) => void) | null = null;
@@ -30,10 +30,13 @@ beforeEach(() => {
   TestWorker.instances = [];
   vi.stubGlobal("Worker", TestWorker);
   vi.stubGlobal("OffscreenCanvas", class {});
-  vi.stubGlobal("URL", class extends NativeURL {
-    static createObjectURL=vi.fn(()=>"blob:fixture");
-    static revokeObjectURL=vi.fn();
-  });
+  vi.stubGlobal(
+    "URL",
+    class extends NativeURL {
+      static createObjectURL = vi.fn(() => "blob:fixture");
+      static revokeObjectURL = vi.fn();
+    },
+  );
 });
 afterEach(() => {
   vi.useRealTimers();
@@ -88,4 +91,19 @@ it("keeps static artwork when worker capability is unavailable", async () => {
   const { assessGpu } = await import("./creative/gpu-policy");
   expect((await assessGpu(new AbortController().signal)).allowed).toBe(false);
   expect(TestWorker.instances.length).toBe(0);
+});
+
+it("treats generic or unavailable renderer identity as unknown capability", async () => {
+  const { classifyGpuRenderer } = await import("./creative/gpu-policy");
+  for (const renderer of ["", "WebKit WebGL", "Mozilla", "generic renderer"]) {
+    expect(classifyGpuRenderer(renderer, true)).toEqual({
+      allowed: false,
+      reason: "unrecognized-renderer",
+    });
+  }
+  expect(classifyGpuRenderer("ANGLE Intel UHD", false).allowed).toBe(false);
+  expect(classifyGpuRenderer("ANGLE Intel UHD", true).allowed).toBe(true);
+  expect(classifyGpuRenderer("ANGLE SwiftShader", true).reason).toBe(
+    "software-renderer",
+  );
 });

@@ -284,13 +284,16 @@ export function CreativeShowcase({
               onPointerEnter={electric}
               onFocus={electric}
             >
-              开始创作 <span aria-hidden="true">↗</span>
+              <span className="cta-label">
+                开始创作 <span aria-hidden="true">↗</span>
+              </span>
               {current === "electric" && (
                 <span className="electric-slot" aria-hidden="true">
                   <SafeEffect key="electric">
                     <Suspense fallback={null}>
                       <Electric
                         theme="light"
+                        borderRadius={12}
                         color="#4f63d8"
                         glowColor="#7961c5"
                         glow={0}

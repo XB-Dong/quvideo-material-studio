@@ -327,7 +327,7 @@ void main() {
   hot *= frameFade;
   float alpha = 1.0 - exp(-energy * gain);
   vec3 color = mix(1.0 - exp(-light * gain), alpha * light / max(energy, 1e-4), uInk);
-  color = mix(color, vec3(alpha), clamp(hot, 0.0, 1.0) * uInk * 0.85);
+  color = mix(color, vec3(alpha), clamp(hot, 0.0, 1.0) * uInk * 0.15);
   float grain = (fract(52.9829189 * fract(dot(gl_FragCoord.xy, vec2(0.06711056, 0.00583715)))) - 0.5) / 255.0;
   alpha = clamp(alpha + grain, 0.0, 1.0);
   fragColor = vec4(clamp(color + grain, 0.0, alpha), alpha);
@@ -526,6 +526,7 @@ const ElectricBorder = ({
     const canvas = canvasRef.current;
     if (!container || !canvas) return;
 
+    canvas.style.opacity = '0';
     const gl = canvas.getContext('webgl2', {
       failIfMajorPerformanceCaveat: true,
       alpha: true,
@@ -563,6 +564,7 @@ const ElectricBorder = ({
     let lost = false;
 
     const resize = () => {
+      canvas.style.opacity = '0';
       const s = settingsRef.current;
       const width = Math.max(1, container.offsetWidth);
       const height = Math.max(1, container.offsetHeight);
@@ -654,6 +656,7 @@ const ElectricBorder = ({
       gl.uniform4fv(u.uArcShape, arcShape);
       gl.bindVertexArray(vao);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
+      if(size.width>1&&size.height>1&&canvas.width>1&&canvas.height>1){canvas.style.opacity='1';canvas.dataset.ready='true';}
     };
 
     const frame = (now: number) => {
