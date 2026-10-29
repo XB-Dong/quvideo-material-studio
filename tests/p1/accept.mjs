@@ -38,12 +38,33 @@ for(const scenario of [{name:'desktop',width:1440,height:1000,motion:'no-prefere
  }
  await check(`${scenario.name}: identity dialog Escape and focus`,async()=>{const trigger=page.getByRole('button',{name:/创作者|当前身份|个人身份/}).first();await trigger.focus();await trigger.click();await page.getByRole('dialog').waitFor();await page.keyboard.press('Escape');await page.getByRole('dialog').waitFor({state:'hidden',timeout:2000});assert(await trigger.evaluate(el=>el===document.activeElement),'Dialog did not return focus');});
  await check(`${scenario.name}: studio fields and overflow`,async()=>{await page.goto(`${base}/templates/demo-pet`,{waitUntil:'networkidle'});await page.locator('input[type=file]').first().waitFor({state:'attached'});const state=await inspect(page);assert(state.scrollWidth<=state.width,`studio overflow ${state.scrollWidth}>${state.width}`);assert(!forbidden.test(state.bodyText));await page.screenshot({path:`${output}/${scenario.name}-studio.png`,fullPage:true});});
+ if(scenario.name==='desktop') await check('desktop: multiple tasks, request error recovery, true failure and refresh',async()=>{
+  const templateResponse=await context.request.get(`${base}/api/templates/demo-pet`);assert(templateResponse.ok());const template=await templateResponse.json();
+  const photo=await context.request.get(base+template.coverUrl);assert(photo.ok());const mime=photo.headers()['content-type'].split(';')[0];
+  const uploaded=page.waitForResponse(r=>r.url().endsWith('/api/assets')&&r.request().method()==='POST');
+  await page.locator('input[type=file]').first().setInputFiles({name:mime==='image/jpeg'?'fixture.jpg':'fixture.png',mimeType:mime,buffer:await photo.body()});const assetResponse=await uploaded;assert(assetResponse.ok());const asset=await assetResponse.json();
+  const submit=page.getByRole('button',{name:/开始制作/});await submit.waitFor();await page.waitForFunction(()=>!document.querySelector('.maker-action button')?.disabled);
+  const firstResponse=page.waitForResponse(r=>r.url().endsWith('/api/tasks')&&r.request().method()==='POST');await submit.click();const first=await (await firstResponse).json();assert(first.id);
+  const pattern=`**/api/tasks/${first.id}`;let injected=0;await page.route(pattern,route=>{injected++;return route.fulfill({status:503,contentType:'application/json',body:JSON.stringify({message:'temporary query outage fixture'})});});
+  await page.waitForFunction(()=>!document.querySelector('.maker-action button')?.disabled);const secondResponse=page.waitForResponse(r=>r.url().endsWith('/api/tasks')&&r.request().method()==='POST');await submit.click();const second=await (await secondResponse).json();assert(second.id&&second.id!==first.id);
+  const firstCard=page.locator('.task-card').filter({has:page.getByText(`任务 ${first.id.slice(0,8)}`,{exact:true})});await firstCard.getByText(/查询暂时异常/).waitFor({timeout:8000});assert(injected>0);assert.equal(await firstCard.getByText('失败',{exact:true}).count(),0,'Request outage changed task status to FAILED');
+  await page.unroute(pattern);await firstCard.getByRole('button',{name:'恢复查询'}).click();
+  const failedResponse=await context.request.post(`${base}/api/tasks`,{headers:{Origin:'http://localhost:3000'},data:{templateId:template.id,assetIds:[asset.id],simulation:{failAt:'GENERATE',delayMs:{assetCheck:50,generate:50,finalize:50}}}});assert.equal(failedResponse.status(),202);const failed=await failedResponse.json();
+  await page.reload({waitUntil:'networkidle'});await page.locator('.task-card').filter({has:page.getByText(`任务 ${first.id.slice(0,8)}`,{exact:true})}).waitFor();
+  const requests=[];page.on('request',r=>{if(/\/api\/tasks\/[^?]+$/.test(r.url()))requests.push(r.url());});
+  const poll=async id=>{for(let i=0;i<120;i++){const r=await context.request.get(`${base}/api/tasks/${id}`);const t=await r.json();if(['SUCCEEDED','FAILED'].includes(t.status))return t;await new Promise(resolve=>setTimeout(resolve,300));}throw Error('Task did not finish');};
+  const outcomes=await Promise.all([poll(first.id),poll(second.id),poll(failed.id)]);assert.deepEqual(outcomes.map(t=>t.status),['SUCCEEDED','SUCCEEDED','FAILED']);assert.equal(outcomes[2].failedStage,'GENERATE');
+  const failedCard=page.locator('.task-card').filter({has:page.getByText(`任务 ${failed.id.slice(0,8)}`,{exact:true})});await failedCard.getByText('失败',{exact:true}).waitFor({timeout:6000});await failedCard.getByText(/失败阶段/).waitFor();
+  await page.getByRole('button',{name:/预览/}).first().click();await page.getByRole('dialog').waitFor();await page.keyboard.press('Escape');await page.getByRole('dialog').waitFor({state:'hidden'});
+  await page.waitForTimeout(2500);const before=requests.length;await page.waitForTimeout(2500);assert.equal(requests.length,before,'Completed tasks kept polling');
+  await page.screenshot({path:`${output}/desktop-task-results.png`,fullPage:true});return {taskIds:[first.id,second.id,failed.id],outcomes:outcomes.map(t=>({id:t.id,status:t.status,stage:t.stage,failedStage:t.failedStage})),injectedQueryFailures:injected,stoppedTaskPollCount:before};
+ });
  await check(`${scenario.name}: history and unknown template`,async()=>{await page.goto(`${base}/history`,{waitUntil:'networkidle'});assert((await inspect(page)).scrollWidth<=scenario.width);await page.goto(`${base}/templates/not-a-template`,{waitUntil:'networkidle'});await page.getByRole('heading',{name:'这个模板不存在'}).waitFor();});
  await check(`${scenario.name}: runtime errors`,async()=>assert.deepEqual(errors,[]));
  await context.tracing.stop({path:`${output}/${scenario.name}-trace.zip`});
  await context.close();
 }
-await fs.writeFile(`${output}/acceptance.json`,JSON.stringify({testedCommit,capturedAt:new Date().toISOString(),browser:await browser.version(),checks,scope:'Initial independent light/layout/keyboard/content checks; not a complete comfort or creativity signoff',missing:['multi-task/query errors/true failure','actual interaction performance/trace','background/offscreen/context-lost cleanup','upgrade/rollback evidence']},null,2));
+await fs.writeFile(`${output}/acceptance.json`,JSON.stringify({testedCommit,capturedAt:new Date().toISOString(),browser:await browser.version(),checks,scope:'Initial independent light/layout/keyboard/content checks; not a complete comfort or creativity signoff',missing:['actual interaction performance/trace','background/offscreen/context-lost cleanup','upgrade/rollback evidence']},null,2));
 await browser.close();relay.close();
 console.log(JSON.stringify({pass:checks.filter(x=>x.status==='pass').length,fail:checks.filter(x=>x.status==='fail').length},null,2));
 if(checks.some(x=>x.status==='fail'))process.exitCode=1;
