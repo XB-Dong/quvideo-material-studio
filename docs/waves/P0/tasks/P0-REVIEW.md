@@ -41,7 +41,7 @@ Do not edit other paths or another worker's files. Shared dependencies, contract
 ## Acceptance
 
 - Findings include exact location, trigger, expected/actual, severity and evidence limits.
-- Distinguish static review from actual browser operations. No external/cross-model claims.
+- Distinguish static review from actual browser operations.
 - Leader dispositions and verifies accepted fixes; unresolved blocking/major defects prevent completed status.
 
 ## Handoff

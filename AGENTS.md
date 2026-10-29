@@ -14,7 +14,7 @@ Write user-facing requirements, decisions and reports in Chinese. Use English id
 
 ## Multi-agent execution after P0 starts
 
-Use native subagents: one Leader and at most three active workers total. Normally assign Frontend, Backend and Test/Acceptance. A read-only reviewer replaces a released worker slot; it does not add capacity. Do not spawn idle roles or create separate user-owned chats for subtasks. Inherit the current model and reasoning settings by default; no model override or external GLM service is authorized by a historical project. Record unverifiable actual model settings as null.
+Use native subagents: one Leader and at most three active workers total. Normally assign Frontend, Backend and Test/Acceptance. A read-only reviewer replaces a released worker slot; it does not add capacity. Do not spawn idle roles or create separate user-owned chats for subtasks. Inherit the current model and reasoning settings by default. Record unverifiable actual model settings as null.
 
 Create independent managed worktrees outside the primary checkout, with codex/ branches, only after execution is authorized. Use app-managed worktree tools for lifecycle. Each concurrently written file has one owner. Leader owns specs/, dependency baselines, migrations numbering, root Compose, CI, state and integration; delegate a shared file only by recording an explicit owner transfer. Implementers own their behavior tests. Test owns independent integration/acceptance tests and must not overwrite implementation tests. Reviewers write only assigned review artifacts.
 

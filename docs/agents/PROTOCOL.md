@@ -14,7 +14,7 @@ Handoff fields: taskId, rootTaskId, waveId, baseCommit, implementationCommit, sp
 
 ## Findings and repair
 
-Findings include severity (blocking/major/minor), location, trigger, expected/actual, evidence and verification limits. Leader disposition is accepted/rejected/deferred with a reason and retest reference. Authors cannot claim independent review of their own work. No external/cross-model review is implied.
+Findings include severity (blocking/major/minor), location, trigger, expected/actual, evidence and verification limits. Leader disposition is accepted/rejected/deferred with a reason and retest reference. Authors cannot claim independent review of their own work.
 
 Track repairs under the original rootTaskId. After two unsuccessful repairs of the same cause, diagnose and propose a bounded different approach; preserve counts. Repeating an unchanged command is not progress. A task may continue after reassessment within scope, but never by deleting acceptance, silently switching models, inventing evidence or extending a user deadline.
 

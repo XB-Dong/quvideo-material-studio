@@ -11,7 +11,7 @@
 - [ccagent](https://github.com/XB-Dong/ccagent)，读取时 main 提交 `bc964298d49ad399ae325f57068c9149502b8c62`，主要参考 AGENTS.md、CONSTITUTION.md、NEXT-WAVES.md 的规格追踪、波次目录和所有权方式。
 - [classroom-annotator](https://github.com/XB-Dong/classroom-annotator)，读取时 main 提交 `d31971124cfcbad19e9b56efd54f6f963d618310`，主要参考 P0-PLAN.md、AGENTS.md 的原生子 Agent、任务包、工作树、独立验收与交接方式。
 
-本项目重新撰写适用于笔试的规则和规格，未复制两个项目的业务代码或运行配置。历史授权、GLM 密钥、具体模型、云主机和截止时间不复用。
+本项目重新撰写适用于笔试的规则和规格，未复制两个项目的业务代码或运行配置。历史授权、凭据、具体模型、云主机和截止时间不复用。
 
 ## 后续依赖与素材
 

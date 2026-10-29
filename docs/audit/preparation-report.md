@@ -14,7 +14,7 @@
 
 需求编号与验收覆盖、内部文档链接、JSON 状态、OpenAPI YAML 解析/内部引用、任务文件映射、图像哈希和 Git diff 空白检查均需以 validation.md 的最终记录为准。完整 OpenAPI 专用 schema 校验器当前未安装，不宣称完成该项；P0 R0 增加契约校验工具并在容器内执行。
 
-仅进行准备材料只读独立审阅；它不是开发、产品运行验收或跨模型审核。[审阅记录](../waves/P0/reviews/preparation-review.md)包含一项初始化表述矛盾及修正，最终无剩余阻断或重大问题。[准备检查](validation.md)已通过，专用 OpenAPI schema 校验与所有产品运行检查明确未执行。
+仅进行准备材料只读独立审阅，产品运行验收尚未执行。[审阅记录](../waves/P0/reviews/preparation-review.md)包含一项初始化表述矛盾及修正，最终无剩余阻断或重大问题。[准备检查](validation.md)已通过，专用 OpenAPI schema 校验与所有产品运行检查明确未执行。
 
 ## 启动时需验证的事项
 
