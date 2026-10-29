@@ -16,3 +16,6 @@ measurement.json记录每次原始资源、响应状态、JS gzip归一值、图
 
 
 `node accept.mjs`提供独立浅色/内容/布局/分类/键盘dialog/制作页/空历史/不存在模板检查。Docker入口可覆盖为`docker run ... material-p1-browser:1.58.2 accept.mjs`；同样需要OUTPUT_DIR挂载和精确TESTED_COMMIT。它会输出acceptance.json和desktop/reduce/mobile截图，失败退出1。脚本还包含四画廊/hero/CTA互动、GPU唯一性/静态清理、真实上传多任务/查询异常恢复/指定后台失败/终态停轮询。后台/离屏/context-lost、实际交互性能和迁移仍需独立取证；所有P1脚本都须在集成部署上实际运行后才有通过结论，脚本存在不构成舒适门槛全过。
+
+
+图形环境要求：Alpine Chromium将SwiftShader拆为独立chromium-swiftshader包，必须显式安装。只写--use-angle=swiftshader启动参数不代表WebGL可用；采集前用空白页原生getContext(webgl2)和UNMASKED_RENDERER_WEBGL验证实际能力，measure.mjs会保存observedWebGL。旧未安装驱动的基线保留但不能用于有图形效果时的公平性能比较。当前GPU环境Chromium149.0.7827.53、SwiftShader真实renderer已实测，P0/P1需复用同一image和相同参数。

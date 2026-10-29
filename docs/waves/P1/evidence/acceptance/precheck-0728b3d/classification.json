@@ -1,0 +1,10 @@
+{
+  "testedCommit": "0728b3df08d3949ce1326b67cf7f3ecf646e65bd",
+  "rawResult": "21 pass / 1 fail",
+  "failedCheck": "four creative gallery subjects and GPU ownership",
+  "classification": "infrastructure_unverified_not_product_behavior_red",
+  "reason": "Blank-page native WebGL2 is unavailable in Alpine149 under all tested launch modes; fine pointer media matches true",
+  "retainedEvidence": "acceptance.json unchanged; screenshots reflect fallback/idle posters, not proof of seven active effects",
+  "nextStep": "Use verified WebGL-capable browser image and repeat P0/P1 same-condition measurements and active seven-effect checks",
+  "verifiedScope": "Basic UI/layout/keyboard and real async task failure semantics passed; seven effects and GPU preference-cleanup assertions cannot be concluded from a WebGL-unavailable environment"
+}

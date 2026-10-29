@@ -7,7 +7,10 @@ const relay = net.createServer(client => { const upstream=net.connect(3000,proce
 await new Promise(resolve=>relay.listen(3000,'127.0.0.1',resolve));
 const output = process.env.OUTPUT_DIR || '/evidence';
 await fs.mkdir(output, { recursive: true });
-const browser = await chromium.launch({ executablePath: '/usr/bin/chromium-browser', headless: true, args: ['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'] });
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_EXECUTABLE_PATH || undefined, headless: true, args: ['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'] });
+const probe=await browser.newPage();
+const observedWebGL=await probe.evaluate(()=>{const c=document.createElement('canvas'),gl=c.getContext('webgl2');if(!gl)return {supported:false};const ext=gl.getExtension('WEBGL_debug_renderer_info');const data={supported:true,renderer:ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER)};gl.getExtension('WEBGL_lose_context')?.loseContext();return data;});
+await probe.close();
 const results = [];
 for (let run = 1; run <= 3; run++) {
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 1, reducedMotion: 'no-preference' });
@@ -36,7 +39,7 @@ for (let run = 1; run <= 3; run++) {
   await context.close();
 }
 const median = values => [...values].sort((a,b)=>a-b)[Math.floor(values.length/2)];
-const report={ capturedAt:new Date().toISOString(), testedCommit:process.env.TESTED_COMMIT||null, browser:await browser.version(),conditions:{viewport:'1440x1000',dpr:1,cache:'new context + Network.setCacheDisabled each run',network:'unthrottled localhost TCP relay to Docker host bridge',cpu:'unthrottled',renderer:'headless Chromium / ANGLE SwiftShader software WebGL',observation:'8 seconds after networkidle; no pointer interaction',imageState:'server cache may be warm; client cache disabled',compression:'actual CDP/ResourceTiming encoded sizes plus script gzip(level9) normalization; not a bundle-estimator claim'},median:{scriptNormalizedGzipBytes:median(results.map(r=>r.scriptNormalizedGzipBytes)),imageEncodedBytes:median(results.map(r=>r.imageEncodedBytes)),cls:median(results.map(r=>r.metrics.cls)),longTaskCount:median(results.map(r=>r.metrics.longTasks.length))},runs:results};
+const report={ capturedAt:new Date().toISOString(), testedCommit:process.env.TESTED_COMMIT||null, browser:await browser.version(),conditions:{viewport:'1440x1000',dpr:1,cache:'new context + Network.setCacheDisabled each run',network:'unthrottled localhost TCP relay to Docker host bridge',cpu:'unthrottled',requestedRenderer:'headless Chromium / ANGLE SwiftShader software WebGL',observedWebGL,observation:'8 seconds after networkidle; no pointer interaction',imageState:'server cache may be warm; client cache disabled',compression:'actual CDP/ResourceTiming encoded sizes plus script gzip(level9) normalization; not a bundle-estimator claim'},median:{scriptNormalizedGzipBytes:median(results.map(r=>r.scriptNormalizedGzipBytes)),imageEncodedBytes:median(results.map(r=>r.imageEncodedBytes)),cls:median(results.map(r=>r.metrics.cls)),longTaskCount:median(results.map(r=>r.metrics.longTasks.length))},runs:results};
 await fs.writeFile(`${output}/measurement.json`, JSON.stringify(report,null,2));
 console.log(JSON.stringify({browser:report.browser,median:report.median,runs:results.map(r=>({run:r.run,errors:r.errors,cls:r.metrics.cls,longTasks:r.metrics.longTasks.length}))},null,2));
 await browser.close();

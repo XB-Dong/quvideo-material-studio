@@ -1,0 +1,156 @@
+{
+  "testedCommit": "0728b3df08d3949ce1326b67cf7f3ecf646e65bd",
+  "capturedAt": "2026-10-29T15:17:07.233Z",
+  "browser": "149.0.7827.53",
+  "checks": [
+    {
+      "name": "desktop: catalog content",
+      "status": "pass",
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyBackground": "rgb(247, 248, 252)",
+        "bodyText": "映\n映作\nMATERIAL STUDIO\n探索模板\n我的作品\n动态效果\n◉\n创作者 9d86cc\n\nMADE OF YOUR MOMENTS\n\n把日常，变成\n值得留住的作品。\n\n选一张模板，让你的照片有新的表达。\n\n开始创作\n↗\n浏览模板\n暂停\n探索灵感\n为你的每一种想象\n全部模板\n创意图片\n人像\n宠物\n2 张图片\n01 / 创作模板\n旅行明信片\n↗\n\n把旅途中的两个片刻，收进一张明信片。上传两张图片，体验模拟制作。\n\n1 张图片\n02 / 创作模板\n宠物肖像\n↗\n\n为你的小伙伴留下一张特别的肖像。上传一张图片，模拟生成温暖插画。\n\n3 张图片\n03 / 创作模板\n三格故事\n↗\n\n三个瞬间，一段自己的故事。上传三张图片，模拟生成故事海报。\n\n1 张图片\n04 / 创作模板\n光影头像\n↗\n\n在色彩和光影之间，发现新的自己。上传一张图片，模拟生成头像。\n\n灵感作品\n创意\n旅行\n人像\n宠物\n映作工作室 让每一份灵感，都有自己的画面。\n模拟制作演示 · 无真实 AI 调用"
+      }
+    },
+    {
+      "name": "desktop: category interaction",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: creative hero and CTA interaction",
+      "status": "pass",
+      "details": {
+        "gpu": [],
+        "owners": [
+          "none",
+          "none"
+        ]
+      }
+    },
+    {
+      "name": "desktop: four creative gallery subjects and GPU ownership",
+      "status": "fail",
+      "message": "No actual WebGL component mounted during interactions"
+    },
+    {
+      "name": "desktop: live static switch and refresh persistence",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: multiple tasks, request error recovery, true failure and refresh",
+      "status": "pass",
+      "details": {
+        "taskIds": [
+          "5e6b4786-d988-4022-8abc-693f3948b427",
+          "ddc4e0d6-f2a9-4a1c-97b6-0a32aaffe6d7",
+          "9735ed15-aa68-48e9-a884-130790d6fc1c"
+        ],
+        "outcomes": [
+          {
+            "id": "5e6b4786-d988-4022-8abc-693f3948b427",
+            "status": "SUCCEEDED",
+            "stage": "FINALIZE",
+            "failedStage": null
+          },
+          {
+            "id": "ddc4e0d6-f2a9-4a1c-97b6-0a32aaffe6d7",
+            "status": "SUCCEEDED",
+            "stage": "FINALIZE",
+            "failedStage": null
+          },
+          {
+            "id": "9735ed15-aa68-48e9-a884-130790d6fc1c",
+            "status": "FAILED",
+            "stage": "GENERATE",
+            "failedStage": "GENERATE"
+          }
+        ],
+        "injectedQueryFailures": 1,
+        "stoppedTaskPollCount": 15
+      }
+    },
+    {
+      "name": "desktop: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: runtime errors",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: catalog content",
+      "status": "pass",
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyBackground": "rgb(247, 248, 252)",
+        "bodyText": "映\n映作\nMATERIAL STUDIO\n探索模板\n我的作品\n静态模式\n◉\n创作者 41b3d7\n\nMADE OF YOUR MOMENTS\n\n把日常，变成\n值得留住的作品。\n\n选一张模板，让你的照片有新的表达。\n\n开始创作\n↗\n浏览模板\n暂停\n探索灵感\n为你的每一种想象\n全部模板\n创意图片\n人像\n宠物\n2 张图片\n01 / 创作模板\n旅行明信片\n↗\n\n把旅途中的两个片刻，收进一张明信片。上传两张图片，体验模拟制作。\n\n1 张图片\n02 / 创作模板\n宠物肖像\n↗\n\n为你的小伙伴留下一张特别的肖像。上传一张图片，模拟生成温暖插画。\n\n3 张图片\n03 / 创作模板\n三格故事\n↗\n\n三个瞬间，一段自己的故事。上传三张图片，模拟生成故事海报。\n\n1 张图片\n04 / 创作模板\n光影头像\n↗\n\n在色彩和光影之间，发现新的自己。上传一张图片，模拟生成头像。\n\n灵感作品\n创意\n旅行\n人像\n宠物\n映作工作室 让每一份灵感，都有自己的画面。\n模拟制作演示 · 无真实 AI 调用"
+      }
+    },
+    {
+      "name": "reduce: category interaction",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: runtime errors",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: catalog content",
+      "status": "pass",
+      "details": {
+        "width": 375,
+        "scrollWidth": 375,
+        "bodyBackground": "rgb(247, 248, 252)",
+        "bodyText": "映\n映作\n我的作品\n动态效果\n◉\n创作者 d8b891\n\nMADE OF YOUR MOMENTS\n\n把日常，变成\n值得留住的作品。\n\n选一张模板，让你的照片有新的表达。\n\n开始创作\n↗\n浏览模板\n暂停\n探索灵感\n全部模板\n创意图片\n人像\n宠物\n2 张图片\n旅行明信片\n↗\n\n把旅途中的两个片刻，收进一张明信片。上传两张图片，体验模拟制作。\n\n1 张图片\n宠物肖像\n↗\n\n为你的小伙伴留下一张特别的肖像。上传一张图片，模拟生成温暖插画。\n\n3 张图片\n三格故事\n↗\n\n三个瞬间，一段自己的故事。上传三张图片，模拟生成故事海报。\n\n1 张图片\n光影头像\n↗\n\n在色彩和光影之间，发现新的自己。上传一张图片，模拟生成头像。\n\n灵感作品\n创意\n旅行\n人像\n宠物\n映作工作室\n模拟制作演示 · 无真实 AI 调用"
+      }
+    },
+    {
+      "name": "mobile: category interaction",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: runtime errors",
+      "status": "pass"
+    }
+  ],
+  "scope": "Initial independent light/layout/keyboard/content checks; not a complete comfort or creativity signoff",
+  "missing": [
+    "actual interaction performance/trace",
+    "background/offscreen/context-lost cleanup",
+    "upgrade/rollback evidence"
+  ]
+}
