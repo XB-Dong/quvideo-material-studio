@@ -23,3 +23,9 @@ Leader 在派发前已发现 afterCommit 队列拒绝路径复用 REQUIRED 事�
 读取 API、MyBatis SQL、身份/上传/私有媒体、受理/后台/模拟、异常处理、迁移、配置及已有测试。模板/历史读接口不执行 pipeline；任务/素材/结果按当前会话归属过滤；图片有真实解码/大小/尺寸检查；受理建记录与 dispatch 用事务后回调隔开。除上述新发现及已知修复项外，本次未发现额外阻断或重大问题。
 
 编译、MySQL 运行及独立 API 黑盒验收由集成后的实际执行验证，本记录不预判通过。
+
+## 修复复核
+
+2026-10-29 17:40+08:00，读取 Backend 最终提交 365e30c 的 Pipeline/Processing 与 DatabaseIntegrationTest：FINALIZE 不再提前调用 end；Processing.success 在一个 REQUIRES_NEW 事务中完成 FINALIZE endStep 与 task/result 成功，任何一项失败抛异常回滚，再由失败事务标记当前步骤和任务失败。新增 finalCompletionRollsBackStepAndPersistsFailure 以委托真实 MyBatis 的 fault mock 注入最终成功持久化错误，断言任务/FINALIZE 均 FAILED、resultKey 为 null。
+
+BE-REV-01 的源码修复已独立核对，处置为采纳并关闭。该注入回归的运行结果来自 Backend/Leader 对应测试证据，本角色没有重复运行该故障注入。另对集成版本 620eb4a8778b9399c31e980fcc19df0919b393a5 独立执行八组真实 API 用例，全部通过，见 live-api-620eb4a.md。该黑盒套件实际验证了正常 finalization 和指定 FINALIZE 失败，但不冒充最终 DB 故障注入。
