@@ -1,0 +1,5 @@
+ARG BROWSER_IMAGE=material-p1-browser:gpu
+FROM ${BROWSER_IMAGE}
+RUN apk add --no-cache xvfb-run
+COPY native-visibility.mjs run-headed.sh ./
+ENTRYPOINT ["sh", "/checks/run-headed.sh"]

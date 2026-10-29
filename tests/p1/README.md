@@ -22,3 +22,5 @@ measurement.json记录每次原始资源、响应状态、JS gzip归一值、图
 
 
 常规 CI 的 Electric 用同步原生 draw 后的 RGBA 样本证明真实存活时绘制、彩色边缘、连续签名变化与大于80%透明区域；该功能性读回会扰动软件渲染，不用于舒适/性能签署。精确600ms合成器五帧以 `EXACT_ELECTRIC_SEQUENCE=1` 单独采集，默认CI报告明确标记未采集；不能用普通CI替代该独立视觉证据。生命周期每项用新的页面状态，finally恢复媒体/偏好，最多5秒等待真实GPU/Orbit/RAF释放；该功能等待上限不是产品效果时长或舒适延迟承诺。
+
+原生后台验证（不使用 Playwright 的 focus emulation）：先 `docker build -t material-p1-browser:headed -f tests/p1/Dockerfile.headed tests/p1`，再用相同 evidence 挂载及 TESTED_COMMIT，`docker run --rm --network material-studio_default --mount "type=bind,source=$outputPath,target=/evidence" -e RELAY_HOST=frontend -e TESTED_COMMIT material-p1-browser:headed`。Dockerfile使用有界10秒的Xvfb socket就绪检查；raw CDP确认app/control同windowId，Target.activateTarget自然切tab，记录browser-trusted visibilitychange和真实GPU/Orbit/RAF释放与恢复；不改document.hidden或派发合成事件。每个CDP请求10秒超时。它证明容器原生浏览器后台生命周期，不证明物理Windows最小化或硬件GPU性能。
