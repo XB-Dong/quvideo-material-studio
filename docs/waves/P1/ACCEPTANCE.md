@@ -12,6 +12,7 @@
 | UX-01 | U01桌面1280/1440及375 | VISUAL、ACCEPT | 无横向溢出，触控/Tab/预览Esc/焦点返回、长错误可读 | not_run |
 | QUALITY-01 | U02系统reduce/手动静态/实时切换 | MOTION、ACCEPT | 装饰停止，大幅运动消失；重要状态仍即时可读，偏好刷新保留 | not_run |
 | QUALITY-01 | P01包体与加载 | BASE、ACCEPT | 同条件前后比较，新增路由JS gzip目标≤35KiB；全部延后创意JS新增体积目标≤120KiB（含Motion/OGL/适配）；首视口公开图含Orbit/poster目标≤800KiB | not_run |
+| QUALITY-01 | P03 Worker能力检测/默认软件降级 | CREATIVE、ACCEPT | probe不阻塞主线程，软件/异常/超时静态GPU；正常能力与软件功能fixture明确区分，资源释放和七功能均有独立证据 | not_run |
 | QUALITY-01 | P02流畅度/布局稳定 | ACCEPT | 无可见卡顿，交互动画不产生>50ms归因长任务；CLS目标≤0.1；记录实际trace | not_run |
 | REG-01 | R01原16前端测试+新增动效用例 | VISUAL、MOTION | 原行为全部通过；卸载/身份/401/提交锁/版本保护不退化 | not_run |
 | REG-01 | R02原12Java+8API | ASSET、ACCEPT | 顺序/失败/归属等通过；新资源key/MIME可预览 | not_run |
@@ -55,3 +56,5 @@ P0没有可比的性能/包体测量，P1-BASE必须在07300db代码/同一浏�
 舒适由Acceptance独立逐项标pass/fail并附环境/证据：阅读不遮挡；原生cursor和键盘focus；点击/输入/Tab/滚动不阻塞；无持续闪烁；静态/reduce含实时切换；375px和coarse pointer；离屏/后台/卸载/页签/弹窗/身份变化的资源与旧请求清理；最多两个活动系统和一个已分配存活context；WebGL不可用/context lost/FPS降级；前后包体/图像/CLS/trace预算；全部P0回归。任何未通过项都不能以高美学分抵消。
 
 先记录有创意的正常模式，再测静态/降级，两者都要通过。Leader复核两份独立签署、处置并复验所有blocking/major；准备文件的只读审阅不构成产品G01/G02通过。
+
+默认能力策略下检查实际交互长任务与舒适度；软件强制功能fixture的已知慢driver不用于宣称舒适通过。真实硬件性能无实测则标未验证，不能用worker模拟消息冒充实际硬件。后台document事件fixture与真实OS标签隐藏也分别标注。

@@ -105,7 +105,7 @@
       "repairCount": 0
     }
   ],
-  "nextAction": "GPU_capable_browser_rebaseline_and_candidate_review",
+  "nextAction": "implement_worker_capability_policy_then_independent_default_and_functional_retest",
   "oglCandidate": "1.0.11",
   "reactBitsComponents": [
     "Dither Veil",
@@ -133,5 +133,7 @@
   "baselineContainerChecks": "16_frontend_12_java_8_api_passed",
   "dispatchRule": "isolated edits allowed while P0 browser baseline is collected; no P1 deployment until baseline freeze",
   "oglInstalled": true,
-  "motionDecision": "CSS_transitions_and_React_lifecycle; unused_Motion_removed"
+  "motionDecision": "CSS_transitions_and_React_lifecycle; unused_Motion_removed",
+  "gpuPerformanceFinding": "open: measured SwiftShader loseContext 131/56/76ms; worker_preflight_and_default_software_fallback_in_progress",
+  "gpuPolicyDecision": "docs/decisions/0009-gpu-comfort-policy.md"
 }

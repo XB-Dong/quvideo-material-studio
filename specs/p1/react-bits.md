@@ -50,3 +50,10 @@ WebGL画布DPR上限1.5，活动像素目标≤1MP，离屏停止；context lost
 **使用舒适门槛**：Acceptance逐项实测阅读不被遮挡、原生cursor/focus、点击/输入/滚动不受干扰、无刺眼闪烁、静态/reduce完整、375px/触屏降级、离屏/卸载资源清理、性能预算及全部P0回归；任何一项严重问题都不通过，不能用美学高分抵消。
 
 Reviewer和Acceptance分别签署结论，Leader复现并处理发现，最终两门槛都通过、无未关闭blocking/major才能completed。不通过先调强度/频率/范围/并发和实现，再复审；不能静默删掉指定组件或将所有效果关闭作为“创意验收通过”。
+
+
+## 能力检测与软件绘图
+
+默认以独立Worker + 1×1 OffscreenCanvas做一次有界预检，不在主线程进行冷GL初始化。标准failIfMajorPerformanceCaveat结合实际renderer判断；纯软件绘图默认保留静态作品、SVG Orbit和普通CSS动效，正常硬件允许七项。Worker确认probe context已释放，main才可授予GPUowner；缺Worker/OffscreenCanvas、异常和超时都回退图片并完整清理。六个真实GL创建同样请求标准caveat，不能写一个库不转发的无效属性假称已控制。
+
+不增加生产强制开关或可见技术提示。软件功能验收的浏览器fixture可明确模拟preflight允许结果以覆盖七项，但要保留实际driver与fixture条件；这条路径不能声称软件强制绘图舒适通过。默认模式仍须通过主线程交互性能门槛、真实业务和降级检查，七组件功能覆盖单独全部完成。实际硬件性能无实测不声称通过，细节和归因见决定0009及验收证据。
