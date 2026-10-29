@@ -1,0 +1,230 @@
+{
+  "components": [
+    {
+      "dependencies": [
+        "ogl@^1.0.11"
+      ],
+      "status": "metadata_and_source_read_only_not_installed",
+      "registryUrl": "https://reactbits.dev/r/DitherVeil-TS-CSS.json",
+      "name": "DitherVeil",
+      "files": [
+        {
+          "usesResizeObserver": false,
+          "bytes": 113,
+          "importsOGL": false,
+          "mentionsReducedMotion": false,
+          "sha256": "e26d3a59edcabc0b117f832abff3b3d99ac5855e1275a842c6d58bf0f585fc76",
+          "usesRAF": false,
+          "cancelsRAF": false,
+          "path": "DitherVeil.css"
+        },
+        {
+          "usesResizeObserver": true,
+          "bytes": 26903,
+          "importsOGL": true,
+          "mentionsReducedMotion": true,
+          "sha256": "e46b5c99d3b68c7309571a10dcef9ed3584739a8cad6f551d79296ecc3c73529",
+          "usesRAF": true,
+          "cancelsRAF": true,
+          "path": "DitherVeil.tsx"
+        }
+      ]
+    },
+    {
+      "dependencies": [],
+      "status": "metadata_and_source_read_only_not_installed",
+      "registryUrl": "https://reactbits.dev/r/GlowCursor-TS-CSS.json",
+      "name": "GlowCursor",
+      "files": [
+        {
+          "usesResizeObserver": false,
+          "bytes": 338,
+          "importsOGL": false,
+          "mentionsReducedMotion": false,
+          "sha256": "02bec034b47fd7f43d20f74845fb24c332a4353a48d44e9150ad0759327e5654",
+          "usesRAF": false,
+          "cancelsRAF": false,
+          "path": "GlowCursor.css"
+        },
+        {
+          "usesResizeObserver": true,
+          "bytes": 34766,
+          "importsOGL": false,
+          "mentionsReducedMotion": true,
+          "sha256": "4fdf8b2357f4aa012d7eafb6f8297642307c3df4fb02ae4b4c18e641e5c63312",
+          "usesRAF": true,
+          "cancelsRAF": true,
+          "path": "GlowCursor.tsx"
+        }
+      ]
+    },
+    {
+      "dependencies": [
+        "ogl@^1.0.11"
+      ],
+      "status": "metadata_and_source_read_only_not_installed",
+      "registryUrl": "https://reactbits.dev/r/RippleDistortion-TS-CSS.json",
+      "name": "RippleDistortion",
+      "files": [
+        {
+          "usesResizeObserver": false,
+          "bytes": 196,
+          "importsOGL": false,
+          "mentionsReducedMotion": false,
+          "sha256": "3a7ecc6d99d604a7ee29f8a6ff3f84aece179a5cdc85d981b81179532170c852",
+          "usesRAF": false,
+          "cancelsRAF": false,
+          "path": "RippleDistortion.css"
+        },
+        {
+          "usesResizeObserver": true,
+          "bytes": 15007,
+          "importsOGL": true,
+          "mentionsReducedMotion": true,
+          "sha256": "74a750b3a1b06dd40cadb35ad636b703af5c80845ae68c0e15ed0b99c8bc9671",
+          "usesRAF": true,
+          "cancelsRAF": true,
+          "path": "RippleDistortion.tsx"
+        }
+      ]
+    },
+    {
+      "dependencies": [],
+      "status": "metadata_and_source_read_only_not_installed",
+      "registryUrl": "https://reactbits.dev/r/HalftoneReveal-TS-CSS.json",
+      "name": "HalftoneReveal",
+      "files": [
+        {
+          "usesResizeObserver": false,
+          "bytes": 206,
+          "importsOGL": false,
+          "mentionsReducedMotion": false,
+          "sha256": "51c09de2dcbaee1810a55a4784ce0f1c328c063cc9bf8c267c9b6cdcfb8392e1",
+          "usesRAF": false,
+          "cancelsRAF": false,
+          "path": "HalftoneReveal.css"
+        },
+        {
+          "usesResizeObserver": true,
+          "bytes": 30668,
+          "importsOGL": false,
+          "mentionsReducedMotion": true,
+          "sha256": "9dcca3775a6496fb9cc29448cf17161c37c4aec0a711887e7f44e6f0392015c1",
+          "usesRAF": true,
+          "cancelsRAF": true,
+          "path": "HalftoneReveal.tsx"
+        }
+      ]
+    },
+    {
+      "dependencies": [],
+      "status": "metadata_and_source_read_only_not_installed",
+      "registryUrl": "https://reactbits.dev/r/OrbitImages-TS-CSS.json",
+      "name": "OrbitImages",
+      "files": [
+        {
+          "usesResizeObserver": false,
+          "bytes": 1788,
+          "importsOGL": false,
+          "mentionsReducedMotion": true,
+          "sha256": "e648040230adb6f08d51fd91583b009e8d9b577c7128c42354cbee1fc4191643",
+          "usesRAF": false,
+          "cancelsRAF": false,
+          "path": "OrbitImages.css"
+        },
+        {
+          "usesResizeObserver": true,
+          "bytes": 30322,
+          "importsOGL": false,
+          "mentionsReducedMotion": true,
+          "sha256": "f039a4d33198e98f24e84ac161ffb1449ffebdde135c9079fcac7768746401db",
+          "usesRAF": true,
+          "cancelsRAF": true,
+          "path": "OrbitImages.tsx"
+        }
+      ]
+    },
+    {
+      "dependencies": [],
+      "status": "metadata_and_source_read_only_not_installed",
+      "registryUrl": "https://reactbits.dev/r/PixelTrail-TS-CSS.json",
+      "name": "PixelTrail",
+      "files": [
+        {
+          "usesResizeObserver": false,
+          "bytes": 54,
+          "importsOGL": false,
+          "mentionsReducedMotion": false,
+          "sha256": "17dc6aee5d947c1f8f34d2a15ff8c50b8dd51b2dbb643f50c6e6106ee38d1cfa",
+          "usesRAF": false,
+          "cancelsRAF": false,
+          "path": "PixelTrail.css"
+        },
+        {
+          "usesResizeObserver": true,
+          "bytes": 26060,
+          "importsOGL": false,
+          "mentionsReducedMotion": false,
+          "sha256": "5b0b2b717087154b3b77fc0974978bfe09ab925ba03900115c61ef9114f6af03",
+          "usesRAF": true,
+          "cancelsRAF": true,
+          "path": "PixelTrail.tsx"
+        }
+      ]
+    },
+    {
+      "dependencies": [],
+      "status": "metadata_and_source_read_only_not_installed",
+      "registryUrl": "https://reactbits.dev/r/ElectricBorder-TS-CSS.json",
+      "name": "ElectricBorder",
+      "files": [
+        {
+          "usesResizeObserver": false,
+          "bytes": 173,
+          "importsOGL": false,
+          "mentionsReducedMotion": false,
+          "sha256": "3ac01db2b8d158c653c9f726c208326818b3b29c7187dc310064fe5a15310979",
+          "usesRAF": false,
+          "cancelsRAF": false,
+          "path": "ElectricBorder.css"
+        },
+        {
+          "usesResizeObserver": true,
+          "bytes": 29319,
+          "importsOGL": false,
+          "mentionsReducedMotion": true,
+          "sha256": "afec82d8e44c009f3aabd940b75825273266400068a1e3e1830d62b356b781dc",
+          "usesRAF": true,
+          "cancelsRAF": true,
+          "path": "ElectricBorder.tsx"
+        }
+      ]
+    }
+  ],
+  "oglCandidate": {
+    "version": "1.0.11",
+    "installed": false,
+    "license": "Unlicense"
+  },
+  "license": "MIT + Commons Clause License Condition v1.0",
+  "upstreamCommit": "e12c22192ac7b4b452c5e2feb9b586d74765d696",
+  "checkedAt": "2026-10-29",
+  "registryMatchesUpstreamCommit": "not_asserted; registry file hashes recorded separately",
+  "licenseUrl": "https://github.com/DavidHDev/react-bits/blob/e12c22192ac7b4b452c5e2feb9b586d74765d696/LICENSE.md",
+  "variant": "TS-CSS",
+  "upstream": "https://github.com/DavidHDev/react-bits",
+  "sourceReviewNotes": {
+    "nativeWebGL2Components": [
+      "GlowCursor",
+      "HalftoneReveal",
+      "PixelTrail",
+      "ElectricBorder"
+    ],
+    "oglComponents": [
+      "DitherVeil",
+      "RippleDistortion"
+    ],
+    "resourceRule": "max one allocated/live WebGL context; unmount/dispose previous owner before mounting next; no-dependency does not imply no-WebGL",
+    "refetchReview": "independent read-only reviewer verified all 14 recorded registry source hashes on 2026-10-29; no runtime execution"
+  }
+}

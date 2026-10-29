@@ -4,6 +4,8 @@
 
 P0 已完成，验收 commit 为 4dd397f2f5b2cb74ca21aba08482d0cae5b0a0de；[GitHub CI 三任务通过](https://github.com/XB-Dong/quvideo-material-studio/actions/runs/40854073869)。后续封存提交只更新交付文档，应用源码与验收版本一致。详见 [P0 报告](docs/waves/P0/REPORT.md)和[验收矩阵](docs/waves/P0/ACCEPTANCE.md)。下一阶段蓝紫色视觉、优质素材及交互动画要求已记录在 [NEXT-WAVES](NEXT-WAVES.md)，尚未启动。
 
+P1启动前准备入口：[计划](docs/waves/P1/PLAN.md)、[方向与素材板](docs/waves/P1/references/README.md)、[角色与所有权](docs/waves/P1/ROLES.md)、[验收](docs/waves/P1/ACCEPTANCE.md)、[七创意与双门槛](specs/p1/react-bits.md)、[准备报告](docs/waves/P1/PREPARATION-REPORT.md)。候选资源仅放在文档准备目录，运行中的P0素材/页面未替换。
+
 ## 一条命令启动
 
 需要可用的 Linux Docker Engine 与 Docker Compose（支持 --wait）。无需宿主机 Node、Java、Maven 或 MySQL。

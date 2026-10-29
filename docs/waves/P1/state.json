@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "1.0.0",
+  "waveId": "P1",
+  "specVersion": "P1-1.1.0",
+  "status": "ready_for_user_start",
+  "executionAuthorized": false,
+  "executionStartedAt": null,
+  "executionCompletedAt": null,
+  "deadline": null,
+  "timezone": "Asia/Shanghai",
+  "authorizationScope": "prepare_P1_documents_references_candidates_and_review_only",
+  "preparationBaseCommit": "07300db74eefe5d8d1ecf979de314450bf5f2a78",
+  "p0AcceptanceCommit": "4dd397f2f5b2cb74ca21aba08482d0cae5b0a0de",
+  "dispatchBaseCommit": null,
+  "implementationCommit": null,
+  "acceptanceCommit": null,
+  "activeDevelopmentAgents": [],
+  "maxNativeWorkers": 3,
+  "modelPolicy": "inherit_current_session",
+  "actualProvider": null,
+  "actualModel": null,
+  "actualReasoningEffort": null,
+  "modelVerificationStatus": "not_verified",
+  "motionCandidate": "14.7.1",
+  "motionInstalled": false,
+  "productionAssetsChanged": false,
+  "productChecks": "not_run_for_P1",
+  "performanceBaseline": null,
+  "preparationValidation": "passed",
+  "independentPreparationReview": "passed_no_open_blocking_or_major",
+  "tasks": [
+    {
+      "taskId": "P1-BASE",
+      "rootTaskId": "P1-BASE",
+      "status": "prepared_not_dispatched",
+      "repairCount": 0
+    },
+    {
+      "taskId": "P1-DIRECTION",
+      "rootTaskId": "P1-DIRECTION",
+      "status": "prepared_not_dispatched",
+      "repairCount": 0
+    },
+    {
+      "taskId": "P1-ASSET",
+      "rootTaskId": "P1-ASSET",
+      "status": "prepared_not_dispatched",
+      "repairCount": 0
+    },
+    {
+      "taskId": "P1-VISUAL",
+      "rootTaskId": "P1-VISUAL",
+      "status": "prepared_not_dispatched",
+      "repairCount": 0
+    },
+    {
+      "taskId": "P1-CREATIVE",
+      "rootTaskId": "P1-CREATIVE",
+      "status": "prepared_not_dispatched",
+      "repairCount": 0
+    },
+    {
+      "taskId": "P1-MOTION",
+      "rootTaskId": "P1-MOTION",
+      "status": "prepared_not_dispatched",
+      "repairCount": 0
+    },
+    {
+      "taskId": "P1-ACCEPT",
+      "rootTaskId": "P1-ACCEPT",
+      "status": "prepared_not_dispatched",
+      "repairCount": 0
+    },
+    {
+      "taskId": "P1-REVIEW",
+      "rootTaskId": "P1-REVIEW",
+      "status": "prepared_not_dispatched",
+      "repairCount": 0
+    },
+    {
+      "taskId": "P1-DELIVERY",
+      "rootTaskId": "P1-DELIVERY",
+      "status": "prepared_not_dispatched",
+      "repairCount": 0
+    }
+  ],
+  "nextAction": "wait_for_explicit_user_P1_start_then_BASE_and_DIRECTION",
+  "oglCandidate": "1.0.11",
+  "reactBitsComponents": [
+    "Dither Veil",
+    "Glow Cursor",
+    "Ripple Distortion",
+    "Halftone Reveal",
+    "Orbit Images",
+    "Pixel Trail",
+    "Electric Border"
+  ],
+  "reactBitsAudit": "docs/waves/P1/references/reactbits-audit.json",
+  "creativeImplementationStarted": false,
+  "aestheticGate": "not_run",
+  "comfortGate": "not_run",
+  "focusedEffortEstimateHours": [
+    10,
+    14
+  ],
+  "preparationCompletedAt": "2026-10-29T22:22:24+08:00",
+  "independentPreparationReviewRef": "docs/waves/P1/reviews/preparation-review.md"
+}

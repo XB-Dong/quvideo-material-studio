@@ -1,0 +1,46 @@
+{
+  "method": "WCAG relative luminance, opaque sRGB pairs only",
+  "checks": [
+    {
+      "name": "正文/页面",
+      "foreground": "#F4F5FF",
+      "background": "#0B1020",
+      "ratio": 17.44638808494611,
+      "threshold": 4.5,
+      "passed": true
+    },
+    {
+      "name": "辅助/面板",
+      "foreground": "#B8C0DD",
+      "background": "#141A30",
+      "ratio": 9.524818861901066,
+      "threshold": 4.5,
+      "passed": true
+    },
+    {
+      "name": "按钮/紫端",
+      "foreground": "#FFFFFF",
+      "background": "#7050D9",
+      "ratio": 5.471080853835268,
+      "threshold": 4.5,
+      "passed": true
+    },
+    {
+      "name": "按钮/蓝端",
+      "foreground": "#FFFFFF",
+      "background": "#3157BF",
+      "ratio": 6.469123911108394,
+      "threshold": 4.5,
+      "passed": true
+    },
+    {
+      "name": "强调/面板",
+      "foreground": "#B6A2FF",
+      "background": "#141A30",
+      "ratio": 7.86861811655829,
+      "threshold": 4.5,
+      "passed": true
+    }
+  ],
+  "limits": "Not a gradient/alpha/photo text or live page audit"
+}

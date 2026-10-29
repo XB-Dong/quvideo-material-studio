@@ -1,3 +1,8 @@
 # 波次导航
 
-当前只有 [P0](P0/PLAN.md)。状态为准备完成待用户启动，不因存在任务包或计划就执行。状态入口 [state.json](P0/state.json)，需求证据入口 [验收矩阵](P0/ACCEPTANCE.md)。
+| 波次 | 状态 | 入口 |
+| --- | --- | --- |
+| P0 | completed，封存07300db | [报告](P0/REPORT.md)、[状态](P0/state.json)、[验收](P0/ACCEPTANCE.md) |
+| P1 | 启动前准备，等待用户明确启动 | [计划](P1/PLAN.md)、[角色](P1/ROLES.md)、[状态](P1/state.json)、[验收](P1/ACCEPTANCE.md)、[方向板](P1/references/README.md) |
+
+计划/任务包不是执行授权；P0历史授权不自动启动P1。

@@ -1,0 +1,119 @@
+{
+  "checkedAt": "2026-10-29T22:22:24+08:00",
+  "specVersion": "P1-1.1.0",
+  "files": [
+    {
+      "path": "docs/waves/P1/ACCEPTANCE.md",
+      "sha256": "307c66b6240c2adefb59a8a2cf69ef6c0531ee5514284f3bce4869d3602b332f"
+    },
+    {
+      "path": "docs/waves/P1/CONTEXT-MAP.md",
+      "sha256": "b09721ad194c771e0e63cf8757da12f1d273605d361d96edc1d913c72550125e"
+    },
+    {
+      "path": "docs/waves/P1/PLAN.md",
+      "sha256": "f9b6e11f405c492ec277538833cee5c2d4c6b23075bd09bc9084d7eb6c02bc41"
+    },
+    {
+      "path": "docs/waves/P1/references/assets/abstract.jpg",
+      "sha256": "e38185f8f05dbbd882afd8a058488ad8fb9d3ff2e8f104a97ae801420ff6b2bf"
+    },
+    {
+      "path": "docs/waves/P1/references/assets/pet.jpg",
+      "sha256": "be26f3bc9edb9a3abeb29c092ffbf3a88fa12ab8c038156d24cafaae7dde889d"
+    },
+    {
+      "path": "docs/waves/P1/references/assets/portrait.jpg",
+      "sha256": "fb8dbf07ee48e2bc7780002cc8c3cebd5b60f34ca15318dc469c9975257d6434"
+    },
+    {
+      "path": "docs/waves/P1/references/assets/travel.jpg",
+      "sha256": "2633727e37fd865835089a11f56d2e19e37f5c4e8e35b7148490e9dc373d4d44"
+    },
+    {
+      "path": "docs/waves/P1/references/contrast-check.json",
+      "sha256": "b38d2790b71ff77edec7a25ebe6c041998ba4680a71b2e03f7afdd709dccc3e6"
+    },
+    {
+      "path": "docs/waves/P1/references/creative-scene-map.svg",
+      "sha256": "b7d37ba5bf9e92e1051acbe64e91753e34c8cf920bf0d618a0aea21d43ff1855"
+    },
+    {
+      "path": "docs/waves/P1/references/direction-board.svg",
+      "sha256": "ce131b3a3e1d8f5424c4602f01c800ffd8c9999655b1be30a337af4e45c97a87"
+    },
+    {
+      "path": "docs/waves/P1/references/manifest.json",
+      "sha256": "a71c43e2e97cd0eaa16184e9ee99db4fa8b86a41dacc3c5b367a2a308c1b4f0a"
+    },
+    {
+      "path": "docs/waves/P1/references/reactbits-audit.json",
+      "sha256": "926ff6f14d52619c78d67facd8794e0c5ec63c77692c195b251dcbe7baefa08e"
+    },
+    {
+      "path": "docs/waves/P1/references/README.md",
+      "sha256": "8de4a6aaf8c5c5dcfc4023978ac622fd72cfc0bbd93c58d68eeece2b3120f7b5"
+    },
+    {
+      "path": "docs/waves/P1/ROLES.md",
+      "sha256": "a252a2bc1911b33b88b2b544b8c88a43a5687de6e392e55c2ed93f602678b245"
+    },
+    {
+      "path": "docs/waves/P1/tasks/P1-ACCEPT.md",
+      "sha256": "43bce196ac753add9eb1a29fd08764d6596382d69eb4191957e35d1241715fec"
+    },
+    {
+      "path": "docs/waves/P1/tasks/P1-ASSET.md",
+      "sha256": "d7f31b9500ae319635ec490d85637d8919a2fa1e39900a218911d002ed179d11"
+    },
+    {
+      "path": "docs/waves/P1/tasks/P1-BASE.md",
+      "sha256": "a9068c97d8cd789ccc6e26d4f6b6e0888cc12dd4893b6835e0ba8ca3f27c036d"
+    },
+    {
+      "path": "docs/waves/P1/tasks/P1-CREATIVE.md",
+      "sha256": "64c2f6897e423270dce3c44f77aa44061feeba59a1065e330ed7662dada1e91a"
+    },
+    {
+      "path": "docs/waves/P1/tasks/P1-DELIVERY.md",
+      "sha256": "006f91b3bb1be81e2528d9608b1b74e9533d561ea0a74086d1c3588b8e872517"
+    },
+    {
+      "path": "docs/waves/P1/tasks/P1-DIRECTION.md",
+      "sha256": "4bdb44f8ec438d3ad4a6cded7f255104f5b3b813b7d627bf493f7a9548968bb4"
+    },
+    {
+      "path": "docs/waves/P1/tasks/P1-MOTION.md",
+      "sha256": "bd8d7b511ba6ff705fa9642f112b7679e0359c4ec517d4e7a5143042c7ebe7bb"
+    },
+    {
+      "path": "docs/waves/P1/tasks/P1-REVIEW.md",
+      "sha256": "05149f29bb5c82dee06b5b11bc999fed93e6898c8f500a0e1cb283a2f8be5ca6"
+    },
+    {
+      "path": "docs/waves/P1/tasks/P1-VISUAL.md",
+      "sha256": "3a34bd21aca97ae93865b057fc776089f659a95465630fe73f9596b9dfd937e1"
+    },
+    {
+      "path": "specs/p1/assets.md",
+      "sha256": "80a92f21ea279abf3defae0ace1eb6e6ed0bab87f9199374ca3739ec29277be7"
+    },
+    {
+      "path": "specs/p1/design.md",
+      "sha256": "b8111ee431306f4c2361c4b0c7d21605f285319e50440ff1fca65c6368f33693"
+    },
+    {
+      "path": "specs/p1/motion.md",
+      "sha256": "546585ddf4805399fffcb907469c0e51ac1659863620b30626c13cf3bca9c1e0"
+    },
+    {
+      "path": "specs/p1/react-bits.md",
+      "sha256": "12cec1c8931b6e4347ca22103bb555b5afdc2035c4616e462204eecbb87c552c"
+    },
+    {
+      "path": "specs/p1/requirements.md",
+      "sha256": "e9b91db85e5f2a507026020acdff426d0264383c640eec2095fb06764b5b1ec2"
+    }
+  ],
+  "hashMode": "repository content: UTF-8 text CRLF normalized to LF; binary unchanged"
+}

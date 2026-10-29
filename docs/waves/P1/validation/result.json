@@ -1,0 +1,20 @@
+{
+  "result": "pass",
+  "specVersion": "P1-1.1.0",
+  "preparedTasks": 9,
+  "requirements": 10,
+  "candidateAssets": 4,
+  "reactBitsComponents": 7,
+  "registryFiles": 14,
+  "dependencyGraph": "acyclic",
+  "relativeLinks": "valid",
+  "svgXML": "valid",
+  "productUnchangedFrom": "07300db74eefe5d8d1ecf979de314450bf5f2a78",
+  "runtimeChecks": "not_run_for_P1",
+  "executionAuthorized": false,
+  "checkedAt": "2026-10-29T22:22:24+08:00",
+  "command": "python docs/waves/P1/validation/check_preparation.py",
+  "exitCode": 0,
+  "environment": "Windows PowerShell / Python standard library / Git; preparation documents only",
+  "independentReviewRef": "docs/waves/P1/reviews/preparation-review.md"
+}
