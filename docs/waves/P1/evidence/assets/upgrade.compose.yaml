@@ -1,0 +1,9 @@
+services:
+  backend:
+    image: ${ASSET_TEST_BACKEND_IMAGE:-material-studio-backend:p0-07300db}
+    environment:
+      APP_PUBLIC_ORIGIN: http://localhost:23010
+  frontend:
+    image: material-studio-frontend:p0-07300db
+    ports: !override
+      - "23010:3000"

@@ -1,10 +1,10 @@
- Network material-p1-assets_default Creating 
- Network material-p1-assets_default Created 
- Container material-p1-assets-mysql-test-1 Creating 
- Container material-p1-assets-mysql-test-1 Created 
- Container material-p1-assets-mysql-test-1 Starting 
- Container material-p1-assets-mysql-test-1 Started 
- Image material-p1-assets-backend-check Building 
+ Network material-p1-assets_default Creating
+ Network material-p1-assets_default Created
+ Container material-p1-assets-mysql-test-1 Creating
+ Container material-p1-assets-mysql-test-1 Created
+ Container material-p1-assets-mysql-test-1 Starting
+ Container material-p1-assets-mysql-test-1 Started
+ Image material-p1-assets-backend-check Building
 #1 [internal] load local bake definitions
 #1 reading from stdin 681B 0.0s done
 #1 DONE 0.0s
@@ -53,13 +53,13 @@
 
 #12 resolving provenance for metadata file
 #12 DONE 0.0s
- Image material-p1-assets-backend-check Built 
- Container material-p1-assets-mysql-test-1 Waiting 
- Container material-p1-assets-mysql-test-1 Healthy 
- Container material-p1-assets-backend-check-run-d8b65b4c5411 Creating 
- Container material-p1-assets-backend-check-run-d8b65b4c5411 Created 
+ Image material-p1-assets-backend-check Built
+ Container material-p1-assets-mysql-test-1 Waiting
+ Container material-p1-assets-mysql-test-1 Healthy
+ Container material-p1-assets-backend-check-run-d8b65b4c5411 Creating
+ Container material-p1-assets-backend-check-run-d8b65b4c5411 Created
 [INFO] Scanning for projects...
-[INFO] 
+[INFO]
 [INFO] --------------------< com.quvideo:material-studio >---------------------
 [INFO] Building material-studio 1.0.0
 [INFO]   from pom.xml
@@ -98,22 +98,22 @@
 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/6.2.19/spring-jdbc-6.2.19.jar (476 kB at 345 kB/s)
 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.17.8/byte-buddy-1.17.8.jar (9.0 MB at 4.2 MB/s)
 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.21.4/jackson-dataformat-toml-2.21.4.jar (58 kB at 23 kB/s)
-[INFO] 
+[INFO]
 [INFO] --- resources:3.3.1:resources (default-resources) @ material-studio ---
 [INFO] Copying 1 resource from src/main/resources to target/classes
 [INFO] Copying 15 resources from src/main/resources to target/classes
-[INFO] 
+[INFO]
 [INFO] --- compiler:3.14.1:compile (default-compile) @ material-studio ---
 [INFO] Recompiling the module because of changed source code.
 [INFO] Compiling 12 source files with javac [debug parameters release 21] to target/classes
-[INFO] 
+[INFO]
 [INFO] --- resources:3.3.1:testResources (default-testResources) @ material-studio ---
 [INFO] skip non existing resourceDirectory /app/src/test/resources
-[INFO] 
+[INFO]
 [INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ material-studio ---
 [INFO] Recompiling the module because of changed dependency.
 [INFO] Compiling 3 source files with javac [debug parameters release 21] to target/test-classes
-[INFO] 
+[INFO]
 [INFO] --- surefire:3.5.6:test (default-test) @ material-studio ---
 [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.5.6/surefire-junit-platform-3.5.6.pom
@@ -130,7 +130,7 @@
 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.12.2/junit-platform-launcher-1.12.2.jar
 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.5.6/common-java5-3.5.6.jar (18 kB at 109 kB/s)
 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.12.2/junit-platform-launcher-1.12.2.jar (208 kB at 766 kB/s)
-[INFO] 
+[INFO]
 [INFO] -------------------------------------------------------
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
@@ -175,15 +175,15 @@ OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader clas
 2026-10-29T15:05:19.265Z  INFO 104 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
 2026-10-29T15:05:19.313Z  INFO 104 --- [           main] c.q.studio.DatabaseIntegrationTest       : Started DatabaseIntegrationTest in 2.275 seconds (process running for 4.312)
 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.201 s -- in com.quvideo.studio.DatabaseIntegrationTest
-[INFO] 
+[INFO]
 [INFO] Results:
-[INFO] 
+[INFO]
 [INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0
-[INFO] 
-[INFO] 
+[INFO]
+[INFO]
 [INFO] --- jar:3.4.2:jar (default-jar) @ material-studio ---
 [INFO] Building jar: /app/target/app.jar
-[INFO] 
+[INFO]
 [INFO] --- spring-boot:3.5.16:repackage (repackage) @ material-studio ---
 [INFO] Replacing main artifact /app/target/app.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
 [INFO] The original artifact has been renamed to /app/target/app.jar.original

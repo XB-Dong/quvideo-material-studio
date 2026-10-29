@@ -1,0 +1,62 @@
+[
+  {
+    "phase": "p0",
+    "historicalTaskId": "5e27a4ba-0a39-4a13-b566-9d7fccf400dc",
+    "historicalResultSha256": "961395304cad3ebd27b95d42426c9f3bfdeedb9e5f562edc728d1ee1d3430101",
+    "historicalOwnerPreserved": true,
+    "foreignResultDenied": null,
+    "templateCovers": [
+      "/media/demo/postcard.png",
+      "/media/demo/pet.png",
+      "/media/demo/story.png",
+      "/media/demo/portrait.png"
+    ],
+    "newResultMatchesP1Resource": false,
+    "checkedAt": "2026-10-29T15:08:58Z"
+  },
+  {
+    "phase": "p1",
+    "historicalTaskId": "5e27a4ba-0a39-4a13-b566-9d7fccf400dc",
+    "historicalResultSha256": "961395304cad3ebd27b95d42426c9f3bfdeedb9e5f562edc728d1ee1d3430101",
+    "historicalOwnerPreserved": true,
+    "foreignResultDenied": true,
+    "templateCovers": [
+      "/media/demo/postcard-p1-cover.jpg",
+      "/media/demo/pet-p1-cover.jpg",
+      "/media/demo/story-p1-cover.jpg",
+      "/media/demo/portrait-p1-cover.jpg"
+    ],
+    "newResultMatchesP1Resource": true,
+    "checkedAt": "2026-10-29T15:09:37Z"
+  },
+  {
+    "phase": "p0-restored",
+    "historicalTaskId": "5e27a4ba-0a39-4a13-b566-9d7fccf400dc",
+    "historicalResultSha256": "961395304cad3ebd27b95d42426c9f3bfdeedb9e5f562edc728d1ee1d3430101",
+    "historicalOwnerPreserved": true,
+    "foreignResultDenied": true,
+    "templateCovers": [
+      "/media/demo/postcard.png",
+      "/media/demo/pet.png",
+      "/media/demo/story.png",
+      "/media/demo/portrait.png"
+    ],
+    "newResultMatchesP1Resource": false,
+    "checkedAt": "2026-10-29T15:12:47Z"
+  },
+  {
+    "phase": "p1-again",
+    "historicalTaskId": "5e27a4ba-0a39-4a13-b566-9d7fccf400dc",
+    "historicalResultSha256": "961395304cad3ebd27b95d42426c9f3bfdeedb9e5f562edc728d1ee1d3430101",
+    "historicalOwnerPreserved": true,
+    "foreignResultDenied": true,
+    "templateCovers": [
+      "/media/demo/postcard-p1-cover.jpg",
+      "/media/demo/pet-p1-cover.jpg",
+      "/media/demo/story-p1-cover.jpg",
+      "/media/demo/portrait-p1-cover.jpg"
+    ],
+    "newResultMatchesP1Resource": true,
+    "checkedAt": "2026-10-29T15:12:56Z"
+  }
+]
