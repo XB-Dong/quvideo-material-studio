@@ -1,6 +1,7 @@
  
 // React Bits source adaptation; provenance and full license in this directory.
 'use client';
+import { rememberContext } from './context-lifecycle';
 
 import { useEffect, useRef, type CSSProperties } from 'react';
 
@@ -487,6 +488,7 @@ const HalftoneReveal = ({
       stencil: false,
       preserveDrawingBuffer: false
     });
+    rememberContext(canvas, gl);
     if (!container || !canvas || !gl) return undefined;
     canvas.style.opacity = '0';
 

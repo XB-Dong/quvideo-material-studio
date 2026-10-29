@@ -7,6 +7,7 @@ import type { Asset, Task, Template } from "../lib/types";
 import { useIdentity } from "./providers";
 import { Shell } from "./shell";
 import { History } from "./history";
+import { StudioIcon } from "./visual/icons";
 export function Studio({ id }: { id: string }) {
   const template = useQuery({
     queryKey: ["template", id],
@@ -138,7 +139,11 @@ export function UploadSlot({
           }}
         />
         {slot.preview ? (
-          <img src={slot.preview} alt={"第" + (index + 1) + "张图片预览"} />
+          <img
+            key={slot.preview}
+            src={slot.preview}
+            alt={"第" + (index + 1) + "张图片预览"}
+          />
         ) : (
           <>
             <span className="upload-plus">＋</span>
@@ -304,7 +309,7 @@ export function Maker({ template: t }: { template: Template }) {
           }
           onClick={submit}
         >
-          {submitting ? "正在提交…" : "开始制作"} <span>✦</span>
+          {submitting ? "正在提交…" : "开始制作"} <StudioIcon name="spark" />
         </button>
         <small>制作在后台进行，离开页面也会继续</small>
       </div>

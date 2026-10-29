@@ -1,6 +1,7 @@
 /* eslint-disable */
 // React Bits source adaptation; provenance and full license in this directory.
 'use client';
+import { rememberContext } from './context-lifecycle';
 
 import { useEffect, useRef, type CSSProperties, type HTMLAttributes, type ReactNode } from 'react';
 
@@ -418,6 +419,7 @@ const GlowCursor = ({
       depth: false,
       stencil: false
     });
+    rememberContext(canvas, gl);
     if (!container || !canvas || !gl || !gl.getExtension('EXT_color_buffer_float')) return undefined;
 
     const vertexShader = compile(gl, gl.VERTEX_SHADER, VERTEX);

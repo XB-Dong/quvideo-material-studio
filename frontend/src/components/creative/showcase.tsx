@@ -11,6 +11,7 @@ import {
 } from "react";
 import Link from "next/link";
 import type { Template } from "../../lib/types";
+import { releaseContext } from "../react-bits/context-lifecycle";
 import { useMotionPreferences } from "../motion/preferences";
 const Orbit = lazy(() => import("../react-bits/OrbitImages")),
   Glow = lazy(() => import("../react-bits/GlowCursor")),
@@ -36,12 +37,7 @@ export class SafeEffect extends Component<
       node.querySelectorAll("canvas").forEach((c) => this.canvases.add(c));
   };
   release = () => {
-    this.canvases.forEach((canvas) => {
-      try {
-        const gl = canvas.getContext("webgl2") || canvas.getContext("webgl");
-        gl?.getExtension("WEBGL_lose_context")?.loseContext();
-      } catch {}
-    });
+    this.canvases.forEach(releaseContext);
     this.canvases.clear();
   };
   componentDidMount() {
@@ -82,7 +78,8 @@ export function PublicImage({
   className?: string;
   loading?: "lazy" | "eager";
 }) {
-  const [failed, setFailed] = useState(false);
+  const [failedSrc, setFailedSrc] = useState<string | null>(null);
+  const failed = failedSrc === src;
   return (
     <img
       src={failed ? "/media/demo/postcard.png" : src}
@@ -90,7 +87,7 @@ export function PublicImage({
       className={className}
       loading={loading}
       onError={() => {
-        if (!failed) setFailed(true);
+        if (!failed) setFailedSrc(src);
       }}
     />
   );
@@ -186,7 +183,12 @@ export function CreativeShowcase({
     document.addEventListener("webglcontextlost", lost, true);
     return () => document.removeEventListener("webglcontextlost", lost, true);
   }, [owner]);
-  useEffect(()=>{if(!enabled){if(idle.current)clearTimeout(idle.current);setOwner(null)}},[enabled]);
+  useEffect(() => {
+    if (!enabled) {
+      if (idle.current) clearTimeout(idle.current);
+      setOwner(null);
+    }
+  }, [enabled]);
   const active = enabled && fine;
   const current =
     active &&

@@ -1618,3 +1618,17 @@ dialog.modal-closing {
   width: 100%;
   height: 100%;
 }
+
+.hero-art:has(.orbit-container) .poster-stack {
+  visibility: hidden;
+}
+.upload-slot.empty .upload-overlay {
+  display: none;
+}
+.icon-button svg {
+  vertical-align: middle;
+}
+.task-progress .orbit svg {
+  width: 34px;
+  height: 34px;
+}

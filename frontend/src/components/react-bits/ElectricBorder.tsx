@@ -1,6 +1,7 @@
  
 // React Bits source adaptation; provenance and full license in this directory.
 'use client';
+import { rememberContext } from './context-lifecycle';
 
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import './ElectricBorder.css';
@@ -533,6 +534,7 @@ const ElectricBorder = ({
       stencil: false,
       powerPreference: 'default'
     });
+    rememberContext(canvas, gl);
     const program = gl ? link(gl) : null;
     if (!gl || !program) return;
 

@@ -1,6 +1,7 @@
 /* eslint-disable */
 // React Bits source adaptation; provenance and full license in this directory.
 'use client';
+import { rememberContext } from './context-lifecycle';
 
 import { useEffect, useRef } from 'react';
 import type { CSSProperties } from 'react';
@@ -264,6 +265,7 @@ const RippleDistortion = ({
       dpr: Math.min(window.devicePixelRatio || 1, 1.5)
     });
     const gl = renderer.gl;
+    rememberContext(gl.canvas, gl);
     gl.clearColor(0, 0, 0, 1);
     const canvas = gl.canvas;
     canvas.style.width = '100%';

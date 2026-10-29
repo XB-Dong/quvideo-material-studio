@@ -1,6 +1,7 @@
  
 // React Bits source adaptation; provenance and full license in this directory.
 'use client';
+import { rememberContext } from './context-lifecycle';
 
 import { useEffect, useRef, type CSSProperties } from 'react';
 
@@ -356,6 +357,7 @@ export default function PixelTrail({
       antialias: false,
       powerPreference: 'high-performance'
     });
+    rememberContext(canvas, gl);
     if (!gl) return undefined;
     const vertex = compile(gl, gl.VERTEX_SHADER, VERTEX);
     const fragment = compile(gl, gl.FRAGMENT_SHADER, FRAGMENT);

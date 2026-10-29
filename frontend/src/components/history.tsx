@@ -4,6 +4,7 @@ import { useIdentity } from "./providers";
 import { useTasks } from "../lib/use-tasks";
 import { stageLabel, type Task } from "../lib/types";
 import { Modal, Shell } from "./shell";
+import { StudioIcon } from "./visual/icons";
 export function HistoryPage() {
   return (
     <Shell>
@@ -57,7 +58,7 @@ function HistoryContent({
           aria-label="刷新制作记录"
           onClick={model.refresh}
         >
-          ↻
+          <StudioIcon name="refresh" />
         </button>
       </div>
       {(model.history.isError || model.active.isError) && (
@@ -70,7 +71,9 @@ function HistoryContent({
         <div className="empty-state">正在加载记录…</div>
       ) : !model.tasks.length ? (
         <div className="empty-state">
-          <span className="empty-icon">▧</span>
+          <span className="empty-icon">
+            <StudioIcon name="image" />
+          </span>
           <h3>你的下一份作品，从这里开始</h3>
           <p>选择模板并上传照片，制作记录会出现在这里。</p>
         </div>
@@ -95,7 +98,11 @@ function HistoryContent({
                         t.status === "FAILED" ? "failed-symbol" : "orbit"
                       }
                     >
-                      {t.status === "FAILED" ? "!" : "✦"}
+                      {t.status === "FAILED" ? (
+                        "!"
+                      ) : (
+                        <StudioIcon name="spark" />
+                      )}
                     </span>
                     <strong>
                       {t.status === "QUEUED"

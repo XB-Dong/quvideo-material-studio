@@ -100,13 +100,24 @@ describe("motion preferences", () => {
 
 describe("dialog exit lifecycle", () => {
   beforeEach(() => {
-    Object.defineProperty(HTMLDialogElement.prototype,"showModal",{configurable:true,value:vi.fn(function(this:HTMLDialogElement){this.setAttribute("open","")})});
-    Object.defineProperty(HTMLDialogElement.prototype,"close",{configurable:true,value:vi.fn(function(this:HTMLDialogElement){this.removeAttribute("open")})});
+    Object.defineProperty(HTMLDialogElement.prototype, "showModal", {
+      configurable: true,
+      value: vi.fn(function (this: HTMLDialogElement) {
+        this.setAttribute("open", "");
+      }),
+    });
+    Object.defineProperty(HTMLDialogElement.prototype, "close", {
+      configurable: true,
+      value: vi.fn(function (this: HTMLDialogElement) {
+        this.removeAttribute("open");
+      }),
+    });
   });
   afterEach(() => {
     vi.useRealTimers();
     vi.restoreAllMocks();
-    delete (HTMLDialogElement.prototype as Partial<HTMLDialogElement>).showModal;
+    delete (HTMLDialogElement.prototype as Partial<HTMLDialogElement>)
+      .showModal;
     delete (HTMLDialogElement.prototype as Partial<HTMLDialogElement>).close;
   });
   it("closes at the 120ms bound without losing its accessible name", () => {
@@ -144,12 +155,54 @@ describe("dialog exit lifecycle", () => {
   });
 });
 
+describe("GPU boundary", () => {
+  afterEach(() => vi.restoreAllMocks());
+  it("releases an owned canvas on removal even if the child did not register cleanup", async () => {
+    const { SafeEffect } = await import("./creative/showcase");
+    const lose = vi.fn();
+    const context = {
+      getExtension: () => ({ loseContext: lose }),
+    } as unknown as WebGL2RenderingContext;
+    vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
+      context,
+    );
+    const view = render(
+      <SafeEffect>
+        <canvas aria-label="owned canvas" />
+      </SafeEffect>,
+    );
+    const { rememberContext } = await import("./react-bits/context-lifecycle");
+    rememberContext(
+      screen.getByLabelText("owned canvas") as HTMLCanvasElement,
+      context,
+    );
+    view.unmount();
+    expect(lose).toHaveBeenCalledTimes(1);
+  });
+});
 
-describe("GPU boundary",()=>{
- afterEach(()=>vi.restoreAllMocks());
- it("releases an owned canvas on removal even if the child did not register cleanup",async()=>{
- const {SafeEffect}=await import("./creative/showcase");const lose=vi.fn();const context={getExtension:()=>({loseContext:lose})} as unknown as WebGL2RenderingContext;
- vi.spyOn(HTMLCanvasElement.prototype,"getContext").mockReturnValue(context);
- const view=render(<SafeEffect><canvas aria-label="owned canvas"/></SafeEffect>);view.unmount();expect(lose).toHaveBeenCalledTimes(1);
- });
+describe("creative fallbacks", () => {
+  afterEach(() => vi.restoreAllMocks());
+  it("does not allocate a context while disposing an uninitialized canvas", async () => {
+    const { SafeEffect } = await import("./creative/showcase");
+    const get = vi.spyOn(HTMLCanvasElement.prototype, "getContext");
+    const view = render(
+      <SafeEffect>
+        <canvas />
+      </SafeEffect>,
+    );
+    view.unmount();
+    expect(get).not.toHaveBeenCalled();
+  });
+  it("allows a valid image after a previous source failed", async () => {
+    const { PublicImage } = await import("./creative/showcase");
+    const view = render(<PublicImage src="/bad.jpg" alt="作品" />);
+    fireEvent.error(screen.getByRole("img"));
+    expect(screen.getByRole("img")).toHaveAttribute(
+      "src",
+      "/media/demo/postcard.png",
+    );
+    view.rerender(<PublicImage src="/good.jpg" alt="作品" />);
+    expect(screen.getByRole("img")).toHaveAttribute("src", "/good.jpg");
+  });
 });

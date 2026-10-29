@@ -1,6 +1,7 @@
  
 // React Bits source adaptation; provenance and full license in this directory.
 'use client';
+import { rememberContext } from './context-lifecycle';
 
 import { useEffect, useRef } from 'react';
 import type { CSSProperties } from 'react';
@@ -466,6 +467,7 @@ const DitherVeil = ({
     const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
     const renderer = new Renderer({ dpr: Math.min(window.devicePixelRatio || 1, 1.5), alpha: false, antialias: false });
     const gl = renderer.gl;
+    rememberContext(gl.canvas, gl);
     const canvas = gl.canvas;
     canvas.style.display = 'block';
     canvas.style.opacity = '0';
