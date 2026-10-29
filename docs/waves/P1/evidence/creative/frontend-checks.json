@@ -1,0 +1,38 @@
+{
+  "taskIds": [
+    "P1-VISUAL",
+    "P1-CREATIVE",
+    "P1-MOTION"
+  ],
+  "baseCommit": "7997279301ce28c1bf1ee5e15d971aa7243a645c",
+  "testedCommit": "8688a85a5c5d990c634f51f2c3facfb04f7a583b",
+  "checkedAt": "2026-10-29T23:33:48+08:00",
+  "specVersion": "P1-1.2.0",
+  "environment": "Windows PowerShell driving Docker Desktop Linux; Node22.22.0-alpine fixed digest; project scripts executed in containers",
+  "checks": [
+    {
+      "command": "docker build --target test --tag material-p1-frontend-check frontend",
+      "exitCode": 0
+    },
+    {
+      "command": "docker run --rm material-p1-frontend-check",
+      "exitCode": 0,
+      "actual": "lint, tsc and 24 Vitest tests passed; original16 preserved"
+    },
+    {
+      "command": "docker build --target runner --tag material-p1-frontend-preview frontend",
+      "exitCode": 0
+    }
+  ],
+  "requestedModel": "inherit_current_session",
+  "actualModel": null,
+  "actualProvider": null,
+  "actualReasoningEffort": null,
+  "modelVerificationStatus": "not_verified",
+  "browserStatus": "independent Acceptance/Reviewer own actual rendering/effects/performance evidence; not self-signed",
+  "knownLimitations": [
+    "All seven real GL shaders still require official Ubuntu browser independent verification; first Alpine blank native canvas did not support WebGL2",
+    "Development strict-mode GPU behavior not tested; product production container builds passed",
+    "Root owns package removal of unused Motion and final integrated regression/CI"
+  ]
+}
