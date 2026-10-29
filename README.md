@@ -2,7 +2,7 @@
 
 小影科技 2027 校招全栈开发笔试项目，作者董信步。浏览模板、上传图片、提交后台制作任务，在等待期间继续使用网站，最后从个人历史预览结果。制作使用可控的模拟器，不调用真实 AI。
 
-当前 P0 已实现并处于集成验收，最终完成状态与验收 commit 见 [P0 状态](docs/waves/P0/state.json) 和 [验收矩阵](docs/waves/P0/ACCEPTANCE.md)。下一阶段蓝紫色视觉、优质素材及交互动画要求已记录在 [NEXT-WAVES](NEXT-WAVES.md)。
+P0 已完成，验收 commit 为 4dd397f2f5b2cb74ca21aba08482d0cae5b0a0de；[GitHub CI 三任务通过](https://github.com/XB-Dong/quvideo-material-studio/actions/runs/40854073869)。后续封存提交只更新交付文档，应用源码与验收版本一致。详见 [P0 报告](docs/waves/P0/REPORT.md)和[验收矩阵](docs/waves/P0/ACCEPTANCE.md)。下一阶段蓝紫色视觉、优质素材及交互动画要求已记录在 [NEXT-WAVES](NEXT-WAVES.md)，尚未启动。
 
 ## 一条命令启动
 

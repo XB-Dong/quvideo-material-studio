@@ -50,3 +50,25 @@
 完整 frontend/backend、准确版本与 lockfile/pom、SQL 迁移和种子、本地素材与来源、Dockerfile/Compose、push/PR CI、关键测试、需求证据矩阵、README、实际投入、AI 实例和限制。明确 acceptanceCommit（业务验证 SHA）和 reportCommit（封存报告 SHA），避免同一提交自引用。
 
 私有仓库默认评估者无法读取；在最终沟通前由用户选择授予指定 GitHub 账号读取或提供 `git archive` 源码包，不擅自公开仓库、不邀请未知账号。源码包不包含 .env、.git、node_modules、target、.next 或运行卷，保留 CI 与本地样例。交卷由用户通过原沟通渠道完成，交卷后不可修改。
+
+## 一致备份与恢复命令
+
+以下是 Bash 终端中的 Docker 编排命令，SQL/tar 实际在容器中执行。先准备仓库外的 ../material-backup 目录。backend 停止后不会产生新任务写入，MySQL 和文件卷保留。
+
+```sh
+docker compose stop backend
+docker compose exec -T mysql sh -c 'MYSQL_PWD="$MYSQL_ROOT_PASSWORD" exec mysqldump -uroot --single-transaction --no-tablespaces "$MYSQL_DATABASE"' > ../material-backup/db.sql
+docker run --rm --user 0 --volumes-from "$(docker compose ps --all --quiet backend)":ro --mount type=bind,src="$(cd ../material-backup && pwd)",dst=/backup --entrypoint sh material-studio-backend -c 'tar -C /data/materials -czf /backup/files.tgz .'
+docker compose up --detach --wait backend
+```
+
+恢复前再次备份当前状态并停止 backend；选择与备份 schema 匹配的已验证代码/镜像后，再恢复成套 SQL 与文件。以下恢复只操作本项目库/卷；不要对未知环境直接执行。
+
+```sh
+docker compose stop backend
+docker compose exec -T mysql sh -c 'MYSQL_PWD="$MYSQL_ROOT_PASSWORD" exec mysql -uroot "$MYSQL_DATABASE"' < ../material-backup/db.sql
+docker compose run --rm --no-deps --volume "$(cd ../material-backup && pwd):/backup:ro" --entrypoint sh backend -c 'tar --no-same-owner -C /data/materials -xzf /backup/files.tgz'
+docker compose up --detach --wait --wait-timeout 150
+```
+
+镜像使用 Docker Compose 默认项目名 material-studio；更改项目名时同步 helper 镜像名或显式 tag。备份/恢复验证结果见 evidence/ui-and-recovery.md；该验证恢复到隔离库和目录，没有覆盖产品库。版本回退必须考虑 schema 兼容性，不使用 down --volumes。
