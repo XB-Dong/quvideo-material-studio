@@ -13,3 +13,8 @@
 实际失败：首次安全tar data filter丢失UID，600文件变root，Java10001读失败；定位后显式恢复UID/GID，从匹配快照重做，回滚/再升通过。rootTask修复计数1，未删门槛。首次源码编辑GBK解码在写前失败，改PYTHONUTF8；不作为行为Red。容器导入tests模块生成的宿主pycache会清理，并已禁止后续写入。
 
 所有安装/转换/格式工具/产品脚本均容器执行。主material-studio/卷/3000未由本Agent更改。命令及重做说明见UPGRADE-VERIFICATION。快照/合成cookie仅专属容器卷或忽略runtime，不进Git。仅验证单机演示/合成数据，恢复丢失快照后新记录，正式恢复先备份并说明窗口；P1前端视觉/动态/性能/独立双门槛不是本结果。Root需集成复验、NOTICE/README整合与最终交付。
+
+
+## 封存前网页封面预算
+
+封面现采用JPEG quality82、4:2:0，尺寸/裁切/来源/颜色不变；4×前三图+portrait最坏加权由996880B降至648144B，低于750KiB目标。重复转换字节一致，13个PNG/迁移/API文件SHA保留。全部四封面已view_image复核；新浏览器实测/15Java/8API由Leader执行。详细新旧参数/大小/hash和限制见image-budget-repair.md、cover-budget-optimization.json，生产manifest已同步。NOTICE未修改。

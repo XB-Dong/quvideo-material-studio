@@ -33,10 +33,10 @@ def main():
         cover.save(
             cover_path,
             format="JPEG",
-            quality=86,
+            quality=82,
             optimize=True,
             progressive=True,
-            subsampling=0,
+            subsampling=2,
         )
         assert cover_path.stat().st_size <= 180 * 1024
         result = image.copy()
@@ -73,6 +73,7 @@ def main():
                 )
     out = dict(
         tool="Pillow " + __version__,
+        coverEncoding=dict(format="JPEG", quality=82, subsampling="4:2:0", progressive=True, optimize=True),
         imagePolicy="RGB; no recolor; results preserve full framing",
         baseCommit="7997279301ce28c1bf1ee5e15d971aa7243a645c",
         assets=records,

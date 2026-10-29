@@ -1,0 +1,82 @@
+{
+  "encodingBefore": {
+    "quality": 86,
+    "subsampling": 0
+  },
+  "encodingAfter": {
+    "quality": 82,
+    "subsampling": 2
+  },
+  "weightedRequestCounts": {
+    "postcard": 4,
+    "pet": 4,
+    "story": 4,
+    "portrait": 1
+  },
+  "weightedBeforeBytes": 996880,
+  "weightedAfterBytes": 648144,
+  "thresholdBytes": 768000,
+  "rows": [
+    {
+      "key": "postcard",
+      "beforeBytes": 55356,
+      "afterBytes": 46077,
+      "psnrAgainstUncompressedCropDb": 42.953502425467235,
+      "newSha256": "c7a1e1f22bc676091a7e65537af2ea5752f6d9bb3ea8d06fb417e4af919ed4be",
+      "beforeSha256": "418f5364df2b1beb54147e8c6c4f5b2d7de0dd5ef1e76458d3b7e91674f0ae65"
+    },
+    {
+      "key": "pet",
+      "beforeBytes": 62962,
+      "afterBytes": 42971,
+      "psnrAgainstUncompressedCropDb": 39.30882354767343,
+      "newSha256": "b7b9edefaa2b7155e4e07806f4479f3b471ebf0e748a55a9ef31b393a65cf84b",
+      "beforeSha256": "4ec3421dec611bb3f58da2c498b572042eb7f4955b49d451011b4f47bf63b9ae"
+    },
+    {
+      "key": "portrait",
+      "beforeBytes": 41292,
+      "afterBytes": 27440,
+      "psnrAgainstUncompressedCropDb": 40.972169617115675,
+      "newSha256": "8ace67bd30233787de0a87fd3c923fac52ba339e2a7b5f0870456980bdeff207",
+      "beforeSha256": "37a82ff47ff600bf6eae22f326c08a318144981d1525fc48dae94ca60fbd9c1b"
+    },
+    {
+      "key": "story",
+      "beforeBytes": 120579,
+      "afterBytes": 66128,
+      "psnrAgainstUncompressedCropDb": 29.708359570899855,
+      "newSha256": "8ea2c133b92ef9145eeafee3b0e7e702d0bf326e9f6ac202f9a11466bcc02435",
+      "beforeSha256": "2eed78f2f5fcfad19a25f42a4db35236b87c1844e0487e33a722b53c794bda56"
+    }
+  ],
+  "notes": "Weighted request model provided by Leader; not an actual browser wire measurement. Crop/source/resolution unchanged; PSNR is diagnostic, visual review still required.",
+  "protectedFilesUnchanged": {
+    "backend/src/main/resources/demo/pet-p1-result.png": "767bad36607f21adc40c2bcefbe1a5e970ccba43da822d92b487e18ddb66699c",
+    "backend/src/main/resources/demo/pet.png": "961395304cad3ebd27b95d42426c9f3bfdeedb9e5f562edc728d1ee1d3430101",
+    "backend/src/main/resources/demo/portrait-p1-result.png": "9f9ad530fa14e28762aa258d1e43f8096d96c5a97f461fbe39a47c1d106490dd",
+    "backend/src/main/resources/demo/portrait.png": "3745798dbf25736945f2c20f212ad8734fadffd7cff032abeae182ae1d34ca20",
+    "backend/src/main/resources/demo/postcard-p1-result.png": "fe1fc5c546b26b2f87aabdade9cd7633a59f391ee7e3299ebe29d4e23ee0f136",
+    "backend/src/main/resources/demo/postcard.png": "044e8e154e6b70f357d374511943f673ff629e2eb0196b0e9b227d0527a6638c",
+    "backend/src/main/resources/demo/story-p1-result.png": "f9ff1ca6eb6bd67669f0029062cd2071e21532cdd4364f0f254fddd2c4aebff5",
+    "backend/src/main/resources/demo/story.png": "a3a26943887aacf44ca88e3dcfa2fcdadf212aa4d23bfe7f13b74a40f09f7c02",
+    "backend/src/main/resources/db/migration/V1__schema.sql": "7ce1ecee5b7c10c13d4ddb4b006f816c9a3214fe5a5af223163d992f53d85b6f",
+    "backend/src/main/resources/db/migration/V2__templates.sql": "888132dc055d1c5fa1ed1df0bbe52bb75a47e6882af52d5c8b990a35a0bc560a",
+    "backend/src/main/resources/db/migration/V3__p1_visual_assets.sql": "85811b60eb7c88f6b780feedc9bdbfbc90cfb233b4b186cc471619697f3eaf50",
+    "backend/src/main/java/com/quvideo/studio/Api.java": "3f24b3cc646d4234933a414dbdfd780f233209e74bee5ad844571a74a6aed6c1",
+    "backend/src/main/java/com/quvideo/studio/FilesService.java": "aaeff5cd56152ec82ab358585a260140db6014eae806546d51c671e1f5f24a63"
+  },
+  "converterRepeatedBytesIdentical": true,
+  "checkedAt": "2026-10-30T01:36:16+08:00",
+  "baseCommit": "cd2b51964cab97a427c33fdc3b502c0d706d7f66",
+  "rootReportedCiImageEncodedBytes": [
+    996880,
+    996880,
+    757983
+  ],
+  "actualBrowserAfterStatus": "not_run_by_asset_agent; Root owns integrated CI/browser verification",
+  "visualReview": "view_image inspected all four optimized JPEGs at original480x640; mountain detail, pet fur/ears, portrait contours and abstract texture remain readable; final independent aesthetic gate belongs to Root reviewer",
+  "fourCoverBytesBefore": 280189,
+  "fourCoverBytesAfter": 182616,
+  "weightedSavingsBytes": 348736
+}
