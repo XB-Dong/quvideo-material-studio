@@ -46,3 +46,11 @@ Next App Router template/category grid, responsive dark detail/upload/history in
 ## Limits and next steps
 
 No actual integrated Java/browser workflow was run by Frontend agent. Leader/Acceptance must validate cookies through proxy, live upload/results, failure injection, responsive375px, modal focus/Esc and refresh/close-page recovery. These are not claimed passed by unit tests. No contract changed. A follow-up EOF cleanup to Dockerfile has no runtime semantic effect; final handoff commit will be reported to Leader. Independent review and full CI run are pending integration.
+
+## Independent review repairs (2026-10-29 17:39–17:40+08:00)
+
+- Repair source commit: 406a48e6e872cbd559fd9a1d10c6dfd3ae466aae; original root task P0-FE-TASK retained, first repair attempt for each finding.
+- Finding 1 accepted: delayed old-user 401 JSON could emit a global expiration after reconnect. A browser session generation now scopes request error side effects; api checks generation and AbortSignal after awaiting the error body, and provider validates event generation. Provider transitions/cleanup invalidate prior requests. New real-api/provider regression verifies old 401 after reconnect does not expire user B, plus aborted 401 produces no expiration event.
+- Finding 2 accepted: an old deferred submission kept a reconnected identity locked. Identity change now aborts the old POST and resets lock, submitting, pending controller and slots/message. A submission generation plus identity epoch gates success/error/finally so old resolution cannot unlock an active new-user POST. New deferred regression exercises expiry, reconnect, new submission, old completion, and new completion in that order.
+- Full frontend Docker check: exit0, lint zero warnings, typecheck passed,16/16 Vitest tests passed (four files). Command docker run --rm --name p0-frontend-identity-check -v <worktree>/frontend/src:/app/src material-frontend-test:dev, source exactly repair commit.
+- Production Docker runner build material-frontend:identity-fix: exit0, Next compilation/TypeScript/static output passed. No dependency or API contract changed. Independent re-review and integrated runtime checks remain Leader/Acceptance responsibility.
