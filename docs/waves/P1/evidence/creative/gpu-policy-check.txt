@@ -1,0 +1,27 @@
+
+> material-studio@1.0.0 lint
+> eslint .
+
+
+> material-studio@1.0.0 typecheck
+> tsc --noEmit
+
+
+> material-studio@1.0.0 test
+> vitest --run
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/app[39m
+
+ [32m✓[39m src/components/gpu-policy.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 108[2mms[22m[39m
+ [32m✓[39m src/lib/use-tasks.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[32m 96[2mms[22m[39m
+ [32m✓[39m src/lib/session-lifecycle.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 152[2mms[22m[39m
+ [32m✓[39m src/components/upload.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 119[2mms[22m[39m
+ [32m✓[39m src/components/motion.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 263[2mms[22m[39m
+ [32m✓[39m src/components/submission.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 374[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m6 passed[39m[22m[90m (6)[39m
+[2m      Tests [22m [1m[32m30 passed[39m[22m[90m (30)[39m
+[2m   Start at [22m 16:04:51
+[2m   Duration [22m 1.84s[2m (environment 52%, tests 14%, import 13%, transform 13%, setup 7%, worker 1%)[22m
+

@@ -32,3 +32,14 @@
 ## 所有权与后续
 
 改动为frontend视觉/创意/动效及测试、原创icon.svg/metadata（Leader明确额外委派）；交接日志在本波专属目录。继续由同一Frontend处理集成审核发现，Leader负责依赖、集成、最终部署/CI/文档。未启动/覆盖主站，不建立额外子Agent，不自签独立美学或舒适门槛。
+
+
+## GPU舒适度修复交接
+
+Root/Acceptance对be43候选在真实SwiftShader软件renderer无截图/trace时归因到原生loseContext：Glow131.3ms、Halftone56.1ms、Pixel76ms。这是有证据的默认交互性能问题，未删除门槛、未将强制软件模式冒充舒适通过。
+
+Root决定有界修复为单次Worker能力预检，提交ade2cbda5cce0626cf419d6ccfdcdb97c7def30c：具名Blob Worker用1×1 OffscreenCanvas/caveat=true/真实renderer；默认排除SwiftShader等纯软件GPU，SVG Orbit与CSS/业务保留。冷探针本身曾测323ms，因此只在worker创建，不回main探测；确认lose/isContextLost后再post released，再由main terminate/revoke/resolve授GPU。Worker无/错误/2s超时均静态，取消清监听/worker/Blob URL。六源实际创建同样带true，OGL通过显式预创建canvas，避免Renderer未转发属性。软件功能fixture只在独立测试工具侧模拟已释放能力消息为allowed，生产没有任何强制入口。
+
+容器lint/type、30tests（原24+能力策略6）以及runner生产构建通过；详见gpu-policy-checks.json和两份txt证据。新增测试验证无主线程GL探针、软件拒绝、release确认、缓存、abort清理、超时/无Worker静态。中途因测试把URL替换为非构造对象导致6个基础设施错误，改保留原URL构造能力的测试桩后全过；不作为产品行为Red。
+
+真实默认舒适/强制软件功能/正常硬件释放测量仍待Acceptance/Root，源码层修正并不自动关闭原major。local performance entries提供yingzuo-gpu-probe详情和yingzuo-effect-release耗时，不外发数据。此前8688代码与证据为历史基线，此段补充最新实现，保护区仍未修改。

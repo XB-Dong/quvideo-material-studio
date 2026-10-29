@@ -1,0 +1,20 @@
+{
+  "testedCommit": "ade2cbda5cce0626cf419d6ccfdcdb97c7def30c",
+  "checkedAt": "2026-10-30T00:08:22+08:00",
+  "status": "implementation_ready_for_independent_measurement",
+  "tests": 30,
+  "originalTests": 16,
+  "lintExitCode": 0,
+  "typecheckExitCode": 0,
+  "testExitCode": 0,
+  "runnerBuildExitCode": 0,
+  "defaultPolicy": "single off-main Worker/OffscreenCanvas capability probe, standard caveat true plus actual software renderer rejection; release confirmation before main GPU; unsupported/timeout/error static GPU",
+  "workerName": "yingzuo-gpu-capability",
+  "messageKind": "yingzuo-gpu-capability",
+  "softwareFunctionalFixture": "Acceptance only may mark actual released Worker assessment allowed; actual renderer preserved; no production override",
+  "performanceEntries": [
+    "yingzuo-gpu-probe",
+    "yingzuo-effect-release"
+  ],
+  "limitations": "Real default software interaction comfort, forced-software seven functional/cleanup and native hardware timing require independent evidence; 131ms original loss finding not erased"
+}
