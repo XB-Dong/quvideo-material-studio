@@ -13,6 +13,7 @@ import Link from "next/link";
 import type { Template } from "../../lib/types";
 import { releaseContext } from "../react-bits/context-lifecycle";
 import { useMotionPreferences } from "../motion/preferences";
+import { beginCoverTransition, clickFeedback } from "../motion/journey";
 import { AnimatedBorder } from "./visuals";
 const Orbit = lazy(() => import("../react-bits/OrbitImages"));
 export class SafeEffect extends Component<
@@ -67,11 +68,13 @@ export function PublicImage({
   alt,
   className,
   loading = "lazy",
+  publicId,
 }: {
   src: string;
   alt: string;
   className?: string;
   loading?: "lazy" | "eager";
+  publicId?: string;
 }) {
   const [failedSrc, setFailedSrc] = useState<string | null>(null);
   const failed = failedSrc === src;
@@ -79,6 +82,7 @@ export function PublicImage({
     <img
       src={failed ? "/media/demo/postcard.png" : src}
       alt={alt}
+      data-public-cover={publicId}
       className={className}
       loading={loading}
       onError={() => {
@@ -123,6 +127,8 @@ export function CreativeShowcase({
           <div className="hero-actions">
             <Link
               className="hero-cta"
+              onPointerDown={e=>clickFeedback(e.currentTarget)}
+              onNavigate={()=>{if(templates[0])beginCoverTransition(templates[0].id)}}
               href={
                 templates[0] ? "/templates/" + templates[0].id : "#templates"
               }
