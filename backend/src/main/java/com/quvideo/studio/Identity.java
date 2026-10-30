@@ -36,11 +36,26 @@ public class Identity {
     }
   }
 
-  Map<String, Object> find(HttpServletRequest req) {
+  private String currentHash(HttpServletRequest req) {
     if (req.getCookies() != null)
       for (Cookie c : req.getCookies())
-        if (c.getName().equals("material_session")) return db.sessionByHash(hash(c.getValue()));
+        if (c.getName().equals("material_session")) return hash(c.getValue());
     return null;
+  }
+
+  Map<String, Object> find(HttpServletRequest req) {
+    String hash = currentHash(req);
+    if (hash == null) return null;
+    var raw = db.sessionByHash(hash);
+    if (raw == null) return null;
+    var view = new HashMap<String, Object>();
+    view.put("userId", raw.get("userId"));
+    view.put("displayName", raw.get("displayName"));
+    view.put("expiresAt", raw.get("expiresAt"));
+    view.put("kind", raw.get("email") == null ? "GUEST" : "ACCOUNT");
+    view.put("email", raw.get("email"));
+    view.put("emailVerified", false);
+    return view;
   }
 
   Map<String, Object> require(HttpServletRequest req) {
@@ -49,20 +64,41 @@ public class Identity {
     return found;
   }
 
-  Map<String, Object> ensure(HttpServletRequest req, HttpServletResponse res) {
-    var current = find(req);
-    if (current != null) return current;
+  void revokeCurrent(HttpServletRequest req) {
+    String hash = currentHash(req);
+    if (hash != null) db.revokeSession(hash);
+  }
+
+  record Issued(String token, Map<String, Object> session) {}
+
+  Issued issue(String user) {
     byte[] bytes = new byte[32];
     random.nextBytes(bytes);
     String token = Base64.getUrlEncoder().withoutPadding().encodeToString(bytes);
+    db.session(hash(token), user, LocalDateTime.now(ZoneOffset.UTC).plusDays(days));
+
+    return new Issued(token, sessionForHash(hash(token)));
+  }
+
+  private Map<String, Object> sessionForHash(String tokenHash) {
+    var raw = db.sessionByHash(tokenHash);
+    var view = new HashMap<String, Object>();
+    view.put("userId", raw.get("userId"));
+    view.put("displayName", raw.get("displayName"));
+    view.put("expiresAt", raw.get("expiresAt"));
+    view.put("kind", raw.get("email") == null ? "GUEST" : "ACCOUNT");
+    view.put("email", raw.get("email"));
+    view.put("emailVerified", false);
+    return view;
+  }
+
+  Issued newGuest() {
     String id = UUID.randomUUID().toString();
-    String name = "创作者 " + id.substring(0, 6);
-    LocalDateTime expiry = LocalDateTime.now(ZoneOffset.UTC).plusDays(days);
-    tx.executeWithoutResult(
-        s -> {
-          db.user(id, name);
-          db.session(hash(token), id, expiry);
-        });
+    db.user(id, "创作者 " + id.substring(0, 6));
+    return issue(id);
+  }
+
+  void cookie(HttpServletResponse res, String token) {
     res.addHeader(
         "Set-Cookie",
         org.springframework.http.ResponseCookie.from("material_session", token)
@@ -73,10 +109,13 @@ public class Identity {
             .maxAge(Duration.ofDays(days))
             .build()
             .toString());
-    var session = new HashMap<String, Object>();
-    session.put("userId", id);
-    session.put("displayName", name);
-    session.put("expiresAt", expiry);
-    return session;
+  }
+
+  Map<String, Object> ensure(HttpServletRequest req, HttpServletResponse res) {
+    var current = find(req);
+    if (current != null) return current;
+    var issued = tx.execute(s -> newGuest());
+    cookie(res, issued.token());
+    return issued.session();
   }
 }

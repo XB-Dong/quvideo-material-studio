@@ -40,10 +40,55 @@ public interface Db {
       @Param("expires") java.time.LocalDateTime expires);
 
   @Select(
-      "SELECT u.id AS userId,u.display_name AS displayName,s.expires_at AS expiresAt FROM sessions"
-          + " s JOIN users u ON u.id=s.user_id WHERE s.token_hash=#{hash} AND"
-          + " s.expires_at>UTC_TIMESTAMP(6)")
+      "SELECT u.id AS userId,u.display_name AS displayName,s.expires_at AS expiresAt, a.email FROM"
+          + " sessions s JOIN users u ON u.id=s.user_id LEFT JOIN account_credentials a ON"
+          + " a.user_id=u.id WHERE s.token_hash=#{hash} AND s.expires_at>UTC_TIMESTAMP(6)")
   Map<String, Object> sessionByHash(String hash);
+
+  @Select("SELECT id FROM users WHERE id=#{id} FOR UPDATE")
+  @Options(flushCache = Options.FlushCachePolicy.TRUE)
+  String lockUser(String id);
+
+  @Update("UPDATE users SET display_name=#{name} WHERE id=#{id}")
+  void renameUser(@Param("id") String id, @Param("name") String name);
+
+  @Delete("DELETE FROM sessions WHERE token_hash=#{hash}")
+  void revokeSession(String hash);
+
+  @Delete("DELETE FROM sessions WHERE user_id=#{id}")
+  void revokeUserSessions(String id);
+
+  String CREDENTIAL =
+      "SELECT user_id AS userId,email,password_algorithm AS algorithm,iterations,salt,password_hash"
+          + " AS passwordHash FROM account_credentials";
+
+  @Select(CREDENTIAL + " WHERE email=#{email}")
+  Map<String, Object> credentialsByEmail(String email);
+
+  @Select(CREDENTIAL + " WHERE user_id=#{id}")
+  Map<String, Object> credentialsByUser(String id);
+
+  @Insert(
+      "INSERT INTO account_credentials"
+          + " VALUES(#{user},#{email},#{algorithm},#{iterations},#{salt},#{hash},UTC_TIMESTAMP(6))")
+  void credentials(
+      @Param("user") String user,
+      @Param("email") String email,
+      @Param("algorithm") String algorithm,
+      @Param("iterations") int iterations,
+      @Param("salt") String salt,
+      @Param("hash") String hash);
+
+  @Update(
+      "UPDATE account_credentials SET"
+          + " password_algorithm=#{algorithm},iterations=#{iterations},salt=#{salt},password_hash=#{hash},updated_at=UTC_TIMESTAMP(6)"
+          + " WHERE user_id=#{user}")
+  void replacePassword(
+      @Param("user") String user,
+      @Param("algorithm") String algorithm,
+      @Param("iterations") int iterations,
+      @Param("salt") String salt,
+      @Param("hash") String hash);
 
   @Insert(
       "INSERT INTO assets"
