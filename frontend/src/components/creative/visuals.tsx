@@ -68,7 +68,7 @@ export function InkBackdrop() {
         ih = image.height * scale;
       cc.drawImage(image, (w - iw) / 2, (h - ih) / 2, iw, ih);
       fc.filter = "blur(9px)";
-      fc.drawImage(clear, -12, -12, w + 24, h + 24);
+      fc.drawImage(clear, 0, 0);
       fc.filter = "none";
       fc.fillStyle = "rgba(248,249,247,.40)";
       fc.fillRect(0, 0, w, h);
