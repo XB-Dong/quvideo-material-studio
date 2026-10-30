@@ -4,6 +4,8 @@ rootTaskId：`P2-PREP-REVIEW`；specVersion：`P2-1.0.0`。Reviewer为原生子A
 
 审核源为分支`codex/p2-preparation`上的精确候选`8461e445eaf935e9ab9ee4894ae684c9c64ea034`，产品参考`7bbfd027758002cc519fc889cea3c8a2b5233717`；两者已通过只读Git解析确认可达。本报告只审核准备完整性与可执行性，不是产品、安全、账户或最终交付验收，也不授权启动P2。
 
+**最终准备结论：修订候选`1790a91df75852ddcb3b823f37d8a1bb7c7dd1fc`准备审核通过，三个发现均closed，无开放blocking/major/minor。** 下文保留846初审发现，末段记录逐项复核依据。P2仍未启动，产品与交付门槛not_run。
+
 ## 审核范围和实际操作
 
 已读AGENTS、CONSTITUTION、NEXT-WAVES、README入口、Agent协议；P2的PLAN、ROLES、CONTEXT-MAP、ACCEPTANCE、state、REQUIREMENTS-MATRIX、requirement-checklist、GAP-LEDGER、DELIVERABLES、MEDIA、REPORT-DRAFT、EFFORT、PREPARATION、BASELINE；`specs/p2/{delivery,identity}.md`与全部10个task包。对照用户原题R-01～R-14、九类README说明、提交和容器验收规则，及用户确认的最后开发波次、账户/访客、真实GIF、逐条报告和投入估算要求。
@@ -49,8 +51,24 @@ rootTaskId：`P2-PREP-REVIEW`；specVersion：`P2-1.0.0`。Reviewer为原生子A
 - 建议：在DOCS末尾或独立明确的Leader子步骤产出候选ZIP并交VERIFY/REVIEW；SEAL若重新生成，核对可执行树/必要文件/打包转换完全等价及最终entries/hash，任何可执行或必需配置变化重新验收。报告文档后续封存与运行源精确区分。
 - 处置：待Leader明确后复核，当前open。
 
-## 当前结论
+## 初审结论（846候选）
 
 **当前候选尚未准备通过：0个blocking、1个open major、2个open minor。** 主体准备包已覆盖原题与用户新增目标，需先关闭PATCH消费者契约缺口，并收敛两处交付清单/时序表述。修订只由Leader完成，本Reviewer随后只读复核并更新此文件。
 
 PREP即使通过也只意味着可执行准备就绪，仍须停在ready_not_started等待用户明确启动P2。USER/CORE/CI/CLEAN/MEDIA/PACK/PROV/OPEN/TRUTH/SEAL等产品与最终交付门槛均未在本轮执行或代签；没有新账户、美学、性能、真实GIF或最终源码包通过结论。
+
+## 集中修订的有界复核
+
+Leader已逐项接受三个发现，只修改准备文件。已实际只读核对846至精确`1790a91df75852ddcb3b823f37d8a1bb7c7dd1fc`的diff（含中间cb667ce修订，1790仅规范packet末空行），并读取FINDINGS处置；没有运行项目脚本、容器或浏览器，也没有修改源码或其他审核报告。
+
+| 发现 | 实际复核 | 最终状态 |
+| --- | --- | --- |
+| P2-PREP-01 major | identity明确Frontend独占catch-all route的PATCH导出、沿用原通用proxy并保留GET/POST；ROLES、地图、FE packet/state同步允许路径。identity与VERIFY要求从前端同源入口实测账户200、非法400、过期401、访客/Origin403、code/cookie透传，非Java直连代替。准备消费者及owner已闭环；route实际尚未开发，不宣称其现已支持PATCH。 | closed，准备缺口修复 |
+| P2-PREP-02 minor | DELIVERABLES最终ZIP必需项明确V1/V2/V3/V4账户迁移与种子；原空库/旧数据副本升级和最终entries核对要求保持。 | closed |
+| P2-PREP-03 minor | PLAN/DOCS明确DOCS末、VERIFY前由Leader生成冻结SHA候选ZIP及entries/manifest，state同步外部写范围与确定仓库外根目录。VERIFY绑定该包hash；SEAL对比可执行源、锁、配置、迁移/种子、素材、入口/命令和最终entries/hash，执行差异重验、非执行差异明示，不能称旧候选运行了最终包字节。 | closed |
+
+附带调整已核对：state分列总87=R条款69+提交/验收8+用户10，独立内联JSON计数一致；10任务含runtimeDependencies的DAG仍无环。两份最终脱敏GIF的精确路径由Acceptance独占`docs/submission/media/home-ink.gif`与`creation-history.gif`，ROLES明确Leader仍持其余说明与引用，避免父路径所有权重叠。原始录制留仓库外；成片/报告晚于候选包加入时须记录非执行差异，若影响构建/运行则重验，未把录制提前插入性能窗口。
+
+修订候选相对7bb的frontend/backend/Compose/CI差异仍为空；执行授权仍false，全部10包not_dispatched，没有将准备修订伪作产品实现。`git diff --check`无输出；本轮JSON/Git核对是数据检查，不等同Leader后续完整准备checker或运行验收。
+
+**PREP独立审核通过，可收敛为ready_not_started并冻结准备包。** 这只表示计划、契约、消费者、所有权与交付顺序可执行；不自动启动P2，也不代签任何账户、产品美学/性能、CI、干净包运行、GIF/许可分发或最终交付结果。用户明确启动后才按精确集成SHA重新核对并派发。唯一准备审核文件至此写入完成，可由Leader封存；本Reviewer不commit或push。

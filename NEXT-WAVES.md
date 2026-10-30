@@ -2,9 +2,9 @@
 
 P0/P1已完成，P1封存e485792。用户于2026-10-30明确启动[P1.1](docs/waves/P1.1/PLAN.md)，当前范围已完成验收a7cdcdf，邮件按用户要求暂缓。P1.2准备已在71bccc5通过，按用户“准备好了直接启动”授权进入执行。实际P1结果见[P1报告](docs/waves/P1/REPORT.md)，不自动延续旧授权。
 
-## P2 最后一轮开发与提交收尾（准备中）
+## P2 最后一轮开发与提交收尾（准备就绪、未启动）
 
-用户仅授权启动前准备。P2要由Leader逐条核对原题、建task补齐差距，完成注册/登录/退出/账户设置与访客保留、完整容器验收、真实GIF（重点山水擦雾）、源码ZIP/提交说明/版本哈希及给用户看的逐条证据报告。未来公开准备单独审来源/许可/全历史，不实际改public。启动后自主决策不提问；P1.2自动启动授权不延续。详见[P2计划](docs/waves/P2/PLAN.md)、[87条矩阵](docs/waves/P2/REQUIREMENTS-MATRIX.md)、[任务](docs/waves/P2/state.json)。完成准备后停在ready_not_started。
+用户仅授权启动前准备。P2要由Leader逐条核对原题、建task补齐差距，完成注册/登录/退出/账户设置与访客保留、完整容器验收、真实GIF（重点山水擦雾）、源码ZIP/提交说明/版本哈希及给用户看的逐条证据报告。未来公开准备单独审来源/许可/全历史，不实际改public。启动后自主决策不提问；P1.2自动启动授权不延续。详见[P2计划](docs/waves/P2/PLAN.md)、[87条矩阵](docs/waves/P2/REQUIREMENTS-MATRIX.md)、[任务](docs/waves/P2/state.json)。准备已通过独立复核与data-only核对，停在ready_not_started，等待明确启动。
 
 ## P1.2 子页与全流程动效
 

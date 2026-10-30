@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "waveId": "P2",
   "specVersion": "P2-1.0.0",
-  "status": "preparing",
+  "status": "ready_not_started",
   "preparationAuthorized": true,
   "executionAuthorized": false,
   "executionStartedAt": null,
@@ -36,15 +36,15 @@
   "newDevelopmentWorktreesCreated": false,
   "applicationExecutedDuringPreparation": false,
   "productChangedDuringPreparation": false,
-  "preparationReview": "changes_addressed_pending_recheck",
-  "preparationChecks": "pending",
+  "preparationReview": "passed_at_1790a91df75852ddcb3b823f37d8a1bb7c7dd1fc",
+  "preparationChecks": "passed_data_only_at_1790a91",
   "submissionGate": "pending_execution",
   "publicReadinessGate": "pending_audit",
   "publicVisibilityChangeAuthorized": false,
   "historyRewriteAuthorized": false,
   "examSubmissionAuthorized": false,
   "mailStatus": "deferred_by_user",
-  "nextAction": "Complete independent preparation review and data-only checks; stop ready_not_started",
+  "nextAction": "Await explicit P2 start; then refresh exact dispatch SHAs/ownership and execute autonomously without user questions",
   "tasks": [
     {
       "taskId": "P2-BASE",
@@ -397,5 +397,10 @@
   "officialRequirementClauseCount": 69,
   "submissionAndAcceptanceRuleCount": 8,
   "userRequirementCount": 10,
-  "externalDeliveryRoot": "C:/Users/dongx/Documents/ChatGPT/quvideo-material-studio-delivery/P2"
+  "externalDeliveryRoot": "C:/Users/dongx/Documents/ChatGPT/quvideo-material-studio-delivery/P2",
+  "preparationReviewedCommit": "1790a91df75852ddcb3b823f37d8a1bb7c7dd1fc",
+  "preparationCompletedAt": "2026-10-30T17:05:29.7749663+08:00",
+  "preparationRepairRounds": 1,
+  "firstPreparationTimestampObserved": "2026-10-30T16:22:47.4078668+08:00",
+  "preparationStartedAt": null
 }
