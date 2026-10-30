@@ -36,3 +36,7 @@ lifecycle.mjs只在像素功能检查使用只读lifecycle-observer审计，不�
 ## CI 首次提交长任务诊断
 
 diagnose-submit.mjs严格保留原chooser/取消/替换/移除、4MiB真实路径、READY后立即真实submit顺序，从大文件选择前启动CDP trace，只追踪首次提交/受理/卡片插入。不跑后30秒求绿；trace/CPU采样只用于归因，不作为舒适门槛通过。完整trace与公共构建chunk在ignored raw，不能把诊断开销当普通性能或删掉原CI长任务。原无截图interact不改。
+
+## 品牌与日期显示
+
+brand-review.mjs只用于用户授权品牌corner的有界审图：桌面/375，纯中文唯一疏影Link、键盘/真coarse首tap、header92/76、原x32/16与无溢出。随后另context核对3条日期与原zh-CN本地calendar显示一致；整个浏览器退出后才启动全新原interaction浏览器，不给性能预热Intl。原25项accept的品牌check内同步固定这些语义/几何，不增加重复完整测试。品牌独立G01由Reviewer实读截图，未替代日期/性能G02。
