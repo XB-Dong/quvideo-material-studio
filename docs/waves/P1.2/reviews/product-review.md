@@ -2,7 +2,7 @@
 
 Reviewer：`p11_design_review`，唯一可写此报告，产品/测试/设置只读；actualProvider/model/reasoning均为null。执行基准`33170a5ae33cc63882f73c329dbd88eda6f5e70c`。
 
-**最终G01通过：实际帧验证版本`7bd5436fce19486688e7064f59ce45f973e34ba4`，经末段有界差异审核，视觉评分沿用于`b2d0a6aa16a4a6890e58b2b92d6f672bfc466c9c`。ROUTE-01、UPLOAD-01、DIALOG-01、STATE-01均已实际复核关闭，无开放美学发现；最后短点互斥minor的运行补证由Acceptance承担。** G02/完整业务/预算/性能/CI不代签。下文保留首轮失败、相位复验、5e2冷图暂签撤回与最后修复，不将失败追改成通过。
+**最终G01通过，适用产品`8a3f8bd12c1fc889566e82f9c2ad95cd96544524`；最新CI候选`c7f2af60f2ef23102eb2838d0066007248db1363`与其产品树无差异。** 该结论来自前序真实逐页验证，以及末段对RO测量时机/Studio容器的源码差异审阅和独立Acceptance提供的8a真实帧审图。ROUTE-01、UPLOAD-01、DIALOG-01、STATE-01均已实际复核关闭，无开放美学发现。G02/完整业务/预算/性能/CI不代签。下文保留每次实际版本、失败与复验，不将失败追改成通过。
 
 ## 结果缩略图契约审查
 
@@ -139,3 +139,34 @@ Leader已通知部署`530876ab2a81d78fda1a7725d5367021d79acf26`，旧Java结果�
 因此本Reviewer将**G01及非受影响场景评分沿用于`b2d0a6aa16a4a6890e58b2b92d6f672bfc466c9c`**，保留7bd真实帧与冷加载实测的精确版本，不冒称重拍了b2。没有再启动浏览器、读取UI或占用无截图性能窗口。删除后的同一时点无bloom证据、其他互斥/生命周期及完整G02由独立Acceptance在实际部署补测；源码差异审核不代替该运行结果。
 
 唯一审核文件至此冻结，可由Leader提交；无新产品美学问题时不继续修改。后续完整交付/CI仍由Leader按精确集成提交签署。
+
+## 8a布局测量与Studio容器的最后有界G01审核
+
+本次受Leader明确派发重新打开本报告，只写该有界差异审核；`ci-reduce-review.md`保持冻结。未启动浏览器、重建会话、执行产品或占用Acceptance无截图性能窗口。
+
+### 源码与作者证据的范围
+
+已实际只读核对b2d→`8a3f8bd12c1fc889566e82f9c2ad95cd96544524`的全部前后端diff：
+
+- 公共桥由MutationObserver定位后直接读取rect，改为定位/注册ResizeObserver，在正常布局回调取得非零几何后读取一次，断开观察再写唯一overlay。原260ms与left/top/width/height等比裁切关键帧保持；generation/disposed/700ms取消与无RO完整Link/CSS回退明确，没有延迟业务导航或保留旧业务树。
+- Shell增加可选mainClass，仅Studio使用`.p12-studio-main`；flow-root隔离margin塌陷，min-height按桌面92px/小屏76px header预留。首页/历史通用main、Ink、原PNG与私有图逻辑没有变更。新自身测试仍为作者自测，未代独立运行。
+- 作者`evidence/frontend/studio-geometry.json`清楚标为实际CSS的隔离DOM骨架、ready固定908px，并非完整API/CLS验收。其桌面pending/ready main y92与小屏y76用于理解修复方向，**未以此签产品美学或完整CLS**。
+
+因此只需复核桥实际画幅/开始位置与Studio加载→就绪/页脚/小屏；没有重评未受影响全站或拿性能trace代美学。
+
+### 独立真实8a帧的实际审图
+
+独立Acceptance在性能运行退出后采集，`affected-review.json`明确testedCommit为8a、浏览器149.0.7827.53、capturedAt为2026-10-30T06:18:52.194Z。已实际读取该JSON并通过view_image逐图查看以下**6张**图片，来自`C:/Users/dongx/.codex/worktrees/p11-acceptance/杭州小影AIcoding/runtime/p12-8a/affected-review-r4/`，不是仅列文件或借作者截图：
+
+- `studio-pending.png`：真实GET模板响应被hold，加载面板的位置/纸面/文字清楚，背景仍浅、底部无压缩或突兀空白块。
+- `studio-ready.png`：真实工作台左Maker/右历史延续此前层级；JSON pending与readyBox均main x0/y92/w1440/h908，未再出现56px margin塌陷。加载面板自身原8px入场不混同为整个main跳移，页脚在两态稳定处于折下。
+- `bridge-70ms.png/150ms.png/230ms.png`：独立控制实际生产260ms WAAPI的pause/currentTime，仅作相位读回，没有替换keyframe。JSON src仍公开demo图、object-fit=cover，三个阶段已逐图查看，图片主体保持比例，画框平顺衔接到340×212.5示例区域，没有首稿长条脸；恢复play后bridgeCleaned=true。该fixture不冒称默认时序/帧率或性能证明。
+- `coarse-studio-ready.png`：真实context在截图前coarse=true/fine=false/touch=1，首tap发生在截图前；实际已加载照片、按钮/焦点、上传位和堆叠记录面板清楚，未因容器修复产生可见横向溢出。JSON记录cancelRetained=true；取消以自动化空选择模拟，并非物理关闭OS窗口，不能混称实体手机或OS弹窗验证。本Reviewer审读独立运行，不冒称自己重新操作。
+
+### 结论与评分
+
+**8a受影响G01通过，无新增美学finding**：Studio（加载/就绪）五维4.5/4/4.5/4/4.5；公共桥五维4/4/4.5/4/4；小屏工作台五维4/4/4.5/4/4。构图与纸面留白稳定，桥修复保留正常比例与受控节奏；既有未受影响场景及原图/弹窗评分沿用此前真实取证。
+
+已只读确认`git diff 8a3f8bd..c7f2af6 -- frontend backend`无输出；因此G01可用于同产品树的c7 CI候选，但实际截图来源仍标8a。独立Acceptance另有route trace/三轮Studio CLS结果，本Reviewer不据作者报告代签这些性能门槛；G02、旧P11实时reduce CI及最终完整CI仍以对应独立运行与Leader结论为准。
+
+唯一产品美学报告至此再次冻结，可提交。除后续明确派发的新产品影响外不再写入；本次没有改动产品、测试、准备审核或已冻结CI诊断审核。
