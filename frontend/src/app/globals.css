@@ -1858,3 +1858,27 @@ footer {
 .border-sleep .border-line {
   animation-play-state: paused;
 }
+
+.border-proximity::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: radial-gradient(
+    130px circle at var(--edge-x, 50%) var(--edge-y, 50%),
+    #8670e3,
+    transparent
+  );
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+.template-card:hover .border-proximity::after,
+.template-card:focus-visible .border-proximity::after {
+  opacity: 0.9;
+}

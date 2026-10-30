@@ -361,6 +361,9 @@ export function CardVisual({ id, src }: { id: string; src: string }) {
       const b = canvas.getBoundingClientRect();
       x = e.clientX - b.left;
       y = e.clientY - b.top;
+      const cardRect = link.getBoundingClientRect();
+      link.style.setProperty("--edge-x", `${e.clientX - cardRect.left}px`);
+      link.style.setProperty("--edge-y", `${e.clientY - cardRect.top}px`);
       if (!active) enter();
     };
     const leave = () => {
