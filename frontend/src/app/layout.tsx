@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { VisualJourney } from "../components/motion/journey";
+import "./journey.css";
 import { Providers } from "../components/providers";
 export const metadata: Metadata = {
   icons: { icon: "/icon.svg" },
@@ -10,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN">
       <body>
-        <Providers>{children}</Providers>
+        <Providers><VisualJourney />{children}</Providers>
       </body>
     </html>
   );
