@@ -4,6 +4,8 @@ rootTaskId：P2-REVIEW；specVersion：P2-1.0.0；Reviewer：p11_design_review�
 
 **最新结论：110894f候选内容与真实六件结构审核通过，无开放finding；允许Leader仅文档封存后按等价规则重包。** 末段记录实际核验，前序保留失败/候选迭代。尚未发生的最终B包核验和正常push CI不得提前写成已成功；产品验证仍绑定81a，最终交付版本由外部清单分列。
 
+后续状态更新：111封存候选CI41046555176集成失败，已撤回其提交材料；110静态包/媒体判断不冒充最终CI通过。P2-FINAL-03有界harness修正已完成源码/本地证据审核，完整远端CI待重跑；详见末段。
+
 ## 逐条报告与实际证据核对
 
 已完整阅读`docs/reports/小影要求逐条符合性报告.md`的87行及证据索引/边界/交付声明，对照checklist全部ID，没有缺行；69个R分句、8个提交验收规则、10个用户要求与原题区别准确。逐行阅读并非只按计数：三阶段、失败中断/只读查询、双端上传、多任务/异常/生命周期、刷新/身份、CI/核心测试、README九项、Compose、可读源码/附件限制均有实现与相应证据入口。注册/访客和展示需求明确为用户范围，未倒称原题强制账户或GIF。
@@ -109,3 +111,27 @@ Leader接受后已改工作树报告R-09.a及report-details.json，对应文本�
 **P2-REVIEW对110候选内容与六件结构passed，P2-FINAL-01/02均closed，无开放blocking/major/minor。** Leader可以集成本审核、Acceptance独立同包证据和报告结束语，仅做文档封存重包。SourcePackage commit、报告记录commit和实际业务验收81a必须分开，不能在提交中嵌入自身最终SHA或在ZIP内要求自身外部hash。作者报告默认仅给作者，六件是上限不是必须全部附招聘方。
 
 后续最终B包仍须按实际新commit/bytes/hash对照306候选：产品/测试/CI/Compose/锁/GIF不得变化；仅记录过的文档/清单封存差异可等价，不冒称81a运行过B字节。最终B重新核真实entries、导出规则、相对链接、包内外GIF、六件大小/hash与外部manifest；正常push触发CI，实际结果写仓库外清单，不能本报告提前代签未来CI或通过回填结果无限制造提交。本角色本次内容审阅完成；最终封存data核验与Leader签署仍按实际发生执行，不授权公开历史或交卷。
+
+## P2-FINAL-03：离屏Hero功能harness的独立源码复核
+
+本次限定读`111fe8a57202a8794cbfe9bc7eac6dcf27308944`至诊断`c4e4032a2027412bf42c6f3b3196b7cb4d3b23e3`、正式修正`becb7eea0b5d61b3973128d851d37b5756c41c18`的源码/原失败/独立本地证据，仅追加本文件，未启动浏览器或容器。已读CI41046555176的failure-summary/visual-fail、41046555176-hero-diagnosis与hero-formal-pass。前后端job成功而integration失败是事实，不因harness后续解释将失败抹去。
+
+### 原失败与可支持的归因边界
+
+原CI在offscreen全局RAF0断言得到1；随后reduce用例实际RAF已0，但Hero仍在屏外，因上例抛错跳过原来置于末尾的恢复而失败。CI pending333 callback x的实际chunk偏移/保存源码片段落在InkBackdrop的frame/requestAnimationFrame(x)，含3500ms点位衰减与排除目标规则，不是已卸载Orbit的callback f。该片段与当前visuals.tsx的Ink逻辑对应，支持pending owner区分，不能把所有global RAF都叫Orbit残留。
+
+独立本地诊断的原600ms检查点**没有复现CI失败**。但真实trusted pointer在滚底后10,10命中MAIN、inkExcluded=false，且Hero native false/Orbit0已发生，证明旧setup坐标能产生合法全局Ink输入，并非“离开所有特效”的可靠前置。CI没有该时刻的完整原生pointer记录，所以只能说源映射与本地目标实证支持setup混入3500ms合法尾迹的解释，不能写成远端每一事件因果已完整重放或本机复现。产品没有因此被修改，不声称“产品缺陷已修”。
+
+### 正式单文件差异
+
+- 新Observer是保留Native构造器的透明子类，仅记录原始entry后`callback.call(observer,entries,observer)`；阈值/target/entries原样传递。pointer监听只读取真实isTrusted/位置/目标，没有dispatch、takeRecords或伪entry。
+- 每次真正resize+滚底后确认Hero bottom<=0，取得**已在视口中的**footer/a几何，再用真实page.mouse.move进入排除区域。断言本次pointer可信、目标A且InkExcluded=true、cardActive=0；没有伪改Canvas/系统偏好、主动cancel产品动画或强制capability。
+- 固定一次`page.screenshot({fullPage:false, animations:'allow'})`作为计时前真实渲染前置；之后600ms直接断言原native IO false已交付、Hero仍离屏、前台/focus/非reduce、Orbit0和**全局RAF0**。没有失败后追加截图重试、只查Orbit而忽略Ink、或把阈值1改为允许。
+- 准确计时变化公开：原600ms从滚动/move后开始；新600ms从一次viewport渲染完成后开始。不能说绝对端到端时间完全没变，也不能当无截图性能检查。单次截图不声称浏览器内部恰好一个帧；截图成本单列，所有无截图性能/资源预算和common入口未改。
+- finally无论成功失败均恢复1440×1000/top，并进行真实viewport render/等待Orbit恢复，避免污染下一reduce用例。当前reduce等其余断言未放宽，原失败也保留。
+
+### 独立本地证据与结论
+
+formal-pass标记真实应用81a/浏览器149.0.7827.53，明确运行命令/容器与processExitCode0，全6项pass。本Reviewer审读而未亲自运行。实际footer bounds x40/y554.671875/w77/h16，pointer命中A且trusted/excluded，cardActive0；native Hero false在17895.3ms，本次render结束18304.6ms，检查18928.5ms，实际计时间隔623.9ms，Orbit0/全局RAF0。finally恢复Hero y92/top，后续reduce与route均pass。首轮诊断的独立process exit未留receipt处为null，未用formal exit倒填首轮；两种证据的限制准确。
+
+**本harness修正与这份本地完整6/6证据可接受，无需修改产品；P2-FINAL-03远端闭环仍pending。** 它建立可信离屏输入/渲染前置并保留零残留硬断言，不是“关掉效果求绿”。不提前签重跑CI成功，不将诊断中的未复现写成已复现，也不重置原rootTaskId或抛弃失败。111六件仍withdrawn；新精确源码包和最后正常push CI实际结果到位后再做封存数据/证据核对。

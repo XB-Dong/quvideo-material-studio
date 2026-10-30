@@ -29,3 +29,5 @@ P2-FINAL-02 / P2-MEDIA：Reviewer实看全部380帧指出首页首稿末段仍�
 P2-FINAL-02复验：唯一实际新录使用headed+Xvfb，未改产品。自然6000ms后截图前两区画布MAE0，新WebM/GIF末同区接近初雾；Reviewer实际看新377全帧/12板及关键大图，确认末回雾，closed。旧片/原诊断保留；Xvfb PID1启动与越过末帧采样错误另记工具前置，不当作业务Red。制作片未改。
 
 P2-FINAL-03 / P2-VERIFY：最终111提交CI41046555176 frontend/backend成功，P11 visual离屏检查1!=0、后续reduce因前例未恢复viewport而cascade。原pipeline失败保留、111附件标为撤回不提交；诊断orbit/raf实际值和原生render机会后修真实根因，既有断言、预算与CI不可削弱。Acceptance唯一获tests/p1.1/visual.mjs诊断和场景finally恢复写权；Frontend只读产品代码分析，无并行浏览器。
+
+P2-FINAL-03局部复验：CI333真实callback映射到Ink frame、Orbit已取消；本地原600ms诊断未复现，但10,10可信目标MAIN/非排除，证明setup能误触合法尾迹，CI现场pointer因果不完整不补造。正式改用可见footer/a真实排除点与一次正常viewport render前置，600ms后原globalRAF0/Orbit0直接断言、finally真恢复；formal6/6容器exit0，独立Reviewer源审接受，不改产品/common/CI/预算，无失败后补帧兜底。该项局部修正接受，整体P2-VERIFY待正常完整远端CI重跑，111附件已withdrawn。

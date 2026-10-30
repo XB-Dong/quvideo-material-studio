@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "waveId": "P2",
   "specVersion": "P2-1.0.0",
-  "status": "reopened_postseal_verification",
+  "status": "sealed_candidate_manual_repair_accepted_final_ci_external",
   "preparationAuthorized": true,
   "executionAuthorized": true,
   "executionStartedAt": "2026-10-30T17:07:41.6287747+08:00",
@@ -26,10 +26,7 @@
     "estimateNotMeasured": true,
     "recordedPriorWaveWallMinutes": 500.59
   },
-  "activeDevelopmentAgents": [
-    "/root/p11_acceptance",
-    "/root/p11_frontend"
-  ],
+  "activeDevelopmentAgents": [],
   "activePreparationReviewers": [],
   "maxNativeWorkers": 3,
   "actualProvider": null,
@@ -40,13 +37,13 @@
   "productChangedDuringPreparation": false,
   "preparationReview": "passed_at_1790a91df75852ddcb3b823f37d8a1bb7c7dd1fc",
   "preparationChecks": "passed_data_only_at_1790a91",
-  "submissionGate": "blocked_until_final_CI_lifecycle_issue_resolved",
+  "submissionGate": "external_manifest_final_CI_must_be_success",
   "publicReadinessGate": "audit_completed_original_history_not_ready_for_direct_public_flip",
   "publicVisibilityChangeAuthorized": false,
   "historyRewriteAuthorized": false,
   "examSubmissionAuthorized": false,
   "mailStatus": "deferred_by_user",
-  "nextAction": "Diagnose exact offscreen orbit/RAF and native render delivery; preserve failure, fix actual cause and rerun required gates without weaker standards",
+  "nextAction": "Normal full CI for repaired native visual setup; immutable final source and final data confirmation, no extra wave",
   "tasks": [
     {
       "taskId": "P2-BASE",
@@ -228,7 +225,7 @@
       "rootTaskId": "P2-VERIFY",
       "waveId": "P2",
       "role": "Acceptance",
-      "status": "reopened_P2_FINAL_03_bounded_diagnosis",
+      "status": "formal_visual6_pass_independent_source_review_accepted_final_CI_pending",
       "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
       "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",
@@ -367,7 +364,7 @@
       "rootTaskId": "P2-SEAL",
       "waveId": "P2",
       "role": "Leader",
-      "status": "reopened_final_CI_failed",
+      "status": "final_external_CI_and_hash_confirmation",
       "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
       "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",
@@ -432,5 +429,15 @@
   "executionWallMinutes": 123.84,
   "completionMeaning": "Manual/independent implementation, required CI81a, cleanroom, upgrade, media and candidate110 review accepted; final immutable source materialization and automatic post-seal CI recorded externally without self-reference",
   "reviewedSourceCandidate": "110894f926d64816d5a8b5d9e5bcabd2554412ed",
-  "finalArchiveIdentity": "External final version manifest: source commit, report/source equivalence, exact SHA256, six-file byte checks and post-seal CI"
+  "finalArchiveIdentity": "External final version manifest: source commit, report/source equivalence, exact SHA256, six-file byte checks and post-seal CI",
+  "lastManualRepairCheckpoint": {
+    "remoteFullCI": "External immutable-source final version manifest is authoritative after source freeze",
+    "at": "2026-10-30T19:38:25.5844862+08:00",
+    "formalSource": "1cdd5b8807bb34d3e49996ef7967c0482db3b3a9",
+    "exitCode": 0,
+    "actualRuntimeChanged": false,
+    "finding": "P2-FINAL-03",
+    "localVisualChecks": 6,
+    "wallMinutes": 150.73
+  }
 }
