@@ -2,11 +2,11 @@
   "schemaVersion": "1.0.0",
   "waveId": "P1.1",
   "specVersion": "P1.1-1.0.0",
-  "status": "prepared",
-  "executionAuthorized": false,
+  "status": "executing",
+  "executionAuthorized": true,
   "preparationBaseCommit": "e485792839d6c3af1a6587a8964f983250366b39",
   "p1AcceptanceCommit": "a2505ecdedf04ad432476d5bdfb1eda02e0fe926",
-  "executionStartedAt": null,
+  "executionStartedAt": "2026-10-30T11:18:40.061353+08:00",
   "executionCompletedAt": null,
   "timezone": "Etc/GMT-8",
   "deadline": null,
@@ -192,10 +192,11 @@
       "repairCount": 0
     }
   ],
-  "nextAction": "await_explicit_human_start; then refresh_exact_SHA_and_dispatch_BASE_and_scoped_MAIL",
+  "nextAction": "BASE; scoped_mail_connection; dispatch_frontend_asset_acceptance",
   "preparationRecordedAt": "2026-10-30T11:03:39.140356+08:00",
   "publicationPolicy": "local_seal_only; no_remote_push_before_scoped_mail_task_to_avoid_new_notifications",
   "preparationCompletedAt": "2026-10-30T11:15:19.368958+08:00",
-  "preparationValidation": "passed_data_only",
-  "preparationReviewReference": "reviews/preparation-review.md"
+  "preparationValidation": "passed_at_preparation_seal_only",
+  "preparationReviewReference": "reviews/preparation-review.md",
+  "preparationSealCommit": "325bfd8e35af2efeb2ad82b19547cbacd61ae913"
 }
