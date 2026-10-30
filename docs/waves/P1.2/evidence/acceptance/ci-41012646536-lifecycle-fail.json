@@ -1,0 +1,359 @@
+{
+  "testedCommit": "c7f2af60f2ef23102eb2838d0066007248db1363",
+  "capturedAt": "2026-10-30T06:24:28.896Z",
+  "fixtureTimeline": [
+    {
+      "id": "32c0eb10-58c6-4774-ae03-e82430c18ed6",
+      "elapsedMs": 22,
+      "status": "SUCCEEDED",
+      "stage": "FINALIZE",
+      "version": 7,
+      "createdAt": "2026-10-30T06:24:23.412587Z",
+      "steps": [
+        {
+          "startedAt": "2026-10-30T06:24:23.430833Z",
+          "completedAt": "2026-10-30T06:24:23.536999Z",
+          "stage": "ASSET_CHECK",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        },
+        {
+          "startedAt": "2026-10-30T06:24:23.549862Z",
+          "completedAt": "2026-10-30T06:24:23.609512Z",
+          "stage": "GENERATE",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        },
+        {
+          "startedAt": "2026-10-30T06:24:23.615244Z",
+          "completedAt": "2026-10-30T06:24:23.672882Z",
+          "stage": "FINALIZE",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        }
+      ]
+    },
+    {
+      "id": "21acff38-e8e1-4e19-872b-d3f1030c8b18",
+      "elapsedMs": 58,
+      "status": "SUCCEEDED",
+      "stage": "FINALIZE",
+      "version": 7,
+      "createdAt": "2026-10-30T06:24:23.472802Z",
+      "steps": [
+        {
+          "startedAt": "2026-10-30T06:24:23.678996Z",
+          "completedAt": "2026-10-30T06:24:23.732915Z",
+          "stage": "ASSET_CHECK",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        },
+        {
+          "startedAt": "2026-10-30T06:24:23.736494Z",
+          "completedAt": "2026-10-30T06:24:23.790880Z",
+          "stage": "GENERATE",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        },
+        {
+          "startedAt": "2026-10-30T06:24:23.797012Z",
+          "completedAt": "2026-10-30T06:24:23.853652Z",
+          "stage": "FINALIZE",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        }
+      ]
+    },
+    {
+      "id": "3b510c7f-5aa3-4e01-8241-33b6d9f74597",
+      "elapsedMs": 119,
+      "status": "SUCCEEDED",
+      "stage": "FINALIZE",
+      "version": 7,
+      "createdAt": "2026-10-30T06:24:23.550230Z",
+      "steps": [
+        {
+          "startedAt": "2026-10-30T06:24:23.857587Z",
+          "completedAt": "2026-10-30T06:24:23.912086Z",
+          "stage": "ASSET_CHECK",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        },
+        {
+          "startedAt": "2026-10-30T06:24:23.915030Z",
+          "completedAt": "2026-10-30T06:24:23.971138Z",
+          "stage": "GENERATE",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        },
+        {
+          "startedAt": "2026-10-30T06:24:23.980136Z",
+          "completedAt": "2026-10-30T06:24:24.036657Z",
+          "stage": "FINALIZE",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        }
+      ]
+    },
+    {
+      "id": "774f658d-7f66-4631-b684-0546c2d729e1",
+      "elapsedMs": 132,
+      "status": "RUNNING",
+      "stage": "GENERATE",
+      "version": 4,
+      "createdAt": "2026-10-30T06:24:23.589380Z",
+      "steps": [
+        {
+          "startedAt": "2026-10-30T06:24:24.040446Z",
+          "completedAt": "2026-10-30T06:24:24.093391Z",
+          "stage": "ASSET_CHECK",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        },
+        {
+          "startedAt": "2026-10-30T06:24:24.096664Z",
+          "completedAt": null,
+          "stage": "GENERATE",
+          "status": "RUNNING",
+          "failureReason": null
+        },
+        {
+          "startedAt": null,
+          "completedAt": null,
+          "stage": "FINALIZE",
+          "status": "NOT_STARTED",
+          "failureReason": null
+        }
+      ]
+    },
+    {
+      "id": "f42a452e-453c-476d-a4b3-7fb04468e91d",
+      "elapsedMs": 151,
+      "status": "QUEUED",
+      "stage": null,
+      "version": 1,
+      "createdAt": "2026-10-30T06:24:23.632008Z",
+      "steps": [
+        {
+          "startedAt": null,
+          "completedAt": null,
+          "stage": "ASSET_CHECK",
+          "status": "NOT_STARTED",
+          "failureReason": null
+        },
+        {
+          "startedAt": null,
+          "completedAt": null,
+          "stage": "GENERATE",
+          "status": "NOT_STARTED",
+          "failureReason": null
+        },
+        {
+          "startedAt": null,
+          "completedAt": null,
+          "stage": "FINALIZE",
+          "status": "NOT_STARTED",
+          "failureReason": null
+        }
+      ]
+    },
+    {
+      "id": "b6066591-c0dc-4054-9505-4699f4b36b0a",
+      "elapsedMs": 218,
+      "status": "QUEUED",
+      "stage": null,
+      "version": 1,
+      "createdAt": "2026-10-30T06:24:23.979382Z",
+      "steps": [
+        {
+          "startedAt": null,
+          "completedAt": null,
+          "stage": "ASSET_CHECK",
+          "status": "NOT_STARTED",
+          "failureReason": null
+        },
+        {
+          "startedAt": null,
+          "completedAt": null,
+          "stage": "GENERATE",
+          "status": "NOT_STARTED",
+          "failureReason": null
+        },
+        {
+          "startedAt": null,
+          "completedAt": null,
+          "stage": "FINALIZE",
+          "status": "NOT_STARTED",
+          "failureReason": null
+        }
+      ]
+    },
+    {
+      "id": "774f658d-7f66-4631-b684-0546c2d729e1",
+      "elapsedMs": 335,
+      "status": "SUCCEEDED",
+      "stage": "FINALIZE",
+      "version": 7,
+      "createdAt": "2026-10-30T06:24:23.589380Z",
+      "steps": [
+        {
+          "startedAt": "2026-10-30T06:24:24.040446Z",
+          "completedAt": "2026-10-30T06:24:24.093391Z",
+          "stage": "ASSET_CHECK",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        },
+        {
+          "startedAt": "2026-10-30T06:24:24.096664Z",
+          "completedAt": "2026-10-30T06:24:24.159810Z",
+          "stage": "GENERATE",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        },
+        {
+          "startedAt": "2026-10-30T06:24:24.164584Z",
+          "completedAt": "2026-10-30T06:24:24.231031Z",
+          "stage": "FINALIZE",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        }
+      ]
+    },
+    {
+      "id": "f42a452e-453c-476d-a4b3-7fb04468e91d",
+      "elapsedMs": 357,
+      "status": "RUNNING",
+      "stage": "GENERATE",
+      "version": 4,
+      "createdAt": "2026-10-30T06:24:23.632008Z",
+      "steps": [
+        {
+          "startedAt": "2026-10-30T06:24:24.237138Z",
+          "completedAt": "2026-10-30T06:24:24.291918Z",
+          "stage": "ASSET_CHECK",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        },
+        {
+          "startedAt": "2026-10-30T06:24:24.299257Z",
+          "completedAt": null,
+          "stage": "GENERATE",
+          "status": "RUNNING",
+          "failureReason": null
+        },
+        {
+          "startedAt": null,
+          "completedAt": null,
+          "stage": "FINALIZE",
+          "status": "NOT_STARTED",
+          "failureReason": null
+        }
+      ]
+    },
+    {
+      "id": "f42a452e-453c-476d-a4b3-7fb04468e91d",
+      "elapsedMs": 499,
+      "status": "SUCCEEDED",
+      "stage": "FINALIZE",
+      "version": 7,
+      "createdAt": "2026-10-30T06:24:23.632008Z",
+      "steps": [
+        {
+          "startedAt": "2026-10-30T06:24:24.237138Z",
+          "completedAt": "2026-10-30T06:24:24.291918Z",
+          "stage": "ASSET_CHECK",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        },
+        {
+          "startedAt": "2026-10-30T06:24:24.299257Z",
+          "completedAt": "2026-10-30T06:24:24.359241Z",
+          "stage": "GENERATE",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        },
+        {
+          "startedAt": "2026-10-30T06:24:24.363765Z",
+          "completedAt": "2026-10-30T06:24:24.425723Z",
+          "stage": "FINALIZE",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        }
+      ]
+    },
+    {
+      "id": "b6066591-c0dc-4054-9505-4699f4b36b0a",
+      "elapsedMs": 559,
+      "status": "RUNNING",
+      "stage": "GENERATE",
+      "version": 4,
+      "createdAt": "2026-10-30T06:24:23.979382Z",
+      "steps": [
+        {
+          "startedAt": "2026-10-30T06:24:24.429975Z",
+          "completedAt": "2026-10-30T06:24:24.483306Z",
+          "stage": "ASSET_CHECK",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        },
+        {
+          "startedAt": "2026-10-30T06:24:24.487633Z",
+          "completedAt": null,
+          "stage": "GENERATE",
+          "status": "RUNNING",
+          "failureReason": null
+        },
+        {
+          "startedAt": null,
+          "completedAt": null,
+          "stage": "FINALIZE",
+          "status": "NOT_STARTED",
+          "failureReason": null
+        }
+      ]
+    },
+    {
+      "id": "b6066591-c0dc-4054-9505-4699f4b36b0a",
+      "elapsedMs": 674,
+      "status": "FAILED",
+      "stage": "GENERATE",
+      "version": 5,
+      "createdAt": "2026-10-30T06:24:23.979382Z",
+      "steps": [
+        {
+          "startedAt": "2026-10-30T06:24:24.429975Z",
+          "completedAt": "2026-10-30T06:24:24.483306Z",
+          "stage": "ASSET_CHECK",
+          "status": "SUCCEEDED",
+          "failureReason": null
+        },
+        {
+          "startedAt": "2026-10-30T06:24:24.487633Z",
+          "completedAt": "2026-10-30T06:24:24.542665Z",
+          "stage": "GENERATE",
+          "failureReason": "模拟生成阶段按演示配置失败",
+          "status": "FAILED"
+        },
+        {
+          "startedAt": null,
+          "completedAt": null,
+          "stage": "FINALIZE",
+          "status": "NOT_STARTED",
+          "failureReason": null
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "focused upload edge pauses offscreen and resumes without blur",
+      "status": "fail",
+      "message": "Offscreen focused upload still animates"
+    },
+    {
+      "name": "active task pauses offscreen while backend continues, then restores",
+      "status": "fail",
+      "message": "Offscreen active task still animates"
+    }
+  ]
+}

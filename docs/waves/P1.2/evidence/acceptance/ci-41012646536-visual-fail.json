@@ -1,0 +1,74 @@
+{
+  "runId": "41012646536",
+  "applicationSource": "8a3f8bd12c1fc889566e82f9c2ad95cd96544524",
+  "pipelineSource": "c7f2af60f2ef23102eb2838d0066007248db1363",
+  "source": "original integration.log exact checks array; original remote lifecycle detailed artifact pending",
+  "checks": [
+    {
+      "name": "continuous scene /templates/demo-pet",
+      "status": "pass"
+    },
+    {
+      "name": "continuous scene /history",
+      "status": "pass"
+    },
+    {
+      "name": "history refetch does not repeat terminal celebration",
+      "status": "pass"
+    },
+    {
+      "name": "result and identity dialogs real pixels, original result and focus",
+      "status": "pass"
+    },
+    {
+      "name": "runtime reduce and route cancel RAF WAAPI public overlays",
+      "status": "pass"
+    },
+    {
+      "name": "focused upload edge pauses offscreen and resumes without blur",
+      "status": "fail",
+      "message": "Offscreen focused upload still animates"
+    },
+    {
+      "name": "active task pauses offscreen while backend continues, then restores",
+      "status": "fail",
+      "message": "Offscreen active task still animates"
+    },
+    {
+      "name": "Authenticated thumbnails retain original integrity",
+      "status": "pass"
+    },
+    {
+      "name": "cold PNG reserves geometry and reveals once after actual load",
+      "status": "pass"
+    },
+    {
+      "name": "cancel before image response removes private nodes without resurrection",
+      "status": "pass"
+    },
+    {
+      "name": "cold image error remains understandable and closable",
+      "status": "pass"
+    },
+    {
+      "name": "reduce during cold load cancels animation and still shows original",
+      "status": "pass"
+    },
+    {
+      "name": "route during cold load clears private visual before late response",
+      "status": "pass"
+    },
+    {
+      "name": "real 401 consumer clears cold private preview and identity data",
+      "status": "pass"
+    },
+    {
+      "name": "route error real React render fault and retry",
+      "status": "pass"
+    },
+    {
+      "name": "global error real React render fault and retry",
+      "status": "pass"
+    }
+  ]
+}
