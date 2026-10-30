@@ -4,11 +4,11 @@
 - rootTaskId: P11-CI-MAIL
 - waveId: P1.1
 - roundId: P11-R1
-- status: waiting_mailbox_connection
+- status: deferred_by_user
 - role: Leader
 - baseCommit: c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef
 - baseCommitMeaning: authorized execution source baseline; record later integrated SHAs separately
-- specVersion: P1.1-1.0.0
+- specVersion: P1.1-1.0.1
 - requirementIds: P11-MAIL-01
 - dependencies: P11-BASE
 - runtimeDependencies: none

@@ -4,13 +4,13 @@
 - rootTaskId: P11-DELIVERY
 - waveId: P1.1
 - roundId: P11-R1
-- status: local_candidate_ready_waiting_MAIL_and_remote_CI
+- status: remote_CI_pending
 - role: Leader
 - baseCommit: c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef
 - baseCommitMeaning: authorized execution source baseline; record later integrated SHAs separately
-- specVersion: P1.1-1.0.0
+- specVersion: P1.1-1.0.1
 - requirementIds: P11-DEL-01, P11-REG-01
-- dependencies: P11-CI-MAIL, P11-ACCEPT, P11-REVIEW
+- dependencies: P11-ACCEPT, P11-REVIEW
 - runtimeDependencies: none
 - requestedModel: inherit_current_session
 - requestedReasoningEffort: inherit_current_session

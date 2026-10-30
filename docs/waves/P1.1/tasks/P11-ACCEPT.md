@@ -4,14 +4,14 @@
 - rootTaskId: P11-ACCEPT
 - waveId: P1.1
 - roundId: P11-R1
-- status: local_checks_passed_waiting_MAIL_01
+- status: local_checks_passed_scope_review_pending
 - role: Acceptance
 - baseCommit: c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef
 - baseCommitMeaning: authorized execution source baseline; record later integrated SHAs separately
-- specVersion: P1.1-1.0.0
-- requirementIds: P11-QUALITY-01, P11-REG-01, P11-MAIL-01
+- specVersion: P1.1-1.0.1
+- requirementIds: P11-QUALITY-01, P11-REG-01
 - dependencies: P11-BASE
-- runtimeDependencies: P11-CARDS, P11-CI-MAIL
+- runtimeDependencies: P11-CARDS
 - requestedModel: inherit_current_session
 - requestedReasoningEffort: inherit_current_session
 - actualProvider: null
@@ -30,7 +30,7 @@ Read AGENTS.md, CONSTITUTION.md, docs/agents/PROTOCOL.md, docs/waves/P1.1/PLAN.m
 
 Independently verify default dynamics, all-image per-request budgets, true background/coarse, card navigation and P0 business; audit scoped-mail evidence.
 
-Visual and business verification may start when P11-CARDS is integrated. Final acceptance sign-off also requires completed P11-CI-MAIL evidence; an unfinished mailbox subitem cannot be reported as a fully completed task.
+Visual and business verification may start when P11-CARDS is integrated. The latest user instruction defers P11-CI-MAIL, which no longer blocks sign-off. Preserve all existing technical/comfort checks and mark mail deferred, not solved.
 
 ## Allowed write paths
 

@@ -1,6 +1,6 @@
 # 本仓库CI邮件治理
 
-版本P1.1-1.0.0。用户已确认仅处理XB-Dong/quvideo-material-studio的CI邮件，必要时使用邮箱定向规则；不授权关闭账号全部Actions邮件。P1.1已启动，实际邮箱接入/生效状态见evidence/ci-mail-execution.json；不发送测试邮件。
+版本P1.1-1.0.1。用户最新明确“那就不管邮件先”，本项暂缓，不再阻塞推送、CI或本轮完成；以下方案保留供未来用户另行请求，当前不执行。用户已确认仅处理XB-Dong/quvideo-material-studio的CI邮件，必要时使用邮箱定向规则；不授权关闭账号全部Actions邮件。P1.1已启动，实际邮箱接入/生效状态见evidence/ci-mail-execution.json；不发送测试邮件。
 
 ## 已核实事实
 
@@ -16,6 +16,6 @@ GitHub官方说明Actions可为触发的运行发送邮件，失败/成功/取�
 4. 同时保持CI真实健康：旧失败留证，新视觉/选择器/预算真实失败必须修复；保留前端lint/type/tests/build、Java/MySQL、API、浏览器及逐轮预算。Leader批量推送可审阅版本，避免每个局部修字都推送；不使用skip-ci、continue-on-error、删失败断言或关闭检查解决邮件。
 5. 验证：只用真实既有样本和合成正反例预览，不主动给用户发新测试邮件；保留规则作用域/动作与命中结果的脱敏证据。不把个人地址、完整邮件/退订链接/token存Git；记录账号级Actions设置未变。若实际邮箱无法提供该定向能力，报告具体限制与可导入规则，邮件任务不得虚报完成。
 
-首次远端push前完成定向规则或明确需要的连接；前端/素材本地开发可并行。最终P1.1完成需要该任务实际验收。账号级停邮件、其他仓库、营销/安全/人工PR邮件均不在范围。
+原邮件前置条件已由用户明确暂缓撤销；本轮继续正常推送/CI，不能把暂缓写成邮件已解决。账号级停邮件、其他仓库、营销/安全/人工PR邮件均不在范围。
 
-官方依据：[Actions运行通知](https://docs.github.com/en/actions/concepts/workflows-and-actions/notifications-for-workflow-runs)、[通知配置](https://docs.github.com/en/subscriptions-and-notifications/get-started/configuring-notifications)。通知治理核实前仅本地提交；CI检查入口可随新视觉契约更新，不修改账号通知开关，不关闭必要检查。
+官方依据：[Actions运行通知](https://docs.github.com/en/actions/concepts/workflows-and-actions/notifications-for-workflow-runs)、[通知配置](https://docs.github.com/en/subscriptions-and-notifications/get-started/configuring-notifications)。当前允许正常推送；CI检查入口可随新视觉契约更新，不修改账号通知开关，不关闭必要检查。

@@ -8,7 +8,7 @@
 - role: Asset
 - baseCommit: c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef
 - baseCommitMeaning: authorized execution source baseline; record later integrated SHAs separately
-- specVersion: P1.1-1.0.0
+- specVersion: P1.1-1.0.1
 - requirementIds: P11-INK-01, P11-QUALITY-01
 - dependencies: P11-BASE
 - runtimeDependencies: none

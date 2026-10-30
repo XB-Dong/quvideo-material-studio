@@ -1,7 +1,7 @@
 {
   "recordedAt": "2026-10-30T11:35:04.537169+08:00",
   "taskId": "P11-CI-MAIL",
-  "status": "waiting_mailbox_connection",
+  "status": "deferred_by_user",
   "scope": "XB-Dong/quvideo-material-studio Actions workflow email only",
   "readOnlyFindings": {
     "githubPrimaryVerifiedEmailProvider": "foxmail.com",
@@ -31,6 +31,9 @@
   "ruleApplied": false,
   "emailSent": false,
   "remotePushPerformed": false,
-  "nextAction": "User sign-in to Foxmail/QQ mailbox and usable browser session; verify actual sender/subject/Actions headers, preview strict positive/negative matches, then reversible skipInbox+CI label",
-  "limits": "Do not infer exact receiving address from primary account email; no blanket GitHub sender/repository filter, no global Actions setting change. Local implementation proceeds; mail task cannot be reported completed without evidence."
+  "nextAction": "none; do not resume mailbox work without new user request",
+  "limits": "Do not infer exact receiving address from primary account email; no blanket GitHub sender/repository filter, no global Actions setting change. Local implementation proceeds; mail task cannot be reported completed without evidence.",
+  "deferredAt": "2026-10-30T12:07:47.822904+08:00",
+  "latestUserInstruction": "那就不管邮件先",
+  "blocksPushOrWaveCompletion": false
 }

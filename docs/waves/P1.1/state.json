@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.0.0",
   "waveId": "P1.1",
-  "specVersion": "P1.1-1.0.0",
-  "status": "awaiting_external_mail_connection",
+  "specVersion": "P1.1-1.0.1",
+  "status": "finalizing_remote_CI",
   "executionAuthorized": true,
   "preparationBaseCommit": "e485792839d6c3af1a6587a8964f983250366b39",
   "p1AcceptanceCommit": "a2505ecdedf04ad432476d5bdfb1eda02e0fe926",
@@ -25,7 +25,7 @@
   "applicationRestarted": true,
   "productChecks": "local_passed_31FE_15Java_8API_22browser_6visual_native_30s_3budgets",
   "aestheticGate": "passed",
-  "comfortGate": "pending_MAIL_01",
+  "comfortGate": "passed_for_current_scope",
   "userConfirmedMailScope": "repository_only_optional_mailbox_rule",
   "brandTarget": "疏影",
   "motionPolicy": "default_continuous_visible; no_manual_control; automatic_system_and_resource_protection",
@@ -54,7 +54,7 @@
       "taskId": "P11-CI-MAIL",
       "rootTaskId": "P11-CI-MAIL",
       "owner": "Leader",
-      "status": "waiting_mailbox_connection",
+      "status": "deferred_by_user",
       "dependencies": [
         "P11-BASE"
       ],
@@ -137,18 +137,16 @@
       "taskId": "P11-ACCEPT",
       "rootTaskId": "P11-ACCEPT",
       "owner": "Acceptance",
-      "status": "local_checks_passed_waiting_MAIL_01",
+      "status": "local_checks_passed_scope_review_pending",
       "dependencies": [
         "P11-BASE"
       ],
       "runtimeDependencies": [
-        "P11-CARDS",
-        "P11-CI-MAIL"
+        "P11-CARDS"
       ],
       "requirements": [
         "P11-QUALITY-01",
-        "P11-REG-01",
-        "P11-MAIL-01"
+        "P11-REG-01"
       ],
       "baseCommit": "c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef",
       "repairCount": 3
@@ -176,9 +174,8 @@
       "taskId": "P11-DELIVERY",
       "rootTaskId": "P11-DELIVERY",
       "owner": "Leader",
-      "status": "local_candidate_ready_waiting_MAIL_and_remote_CI",
+      "status": "remote_CI_pending",
       "dependencies": [
-        "P11-CI-MAIL",
         "P11-ACCEPT",
         "P11-REVIEW"
       ],
@@ -191,9 +188,9 @@
       "repairCount": 0
     }
   ],
-  "nextAction": "obtain_operable_receiving_mailbox; verify_repository_only_rule; then_push_run_CI_and_sign_complete",
+  "nextAction": "push_private_main; verify_complete_remote_CI; finalize_delivery",
   "preparationRecordedAt": "2026-10-30T11:03:39.140356+08:00",
-  "publicationPolicy": "local_seal_only; no_remote_push_before_scoped_mail_task_to_avoid_new_notifications",
+  "publicationPolicy": "normal_private_repository_push_and_required_CI; mail_deferred_by_user",
   "preparationCompletedAt": "2026-10-30T11:15:19.368958+08:00",
   "preparationValidation": "passed_at_preparation_seal_only",
   "preparationReviewReference": "reviews/preparation-review.md",
@@ -203,10 +200,12 @@
   "deployedCommit": "64e919aac25cacf7f1193b4a361071e5d03ef635",
   "newProductDependenciesAdded": false,
   "containerBuildChecksExecuted": true,
-  "mailStatus": "awaiting_operable_mailbox_session",
+  "mailStatus": "deferred_by_user",
   "aestheticSourceCommit": "64e919aac25cacf7f1193b4a361071e5d03ef635",
   "localVerificationCompletedAt": "2026-10-30T11:53:28.819014+08:00",
   "runtimeComfortGate": "passed",
-  "remoteCI": "not_run_for_P1.1_no_remote_push",
-  "localDeliveryStatus": "candidate_ready_mail_and_remote_CI_pending"
+  "remoteCI": "pending_push",
+  "localDeliveryStatus": "local_passed_remote_CI_pending",
+  "mailDeferredAt": "2026-10-30T12:07:47.822904+08:00",
+  "mailDeferralUserInstruction": "那就不管邮件先"
 }
