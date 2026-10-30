@@ -1,0 +1,267 @@
+{
+  "testedCommit": "fabdb38fc0ed8f948cef8b4e77dccdf401f23059",
+  "capturedAt": "2026-10-30T07:00:57.542Z",
+  "browser": "149.0.7827.53",
+  "conditions": "No screenshots, pixel readback, tracing or RAF stacks; default software driver. Original full-result request and large legal upload not erased; startup recorded separately.",
+  "phases": [
+    {
+      "label": "real Link navigation",
+      "begin": 2982.3000000000466,
+      "end": 4167.699999999953
+    },
+    {
+      "label": "real chooser upload cancel same-file replace remove",
+      "begin": 4562.5,
+      "end": 9343.900000000023
+    },
+    {
+      "label": "large legal JPEG transport and preview",
+      "begin": 9346.699999999953,
+      "end": 10507.5
+    },
+    {
+      "label": "submit 0",
+      "begin": 10510.599999999977,
+      "end": 10861.099999999977
+    },
+    {
+      "label": "submit 1",
+      "begin": 10863.400000000023,
+      "end": 11234.599999999977
+    },
+    {
+      "label": "task updates and original result dialog",
+      "begin": 11237.699999999953,
+      "end": 19612.300000000047
+    },
+    {
+      "label": "history refresh and identity dialog",
+      "begin": 19613.5,
+      "end": 23696.800000000047
+    },
+    {
+      "label": "continuous child scene 30s",
+      "begin": 23699.900000000023,
+      "end": 53703.19999999995
+    }
+  ],
+  "longTasks": [
+    {
+      "at": 199.5,
+      "duration": 96,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 459.9000000000233,
+      "duration": 178,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 982.9000000000233,
+      "duration": 243,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 10738.099999999977,
+      "duration": 76,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    }
+  ],
+  "audit": {
+    "observedAt": 53704.90000000002,
+    "rafPending": 0,
+    "rafExecuted": 3,
+    "gpuAllocated": 0,
+    "gpuLive": 0,
+    "coarse": false,
+    "fine": true,
+    "hover": true,
+    "reduce": false,
+    "hidden": false,
+    "animations": [
+      {
+        "name": "p12-page-in",
+        "state": "finished",
+        "target": "p12-route-surface",
+        "iterations": 1
+      },
+      {
+        "name": "p12-flow",
+        "state": "running",
+        "target": {},
+        "iterations": null
+      },
+      {
+        "name": "card-in",
+        "state": "finished",
+        "target": "task-card p12-task",
+        "iterations": 1
+      },
+      {
+        "name": "label-in",
+        "state": "finished",
+        "target": "status succeeded",
+        "iterations": 1
+      },
+      {
+        "name": "card-in",
+        "state": "finished",
+        "target": "task-card p12-task",
+        "iterations": 1
+      },
+      {
+        "name": "label-in",
+        "state": "finished",
+        "target": "status succeeded",
+        "iterations": 1
+      }
+    ]
+  },
+  "gesture": {
+    "events": [
+      {
+        "kind": "click",
+        "turn": 1,
+        "at": 7835,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 1,
+        "active": true,
+        "trusted": true,
+        "at": 7835
+      },
+      {
+        "kind": "create-url",
+        "url": "blob:http://localhost:3000/b69e977f-28b1-4452-bfb4-f7792dd0877b",
+        "bytes": 42971,
+        "at": 7901.400000000023
+      },
+      {
+        "kind": "click",
+        "turn": 2,
+        "at": 8336.599999999977,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 2,
+        "active": true,
+        "trusted": true,
+        "at": 8336.699999999953
+      },
+      {
+        "kind": "click",
+        "turn": 3,
+        "at": 8850.099999999977,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 3,
+        "active": true,
+        "trusted": true,
+        "at": 8850.199999999953
+      },
+      {
+        "kind": "revoke-url",
+        "url": "blob:http://localhost:3000/b69e977f-28b1-4452-bfb4-f7792dd0877b",
+        "at": 8898.900000000023
+      },
+      {
+        "kind": "create-url",
+        "url": "blob:http://localhost:3000/8351e939-89e4-417a-811b-8bab2495c833",
+        "bytes": 42971,
+        "at": 8899.300000000047
+      },
+      {
+        "kind": "revoke-url",
+        "url": "blob:http://localhost:3000/8351e939-89e4-417a-811b-8bab2495c833",
+        "at": 9335.400000000023
+      },
+      {
+        "kind": "click",
+        "turn": 4,
+        "at": 9605.599999999977,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 4,
+        "active": true,
+        "trusted": true,
+        "at": 9605.599999999977
+      },
+      {
+        "kind": "create-url",
+        "url": "blob:http://localhost:3000/2b695477-a6c9-4734-a896-0081c7e80ecd",
+        "bytes": 4194304,
+        "at": 9649.699999999953
+      },
+      {
+        "kind": "revoke-url",
+        "url": "blob:http://localhost:3000/2b695477-a6c9-4734-a896-0081c7e80ecd",
+        "at": 20913.099999999977
+      }
+    ],
+    "liveUrls": []
+  },
+  "interactionLongTasks": [
+    {
+      "at": 10738.099999999977,
+      "duration": 76,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    }
+  ],
+  "lazyScripts": [
+    {
+      "url": "http://localhost:3000/_next/static/chunks/0ahkl0px33yc_.js",
+      "gzipBytes": 3381
+    }
+  ],
+  "lazyGzipBytes": 3381,
+  "largeLegalUpload": {
+    "selectedBytes": 4194304,
+    "serverAssetBytes": 4194304,
+    "width": 480,
+    "height": 640,
+    "kind": "Valid local JPEG plus trailing padding selected from actual container filesystem path; original upload unmodified; transport test, not 20MP device performance"
+  },
+  "taskIds": [
+    "d7adfd74-06eb-4d4a-abab-141c4aa9aa76",
+    "e4b0be27-e526-47b8-b8f3-a26c99e749ef"
+  ],
+  "errors": [],
+  "pass": false
+}

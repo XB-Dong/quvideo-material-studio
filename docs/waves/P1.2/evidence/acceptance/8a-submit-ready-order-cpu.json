@@ -1,0 +1,286 @@
+{
+  "scope": "CPU sampling diagnostic, not normal-timing acceptance. Function declaration callback18394 and per-sample column19943 match task timestamp formatting.",
+  "network": [
+    {
+      "kind": "request",
+      "id": "109.86",
+      "timestamp": 78848.920898,
+      "method": "POST",
+      "url": "http://localhost:3000/api/tasks",
+      "at": 8411.866
+    },
+    {
+      "kind": "response",
+      "id": "109.86",
+      "timestamp": 78849.014525,
+      "status": 202,
+      "at": 8505.493
+    }
+  ],
+  "DOM": [
+    {
+      "at": 7125.70000000298,
+      "value": []
+    },
+    {
+      "at": 8575.60000000894,
+      "value": [
+        {
+          "id": "da2c5f84-581c-4a0d-b621-45d93b7e87ef",
+          "emphasis": "true",
+          "status": "排队中"
+        }
+      ]
+    },
+    {
+      "at": 8681.800000011921,
+      "value": [
+        {
+          "id": "da2c5f84-581c-4a0d-b621-45d93b7e87ef",
+          "emphasis": "true",
+          "stage": "素材检查",
+          "status": "制作中"
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task": {
+        "at": 8380.40000000596,
+        "duration": 54
+      },
+      "topSamples": [
+        {
+          "frame": [
+            "(program)",
+            0,
+            null,
+            0
+          ],
+          "ms": 23.455
+        },
+        {
+          "frame": [
+            "setAttribute",
+            0,
+            null,
+            173762
+          ],
+          "ms": 7.406
+        },
+        {
+          "frame": [
+            "sC",
+            15,
+            155334,
+            156569
+          ],
+          "ms": 6.489
+        },
+        {
+          "frame": [
+            "elementsFromPoint",
+            0,
+            null,
+            29
+          ],
+          "ms": 4.139
+        },
+        {
+          "frame": [
+            "fetch",
+            0,
+            null,
+            33276
+          ],
+          "ms": 2.427
+        },
+        {
+          "frame": [
+            "cf",
+            15,
+            170813,
+            173762
+          ],
+          "ms": 0.942
+        },
+        {
+          "frame": [
+            "s5",
+            15,
+            163618,
+            164069
+          ],
+          "ms": 0.878
+        },
+        {
+          "frame": [
+            "setTimeout",
+            0,
+            null,
+            27591
+          ],
+          "ms": 0.536
+        },
+        {
+          "frame": [
+            "c",
+            15,
+            10126,
+            10127
+          ],
+          "ms": 0.443
+        },
+        {
+          "frame": [
+            "up",
+            15,
+            119547,
+            119748
+          ],
+          "ms": 0.368
+        },
+        {
+          "frame": [
+            "setAttribute",
+            0,
+            null,
+            21084
+          ],
+          "ms": 0.341
+        },
+        {
+          "frame": [
+            "tB",
+            15,
+            30553,
+            30554
+          ],
+          "ms": 0.251
+        }
+      ]
+    },
+    {
+      "task": {
+        "at": 8513.800000011921,
+        "duration": 61
+      },
+      "topSamples": [
+        {
+          "frame": [
+            "",
+            24,
+            18394,
+            19943
+          ],
+          "ms": 29.241
+        },
+        {
+          "frame": [
+            "fetch",
+            0,
+            null,
+            33276
+          ],
+          "ms": 4.547
+        },
+        {
+          "frame": [
+            "setInterval",
+            0,
+            null,
+            22258
+          ],
+          "ms": 2.776
+        },
+        {
+          "frame": [
+            "",
+            24,
+            12132,
+            12240
+          ],
+          "ms": 1.69
+        },
+        {
+          "frame": [
+            "clearTimeout",
+            0,
+            null,
+            22292
+          ],
+          "ms": 1.611
+        },
+        {
+          "frame": [
+            "setTimeout",
+            0,
+            null,
+            22191
+          ],
+          "ms": 1.1
+        },
+        {
+          "frame": [
+            "r",
+            16,
+            33248,
+            33276
+          ],
+          "ms": 0.933
+        },
+        {
+          "frame": [
+            "clearTimeout",
+            0,
+            null,
+            22223
+          ],
+          "ms": 0.887
+        },
+        {
+          "frame": [
+            "#v",
+            20,
+            5226,
+            5253
+          ],
+          "ms": 0.81
+        },
+        {
+          "frame": [
+            "aE",
+            15,
+            63805,
+            63938
+          ],
+          "ms": 0.71
+        },
+        {
+          "frame": [
+            "#R",
+            20,
+            4957,
+            5026
+          ],
+          "ms": 0.623
+        },
+        {
+          "frame": [
+            "clearTimeout",
+            16,
+            22219,
+            22223
+          ],
+          "ms": 0.563
+        }
+      ]
+    }
+  ],
+  "timestampSource": {
+    "file": "2jhh2aiuzz49e.js",
+    "column": 19942,
+    "around": "stage)]}),(0,t.jsx)(\"time\",{dateTime:e.createdAt,children:new Date(e.createdAt).toLocaleString(\"zh-CN\",{month:\"2-digit\",day:\"2-digit\",hour:\"2-digit\",minute:\"2-digit\"})}),(0,t.jsxs)(\"p\",{className:\"task-id\",title:e.id,children:[\"任务 \",e.id.sl"
+  }
+}

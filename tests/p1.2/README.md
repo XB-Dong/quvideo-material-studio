@@ -32,3 +32,7 @@ affected-review.mjs只在全部无截图采样结束后运行，供有界差异�
 ## 原生离屏事件前置
 
 lifecycle.mjs只在像素功能检查使用只读lifecycle-observer审计，不用于无截图性能。保留原200/250ms快照；确认几何离屏后，恰一次普通viewport screenshot（fullPage=false、animations=allow），随后500ms内必须收到本轮该真实产品observer的false事件，立即保留data/CSS/Animation.pending/currentTime/ready并执行0个running无限动画断言。restore同样要求本轮true且恢复动画。定时器25ms只读轮询，不请求补充RAF帧；缺事件明确是trigger prerequisite失败，仍exit1，无循环截图/手工暂停。slot焦点、前台/非reduce/dialog0和task emphasis/服务端仍RUNNING|QUEUED都须真实成立。仅该活动任务模拟fixture调整为4+10+2=16秒，防自然终态假绿；seed35秒deadline、原预算/业务路径不变。diagnose-lifecycle.mjs保留原checkpoint前后证据供复现。
+
+## CI 首次提交长任务诊断
+
+diagnose-submit.mjs严格保留原chooser/取消/替换/移除、4MiB真实路径、READY后立即真实submit顺序，从大文件选择前启动CDP trace，只追踪首次提交/受理/卡片插入。不跑后30秒求绿；trace/CPU采样只用于归因，不作为舒适门槛通过。完整trace与公共构建chunk在ignored raw，不能把诊断开销当普通性能或删掉原CI长任务。原无截图interact不改。

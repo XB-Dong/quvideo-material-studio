@@ -65,3 +65,11 @@ raw位于本 worktree `runtime/p12-*`，manifest为 p12-raw-manifest.json；完�
 Leader实读诊断后授权唯一正式harness修正：只读nativeIO审计；保留原200/250 checkpoint；几何确认后恰一次viewport screenshot allow；shot后500ms内必须有本轮目标false，立即原0running无限动画标准，恢复必须有本轮true并running。缺事件明示trigger prerequisite failure且exit1，不靠超时放宽或反复补帧。新增焦点/可见/非reduce/dialog0/active emphasis与服务端仍RUNNING守卫；只将活动mock延长至4+10+2=16s防自然结束假绿，seed35s不变。observer回调this/entries/observer与原生一致，不覆值/不dispatch假事件；25ms定时只读轮询不申请补充RAF。
 
 局部正式两项最终代码实际exit0，证据8a-lifecycle-native-trigger-pass.json，应用8a不变。中间两次相同功能pass属于增加callback this忠实转发、显式allow、无RAF轮询后的必要局部复验，不是失败重试求偶然绿。原无截图interaction、九轮measure和native入口未改、结果继续有效。远端最新失败保持事实，等待新harness完整CI，不能据此提前声称远端通过。
+
+## CI 41016072989：完整功能/视觉通过，首次提交性能仍待处理
+
+本轮远端fabdb38fc0ed8f948cef8b4e77dccdf401f23059前后端/旧P1.1已过，P1.2实际一次完整25功能与16视觉（含nativeIO前置两项）全部pass，原JSON已保留。没有重跑已通过前功。新失败在无截图interaction：submit0窗口10510.6–10861.1内at10738.1/duration76ms，非route或4MiB阶段；errors0/lazy3381B/真实4194304B正确。原失败不删除、不放宽50ms或添加任意筛选。
+
+有界诊断第一次只trace首次提交，发现响应后Reactcommit69ms、CPU31.906ms在history tasks.map日期toLocaleString；第二次根据Leader要求将trace起点提前至大图选择前，保留READY→立即submit顺序，仍在API202后Reactcommit61ms复现，CPU29.241ms精确script24/column19943，对应部署chunk2jhh2aiuzz49e.js列19942与history.tsx185–191的createdAt.toLocaleString(zh-CN,month/day/hour/minute)。API POST8411.866→2028505.493，Reactcommit8513.8–8574.8，首卡DOM8575.6；普通Layout8583.5之后11.46ms，无旧connect强制布局/Ink主导证据。另有click复合54/80ms含Playwright hit-test与提交状态React，诊断开销如实保留。
+
+这些是有时间线和CPU源位置的首次日期格式化成本候选，不能将无trace的CI76ms全量归因冒称已证实；已交Leader决定针对实际源的有界优化与后续无截图复验。当前未改产品/门槛/无截图interact，整体远端仍失败，后续正式九轮/native尚未在该CI运行，不宣称整体通过。

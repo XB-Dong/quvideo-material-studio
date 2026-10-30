@@ -489,6 +489,116 @@
       "sha256": "f8df69c50492b8080b0d681e13a1aaac655600e620e968fb56194d5da7852c12"
     },
     {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/cpu-summary.json",
+      "bytes": 5560,
+      "sha256": "3eca7fdc98491a679d5e86efc517bf45b78f20f68498a696f42b39befeab2336"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/sources/0-5v9e-irmykv.js",
+      "bytes": 235044,
+      "sha256": "98a3d0e5272f1b3bbf2ca30f18e1939a02759a41fb718b579bceb598aca4cd05"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/sources/004pxbom_6o0l.js",
+      "bytes": 33693,
+      "sha256": "76842b05b1f4dcd2fe6b73305aec1828a65e157015fe0ebb14a1ea5679b393d0"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/sources/0ahkl0px33yc_.js",
+      "bytes": 7996,
+      "sha256": "df8796329911383c4e5b54234beb4e1508a4715751542eee3d3ccfa9ab06b247"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/sources/0fxzkwkq0b9k6.js",
+      "bytes": 168903,
+      "sha256": "361745239c6d0f6f1441350a37b460695acc5c7da044219b1711780f883cc473"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/sources/0wn0r87ywrmd_.js",
+      "bytes": 14033,
+      "sha256": "c71d5be4474fca31ce4d38b9efe14ee1c0c6806d9571588b0caaf65612d6cfd6"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/sources/1n7bhzrwk9i9c.js",
+      "bytes": 853,
+      "sha256": "cf97f926935b6ddae7468c6177b5dffdbc7d4250efd5fb84b5d0f5188d335edc"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/sources/250fgdp7j729l.js",
+      "bytes": 25612,
+      "sha256": "017da8c0e6b4ae78c0114dcfd693d2e681ce645ec501b81855525043d0c9ba24"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/sources/27gjg8e11zukd.js",
+      "bytes": 21505,
+      "sha256": "42c501b2846c8ccdaae12148388d5d83d3138c9506b1a4435d0283455dcdaa7d"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/sources/2iml5hbi3qvzq.js",
+      "bytes": 12767,
+      "sha256": "fa1cdad3cc0c13e9e84e5e3e047cdfe926553690f1553d709a6ae6c8795ebf3a"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/sources/2jhh2aiuzz49e.js",
+      "bytes": 34222,
+      "sha256": "92f1c5a13b9c0940f70217ea113e535db76046bde67028dfe1f91863adf0fcc7"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/sources/2l6r11pyf_wtg.js",
+      "bytes": 11526,
+      "sha256": "e8fb66dd0b8e898b89cd1a501c6365064f1370cb3deb08d057463b01da38b476"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/sources/3g3x_lkd64sgl.js",
+      "bytes": 249,
+      "sha256": "48638bf5c73b2c0f15853884acd1737d34c29a9228702abe07a6b5b4370ddb16"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/sources/3koyarw6rgz08.js",
+      "bytes": 28183,
+      "sha256": "68de42e6afc0ded6e5b753a30aa45bd19cb4bf6e328694bdb19a10a203fcbcbd"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/sources/turbopack-3-ry682tkyiqk.js",
+      "bytes": 10030,
+      "sha256": "8bbb58cbfd4633c1d828c6bc37bc32abc768a149c01b1dfc4f5131fd81274551"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/submit-diagnosis.json",
+      "bytes": 76619,
+      "sha256": "c5801b7bb687d45059e9680e993af9561fdf422091256e25a856dd2c202b1ace"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/submit-trace.json",
+      "bytes": 1292048,
+      "sha256": "91f195c2e2652300b936591b7b7533b6082916f371a219703a8ca8b59c5c5f95"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/valid-large-jpeg.jpg",
+      "bytes": 4194304,
+      "sha256": "1c3aa236c6e39892730336ed86df4f93bedc392efe151412171239edb0dd43ff"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis/cpu-summary.json",
+      "bytes": 8182,
+      "sha256": "e715062bae90eb834b787a7c2b706a439041ab0c994e36794299db08feabec0a"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis/submit-diagnosis.json",
+      "bytes": 133069,
+      "sha256": "546cc0c7c245dba342f8cce7345c97ce427ba2d2305e9c3c676e7a600adf0feb"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis/submit-trace.json",
+      "bytes": 874784,
+      "sha256": "6a948479d059628ec15843a601a53e1e8b7cf6074abb70202918832302cc71b8"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis/valid-large-jpeg.jpg",
+      "bytes": 4194304,
+      "sha256": "1c3aa236c6e39892730336ed86df4f93bedc392efe151412171239edb0dd43ff"
+    },
+    {
       "path": "runtime/p12-b2d/cold-r2/cold-error.png",
       "bytes": 161700,
       "sha256": "59e8478ad1cc38ecc498f172626e1a64fd327242177dca73fe9cfe6e9e018f97"

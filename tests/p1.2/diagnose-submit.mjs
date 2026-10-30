@@ -1,0 +1,33 @@
+import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import {start,base,output,testedCommit,audit} from './common.mjs';
+import {gestureAudit,fileGesture,fixture,ready} from './gestures.mjs';
+
+const {browser,relay}=await start(),context=await browser.newContext({viewport:{width:1440,height:1000},deviceScaleFactor:1}),page=await context.newPage(),sources=new Map(),network=[];
+page.on('response',r=>{if(r.request().resourceType()==='script')sources.set(r.url(),r.body().then(b=>b.toString()).catch(()=>''))});
+await page.addInitScript(audit);await page.addInitScript(gestureAudit);
+await page.addInitScript(()=>{window.__submitTasks=[];new PerformanceObserver(l=>{for(const e of l.getEntries())window.__submitTasks.push({at:e.startTime,duration:e.duration})}).observe({type:'longtask',buffered:true})});
+await page.goto(base,{waitUntil:'networkidle'});await page.waitForTimeout(1500);
+await page.locator('a.template-card[href="/templates/demo-pet"]').click();await page.locator('input[type=file]').waitFor({state:'attached'});
+const file=await fixture(context,base);await fileGesture(page,file);await ready(page);await fileGesture(page,null,{cancel:true});await fileGesture(page,file);await ready(page);await page.getByRole('button',{name:'移除第1张图片',exact:true}).click();
+const largePath=output+'/valid-large-jpeg.jpg';await fs.writeFile(largePath,Buffer.concat([file.buffer,Buffer.alloc(4194304-file.buffer.length)]));
+const session=await context.newCDPSession(page);await session.send('Network.enable');
+session.on('Network.requestWillBeSent',e=>{if(e.request.url.endsWith('/api/tasks'))network.push({kind:'request',id:e.requestId,timestamp:e.timestamp,method:e.request.method,url:e.request.url})});
+session.on('Network.responseReceived',e=>{if(e.response.url.endsWith('/api/tasks'))network.push({kind:'response',id:e.requestId,timestamp:e.timestamp,status:e.response.status})});
+await page.evaluate(()=>{window.__submitDOM=[];let last='';new MutationObserver(()=>{const value=[...document.querySelectorAll('.task-card')].map(e=>({id:e.getAttribute('data-task-id'),emphasis:e.getAttribute('data-emphasis'),stage:e.querySelector('[data-current=true]')?.textContent,status:e.querySelector('.status')?.textContent}));const key=JSON.stringify(value);if(key!==last){last=key;window.__submitDOM.push({at:performance.now(),value})}}).observe(document,{subtree:true,childList:true,attributes:true})});
+await session.send('Tracing.start',{categories:'devtools.timeline,v8.execute,blink.user_timing,disabled-by-default-devtools.timeline.stack,disabled-by-default-v8.cpu_profiler',options:'sampling-frequency=1000',transferMode:'ReturnAsStream'});
+await page.evaluate(()=>performance.mark('P12_LARGE_START'));
+const upload=page.waitForResponse(r=>r.url().endsWith('/api/assets')&&r.request().method()==='POST');await fileGesture(page,largePath);await ready(page);const asset=await(await upload).json();assert.equal(asset.sizeBytes,4194304);
+await page.evaluate(()=>performance.mark('P12_LARGE_READY'));
+const begin=await page.evaluate(()=>{performance.mark('P12_SUBMIT_START');return performance.now()});
+const response=page.waitForResponse(r=>r.url().endsWith('/api/tasks')&&r.request().method()==='POST');await page.getByRole('button',{name:/开始制作/}).click();const task=await(await response).json();await page.waitForFunction(()=>!document.querySelector('.maker-action button')?.disabled);
+const end=await page.evaluate(()=>{performance.mark('P12_SUBMIT_END');return performance.now()});await page.waitForTimeout(100);
+const complete=new Promise(r=>session.once('Tracing.tracingComplete',r));await session.send('Tracing.end');const {stream}=await complete;let raw='';
+while(true){const part=await session.send('IO.read',{handle:stream});raw+=part.base64Encoded?Buffer.from(part.data,'base64').toString():part.data;if(part.eof)break}await session.send('IO.close',{handle:stream});await fs.writeFile(output+'/submit-trace.json',raw);
+const events=JSON.parse(raw).traceEvents,marker=events.find(e=>e.name==='P12_SUBMIT_START');assert(marker);
+const costly=events.filter(e=>e.pid===marker.pid&&e.tid===marker.tid&&e.dur>=2000&&e.ts>=marker.ts&&e.ts<=marker.ts+(end-begin+150)*1000).map(e=>({name:e.name,at:(e.ts-marker.ts)/1000+begin,duration:e.dur/1000,args:e.args})).sort((a,b)=>b.duration-a.duration),snippets=[];
+for(const event of costly){const d=event.args?.data||{},f=d.stackTrace?.[0]||d,url=d.url||d.scriptName||f.url;if(!url||!sources.has(url))continue;const source=await sources.get(url),lines=source.split('\n'),line=d.lineNumber??f.lineNumber??0,column=d.columnNumber??f.columnNumber??0;snippets.push({url,functionName:d.functionName||f.functionName,line,column,around:(lines[line]||lines[Math.max(0,line-1)]||'').slice(Math.max(0,column-120),column+1500)})}
+await fs.mkdir(output+'/sources',{recursive:true});for(const [url,promise] of sources)await fs.writeFile(output+'/sources/'+new URL(url).pathname.split('/').at(-1),await promise);
+const data=await page.evaluate(()=>({longTasks:window.__submitTasks,dom:window.__submitDOM,audit:window.__audit()})),longTasks=data.longTasks.filter(t=>t.at>=begin&&t.at<end);
+await fs.writeFile(output+'/submit-diagnosis.json',JSON.stringify({testedCommit,capturedAt:new Date().toISOString(),scope:'Single first-submit diagnostic with exact real interaction prelude; tracing starts before large file selection, Ready-to-submit order retained; CDP tracing perturbs execution and is not a comfort pass.',browser:await browser.version(),begin,end,asset:{bytes:asset.sizeBytes,width:asset.width,height:asset.height},taskId:task.id,network,...data,submitLongTasks:longTasks,costly,snippets},null,2));
+console.log(JSON.stringify({begin,end,submitLongTasks:longTasks,costly:costly.slice(0,12)},null,2));await context.close();await browser.close();relay.close();

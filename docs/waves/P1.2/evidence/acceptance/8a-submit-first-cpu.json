@@ -1,0 +1,376 @@
+[
+  {
+    "name": "click80",
+    "top": [
+      {
+        "frame": [
+          "(program)",
+          0,
+          null,
+          null
+        ],
+        "ms": 34.832,
+        "url": null
+      },
+      {
+        "frame": [
+          "sC",
+          12,
+          30,
+          155334
+        ],
+        "ms": 10.978,
+        "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+      },
+      {
+        "frame": [
+          "setAttribute",
+          0,
+          null,
+          null
+        ],
+        "ms": 7.826,
+        "url": null
+      },
+      {
+        "frame": [
+          "elementsFromPoint",
+          0,
+          null,
+          null
+        ],
+        "ms": 6.897,
+        "url": null
+      },
+      {
+        "frame": [
+          "fetch",
+          0,
+          null,
+          null
+        ],
+        "ms": 2.695,
+        "url": null
+      },
+      {
+        "frame": [
+          "cf",
+          12,
+          30,
+          170813
+        ],
+        "ms": 2.01,
+        "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+      },
+      {
+        "frame": [
+          "",
+          12,
+          30,
+          105730
+        ],
+        "ms": 1.624,
+        "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+      },
+      {
+        "frame": [
+          "setTimeout",
+          0,
+          null,
+          null
+        ],
+        "ms": 1.589,
+        "url": null
+      },
+      {
+        "frame": [
+          "s5",
+          12,
+          30,
+          163618
+        ],
+        "ms": 1.143,
+        "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+      },
+      {
+        "frame": [
+          "os",
+          12,
+          30,
+          72586
+        ],
+        "ms": 0.858,
+        "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+      },
+      {
+        "frame": [
+          "up",
+          12,
+          30,
+          119547
+        ],
+        "ms": 0.831,
+        "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+      },
+      {
+        "frame": [
+          "h",
+          57,
+          0,
+          3966
+        ],
+        "ms": 0.732,
+        "url": null
+      },
+      {
+        "frame": [
+          "clearTimeout",
+          0,
+          null,
+          null
+        ],
+        "ms": 0.625,
+        "url": null
+      },
+      {
+        "frame": [
+          "setProperty",
+          0,
+          null,
+          null
+        ],
+        "ms": 0.556,
+        "url": null
+      }
+    ],
+    "stacks": [
+      [
+        "(program)#0 <- (root)#0",
+        34.83199999999999
+      ],
+      [
+        "sC#12 <- #12 <- s_#12 <- ss#12 <- su#12 <- sZ#12 <- sK#12 <- sY#12 <- #12 <- (root)#0",
+        10.977999999999998
+      ],
+      [
+        "setAttribute#0 <- cf#12 <- #12 <- iI#12 <- up#12 <- uf#12 <- up#12 <- uf#12 <- up#12 <- uf#12 <- up#12 <- uf#12",
+        7.592999999999997
+      ],
+      [
+        "elementsFromPoint#0 <- expectHitTarget#25 <- listener#25 <- listener#25 <- (root)#0",
+        6.897000000000001
+      ],
+      [
+        "fetch#0 <- r#13 <- k#57 <- s5#12 <- #12 <- tU#12 <- cn#12 <- fq#12 <- fW#12 <- (root)#0",
+        2.695
+      ],
+      [
+        "cf#12 <- #12 <- iI#12 <- up#12 <- uf#12 <- up#12 <- uf#12 <- up#12 <- uf#12 <- up#12 <- uf#12 <- up#12",
+        2.01
+      ],
+      [
+        "#12 <- iI#12 <- up#12 <- uf#12 <- up#12 <- uf#12 <- up#12 <- uf#12 <- up#12 <- uf#12 <- up#12 <- uf#12",
+        1.624
+      ],
+      [
+        "setTimeout#0 <- t#13 <- dispatchEvent#0 <- e.s.t#13 <- onPointerDown#57 <- s5#12 <- #12 <- tU#12 <- cn#12 <- fq#12 <- fW#12 <- (root)#0",
+        1.589
+      ],
+      [
+        "s5#12 <- #12 <- tU#12 <- cn#12 <- fq#12 <- fW#12 <- (root)#0",
+        1.143
+      ],
+      [
+        "up#12 <- uf#12 <- up#12 <- uf#12 <- up#12 <- uf#12 <- up#12 <- uf#12 <- up#12 <- uf#12 <- up#12 <- uf#12",
+        0.831
+      ]
+    ]
+  },
+  {
+    "name": "commit69",
+    "top": [
+      {
+        "frame": [
+          "",
+          24,
+          0,
+          18394
+        ],
+        "ms": 32.34,
+        "url": null
+      },
+      {
+        "frame": [
+          "fetch",
+          0,
+          null,
+          null
+        ],
+        "ms": 4.481,
+        "url": null
+      },
+      {
+        "frame": [
+          "MutationObserver.observe.subtree",
+          89,
+          0,
+          60
+        ],
+        "ms": 3.34,
+        "url": ""
+      },
+      {
+        "frame": [
+          "setInterval",
+          0,
+          null,
+          null
+        ],
+        "ms": 2.499,
+        "url": null
+      },
+      {
+        "frame": [
+          "",
+          24,
+          0,
+          12132
+        ],
+        "ms": 1.894,
+        "url": null
+      },
+      {
+        "frame": [
+          "clearTimeout",
+          0,
+          null,
+          null
+        ],
+        "ms": 1.724,
+        "url": null
+      },
+      {
+        "frame": [
+          "(program)",
+          0,
+          null,
+          null
+        ],
+        "ms": 1.658,
+        "url": null
+      },
+      {
+        "frame": [
+          "aE",
+          12,
+          30,
+          63805
+        ],
+        "ms": 1.644,
+        "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+      },
+      {
+        "frame": [
+          "setTimeout",
+          0,
+          null,
+          null
+        ],
+        "ms": 1.255,
+        "url": null
+      },
+      {
+        "frame": [
+          "createElement",
+          0,
+          null,
+          null
+        ],
+        "ms": 1.129,
+        "url": null
+      },
+      {
+        "frame": [
+          "",
+          12,
+          30,
+          142664
+        ],
+        "ms": 0.904,
+        "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+      },
+      {
+        "frame": [
+          "r",
+          13,
+          0,
+          33248
+        ],
+        "ms": 0.86,
+        "url": "http://localhost:3000/_next/static/chunks/004pxbom_6o0l.js"
+      },
+      {
+        "frame": [
+          "#R",
+          20,
+          0,
+          4957
+        ],
+        "ms": 0.779,
+        "url": null
+      },
+      {
+        "frame": [
+          "M",
+          24,
+          0,
+          15091
+        ],
+        "ms": 0.658,
+        "url": null
+      }
+    ],
+    "stacks": [
+      [
+        "#24 <- M#24 <- aE#12 <- o4#12 <- ih#12 <- sw#12 <- #12 <- sb#12 <- su#12 <- sZ#12 <- sK#12 <- sY#12",
+        32.70799999999998
+      ],
+      [
+        "fetch#0 <- r#13 <- queryFn#24 <- u#13 <- w#13 <- start#13 <- fetch#13 <- #f#20 <- onSubscribe#20 <- subscribe#13 <- #24 <- #24",
+        4.481000000000001
+      ],
+      [
+        "MutationObserver.observe.subtree#89 <- (root)#0",
+        3.34
+      ],
+      [
+        "setInterval#0 <- setInterval#13 <- setInterval#13 <- #R#20 <- #m#20 <- onQueryUpdate#20 <- #13 <- #13 <- batch#13 <- #o#13 <- fetch#13 <- #f#20",
+        1.931
+      ],
+      [
+        "#24 <- batch#13 <- setQueries#24 <- #24 <- ix#12 <- uS#12 <- uw#12 <- uS#12 <- uw#12 <- uS#12 <- uw#12 <- uS#12",
+        1.894
+      ],
+      [
+        "(program)#0 <- (root)#0",
+        1.6579999999999997
+      ],
+      [
+        "aE#12 <- o4#12 <- ih#12 <- sw#12 <- #12 <- sb#12 <- su#12 <- sZ#12 <- sK#12 <- sY#12 <- #12 <- (root)#0",
+        1.644
+      ],
+      [
+        "clearTimeout#0 <- clearTimeout#13 <- clearTimeout#13 <- clearGcTimeout#13 <- addObserver#13 <- onSubscribe#20 <- subscribe#13 <- #24 <- #24 <- batch#13 <- setQueries#24 <- #24",
+        1.1940000000000002
+      ],
+      [
+        "createElement#0 <- #12 <- sx#12 <- sw#12 <- #12 <- sb#12 <- su#12 <- sZ#12 <- sK#12 <- sY#12 <- #12 <- (root)#0",
+        1.129
+      ],
+      [
+        "#12 <- sx#12 <- sw#12 <- #12 <- sb#12 <- su#12 <- sZ#12 <- sK#12 <- sY#12 <- #12 <- (root)#0",
+        0.9039999999999999
+      ]
+    ]
+  }
+]

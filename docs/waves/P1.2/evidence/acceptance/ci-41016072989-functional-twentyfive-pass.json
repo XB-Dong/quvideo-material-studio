@@ -1,0 +1,665 @@
+{
+  "testedCommit": "fabdb38fc0ed8f948cef8b4e77dccdf401f23059",
+  "capturedAt": "2026-10-30T06:58:21.977Z",
+  "browser": "149.0.7827.53",
+  "checks": [
+    {
+      "name": "desktop: brand, controls, gallery and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: Java cards keep stable IDs",
+      "status": "pass",
+      "details": [
+        {
+          "id": "demo-postcard",
+          "cover": "/media/demo/postcard-p1-cover.jpg",
+          "count": 2
+        },
+        {
+          "id": "demo-pet",
+          "cover": "/media/demo/pet-p1-cover.jpg",
+          "count": 1
+        },
+        {
+          "id": "demo-story",
+          "cover": "/media/demo/story-p1-cover.jpg",
+          "count": 3
+        },
+        {
+          "id": "demo-portrait",
+          "cover": "/media/demo/portrait-p1-cover.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "desktop: Orbit continuous despite legacy static key and hover",
+      "status": "pass",
+      "details": {
+        "before": {
+          "x": 1072.300048828125,
+          "y": 186.26998901367188,
+          "width": 84.03125,
+          "height": 84.03125
+        },
+        "after": {
+          "x": 1077.93994140625,
+          "y": 208.42999267578125,
+          "width": 84.03125,
+          "height": 84.03125
+        }
+      }
+    },
+    {
+      "name": "desktop: four card first Enter navigation and classification",
+      "status": "pass"
+    },
+    {
+      "name": "P12: actual chooser same task, cancel keeps preview, keyboard and repeat same file",
+      "status": "pass",
+      "details": {
+        "chosen": {
+          "eventCount": 1,
+          "input": {
+            "kind": "file-input-click",
+            "turn": 1,
+            "active": true,
+            "trusted": true,
+            "at": 3569.4000000000233
+          },
+          "audit": {
+            "events": [
+              {
+                "kind": "click",
+                "turn": 1,
+                "at": 3569.4000000000233,
+                "trusted": true
+              },
+              {
+                "kind": "file-input-click",
+                "turn": 1,
+                "active": true,
+                "trusted": true,
+                "at": 3569.4000000000233
+              }
+            ],
+            "liveUrls": []
+          }
+        },
+        "canceled": {
+          "eventCount": 1,
+          "input": {
+            "kind": "file-input-click",
+            "turn": 2,
+            "active": true,
+            "trusted": true,
+            "at": 4067.8000000000466
+          },
+          "audit": {
+            "events": [
+              {
+                "kind": "click",
+                "turn": 1,
+                "at": 3569.4000000000233,
+                "trusted": true
+              },
+              {
+                "kind": "file-input-click",
+                "turn": 1,
+                "active": true,
+                "trusted": true,
+                "at": 3569.4000000000233
+              },
+              {
+                "kind": "create-url",
+                "url": "blob:http://localhost:3000/aa80d9be-29df-4e89-bd0c-4ccff6406892",
+                "bytes": 42971,
+                "at": 3622.9000000000233
+              },
+              {
+                "kind": "click",
+                "turn": 2,
+                "at": 4067.8000000000466,
+                "trusted": true
+              },
+              {
+                "kind": "file-input-click",
+                "turn": 2,
+                "active": true,
+                "trusted": true,
+                "at": 4067.8000000000466
+              }
+            ],
+            "liveUrls": [
+              "blob:http://localhost:3000/aa80d9be-29df-4e89-bd0c-4ccff6406892"
+            ]
+          }
+        },
+        "again": {
+          "eventCount": 1,
+          "input": {
+            "kind": "file-input-click",
+            "turn": 3,
+            "active": true,
+            "trusted": true,
+            "at": 4118.900000000023
+          },
+          "audit": {
+            "events": [
+              {
+                "kind": "click",
+                "turn": 1,
+                "at": 3569.4000000000233,
+                "trusted": true
+              },
+              {
+                "kind": "file-input-click",
+                "turn": 1,
+                "active": true,
+                "trusted": true,
+                "at": 3569.4000000000233
+              },
+              {
+                "kind": "create-url",
+                "url": "blob:http://localhost:3000/aa80d9be-29df-4e89-bd0c-4ccff6406892",
+                "bytes": 42971,
+                "at": 3622.9000000000233
+              },
+              {
+                "kind": "click",
+                "turn": 2,
+                "at": 4067.8000000000466,
+                "trusted": true
+              },
+              {
+                "kind": "file-input-click",
+                "turn": 2,
+                "active": true,
+                "trusted": true,
+                "at": 4067.8000000000466
+              },
+              {
+                "kind": "keydown",
+                "turn": 3,
+                "at": 4118.599999999977,
+                "trusted": true
+              },
+              {
+                "kind": "file-input-click",
+                "turn": 3,
+                "active": true,
+                "trusted": true,
+                "at": 4118.900000000023
+              }
+            ],
+            "liveUrls": [
+              "blob:http://localhost:3000/aa80d9be-29df-4e89-bd0c-4ccff6406892"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "P12: parallel slots, superseded delayed uploads, remove and errors",
+      "status": "pass",
+      "details": {
+        "responses": [
+          {
+            "n": 1,
+            "id": "10c2eef0-1d24-4582-ba49-38320c89538b"
+          },
+          {
+            "n": 2,
+            "id": "34d1db35-79f4-4c73-897a-2e1dbab127a4"
+          },
+          {
+            "n": 3,
+            "id": "f764e5ab-03b8-40e3-a1f7-0842d1fb363c"
+          }
+        ],
+        "old": "blob:http://localhost:3000/31932f29-964c-49dc-9259-e6a3523d6009",
+        "latest": "blob:http://localhost:3000/048c0e18-0044-4394-b30a-7f079ac60863",
+        "gesture": {
+          "events": [
+            {
+              "kind": "create-url",
+              "url": "blob:http://localhost:3000/31932f29-964c-49dc-9259-e6a3523d6009",
+              "bytes": 42971,
+              "at": 943.9000000000233
+            },
+            {
+              "kind": "revoke-url",
+              "url": "blob:http://localhost:3000/31932f29-964c-49dc-9259-e6a3523d6009",
+              "at": 1015.9000000000233
+            },
+            {
+              "kind": "create-url",
+              "url": "blob:http://localhost:3000/048c0e18-0044-4394-b30a-7f079ac60863",
+              "bytes": 42971,
+              "at": 1022.5
+            },
+            {
+              "kind": "create-url",
+              "url": "blob:http://localhost:3000/db59a0f9-9921-4d5b-b432-5ff819c6d8f6",
+              "bytes": 42971,
+              "at": 1086.8000000000466
+            },
+            {
+              "kind": "revoke-url",
+              "url": "blob:http://localhost:3000/048c0e18-0044-4394-b30a-7f079ac60863",
+              "at": 3312.9000000000233
+            },
+            {
+              "kind": "create-url",
+              "url": "blob:http://localhost:3000/72f87e45-7d6e-4cb9-85b2-a149e8c7fa07",
+              "bytes": 42971,
+              "at": 3379.8000000000466
+            },
+            {
+              "kind": "revoke-url",
+              "url": "blob:http://localhost:3000/72f87e45-7d6e-4cb9-85b2-a149e8c7fa07",
+              "at": 3449.4000000000233
+            },
+            {
+              "kind": "create-url",
+              "url": "blob:http://localhost:3000/925045b8-1dd4-418a-9544-13a0cbfc3dc7",
+              "bytes": 42971,
+              "at": 3450.100000000093
+            },
+            {
+              "kind": "revoke-url",
+              "url": "blob:http://localhost:3000/925045b8-1dd4-418a-9544-13a0cbfc3dc7",
+              "at": 3589.3000000000466
+            },
+            {
+              "kind": "create-url",
+              "url": "blob:http://localhost:3000/44f7c1e7-d9aa-4e31-a0c1-72525366c27b",
+              "bytes": 42971,
+              "at": 3622.20000000007
+            }
+          ],
+          "liveUrls": [
+            "blob:http://localhost:3000/db59a0f9-9921-4d5b-b432-5ff819c6d8f6",
+            "blob:http://localhost:3000/44f7c1e7-d9aa-4e31-a0c1-72525366c27b"
+          ]
+        }
+      }
+    },
+    {
+      "name": "P12: public cover routing bridge, direct/back/forward/rapid and privacy cleanup",
+      "status": "pass",
+      "details": {
+        "events": [
+          {
+            "kind": "fetch",
+            "id": 1,
+            "url": "/api/session",
+            "at": 142.40000000002328
+          },
+          {
+            "kind": "fetch",
+            "id": 2,
+            "url": "/api/categories",
+            "at": 158.40000000002328
+          },
+          {
+            "kind": "fetch",
+            "id": 3,
+            "url": "/api/templates",
+            "at": 164.5
+          },
+          {
+            "kind": "fetch",
+            "id": 4,
+            "url": "http://localhost:3000/?_rsc=5CB68i4pnAekjehf",
+            "at": 342.60000000009313
+          },
+          {
+            "kind": "fetch",
+            "id": 5,
+            "url": "http://localhost:3000/history?_rsc=5CB68i4pnAekjehf",
+            "at": 346.60000000009313
+          },
+          {
+            "kind": "fetch",
+            "id": 6,
+            "url": "http://localhost:3000/templates/demo-postcard?_rsc=5CB68i4pnAekjehf",
+            "at": 348.10000000009313
+          },
+          {
+            "kind": "fetch",
+            "id": 7,
+            "url": "http://localhost:3000/templates/demo-pet?_rsc=5CB68i4pnAekjehf",
+            "at": 348.4000000000233
+          },
+          {
+            "kind": "fetch",
+            "id": 8,
+            "url": "http://localhost:3000/templates/demo-story?_rsc=5CB68i4pnAekjehf",
+            "at": 404.60000000009313
+          },
+          {
+            "kind": "fetch",
+            "id": 9,
+            "url": "http://localhost:3000/?_rsc=8nTjltbQWvg6NcbE",
+            "at": 412.70000000006985
+          },
+          {
+            "kind": "fetch",
+            "id": 10,
+            "url": "http://localhost:3000/templates/demo-postcard?_rsc=tXyZJ52UQVBCVsD3",
+            "at": 417.60000000009313
+          },
+          {
+            "kind": "fetch",
+            "id": 11,
+            "url": "http://localhost:3000/history?_rsc=slXvbtRVQed3BeV4",
+            "at": 422.5
+          },
+          {
+            "kind": "fetch",
+            "id": 12,
+            "url": "http://localhost:3000/templates/demo-pet?_rsc=tXyZJ52UQVBCVsD3",
+            "at": 448
+          },
+          {
+            "kind": "fetch",
+            "id": 13,
+            "url": "http://localhost:3000/templates/demo-story?_rsc=tXyZJ52UQVBCVsD3",
+            "at": 459.70000000006985
+          },
+          {
+            "kind": "fetch",
+            "id": 14,
+            "url": "http://localhost:3000/templates/demo-portrait?_rsc=tXyZJ52UQVBCVsD3",
+            "at": 473.20000000006985
+          },
+          {
+            "kind": "fetch",
+            "id": 15,
+            "url": "http://localhost:3000/templates/demo-pet?_rsc=hE4p78L5-vygS9zh",
+            "at": 2468.600000000093
+          },
+          {
+            "kind": "fetch",
+            "id": 16,
+            "url": "/api/templates/demo-pet",
+            "at": 2578
+          },
+          {
+            "kind": "fetch",
+            "id": 17,
+            "url": "/api/tasks?limit=20",
+            "at": 2601.70000000007
+          },
+          {
+            "kind": "fetch",
+            "id": 18,
+            "url": "/api/tasks?activeOnly=true&limit=50",
+            "at": 2606.5
+          },
+          {
+            "kind": "bridge",
+            "src": "http://localhost:3000/media/demo/pet-p1-cover.jpg",
+            "at": 2716.70000000007
+          }
+        ],
+        "bridges": [
+          "http://localhost:3000/media/demo/pet-p1-cover.jpg"
+        ],
+        "waapi": [
+          {
+            "state": "running",
+            "name": "p12-page-in",
+            "target": "p12-route-surface"
+          },
+          {
+            "state": "running",
+            "name": "p12-flow",
+            "target": "[object SVGAnimatedString]"
+          },
+          {
+            "state": "running",
+            "name": "p12-status-in",
+            "target": "upload-plus"
+          },
+          {
+            "state": "running",
+            "name": "p12-status-in",
+            "target": "p12-upload-status"
+          },
+          {
+            "state": "running",
+            "name": "p12-flow",
+            "target": "[object SVGAnimatedString]"
+          },
+          {
+            "state": "running",
+            "target": "p12-cover-bridge"
+          }
+        ]
+      }
+    },
+    {
+      "name": "desktop: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: multiple tasks, request error recovery, true failure and refresh",
+      "status": "pass",
+      "details": {
+        "taskIds": [
+          "9cc93706-eefd-40a5-9684-2290b43d5e06",
+          "19329e1d-cad0-4506-b8b4-2f34ca370c61",
+          "80710ff1-d43c-45bc-ae9d-00abe2ccd387"
+        ],
+        "outcomes": [
+          {
+            "id": "9cc93706-eefd-40a5-9684-2290b43d5e06",
+            "status": "SUCCEEDED",
+            "stage": "FINALIZE",
+            "failedStage": null
+          },
+          {
+            "id": "19329e1d-cad0-4506-b8b4-2f34ca370c61",
+            "status": "SUCCEEDED",
+            "stage": "FINALIZE",
+            "failedStage": null
+          },
+          {
+            "id": "80710ff1-d43c-45bc-ae9d-00abe2ccd387",
+            "status": "FAILED",
+            "stage": "GENERATE",
+            "failedStage": "GENERATE"
+          }
+        ],
+        "injectedQueryFailures": 1,
+        "stoppedTaskPollCount": 14
+      }
+    },
+    {
+      "name": "desktop: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: runtime errors",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: brand, controls, gallery and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: Java cards keep stable IDs",
+      "status": "pass",
+      "details": [
+        {
+          "id": "demo-postcard",
+          "cover": "/media/demo/postcard-p1-cover.jpg",
+          "count": 2
+        },
+        {
+          "id": "demo-pet",
+          "cover": "/media/demo/pet-p1-cover.jpg",
+          "count": 1
+        },
+        {
+          "id": "demo-story",
+          "cover": "/media/demo/story-p1-cover.jpg",
+          "count": 3
+        },
+        {
+          "id": "demo-portrait",
+          "cover": "/media/demo/portrait-p1-cover.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "reduce: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: runtime errors",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: brand, controls, gallery and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: Java cards keep stable IDs",
+      "status": "pass",
+      "details": [
+        {
+          "id": "demo-postcard",
+          "cover": "/media/demo/postcard-p1-cover.jpg",
+          "count": 2
+        },
+        {
+          "id": "demo-pet",
+          "cover": "/media/demo/pet-p1-cover.jpg",
+          "count": 1
+        },
+        {
+          "id": "demo-story",
+          "cover": "/media/demo/story-p1-cover.jpg",
+          "count": 3
+        },
+        {
+          "id": "demo-portrait",
+          "cover": "/media/demo/portrait-p1-cover.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "mobile: true coarse first tap direct navigation",
+      "status": "pass",
+      "details": {
+        "observedAt": 2215.70000000007,
+        "rafPending": 0,
+        "rafExecuted": 16,
+        "gpuAllocated": 0,
+        "gpuLive": 0,
+        "coarse": true,
+        "fine": false,
+        "hover": false,
+        "reduce": false,
+        "hidden": false,
+        "animations": [
+          {
+            "name": "p12-page-in",
+            "state": "finished",
+            "target": "p12-route-surface",
+            "iterations": 1
+          },
+          {
+            "name": "edge-flow",
+            "state": "paused",
+            "target": {},
+            "iterations": null
+          },
+          {
+            "name": "card-in",
+            "state": "finished",
+            "target": "template-card",
+            "iterations": 1
+          },
+          {
+            "name": "edge-flow",
+            "state": "running",
+            "target": {},
+            "iterations": null
+          },
+          {
+            "name": "card-in",
+            "state": "finished",
+            "target": "template-card",
+            "iterations": 1
+          },
+          {
+            "name": "edge-flow",
+            "state": "running",
+            "target": {},
+            "iterations": null
+          },
+          {
+            "name": "card-in",
+            "state": "finished",
+            "target": "template-card",
+            "iterations": 1
+          },
+          {
+            "name": "edge-flow",
+            "state": "running",
+            "target": {},
+            "iterations": null
+          },
+          {
+            "name": "card-in",
+            "state": "finished",
+            "target": "template-card",
+            "iterations": 1
+          },
+          {
+            "name": "edge-breathe",
+            "state": "running",
+            "target": {},
+            "iterations": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "mobile: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: runtime errors",
+      "status": "pass"
+    }
+  ],
+  "scope": "P12 independent functional checks; final G02 also requires page scenes/lifecycle/three-page budgets/remote CI; mail deferred by user"
+}

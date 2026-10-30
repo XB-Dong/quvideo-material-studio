@@ -1,0 +1,15 @@
+{
+  "scope": "Full traces and public generated chunks remain ignored raw, not Git. Tracing is diagnostic, not performance acceptance.",
+  "traces": [
+    {
+      "path": "runtime/p12-8a/submit-diagnosis/submit-trace.json",
+      "bytes": 874784,
+      "sha256": "6a948479d059628ec15843a601a53e1e8b7cf6074abb70202918832302cc71b8"
+    },
+    {
+      "path": "runtime/p12-8a/submit-diagnosis-r2/submit-trace.json",
+      "bytes": 1292048,
+      "sha256": "91f195c2e2652300b936591b7b7533b6082916f371a219703a8ca8b59c5c5f95"
+    }
+  ]
+}
