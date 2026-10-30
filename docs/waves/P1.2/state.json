@@ -33,9 +33,9 @@
   "dependenciesInstalledForP12": true,
   "productRestartedForP12": true,
   "developmentWorktreesCreatedForP12": false,
-  "productChecks": "not_run_for_P1.2",
-  "aestheticGate": "not_run",
-  "comfortGate": "not_run",
+  "productChecks": "independent_checks_in_progress_at_5e2af4c",
+  "aestheticGate": "reviewing",
+  "comfortGate": "validating",
   "homePolicy": "preserve_approved_layout_palette_assets_and_motion; functional_click_navigation_only",
   "mailStatus": "deferred_by_user_excluded_from_P1.2",
   "effortEstimateHours": [
@@ -63,7 +63,7 @@
       "taskId": "P12-FOUND",
       "rootTaskId": "P12-FOUND",
       "role": "Frontend",
-      "status": "in_progress",
+      "status": "implemented_pending_independent_gates",
       "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
       "dependencies": [
         "P12-BASE"
@@ -80,7 +80,7 @@
       "taskId": "P12-ROUTE",
       "rootTaskId": "P12-ROUTE",
       "role": "Frontend",
-      "status": "ready_after_dependencies",
+      "status": "implemented_pending_independent_gates",
       "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
       "dependencies": [
         "P12-FOUND"
@@ -96,7 +96,7 @@
       "taskId": "P12-STUDIO",
       "rootTaskId": "P12-STUDIO",
       "role": "Frontend",
-      "status": "ready_after_dependencies",
+      "status": "implemented_pending_independent_gates",
       "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
       "dependencies": [
         "P12-ROUTE"
@@ -113,7 +113,7 @@
       "taskId": "P12-HISTORY",
       "rootTaskId": "P12-HISTORY",
       "role": "Frontend",
-      "status": "ready_after_dependencies",
+      "status": "implemented_pending_independent_gates",
       "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
       "dependencies": [
         "P12-STUDIO"
@@ -130,7 +130,7 @@
       "taskId": "P12-DIALOG",
       "rootTaskId": "P12-DIALOG",
       "role": "Frontend",
-      "status": "ready_after_dependencies",
+      "status": "implemented_pending_independent_gates",
       "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
       "dependencies": [
         "P12-HISTORY"
@@ -199,7 +199,7 @@
     }
   ],
   "preparationRecordedAt": "2026-10-30T12:32:21.079406+08:00",
-  "nextAction": "Frontend_FOUND_ROUTE_STUDIO_HISTORY_DIALOG; independent_Acceptance_baseline_then_checks",
+  "nextAction": "Acceptance_and_Reviewer_verify_5e2af4c; integrate_tests_then_remote_CI",
   "p11VerifiedCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
   "p11VerifiedCIRun": 41002700967,
   "conditionalExecutionAuthorization": {

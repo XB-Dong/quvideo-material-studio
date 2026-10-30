@@ -29,7 +29,7 @@
 | P12-REVIEW | 独立Reviewer | 首个可运行子页后审中间产物，DIALOG后逐页签美学 |
 | P12-DELIVERY | Leader | ACCEPT+REVIEW后集成完整CI、报告/源码/实际投入与回滚，然后停止 |
 
-Leader+最多三子；本轮无新素材/后端任务。唯一Frontend顺序推进，避免多人改studio.tsx、Shell与CSS。Acceptance只写新独立验收，Reviewer只写审核报告；Leader持有依赖锁/共享CI/契约与最终集成。具体所有权见ROLES、任务包与CONTEXT-MAP。
+Leader+最多三子；本轮不新增素材或后端Agent。唯一Frontend顺序推进，避免多人改studio.tsx、Shell与CSS。Acceptance只写新独立验收，Reviewer只写审核报告；Leader持有依赖锁/共享CI/契约与最终集成，并按决定0014唯一实现认证结果卡片缩略图，原PNG/上传/DB保持。具体所有权见ROLES、任务包与CONTEXT-MAP。
 
 ## 启动和完成门槛
 
