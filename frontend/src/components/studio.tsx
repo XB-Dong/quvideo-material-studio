@@ -7,7 +7,12 @@ import type { Asset, Task, Template } from "../lib/types";
 import { useIdentity } from "./providers";
 import { Shell } from "./shell";
 import { History } from "./history";
-import { SceneEdge, beginCoverTransition, clickFeedback } from "./motion/journey";
+import { StatePanel } from "./motion/state-panel";
+import {
+  SceneEdge,
+  beginCoverTransition,
+  clickFeedback,
+} from "./motion/journey";
 import { StudioIcon } from "./visual/icons";
 export function Studio({ id }: { id: string }) {
   const template = useQuery({
@@ -18,16 +23,25 @@ export function Studio({ id }: { id: string }) {
   return (
     <Shell>
       {template.isPending ? (
-        <div className="empty-state">正在加载模板…</div>
+        <StatePanel
+          loading
+          title="正在加载模板"
+          detail="即将展开创作工作台。"
+        />
       ) : template.isError ? (
-        <div className="empty-state" role="alert">
-          <h2>
-            {template.error instanceof ApiError && template.error.status === 404
-              ? "这个模板不存在"
-              : "模板暂时无法加载"}
-          </h2>
-          <button onClick={() => template.refetch()}>重试</button>{" "}
-          <Link href="/">返回模板列表</Link>
+        <div role="alert">
+          <StatePanel
+            title={
+              template.error instanceof ApiError &&
+              template.error.status === 404
+                ? "这个模板不存在"
+                : "模板暂时无法加载"
+            }
+            detail="你可以重试，或选择另一张模板继续创作。"
+          >
+            <button onClick={() => template.refetch()}>重试</button>
+            <Link href="/">返回模板列表</Link>
+          </StatePanel>
         </div>
       ) : (
         <div className="studio-layout p12-studio-layout">
@@ -127,8 +141,16 @@ export function UploadSlot({
     }
   };
   return (
-    <div data-upload-state={slot.status} className={"upload-slot p12-upload " + slot.status.toLowerCase()}>
-      <label className="upload-label" onPointerDown={e=>{if(!disabled)clickFeedback(e.currentTarget)}}>
+    <div
+      data-upload-state={slot.status}
+      className={"upload-slot p12-upload " + slot.status.toLowerCase()}
+    >
+      <label
+        className="upload-label"
+        onPointerDown={(e) => {
+          if (!disabled) clickFeedback(e.currentTarget);
+        }}
+      >
         <input
           disabled={disabled}
           type="file"
@@ -152,7 +174,14 @@ export function UploadSlot({
             <small>点击选择 · JPEG / PNG</small>
           </>
         )}
-        <svg className="p12-upload-edge" aria-hidden="true" viewBox="0 0 300 150" preserveAspectRatio="none"><rect x="2" y="2" width="296" height="146" rx="12" pathLength="100"/></svg>
+        <svg
+          className="p12-upload-edge"
+          aria-hidden="true"
+          viewBox="0 0 300 150"
+          preserveAspectRatio="none"
+        >
+          <rect x="2" y="2" width="296" height="146" rx="12" pathLength="100" />
+        </svg>
         <span className="upload-overlay">
           {slot.status === "UPLOADING"
             ? "正在上传…"
@@ -161,7 +190,25 @@ export function UploadSlot({
               : "选择照片"}
         </span>
       </label>
-      <div className="p12-upload-status" aria-live="polite" key={slot.status}>{slot.status==="READY"?<><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m4 10 4 4 8-9"/></svg>已准备好</>:slot.status==="UPLOADING"?<><span className="p12-upload-dot"/>连接素材服务</>:slot.status==="ERROR"?"请重新选择图片":""}</div>
+      <div className="p12-upload-status" aria-live="polite" key={slot.status}>
+        {slot.status === "READY" ? (
+          <>
+            <svg aria-hidden="true" viewBox="0 0 20 20">
+              <path d="m4 10 4 4 8-9" />
+            </svg>
+            已准备好
+          </>
+        ) : slot.status === "UPLOADING" ? (
+          <>
+            <span className="p12-upload-dot" />
+            连接素材服务
+          </>
+        ) : slot.status === "ERROR" ? (
+          "请重新选择图片"
+        ) : (
+          ""
+        )}
+      </div>
       {slot.status !== "EMPTY" && (
         <button
           className="remove-upload"
@@ -268,7 +315,12 @@ export function Maker({ template: t }: { template: Template }) {
   };
   return (
     <aside className="maker-panel p12-studio">
-      <Link href="/" className="back-link" onNavigate={()=>beginCoverTransition(t.id)} onPointerDown={e=>clickFeedback(e.currentTarget)}>
+      <Link
+        href="/"
+        className="back-link"
+        onNavigate={() => beginCoverTransition(t.id)}
+        onPointerDown={(e) => clickFeedback(e.currentTarget)}
+      >
         ← 返回探索
       </Link>
       <h1>{t.title}</h1>
@@ -278,7 +330,7 @@ export function Maker({ template: t }: { template: Template }) {
         src={t.coverUrl}
         alt={t.title + "示例封面"}
       />
-      <SceneEdge/>
+      <SceneEdge />
       <p className="description">{t.description}</p>
       <div className="section-top">
         <h2>上传素材</h2>
@@ -301,7 +353,16 @@ export function Maker({ template: t }: { template: Template }) {
           />
         ))}
       </div>
-      <div className="maker-action" data-submission-state={submitting?"submitting":message.startsWith("任务已受理")?"accepted":"idle"}>
+      <div
+        className="maker-action"
+        data-submission-state={
+          submitting
+            ? "submitting"
+            : message.startsWith("任务已受理")
+              ? "accepted"
+              : "idle"
+        }
+      >
         {message && (
           <p role="status" className="submission-message">
             {message}
@@ -312,7 +373,7 @@ export function Maker({ template: t }: { template: Template }) {
           disabled={
             !session || submitting || slots.some((s) => s.status !== "READY")
           }
-          onPointerDown={e=>clickFeedback(e.currentTarget)}
+          onPointerDown={(e) => clickFeedback(e.currentTarget)}
           onClick={submit}
         >
           {submitting ? "正在提交…" : "开始制作"} <StudioIcon name="spark" />

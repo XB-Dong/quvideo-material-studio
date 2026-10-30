@@ -127,8 +127,10 @@ export function CreativeShowcase({
           <div className="hero-actions">
             <Link
               className="hero-cta"
-              onPointerDown={e=>clickFeedback(e.currentTarget)}
-              onNavigate={()=>{if(templates[0])beginCoverTransition(templates[0].id)}}
+              onPointerDown={(e) => clickFeedback(e.currentTarget)}
+              onNavigate={() => {
+                if (templates[0]) beginCoverTransition(templates[0].id);
+              }}
               href={
                 templates[0] ? "/templates/" + templates[0].id : "#templates"
               }

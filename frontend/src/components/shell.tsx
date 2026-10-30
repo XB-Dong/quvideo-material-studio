@@ -9,14 +9,20 @@ export function Modal({
   title,
   children,
   onClose,
+  origin,
 }: {
   title: string;
   children: React.ReactNode;
   onClose: () => void;
+  origin?: { left: number; top: number; width: number; height: number } | null;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
   const titleId = useId();
+  const animation = useRef<Animation | null>(null);
+  const latestClose = useRef(onClose);
+  latestClose.current = onClose;
   const { enabled } = useMotionPreferences();
+  const entry=useRef({enabled,origin});
   const [closing, setClosing] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const close = () => {
@@ -26,6 +32,22 @@ export function Modal({
       return;
     }
     setClosing(true);
+    animation.current?.cancel();
+    const image =
+      ref.current?.querySelector<HTMLImageElement>(".preview-image");
+    if (image && origin && typeof image.animate === "function") {
+      const b = image.getBoundingClientRect();
+      animation.current = image.animate(
+        [
+          { transform: "none", opacity: 1 },
+          {
+            transform: `translate(${origin.left + origin.width / 2 - b.left - b.width / 2}px,${origin.top + origin.height / 2 - b.top - b.height / 2}px) scale(.94)`,
+            opacity: 0,
+          },
+        ],
+        { duration: 120, easing: "ease-in", fill: "forwards" },
+      );
+    }
     timer.current = setTimeout(() => {
       ref.current?.close();
       onClose();
@@ -35,17 +57,61 @@ export function Modal({
     const previous = document.activeElement as HTMLElement | null;
     if (ref.current && !ref.current.open) ref.current.showModal();
     return () => {
+      animation.current?.cancel();
       if (timer.current) clearTimeout(timer.current);
       if (previous?.isConnected) previous.focus();
+    };
+  }, []);
+  useEffect(() => {
+    if (!enabled) {
+      animation.current?.cancel();
+      if (closing) {
+        if (timer.current) clearTimeout(timer.current);
+        latestClose.current();
+      }
+    }
+  }, [enabled, closing]);
+  useEffect(() => {
+    const {enabled,origin}=entry.current;
+    const media =
+      typeof matchMedia === "function"
+        ? matchMedia("(prefers-reduced-motion: reduce)")
+        : null;
+    const cancel = () => {
+      animation.current?.cancel();
+    };
+    media?.addEventListener("change", cancel);
+    document.addEventListener("visibilitychange", cancel);
+    const image =
+      ref.current?.querySelector<HTMLImageElement>(".preview-image");
+    if (enabled && image && origin && typeof image.animate === "function") {
+      const b = image.getBoundingClientRect();
+      if (b.width && b.height)
+        animation.current = image.animate(
+          [
+            {
+              transform: `translate(${origin.left + origin.width / 2 - b.left - b.width / 2}px,${origin.top + origin.height / 2 - b.top - b.height / 2}px) scale(${Math.min(0.95, origin.width / b.width)})`,
+              opacity: 0.45,
+            },
+            { transform: "none", opacity: 1 },
+          ],
+          { duration: 200, easing: "cubic-bezier(.2,.7,.2,1)" },
+        );
+    }
+    return () => {
+      cancel();
+      media?.removeEventListener("change", cancel);
+      document.removeEventListener("visibilitychange", cancel);
     };
   }, []);
   return (
     <dialog
       ref={ref}
       aria-labelledby={titleId}
-      className={closing ? "modal-closing" : undefined}
+      className={closing ? "p12-dialog modal-closing" : "p12-dialog"}
       onCancel={(event) => {
         event.preventDefault();
+        animation.current?.cancel();
         ref.current?.close();
         onClose();
       }}

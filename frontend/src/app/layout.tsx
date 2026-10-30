@@ -12,7 +12,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN">
       <body>
-        <Providers><VisualJourney />{children}</Providers>
+        <Providers>
+          <VisualJourney />
+          {children}
+        </Providers>
       </body>
     </html>
   );

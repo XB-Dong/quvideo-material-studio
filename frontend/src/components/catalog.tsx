@@ -80,8 +80,8 @@ export function Catalog() {
               <Link
                 href={"/templates/" + t.id}
                 className="template-card"
-                onPointerDown={e=>clickFeedback(e.currentTarget)}
-                onNavigate={()=>beginCoverTransition(t.id)}
+                onPointerDown={(e) => clickFeedback(e.currentTarget)}
+                onNavigate={() => beginCoverTransition(t.id)}
                 key={t.id}
               >
                 <div className="template-image">
