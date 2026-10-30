@@ -8,7 +8,6 @@ import {
 import { afterEach, beforeEach, describe, it, expect, vi } from "vitest";
 import {
   MotionPreferences,
-  MotionToggle,
   useMotionPreferences,
 } from "./motion/preferences";
 import { Modal } from "./shell";
@@ -18,7 +17,6 @@ function Probe() {
   const p = useMotionPreferences();
   return (
     <>
-      <MotionToggle />
       <output>{p.enabled ? "moving" : "still"}</output>
     </>
   );
@@ -40,26 +38,14 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 describe("motion preferences", () => {
-  it("persists static preference without removing accessible controls", () => {
-    const first = render(
-      <MotionPreferences>
-        <Probe />
-      </MotionPreferences>,
-    );
+  it("ignores the legacy visual preference without clearing identity data", () => {
+    localStorage.setItem("yingzuo-static", "true");
+    localStorage.setItem("identity-fixture", "preserved");
+    render(<MotionPreferences><Probe /></MotionPreferences>);
     expect(screen.getByText("moving")).toBeInTheDocument();
-    fireEvent.click(screen.getByRole("button", { name: "动态效果" }));
-    expect(screen.getByText("still")).toBeInTheDocument();
-    first.unmount();
-    render(
-      <MotionPreferences>
-        <Probe />
-      </MotionPreferences>,
-    );
-    expect(screen.getByRole("button", { name: "静态模式" })).toHaveAttribute(
-      "aria-pressed",
-      "false",
-    );
-    expect(screen.getByText("still")).toBeInTheDocument();
+    expect(screen.queryByRole("button")).not.toBeInTheDocument();
+    expect(localStorage.getItem("identity-fixture")).toBe("preserved");
+    expect(localStorage.getItem("yingzuo-static")).toBeNull();
   });
   it("honors live system reduce and removes its listener on unmount", () => {
     const view = render(
@@ -72,7 +58,6 @@ describe("motion preferences", () => {
       listeners.forEach((f) => f());
     });
     expect(screen.getByText("still")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "静态模式" })).toBeDisabled();
     view.unmount();
     expect(listeners.size).toBe(0);
   });

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useState, useRef, useEffect, useId } from "react";
 import { useIdentity } from "./providers";
-import { MotionToggle, useMotionPreferences } from "./motion/preferences";
+import { useMotionPreferences } from "./motion/preferences";
 
 export function Modal({
   title,
@@ -69,15 +69,14 @@ export function Shell({ children }: { children: React.ReactNode }) {
     <>
       <header className="site-header">
         <Link href="/" className="brand">
-          <span className="brand-mark">映</span>
+          <span className="brand-mark">疏</span>
           <span>
-            映作<span className="brand-caption">MATERIAL STUDIO</span>
+            疏影<span className="brand-caption">SHUYING STUDIO</span>
           </span>
         </Link>
         <nav aria-label="主导航">
           <Link href="/">探索模板</Link>
           <Link href="/history">我的作品</Link>
-          <MotionToggle />
           <button className="identity-button" onClick={() => setOpen(true)}>
             <span className="avatar">◉</span>
             {session?.displayName || "连接身份中"}
@@ -92,7 +91,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
       )}
       <main>{children}</main>
       <footer>
-        映作工作室 <span>让每一份灵感，都有自己的画面。</span>
+        疏影工作室 <span>让每一份灵感，都有自己的画面。</span>
         <small>模拟制作演示 · 无真实 AI 调用</small>
       </footer>
       {open && (

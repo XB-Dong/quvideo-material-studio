@@ -9,19 +9,14 @@ import {
 type Preferences = {
   enabled: boolean;
   systemReduced: boolean;
-  manualStatic: boolean;
-  setStatic: (value: boolean) => void;
 };
 const Context = createContext<Preferences>({
   enabled: false,
   systemReduced: false,
-  manualStatic: false,
-  setStatic: () => {},
 });
 export function MotionPreferences({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false),
     [systemReduced, setReduced] = useState(false),
-    [manualStatic, setManual] = useState(false),
     [visible, setVisible] = useState(true);
   useEffect(() => {
     if (typeof window.matchMedia !== "function") {
@@ -34,7 +29,7 @@ export function MotionPreferences({ children }: { children: ReactNode }) {
     sync();
     visibility();
     try {
-      setManual(localStorage.getItem("yingzuo-static") === "true");
+      localStorage.removeItem("yingzuo-static");
     } catch {}
     setReady(true);
     media.addEventListener("change", sync);
@@ -44,24 +39,16 @@ export function MotionPreferences({ children }: { children: ReactNode }) {
       document.removeEventListener("visibilitychange", visibility);
     };
   }, []);
-  const setStatic = (value: boolean) => {
-    setManual(value);
-    try {
-      localStorage.setItem("yingzuo-static", String(value));
-    } catch {}
-  };
   return (
     <Context
       value={{
-        enabled: ready && !systemReduced && !manualStatic && visible,
+        enabled: ready && !systemReduced && visible,
         systemReduced,
-        manualStatic,
-        setStatic,
       }}
     >
       <div
         className={
-          !ready || systemReduced || manualStatic || !visible
+          !ready || systemReduced || !visible
             ? "motion-static"
             : ""
         }
@@ -73,17 +60,4 @@ export function MotionPreferences({ children }: { children: ReactNode }) {
 }
 export function useMotionPreferences() {
   return useContext(Context);
-}
-export function MotionToggle() {
-  const p = useMotionPreferences();
-  return (
-    <button
-      className="motion-toggle"
-      aria-pressed={!p.manualStatic && !p.systemReduced}
-      disabled={p.systemReduced}
-      onClick={() => p.setStatic(!p.manualStatic)}
-    >
-      {p.manualStatic || p.systemReduced ? "静态模式" : "动态效果"}
-    </button>
-  );
 }
