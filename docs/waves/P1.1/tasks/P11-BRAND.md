@@ -3,11 +3,11 @@
 - taskId: P11-BRAND
 - rootTaskId: P11-BRAND
 - waveId: P1.1
-- roundId: assigned_at_dispatch
+- roundId: P11-R1
 - status: prepared_not_dispatched
 - role: Frontend
-- baseCommit: e485792839d6c3af1a6587a8964f983250366b39
-- baseCommitMeaning: P1 sealed preparation anchor; refresh exact integrated SHA at authorized dispatch
+- baseCommit: c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef
+- baseCommitMeaning: authorized execution source baseline; record later integrated SHAs separately
 - specVersion: P1.1-1.0.0
 - requirementIds: P11-BRAND-01, P11-AUTO-01, P11-REG-01
 - dependencies: P11-BASE
@@ -24,7 +24,7 @@
 
 ## Context and authorization
 
-Read AGENTS.md, CONSTITUTION.md, docs/agents/PROTOCOL.md, docs/waves/P1.1/PLAN.md, ROLES.md, CONTEXT-MAP.md, ACCEPTANCE.md, state.json and specs/p1.1/{requirements,design,effects,assets,ci-mail}.md. This preparation packet is not execution authorization. Leader refreshes precise base before dispatch.
+Read AGENTS.md, CONSTITUTION.md, docs/agents/PROTOCOL.md, docs/waves/P1.1/PLAN.md, ROLES.md, CONTEXT-MAP.md, ACCEPTANCE.md, state.json and specs/p1.1/{requirements,design,effects,assets,ci-mail}.md. User explicitly started P1.1 on 2026-10-30. Execute only when Leader dispatches this task; source baseline is the exact baseCommit above.
 
 ## Goal
 

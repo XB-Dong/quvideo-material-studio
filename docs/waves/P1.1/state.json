@@ -10,7 +10,11 @@
   "executionCompletedAt": null,
   "timezone": "Etc/GMT-8",
   "deadline": null,
-  "activeDevelopmentAgents": [],
+  "activeDevelopmentAgents": [
+    "p11_frontend",
+    "p11_assets",
+    "p11_acceptance"
+  ],
   "activePreparationReviewers": [],
   "maxNativeWorkers": 3,
   "actualProvider": null,
@@ -41,21 +45,21 @@
       "taskId": "P11-BASE",
       "rootTaskId": "P11-BASE",
       "owner": "Leader",
-      "status": "prepared_not_dispatched",
+      "status": "completed",
       "dependencies": [],
       "runtimeDependencies": [],
       "requirements": [
         "P11-QUALITY-01",
         "P11-REG-01"
       ],
-      "baseCommit": "e485792839d6c3af1a6587a8964f983250366b39",
+      "baseCommit": "c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef",
       "repairCount": 0
     },
     {
       "taskId": "P11-CI-MAIL",
       "rootTaskId": "P11-CI-MAIL",
       "owner": "Leader",
-      "status": "prepared_not_dispatched",
+      "status": "in_progress",
       "dependencies": [
         "P11-BASE"
       ],
@@ -63,14 +67,14 @@
       "requirements": [
         "P11-MAIL-01"
       ],
-      "baseCommit": "e485792839d6c3af1a6587a8964f983250366b39",
+      "baseCommit": "c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef",
       "repairCount": 0
     },
     {
       "taskId": "P11-ASSET",
       "rootTaskId": "P11-ASSET",
       "owner": "Asset",
-      "status": "prepared_not_dispatched",
+      "status": "in_progress",
       "dependencies": [
         "P11-BASE"
       ],
@@ -79,14 +83,14 @@
         "P11-INK-01",
         "P11-QUALITY-01"
       ],
-      "baseCommit": "e485792839d6c3af1a6587a8964f983250366b39",
+      "baseCommit": "c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef",
       "repairCount": 0
     },
     {
       "taskId": "P11-BRAND",
       "rootTaskId": "P11-BRAND",
       "owner": "Frontend",
-      "status": "prepared_not_dispatched",
+      "status": "in_progress",
       "dependencies": [
         "P11-BASE"
       ],
@@ -96,14 +100,14 @@
         "P11-AUTO-01",
         "P11-REG-01"
       ],
-      "baseCommit": "e485792839d6c3af1a6587a8964f983250366b39",
+      "baseCommit": "c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef",
       "repairCount": 0
     },
     {
       "taskId": "P11-SCENE",
       "rootTaskId": "P11-SCENE",
       "owner": "Frontend",
-      "status": "prepared_not_dispatched",
+      "status": "ready_after_dependencies",
       "dependencies": [
         "P11-BRAND",
         "P11-ASSET"
@@ -114,14 +118,14 @@
         "P11-EDGE-01",
         "P11-QUALITY-01"
       ],
-      "baseCommit": "e485792839d6c3af1a6587a8964f983250366b39",
+      "baseCommit": "c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef",
       "repairCount": 0
     },
     {
       "taskId": "P11-CARDS",
       "rootTaskId": "P11-CARDS",
       "owner": "Frontend",
-      "status": "prepared_not_dispatched",
+      "status": "ready_after_dependencies",
       "dependencies": [
         "P11-SCENE"
       ],
@@ -131,14 +135,14 @@
         "P11-AUTO-01",
         "P11-REG-01"
       ],
-      "baseCommit": "e485792839d6c3af1a6587a8964f983250366b39",
+      "baseCommit": "c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef",
       "repairCount": 0
     },
     {
       "taskId": "P11-ACCEPT",
       "rootTaskId": "P11-ACCEPT",
       "owner": "Acceptance",
-      "status": "prepared_not_dispatched",
+      "status": "in_progress",
       "dependencies": [
         "P11-BASE"
       ],
@@ -151,14 +155,14 @@
         "P11-REG-01",
         "P11-MAIL-01"
       ],
-      "baseCommit": "e485792839d6c3af1a6587a8964f983250366b39",
+      "baseCommit": "c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef",
       "repairCount": 0
     },
     {
       "taskId": "P11-REVIEW",
       "rootTaskId": "P11-REVIEW",
       "owner": "Reviewer",
-      "status": "prepared_not_dispatched",
+      "status": "ready_after_dependencies",
       "dependencies": [
         "P11-ASSET"
       ],
@@ -170,14 +174,14 @@
         "P11-EDGE-01",
         "P11-CARD-01"
       ],
-      "baseCommit": "e485792839d6c3af1a6587a8964f983250366b39",
+      "baseCommit": "c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef",
       "repairCount": 0
     },
     {
       "taskId": "P11-DELIVERY",
       "rootTaskId": "P11-DELIVERY",
       "owner": "Leader",
-      "status": "prepared_not_dispatched",
+      "status": "ready_after_dependencies",
       "dependencies": [
         "P11-CI-MAIL",
         "P11-ACCEPT",
@@ -188,7 +192,7 @@
         "P11-DEL-01",
         "P11-REG-01"
       ],
-      "baseCommit": "e485792839d6c3af1a6587a8964f983250366b39",
+      "baseCommit": "c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef",
       "repairCount": 0
     }
   ],
@@ -198,5 +202,6 @@
   "preparationCompletedAt": "2026-10-30T11:15:19.368958+08:00",
   "preparationValidation": "passed_at_preparation_seal_only",
   "preparationReviewReference": "reviews/preparation-review.md",
-  "preparationSealCommit": "325bfd8e35af2efeb2ad82b19547cbacd61ae913"
+  "preparationSealCommit": "325bfd8e35af2efeb2ad82b19547cbacd61ae913",
+  "executionBaseCommit": "c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef"
 }
