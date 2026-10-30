@@ -63,7 +63,7 @@
       "taskId": "P12-FOUND",
       "rootTaskId": "P12-FOUND",
       "role": "Frontend",
-      "status": "implemented_pending_independent_gates",
+      "status": "repairing_independent_findings",
       "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
       "dependencies": [
         "P12-BASE"
@@ -74,7 +74,7 @@
         "P12-SCENE-01",
         "P12-A11Y-01"
       ],
-      "repairCount": 0
+      "repairCount": 1
     },
     {
       "taskId": "P12-ROUTE",
@@ -90,7 +90,7 @@
         "P12-HOME-01",
         "P12-ROUTE-01"
       ],
-      "repairCount": 0
+      "repairCount": 1
     },
     {
       "taskId": "P12-STUDIO",
@@ -107,7 +107,7 @@
         "P12-UPLOAD-01",
         "P12-TASK-01"
       ],
-      "repairCount": 0
+      "repairCount": 1
     },
     {
       "taskId": "P12-HISTORY",
@@ -130,7 +130,7 @@
       "taskId": "P12-DIALOG",
       "rootTaskId": "P12-DIALOG",
       "role": "Frontend",
-      "status": "implemented_pending_independent_gates",
+      "status": "repairing_independent_findings",
       "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
       "dependencies": [
         "P12-HISTORY"
@@ -141,7 +141,7 @@
         "P12-STATE-01",
         "P12-A11Y-01"
       ],
-      "repairCount": 0
+      "repairCount": 1
     },
     {
       "taskId": "P12-ACCEPT",
@@ -199,7 +199,7 @@
     }
   ],
   "preparationRecordedAt": "2026-10-30T12:32:21.079406+08:00",
-  "nextAction": "Acceptance_and_Reviewer_verify_5e2af4c; integrate_tests_then_remote_CI",
+  "nextAction": "Finalize_IO_and_cold_preview_repair_then_independent_gates_and_CI",
   "p11VerifiedCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
   "p11VerifiedCIRun": 41002700967,
   "conditionalExecutionAuthorization": {
