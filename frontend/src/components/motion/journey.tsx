@@ -51,9 +51,10 @@ export function useSceneVisibility(ref: RefObject<HTMLElement | null>) {
   useEffect(() => {
     const el = ref.current;
     if (!el || typeof IntersectionObserver === "undefined") return;
-    const observer = new IntersectionObserver(([e]) =>
-      el.classList.toggle("p12-offscreen", !e.isIntersecting),
-    );
+    const observer = new IntersectionObserver(([e]) => {
+      el.classList.toggle("p12-offscreen", !e.isIntersecting);
+      el.toggleAttribute("data-p12-offscreen", !e.isIntersecting);
+    });
     observer.observe(el);
     return () => observer.disconnect();
   }, [ref]);

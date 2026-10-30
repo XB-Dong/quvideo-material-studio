@@ -55,3 +55,12 @@ Reviewer实际ERROR截图minor已采纳：无preview时不渲染hover胶囊，JP
 独立Acceptance对5e2原PNG延迟600ms复现：img0×0/小dialog在load后跳为702×468/760×606且无图动画。作者实际view cold-open图后采纳。新增ResultPreview：从当前缩略图只取自然宽高比作为元数据，固定702px/视窗限宽高比例画框，原PNG未加载时即占最终空间；同步showModal不变。真实load/缓存complete后只对当前真实img节点做一次200ms等比轻显影，不克隆或缓存私有像素。媒体/隐藏、身份失效、开始关闭/ESC和卸载取消待load动画监听和Animation；普通加载状态仍能落到真实就绪/错误静态内容。失败文案保留同框和可用关闭。
 
 首轮新测试在身份失效后用默认accessible role找已隐藏img而失败，改为失效前持有节点再验证隐藏/不动画，未改变产品保护。最终05:19:21UTC/13:19:21+08:00容器lint/typecheck/39tests全通过，包含冷load单次显影/预留、媒体提前取消、身份隐去与失败、close起点取消4新用例；原35不减。隔离Chromium实际CSS支持验证为true，1440×1000画框在图片未加载时702×468；完整dialog冷延迟多帧仍待独立复验。
+
+
+## 收尾状态边界修复
+
+UploadSlot状态class随上传完成而重写，纯class IO标记可能丢失；Observer改为同时写不由React管理的data-p12-offscreen，暂停CSS以该属性覆盖。扩展既有IO行为用例：离屏后class从empty变ready，暂停属性仍保留，真正回到视窗才移除；不触碰上传请求/版本或任务查询。
+
+采纳Acceptance实际route错误恢复major：合法JSON中坏title渲染失败后持久Query缓存保坏data，Next reset可循环回错误页。仅app/error“重新加载”改真正window.location.reload()，符合文案并重新获取正常响应，Cookie/Java任务与原记录不清除；global-error已独立通过的reset不变。完整恢复动作由独立浏览器复验。
+
+此收尾小补丁容器05:22:39UTC/13:22:39+08:00 lint/typecheck/39tests再次全部通过，exit0；未改原31业务保护，未削减视觉用例。

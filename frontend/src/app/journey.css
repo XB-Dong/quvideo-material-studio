@@ -628,3 +628,10 @@ body:has(dialog[open]) .p12-studio .primary-button {
   font-size: 12px;
   line-height: 1.8;
 }
+
+.p12-upload[data-p12-offscreen] .p12-upload-edge rect,
+.p12-history .p12-task[data-p12-offscreen] .orbit,
+.p12-history .p12-task[data-p12-offscreen] .p12-stage-path i,
+.p12-studio[data-p12-offscreen] .primary-button {
+  animation-play-state: paused !important;
+}

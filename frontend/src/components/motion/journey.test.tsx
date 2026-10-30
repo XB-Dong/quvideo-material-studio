@@ -9,7 +9,12 @@ vi.mock("../providers", () => ({
 vi.mock("./preferences", () => ({
   useMotionPreferences: () => ({ enabled: state.enabled }),
 }));
-import { beginCoverTransition, clickFeedback, VisualJourney, useSceneVisibility } from "./journey";
+import {
+  beginCoverTransition,
+  clickFeedback,
+  VisualJourney,
+  useSceneVisibility,
+} from "./journey";
 beforeEach(() => {
   state.pathname = "/";
   state.enabled = true;
@@ -104,11 +109,11 @@ it("pauses an observed visual scope offscreen, resumes and disconnects without r
       disconnect = disconnect;
     },
   );
-  function Probe() {
+  function Probe({ phase = "empty" }: { phase?: string }) {
     const ref = useRef<HTMLDivElement>(null);
     useSceneVisibility(ref);
     return (
-      <div ref={ref} data-testid="visual">
+      <div ref={ref} className={phase} data-testid="visual">
         <input aria-label="still available" />
       </div>
     );
@@ -123,6 +128,9 @@ it("pauses an observed visual scope offscreen, resumes and disconnects without r
     ),
   );
   expect(el).toHaveClass("p12-offscreen");
+  view.rerender(<Probe phase="ready" />);
+  expect(el).toHaveClass("ready");
+  expect(el).toHaveAttribute("data-p12-offscreen");
   expect(view.getByLabelText("still available")).toBeInTheDocument();
   act(() =>
     callback(
@@ -131,6 +139,7 @@ it("pauses an observed visual scope offscreen, resumes and disconnects without r
     ),
   );
   expect(el).not.toHaveClass("p12-offscreen");
+  expect(el).not.toHaveAttribute("data-p12-offscreen");
   view.unmount();
   expect(disconnect).toHaveBeenCalledOnce();
 });
