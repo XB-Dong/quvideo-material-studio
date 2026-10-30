@@ -1,0 +1,75 @@
+{
+  "applicationSHA": "64e919aac25cacf7f1193b4a361071e5d03ef635",
+  "files": [
+    {
+      "path": "runtime/p12-baseline/actions.json",
+      "bytes": 2931,
+      "sha256": "9fc4ccdcba5a73194c14a51ad4c8a0260181209fe587e5dd9534d0f8d22e848f"
+    },
+    {
+      "path": "runtime/p12-baseline/baseline-history.png",
+      "bytes": 178260,
+      "sha256": "087be824a48c5cdac18a2cdb41a73fa8e03d7b1b8c590f2d461d7d041cd75ae1"
+    },
+    {
+      "path": "runtime/p12-baseline/baseline-home.png",
+      "bytes": 1199772,
+      "sha256": "4d57b1718b6a70ed973ec5c9a1c709d31a0d5f8d4e36fb1d59f1a342cb2fd084"
+    },
+    {
+      "path": "runtime/p12-baseline/baseline-studio-ready.png",
+      "bytes": 248521,
+      "sha256": "6724891a19644e1121dcab1b0ca449fc81b0a6f75c1e25b7b6e44d7b9d961a22"
+    },
+    {
+      "path": "runtime/p12-baseline/history-run-1.png",
+      "bytes": 489194,
+      "sha256": "34e7e9fa6c9af49c8cff38a56fa405b465b70c9e470c2b2cde4c265103f633da"
+    },
+    {
+      "path": "runtime/p12-baseline/history-run-2.png",
+      "bytes": 489735,
+      "sha256": "9b64a0072568a30ee2ba938ef94da5ea4cf6696ad581192f4a6aebe67860f362"
+    },
+    {
+      "path": "runtime/p12-baseline/history-run-3.png",
+      "bytes": 489478,
+      "sha256": "6fcd0b2a280b135a0f712cd2e4ef8a1c3e5908e5eba231759502792187ddd0df"
+    },
+    {
+      "path": "runtime/p12-baseline/home-run-1.png",
+      "bytes": 1201646,
+      "sha256": "896916cde3dd3b084b62e444fcccaeef97dd1df5886a3e588918d4a530c3f17d"
+    },
+    {
+      "path": "runtime/p12-baseline/home-run-2.png",
+      "bytes": 1199232,
+      "sha256": "965c30579c4a5482b95004665c07492cac513c52110442b26ffc1a195cd1baa5"
+    },
+    {
+      "path": "runtime/p12-baseline/home-run-3.png",
+      "bytes": 1199501,
+      "sha256": "c54976e9e3cec4efd280799d48256fa10969786e0ebb6682dbd1bc64a9886e68"
+    },
+    {
+      "path": "runtime/p12-baseline/measurement.json",
+      "bytes": 267929,
+      "sha256": "859f5619d1188d44186273aefdf2f11c5cb189bc4837db2c4ad34cad0f5ecbd1"
+    },
+    {
+      "path": "runtime/p12-baseline/studio-run-1.png",
+      "bytes": 518048,
+      "sha256": "4eb6ee29de08d9f38f3f5e23f6be3346cc3590b4351c2f6b92c851fee1f35030"
+    },
+    {
+      "path": "runtime/p12-baseline/studio-run-2.png",
+      "bytes": 516799,
+      "sha256": "1b60682b1babff5cf127fe2d35f006492f2e3550e27ba5a427a0ea6a07ac25e6"
+    },
+    {
+      "path": "runtime/p12-baseline/studio-run-3.png",
+      "bytes": 517953,
+      "sha256": "125563d3ba727b6e7bd71c95e5f0962d2766c6d148b322d914076fafba1a7f55"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "testedCommit": "64e919aac25cacf7f1193b4a361071e5d03ef635",
+  "capturedAt": "2026-10-30T04:56:22.701Z",
+  "first": {
+    "eventCount": 1,
+    "input": {
+      "kind": "file-input-click",
+      "turn": 1,
+      "active": true,
+      "trusted": true,
+      "at": 1337.7000000029802
+    },
+    "audit": {
+      "events": [
+        {
+          "kind": "click",
+          "turn": 1,
+          "at": 1337.4000000059605,
+          "trusted": true
+        },
+        {
+          "kind": "file-input-click",
+          "turn": 1,
+          "active": true,
+          "trusted": true,
+          "at": 1337.7000000029802
+        }
+      ],
+      "liveUrls": []
+    }
+  },
+  "canceled": {
+    "eventCount": 1,
+    "input": {
+      "kind": "file-input-click",
+      "turn": 2,
+      "active": true,
+      "trusted": true,
+      "at": 1759.7000000029802
+    },
+    "audit": {
+      "events": [
+        {
+          "kind": "click",
+          "turn": 1,
+          "at": 1337.4000000059605,
+          "trusted": true
+        },
+        {
+          "kind": "file-input-click",
+          "turn": 1,
+          "active": true,
+          "trusted": true,
+          "at": 1337.7000000029802
+        },
+        {
+          "kind": "create-url",
+          "url": "blob:http://localhost:3000/47dacf1a-ec15-4e7b-871b-e35711ff8b7b",
+          "bytes": 42971,
+          "at": 1424.2000000029802
+        },
+        {
+          "kind": "click",
+          "turn": 2,
+          "at": 1759.5,
+          "trusted": true
+        },
+        {
+          "kind": "file-input-click",
+          "turn": 2,
+          "active": true,
+          "trusted": true,
+          "at": 1759.7000000029802
+        }
+      ],
+      "liveUrls": [
+        "blob:http://localhost:3000/47dacf1a-ec15-4e7b-871b-e35711ff8b7b"
+      ]
+    }
+  },
+  "audit": {
+    "events": [
+      {
+        "kind": "click",
+        "turn": 1,
+        "at": 1337.4000000059605,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 1,
+        "active": true,
+        "trusted": true,
+        "at": 1337.7000000029802
+      },
+      {
+        "kind": "create-url",
+        "url": "blob:http://localhost:3000/47dacf1a-ec15-4e7b-871b-e35711ff8b7b",
+        "bytes": 42971,
+        "at": 1424.2000000029802
+      },
+      {
+        "kind": "click",
+        "turn": 2,
+        "at": 1759.5,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 2,
+        "active": true,
+        "trusted": true,
+        "at": 1759.7000000029802
+      },
+      {
+        "kind": "revoke-url",
+        "url": "blob:http://localhost:3000/47dacf1a-ec15-4e7b-871b-e35711ff8b7b",
+        "at": 2518.5999999940395
+      }
+    ],
+    "liveUrls": []
+  },
+  "nativeViewTransition": true,
+  "scope": "P1.1 unchanged application; chooser event is Chromium intercepted native chooser, empty setFiles models cancellation; physical OS dialog close not automated"
+}

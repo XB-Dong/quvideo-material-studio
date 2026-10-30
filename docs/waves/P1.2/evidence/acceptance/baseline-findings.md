@@ -1,0 +1,9 @@
+# P12-ACCEPT旧部署基线
+
+真实应用64e919，Chromium149/SwiftShader、1440×1000/DPR1，首页/制作/历史各3冷上下文。子页固定demo-pet本地JPEG42971B上传，2成功+1GENERATE失败；不依赖真实用户数据，不是随机选择小图。
+
+首页JS167230B、图432404/471099/447935B通过。制作JS167918B、图1501210/1437726/1501210B失败；历史JS161446B、图1457853/1457869/1457861B失败。所有CLS<.018，pageerror0。逐请求显示两成功结果各665k，启动ink重复2×63484B，原图复制结果是主要成本；不能因只是旧版本基线而放宽P12绝对预算或去重。已移交Leader结果缩略图owner决策，Frontend背景共享加载。
+
+真实动作基线：原生filechooser事件每次1，真实trusted inputclick处于原用户click任务且activation=true（外部click到input约.2–.3ms）；选择JPEG后READY，空setFiles模拟取消保留原blob预览不上传；路由到历史后blob被revoke、liveUrls0。浏览器截获chooser与空文件列表代表自动化选择/取消边界，未控制物理OS文件窗。
+
+新gesture仪表首轮遗漏直接命中input这一原生trusted点击路径，错误判成离开事件任务；已在测试仪表补直接trusted输入的开始记录，未改产品或放宽异步input.click检查（后者isTrusted=false且原任务turn0仍拒绝）。该仪表根因修正1次，首轮exit1不作产品Red。基线measure因真实图片超限exit1，原始完整报告保留，不改成pass。新harness仍在开发，不能标P12验收通过。
