@@ -148,6 +148,21 @@ Task 包含 id、templateId/title、createdAt、status、stage、failedStage、f
 
 前端区分上传、提交、任务和查询状态。受理后退出“提交中”，可继续创建。每个活跃任务独立轮询，结束或离页后停止；刷新读取历史和全部活跃页恢复跟踪。版本、身份 generation 和取消信号防止旧响应污染。POST 网络结果不确定时先刷新历史，不自动重发。
 
+## P1.2动效验收入口
+
+应用先用Compose启动。为每次浏览器验收设置实际部署的40位`TESTED_COMMIT`（Bash可用`export TESTED_COMMIT=$(git rev-parse HEAD)`，PowerShell用`$env:TESTED_COMMIT=(git rev-parse HEAD)`；源码包没有Git目录时使用交付清单的源码SHA）。本地复验输出在ignored的runtime/p12-browser；不要把合成会话cookie、运行卷或原始trace提交到Git。
+
+```sh
+docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-p12-check accept.mjs
+docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/visual browser-p12-check visual.mjs
+docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/interaction browser-p12-check interact.mjs
+docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/measure browser-p12-check measure.mjs
+docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps browser-p12-check --test budgets.test.mjs
+docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-p12-headed
+```
+
+visual统一执行子页/离屏/冷原图/框架错误恢复/缩略图授权，不重复跑四个独立诊断helper；性能入口不截图/不读像素/不采栈，4MiB合法JPEG通过真实磁盘文件进入原生chooser（不把自动化buffer转码算成产品开销）。measure每页3轮，固定两成功一失败，全部真实图片请求逐轮计量，单轮不达标即失败。原生后台用容器Xvfb+CDP真实标签，不能冒充物理设备验证。原P1.1功能/视觉、前端/Java/API门槛继续保留于CI。
+
 ## 五分钟演示
 
 1. 打开网站，切换创意图片/人像/宠物。四个本地模板覆盖 1/2/3 张图，详情按要求展示上传位。

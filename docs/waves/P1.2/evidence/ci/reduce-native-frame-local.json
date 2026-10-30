@@ -1,0 +1,56 @@
+{
+  "taskId": "P11-ACCEPT",
+  "rootTaskId": "P11-ACCEPT",
+  "applicationSource": "8a3f8bd12c1fc889566e82f9c2ad95cd96544524",
+  "harnessSource": "0d444fd87d208d522bd366c2674c12ba6824c6a0",
+  "capturedAt": "2026-10-30T06:08:54.889Z",
+  "browser": "149.0.7827.53",
+  "visualPassCount": 6,
+  "exitCode": 0,
+  "render": {
+    "count": 1,
+    "durationMs": 957,
+    "fullPage": false,
+    "animations": "allow",
+    "syntheticMediaEvents": 0,
+    "sequenceStart": 33138.19999998808,
+    "beforeStatic": false,
+    "afterStatic": true,
+    "trustedNativeEvents": [
+      {
+        "kind": "media-change",
+        "matches": true,
+        "trusted": true,
+        "at": 33470.29999999702
+      }
+    ]
+  },
+  "a": {
+    "raf": 0,
+    "executed": 586,
+    "gpu": 0,
+    "motionStatic": true,
+    "orbit": 0,
+    "hidden": false
+  },
+  "b": {
+    "raf": 0,
+    "executed": 586,
+    "gpu": 0,
+    "motionStatic": true,
+    "orbit": 0,
+    "hidden": false
+  },
+  "hero": {
+    "x": 40,
+    "y": 92,
+    "width": 1360,
+    "height": 433.5
+  },
+  "screenshot": {
+    "path": "runtime/p11-reduce-frame-8a/reduce-native-frame.png",
+    "bytes": 967780,
+    "sha256": "7ce67d2ca907ec770781cfced247d4b4e71369a2d65ff958d96ca5ba1c9b13e9"
+  },
+  "limits": "Functional pixel test, not performance; timeout for native event is bounded500ms after one shot. Root cause of older headless delivery stall remains unconfirmed."
+}
