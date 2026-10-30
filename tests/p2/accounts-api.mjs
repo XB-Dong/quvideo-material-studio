@@ -23,7 +23,7 @@ try{
  });
  await check('Second account and guest media/task isolation; login never merges guest history',async()=>{
   const guest=(await call(b,'/api/session',{method:'POST'})).json;guestB=await clone(b,api);const f=await fixture(b),guestTask=await task(b,f.asset);
-  const reg=(await call(b,'/api/auth/register',{method:'POST',expected:201,data:{displayName:'合成创作者乙',email:emailB,password}})).json;ownerB=reg.userId;assert.equal(ownerB,guest.userId);assert.notEqual(ownerA,ownerB);await call(b,'/api/tasks/'+recordA.id,{expected:404});await call(b,'/media/assets/'+assetA.id,{expected:404});
+  const reg=(await call(b,'/api/auth/register',{method:'POST',expected:201,data:{displayName:'合成创作者乙',email:emailB,password}})).json;ownerB=reg.userId;assert.equal(ownerB,guest.userId);assert.notEqual(ownerA,ownerB);await call(guestB,'/api/session',{expected:401});await call(b,'/api/tasks/'+recordA.id,{expected:404});await call(b,'/media/assets/'+assetA.id,{expected:404});
   const stranger=await api();await call(stranger,'/api/session',{method:'POST'});const strangerAsset=(await fixture(stranger)).asset,strangerTask=await task(stranger,strangerAsset);const oldStranger=await clone(stranger,api);
   const login=(await call(stranger,'/api/auth/login',{method:'POST',data:{email:emailA,password}})).json;assert.equal(login.userId,ownerA);await call(oldStranger,'/api/session',{expected:401});await call(stranger,'/api/tasks/'+strangerTask.id,{expected:404});await call(a,'/api/tasks/'+guestTask.id,{expected:404});return {ownersDistinct:true,guestNotMerged:true,foreignTaskAndAsset404:true};
  });
