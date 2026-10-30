@@ -1,0 +1,172 @@
+{
+  "testedCommit": "1b38655d71a8f9c9001d7402d4adf12ee7d35cf4",
+  "capturedAt": "2026-10-30T09:49:26.435Z",
+  "browser": "149.0.7827.53",
+  "base": "http://localhost:3301",
+  "origin": "http://localhost:3301",
+  "checks": [
+    {
+      "name": "375px keyboard, guest creation/register retention/settings/password/logout/login",
+      "status": "pass",
+      "startedAt": "2026-10-30T09:48:41.037Z",
+      "details": {
+        "width": 375,
+        "ownerPreserved": true,
+        "taskId": "ea4c311f-5b9a-4bfe-98f3-a5264598e04a",
+        "singleRegisterPost": true,
+        "oldPasswordRejected": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "Real delayed Set-Cookie survives dialog close and route change under one global auth lock",
+      "status": "pass",
+      "startedAt": "2026-10-30T09:48:51.711Z",
+      "details": {
+        "events": [
+          {
+            "kind": "request-held",
+            "method": "POST",
+            "at": 1793353735134
+          },
+          {
+            "kind": "real-server-completed",
+            "at": 1793353735347,
+            "status": 200,
+            "hasSetCookie": true
+          },
+          {
+            "kind": "real-response-released",
+            "at": 1793353735744
+          }
+        ],
+        "globalLockAcrossRoute": true,
+        "browserCookieMatchesServer": true
+      }
+    },
+    {
+      "name": "Unknown successful POST body recovers via GETsession without a duplicate mutation",
+      "status": "pass",
+      "startedAt": "2026-10-30T09:48:55.829Z",
+      "details": {
+        "fixture": "Real server executed200 and originalSetCookie delivered; body deliberately truncated to model unreadable result, not fake identity.",
+        "events": [
+          {
+            "kind": "request-held",
+            "method": "POST",
+            "at": 1793353738907
+          },
+          {
+            "kind": "real-server-completed",
+            "at": 1793353739098,
+            "status": 200,
+            "hasSetCookie": true
+          },
+          {
+            "kind": "real-cookie-truncated-body",
+            "at": 1793353739100
+          }
+        ],
+        "authPosts": 1,
+        "getSessionRecovery": true
+      }
+    },
+    {
+      "name": "Aborted unknown POST does not retry login or automatically create a replacement guest",
+      "status": "pass",
+      "startedAt": "2026-10-30T09:48:59.177Z",
+      "details": {
+        "events": [
+          {
+            "kind": "request-held",
+            "method": "POST",
+            "at": 1793353743341
+          },
+          {
+            "kind": "real-server-completed",
+            "at": 1793353743550,
+            "status": 200,
+            "hasSetCookie": true
+          },
+          {
+            "kind": "response-aborted",
+            "at": 1793353743553
+          }
+        ],
+        "autoAuthPosts": 1,
+        "autoSessionPosts": 0,
+        "unconfirmedOutcomeShown": true
+      }
+    },
+    {
+      "name": "Late old-user history and genuine revoked-token401 cannot restore old UI or expire the new account",
+      "status": "pass",
+      "startedAt": "2026-10-30T09:49:03.673Z",
+      "details": {
+        "oldTaskId": "e64f0768-cfcf-4f36-a759-877b3e6c95ce",
+        "realLateStatus": 401,
+        "newAccountRetained": true,
+        "delivery": "real401released",
+        "events": [
+          {
+            "kind": "request-held",
+            "method": "GET",
+            "at": 1793353747168
+          },
+          {
+            "kind": "real-server-completed",
+            "at": 1793353752066,
+            "status": 401,
+            "hasSetCookie": false
+          },
+          {
+            "kind": "real-response-released",
+            "at": 1793353752070
+          }
+        ]
+      }
+    },
+    {
+      "name": "Identity switch revokes private upload preview before a delayed actual upload response",
+      "status": "pass",
+      "startedAt": "2026-10-30T09:49:12.431Z",
+      "details": {
+        "newOwnerKept": true,
+        "oldBlobRemoved": true,
+        "lateUploadDidNotEnableSubmit": true,
+        "events": [
+          {
+            "kind": "request-held",
+            "method": "POST",
+            "at": 1793353754277
+          },
+          {
+            "kind": "real-server-completed",
+            "at": 1793353754350,
+            "status": 201,
+            "hasSetCookie": false
+          },
+          {
+            "kind": "real-response-released",
+            "at": 1793353757188
+          }
+        ]
+      }
+    },
+    {
+      "name": "Accepted old task continues in Java while UI switches users; late POST never inserts into new history",
+      "status": "fail",
+      "startedAt": "2026-10-30T09:49:18.000Z",
+      "message": "history is not a function"
+    },
+    {
+      "name": "Account UI has no uncaught runtime errors",
+      "status": "pass",
+      "startedAt": "2026-10-30T09:49:26.434Z",
+      "details": {
+        "errors": []
+      }
+    }
+  ],
+  "scope": "Independent real UI and same-origin server acceptance. Auth response gates use isolated request cookie jars. No cookies/passwords/snapshots written to evidence. Each scenario synthetic identity, no production volumes."
+}
