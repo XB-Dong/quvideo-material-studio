@@ -1,0 +1,45 @@
+{
+  "taskId": "P12-BASE",
+  "rootTaskId": "P12-BASE",
+  "checkedAt": "2026-10-30T12:47:28.563195+08:00",
+  "source": "71bccc5 plus exact dev-type-only diff before dispatch commit",
+  "packageLockSha256": "5b77e41c093b4e3f76adb46035748b24b56968ec5cc53875d955abb57877d90a",
+  "runtimeVersions": {
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devTypes": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0"
+  },
+  "checks": [
+    {
+      "command": "docker run --rm --mount type=bind,source=<primary>/frontend,target=/app -w /app node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34 npm install --save-dev --save-exact @types/react@19.3.0 @types/react-dom@19.3.0 --package-lock-only --ignore-scripts --no-audit --no-fund",
+      "exitCode": 0
+    },
+    {
+      "command": "docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps frontend-check sh -c <lint && typecheck &&31tests && React API inspection>",
+      "exitCode": 0,
+      "tests": 31,
+      "testFiles": 6,
+      "reactApi": {
+        "version": "19.3.1",
+        "ViewTransition": "symbol",
+        "addTransitionType": "function"
+      }
+    },
+    {
+      "command": "docker compose build frontend",
+      "exitCode": 0,
+      "imageId": "sha256:489af154ab80ff69c0a6dfee7af2a673619fe49ef0d325b2f022e1e7a8df710c"
+    }
+  ],
+  "newRuntimeDependencies": [],
+  "routePathDecision": "Ship complete existing Link + CSS/WAAPI public-cover bridge; native VT not enabled without separate timely-cleanup proof",
+  "nativeEffectCleanupTimingVerified": false,
+  "nativeRouteEnabled": false,
+  "existingApplicationRestarted": false,
+  "applicationStillServingSource": "64e919aac25cacf7f1193b4a361071e5d03ef635",
+  "P12FeatureChecks": "not_run"
+}

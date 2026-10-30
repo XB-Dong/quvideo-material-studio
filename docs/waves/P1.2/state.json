@@ -2,12 +2,12 @@
   "schemaVersion": "1.0.0",
   "waveId": "P1.2",
   "specVersion": "P1.2-1.0.0",
-  "status": "prepared",
-  "executionAuthorized": false,
+  "status": "executing",
+  "executionAuthorized": true,
   "preparationBaseCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
   "p11ProductReferenceCommit": "64e919aac25cacf7f1193b4a361071e5d03ef635",
   "executionBaseCommit": null,
-  "executionStartedAt": null,
+  "executionStartedAt": "2026-10-30T12:44:33.221513+08:00",
   "executionCompletedAt": null,
   "p11CIPrerequisite": "passed_exact_verified_source",
   "timezone": "Etc/GMT-8",
@@ -26,7 +26,7 @@
   "actualModel": null,
   "actualReasoningEffort": null,
   "productImplemented": false,
-  "dependenciesInstalledForP12": false,
+  "dependenciesInstalledForP12": true,
   "productRestartedForP12": false,
   "developmentWorktreesCreatedForP12": false,
   "productChecks": "not_run_for_P1.2",
@@ -45,7 +45,7 @@
       "taskId": "P12-BASE",
       "rootTaskId": "P12-BASE",
       "role": "Leader",
-      "status": "prepared_not_dispatched",
+      "status": "completed",
       "baseCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
       "dependencies": [],
       "runtimeDependencies": [],
@@ -195,7 +195,7 @@
     }
   ],
   "preparationRecordedAt": "2026-10-30T12:32:21.079406+08:00",
-  "nextAction": "start_P12_BASE_directly_under_conditional_user_authorization",
+  "nextAction": "BASE compatibility/types/container checks; dispatch unique Frontend and independent Acceptance",
   "p11VerifiedCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
   "p11VerifiedCIRun": 41002700967,
   "conditionalExecutionAuthorization": {
@@ -207,5 +207,8 @@
     "requireAdditionalUserConfirmation": false
   },
   "preparationCompletedAt": "2026-10-30T12:43:53.305622+08:00",
-  "preparationValidation": "passed_data_only"
+  "preparationValidation": "passed_at_preparation_seal",
+  "preparationSealCommit": "71bccc5fb1a45afd1853df870e46e459ab037023",
+  "baseChecks": "type_compatibility_lint_31tests_build_passed",
+  "routeImplementationDecision": "Link_CSS_WAAPI_public_cover; native_not_enabled_without_cleanup_evidence"
 }

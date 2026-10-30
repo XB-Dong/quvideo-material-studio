@@ -1,6 +1,6 @@
 # P1.2 多Agent角色与所有权
 
-Leader+最多三子。当前仅独立准备Reviewer，不启动P1.2开发worker/worktree；下表在准备门槛通过后依已获条件式授权派发。继承当前模型/推理，实际provider/model/reasoning无证据均null。
+Leader+最多三子。准备已于71bccc5通过，用户条件式执行授权现已生效，按下表派发开发；最多三子，不新增空闲角色。继承当前模型/推理，实际provider/model/reasoning无证据均null。
 
 | 角色 | 独占路径/任务 | 责任 |
 | --- | --- | --- |
