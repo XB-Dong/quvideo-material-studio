@@ -115,11 +115,8 @@ export function Shell({
     <>
       <InkBackdrop />
       <header className="site-header">
-        <Link href="/" className="brand">
-          <span className="brand-mark">疏</span>
-          <span>
-            疏影<span className="brand-caption">SHUYING STUDIO</span>
-          </span>
+        <Link href="/" className="brand p12-wordmark" aria-label="疏影">
+          <span>疏影</span>
         </Link>
         <nav aria-label="主导航">
           <Link href="/">探索模板</Link>

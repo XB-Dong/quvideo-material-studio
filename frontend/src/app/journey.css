@@ -645,3 +645,41 @@ body:has(dialog[open]) .p12-studio .primary-button {
     min-height: calc(100svh - 76px);
   }
 }
+
+.brand.p12-wordmark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 46px;
+  gap: 0;
+  color: #373648;
+  font-family: "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  white-space: nowrap;
+}
+.brand.p12-wordmark::after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  bottom: 3px;
+  width: 18px;
+  height: 1px;
+  background: #a097b5;
+}
+.brand.p12-wordmark:active {
+  color: #726588;
+}
+@media (max-width: 600px) {
+  .brand.p12-wordmark {
+    font-size: 27px;
+    letter-spacing: 0.15em;
+    height: 42px;
+  }
+  .brand.p12-wordmark::after {
+    bottom: 3px;
+    width: 16px;
+  }
+}
