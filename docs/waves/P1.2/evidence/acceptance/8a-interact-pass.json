@@ -1,0 +1,255 @@
+{
+  "testedCommit": "8a3f8bd12c1fc889566e82f9c2ad95cd96544524",
+  "capturedAt": "2026-10-30T06:12:45.448Z",
+  "browser": "149.0.7827.53",
+  "conditions": "No screenshots, pixel readback, tracing or RAF stacks; default software driver. Original full-result request and large legal upload not erased; startup recorded separately.",
+  "phases": [
+    {
+      "label": "real Link navigation",
+      "begin": 3030.1000000089407,
+      "end": 3805.1000000089407
+    },
+    {
+      "label": "real chooser upload cancel same-file replace remove",
+      "begin": 4252.9000000059605,
+      "end": 5915.600000008941
+    },
+    {
+      "label": "large legal JPEG transport and preview",
+      "begin": 5925.600000008941,
+      "end": 7080.5
+    },
+    {
+      "label": "submit 0",
+      "begin": 7083.20000000298,
+      "end": 7429.20000000298
+    },
+    {
+      "label": "submit 1",
+      "begin": 7441.800000011921,
+      "end": 7847.70000000298
+    },
+    {
+      "label": "task updates and original result dialog",
+      "begin": 7852,
+      "end": 17610.90000000596
+    },
+    {
+      "label": "history refresh and identity dialog",
+      "begin": 17618.60000000894,
+      "end": 18791.40000000596
+    },
+    {
+      "label": "continuous child scene 30s",
+      "begin": 18797.80000001192,
+      "end": 48805.80000001192
+    }
+  ],
+  "longTasks": [
+    {
+      "at": 79.40000000596046,
+      "duration": 120,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 212.90000000596046,
+      "duration": 60,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 437,
+      "duration": 93,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 885.5,
+      "duration": 106,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    }
+  ],
+  "audit": {
+    "observedAt": 48818.20000000298,
+    "rafPending": 0,
+    "rafExecuted": 11,
+    "gpuAllocated": 0,
+    "gpuLive": 0,
+    "coarse": false,
+    "fine": true,
+    "hover": true,
+    "reduce": false,
+    "hidden": false,
+    "animations": [
+      {
+        "name": "p12-page-in",
+        "state": "finished",
+        "target": "p12-route-surface",
+        "iterations": 1
+      },
+      {
+        "name": "p12-flow",
+        "state": "running",
+        "target": {},
+        "iterations": null
+      },
+      {
+        "name": "card-in",
+        "state": "finished",
+        "target": "task-card p12-task",
+        "iterations": 1
+      },
+      {
+        "name": "label-in",
+        "state": "finished",
+        "target": "status succeeded",
+        "iterations": 1
+      },
+      {
+        "name": "card-in",
+        "state": "finished",
+        "target": "task-card p12-task",
+        "iterations": 1
+      },
+      {
+        "name": "label-in",
+        "state": "finished",
+        "target": "status succeeded",
+        "iterations": 1
+      }
+    ]
+  },
+  "gesture": {
+    "events": [
+      {
+        "kind": "click",
+        "turn": 1,
+        "at": 4759.600000008941,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 1,
+        "active": true,
+        "trusted": true,
+        "at": 4760.100000008941
+      },
+      {
+        "kind": "create-url",
+        "url": "blob:http://localhost:3000/531c4b5b-02d9-4d8f-899c-8fa162c7e56f",
+        "bytes": 42971,
+        "at": 4862.5
+      },
+      {
+        "kind": "click",
+        "turn": 2,
+        "at": 5268,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 2,
+        "active": true,
+        "trusted": true,
+        "at": 5268.100000008941
+      },
+      {
+        "kind": "click",
+        "turn": 3,
+        "at": 5418.9000000059605,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 3,
+        "active": true,
+        "trusted": true,
+        "at": 5419.100000008941
+      },
+      {
+        "kind": "revoke-url",
+        "url": "blob:http://localhost:3000/531c4b5b-02d9-4d8f-899c-8fa162c7e56f",
+        "at": 5464.800000011921
+      },
+      {
+        "kind": "create-url",
+        "url": "blob:http://localhost:3000/7819a8f2-e366-4764-90e3-44b1d981c694",
+        "bytes": 42971,
+        "at": 5466.600000008941
+      },
+      {
+        "kind": "revoke-url",
+        "url": "blob:http://localhost:3000/7819a8f2-e366-4764-90e3-44b1d981c694",
+        "at": 5893.70000000298
+      },
+      {
+        "kind": "click",
+        "turn": 4,
+        "at": 6066.300000011921,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 4,
+        "active": true,
+        "trusted": true,
+        "at": 6066.600000008941
+      },
+      {
+        "kind": "create-url",
+        "url": "blob:http://localhost:3000/da1b6ef0-3fa5-449c-9d44-2669cbff8b10",
+        "bytes": 4194304,
+        "at": 6159.300000011921
+      },
+      {
+        "kind": "revoke-url",
+        "url": "blob:http://localhost:3000/da1b6ef0-3fa5-449c-9d44-2669cbff8b10",
+        "at": 18016.80000001192
+      }
+    ],
+    "liveUrls": []
+  },
+  "interactionLongTasks": [],
+  "lazyScripts": [
+    {
+      "url": "http://localhost:3000/_next/static/chunks/0ahkl0px33yc_.js",
+      "gzipBytes": 3381
+    }
+  ],
+  "lazyGzipBytes": 3381,
+  "largeLegalUpload": {
+    "selectedBytes": 4194304,
+    "serverAssetBytes": 4194304,
+    "width": 480,
+    "height": 640,
+    "kind": "Valid local JPEG plus trailing padding selected from actual container filesystem path; original upload unmodified; transport test, not 20MP device performance"
+  },
+  "taskIds": [
+    "20556955-e9e4-4ac5-9ed7-b1f0c9a7356f",
+    "2f2f059e-ccec-42fe-9e88-b5c1027dc5ea"
+  ],
+  "errors": [],
+  "pass": true
+}

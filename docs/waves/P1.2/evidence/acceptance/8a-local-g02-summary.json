@@ -1,0 +1,131 @@
+{
+  "rootTaskId": "P12-ACCEPT",
+  "wave": "P1.2",
+  "specVersion": "P1.2-1.0.1",
+  "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
+  "applicationSource": "8a3f8bd12c1fc889566e82f9c2ad95cd96544524",
+  "harnessSourceMainSix": "b3b214945a6432dcfafdfc450fe87d2691de178f",
+  "harnessSourcePostPerformanceReview": "d793346268154221b02b6027fd6888eee285c2ab",
+  "actualModel": null,
+  "actualProvider": null,
+  "actualReasoningEffort": null,
+  "localG02": "pass_with_explicit_inherited_unchanged_checks",
+  "remoteCI": "pending_leader_verification",
+  "mail": "deferred_by_user",
+  "perRun": [
+    {
+      "name": "home-1",
+      "startupJsGzipBytes": 186817,
+      "allImageEncodedBytes": 494389,
+      "cls": 0,
+      "errors": []
+    },
+    {
+      "name": "home-2",
+      "startupJsGzipBytes": 186817,
+      "allImageEncodedBytes": 560902,
+      "cls": 0.00011580442828896605,
+      "errors": []
+    },
+    {
+      "name": "home-3",
+      "startupJsGzipBytes": 186817,
+      "allImageEncodedBytes": 404597,
+      "cls": 0.00011095983434606479,
+      "errors": []
+    },
+    {
+      "name": "studio-1",
+      "startupJsGzipBytes": 184414,
+      "allImageEncodedBytes": 176894,
+      "cls": 0.00011580442828896605,
+      "errors": []
+    },
+    {
+      "name": "studio-2",
+      "startupJsGzipBytes": 184414,
+      "allImageEncodedBytes": 176873,
+      "cls": 0.00011571126302083333,
+      "errors": []
+    },
+    {
+      "name": "studio-3",
+      "startupJsGzipBytes": 184414,
+      "allImageEncodedBytes": 176902,
+      "cls": 0.00012089138454861111,
+      "errors": []
+    },
+    {
+      "name": "history-1",
+      "startupJsGzipBytes": 181033,
+      "allImageEncodedBytes": 133546,
+      "cls": 0.0257531226490162,
+      "errors": []
+    },
+    {
+      "name": "history-2",
+      "startupJsGzipBytes": 181033,
+      "allImageEncodedBytes": 133554,
+      "cls": 0.016512461721161265,
+      "errors": []
+    },
+    {
+      "name": "history-3",
+      "startupJsGzipBytes": 181033,
+      "allImageEncodedBytes": 133554,
+      "cls": 0.016230605888366702,
+      "errors": []
+    }
+  ],
+  "individualBudgetsPass": true,
+  "interaction": {
+    "pass": true,
+    "attributableLongTaskCandidates": [],
+    "lazyGzipBytes": 3381,
+    "largeLegalUpload": {
+      "selectedBytes": 4194304,
+      "serverAssetBytes": 4194304,
+      "width": 480,
+      "height": 640,
+      "kind": "Valid local JPEG plus trailing padding selected from actual container filesystem path; original upload unmodified; transport test, not 20MP device performance"
+    },
+    "errors": []
+  },
+  "native": {
+    "pass": true,
+    "paths": [
+      "/",
+      "/templates/demo-pet",
+      "/history"
+    ],
+    "scope": "Headed Chromium in container Xvfb; raw CDP, no Playwright focus emulation; same-window native tabs activated by Target.activateTarget; no visibility override or dispatched event"
+  },
+  "inheritedChecks": [
+    {
+      "applicationSource": "5e2af4c7c89f7a4374e7d6ce947af6ff7070f95c",
+      "artifact": "5e2-functional.json",
+      "passed": 25,
+      "meaning": "25 original/extended functionality checks; later differences are explicitly covered by visual/cold/boundary/RO/native/interaction checks. Not claimed rerun on8a."
+    },
+    {
+      "applicationSource": "b2d0a6aa16a4a6890e58b2b92d6f672bfc466c9c",
+      "artifact": "b2d-visual-first-14-pass-2-selector-fail.json",
+      "passed": 14,
+      "failed": 2,
+      "meaning": "16 unique required visual cases. Original two failures are harness selectors, preserved; exact affected6 strict cold cases rerun after selector correction."
+    },
+    {
+      "applicationSource": "b2d0a6aa16a4a6890e58b2b92d6f672bfc466c9c",
+      "artifact": "b2d-cold-six-pass.json",
+      "passed": 6,
+      "meaning": "Includes both previous failed selector cases and first-moment no bloom, not claimed one unbroken16pass run."
+    }
+  ],
+  "limits": [
+    "Default software Chromium149; not hardware performance or physical Windows minimize.",
+    "Intercepted chooser models cancel with empty file selection; OS dialog window not physically controlled.",
+    "4MiB valid JPEG tailpadding tests transport, not20MP decoding.",
+    "Post-perf bridge screenshots pause actual original260ms WAAPI; not default timing proof.",
+    "Remote CI final full pass and Leader integration signoff still required."
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "testedCommit": "8a3f8bd12c1fc889566e82f9c2ad95cd96544524",
+  "capturedAt": "2026-10-30T06:15:45.133Z",
+  "browser": "Chrome/149.0.7827.53",
+  "environment": "Headed Chromium in container Xvfb; raw CDP, no Playwright focus emulation; same-window native tabs activated by Target.activateTarget; no visibility override or dispatched event",
+  "results": [
+    {
+      "path": "/",
+      "mode": "default-policy",
+      "windows": {
+        "app": {
+          "windowId": 1674067210,
+          "bounds": {
+            "left": 20,
+            "top": 20,
+            "width": 1050,
+            "height": 980,
+            "windowState": "normal"
+          }
+        },
+        "control": {
+          "windowId": 1674067210,
+          "bounds": {
+            "left": 20,
+            "top": 20,
+            "width": 1050,
+            "height": 980,
+            "windowState": "normal"
+          }
+        }
+      },
+      "before": {
+        "visibility": "visible",
+        "hidden": false,
+        "orbit": 1,
+        "mainGPU": 0,
+        "events": [],
+        "preflight": [],
+        "rafPending": 1,
+        "rafExecuted": 0,
+        "runningAnimations": 9,
+        "overlays": 0
+      },
+      "hidden": {
+        "visibility": "hidden",
+        "hidden": true,
+        "orbit": 0,
+        "mainGPU": 0,
+        "events": [
+          {
+            "state": "hidden",
+            "hidden": true,
+            "trusted": true,
+            "at": 2370.8999999910593
+          }
+        ],
+        "preflight": [],
+        "rafPending": 0,
+        "rafExecuted": 0,
+        "runningAnimations": 0,
+        "overlays": 0
+      },
+      "restored": {
+        "visibility": "visible",
+        "hidden": false,
+        "orbit": 1,
+        "mainGPU": 0,
+        "events": [
+          {
+            "state": "hidden",
+            "hidden": true,
+            "trusted": true,
+            "at": 2370.8999999910593
+          },
+          {
+            "state": "visible",
+            "hidden": false,
+            "trusted": true,
+            "at": 2410.3999999910593
+          }
+        ],
+        "preflight": [],
+        "rafPending": 0,
+        "rafExecuted": 0,
+        "runningAnimations": 10,
+        "overlays": 0
+      }
+    },
+    {
+      "path": "/templates/demo-pet",
+      "mode": "default-policy",
+      "windows": {
+        "app": {
+          "windowId": 1674067213,
+          "bounds": {
+            "left": 20,
+            "top": 20,
+            "width": 1050,
+            "height": 980,
+            "windowState": "normal"
+          }
+        },
+        "control": {
+          "windowId": 1674067213,
+          "bounds": {
+            "left": 20,
+            "top": 20,
+            "width": 1050,
+            "height": 980,
+            "windowState": "normal"
+          }
+        }
+      },
+      "before": {
+        "visibility": "visible",
+        "hidden": false,
+        "orbit": 0,
+        "mainGPU": 0,
+        "events": [],
+        "preflight": [],
+        "rafPending": 0,
+        "rafExecuted": 0,
+        "runningAnimations": 11,
+        "overlays": 0
+      },
+      "hidden": {
+        "visibility": "hidden",
+        "hidden": true,
+        "orbit": 0,
+        "mainGPU": 0,
+        "events": [
+          {
+            "state": "hidden",
+            "hidden": true,
+            "trusted": true,
+            "at": 601.9000000059605
+          }
+        ],
+        "preflight": [],
+        "rafPending": 0,
+        "rafExecuted": 0,
+        "runningAnimations": 0,
+        "overlays": 0
+      },
+      "restored": {
+        "visibility": "visible",
+        "hidden": false,
+        "orbit": 0,
+        "mainGPU": 0,
+        "events": [
+          {
+            "state": "hidden",
+            "hidden": true,
+            "trusted": true,
+            "at": 601.9000000059605
+          },
+          {
+            "state": "visible",
+            "hidden": false,
+            "trusted": true,
+            "at": 646.2000000029802
+          }
+        ],
+        "preflight": [],
+        "rafPending": 0,
+        "rafExecuted": 0,
+        "runningAnimations": 11,
+        "overlays": 0
+      }
+    },
+    {
+      "path": "/history",
+      "coldLoadedHidden": {
+        "state": "loading",
+        "naturalWidth": 960,
+        "privateAnimations": 0
+      },
+      "mode": "default-policy",
+      "windows": {
+        "app": {
+          "windowId": 1674067216,
+          "bounds": {
+            "left": 20,
+            "top": 20,
+            "width": 1050,
+            "height": 980,
+            "windowState": "normal"
+          }
+        },
+        "control": {
+          "windowId": 1674067216,
+          "bounds": {
+            "left": 20,
+            "top": 20,
+            "width": 1050,
+            "height": 980,
+            "windowState": "normal"
+          }
+        }
+      },
+      "before": {
+        "visibility": "visible",
+        "hidden": false,
+        "orbit": 0,
+        "mainGPU": 0,
+        "events": [],
+        "preflight": [],
+        "rafPending": 0,
+        "rafExecuted": 0,
+        "runningAnimations": 8,
+        "overlays": 0
+      },
+      "hidden": {
+        "visibility": "hidden",
+        "hidden": true,
+        "orbit": 0,
+        "mainGPU": 0,
+        "events": [
+          {
+            "state": "hidden",
+            "hidden": true,
+            "trusted": true,
+            "at": 715.1000000089407
+          }
+        ],
+        "preflight": [],
+        "rafPending": 0,
+        "rafExecuted": 0,
+        "runningAnimations": 0,
+        "overlays": 0
+      },
+      "restored": {
+        "visibility": "visible",
+        "hidden": false,
+        "orbit": 0,
+        "mainGPU": 0,
+        "events": [
+          {
+            "state": "hidden",
+            "hidden": true,
+            "trusted": true,
+            "at": 715.1000000089407
+          },
+          {
+            "state": "visible",
+            "hidden": false,
+            "trusted": true,
+            "at": 821.1000000089407
+          }
+        ],
+        "preflight": [],
+        "rafPending": 0,
+        "rafExecuted": 0,
+        "runningAnimations": 9,
+        "overlays": 0
+      }
+    }
+  ],
+  "limits": "Not physical Windows/IAB minimize or hardware GPU performance; No capability override; actual software renderer"
+}

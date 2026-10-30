@@ -1,0 +1,98 @@
+{
+  "scope": "Diagnostic tracing only; not performance gate. Previous connect forced Layout15.884ms disappears after ResizeObserver natural phase; ordinary browser layout and Playwright visibility evaluation retained. No claim that tracing represents normal timing.",
+  "runs": [
+    {
+      "applicationSource": "b2d0a6aa16a4a6890e58b2b92d6f672bfc466c9c",
+      "rawPath": "runtime/p12-b2d/route-diagnosis/route-trace.json",
+      "sha256": "cc36f1b9dccdeaa0dbfb7fb099550c1483bb86f850caaf2bbec841c9c694d11d",
+      "navigationLongTasks": [
+        {
+          "at": 3949.2000000029802,
+          "duration": 54
+        }
+      ],
+      "layoutGroups": [
+        {
+          "topFunction": "natural",
+          "url": "",
+          "column": null,
+          "count": 15,
+          "sumMs": 12.948,
+          "maxMs": 5.428
+        },
+        {
+          "topFunction": "check",
+          "url": "",
+          "column": 34,
+          "count": 2,
+          "sumMs": 0.582,
+          "maxMs": 0.293
+        },
+        {
+          "topFunction": "dontForceLayout",
+          "url": "http://localhost:3000/_next/static/chunks/27gjg8e11zukd.js",
+          "column": 10469,
+          "count": 1,
+          "sumMs": 3.052,
+          "maxMs": 3.052
+        },
+        {
+          "topFunction": "a",
+          "url": "http://localhost:3000/_next/static/chunks/3ptss1hm5l3km.js",
+          "column": 28569,
+          "count": 1,
+          "sumMs": 15.884,
+          "maxMs": 15.884
+        },
+        {
+          "topFunction": "computeBox",
+          "url": "",
+          "column": 24,
+          "count": 1,
+          "sumMs": 0.143,
+          "maxMs": 0.143
+        }
+      ]
+    },
+    {
+      "applicationSource": "8a3f8bd12c1fc889566e82f9c2ad95cd96544524",
+      "rawPath": "runtime/p12-8a/route-diagnosis/route-trace.json",
+      "sha256": "b57baf15b551e1aaa7c47f4f85a2ee7292107fc8f3aabe7d6b3afb74c8986b42",
+      "navigationLongTasks": [],
+      "layoutGroups": [
+        {
+          "topFunction": "natural",
+          "url": "",
+          "column": null,
+          "count": 13,
+          "sumMs": 12.026,
+          "maxMs": 7.716
+        },
+        {
+          "topFunction": "check",
+          "url": "",
+          "column": 34,
+          "count": 2,
+          "sumMs": 0.478,
+          "maxMs": 0.289
+        },
+        {
+          "topFunction": "dontForceLayout",
+          "url": "http://localhost:3000/_next/static/chunks/27gjg8e11zukd.js",
+          "column": 10469,
+          "count": 1,
+          "sumMs": 5.094,
+          "maxMs": 5.094
+        },
+        {
+          "topFunction": "computeBox",
+          "url": "",
+          "column": 24,
+          "count": 1,
+          "sumMs": 16.59,
+          "maxMs": 16.59
+        }
+      ]
+    }
+  ]
+}

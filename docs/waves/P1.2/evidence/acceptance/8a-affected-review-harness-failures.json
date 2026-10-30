@@ -1,0 +1,31 @@
+{
+  "rootTaskId": "P12-ACCEPT",
+  "applicationSource": "8a3f8bd12c1fc889566e82f9c2ad95cd96544524",
+  "runs": [
+    {
+      "path": "runtime/p12-8a/affected-review",
+      "exitCode": 1,
+      "error": "route.continue: Route is already handled!",
+      "classification": "harness premature unroute while held handler outstanding",
+      "fix": "release real response; await actual input/cover then remove handler"
+    },
+    {
+      "path": "runtime/p12-8a/affected-review-r2",
+      "exitCode": 1,
+      "error": "AssertionError: Loading boundary moved the main origin; 100 !== 92",
+      "classification": "instant getBoundingClientRect sampled expected transformY8 page entry; not original56px margin collapse"
+    },
+    {
+      "path": "runtime/p12-8a/affected-review-r3",
+      "exitCode": 1,
+      "error": "AssertionError: Loading boundary moved the main origin; 100 !== 92",
+      "classification": "same root second failed repair: waiting CSS/fonts does not complete prescribed finite animation",
+      "reassessmentAfterTwo": "inspect source journey.css p12-page-in; wait its actual finite Animation.finished before steady geometry instead of another delay; original per-run CLS .1 unchanged"
+    },
+    {
+      "path": "runtime/p12-8a/affected-review-r4",
+      "exitCode": 0,
+      "classification": "bounded reassessment passes; pending/ready main y92, real bridge phases and true coarse chooser pass"
+    }
+  ]
+}
