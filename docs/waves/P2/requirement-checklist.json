@@ -2,790 +2,1141 @@
   "schemaVersion": "1.0.0",
   "specVersion": "P2-1.0.0",
   "baselineCommit": "7bbfd027758002cc519fc889cea3c8a2b5233717",
-  "purpose": "Leader clause-level preparation audit; no P2 execution pass claims",
+  "purpose": "Final clause-level disposition; source/runtime/docs and future public-release boundaries remain separate",
   "requirements": [
     {
       "id": "R-01.a",
       "requirement": "Next.js App Router、React、TypeScript",
       "source": "frontend/src/app; frontend/package-lock.json",
       "evidence": "E-SRC/E-FE",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "锁文件、路由源码与容器前端构建版本一致"
+      "observable": "锁文件、路由源码与容器前端构建版本一致",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "frontend/src/app; frontend/package-lock.json",
+      "finalImplementation": "App Router分离列表、制作、历史和账户路由，TypeScript全量检查；准确npm版本锁定。",
+      "finalEvidence": "E-FE：lint/type/生产构建；E-CLEAN：包内Docker构建。"
     },
     {
       "id": "R-01.b",
       "requirement": "Java、Spring Boot、MyBatis、MySQL",
       "source": "backend/pom.xml; Api.java; Db.java; compose.yaml",
       "evidence": "E-SRC/E-JAVA",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "真实MySQL下Java测试与构建，不以H2或Next替代"
+      "observable": "真实MySQL下Java测试与构建，不以H2或Next替代",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "backend/pom.xml; Api.java; Db.java; compose.yaml",
+      "finalImplementation": "Spring Boot提供HTTP接口，MyBatis注解mapper访问真实MySQL8.4，Java21编译。",
+      "finalEvidence": "E-JAVA：mvn verify/26例；E-CLEAN：三服务健康。"
     },
     {
       "id": "R-01.c",
       "requirement": "模板/素材/任务/个人记录由Java提供、状态历史持久化",
       "source": "Api/Tasks/Db/FilesService/Identity.java; lib/proxy.ts",
       "evidence": "E-API/E-JAVA",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "走Next同源代理确实读写Java/MySQL与文件卷"
+      "observable": "走Next同源代理确实读写Java/MySQL与文件卷",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Api/Tasks/Db/FilesService/Identity.java; lib/proxy.ts",
+      "finalImplementation": "Next仅同源转发，Java创建/查询任务并写MySQL及文件卷；不在Next内推进业务。",
+      "finalEvidence": "E-API：test01/03/05/07/08；E-AUTH：owner与任务持久化场景。"
     },
     {
       "id": "R-01.d",
       "requirement": "准确兼容版本和职责在README说明，方案自选",
       "source": "README版本表; package-lock/pom; Dockerfiles",
       "evidence": "E-DOC/E-CI",
-      "status": "documentation_needs_final_alignment",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-DOCS",
-      "observable": "最终README与实际锁/构建一致，队列/轮询选择可解释"
+      "observable": "最终README与实际锁/构建一致，队列/轮询选择可解释",
+      "baselineStatus": "documentation_needs_final_alignment",
+      "baselineSource": "README版本表; package-lock/pom; Dockerfiles",
+      "finalImplementation": "README版本表与package-lock/pom/固定digest Dockerfile对应，说明Java单线程队列和前端轮询职责。",
+      "finalEvidence": "E-DOC：README版本/连接/后台执行；E-FE/E-JAVA实际兼容构建。"
     },
     {
       "id": "R-02.a",
       "requirement": "分类、模板卡片、标题、封面",
       "source": "catalog.tsx; Api/Db.java; V2/V3 SQL",
       "evidence": "E-API/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "实际显示接口返回的分类/标题/封面"
+      "observable": "实际显示接口返回的分类/标题/封面",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "catalog.tsx; Api/Db.java; V2/V3 SQL",
+      "finalImplementation": "Java种子提供分类和四张带标题封面的模板卡。",
+      "finalEvidence": "E-API：test01；E-P11：Java cards keep stable IDs。"
     },
     {
       "id": "R-02.b",
       "requirement": "分类筛选与点击详情",
       "source": "catalog.tsx; app/templates/[id]/page.tsx",
       "evidence": "E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "切类过滤正确，真实Link进入对应模板"
+      "observable": "切类过滤正确，真实Link进入对应模板",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "catalog.tsx; app/templates/[id]/page.tsx",
+      "finalImplementation": "分类按钮更新接口查询，Link按稳定模板ID进入详情。",
+      "finalEvidence": "E-P11：four card first Enter navigation and classification。"
     },
     {
       "id": "R-02.c",
       "requirement": "Java数据而非前端写死页面",
       "source": "Api.templates/categories; Db.java",
       "evidence": "E-API/E-SRC",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "接口数据与页面卡片ID对应"
+      "observable": "接口数据与页面卡片ID对应",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Api.templates/categories; Db.java",
+      "finalImplementation": "catalog通过/api/categories和/api/templates获取Java数据，页面显示的ID与接口逐张比对。",
+      "finalEvidence": "E-API：test01；E-P11：Java cards keep stable IDs。"
     },
     {
       "id": "R-02.d",
       "requirement": "模板自行构造、不同素材数量、无需CRUD",
       "source": "V2/V3 SQL; demo-* templates",
       "evidence": "E-API",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "1/2/3图模板要求不同，初始化可重现"
+      "observable": "1/2/3图模板要求不同，初始化可重现",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "V2/V3 SQL; demo-* templates",
+      "finalImplementation": "V2/V3种子有宠物/人像1图、明信片2图、三格故事3图，固定演示数据无需后台CRUD。",
+      "finalEvidence": "E-API：test01/04；E-CLEAN：空库迁移后可读四模板。"
     },
     {
       "id": "R-02.e",
       "requirement": "示例本地可访问或合法资源，无付费/内部依赖",
       "source": "backend/resources/demo; THIRD-PARTY-NOTICES.md",
       "evidence": "E-API/E-SOURCE",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-AUDIT",
-      "observable": "包内全部图片可访问，来源与适用许可核对"
+      "observable": "包内全部图片可访问，来源与适用许可核对",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "backend/resources/demo; THIRD-PARTY-NOTICES.md",
+      "finalImplementation": "照片/山水/预置结果随包本地提供，来源和适用许可逐项登记，不需运行时外部服务。",
+      "finalEvidence": "E-API：test01；E-PROV：实际许可/包entries审阅；E-CLEAN本地素材。"
     },
     {
       "id": "R-03.a",
       "requirement": "详情标题、描述、封面、要求及对应上传位",
       "source": "studio.tsx; API template",
       "evidence": "E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "每种模板上传位数量/要求与API一致"
+      "observable": "每种模板上传位数量/要求与API一致",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "studio.tsx; API template",
+      "finalImplementation": "studio按Java模板绘制标题、描述、封面、MIME/大小和requiredImageCount上传槽。",
+      "finalEvidence": "E-P11：studio fields and overflow；E-P12：1/2图真实制作流程；E-API：test01/04。"
     },
     {
       "id": "R-03.b",
       "requirement": "选择、预览、替换、移除",
       "source": "studio.tsx UploadSlot; upload.test.tsx",
       "evidence": "E-FE/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "真实filechooser并快速替换/移除，旧图不恢复"
+      "observable": "真实filechooser并快速替换/移除，旧图不恢复",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "studio.tsx UploadSlot; upload.test.tsx",
+      "finalImplementation": "真实文件输入支持chooser、blob预览、替换/移除，成功后仍以服务端assetId提交。",
+      "finalEvidence": "E-FE：upload.test.tsx三例；E-P12：actual chooser、parallel slots。"
     },
     {
       "id": "R-03.c",
       "requirement": "上传中/失败反馈",
       "source": "UploadSlot; upload.test.tsx",
       "evidence": "E-FE/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "等待真实上传、错误可重选且不假READY"
+      "observable": "等待真实上传、错误可重选且不假READY",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "UploadSlot; upload.test.tsx",
+      "finalImplementation": "各槽独立UPLOADING/ERROR/READY，失败保留重选入口且不可误当就绪。",
+      "finalEvidence": "E-FE：rejects type and size…never reports READY after failure；E-P12：parallel slots…errors。"
     },
     {
       "id": "R-03.d",
       "requirement": "前端校验数量/类型/大小",
       "source": "studio.tsx; submission/upload tests",
       "evidence": "E-FE",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "缺图、非JPEG/PNG、>5MiB在客户端拦截"
+      "observable": "缺图、非JPEG/PNG、>5MiB在客户端拦截",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "studio.tsx; submission/upload tests",
+      "finalImplementation": "前端在上传前校验MIME/单文件字节，提交时要求所有必要槽READY且数量准确。",
+      "finalEvidence": "E-FE：upload及blocks submission until every required upload is ready。"
     },
     {
       "id": "R-03.e",
       "requirement": "服务端校验素材与制作参数",
       "source": "FilesService/Tasks/Simulation.java",
       "evidence": "E-JAVA/E-API",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "伪MIME/损坏图/大小/数量/非法simulation被拒绝，合法图落盘"
+      "observable": "伪MIME/损坏图/大小/数量/非法simulation被拒绝，合法图落盘",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "FilesService/Tasks/Simulation.java",
+      "finalImplementation": "Java校验实际图片解码/尺寸像素/MIME/大小、模板存在、素材数量/归属和simulation参数。",
+      "finalEvidence": "E-JAVA：uploadRejectsSpoofingAndBrokenImage、simulationValidationAndSnapshot；E-API：test03/04。"
     },
     {
       "id": "R-03.f",
       "requirement": "未准备好/提交中防重复",
       "source": "studio.tsx Maker; submission.test.tsx",
       "evidence": "E-FE/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "未就绪不能提交，双击仅一个受理POST"
+      "observable": "未就绪不能提交，双击仅一个受理POST",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "studio.tsx Maker; submission.test.tsx",
+      "finalImplementation": "素材未完成和POST受理中禁用按钮；同步ref锁抵御重复点击，受理后立即解除。",
+      "finalEvidence": "E-FE：submission.test.tsx四例；E-P12：真实快速重复提交。"
     },
     {
       "id": "R-03.g",
       "requirement": "不存在/加载/空数据/请求失败反馈",
       "source": "state-panel; app/loading/error/not-found; catalog/studio/history",
       "evidence": "E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "实际404/空/延迟/失败及恢复，框架错误不以query404冒充"
+      "observable": "实际404/空/延迟/失败及恢复，框架错误不以query404冒充",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "state-panel; app/loading/error/not-found; catalog/studio/history",
+      "finalImplementation": "列表/详情/历史具备loading、空数据、请求异常、404与可操作恢复反馈。",
+      "finalEvidence": "E-P11：history and unknown template；E-P12：boundaries及error/loading反馈；E-FE查询恢复。"
     },
     {
       "id": "R-03.h",
       "requirement": "服务端可用文件，非只浏览器blob",
       "source": "FilesService.java; material-files卷",
       "evidence": "E-API/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "API返回asset ID/URL，后端使用文件，预览blob不能代替服务器上传"
+      "observable": "API返回asset ID/URL，后端使用文件，预览blob不能代替服务器上传",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "FilesService.java; material-files卷",
+      "finalImplementation": "上传实际写Java文件卷，assetId与路径入库，受session/owner鉴权；blob仅本地预览。",
+      "finalEvidence": "E-API：test03/08；E-AUTH：register保留上传、跨owner404；E-UPGRADE旧文件保留。"
     },
     {
       "id": "R-04.a",
       "requirement": "检查建任务后返回ID，不等待制作",
       "source": "Tasks.create/afterCommit; Api.create",
       "evidence": "E-JAVA/E-API",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "慢任务POST202先返回，DB记录已存在"
+      "observable": "慢任务POST202先返回，DB记录已存在",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Tasks.create/afterCommit; Api.create",
+      "finalImplementation": "Tasks.create事务提交后派发，POST202返回包含id的任务，不等待延迟生成。",
+      "finalEvidence": "E-JAVA：commitBeforeDispatchAndRollbackDoesNotDispatch；E-API：test05。"
     },
     {
       "id": "R-04.b",
       "requirement": "Java后台执行，关闭页面不中断",
       "source": "Processing/Pipeline.java",
       "evidence": "E-API/E-HISTORY",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "提交后不查询/关闭页面，随后GET显示已完成"
+      "observable": "提交后不查询/关闭页面，随后GET显示已完成",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Processing/Pipeline.java",
+      "finalImplementation": "Java Processing/Pipeline独立工作线程执行，浏览器关闭不决定处理生命周期。",
+      "finalEvidence": "E-API：test05无查询执行；E-AUI：已受理任务切身份后继续、重登恢复。"
     },
     {
       "id": "R-04.c",
       "requirement": "多任务可排队或并行",
       "source": "Processing有界单线程FIFO",
       "evidence": "E-JAVA/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "连续两个任务分别排队/执行、各自终态"
+      "observable": "连续两个任务分别排队/执行、各自终态",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Processing有界单线程FIFO",
+      "finalImplementation": "有界单线程FIFO承接多任务，队列满时持久化清晰失败而不丢失。",
+      "finalEvidence": "E-JAVA：saturatedQueueFailurePersistsFromAfterCommit；E-API：test07。"
     },
     {
       "id": "R-05.a",
       "requirement": "素材检查→模拟生成→结果整理顺序",
       "source": "Simulation.STAGES; Pipeline.run",
       "evidence": "E-JAVA",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "orderedBoundaries与三条steps顺序"
+      "observable": "orderedBoundaries与三条steps顺序",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Simulation.STAGES; Pipeline.run",
+      "finalImplementation": "Pipeline严格ASSET_CHECK→GENERATE→FINALIZE，顺序来源Java而非前端定时文案。",
+      "finalEvidence": "E-JAVA：orderedBoundariesAndStableTerminal；E-AUTH：Real multi-step order。"
     },
     {
       "id": "R-05.b",
       "requirement": "每步独立可观察执行边界，非前端定时文案",
       "source": "Processing/Db begin/end; task_steps",
       "evidence": "E-JAVA/E-API",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "慢配置查询可见独立开始/结束/当前阶段，后台无查询也推进"
+      "observable": "慢配置查询可见独立开始/结束/当前阶段，后台无查询也推进",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Processing/Db begin/end; task_steps",
+      "finalImplementation": "每阶段begin/end单独落task_steps，阶段开始/结束有时间、状态和版本边界。",
+      "finalEvidence": "E-JAVA：stagesFailuresHistoryAndOwnership；E-API：test05/06；E-AUTH三阶段快照。"
     },
     {
       "id": "R-05.c",
       "requirement": "状态/阶段/结果或失败原因持久化，可查任务/历史",
       "source": "Tasks.view/history; Db; V1 SQL",
       "evidence": "E-JAVA/E-API",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "GET详情和历史快照一致，失败阶段/原因可读"
+      "observable": "GET详情和历史快照一致，失败阶段/原因可读",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Tasks.view/history; Db; V1 SQL",
+      "finalImplementation": "Task和steps保存状态、阶段、失败code/reason、结果URL、创建时间及单调version。",
+      "finalEvidence": "E-API：test05/06/07；E-AUTH：查询历史与任务字段断言。"
     },
     {
       "id": "R-05.d",
       "requirement": "整理成功后可预览结果地址",
       "source": "Processing.success; Api result; history preview",
       "evidence": "E-API/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "成功才有resultUrl，原PNG真实预览，终态事务原子"
+      "observable": "成功才有resultUrl，原PNG真实预览，终态事务原子",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Processing.success; Api result; history preview",
+      "finalImplementation": "整理成功后提供同owner结果URL；成功step与Task终态同事务，结果接口可解码。",
+      "finalEvidence": "E-JAVA：finalCompletionRollsBackStepAndPersistsFailure、ResultThumbnailTest；E-API：test05/08。"
     },
     {
       "id": "R-05.e",
       "requirement": "查询只读，不驱动任务下一步",
       "source": "Tasks.get/history; Pipeline",
       "evidence": "E-JAVA/E-API",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "不查询也完成；GET不写阶段或启动执行"
+      "observable": "不查询也完成；GET不写阶段或启动执行",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Tasks.get/history; Pipeline",
+      "finalImplementation": "Tasks.get/history仅查询；Pipeline无需任何查询可到终态。",
+      "finalEvidence": "E-API：test05；E-AUTH：terminal queries do not regress。"
     },
     {
       "id": "R-05.f",
       "requirement": "等待/处理/成功/失败，终态不回退",
       "source": "Db状态迁移; types.mergeTask",
       "evidence": "E-JAVA/E-FE/E-API",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "四状态可表达，重复/乱序旧快照不能退回处理中"
+      "observable": "四状态可表达，重复/乱序旧快照不能退回处理中",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Db状态迁移; types.mergeTask",
+      "finalImplementation": "持久化QUEUED/RUNNING/SUCCEEDED/FAILED，前端按id/version合并并保护终态。",
+      "finalEvidence": "E-JAVA：orderedBoundariesAndStableTerminal；E-FE：never regresses versions or terminal state。"
     },
     {
       "id": "R-06.a",
       "requirement": "可重复指定阶段失败",
       "source": "Simulation.failAt; Pipeline",
       "evidence": "E-JAVA/E-API",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "ASSET_CHECK/GENERATE/FINALIZE逐个真实失败"
+      "observable": "ASSET_CHECK/GENERATE/FINALIZE逐个真实失败",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Simulation.failAt; Pipeline",
+      "finalImplementation": "simulation.failAt可指定三阶段之一，非随机，可重复触发。",
+      "finalEvidence": "E-JAVA：failureStopsFollowingHandlers参数化三例；E-API：test06；E-AUTH三次失败。"
     },
     {
       "id": "R-06.b",
       "requirement": "失败停止后续并保存阶段/原因",
       "source": "Pipeline return; Processing.fail",
       "evidence": "E-JAVA/E-API",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "后续NOT_STARTED，无后续handler执行，reason可理解"
+      "observable": "后续NOT_STARTED，无后续handler执行，reason可理解",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Pipeline return; Processing.fail",
+      "finalImplementation": "失败记录failedStage/code/reason，立刻return，后续step保持NOT_STARTED。",
+      "finalEvidence": "E-JAVA：failureStopsFollowingHandlers、unexpectedActionFailureStopsPipeline；E-API：test06。"
     },
     {
       "id": "R-06.c",
       "requirement": "耗时可调，能看处理中/多任务",
       "source": "simulation.delayMs; env配置",
       "evidence": "E-API/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "设置慢延迟可观察队列与阶段，快配置可复验"
+      "observable": "设置慢延迟可观察队列与阶段，快配置可复验",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "simulation.delayMs; env配置",
+      "finalImplementation": "每阶段0～30000ms，可由环境默认值或每任务delayMs覆盖，入库保存快照。",
+      "finalEvidence": "E-JAVA：simulationValidationAndSnapshot；E-AUTH控制耗时实际观察；E-DOC可复制请求。"
     },
     {
       "id": "R-06.d",
       "requirement": "README写清模拟操作，不要求随机/重试UI",
       "source": "README指定失败与耗时",
       "evidence": "E-DOC",
-      "status": "documentation_needs_final_alignment",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-DOCS",
-      "observable": "最终示例可复制，三阶段与耗时字段和服务端一致"
+      "observable": "最终示例可复制，三阶段与耗时字段和服务端一致",
+      "baselineStatus": "documentation_needs_final_alignment",
+      "baselineSource": "README指定失败与耗时",
+      "finalImplementation": "README提供带同源cookie的fetch完整素材/POST示例，说明三failAt和延迟上限/开关。",
+      "finalEvidence": "E-DOC：指定失败与耗时；E-API/E-AUTH使用等价真实请求。"
     },
     {
       "id": "R-07.a",
       "requirement": "上传/提交/等待处理/成功/失败分别表达",
       "source": "studio/history; state-panel",
       "evidence": "E-FE/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "真实各态分别出现，错误来源可区分"
+      "observable": "真实各态分别出现，错误来源可区分",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "studio/history; state-panel",
+      "finalImplementation": "上传、受理POST、后台等待/运行、成功/失败分别使用独立状态和反馈。",
+      "finalEvidence": "E-FE：upload/submission/use-tasks；E-P11：multiple tasks…true failure；E-MEDIA流程。"
     },
     {
       "id": "R-07.b",
       "requirement": "受理成功展示任务并解除提交态",
       "source": "Maker; useTasks.add; submission tests",
       "evidence": "E-FE/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "首次受理后可立即继续第二任务"
+      "observable": "首次受理后可立即继续第二任务",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Maker; useTasks.add; submission tests",
+      "finalImplementation": "202后将Task加入当前身份列表并清POST锁，可继续提交第二任务。",
+      "finalEvidence": "E-FE：unlocks after acceptance and allows a second independent task；E-P12实际连续任务。"
     },
     {
       "id": "R-07.c",
       "requirement": "展示真实当前阶段/失败原因/成功图",
       "source": "history.tsx; Task fields",
       "evidence": "E-API/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "页面对应Java stage/reason/result，不虚构百分比"
+      "observable": "页面对应Java stage/reason/result，不虚构百分比",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "history.tsx; Task fields",
+      "finalImplementation": "历史卡读取服务端stage/steps和reason，成功显示缩图及原图预览。",
+      "finalEvidence": "E-P11：multiple tasks…true failure；E-AUTH真实阶段/结果；E-MEDIA流程。"
     },
     {
       "id": "R-07.d",
       "requirement": "查询暂不可用≠任务失败，保留信息并能恢复",
       "source": "use-tasks queryError/refresh; history",
       "evidence": "E-FE/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "GET503保留RUNNING，恢复查询后读取真实终态"
+      "observable": "GET503保留RUNNING，恢复查询后读取真实终态",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "use-tasks queryError/refresh; history",
+      "finalImplementation": "queryError与Task.status分离，查询503保留原任务；恢复按钮重新读取Java。",
+      "finalEvidence": "E-FE：keeps server state on query outage and recovers separately；E-P11实际阻断/恢复GET。"
     },
     {
       "id": "R-08.a",
       "requirement": "连续多任务，状态/阶段/错误/结果不串",
       "source": "userId/task.id query keys; mergeTask",
       "evidence": "E-FE/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "逆序A失败B成功分别正确，结果归属正确"
+      "observable": "逆序A失败B成功分别正确，结果归属正确",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "userId/task.id query keys; mergeTask",
+      "finalImplementation": "查询key和合并以owner/taskId隔离，多个任务失败、成功、迟到响应不会互相替换。",
+      "finalEvidence": "E-FE：keeps A failure and B success independent under reversed responses；E-API：test07。"
     },
     {
       "id": "R-08.b",
       "requirement": "自动跟踪未结束",
       "source": "use-tasks active分页/refetchInterval",
       "evidence": "E-FE/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "新建/刷新活跃任务自动查，跨历史分页不漏"
+      "observable": "新建/刷新活跃任务自动查，跨历史分页不漏",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "use-tasks active分页/refetchInterval",
+      "finalImplementation": "活跃任务页自动发现并逐任务轮询，不仅依赖历史第一页。",
+      "finalEvidence": "E-FE：discovers active tasks beyond the first history page；E-API：test07。"
     },
     {
       "id": "R-08.c",
       "requirement": "单任务结束停跟踪，无活动任务不轮询",
       "source": "terminal/refetchInterval false",
       "evidence": "E-FE/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "A结束不再查，B仍查；全部结束停止周期GET"
+      "observable": "A结束不再查，B仍查；全部结束停止周期GET",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "terminal/refetchInterval false",
+      "finalImplementation": "终态任务refetchInterval=false；无待处理任务停止，不因查询重回处理中。",
+      "finalEvidence": "E-FE：stops polling ended tasks while another remains active, then stops all；E-P11终态请求计数。"
     },
     {
       "id": "R-08.d",
       "requirement": "离页/切用户清理请求/订阅",
       "source": "AbortSignal; providers generation; use-tasks",
       "evidence": "E-FE/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "卸载停止计时/请求；新账户切换扩展需新用例"
+      "observable": "卸载停止计时/请求；新账户切换扩展需新用例",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "AbortSignal; providers generation; use-tasks",
+      "finalImplementation": "离页取消AbortSignal/计时器，身份变化先清查询和私有预览，认证串行锁跨路由保留。",
+      "finalEvidence": "E-FE：cancels requests and timers on unmount；E-AUI真实Set-Cookie锁/迟到上传。"
     },
     {
       "id": "R-08.e",
       "requirement": "旧响应不覆盖当前用户/其他任务",
       "source": "api/session-generation/types; lifecycle tests",
       "evidence": "E-FE",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "迟到401/数据/上传/提交及认证Set-Cookie竞态在P2一并验证"
+      "observable": "迟到401/数据/上传/提交及认证Set-Cookie竞态在P2一并验证",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "api/session-generation/types; lifecycle tests",
+      "finalImplementation": "generation隔绝旧数据/401/finally，持久Provider认证锁防旧cookie覆盖新身份。",
+      "finalEvidence": "E-FE：session/account-lifecycle；E-AUI：旧history/真实撤销token401、上传和已受理POST门控。"
     },
     {
       "id": "R-09.a",
       "requirement": "个人历史、创建时间、状态、成功或失败原因",
       "source": "Tasks.history; history.tsx; task-time",
       "evidence": "E-API/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "返回历史带时间和对应结果/原因，日期语义正确"
+      "observable": "返回历史带时间和对应结果/原因，日期语义正确",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Tasks.history; history.tsx; task-time",
+      "finalImplementation": "个人历史显示本地时区创建时间、状态、阶段、失败原因或成功图。",
+      "finalEvidence": "E-API：test07；E-FE：task-time本地日历、午夜/跨年/闰日与无效日期测试；E-AUI账户历史。"
     },
     {
       "id": "R-09.b",
       "requirement": "刷新从Java恢复并继续跟踪",
       "source": "use-tasks active/history; Java/MySQL",
       "evidence": "E-FE/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "刷新后同身份记录恢复，未结束任务继续"
+      "observable": "刷新后同身份记录恢复，未结束任务继续",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "use-tasks active/history; Java/MySQL",
+      "finalImplementation": "刷新从Java历史与活跃接口重建，不依赖localStorage临时任务；未结束继续跟踪。",
+      "finalEvidence": "E-API：test07；E-P11：refresh；E-AUI：重登录回历史；E-UPGRADE旧记录恢复。"
     },
     {
       "id": "R-09.c",
       "requirement": "成功结果图片预览",
       "source": "ResultPreview; authenticated original result",
       "evidence": "E-BROWSER/E-JAVA",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "真实原PNG、冷加载/失败/焦点返回，非仅缩略图"
+      "observable": "真实原PNG、冷加载/失败/焦点返回，非仅缩略图",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "ResultPreview; authenticated original result",
+      "finalImplementation": "受owner保护的原PNG在原生对话框展示，卡片小JPEG不改变原结果。",
+      "finalEvidence": "E-JAVA：ResultThumbnailTest三例；E-P12：preview显影/冷图；E-API：test08。"
     },
     {
       "id": "R-10.a",
       "requirement": "自行设计身份方案",
       "source": "Identity.java; users/sessions; providers",
       "evidence": "E-JAVA/E-API",
-      "status": "guest_implemented_account_extension_missing",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-BE-USER",
-      "observable": "已有匿名有效；按用户确认增加本地账户/访客双模式"
+      "observable": "已有匿名有效；按用户确认增加本地账户/访客双模式",
+      "baselineStatus": "guest_implemented_account_extension_missing",
+      "baselineSource": "Identity.java; users/sessions; providers",
+      "finalImplementation": "HttpOnly随机session访客+本地邮箱密码账户，身份由Java验证，不接受客户端指定owner。",
+      "finalEvidence": "E-JAVA：AccountIntegrationTest/PasswordAndAuthTest；E-AUTH八例；E-UPGRADE访客升级。"
     },
     {
       "id": "R-10.b",
       "requirement": "个人任务记录按身份管理",
       "source": "Tasks/Db owner; media owner guards",
       "evidence": "E-JAVA/E-API/E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "账户A/B/访客三者任务、素材、结果隔离；注册升级保留访客作品"
+      "observable": "账户A/B/访客三者任务、素材、结果隔离；注册升级保留访客作品",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Tasks/Db owner; media owner guards",
+      "finalImplementation": "任务、上传、结果、缩图均按session.owner鉴权；登录不隐式合并其他访客作品。",
+      "finalEvidence": "E-API：test08；E-AUTH：Second account and guest media/task isolation；E-AUI。"
     },
     {
       "id": "R-10.c",
       "requirement": "README说明身份和演示",
       "source": "README身份限制/无痕演示",
       "evidence": "E-DOC",
-      "status": "documentation_needs_final_alignment",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-DOCS",
-      "observable": "新访客、注册、登录、退出/改密与历史语义同步说明"
+      "observable": "新访客、注册、登录、退出/改密与历史语义同步说明",
+      "baselineStatus": "documentation_needs_final_alignment",
+      "baselineSource": "README身份限制/无痕演示",
+      "finalImplementation": "README明确cookie期限/访客丢失、注册保留、登录不合并、退出/改密与双窗口演示。",
+      "finalEvidence": "E-DOC：身份与个人作品/五分钟演示；E-AUTH等价真实操作。"
     },
     {
       "id": "R-11.a",
       "requirement": "列表/制作/历史布局层级间距反馈",
       "source": "catalog/studio/history; globals/journey CSS",
       "evidence": "E-BROWSER/E-HISTORY",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "当前页面层级清楚，账户新界面同风格"
+      "observable": "当前页面层级清楚，账户新界面同风格",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "catalog/studio/history; globals/journey CSS",
+      "finalImplementation": "保留用户认可浅色山水首页，制作左配置/右历史，独立作品与账户页；反馈分层。",
+      "finalEvidence": "E-P11/E-P12布局/动态断言；E-REVIEW：账户桌面与375PNG有限美学审核。"
     },
     {
       "id": "R-11.b",
       "requirement": "桌面主界面、小屏可操作",
       "source": "responsive CSS; 375px场景",
       "evidence": "E-BROWSER",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "375px所有核心和账户表单可操作、无横向溢出"
+      "observable": "375px所有核心和账户表单可操作、无横向溢出",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "responsive CSS; 375px场景",
+      "finalImplementation": "桌面主要流程与375px真实touch/chooser/账户流程，布局无横向溢出。",
+      "finalEvidence": "E-P11：mobile真实coarse first tap；E-AUI：375px全账户流程。"
     },
     {
       "id": "R-11.c",
       "requirement": "合适语义、键盘焦点",
       "source": "Link/input/button/native dialog",
       "evidence": "E-BROWSER/E-FE",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "Tab/Enter/ESC/焦点恢复和新账户表单可用"
+      "observable": "Tab/Enter/ESC/焦点恢复和新账户表单可用",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Link/input/button/native dialog",
+      "finalImplementation": "Link/input/button/native dialog语义，Escape关闭、焦点返回、键盘上传/导航。",
+      "finalEvidence": "E-P11：identity dialog Escape and focus；E-P12：chooser键盘；E-AUI键盘设置。"
     },
     {
       "id": "R-11.d",
       "requirement": "上传和图标按钮有标签",
       "source": "UploadSlot; Modal close; aria labels",
       "evidence": "E-BROWSER/E-SRC",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "可访问名可读，账户密码切换等新图标同样有标签"
+      "observable": "可访问名可读，账户密码切换等新图标同样有标签",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "UploadSlot; Modal close; aria labels",
+      "finalImplementation": "槽位选择/替换/移除、预览关闭和账户入口均有可理解label/aria-label。",
+      "finalEvidence": "E-P12真实按accessible role操作；E-AUI按钮/输入label定位。"
     },
     {
       "id": "R-11.e",
       "requirement": "参考主要布局，品牌素材可替换，不扩题外功能",
       "source": "UI refs; 原创布局/合法素材; Shell",
       "evidence": "E-SOURCE/E-HISTORY",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-REPORT",
-      "observable": "解释UI-01/02/03对应；不把账单订阅当强制要求"
+      "observable": "解释UI-01/02/03对应；不把账单订阅当强制要求",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "UI refs; 原创布局/合法素材; Shell",
+      "finalImplementation": "沿用模板网格、详情/制作并排历史布局，以疏影浅色原创视觉替换品牌；未实现题外会员/计费按钮。",
+      "finalEvidence": "E-SRC：catalog/studio/history/shell；E-REVIEW；E-P11无题外控件。"
     },
     {
       "id": "R-12.a",
       "requirement": "push/PR触发CI",
       "source": "ci.yml on push/pull_request",
       "evidence": "E-CI/E-SRC",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "检查触发和最终候选实际run，不关门槛"
+      "observable": "检查触发和最终候选实际run，不关门槛",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "ci.yml on push/pull_request",
+      "finalImplementation": "GitHub Actions同时监听push和pull_request并保留workflow_dispatch，未跳过必需检查。",
+      "finalEvidence": "E-CI：实际run事件/SHA和job/step结果；ci.yml。"
     },
     {
       "id": "R-12.b",
       "requirement": "前端lint/TypeScript/构建",
       "source": "frontend-check/Dockerfile/CI",
       "evidence": "E-FE/E-CI",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "最终容器lint/type/test/生产构建exit0"
+      "observable": "最终容器lint/type/test/生产构建exit0",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "frontend-check/Dockerfile/CI",
+      "finalImplementation": "frontend容器npm ci→eslint→tsc→Vitest，生产Docker单独next build。",
+      "finalEvidence": "E-CI frontend+integration构建；E-FE58例。"
     },
     {
       "id": "R-12.c",
       "requirement": "Java测试和构建",
       "source": "backend-check; mvn verify/package",
       "evidence": "E-JAVA/E-CI",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "真实MySQL测试0失败0跳过、JAR构建成功"
+      "observable": "真实MySQL测试0失败0跳过、JAR构建成功",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "backend-check; mvn verify/package",
+      "finalImplementation": "Maven测试镜像连接真实隔离MySQL执行verify并package，生产镜像构建JAR。",
+      "finalEvidence": "E-CI backend；E-JAVA26例；E-CLEAN。"
     },
     {
       "id": "R-12.d",
       "requirement": "关键测试：后端顺序/中断，前端多任务/查询异常",
       "source": "Pipeline/DatabaseIntegration/use-tasks tests",
       "evidence": "E-JAVA/E-FE",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "点名行为测试与结果，P2账户新增不削弱旧断言"
+      "observable": "点名行为测试与结果，P2账户新增不削弱旧断言",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Pipeline/DatabaseIntegration/use-tasks tests",
+      "finalImplementation": "后端覆盖顺序/每阶段中断/事务；前端覆盖多任务反序响应、queryError≠执行失败及生命周期。",
+      "finalEvidence": "E-JAVA：Pipeline/DatabaseIntegrationTest；E-FE：use-tasks及submission/upload/session测试。"
     },
     {
       "id": "R-12.e",
       "requirement": "压缩包保留CI配置",
       "source": "ci.yml; archive entries",
       "evidence": "E-SRC",
-      "status": "pending_final_package",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-SEAL",
-      "observable": "最终ZIP确含完整workflow与测试入口"
+      "observable": "最终ZIP确含完整workflow与测试入口",
+      "baselineStatus": "pending_final_package",
+      "baselineSource": "ci.yml; archive entries",
+      "finalImplementation": "源码ZIP保留完整.github/workflows/ci.yml及原检查脚本，逐blob对照。",
+      "finalEvidence": "E-PACK：protectedsource与source-tree-index完整性。"
     },
     {
       "id": "R-13.0",
       "requirement": "完整前后端、版本锁、结构/种子、CI、README；注明验收commit",
       "source": "frontend/backend/locks/migration/CI/README",
       "evidence": "E-SRC/E-DOC",
-      "status": "pending_final_package",
+      "status": "documentation_source_and_actual_evidence_accepted_with_limits",
       "task": "P2-SEAL",
-      "observable": "ZIP/清单完整，40位SHA与实际CI/代码匹配"
+      "observable": "ZIP/清单完整，40位SHA与实际CI/代码匹配",
+      "baselineStatus": "pending_final_package",
+      "baselineSource": "frontend/backend/locks/migration/CI/README",
+      "finalImplementation": "完整应用源码、锁文件、V1～V4结构/种子、CI、Compose、README；外部版本清单分开验收与交付commit。",
+      "finalEvidence": "E-PACK实际entries/blob/ZIPhash；E-CLEAN从ZIP运行。"
     },
     {
       "id": "R-13.1",
       "requirement": "技术版本/结构/构建测试启动/连接",
       "source": "README; lock/pom/Compose",
       "evidence": "E-DOC/E-CI",
-      "status": "documentation_needs_final_alignment",
+      "status": "documentation_source_and_actual_evidence_accepted_with_limits",
       "task": "P2-DOCS",
-      "observable": "统一最终入口，全部命令从新包可执行"
+      "observable": "统一最终入口，全部命令从新包可执行",
+      "baselineStatus": "documentation_needs_final_alignment",
+      "baselineSource": "README; lock/pom/Compose",
+      "finalImplementation": "README列版本、结构、全部容器构建/测试/启动和同源Next→Java→MySQL连接。",
+      "finalEvidence": "E-DOC：技术版本/结构/构建测试/连接；E-CLEAN实际命令。"
     },
     {
       "id": "R-13.2",
       "requirement": "配置示例/初始化/模拟数据素材",
-      "source": "env example; V1-V3; demo/ink",
+      "source": ".env.example; backend/src/main/resources/db/migration/V1__schema.sql/V2__templates.sql/V3__p1_visual_assets.sql/V4__accounts.sql; demo/",
       "evidence": "E-DOC/E-API",
-      "status": "account_migration_and_final_docs_pending",
+      "status": "documentation_source_and_actual_evidence_accepted_with_limits",
       "task": "P2-DOCS",
-      "observable": "补V4与账户初始化，干净空库验证无凭据示例"
+      "observable": "补V4与账户初始化，干净空库验证无凭据示例",
+      "baselineStatus": "account_migration_and_final_docs_pending",
+      "baselineSource": "env example; V1-V3; demo/ink",
+      "finalImplementation": ".env.example无真实凭据，Flyway初始化，包内demo和资源重做输入/来源。",
+      "finalEvidence": "E-PACK敏感项/文件完整性；E-CLEAN空库；E-UPGRADE V3→V4。"
     },
     {
       "id": "R-13.3",
       "requirement": "主要接口字段/状态/阶段/执行方式",
       "source": "specs/api.yaml; README; Tasks/Pipeline",
       "evidence": "E-DOC/E-SRC",
-      "status": "documentation_needs_final_alignment",
+      "status": "documentation_source_and_actual_evidence_accepted_with_limits",
       "task": "P2-DOCS",
-      "observable": "账户新API纳入OpenAPI/README，原字段准确"
+      "observable": "账户新API纳入OpenAPI/README，原字段准确",
+      "baselineStatus": "documentation_needs_final_alignment",
+      "baselineSource": "specs/api.yaml; README; Tasks/Pipeline",
+      "finalImplementation": "README接口表和OpenAPI描述字段、Task/Step状态、快照延迟/单线程后台方式。",
+      "finalEvidence": "E-DOC：specs/api.yaml+README；E-API/E-AUTH逐接口实测。"
     },
     {
       "id": "R-13.4",
       "requirement": "成功/指定失败/耗时/多任务/刷新演示",
       "source": "README模拟fetch; demo",
       "evidence": "E-DOC/E-BROWSER",
-      "status": "documentation_needs_final_alignment",
+      "status": "documentation_source_and_actual_evidence_accepted_with_limits",
       "task": "P2-DOCS",
-      "observable": "最终可复制演示并附真实GIF，测试证据不靠GIF代替"
+      "observable": "最终可复制演示并附真实GIF，测试证据不靠GIF代替",
+      "baselineStatus": "documentation_needs_final_alignment",
+      "baselineSource": "README模拟fetch; demo",
+      "finalImplementation": "README五分钟演示及可复制simulation请求覆盖成功、三阶段失败、慢处理、多个任务和刷新。",
+      "finalEvidence": "E-API：test05/06/07；E-AUTH阶段场景；E-MEDIA操作记录。"
     },
     {
       "id": "R-13.5",
       "requirement": "身份与个人记录设计/演示",
       "source": "Identity/providers; README",
       "evidence": "E-DOC/E-API",
-      "status": "documentation_needs_final_alignment",
+      "status": "documentation_source_and_actual_evidence_accepted_with_limits",
       "task": "P2-DOCS",
-      "observable": "访客/账户、注册保留、登录不合并、退出/改密行为如实"
+      "observable": "访客/账户、注册保留、登录不合并、退出/改密行为如实",
+      "baselineStatus": "documentation_needs_final_alignment",
+      "baselineSource": "Identity/providers; README",
+      "finalImplementation": "README阐明访客/注册账户、owner隔离、改昵称/密码及恢复历史的演示方式。",
+      "finalEvidence": "E-DOC身份章节；E-AUTH/E-AUI实测同方案。"
     },
     {
       "id": "R-13.6",
       "requirement": "完成/未完成/已知限制/实际投入/重启边界",
       "source": "effort; Processing启动中断; README",
       "evidence": "E-DOC/E-JAVA",
-      "status": "documentation_needs_final_alignment",
+      "status": "documentation_source_and_actual_evidence_accepted_with_limits",
       "task": "P2-REPORT",
-      "observable": "实测/估算/未知分开，重启不续跑和新账户限制明示"
+      "observable": "实测/估算/未知分开，重启不续跑和新账户限制明示",
+      "baselineStatus": "documentation_needs_final_alignment",
+      "baselineSource": "effort; Processing启动中断; README",
+      "finalImplementation": "完成与限制分列；记录AI墙钟与人工低置信估计；明确重启遗留任务INTERRUPTED且不自动续跑。",
+      "finalEvidence": "E-DOC：effort/README限制；E-JAVA：restartClosesOnlyNonterminalTasks。"
     },
     {
       "id": "R-13.7",
       "requirement": "部署回滚基本步骤",
       "source": "docs/delivery; README; historical恢复",
       "evidence": "E-DOC/E-HISTORY",
-      "status": "account_migration_and_final_docs_pending",
+      "status": "documentation_source_and_actual_evidence_accepted_with_limits",
       "task": "P2-DOCS",
-      "observable": "V4匹配备份/回滚，新旧数据不破坏，不删除产品卷"
+      "observable": "V4匹配备份/回滚，新旧数据不破坏，不删除产品卷",
+      "baselineStatus": "account_migration_and_final_docs_pending",
+      "baselineSource": "docs/delivery; README; historical恢复",
+      "finalImplementation": "提供具体部署、成套DB/文件备份与隔离恢复/匹配schema回滚步骤，不删除产品卷。",
+      "finalEvidence": "E-DOC：docs/delivery.md；E-UPGRADE仅证明升级，不冒称本轮生产恢复演练。"
     },
     {
       "id": "R-13.8",
       "requirement": "使用AI与拆分上下文/生成修改/验证修正实例",
       "source": "README; effort; handoffs/reviews",
       "evidence": "E-DOC/E-HISTORY",
-      "status": "documentation_needs_final_alignment",
+      "status": "documentation_source_and_actual_evidence_accepted_with_limits",
       "task": "P2-REPORT",
-      "observable": "给真实闭环/准确角色与模型未知，不含私人聊天账号"
+      "observable": "给真实闭环/准确角色与模型未知，不含私人聊天账号",
+      "baselineStatus": "documentation_needs_final_alignment",
+      "baselineSource": "README; effort; handoffs/reviews",
+      "finalImplementation": "声明Codex多角色任务/契约/所有权、作者测试→独立验证→只读审阅→Leader复验；说明实际缓存/身份竞态修正。",
+      "finalEvidence": "E-DOC：README/effort；E-JAVA并发升级测试及E-AUI真实门控；不交私人聊天。"
     },
     {
       "id": "R-13.9",
       "requirement": "脚手架/开源代码/素材来源与复用",
       "source": "THIRD-PARTY-NOTICES; manifests; RB LICENSE",
       "evidence": "E-SOURCE",
-      "status": "provenance_review_pending",
+      "status": "documentation_source_and_actual_evidence_accepted_with_limits",
       "task": "P2-AUDIT",
-      "observable": "逐项适用许可/复用，原创授权范围明确，不盖过Commons Clause"
+      "observable": "逐项适用许可/复用，原创授权范围明确，不盖过Commons Clause",
+      "baselineStatus": "provenance_review_pending",
+      "baselineSource": "THIRD-PARTY-NOTICES; manifests; RB LICENSE",
+      "finalImplementation": "原创MIT范围与第三方分开，ReactBits保留全文MIT+Commons Clause；照片/山水/Pillow分别登记，不复制参考仓库业务。",
+      "finalEvidence": "E-PROV：源码/entries审阅；THIRD-PARTY-NOTICES、LICENSE、docs/assets/provenance.json。"
     },
     {
       "id": "R-14.a",
       "requirement": "推荐docker compose up --build三服务",
       "source": "compose.yaml; Dockerfiles",
       "evidence": "E-CI/E-API",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "从最终ZIP新目录/空卷实际启动，非仅当前环境成功"
+      "observable": "从最终ZIP新目录/空卷实际启动，非仅当前环境成功",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "compose.yaml; Dockerfiles",
+      "finalImplementation": "默认命令docker compose up --build即三服务及健康依赖/持久化卷。",
+      "finalEvidence": "E-CLEAN：从候选ZIP在全新项目/空卷执行同命令带detach/wait选项。"
     },
     {
       "id": "R-14.b",
       "requirement": "Dockerfile、非敏感配置示例、说明",
       "source": "Dockerfiles; .env.example; README",
       "evidence": "E-DOC/E-SRC",
-      "status": "pending_final_package",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-SEAL",
-      "observable": "包内存在、无真实凭据、默认可启动"
+      "observable": "包内存在、无真实凭据、默认可启动",
+      "baselineStatus": "pending_final_package",
+      "baselineSource": "Dockerfiles; .env.example; README",
+      "finalImplementation": "前后端多阶段Dockerfile固定digest、非root应用用户、示例配置和准确命令均随包。",
+      "finalEvidence": "E-PACK全部Dockerfile和envexample；E-CLEAN构建/启动。"
     },
     {
       "id": "R-14.c",
       "requirement": "初始化数据、素材可用",
-      "source": "Flyway V1-V3/demo; planned V4",
+      "source": "backend/src/main/resources/db/migration/V1-V4; backend/src/main/resources/demo/",
       "evidence": "E-API/E-CI",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "空库与旧库升级都可用，演示无需外部服务"
+      "observable": "空库与旧库升级都可用，演示无需外部服务",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Flyway V1-V3/demo; planned V4",
+      "finalImplementation": "空库Flyway V1～V4自动迁移；固定分类/四模板/本地封面和结果无需手动导入。",
+      "finalEvidence": "E-CLEAN空卷初始化与localmedia；E-UPGRADE旧库升级。"
     },
     {
       "id": "R-14.d",
       "requirement": "无需公网/真实部署截图，可读源码与容器运行",
       "source": "交付说明",
       "evidence": "E-DOC",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-REPORT",
-      "observable": "不以无公网误报未完成；GIF是用户展示要求而非官方部署证明"
+      "observable": "不以无公网误报未完成；GIF是用户展示要求而非官方部署证明",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "交付说明",
+      "finalImplementation": "源码包可直接读，容器本地启动，无公网地址依赖；实际GIF展示本地页面。",
+      "finalEvidence": "E-PACK/E-CLEAN/E-MEDIA；未部署公网。"
     },
     {
       "id": "SUB.a",
       "requirement": "原沟通渠道交源码链接或压缩包",
       "source": "DELIVERABLES; original题面",
       "evidence": "E-DOC",
-      "status": "user_submission_boundary",
+      "status": "materials_and_constraints_ready_author_submission_not_performed",
       "task": "P2-SEAL",
-      "observable": "给可交ZIP和可复制说明，不代发/邀请评估者"
+      "observable": "给可交ZIP和可复制说明，不代发/邀请评估者",
+      "baselineStatus": "user_submission_boundary",
+      "baselineSource": "DELIVERABLES; original题面",
+      "finalImplementation": "提供完整源码ZIP和可复制原渠道提交文字，私库链接仅作为备选。",
+      "finalEvidence": "E-PACK+外部提交说明；实际交卷由作者完成。"
     },
     {
       "id": "SUB.b",
       "requirement": "日期按双方约定",
       "source": "PLAN deadline=null",
       "evidence": "E-DOC",
-      "status": "user_submission_boundary",
+      "status": "materials_and_constraints_ready_author_submission_not_performed",
       "task": "P2-REPORT",
-      "observable": "不从倒计时推断实际截止"
+      "observable": "不从倒计时推断实际截止",
+      "baselineStatus": "user_submission_boundary",
+      "baselineSource": "PLAN deadline=null",
+      "finalImplementation": "原题倒计时作为历史快照，不自行约定截止日；deadline=null。",
+      "finalEvidence": "E-DOC提交说明；本轮未替作者承诺提交日期。"
     },
     {
       "id": "SUB.c",
       "requirement": "最多6文件、单个不超过100MB",
       "source": "DELIVERABLES; manifest schema",
       "evidence": "E-DOC",
-      "status": "pending_final_package",
+      "status": "materials_and_constraints_ready_author_submission_not_performed",
       "task": "P2-SEAL",
-      "observable": "实际统计附件数<=6、每个<100000000B"
+      "observable": "实际统计附件数<=6、每个<100000000B",
+      "baselineStatus": "pending_final_package",
+      "baselineSource": "DELIVERABLES; manifest schema",
+      "finalImplementation": "交付清单核对附件总数不超过6且每个严格小于100000000字节，记录SHA256。",
+      "finalEvidence": "E-PACK外部manifest附件列表和实际字节。"
     },
     {
       "id": "SUB.d",
       "requirement": "交卷后不可改",
       "source": "提交说明/停止规则",
       "evidence": "E-DOC",
-      "status": "user_submission_boundary",
+      "status": "materials_and_constraints_ready_author_submission_not_performed",
       "task": "P2-SEAL",
-      "observable": "封存验收SHA和文件hash，用户最终交卷，之后不自动开发"
+      "observable": "封存验收SHA和文件hash，用户最终交卷，之后不自动开发",
+      "baselineStatus": "user_submission_boundary",
+      "baselineSource": "提交说明/停止规则",
+      "finalImplementation": "交卷前确认commit和附件hash；交卷由作者操作，提交后停止修改约定版本。",
+      "finalEvidence": "E-DOC提交说明；本轮未交卷。"
     },
     {
       "id": "ACC.a",
       "requirement": "先审源码/执行入口/依赖脚本/材料",
       "source": "README; entrypoint/locks/Compose",
       "evidence": "E-SRC/E-DOC",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-REVIEW",
-      "observable": "独立审阅可读性/脚本职责，无隐含宿主脚本执行"
+      "observable": "独立审阅可读性/脚本职责，无隐含宿主脚本执行",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "README; entrypoint/locks/Compose",
+      "finalImplementation": "README为独立入口，完整源码/容器入口/锁/素材/测试/许可可读。",
+      "finalEvidence": "E-PACK entries；E-CLEAN实际按包运行；E-REVIEW最终入口审阅。"
     },
     {
       "id": "ACC.b",
       "requirement": "安装/构建/测试/执行在容器",
       "source": "Dockerfiles; CI; test entries",
       "evidence": "E-CI",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "全部应用命令容器执行，新包启动亦然"
+      "observable": "全部应用命令容器执行，新包启动亦然",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "Dockerfiles; CI; test entries",
+      "finalImplementation": "项目依赖、构建、Java/前端/API/浏览器测试和录制转码均在容器；宿主仅Git/文本/元数据编排。",
+      "finalEvidence": "E-CI/E-CLEAN/E-MEDIA记录镜像/命令；不在宿主安装项目依赖。"
     },
     {
       "id": "ACC.c",
       "requirement": "源码实现和实际运行分别记录",
       "source": "报告格式/矩阵/证据schema",
       "evidence": "E-DOC",
-      "status": "documentation_needs_final_alignment",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-REPORT",
-      "observable": "每条分别给source和实际运行SHA/结果，不混合"
+      "observable": "每条分别给source和实际运行SHA/结果，不混合",
+      "baselineStatus": "documentation_needs_final_alignment",
+      "baselineSource": "报告格式/矩阵/证据schema",
+      "finalImplementation": "报告逐条区分源码、作者测试、独立运行和文档事实，绑定准确版本/环境/时间/结果。",
+      "finalEvidence": "本报告87行+证据索引；E-REVIEW核对。"
     },
     {
       "id": "ACC.d",
       "requirement": "未验证如实记录，不隐藏问题；复杂度不等于质量",
       "source": "REPORT-DRAFT; failures; limits",
       "evidence": "E-HISTORY/E-DOC",
-      "status": "documentation_needs_final_alignment",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-REPORT",
-      "observable": "环境阻塞/未测/非要求单列，所有缺口有task或明确边界"
+      "observable": "环境阻塞/未测/非要求单列，所有缺口有task或明确边界",
+      "baselineStatus": "documentation_needs_final_alignment",
+      "baselineSource": "REPORT-DRAFT; failures; limits",
+      "finalImplementation": "失败首轮及修复保留，不把环境问题算行为Red；硬件GPU/真实设备/生产安全等未测明确列出。",
+      "finalEvidence": "E-AUI首轮7pass+1 harnessfail、受影响复验；E-CI保留实际失败；E-REVIEW。"
     },
     {
       "id": "U-01",
       "requirement": "注册账户并保留当前访客作品",
-      "source": "specs/p2/identity.md（尚未编码）",
+      "source": "backend/src/main/java/com/quvideo/studio/AccountService.java register; backend/src/main/resources/db/migration/V4__accounts.sql",
       "evidence": "E-NONE",
-      "status": "not_implemented",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-BE-USER",
-      "observable": "注册升级同userId、事务唯一邮箱与token轮换、原素材/任务保留"
+      "observable": "注册升级同userId、事务唯一邮箱与token轮换、原素材/任务保留",
+      "baselineStatus": "not_implemented",
+      "baselineSource": "specs/p2/identity.md（尚未编码）",
+      "finalImplementation": "注册将当前guest同userId原子升级、保素材/任务；旧session撤销，重复邮箱不半升级。",
+      "finalEvidence": "E-JAVA：fullLifecycle/duplicateEmail/concurrentGuestUpgrade；E-AUTH1/2；E-AUI375px；E-UPGRADE。"
     },
     {
       "id": "U-02",
       "requirement": "登录已有账户读取本人历史",
-      "source": "specs/p2/identity.md",
+      "source": "backend/src/main/java/com/quvideo/studio/AccountService.java login; frontend/src/components/account/dialog.tsx",
       "evidence": "E-NONE",
-      "status": "not_implemented",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-BE-USER",
-      "observable": "正确/错误凭据、同账户跨浏览器/刷新恢复、当前访客不自动合并"
+      "observable": "正确/错误凭据、同账户跨浏览器/刷新恢复、当前访客不自动合并",
+      "baselineStatus": "not_implemented",
+      "baselineSource": "specs/p2/identity.md",
+      "finalImplementation": "登录本地账户回同owner历史；密码错误统一AUTH_INVALID，其他访客不被合并。",
+      "finalEvidence": "E-AUTH3/5/6；E-AUI登录/退出/重登历史。"
     },
     {
       "id": "U-03",
       "requirement": "退出和旧session撤销",
-      "source": "specs/p2/identity.md",
+      "source": "backend/src/main/java/com/quvideo/studio/AccountService.java logout; Identity.java",
       "evidence": "E-NONE",
-      "status": "not_implemented",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-BE-USER",
-      "observable": "退出返回新访客，旧cookie不能读旧任务/素材/结果"
+      "observable": "退出返回新访客，旧cookie不能读旧任务/素材/结果",
+      "baselineStatus": "not_implemented",
+      "baselineSource": "specs/p2/identity.md",
+      "finalImplementation": "logout撤销当前会话并签新访客，旧token不能再读私图/任务。",
+      "finalEvidence": "E-JAVA：logoutWithoutLiveCookieStillReturnsFreshGuest；E-AUTH6/7；E-AUI。"
     },
     {
       "id": "U-04",
       "requirement": "账户设置：昵称/邮箱展示、改昵称/改密码",
-      "source": "specs/p2/identity.md",
+      "source": "frontend/src/components/account/settings.tsx; backend/src/main/java/com/quvideo/studio/AccountService.java",
       "evidence": "E-NONE",
-      "status": "not_implemented",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-BE-USER",
-      "observable": "昵称保存，校验旧密码、新密码生效、所有旧会话失效"
+      "observable": "昵称保存，校验旧密码、新密码生效、所有旧会话失效",
+      "baselineStatus": "not_implemented",
+      "baselineSource": "specs/p2/identity.md",
+      "finalImplementation": "账户页展示昵称/未验证邮箱，支持改昵称、验证旧密码后改密；改密使全部旧会话失效。",
+      "finalEvidence": "E-AUTH4/7；E-AUI375px全流程；E-REVIEW账户图。"
     },
     {
       "id": "U-05",
       "requirement": "清晰访客/登录/注册/个人中心入口",
-      "source": "specs/p2/identity.md; Shell现仅当前身份",
+      "source": "frontend/src/components/shell.tsx; account/dialog.tsx; frontend/src/app/account/page.tsx",
       "evidence": "E-NONE",
-      "status": "not_implemented",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-FE-USER",
-      "observable": "真实表单/反馈/提交锁/键盘/375px，邮箱未验证准确说明"
+      "observable": "真实表单/反馈/提交锁/键盘/375px，邮箱未验证准确说明",
+      "baselineStatus": "not_implemented",
+      "baselineSource": "specs/p2/identity.md; Shell现仅当前身份",
+      "finalImplementation": "Header清晰标注访客并提供登录/注册入口，账户Link可进入设置和个人作品。",
+      "finalEvidence": "E-AUI真实role/label导航；E-REVIEW桌面/小屏header。"
     },
     {
       "id": "U-06",
       "requirement": "切账户旧请求/缓存/私有预览不串",
-      "source": "原generation保护+计划账户扩展",
+      "source": "frontend/src/components/providers.tsx; frontend/src/lib/api.ts; account-lifecycle.test.tsx",
       "evidence": "E-FE（旧匿名范围）",
-      "status": "account_extension_not_implemented",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-FE-USER",
-      "observable": "全局串行认证Set-Cookie，迟到401/数据/提交/上传与未知POST恢复"
+      "observable": "全局串行认证Set-Cookie，迟到401/数据/提交/上传与未知POST恢复",
+      "baselineStatus": "account_extension_not_implemented",
+      "baselineSource": "原generation保护+计划账户扩展",
+      "finalImplementation": "持久全局认证队列跨对话框/路由序列化，generation隔离查询/旧401/上传/POST，未知结果GET恢复不重复POST。",
+      "finalEvidence": "E-AUI八场景真实网络cookie/已执行响应门控；E-FE account-lifecycle。"
     },
     {
       "id": "U-07",
       "requirement": "保留访客直接体验",
-      "source": "原POST session; planned账户兼容",
+      "source": "backend/src/main/java/com/quvideo/studio/Identity.java ensure; frontend/src/components/providers.tsx",
       "evidence": "E-JAVA/E-BROWSER（旧范围）",
-      "status": "baseline_implemented_related_evidence",
+      "status": "implementation_and_relevant_actual_evidence_accepted",
       "task": "P2-VERIFY",
-      "observable": "未注册也能模板/上传/提交/历史；新V4后旧访客数据不丢"
+      "observable": "未注册也能模板/上传/提交/历史；新V4后旧访客数据不丢",
+      "baselineStatus": "baseline_implemented_related_evidence",
+      "baselineSource": "原POST session; planned账户兼容",
+      "finalImplementation": "默认仍POSTsession创建guest，不需要注册即可真实上传/制作/历史。",
+      "finalEvidence": "E-API原八例；E-AUTHguest；E-AUI先guest制作再注册。"
     },
     {
       "id": "MEDIA-01",
       "requirement": "附件用动图，首页山水动态为重点",
       "source": "MEDIA.md",
       "evidence": "E-NONE",
-      "status": "not_recorded",
+      "status": "real_GIF_decode_and_independent_all_frame_review_passed",
       "task": "P2-MEDIA",
-      "observable": "真实鼠标/清晰中心/雾恢复、山水可辨、成片播放与元数据"
+      "observable": "真实鼠标/清晰中心/雾恢复、山水可辨、成片播放与元数据",
+      "baselineStatus": "not_recorded",
+      "baselineSource": "MEDIA.md",
+      "finalImplementation": "首页真实鼠标移动录制山水局部由雾变清晰及回雾，连续原生动效无需控制按钮。",
+      "finalEvidence": "E-MEDIA：home-ink.gif及原录制元数据；E-REVIEW成片。"
     },
     {
       "id": "MEDIA-02",
       "requirement": "上传/制作/历史真实流程动图",
       "source": "MEDIA.md",
       "evidence": "E-NONE",
-      "status": "not_recorded",
+      "status": "real_GIF_decode_and_independent_all_frame_review_passed",
       "task": "P2-MEDIA",
-      "observable": "真实服务端阶段与结果/另任务，匿名合成数据，录制在性能后"
+      "observable": "真实服务端阶段与结果/另任务，匿名合成数据，录制在性能后",
+      "baselineStatus": "not_recorded",
+      "baselineSource": "MEDIA.md",
+      "finalImplementation": "真实文件chooser→Java上传→202→三阶段→结果/历史，另有指定失败与成功并存。",
+      "finalEvidence": "E-MEDIA：creation-history.gif、任务/步骤快照和原录制元数据。"
     },
     {
       "id": "OPEN-01",
       "requirement": "为将来公开私库准备来源/许可/隐私/历史处理",
       "source": "NOTICES; RB LICENSE; refs/history",
       "evidence": "E-SOURCE",
-      "status": "public_readiness_not_audited",
+      "status": "audit_complete_history_requires_separate_public_preparation",
       "task": "P2-AUDIT",
-      "observable": "当前树+全refs/历史披露清单、许可范围/待处理、保留私有证据；不自动公开"
+      "observable": "当前树+全refs/历史披露清单、许可范围/待处理、保留私有证据；不自动公开",
+      "baselineStatus": "public_readiness_not_audited",
+      "baselineSource": "NOTICES; RB LICENSE; refs/history",
+      "finalImplementation": "审计当前分发与全部可达refs的有限秘密模式/已知资料披露；当前源码包过滤私人参考，保留来源许可，完整历史公开仍需另行处置。",
+      "finalEvidence": "E-PROV历史审阅+E-PACK；不宣称可直接把原仓库切public，不改可见性/不重写历史。"
     }
-  ]
+  ],
+  "businessAcceptanceCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+  "reviewedArchiveCandidate": "110894f926d64816d5a8b5d9e5bcabd2554412ed",
+  "finalArchiveAndPostSealCI": "External final version manifest binds immutable source commit, file hashes, documentary equivalence and actual post-seal CI"
 }
