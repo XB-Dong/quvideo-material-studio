@@ -1,0 +1,150 @@
+{
+  "sourceCommit": "7bbfd027758002cc519fc889cea3c8a2b5233717",
+  "capturedAt": "2026-10-30T16:45:41.4496698+08:00",
+  "checks": [
+    {
+      "entry": "p11-browser/acceptance.json",
+      "names": [
+        "desktop: brand, controls, gallery and overflow",
+        "desktop: Java cards keep stable IDs",
+        "desktop: Orbit continuous despite legacy static key and hover",
+        "desktop: four card first Enter navigation and classification",
+        "desktop: identity dialog Escape and focus",
+        "desktop: studio fields and overflow",
+        "desktop: multiple tasks, request error recovery, true failure and refresh",
+        "desktop: history and unknown template",
+        "desktop: runtime errors",
+        "reduce: brand, controls, gallery and overflow",
+        "reduce: Java cards keep stable IDs",
+        "reduce: identity dialog Escape and focus",
+        "reduce: studio fields and overflow",
+        "reduce: history and unknown template",
+        "reduce: runtime errors",
+        "mobile: brand, controls, gallery and overflow",
+        "mobile: Java cards keep stable IDs",
+        "mobile: true coarse first tap direct navigation",
+        "mobile: identity dialog Escape and focus",
+        "mobile: studio fields and overflow",
+        "mobile: history and unknown template",
+        "mobile: runtime errors"
+      ],
+      "count": 22
+    },
+    {
+      "entry": "p11-browser/visual/visual.json",
+      "names": [
+        "default software ink same-coordinate clarity, visible pixels and refog",
+        "three or more real border families and continuous compositor movement",
+        "four real card canvases change pixels independently and release on exit",
+        "offscreen hero stops its RAF after viewport resize and returns",
+        "reduce live change clears RAF and contexts; restore remains usable",
+        "route unmount no residual creative RAF"
+      ],
+      "count": 6
+    },
+    {
+      "entry": "p12-browser/acceptance.json",
+      "names": [
+        "desktop: brand, controls, gallery and overflow",
+        "desktop: Java cards keep stable IDs",
+        "desktop: Orbit continuous despite legacy static key and hover",
+        "desktop: four card first Enter navigation and classification",
+        "P12: actual chooser same task, cancel keeps preview, keyboard and repeat same file",
+        "P12: parallel slots, superseded delayed uploads, remove and errors",
+        "P12: public cover routing bridge, direct/back/forward/rapid and privacy cleanup",
+        "desktop: identity dialog Escape and focus",
+        "desktop: studio fields and overflow",
+        "desktop: multiple tasks, request error recovery, true failure and refresh",
+        "desktop: history and unknown template",
+        "desktop: runtime errors",
+        "reduce: brand, controls, gallery and overflow",
+        "reduce: Java cards keep stable IDs",
+        "reduce: identity dialog Escape and focus",
+        "reduce: studio fields and overflow",
+        "reduce: history and unknown template",
+        "reduce: runtime errors",
+        "mobile: brand, controls, gallery and overflow",
+        "mobile: Java cards keep stable IDs",
+        "mobile: true coarse first tap direct navigation",
+        "mobile: identity dialog Escape and focus",
+        "mobile: studio fields and overflow",
+        "mobile: history and unknown template",
+        "mobile: runtime errors"
+      ],
+      "count": 25
+    },
+    {
+      "entry": "p12-browser/visual/visual.json",
+      "names": [
+        "continuous scene /templates/demo-pet",
+        "continuous scene /history",
+        "history refetch does not repeat terminal celebration",
+        "result and identity dialogs real pixels, original result and focus",
+        "runtime reduce and route cancel RAF WAAPI public overlays",
+        "focused upload edge pauses offscreen and resumes without blur",
+        "active task pauses offscreen while backend continues, then restores",
+        "Authenticated thumbnails retain original integrity",
+        "cold PNG reserves geometry and reveals once after actual load",
+        "cancel before image response removes private nodes without resurrection",
+        "cold image error remains understandable and closable",
+        "reduce during cold load cancels animation and still shows original",
+        "route during cold load clears private visual before late response",
+        "real 401 consumer clears cold private preview and identity data",
+        "route error real React render fault and retry",
+        "global error real React render fault and retry"
+      ],
+      "count": 16
+    }
+  ],
+  "p12Interaction": {
+    "candidateLongTasks": [],
+    "errors": [],
+    "pass": true
+  },
+  "jobs": [
+    {
+      "id": 123959851709,
+      "name": "backend",
+      "conclusion": "success"
+    },
+    {
+      "id": 123959852058,
+      "name": "frontend",
+      "conclusion": "success"
+    },
+    {
+      "id": 123960400987,
+      "name": "integration",
+      "conclusion": "success"
+    }
+  ],
+  "conclusion": "success",
+  "artifact": {
+    "id": 12963743311,
+    "sha256": "72a387ce8237d82215ff38ba3ad2b8df220e2f5a468ff8c6cedfa3bc02729710",
+    "bytes": 23091500
+  },
+  "scope": "Read-only existing CI logs/artifact inspection during P2 preparation. Existing guest/core baseline, not new P2 accounts, final package or GIF acceptance.",
+  "p12Measure": {
+    "runCount": 9,
+    "maxCls": 0.016563740294656636,
+    "maxJs": 177908.0,
+    "maxImages": 745041.0
+  },
+  "javaLog": [
+    "2026-10-30T08:11:52.5258210Z [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0"
+  ],
+  "runId": 41024631245,
+  "frontendLog": [
+    "2026-10-30T08:11:36.2453637Z \u001b[2m      Tests \u001b[22m \u001b[1m\u001b[32m48 passed\u001b[39m\u001b[22m\u001b[90m (48)\u001b[39m"
+  ],
+  "apiLog": [
+    "2026-10-30T08:14:47.8679549Z Ran 8 tests in 12.861s"
+  ],
+  "nativePages": [
+    "/",
+    "/templates/demo-pet",
+    "/history"
+  ],
+  "url": "https://github.com/XB-Dong/quvideo-material-studio/actions/runs/41024631245"
+}

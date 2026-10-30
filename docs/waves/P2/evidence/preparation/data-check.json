@@ -1,0 +1,15 @@
+{
+  "taskCount": 10,
+  "executionAuthorized": false,
+  "sourceReference": "7bbfd027758002cc519fc889cea3c8a2b5233717",
+  "checkKind": "data_only_preparation_no_product_script",
+  "acyclic": true,
+  "checkedAt": "2026-10-30T16:53:03.1852381+08:00",
+  "r13Subitems": 9,
+  "productTreeUnchanged": true,
+  "errors": [],
+  "officialRoots": 14,
+  "allClausesHaveTaskAndObservable": true,
+  "clauseCount": 87,
+  "result": "pass"
+}

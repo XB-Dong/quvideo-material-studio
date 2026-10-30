@@ -1,0 +1,791 @@
+{
+  "schemaVersion": "1.0.0",
+  "specVersion": "P2-1.0.0",
+  "baselineCommit": "7bbfd027758002cc519fc889cea3c8a2b5233717",
+  "purpose": "Leader clause-level preparation audit; no P2 execution pass claims",
+  "requirements": [
+    {
+      "id": "R-01.a",
+      "requirement": "Next.js App Router、React、TypeScript",
+      "source": "frontend/src/app; frontend/package-lock.json",
+      "evidence": "E-SRC/E-FE",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "锁文件、路由源码与容器前端构建版本一致"
+    },
+    {
+      "id": "R-01.b",
+      "requirement": "Java、Spring Boot、MyBatis、MySQL",
+      "source": "backend/pom.xml; Api.java; Db.java; compose.yaml",
+      "evidence": "E-SRC/E-JAVA",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "真实MySQL下Java测试与构建，不以H2或Next替代"
+    },
+    {
+      "id": "R-01.c",
+      "requirement": "模板/素材/任务/个人记录由Java提供、状态历史持久化",
+      "source": "Api/Tasks/Db/FilesService/Identity.java; lib/proxy.ts",
+      "evidence": "E-API/E-JAVA",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "走Next同源代理确实读写Java/MySQL与文件卷"
+    },
+    {
+      "id": "R-01.d",
+      "requirement": "准确兼容版本和职责在README说明，方案自选",
+      "source": "README版本表; package-lock/pom; Dockerfiles",
+      "evidence": "E-DOC/E-CI",
+      "status": "documentation_needs_final_alignment",
+      "task": "P2-DOCS",
+      "observable": "最终README与实际锁/构建一致，队列/轮询选择可解释"
+    },
+    {
+      "id": "R-02.a",
+      "requirement": "分类、模板卡片、标题、封面",
+      "source": "catalog.tsx; Api/Db.java; V2/V3 SQL",
+      "evidence": "E-API/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "实际显示接口返回的分类/标题/封面"
+    },
+    {
+      "id": "R-02.b",
+      "requirement": "分类筛选与点击详情",
+      "source": "catalog.tsx; app/templates/[id]/page.tsx",
+      "evidence": "E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "切类过滤正确，真实Link进入对应模板"
+    },
+    {
+      "id": "R-02.c",
+      "requirement": "Java数据而非前端写死页面",
+      "source": "Api.templates/categories; Db.java",
+      "evidence": "E-API/E-SRC",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "接口数据与页面卡片ID对应"
+    },
+    {
+      "id": "R-02.d",
+      "requirement": "模板自行构造、不同素材数量、无需CRUD",
+      "source": "V2/V3 SQL; demo-* templates",
+      "evidence": "E-API",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "1/2/3图模板要求不同，初始化可重现"
+    },
+    {
+      "id": "R-02.e",
+      "requirement": "示例本地可访问或合法资源，无付费/内部依赖",
+      "source": "backend/resources/demo; THIRD-PARTY-NOTICES.md",
+      "evidence": "E-API/E-SOURCE",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-AUDIT",
+      "observable": "包内全部图片可访问，来源与适用许可核对"
+    },
+    {
+      "id": "R-03.a",
+      "requirement": "详情标题、描述、封面、要求及对应上传位",
+      "source": "studio.tsx; API template",
+      "evidence": "E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "每种模板上传位数量/要求与API一致"
+    },
+    {
+      "id": "R-03.b",
+      "requirement": "选择、预览、替换、移除",
+      "source": "studio.tsx UploadSlot; upload.test.tsx",
+      "evidence": "E-FE/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "真实filechooser并快速替换/移除，旧图不恢复"
+    },
+    {
+      "id": "R-03.c",
+      "requirement": "上传中/失败反馈",
+      "source": "UploadSlot; upload.test.tsx",
+      "evidence": "E-FE/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "等待真实上传、错误可重选且不假READY"
+    },
+    {
+      "id": "R-03.d",
+      "requirement": "前端校验数量/类型/大小",
+      "source": "studio.tsx; submission/upload tests",
+      "evidence": "E-FE",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "缺图、非JPEG/PNG、>5MiB在客户端拦截"
+    },
+    {
+      "id": "R-03.e",
+      "requirement": "服务端校验素材与制作参数",
+      "source": "FilesService/Tasks/Simulation.java",
+      "evidence": "E-JAVA/E-API",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "伪MIME/损坏图/大小/数量/非法simulation被拒绝，合法图落盘"
+    },
+    {
+      "id": "R-03.f",
+      "requirement": "未准备好/提交中防重复",
+      "source": "studio.tsx Maker; submission.test.tsx",
+      "evidence": "E-FE/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "未就绪不能提交，双击仅一个受理POST"
+    },
+    {
+      "id": "R-03.g",
+      "requirement": "不存在/加载/空数据/请求失败反馈",
+      "source": "state-panel; app/loading/error/not-found; catalog/studio/history",
+      "evidence": "E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "实际404/空/延迟/失败及恢复，框架错误不以query404冒充"
+    },
+    {
+      "id": "R-03.h",
+      "requirement": "服务端可用文件，非只浏览器blob",
+      "source": "FilesService.java; material-files卷",
+      "evidence": "E-API/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "API返回asset ID/URL，后端使用文件，预览blob不能代替服务器上传"
+    },
+    {
+      "id": "R-04.a",
+      "requirement": "检查建任务后返回ID，不等待制作",
+      "source": "Tasks.create/afterCommit; Api.create",
+      "evidence": "E-JAVA/E-API",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "慢任务POST202先返回，DB记录已存在"
+    },
+    {
+      "id": "R-04.b",
+      "requirement": "Java后台执行，关闭页面不中断",
+      "source": "Processing/Pipeline.java",
+      "evidence": "E-API/E-HISTORY",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "提交后不查询/关闭页面，随后GET显示已完成"
+    },
+    {
+      "id": "R-04.c",
+      "requirement": "多任务可排队或并行",
+      "source": "Processing有界单线程FIFO",
+      "evidence": "E-JAVA/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "连续两个任务分别排队/执行、各自终态"
+    },
+    {
+      "id": "R-05.a",
+      "requirement": "素材检查→模拟生成→结果整理顺序",
+      "source": "Simulation.STAGES; Pipeline.run",
+      "evidence": "E-JAVA",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "orderedBoundaries与三条steps顺序"
+    },
+    {
+      "id": "R-05.b",
+      "requirement": "每步独立可观察执行边界，非前端定时文案",
+      "source": "Processing/Db begin/end; task_steps",
+      "evidence": "E-JAVA/E-API",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "慢配置查询可见独立开始/结束/当前阶段，后台无查询也推进"
+    },
+    {
+      "id": "R-05.c",
+      "requirement": "状态/阶段/结果或失败原因持久化，可查任务/历史",
+      "source": "Tasks.view/history; Db; V1 SQL",
+      "evidence": "E-JAVA/E-API",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "GET详情和历史快照一致，失败阶段/原因可读"
+    },
+    {
+      "id": "R-05.d",
+      "requirement": "整理成功后可预览结果地址",
+      "source": "Processing.success; Api result; history preview",
+      "evidence": "E-API/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "成功才有resultUrl，原PNG真实预览，终态事务原子"
+    },
+    {
+      "id": "R-05.e",
+      "requirement": "查询只读，不驱动任务下一步",
+      "source": "Tasks.get/history; Pipeline",
+      "evidence": "E-JAVA/E-API",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "不查询也完成；GET不写阶段或启动执行"
+    },
+    {
+      "id": "R-05.f",
+      "requirement": "等待/处理/成功/失败，终态不回退",
+      "source": "Db状态迁移; types.mergeTask",
+      "evidence": "E-JAVA/E-FE/E-API",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "四状态可表达，重复/乱序旧快照不能退回处理中"
+    },
+    {
+      "id": "R-06.a",
+      "requirement": "可重复指定阶段失败",
+      "source": "Simulation.failAt; Pipeline",
+      "evidence": "E-JAVA/E-API",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "ASSET_CHECK/GENERATE/FINALIZE逐个真实失败"
+    },
+    {
+      "id": "R-06.b",
+      "requirement": "失败停止后续并保存阶段/原因",
+      "source": "Pipeline return; Processing.fail",
+      "evidence": "E-JAVA/E-API",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "后续NOT_STARTED，无后续handler执行，reason可理解"
+    },
+    {
+      "id": "R-06.c",
+      "requirement": "耗时可调，能看处理中/多任务",
+      "source": "simulation.delayMs; env配置",
+      "evidence": "E-API/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "设置慢延迟可观察队列与阶段，快配置可复验"
+    },
+    {
+      "id": "R-06.d",
+      "requirement": "README写清模拟操作，不要求随机/重试UI",
+      "source": "README指定失败与耗时",
+      "evidence": "E-DOC",
+      "status": "documentation_needs_final_alignment",
+      "task": "P2-DOCS",
+      "observable": "最终示例可复制，三阶段与耗时字段和服务端一致"
+    },
+    {
+      "id": "R-07.a",
+      "requirement": "上传/提交/等待处理/成功/失败分别表达",
+      "source": "studio/history; state-panel",
+      "evidence": "E-FE/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "真实各态分别出现，错误来源可区分"
+    },
+    {
+      "id": "R-07.b",
+      "requirement": "受理成功展示任务并解除提交态",
+      "source": "Maker; useTasks.add; submission tests",
+      "evidence": "E-FE/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "首次受理后可立即继续第二任务"
+    },
+    {
+      "id": "R-07.c",
+      "requirement": "展示真实当前阶段/失败原因/成功图",
+      "source": "history.tsx; Task fields",
+      "evidence": "E-API/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "页面对应Java stage/reason/result，不虚构百分比"
+    },
+    {
+      "id": "R-07.d",
+      "requirement": "查询暂不可用≠任务失败，保留信息并能恢复",
+      "source": "use-tasks queryError/refresh; history",
+      "evidence": "E-FE/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "GET503保留RUNNING，恢复查询后读取真实终态"
+    },
+    {
+      "id": "R-08.a",
+      "requirement": "连续多任务，状态/阶段/错误/结果不串",
+      "source": "userId/task.id query keys; mergeTask",
+      "evidence": "E-FE/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "逆序A失败B成功分别正确，结果归属正确"
+    },
+    {
+      "id": "R-08.b",
+      "requirement": "自动跟踪未结束",
+      "source": "use-tasks active分页/refetchInterval",
+      "evidence": "E-FE/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "新建/刷新活跃任务自动查，跨历史分页不漏"
+    },
+    {
+      "id": "R-08.c",
+      "requirement": "单任务结束停跟踪，无活动任务不轮询",
+      "source": "terminal/refetchInterval false",
+      "evidence": "E-FE/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "A结束不再查，B仍查；全部结束停止周期GET"
+    },
+    {
+      "id": "R-08.d",
+      "requirement": "离页/切用户清理请求/订阅",
+      "source": "AbortSignal; providers generation; use-tasks",
+      "evidence": "E-FE/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "卸载停止计时/请求；新账户切换扩展需新用例"
+    },
+    {
+      "id": "R-08.e",
+      "requirement": "旧响应不覆盖当前用户/其他任务",
+      "source": "api/session-generation/types; lifecycle tests",
+      "evidence": "E-FE",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "迟到401/数据/上传/提交及认证Set-Cookie竞态在P2一并验证"
+    },
+    {
+      "id": "R-09.a",
+      "requirement": "个人历史、创建时间、状态、成功或失败原因",
+      "source": "Tasks.history; history.tsx; task-time",
+      "evidence": "E-API/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "返回历史带时间和对应结果/原因，日期语义正确"
+    },
+    {
+      "id": "R-09.b",
+      "requirement": "刷新从Java恢复并继续跟踪",
+      "source": "use-tasks active/history; Java/MySQL",
+      "evidence": "E-FE/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "刷新后同身份记录恢复，未结束任务继续"
+    },
+    {
+      "id": "R-09.c",
+      "requirement": "成功结果图片预览",
+      "source": "ResultPreview; authenticated original result",
+      "evidence": "E-BROWSER/E-JAVA",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "真实原PNG、冷加载/失败/焦点返回，非仅缩略图"
+    },
+    {
+      "id": "R-10.a",
+      "requirement": "自行设计身份方案",
+      "source": "Identity.java; users/sessions; providers",
+      "evidence": "E-JAVA/E-API",
+      "status": "guest_implemented_account_extension_missing",
+      "task": "P2-BE-USER",
+      "observable": "已有匿名有效；按用户确认增加本地账户/访客双模式"
+    },
+    {
+      "id": "R-10.b",
+      "requirement": "个人任务记录按身份管理",
+      "source": "Tasks/Db owner; media owner guards",
+      "evidence": "E-JAVA/E-API/E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "账户A/B/访客三者任务、素材、结果隔离；注册升级保留访客作品"
+    },
+    {
+      "id": "R-10.c",
+      "requirement": "README说明身份和演示",
+      "source": "README身份限制/无痕演示",
+      "evidence": "E-DOC",
+      "status": "documentation_needs_final_alignment",
+      "task": "P2-DOCS",
+      "observable": "新访客、注册、登录、退出/改密与历史语义同步说明"
+    },
+    {
+      "id": "R-11.a",
+      "requirement": "列表/制作/历史布局层级间距反馈",
+      "source": "catalog/studio/history; globals/journey CSS",
+      "evidence": "E-BROWSER/E-HISTORY",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "当前页面层级清楚，账户新界面同风格"
+    },
+    {
+      "id": "R-11.b",
+      "requirement": "桌面主界面、小屏可操作",
+      "source": "responsive CSS; 375px场景",
+      "evidence": "E-BROWSER",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "375px所有核心和账户表单可操作、无横向溢出"
+    },
+    {
+      "id": "R-11.c",
+      "requirement": "合适语义、键盘焦点",
+      "source": "Link/input/button/native dialog",
+      "evidence": "E-BROWSER/E-FE",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "Tab/Enter/ESC/焦点恢复和新账户表单可用"
+    },
+    {
+      "id": "R-11.d",
+      "requirement": "上传和图标按钮有标签",
+      "source": "UploadSlot; Modal close; aria labels",
+      "evidence": "E-BROWSER/E-SRC",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "可访问名可读，账户密码切换等新图标同样有标签"
+    },
+    {
+      "id": "R-11.e",
+      "requirement": "参考主要布局，品牌素材可替换，不扩题外功能",
+      "source": "UI refs; 原创布局/合法素材; Shell",
+      "evidence": "E-SOURCE/E-HISTORY",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-REPORT",
+      "observable": "解释UI-01/02/03对应；不把账单订阅当强制要求"
+    },
+    {
+      "id": "R-12.a",
+      "requirement": "push/PR触发CI",
+      "source": "ci.yml on push/pull_request",
+      "evidence": "E-CI/E-SRC",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "检查触发和最终候选实际run，不关门槛"
+    },
+    {
+      "id": "R-12.b",
+      "requirement": "前端lint/TypeScript/构建",
+      "source": "frontend-check/Dockerfile/CI",
+      "evidence": "E-FE/E-CI",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "最终容器lint/type/test/生产构建exit0"
+    },
+    {
+      "id": "R-12.c",
+      "requirement": "Java测试和构建",
+      "source": "backend-check; mvn verify/package",
+      "evidence": "E-JAVA/E-CI",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "真实MySQL测试0失败0跳过、JAR构建成功"
+    },
+    {
+      "id": "R-12.d",
+      "requirement": "关键测试：后端顺序/中断，前端多任务/查询异常",
+      "source": "Pipeline/DatabaseIntegration/use-tasks tests",
+      "evidence": "E-JAVA/E-FE",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "点名行为测试与结果，P2账户新增不削弱旧断言"
+    },
+    {
+      "id": "R-12.e",
+      "requirement": "压缩包保留CI配置",
+      "source": "ci.yml; archive entries",
+      "evidence": "E-SRC",
+      "status": "pending_final_package",
+      "task": "P2-SEAL",
+      "observable": "最终ZIP确含完整workflow与测试入口"
+    },
+    {
+      "id": "R-13.0",
+      "requirement": "完整前后端、版本锁、结构/种子、CI、README；注明验收commit",
+      "source": "frontend/backend/locks/migration/CI/README",
+      "evidence": "E-SRC/E-DOC",
+      "status": "pending_final_package",
+      "task": "P2-SEAL",
+      "observable": "ZIP/清单完整，40位SHA与实际CI/代码匹配"
+    },
+    {
+      "id": "R-13.1",
+      "requirement": "技术版本/结构/构建测试启动/连接",
+      "source": "README; lock/pom/Compose",
+      "evidence": "E-DOC/E-CI",
+      "status": "documentation_needs_final_alignment",
+      "task": "P2-DOCS",
+      "observable": "统一最终入口，全部命令从新包可执行"
+    },
+    {
+      "id": "R-13.2",
+      "requirement": "配置示例/初始化/模拟数据素材",
+      "source": "env example; V1-V3; demo/ink",
+      "evidence": "E-DOC/E-API",
+      "status": "account_migration_and_final_docs_pending",
+      "task": "P2-DOCS",
+      "observable": "补V4与账户初始化，干净空库验证无凭据示例"
+    },
+    {
+      "id": "R-13.3",
+      "requirement": "主要接口字段/状态/阶段/执行方式",
+      "source": "specs/api.yaml; README; Tasks/Pipeline",
+      "evidence": "E-DOC/E-SRC",
+      "status": "documentation_needs_final_alignment",
+      "task": "P2-DOCS",
+      "observable": "账户新API纳入OpenAPI/README，原字段准确"
+    },
+    {
+      "id": "R-13.4",
+      "requirement": "成功/指定失败/耗时/多任务/刷新演示",
+      "source": "README模拟fetch; demo",
+      "evidence": "E-DOC/E-BROWSER",
+      "status": "documentation_needs_final_alignment",
+      "task": "P2-DOCS",
+      "observable": "最终可复制演示并附真实GIF，测试证据不靠GIF代替"
+    },
+    {
+      "id": "R-13.5",
+      "requirement": "身份与个人记录设计/演示",
+      "source": "Identity/providers; README",
+      "evidence": "E-DOC/E-API",
+      "status": "documentation_needs_final_alignment",
+      "task": "P2-DOCS",
+      "observable": "访客/账户、注册保留、登录不合并、退出/改密行为如实"
+    },
+    {
+      "id": "R-13.6",
+      "requirement": "完成/未完成/已知限制/实际投入/重启边界",
+      "source": "effort; Processing启动中断; README",
+      "evidence": "E-DOC/E-JAVA",
+      "status": "documentation_needs_final_alignment",
+      "task": "P2-REPORT",
+      "observable": "实测/估算/未知分开，重启不续跑和新账户限制明示"
+    },
+    {
+      "id": "R-13.7",
+      "requirement": "部署回滚基本步骤",
+      "source": "docs/delivery; README; historical恢复",
+      "evidence": "E-DOC/E-HISTORY",
+      "status": "account_migration_and_final_docs_pending",
+      "task": "P2-DOCS",
+      "observable": "V4匹配备份/回滚，新旧数据不破坏，不删除产品卷"
+    },
+    {
+      "id": "R-13.8",
+      "requirement": "使用AI与拆分上下文/生成修改/验证修正实例",
+      "source": "README; effort; handoffs/reviews",
+      "evidence": "E-DOC/E-HISTORY",
+      "status": "documentation_needs_final_alignment",
+      "task": "P2-REPORT",
+      "observable": "给真实闭环/准确角色与模型未知，不含私人聊天账号"
+    },
+    {
+      "id": "R-13.9",
+      "requirement": "脚手架/开源代码/素材来源与复用",
+      "source": "THIRD-PARTY-NOTICES; manifests; RB LICENSE",
+      "evidence": "E-SOURCE",
+      "status": "provenance_review_pending",
+      "task": "P2-AUDIT",
+      "observable": "逐项适用许可/复用，原创授权范围明确，不盖过Commons Clause"
+    },
+    {
+      "id": "R-14.a",
+      "requirement": "推荐docker compose up --build三服务",
+      "source": "compose.yaml; Dockerfiles",
+      "evidence": "E-CI/E-API",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "从最终ZIP新目录/空卷实际启动，非仅当前环境成功"
+    },
+    {
+      "id": "R-14.b",
+      "requirement": "Dockerfile、非敏感配置示例、说明",
+      "source": "Dockerfiles; .env.example; README",
+      "evidence": "E-DOC/E-SRC",
+      "status": "pending_final_package",
+      "task": "P2-SEAL",
+      "observable": "包内存在、无真实凭据、默认可启动"
+    },
+    {
+      "id": "R-14.c",
+      "requirement": "初始化数据、素材可用",
+      "source": "Flyway V1-V3/demo; planned V4",
+      "evidence": "E-API/E-CI",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "空库与旧库升级都可用，演示无需外部服务"
+    },
+    {
+      "id": "R-14.d",
+      "requirement": "无需公网/真实部署截图，可读源码与容器运行",
+      "source": "交付说明",
+      "evidence": "E-DOC",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-REPORT",
+      "observable": "不以无公网误报未完成；GIF是用户展示要求而非官方部署证明"
+    },
+    {
+      "id": "SUB.a",
+      "requirement": "原沟通渠道交源码链接或压缩包",
+      "source": "DELIVERABLES; original题面",
+      "evidence": "E-DOC",
+      "status": "user_submission_boundary",
+      "task": "P2-SEAL",
+      "observable": "给可交ZIP和可复制说明，不代发/邀请评估者"
+    },
+    {
+      "id": "SUB.b",
+      "requirement": "日期按双方约定",
+      "source": "PLAN deadline=null",
+      "evidence": "E-DOC",
+      "status": "user_submission_boundary",
+      "task": "P2-REPORT",
+      "observable": "不从倒计时推断实际截止"
+    },
+    {
+      "id": "SUB.c",
+      "requirement": "最多6文件、单个不超过100MB",
+      "source": "DELIVERABLES; manifest schema",
+      "evidence": "E-DOC",
+      "status": "pending_final_package",
+      "task": "P2-SEAL",
+      "observable": "实际统计附件数<=6、每个<100000000B"
+    },
+    {
+      "id": "SUB.d",
+      "requirement": "交卷后不可改",
+      "source": "提交说明/停止规则",
+      "evidence": "E-DOC",
+      "status": "user_submission_boundary",
+      "task": "P2-SEAL",
+      "observable": "封存验收SHA和文件hash，用户最终交卷，之后不自动开发"
+    },
+    {
+      "id": "ACC.a",
+      "requirement": "先审源码/执行入口/依赖脚本/材料",
+      "source": "README; entrypoint/locks/Compose",
+      "evidence": "E-SRC/E-DOC",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-REVIEW",
+      "observable": "独立审阅可读性/脚本职责，无隐含宿主脚本执行"
+    },
+    {
+      "id": "ACC.b",
+      "requirement": "安装/构建/测试/执行在容器",
+      "source": "Dockerfiles; CI; test entries",
+      "evidence": "E-CI",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "全部应用命令容器执行，新包启动亦然"
+    },
+    {
+      "id": "ACC.c",
+      "requirement": "源码实现和实际运行分别记录",
+      "source": "报告格式/矩阵/证据schema",
+      "evidence": "E-DOC",
+      "status": "documentation_needs_final_alignment",
+      "task": "P2-REPORT",
+      "observable": "每条分别给source和实际运行SHA/结果，不混合"
+    },
+    {
+      "id": "ACC.d",
+      "requirement": "未验证如实记录，不隐藏问题；复杂度不等于质量",
+      "source": "REPORT-DRAFT; failures; limits",
+      "evidence": "E-HISTORY/E-DOC",
+      "status": "documentation_needs_final_alignment",
+      "task": "P2-REPORT",
+      "observable": "环境阻塞/未测/非要求单列，所有缺口有task或明确边界"
+    },
+    {
+      "id": "U-01",
+      "requirement": "注册账户并保留当前访客作品",
+      "source": "specs/p2/identity.md（尚未编码）",
+      "evidence": "E-NONE",
+      "status": "not_implemented",
+      "task": "P2-BE-USER",
+      "observable": "注册升级同userId、事务唯一邮箱与token轮换、原素材/任务保留"
+    },
+    {
+      "id": "U-02",
+      "requirement": "登录已有账户读取本人历史",
+      "source": "specs/p2/identity.md",
+      "evidence": "E-NONE",
+      "status": "not_implemented",
+      "task": "P2-BE-USER",
+      "observable": "正确/错误凭据、同账户跨浏览器/刷新恢复、当前访客不自动合并"
+    },
+    {
+      "id": "U-03",
+      "requirement": "退出和旧session撤销",
+      "source": "specs/p2/identity.md",
+      "evidence": "E-NONE",
+      "status": "not_implemented",
+      "task": "P2-BE-USER",
+      "observable": "退出返回新访客，旧cookie不能读旧任务/素材/结果"
+    },
+    {
+      "id": "U-04",
+      "requirement": "账户设置：昵称/邮箱展示、改昵称/改密码",
+      "source": "specs/p2/identity.md",
+      "evidence": "E-NONE",
+      "status": "not_implemented",
+      "task": "P2-BE-USER",
+      "observable": "昵称保存，校验旧密码、新密码生效、所有旧会话失效"
+    },
+    {
+      "id": "U-05",
+      "requirement": "清晰访客/登录/注册/个人中心入口",
+      "source": "specs/p2/identity.md; Shell现仅当前身份",
+      "evidence": "E-NONE",
+      "status": "not_implemented",
+      "task": "P2-FE-USER",
+      "observable": "真实表单/反馈/提交锁/键盘/375px，邮箱未验证准确说明"
+    },
+    {
+      "id": "U-06",
+      "requirement": "切账户旧请求/缓存/私有预览不串",
+      "source": "原generation保护+计划账户扩展",
+      "evidence": "E-FE（旧匿名范围）",
+      "status": "account_extension_not_implemented",
+      "task": "P2-FE-USER",
+      "observable": "全局串行认证Set-Cookie，迟到401/数据/提交/上传与未知POST恢复"
+    },
+    {
+      "id": "U-07",
+      "requirement": "保留访客直接体验",
+      "source": "原POST session; planned账户兼容",
+      "evidence": "E-JAVA/E-BROWSER（旧范围）",
+      "status": "baseline_implemented_related_evidence",
+      "task": "P2-VERIFY",
+      "observable": "未注册也能模板/上传/提交/历史；新V4后旧访客数据不丢"
+    },
+    {
+      "id": "MEDIA-01",
+      "requirement": "附件用动图，首页山水动态为重点",
+      "source": "MEDIA.md",
+      "evidence": "E-NONE",
+      "status": "not_recorded",
+      "task": "P2-MEDIA",
+      "observable": "真实鼠标/清晰中心/雾恢复、山水可辨、成片播放与元数据"
+    },
+    {
+      "id": "MEDIA-02",
+      "requirement": "上传/制作/历史真实流程动图",
+      "source": "MEDIA.md",
+      "evidence": "E-NONE",
+      "status": "not_recorded",
+      "task": "P2-MEDIA",
+      "observable": "真实服务端阶段与结果/另任务，匿名合成数据，录制在性能后"
+    },
+    {
+      "id": "OPEN-01",
+      "requirement": "为将来公开私库准备来源/许可/隐私/历史处理",
+      "source": "NOTICES; RB LICENSE; refs/history",
+      "evidence": "E-SOURCE",
+      "status": "public_readiness_not_audited",
+      "task": "P2-AUDIT",
+      "observable": "当前树+全refs/历史披露清单、许可范围/待处理、保留私有证据；不自动公开"
+    }
+  ]
+}
