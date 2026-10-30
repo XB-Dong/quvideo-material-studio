@@ -26,3 +26,9 @@
 七项React Bits组件已按TS-CSS源码接入frontend/src/components/react-bits/，版权David Haz，完整[MIT + Commons Clause License Condition v1.0](frontend/src/components/react-bits/LICENSE.md)随源码保留，不能简称纯MIT。原始14文件hash、registry源URL及独立GitHub许可提交见[源冻结](docs/waves/P1/evidence/leader-baseline/source-freeze.json)，本地适配见[ADAPTATIONS](frontend/src/components/react-bits/ADAPTATIONS.md)。registry与GitHub内容等价性没有自动断言；本项目将组件集成为应用，不单独分发组件/工具库。
 
 实际图形依赖OGL1.0.11为Unlicense，准确版本/完整包完整性在frontend/package-lock.json及原NPM包。普通动效采用CSS+React；曾验证的Motion候选已因无实际import而移除。验收用Playwright1.58.2（Apache-2.0）、Alpine Chromium/SwiftShader及Noto CJK等包在独立工具镜像安装，不作为前端产品包或外链资源；准确浏览器和driver按各次报告记录，包许可随原发行包提供。
+
+## P1.1水墨与创意适配
+
+水墨装饰取自吴云（1811–1883）1854《仙霞新霁图》/Landscape，The Metropolitan Museum of Art藏品737785/2024.549.47。[藏品页](https://www.metmuseum.org/art/collection/search/737785)及[Open Access/CC0](https://www.metmuseum.org/hubs/open-access)提供公开领域依据。原始DP-42597-004.jpg裁掉摄影边框、色卡和题跋，调为冷浅纸色并编码为frontend/public/ink/landscape.webp。来源/裁切/源与产图哈希见[P1.1清单](docs/waves/P1.1/evidence/assets/production-manifest.json)，[容器转换](assets/p1.1/README.md)固定Pillow11.3.0（[HPND许可](https://github.com/python-pillow/Pillow/blob/11.3.0/LICENSE)），不增加产品运行依赖。
+
+P1.1默认使用原生Canvas2D/CSS/SVG实现擦雾、光晕、点阵/网点/水波/像素及边框；Orbit使用已有上游适配。未运行的上游shader与实际采用代码、Glare Hover/Magic Bento的边缘设计参考在[适配说明](frontend/src/components/react-bits/ADAPTATIONS.md)分别登记，不将保留源码等同实际运行。

@@ -49,29 +49,35 @@ jobs:
         env:
           TESTED_COMMIT: ${{ github.sha }}
         run: docker compose -f compose.yaml -f compose.test.yaml run --build --rm api-check
-      - name: Independent browser acceptance
+      - name: Independent P1.1 browser and business acceptance
         env:
           TESTED_COMMIT: ${{ github.sha }}
-        run: docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-check accept.mjs
-      - name: Explicit software functional coverage of GPU effects
+        run: docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-p11-check accept.mjs
+      - name: Default software visible ink, borders and card effects
         env:
           TESTED_COMMIT: ${{ github.sha }}
-        run: docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e FORCE_GPU_FUNCTIONAL=1 -e OUTPUT_DIR=/evidence/functional browser-check accept.mjs
-      - name: Default capability policy interaction measurements
+        run: docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/visual browser-p11-check visual.mjs
+      - name: Continuous interaction and resource measurements
         env:
           TESTED_COMMIT: ${{ github.sha }}
-        run: docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/interaction browser-check interact.mjs
+        run: docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/interaction browser-p11-check interact.mjs
       - name: Browser performance measurements
         env:
           TESTED_COMMIT: ${{ github.sha }}
-        run: docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps browser-check measure.mjs
+        run: docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/measure browser-p11-check measure.mjs
+      - name: Per-run budget guard behavior tests
+        run: docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps browser-p11-check --test budgets.test.mjs
+      - name: Browser-native background cleanup and recovery
+        env:
+          TESTED_COMMIT: ${{ github.sha }}
+        run: docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-p11-headed
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: browser-evidence
           path: |
-            runtime/p1-browser/**/*.json
-            runtime/p1-browser/**/*.png
+            runtime/p11-browser/**/*.json
+            runtime/p11-browser/**/*.png
           retention-days: 7
       - name: Collect service logs
         if: always()
