@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, type RefObject } from "react";
+import { useLinkStatus } from "next/link";
 import { usePathname } from "next/navigation";
 import { useMotionPreferences } from "./preferences";
 import { useIdentity } from "../providers";
@@ -127,6 +128,8 @@ export function VisualJourney() {
       cleanup.current();
       layer.current?.replaceChildren();
     };
+    const media = matchMedia("(prefers-reduced-motion: reduce)");
+    media.addEventListener("change", cancel);
     window.addEventListener("shuying-cover", start);
     window.addEventListener("shuying-click", click);
     window.addEventListener("popstate", cancel);
@@ -134,6 +137,7 @@ export function VisualJourney() {
     document.addEventListener("visibilitychange", cancel);
     return () => {
       cancel();
+      media.removeEventListener("change", cancel);
       window.removeEventListener("shuying-cover", start);
       window.removeEventListener("shuying-click", click);
       window.removeEventListener("popstate", cancel);
@@ -197,10 +201,21 @@ export function VisualJourney() {
       observer.observe(document.body, { subtree: true, childList: true });
       timer = setTimeout(() => {
         observer?.disconnect();
-        if(gen===generation.current)pending.current = null;
+        if (gen === generation.current) pending.current = null;
       }, 700);
     }
     return cancel;
   }, [pathname, enabled]);
   return <div ref={layer} className="p12-visual-layer" aria-hidden="true" />;
+}
+
+export function LinkPending() {
+  const { pending } = useLinkStatus();
+  return (
+    <span
+      aria-hidden="true"
+      className="p12-link-progress"
+      data-pending={pending}
+    />
+  );
 }

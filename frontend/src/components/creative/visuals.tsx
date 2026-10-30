@@ -35,6 +35,23 @@ export function AnimatedBorder({ kind }: { kind: BorderKind }) {
     </span>
   );
 }
+let inkImagePromise: Promise<HTMLImageElement> | null = null;
+function loadInkImage() {
+  if (!inkImagePromise)
+    inkImagePromise = new Promise<HTMLImageElement>((resolve, reject) => {
+      const image = new Image();
+      image.onload = () => {
+        image.onload = null;
+        resolve(image);
+      };
+      image.onerror = () => {
+        inkImagePromise = null;
+        reject(new Error("Ink image unavailable"));
+      };
+      image.src = "/ink/landscape.webp";
+    });
+  return inkImagePromise;
+}
 export function InkBackdrop() {
   const ref = useRef<HTMLCanvasElement>(null);
   const { enabled } = useMotionPreferences();
@@ -43,7 +60,7 @@ export function InkBackdrop() {
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-    const image = new Image();
+    let image: HTMLImageElement;
     let dead = false,
       raf = 0,
       last = 0,
@@ -185,19 +202,22 @@ export function InkBackdrop() {
       if (points.length > 24) points.shift();
       if (!raf) raf = requestAnimationFrame(frame);
     };
-    image.onload = () => {
-      if (dead) return;
-      paint();
-      window.addEventListener("pointermove", move, { passive: true });
-      window.addEventListener("resize", paint);
-    };
-    image.src = "/ink/landscape.webp";
+    loadInkImage()
+      .then((loaded) => {
+        if (dead) return;
+        image = loaded;
+        paint();
+        window.addEventListener("pointermove", move, { passive: true });
+        window.addEventListener("resize", paint);
+      })
+      .catch(() => {
+        if (!dead) canvas.dataset.inkReady = "error";
+      });
     return () => {
       dead = true;
       cancelAnimationFrame(raf);
       window.removeEventListener("pointermove", move);
       window.removeEventListener("resize", paint);
-      image.onload = null;
       canvas.width = canvas.height = 0;
       fog.width = clear.width = mask.width = 0;
     };

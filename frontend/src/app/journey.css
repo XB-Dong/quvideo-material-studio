@@ -535,3 +535,36 @@ body:has(dialog[open]) .p12-scene-current {
     max-height: 65vh;
   }
 }
+
+.p12-link-progress {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 2px;
+  height: 2px;
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 3;
+  transform-origin: left;
+  background: #b1a5ed;
+}
+.p12-link-progress[data-pending="true"] {
+  animation: p12-link-wait 1.2s ease-in-out 0.1s infinite;
+}
+@keyframes p12-link-wait {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.1);
+  }
+  30% {
+    opacity: 0.75;
+  }
+  90% {
+    opacity: 0.45;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+  }
+}

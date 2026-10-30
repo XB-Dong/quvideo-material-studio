@@ -1,5 +1,9 @@
 "use client";
-import { beginCoverTransition, clickFeedback } from "./motion/journey";
+import {
+  LinkPending,
+  beginCoverTransition,
+  clickFeedback,
+} from "./motion/journey";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import Link from "next/link";
@@ -84,6 +88,7 @@ export function Catalog() {
                 onNavigate={() => beginCoverTransition(t.id)}
                 key={t.id}
               >
+                <LinkPending />
                 <div className="template-image">
                   <PublicImage
                     src={t.coverUrl}

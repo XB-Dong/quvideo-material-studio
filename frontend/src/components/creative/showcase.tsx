@@ -13,7 +13,11 @@ import Link from "next/link";
 import type { Template } from "../../lib/types";
 import { releaseContext } from "../react-bits/context-lifecycle";
 import { useMotionPreferences } from "../motion/preferences";
-import { beginCoverTransition, clickFeedback } from "../motion/journey";
+import {
+  LinkPending,
+  beginCoverTransition,
+  clickFeedback,
+} from "../motion/journey";
 import { AnimatedBorder } from "./visuals";
 const Orbit = lazy(() => import("../react-bits/OrbitImages"));
 export class SafeEffect extends Component<
@@ -135,6 +139,7 @@ export function CreativeShowcase({
                 templates[0] ? "/templates/" + templates[0].id : "#templates"
               }
             >
+              <LinkPending />
               <span className="cta-label">
                 开始创作 <span aria-hidden="true">↗</span>
               </span>

@@ -22,7 +22,7 @@ export function Modal({
   const latestClose = useRef(onClose);
   latestClose.current = onClose;
   const { enabled } = useMotionPreferences();
-  const entry=useRef({enabled,origin});
+  const entry = useRef({ enabled, origin });
   const [closing, setClosing] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const close = () => {
@@ -72,7 +72,7 @@ export function Modal({
     }
   }, [enabled, closing]);
   useEffect(() => {
-    const {enabled,origin}=entry.current;
+    const { enabled, origin } = entry.current;
     const media =
       typeof matchMedia === "function"
         ? matchMedia("(prefers-reduced-motion: reduce)")
