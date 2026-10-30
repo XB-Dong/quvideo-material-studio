@@ -1,0 +1,144 @@
+{
+  "testedCommit": "111fe8a57202a8794cbfe9bc7eac6dcf27308944",
+  "capturedAt": "2026-10-30T11:19:20.020Z",
+  "browser": "149.0.7827.53",
+  "mode": "Unmodified production policy; no capability fixture",
+  "diagnosticCpuRate": 1,
+  "checks": [
+    {
+      "name": "default software ink same-coordinate clarity, visible pixels and refog",
+      "status": "pass",
+      "details": {
+        "point": {
+          "x": 840,
+          "y": 360,
+          "energy": 6125
+        },
+        "before": {
+          "edgeEnergy": 0.7883506343713984,
+          "mean": 215.21179354094662,
+          "width": 70,
+          "height": 70
+        },
+        "clear": {
+          "edgeEnergy": 9.13473183391004,
+          "mean": 206.26852652825815,
+          "width": 70,
+          "height": 70
+        },
+        "refog": {
+          "edgeEnergy": 0.776167820069211,
+          "mean": 215.52595155709423,
+          "width": 70,
+          "height": 70
+        },
+        "diff": {
+          "changedPixels": 3886,
+          "edgeRatio": 11.587143379663463
+        },
+        "limits": "Compositor screenshots perturb time; this is functional clarity evidence, not performance"
+      }
+    },
+    {
+      "name": "three or more real border families and continuous compositor movement",
+      "status": "pass",
+      "details": {
+        "families": [
+          {
+            "kind": "electric",
+            "style": "18px, 3px, 2px, 5px, 28px, 44px"
+          },
+          {
+            "kind": "flow",
+            "style": "13px, 87px"
+          },
+          {
+            "kind": "pixel",
+            "style": "0.5px, 1.5px, 0.5px, 4px, 2px, 91.5px"
+          },
+          {
+            "kind": "electric",
+            "style": "18px, 3px, 2px, 5px, 28px, 44px"
+          },
+          {
+            "kind": "proximity",
+            "style": "none"
+          }
+        ],
+        "diff": {
+          "changedPixels": 335,
+          "edgeRatio": 0.9999474205659524
+        }
+      }
+    },
+    {
+      "name": "four real card canvases change pixels independently and release on exit",
+      "status": "pass",
+      "details": [
+        {
+          "id": "demo-postcard",
+          "width": 310,
+          "height": 413,
+          "colored": 16050,
+          "centerAlpha": 107,
+          "cornerAlpha": 0
+        },
+        {
+          "id": "demo-pet",
+          "width": 310,
+          "height": 413,
+          "colored": 128,
+          "centerAlpha": 0,
+          "cornerAlpha": 0
+        },
+        {
+          "id": "demo-story",
+          "width": 310,
+          "height": 413,
+          "colored": 125454,
+          "centerAlpha": 0,
+          "cornerAlpha": 255
+        },
+        {
+          "id": "demo-portrait",
+          "width": 310,
+          "height": 413,
+          "colored": 124254,
+          "centerAlpha": 0,
+          "cornerAlpha": 255
+        }
+      ]
+    },
+    {
+      "name": "offscreen hero stops its RAF after viewport resize and returns",
+      "status": "fail",
+      "message": "Expected values to be strictly equal:\n\n1 !== 0\n"
+    },
+    {
+      "name": "reduce live change clears RAF and contexts; restore remains usable",
+      "status": "fail",
+      "message": "Hero left the viewport during reduced-motion check"
+    },
+    {
+      "name": "route unmount no residual creative RAF",
+      "status": "pass",
+      "details": {
+        "observedAt": 1145,
+        "rafPending": 0,
+        "rafExecuted": 0,
+        "pendingCallbacks": [],
+        "rafHistory": [],
+        "motionStatic": true,
+        "orbit": 0,
+        "gpuAllocated": 0,
+        "gpuLive": 0,
+        "coarse": false,
+        "fine": true,
+        "hover": true,
+        "reduce": true,
+        "hidden": false,
+        "animations": []
+      }
+    }
+  ]
+}

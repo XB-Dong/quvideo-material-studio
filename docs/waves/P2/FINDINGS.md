@@ -27,3 +27,5 @@ P2-AUTH-01：CI81a真实MySQL26项及独立账户API8/浏览器8、V3到V4旧gue
 P2-FINAL-02 / P2-MEDIA：Reviewer实看全部380帧指出首页首稿末段仍清晰；Acceptance只读原WebM/GIF同坐标确认第二处尾回雾未充分进入录制，非仅trim问题，未据此断言产品坏或全renderer冻结。保留初稿/诊断/失败证据，执行一次有界headed+Xvfb真实自然停留重录；不改产品参数、不拼静态帧。该媒体子项当前open，待新片同坐标实值/全帧独立复验。
 
 P2-FINAL-02复验：唯一实际新录使用headed+Xvfb，未改产品。自然6000ms后截图前两区画布MAE0，新WebM/GIF末同区接近初雾；Reviewer实际看新377全帧/12板及关键大图，确认末回雾，closed。旧片/原诊断保留；Xvfb PID1启动与越过末帧采样错误另记工具前置，不当作业务Red。制作片未改。
+
+P2-FINAL-03 / P2-VERIFY：最终111提交CI41046555176 frontend/backend成功，P11 visual离屏检查1!=0、后续reduce因前例未恢复viewport而cascade。原pipeline失败保留、111附件标为撤回不提交；诊断orbit/raf实际值和原生render机会后修真实根因，既有断言、预算与CI不可削弱。Acceptance唯一获tests/p1.1/visual.mjs诊断和场景finally恢复写权；Frontend只读产品代码分析，无并行浏览器。

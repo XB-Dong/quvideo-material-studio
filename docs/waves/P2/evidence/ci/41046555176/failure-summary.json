@@ -1,0 +1,15 @@
+{
+  "runId": 41046555176,
+  "sourceCommit": "111fe8a57202a8794cbfe9bc7eac6dcf27308944",
+  "conclusion": "failure",
+  "frontend": "success",
+  "backend": "success",
+  "integrationFailedStep": "Default software visible ink, borders and card effects",
+  "failure": "Offscreen hero expected0 actual1; next reduced-motion scenario retained offscreen viewport because first assertion threw before restore",
+  "cause": "Unresolved until independent telemetry; not labelled product or infrastructure failure without evidence",
+  "rawLogSha256": "e2bc214346ebb83a6a997d24c7764f01e065a07d952726f78e77bc4478693ec7",
+  "rawArtifactSha256": "125a57337a8a4ba5fa8588e82774186189e94705a142eefa4035d7e66936010e",
+  "rootTaskId": "P2-VERIFY",
+  "findingId": "P2-FINAL-03",
+  "capturedAt": "2026-10-30T19:27:23.8891501+08:00"
+}
