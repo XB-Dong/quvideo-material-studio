@@ -21,12 +21,12 @@
 
 ## 真实动图
 
-- `media/home-ink.gif`：1200×750、12fps、16秒/192帧，12441767字节，SHA256 `e0f1b133bd9389bb1b42de470308c49bc18553b1e82b71cc41e21075d030e63d`。
+- `media/home-ink.gif`：1200×750、10fps、18.9秒/189帧，18367297字节，SHA256 `e78acdca36ea21535222ce4188629351afd9a064940d98a32979dcbfec78c119`。
 - `media/creation-history.gif`：1200×750、12fps、15.66秒/188帧，12086707字节，SHA256 `a9f294456dbcae08114712e58cd89581ea0bad131d1b8a30ab5b643923a8a9f6`。
 
-两者均从81a真实页面录制、全周期解码exit0，单个小于20MB。首页只从原WebM裁去前3秒无输入bootstrap段，保留两段真实鼠标清晰轨迹和自然回雾，不拼接/加速/更改产品雾层；另一个完整保留真实chooser、上传、POST202、Java阶段、原图预览及成功/失败历史。原始视频、首稿hash、trim命令、动作/采样点及实际工具版本见`../waves/P2/evidence/acceptance/media-manifest.json`；原WebM不随源码包或交卷附件分发。
+两者均从81a真实页面录制、全周期解码exit0，单个小于20MB。首页最终采用headed+Xvfb真实重录，只从原WebM裁去前2.2秒无输入bootstrap段，按正常等时10fps编码，保留两段真实鼠标、自然等待6000ms、一次正常viewport截图与1500ms视频flush；未拼接/加速或更改产品雾层；另一个完整保留真实chooser、上传、POST202、Java阶段、原图预览及成功/失败历史。原始视频、首稿hash、trim命令、动作/采样点及实际工具版本见`../waves/P2/evidence/acceptance/media-manifest.json`；原WebM不随源码包或交卷附件分发。
 
-媒体工具为固定digest官方Playwright1.58.2镜像，实际Chromium145.0.7632.6/Node24.13.0/FFmpeg6.1.1，与Alpine Chromium149软件性能环境分别记录。录制含仅辅助显示实际pointermove的工具鼠标箭头，未加产品技术特效注释。独立审核按全时段/全帧分镜和关键原尺寸帧核内容，并读取完整解码证据；这种方法不冒称原生播放器实时播放或物理设备流畅实测。
+媒体工具为固定digest官方Playwright1.58.2镜像，实际Chromium145.0.7632.6/Node24.13.0/FFmpeg6.1.1，首页为headed+Xvfb、制作流程为原headless录制，与Alpine Chromium149软件性能环境分别记录。录制含仅辅助显示实际pointermove的工具鼠标箭头，未加产品技术特效注释。首页初稿第二处回雾未充分进入编码画面，保留原片/同坐标诊断，不将其包装成通过；新录实际画布在截图前自然等待结束时两区与初雾逐像素相同，最终GIF两区末态接近初雾的定量结果随媒体记录。独立审核按全时段/全帧分镜和关键原尺寸帧核内容，并读取完整解码证据；这种方法不冒称原生播放器实时播放或物理设备流畅实测。
 
 ## 五分钟核对
 

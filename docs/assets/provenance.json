@@ -380,29 +380,29 @@
     "license": "MIT + Commons Clause License Condition v1.0",
     "currentRetained": [
       {
-        "bytes": 4181,
+        "sha256": "4bfcb7609812c131544885b5f6a9822bb5dca3c48b900b9d4c53fd8a3c30885c",
         "file": "ADAPTATIONS.md",
-        "sha256": "4bfcb7609812c131544885b5f6a9822bb5dca3c48b900b9d4c53fd8a3c30885c"
+        "bytes": 4181
       },
       {
-        "bytes": 726,
+        "sha256": "bac48555918b75a2eb49fe71a8fd692f3ffd3823a21c301c6cd190c9885bde69",
         "file": "context-lifecycle.ts",
-        "sha256": "bac48555918b75a2eb49fe71a8fd692f3ffd3823a21c301c6cd190c9885bde69"
+        "bytes": 726
       },
       {
-        "bytes": 2060,
+        "sha256": "4bdd1fa59a6b7d5954bc3b213dbc34e455c635a94bbcecf9293553797d0fad02",
         "file": "LICENSE.md",
-        "sha256": "4bdd1fa59a6b7d5954bc3b213dbc34e455c635a94bbcecf9293553797d0fad02"
+        "bytes": 2060
       },
       {
-        "bytes": 1788,
+        "sha256": "e648040230adb6f08d51fd91583b009e8d9b577c7128c42354cbee1fc4191643",
         "file": "OrbitImages.css",
-        "sha256": "e648040230adb6f08d51fd91583b009e8d9b577c7128c42354cbee1fc4191643"
+        "bytes": 1788
       },
       {
-        "bytes": 30404,
+        "sha256": "7cff2d9b3370badb7b35ac460102a10f8e4f55f63793ccc0bc2543ab285fc6f7",
         "file": "OrbitImages.tsx",
-        "sha256": "7cff2d9b3370badb7b35ac460102a10f8e4f55f63793ccc0bc2543ab285fc6f7"
+        "bytes": 30404
       }
     ],
     "historicalRegistryUrls": [

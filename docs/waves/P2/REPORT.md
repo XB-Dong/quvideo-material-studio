@@ -4,7 +4,7 @@
 
 可复核的容器结果：前端lint/type/58测试/生产构建，Java真实MySQL26测试/verify/package，原API8项，账户API8/浏览器8，原P1.1/P1.2功能/视觉/无截图交互/逐轮资源预算/原生后台释放恢复均通过。源码包在仓库外新目录、两个空卷启动后独立8+8通过；V3合成旧库升级V4保原guest/任务完整快照和文件bytes，注册保owner、旧token401。详细时间、用例、精确版本和环境在[evidence/ci/41038592540-run.json](evidence/ci/41038592540-run.json)、[空卷记录](evidence/acceptance/81a3de8-cleanroom-summary.json)、[升级记录](evidence/acceptance/81a3de8-v3-v4-upgrade-pass.json)。
 
-两份真实GIF及hash/原录制/裁剪/动作/工具版本在[媒体记录](evidence/acceptance/media-manifest.json)，首页16秒192帧、制作15.66秒188帧，均1200×750/12fps、单个小于20MB，全周期解码exit0。首页仅裁无输入开头，保留真实山水擦雾/回雾，制作展示实际Java阶段和历史。独立视觉核验使用完整时序分镜及关键放大，方法与未测实时/硬件边界明确记录。
+两份真实GIF及hash/原录制/裁剪/动作/工具版本在[媒体记录](evidence/acceptance/media-manifest.json)，首页18.9秒189帧/10fps、制作15.66秒188帧/12fps，均1200×750、单个小于20MB，全周期解码exit0。首页仅裁无输入开头，保留真实山水擦雾/回雾，制作展示实际Java阶段和历史。独立视觉核验使用完整时序分镜及关键放大，方法与未测实时/硬件边界明确记录。
 
 最终源码包在业务验收树基础加入报告/动图/来源和已执行独立工具。最终deliveryCommit、包条目/hash、与已验证候选的执行树/CI/配置/锁/迁移/素材比较及最终审核由仓库外版本清单锁定，避免提交自引用。封存前检查不得因通过旧CI而略过实际改变的执行内容。
 

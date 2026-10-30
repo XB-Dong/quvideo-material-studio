@@ -19,3 +19,11 @@ Leader另修计数字段：总追踪单元87=原题R条款69+提交/验收规则
 P2-AUTH-01 / P2-BE-USER：作者同guest并发注册用例发现等待user锁后二次require读到MyBatis一级缓存旧session，实际409而预期旧token401。Leader接受major；账户READ_COMMITTED+锁SELECT flushCache强制重读，作者26Java通过，失败保留，独立/CI复验待执行，不冒称准备审核证明运行。
 
 P2-PROV-01 / P2-AUDIT：Reviewer指出六组未挂载上游完整组件源码不应以应用集成名义附送。Leader接受，唯一删除12文件与无引用OGL并更新当前来源范围，实际Orbit/原许可/效果保持；Git历史不改，未来公开审计单列。待独立复核/新构建验证。
+
+## 最终验收处置更新
+
+P2-AUTH-01：CI81a真实MySQL26项及独立账户API8/浏览器8、V3到V4旧guest升级均通过，closed。P2-PROV-01：Reviewer复核1b清理及9bd真实300文件ZIP/原许可/零旧组件，当前分发处置closed，原Git历史未来公开边界另列。P2-FINAL-01：报告R09错误把本轮时间显示归于跨时区浏览器，接受minor，改为E-FE本地日历测试并由Reviewer复核closed。
+
+P2-FINAL-02 / P2-MEDIA：Reviewer实看全部380帧指出首页首稿末段仍清晰；Acceptance只读原WebM/GIF同坐标确认第二处尾回雾未充分进入录制，非仅trim问题，未据此断言产品坏或全renderer冻结。保留初稿/诊断/失败证据，执行一次有界headed+Xvfb真实自然停留重录；不改产品参数、不拼静态帧。该媒体子项当前open，待新片同坐标实值/全帧独立复验。
+
+P2-FINAL-02复验：唯一实际新录使用headed+Xvfb，未改产品。自然6000ms后截图前两区画布MAE0，新WebM/GIF末同区接近初雾；Reviewer实际看新377全帧/12板及关键大图，确认末回雾，closed。旧片/原诊断保留；Xvfb PID1启动与越过末帧采样错误另记工具前置，不当作业务Red。制作片未改。
