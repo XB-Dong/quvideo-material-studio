@@ -1,8 +1,11 @@
 "use client";
 import Link from "next/link";
-import { useState, useRef, useEffect, useId } from "react";
+import "./account/header.css";
+import { useState, useRef, useEffect, useId, lazy, Suspense } from "react";
 import { useIdentity } from "./providers";
 import { useMotionPreferences } from "./motion/preferences";
+
+const AccountDialog = lazy(() => import("./account/dialog"));
 
 export function Modal({
   title,
@@ -108,8 +111,8 @@ export function Shell({
   children: React.ReactNode;
   mainClass?: string;
 }) {
-  const { session, error, retry } = useIdentity();
-  const [open, setOpen] = useState(false);
+  const { session, error, retry, authBusy } = useIdentity();
+  const [open, setOpen] = useState<"login" | "guest" | null>(null);
   return (
     <>
       <header className="site-header">
@@ -119,10 +122,37 @@ export function Shell({
         <nav aria-label="主导航">
           <Link href="/">探索模板</Link>
           <Link href="/history">我的作品</Link>
-          <button className="identity-button" onClick={() => setOpen(true)}>
-            <span className="avatar">◉</span>
-            {session?.displayName || "连接身份中"}
-          </button>
+          {session?.kind === "ACCOUNT" ? (
+            <Link
+              href="/account"
+              className="identity-button"
+              aria-label="账户设置"
+            >
+              <span className="avatar">◉</span>
+              <span className="p2-account-name">{session.displayName}</span>
+            </Link>
+          ) : (
+            <>
+              <button
+                className="identity-button p2-identity-button"
+                disabled={authBusy}
+                onClick={() => setOpen("guest")}
+              >
+                <span className="avatar">◉</span>
+                <span className="p2-identity-label">
+                  <small className="p2-guest-label">访客</small>
+                  {session?.displayName || "连接身份中"}
+                </span>
+              </button>
+              <button
+                className="p2-auth-entry"
+                disabled={authBusy}
+                onClick={() => setOpen("login")}
+              >
+                登录 / 注册
+              </button>
+            </>
+          )}
         </nav>
       </header>
       {error && (
@@ -143,18 +173,9 @@ export function Shell({
         <small>模拟制作演示 · 无真实 AI 调用</small>
       </footer>
       {open && (
-        <Modal title="当前身份" onClose={() => setOpen(false)}>
-          <div className="identity-panel">
-            <span className="large-avatar">◉</span>
-            <h3>{session?.displayName || "身份未连接"}</h3>
-            <code>{session?.userId || "—"}</code>
-            <p>此浏览器使用独立匿名身份，作品仅对当前会话可见。</p>
-            <p>
-              打开无痕窗口可体验另一位用户。清除 Cookie
-              后，原身份的记录无法找回。
-            </p>
-          </div>
-        </Modal>
+        <Suspense fallback={null}>
+          <AccountDialog initial={open} onClose={() => setOpen(null)} />
+        </Suspense>
       )}
     </>
   );

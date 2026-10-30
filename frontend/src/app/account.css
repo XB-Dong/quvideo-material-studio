@@ -1,0 +1,206 @@
+.p2-account-form {
+  width: min(380px, calc(100vw - 80px));
+  padding: 0 2px 6px;
+}
+.p2-account-form form,
+.p2-account-card form {
+  display: grid;
+  gap: 16px;
+}
+.p2-account-form label,
+.p2-account-card label {
+  display: grid;
+  gap: 8px;
+  font-size: 12px;
+  color: #5c596c;
+}
+.p2-account-form input,
+.p2-account-card input {
+  width: 100%;
+  min-width: 0;
+  background: #fbfafc;
+  border: 1px solid #ddd9e8;
+  border-radius: 10px;
+  padding: 12px;
+  color: #302e3d;
+  font: inherit;
+}
+.p2-account-form input:focus,
+.p2-account-card input:focus {
+  outline: 2px solid #9b91ce;
+  outline-offset: 2px;
+}
+.p2-account-form small {
+  font-size: 10px;
+  color: #827b90;
+  line-height: 1.7;
+}
+.p2-account-primary {
+  background: #716ab8 !important;
+  color: #fff !important;
+  border: 1px solid #716ab8 !important;
+  min-height: 42px;
+}
+.p2-account-muted {
+  color: #7d758a;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.p2-account-greeting {
+  font-size: 24px;
+  font-family: "Noto Serif CJK SC", serif;
+}
+.p2-auth-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.p2-auth-tabs button {
+  flex: 1;
+  background: transparent;
+  color: #71667f;
+  border-color: #e5deec;
+}
+.p2-auth-tabs [aria-pressed="true"] {
+  background: #f3f0f9;
+  color: #7163ae;
+  border-color: #d7ceea;
+}
+.p2-account-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #7667b1;
+  margin-top: 20px;
+}
+.p2-account-links button {
+  background: #f5f2fa;
+  color: #7667b1;
+  border-color: #e6dfee;
+}
+.p2-form-message {
+  border-left: 2px solid #b3a4cc;
+  padding: 10px 12px;
+  background: #f8f5fb;
+  font-size: 12px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  color: #7d637b;
+}
+.p2-account-page {
+  max-width: 1000px;
+  margin: 38px auto 0;
+  min-height: calc(100svh - 140px);
+}
+.p2-account-page > h1 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.p2-settings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.p2-account-card {
+  border: 1px solid #e5dfec;
+  border-radius: 20px;
+  padding: 28px;
+  background: #fff;
+}
+.p2-account-card h2 {
+  font-size: 18px;
+  margin-bottom: 22px;
+}
+.p2-account-card dl {
+  font-size: 12px;
+  line-height: 1.9;
+  margin-bottom: 6px;
+}
+.p2-account-card dt {
+  color: #82798f;
+}
+.p2-account-card dd {
+  margin: 0 0 13px;
+  overflow-wrap: anywhere;
+}
+.p2-personal-link {
+  display: inline-block;
+  margin-top: 24px;
+  color: #7968b4;
+  font-size: 12px;
+}
+.p2-account-exit {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+.p2-account-exit h2 {
+  margin-bottom: 10px;
+}
+.p2-account-exit p {
+  margin-bottom: 0;
+}
+.p2-account-exit button {
+  white-space: nowrap;
+  background: #faf8fc;
+  border-color: #e3dce8;
+  color: #8b6b80;
+}
+.p2-guest-label {
+  font-size: 10px;
+  color: #8b8298;
+  font-weight: 400;
+}
+.p2-auth-entry {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: #726582 !important;
+  font-size: 12px;
+  padding: 8px 4px;
+}
+.p2-identity-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+@media (max-width: 600px) {
+  .p2-settings-grid {
+    grid-template-columns: 1fr;
+  }
+  .p2-account-page {
+    margin-top: 28px;
+  }
+  .p2-account-card {
+    padding: 22px;
+  }
+  .p2-account-exit {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .p2-account-page > h1 {
+    font-size: 26px;
+  }
+  .p2-account-form {
+    width: calc(100vw - 80px);
+  }
+  .identity-button.p2-identity-button {
+    position: relative;
+  }
+  .p2-identity-button .p2-guest-label {
+    position: absolute;
+    bottom: -3px;
+    left: 11px;
+    font-size: 9px;
+  }
+  .p2-auth-entry {
+    font-size: 11px;
+    padding: 6px 0;
+  }
+}
+
+.p2-account-page > h1 {
+  overflow-wrap: anywhere;
+}

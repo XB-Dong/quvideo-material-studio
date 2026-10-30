@@ -1,0 +1,39 @@
+.p2-guest-label {
+  font-size: 10px;
+  color: #8b8298;
+  font-weight: 400;
+}
+.p2-auth-entry {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: #726582 !important;
+  font-size: 12px;
+  padding: 8px 4px;
+}
+.p2-identity-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+@media (max-width: 600px) {
+  .identity-button.p2-identity-button {
+    position: relative;
+  }
+  .p2-identity-button .p2-guest-label {
+    position: absolute;
+    bottom: -3px;
+    left: 11px;
+    font-size: 9px;
+  }
+  .p2-auth-entry {
+    font-size: 11px;
+    padding: 6px 0;
+  }
+}
+
+.p2-account-name {
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
