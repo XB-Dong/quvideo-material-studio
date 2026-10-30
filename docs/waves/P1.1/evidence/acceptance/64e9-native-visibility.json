@@ -1,0 +1,84 @@
+{
+  "testedCommit": "64e919aac25cacf7f1193b4a361071e5d03ef635",
+  "capturedAt": "2026-10-30T03:43:47.123Z",
+  "browser": "Chrome/149.0.7827.53",
+  "environment": "Headed Chromium in container Xvfb; raw CDP, no Playwright focus emulation; same-window native tabs activated by Target.activateTarget; no visibility override or dispatched event",
+  "results": [
+    {
+      "mode": "default-policy",
+      "windows": {
+        "app": {
+          "windowId": 414719339,
+          "bounds": {
+            "left": 20,
+            "top": 20,
+            "width": 1050,
+            "height": 980,
+            "windowState": "normal"
+          }
+        },
+        "control": {
+          "windowId": 414719339,
+          "bounds": {
+            "left": 20,
+            "top": 20,
+            "width": 1050,
+            "height": 980,
+            "windowState": "normal"
+          }
+        }
+      },
+      "before": {
+        "visibility": "visible",
+        "hidden": false,
+        "orbit": 1,
+        "mainGPU": 0,
+        "events": [],
+        "preflight": [],
+        "rafPending": 1,
+        "rafExecuted": 3
+      },
+      "hidden": {
+        "visibility": "hidden",
+        "hidden": true,
+        "orbit": 0,
+        "mainGPU": 0,
+        "events": [
+          {
+            "state": "hidden",
+            "hidden": true,
+            "trusted": true,
+            "at": 727.5
+          }
+        ],
+        "preflight": [],
+        "rafPending": 0,
+        "rafExecuted": 3
+      },
+      "restored": {
+        "visibility": "visible",
+        "hidden": false,
+        "orbit": 1,
+        "mainGPU": 0,
+        "events": [
+          {
+            "state": "hidden",
+            "hidden": true,
+            "trusted": true,
+            "at": 727.5
+          },
+          {
+            "state": "visible",
+            "hidden": false,
+            "trusted": true,
+            "at": 741.3999999985099
+          }
+        ],
+        "preflight": [],
+        "rafPending": 0,
+        "rafExecuted": 3
+      }
+    }
+  ],
+  "limits": "Not physical Windows/IAB minimize or hardware GPU performance; No capability override; actual software renderer"
+}

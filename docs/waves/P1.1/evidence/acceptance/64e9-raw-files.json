@@ -1,0 +1,150 @@
+{
+  "scope": "Ignored raw evidence; preserve outside Git before archiving worktree",
+  "files": [
+    {
+      "path": "runtime/p11-64e9/accept/acceptance.json",
+      "bytes": 6810,
+      "sha256": "58258e75d0c3479efd1f62de4c1355ccb5bf5811c30b5cf3db26d0ef449854b7"
+    },
+    {
+      "path": "runtime/p11-64e9/accept/desktop-catalog.png",
+      "bytes": 1198409,
+      "sha256": "ebda4f876ef41a2f19320f16fefb17840ef5704f349b2064380f1771f8836970"
+    },
+    {
+      "path": "runtime/p11-64e9/accept/desktop-studio.png",
+      "bytes": 216961,
+      "sha256": "0143cccfc25a35220404d2b7dd6200aaedd3dda965afd7dc6fc2b0407d3d6a08"
+    },
+    {
+      "path": "runtime/p11-64e9/accept/desktop-task-results.png",
+      "bytes": 518788,
+      "sha256": "5a7e7ee919d97513771a3c2d8882755f4017be6cf1f30336219fb43951645785"
+    },
+    {
+      "path": "runtime/p11-64e9/accept/desktop.png",
+      "bytes": 310459,
+      "sha256": "9f68c76871b4d6115594d256983da20244cb649ffa60d33b38c004e2259d1b51"
+    },
+    {
+      "path": "runtime/p11-64e9/accept/mobile-catalog.png",
+      "bytes": 378106,
+      "sha256": "c28d52cf0d85f9077fb18d113fc4a9a9bb848d31e0a78f74148e69e43e5d41a3"
+    },
+    {
+      "path": "runtime/p11-64e9/accept/mobile-studio.png",
+      "bytes": 153077,
+      "sha256": "acd38fc6214a4cf09d8ad54b185e444fe118bbef1cf147bec43c4b4cdb567093"
+    },
+    {
+      "path": "runtime/p11-64e9/accept/mobile.png",
+      "bytes": 57321,
+      "sha256": "7c69417f74b78a0cb47faac4028f85cb96da8eead7f8a66c328f8af4914333bd"
+    },
+    {
+      "path": "runtime/p11-64e9/accept/reduce-catalog.png",
+      "bytes": 1199982,
+      "sha256": "b42f93f5d26177b1914eb9f2f1061b9038c7ce81efebba1db9f2e70271109521"
+    },
+    {
+      "path": "runtime/p11-64e9/accept/reduce-studio.png",
+      "bytes": 217053,
+      "sha256": "83f9d7668450fd48457bd4a80999c15b67766f1e27f363593bc92563225b69a3"
+    },
+    {
+      "path": "runtime/p11-64e9/accept/reduce.png",
+      "bytes": 310599,
+      "sha256": "1cb1f14e35b881b957b5a589487b4f94c4feb08a1324ac110bceb1bad42d8b0f"
+    },
+    {
+      "path": "runtime/p11-64e9/interact/interaction-performance.json",
+      "bytes": 3532,
+      "sha256": "d2c3ee54de5090d7a7dcb84be0fc9b0206db9719948e3cd18633e4489f331358"
+    },
+    {
+      "path": "runtime/p11-64e9/measure/measurement.json",
+      "bytes": 95863,
+      "sha256": "a1f189f780000e1caf01cbeef8bc72396da57d4e6b8f5e41ae04f3268a793765"
+    },
+    {
+      "path": "runtime/p11-64e9/measure/run-1.png",
+      "bytes": 1198859,
+      "sha256": "8d07b7223bbecf54fec8977f043fb2f566d5647739ca06075ed9eb05c7c0ab8b"
+    },
+    {
+      "path": "runtime/p11-64e9/measure/run-2.png",
+      "bytes": 1191556,
+      "sha256": "413030d641e2a09291934c098e3c3bf8b072656a80e9c766a83b31fb704dbd08"
+    },
+    {
+      "path": "runtime/p11-64e9/measure/run-3.png",
+      "bytes": 1191038,
+      "sha256": "4ef4ed6d0112ae1a82ae07462d8804207f86cdf939ac8689b05def0b6218d085"
+    },
+    {
+      "path": "runtime/p11-64e9/native/native-visibility.json",
+      "bytes": 2141,
+      "sha256": "dcf8af1c4a82e1e337558c0382a94868f4761f74296ba5b83b8d4f4eeb4e0e7c"
+    },
+    {
+      "path": "runtime/p11-64e9/visual/border-a.png",
+      "bytes": 176999,
+      "sha256": "2c0b8573317821e47c2316b52034704739c5f0cdb708c5c556b34096dfd32dab"
+    },
+    {
+      "path": "runtime/p11-64e9/visual/border-b.png",
+      "bytes": 177248,
+      "sha256": "6948574688faeb203ee5399ff7aaa9ff01557f6c1be0d9233600c8184fcb7b8e"
+    },
+    {
+      "path": "runtime/p11-64e9/visual/ink-clear.png",
+      "bytes": 7710,
+      "sha256": "d68880139f519a91f8f7966ce94cecd335b6e603b94b61a8eca7b22141a92953"
+    },
+    {
+      "path": "runtime/p11-64e9/visual/ink-fog.png",
+      "bytes": 3891,
+      "sha256": "bbdf220bcf27962bceccabbc527082d2228c62602a9ebff6729b956c5c2f7039"
+    },
+    {
+      "path": "runtime/p11-64e9/visual/ink-refog.png",
+      "bytes": 3853,
+      "sha256": "4eba6ede85d3adc7a849a165d47eb631781e7661108aef0821dc5e9495b54e9b"
+    },
+    {
+      "path": "runtime/p11-64e9/visual/visual.json",
+      "bytes": 3942,
+      "sha256": "1ec5c34884c49818f0040e5fa68fbd4ef2b50f754cebaed14b1b87091f7921ea"
+    },
+    {
+      "path": "runtime/p11-64e9/visual-final/border-a.png",
+      "bytes": 177771,
+      "sha256": "ac70da591ecaf4872fe2875768b2367cff0b4b1e96fcbda83d37709b7efe7dc8"
+    },
+    {
+      "path": "runtime/p11-64e9/visual-final/border-b.png",
+      "bytes": 176954,
+      "sha256": "218da3536294642d908a857988ffcc859b965600010e5e2a1d0849b8563a762f"
+    },
+    {
+      "path": "runtime/p11-64e9/visual-final/ink-clear.png",
+      "bytes": 7710,
+      "sha256": "d68880139f519a91f8f7966ce94cecd335b6e603b94b61a8eca7b22141a92953"
+    },
+    {
+      "path": "runtime/p11-64e9/visual-final/ink-fog.png",
+      "bytes": 3891,
+      "sha256": "bbdf220bcf27962bceccabbc527082d2228c62602a9ebff6729b956c5c2f7039"
+    },
+    {
+      "path": "runtime/p11-64e9/visual-final/ink-refog.png",
+      "bytes": 3853,
+      "sha256": "4eba6ede85d3adc7a849a165d47eb631781e7661108aef0821dc5e9495b54e9b"
+    },
+    {
+      "path": "runtime/p11-64e9/visual-final/visual.json",
+      "bytes": 6098,
+      "sha256": "2adb142ffe5e5627662ef3c0cecf842298ba62a3497de1687f2698a73030412a"
+    }
+  ]
+}
