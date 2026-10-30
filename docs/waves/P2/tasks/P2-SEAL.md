@@ -43,4 +43,3 @@ Write the assigned handoff under docs/waves/P2/handoffs/ with exact base and imp
 ## Final versus tested candidate
 
 After verification/review, regenerate final ZIP and compare executable source, config, locks, migrations/seeds, assets, startup commands and entries with the tested candidate. Rerun affected/required checks for executable or command changes. For non-executable documentary deltas, record exact difference and executable-tree equality, inspect/extract/hash final archive, and never claim the earlier candidate run used final bytes.
-

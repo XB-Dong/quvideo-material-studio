@@ -44,4 +44,3 @@ Write the assigned handoff under docs/waves/P2/handoffs/ with exact base and imp
 ## Candidate and proxy boundary
 
 Leader supplies frozen candidate ZIP before dispatch. Verify profile PATCH through the frontend same-origin URL including200/400/401/403, error code and cookies, while old GET/POST remain. Bind clean-room findings to this exact archive SHA, not a later final archive.
-
