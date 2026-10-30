@@ -23,8 +23,9 @@ docker compose up --build
 | 部分 | 准确版本 |
 | --- | --- |
 | 前端 | Next.js 16.4.3 App Router、React/react-dom 19.3.1、TypeScript 5.9.3 |
+| React开发类型 | @types/react 19.3.0、@types/react-dom 19.3.0 |
 | 客户端状态 | TanStack Query 5.105.0 |
-| 图形与动效 | OGL 1.0.11；操作过渡使用CSS和React生命周期，七视觉组件来自React Bits TS-CSS适配 |
+| 图形与动效 | CSS/SVG/WAAPI与Canvas2D；Orbit及按能力的保留源组件来自React Bits适配，OGL 1.0.11 |
 | 图形验收工具 | Playwright 1.58.2；实际Chromium/SwiftShader版本随每次容器证据记录 |
 | 前端工具 | Vitest 5.0.5、RTL 16.3.2、ESLint 9.39.2 |
 | 前端运行时 | Node.js 22.22.0-alpine |
@@ -43,6 +44,7 @@ docs/requirements/     题目 R-01～R-14 和参考图
 docs/waves/P0/         P0历史记录
 docs/waves/P1/         P1历史计划、交接、审核与实际证据
 docs/waves/P1.1/       当前计划、角色、任务、独立审核与运行证据
+docs/waves/P1.2/       子页动效、全流程交互、独立审核与逐页资源证据
 assets/p1.1/           固定容器的水墨衍生转换
 compose.yaml           frontend、backend、mysql 与持久卷
 compose.test.yaml      前端检查、Java/MySQL 检查、独立 API 验收
@@ -138,6 +140,7 @@ STORAGE_ROOT 在 Compose 内固定 /data/materials 并挂卷；BACKEND_INTERNAL_
 | GET /api/tasks/{id} | 只读状态快照，含步骤和单调 version |
 | GET /media/demo/{key} | 公开本地示例 |
 | GET /media/assets/{id}、/media/results/{taskId} | 当前用户的上传和成功结果图 |
+| GET /media/results/{taskId}?thumbnail=true | 相同身份/owner/SUCCEEDED检查的512px等比JPEG卡片图；无query仍原PNG，预览不换小图 |
 
 Task 包含 id、templateId/title、createdAt、status、stage、failedStage、failureCode/reason、resultUrl、version 和三条 steps。请求异常返回 code/message/requestId；查询错误不代表任务执行失败。
 
