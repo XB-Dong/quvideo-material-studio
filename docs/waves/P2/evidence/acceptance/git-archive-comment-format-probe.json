@@ -1,0 +1,12 @@
+{
+  "scope": "Data-only standard Git ZIP format probe, README-only partial archive; not candidate ZIP or runtime acceptance",
+  "sourceCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
+  "command": "git archive --format=zip --output=<ignored probe> 8c9f91af73d0ad5203162b504856b9f02b2990d6 README.md",
+  "gitVersion": "git version 2.53.0.windows.3",
+  "zipComment": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
+  "zipCommentMatches": true,
+  "paths": [
+    "README.md"
+  ],
+  "sha256": "85bb44b19c0107121c13b3ba14b7e1176e11323787badd98c607332cce662fae"
+}

@@ -21,3 +21,11 @@ accounts-api.mjs通过前端同源入口验真实账户/访客和三步任务，
 home-ink：1440桌面约14秒真实连续pointer输入，两个背景区域、停留/回雾，保留真实卡片/边框；工具录制指针辅助仅绘制鼠标位置、不改变产品clear/fog/mask。creation-history：真实选择仓库fixture、上传、受理/Java阶段/成功、历史/原图与另一失败记录约20秒。模拟延迟明确记录，不能假改阶段或拼接顺序。真实WebM原录制存仓库外，ffmpeg palettegen/paletteuse约10fps/GIF目标20MB/硬限100MB；记录版本/源SHA/动作/fps/时长/尺寸/帧数/字节/hash，成片只写规定两个路径。Reviewer全段播放独立审核，GIF不代替断言。
 
 accounts-browser.mjs现已按实际UI语义实现（仍未运行）：375真实触摸chooser与注册保留、键盘进入设置、昵称/密码/错误与退出重登录；跨路由真实SetCookie锁；真实200+SetCookie但截断body的未知结果GET恢复；真实已执行后abort的未知结果不重POST；真实已撤销cookie迟到401；迟到上传与已受理任务清理/继续。gates增加延迟实际执行GET，确保401来自被撤销旧token，不伪造身份；所有网络门控不进无截图性能。未知JSON截断只模拟不可读响应，真实账户写入与cookie来自服务器，证据必须如实说明。失败消息仅首行且合成secret脱敏，request headers/body不落报告。
+
+## 精确源码ZIP比对
+
+verify-archive.py可选--source-tree-index <JSON>，格式sourceCommit=精确候选SHA、files=[{path,blobOid,type:blob,mode:100644或100755}]。索引必须由Acceptance独立读取git ls-tree -r --full-tree -z <精确SHA>生成，不能拿Root打包entries当独立Git树来源；Git元数据读取可在宿主，应用/测试不在宿主运行。校验器无需容器内Git，计算SHA1(blob+空格+文件字节数+NUL+原字节)逐文件对比；archive comment读到的精确commit也必须匹配。
+
+ZIP自身package-policy由精确Git blob对照约束；expected为Git所有非政策排除文件，导出不准缺文件/多未跟踪文件/改字节。硬性禁止政策排掉frontend/backend/tests/.github/assets及根运行/许可入口；私有协调/题面/邮件图/用户报告、原RB许可、本地demo/ink、素材重做输入与来源分别检查。curated来源不含cachePath/本机Windows路径，合法https不能误报成本机路径。无索引仅结构检查，报告completeSourceComparedToGit=false，不能称完整源码验证。标准Git archive README-only数据探针实读40字节commit comment；不是最终候选或CLEAN。
+
+archive_checks_test.py仅合成ZIP/JSON数据，容器stdlib unittest测试正常导出、字节篡改、少资产、夹私有文件、错commit、政策擅排tests与cachePath七种行为，实际7/7 exit0；不运行任何应用/浏览器。最终候选到来后仍需真实校验+新解压空卷运行，不能用这些数据测试替代。
