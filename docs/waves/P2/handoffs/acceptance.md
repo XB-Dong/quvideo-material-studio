@@ -14,3 +14,7 @@ tests/p2/common.mjs支持BASE_URL/APP_PUBLIC_ORIGIN/RELAY_HOST/RELAY_PORT/RELAY_
 Alpine独立验收与官方Playwright媒体Dockerfile已准备，均tests构建上下文并沿原p1精确锁；媒体官方digest、ffmpeg/CJK且使用捆绑Chromium，避免外置Alpine路径。待全部性能结束才录真实WebM/GIF，原录制仓库外，工具指针辅助如实记录、不改产品显雾/动画/阶段。成片目标20MB/硬限100MB，两个规定路径由本角色独占；最终需Reviewer整段真实播放核验。
 
 后续补入：精确测试/应用/ZIP SHA、命令/环境/起止+08/退出码、所有失败/处置/独立结果、原始证据hash与限制、媒体帧率/时长/尺寸/字节/工具/模拟配置。当前无P2运行结果与真实GIF，不签G02/最终完成。
+
+更新：根据精确UI候选8c0f6c614e8a4002e7ac993e6b3f64bc2eb5cd86读取dialog/settings/header标签，accounts-browser.mjs已写8组实际UI/竞态场景。gates使用独立APIjar转发真实Cookie响应，支持真实执行后截断body/abort，以及旧请求延迟到token撤销后真实获取401；不靠伪造session或cookie证明隔离。375上传用真正touchscreen chooser，账户设置由键盘Enter进入。额外全页pageerror0守卫。
+
+唯一已运行检查：容器node --check解析所有tests/p2/*.mjs，退出0；无模块执行/产品请求/浏览器启动/应用录制，不签P2运行通过。原应用/候选仍等Leader冻结部署，媒体和迁移/ZIP运行未开始。

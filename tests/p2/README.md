@@ -19,3 +19,5 @@ accounts-api.mjs通过前端同源入口验真实账户/访客和三步任务，
 ## 真实GIF设计（性能全部结束后）
 
 home-ink：1440桌面约14秒真实连续pointer输入，两个背景区域、停留/回雾，保留真实卡片/边框；工具录制指针辅助仅绘制鼠标位置、不改变产品clear/fog/mask。creation-history：真实选择仓库fixture、上传、受理/Java阶段/成功、历史/原图与另一失败记录约20秒。模拟延迟明确记录，不能假改阶段或拼接顺序。真实WebM原录制存仓库外，ffmpeg palettegen/paletteuse约10fps/GIF目标20MB/硬限100MB；记录版本/源SHA/动作/fps/时长/尺寸/帧数/字节/hash，成片只写规定两个路径。Reviewer全段播放独立审核，GIF不代替断言。
+
+accounts-browser.mjs现已按实际UI语义实现（仍未运行）：375真实触摸chooser与注册保留、键盘进入设置、昵称/密码/错误与退出重登录；跨路由真实SetCookie锁；真实200+SetCookie但截断body的未知结果GET恢复；真实已执行后abort的未知结果不重POST；真实已撤销cookie迟到401；迟到上传与已受理任务清理/继续。gates增加延迟实际执行GET，确保401来自被撤销旧token，不伪造身份；所有网络门控不进无截图性能。未知JSON截断只模拟不可读响应，真实账户写入与cookie来自服务器，证据必须如实说明。失败消息仅首行且合成secret脱敏，request headers/body不落报告。

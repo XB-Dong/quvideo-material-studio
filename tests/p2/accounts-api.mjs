@@ -45,7 +45,7 @@ try{
   const first=await terminal(a,recordA.id);assert.equal(first.task.status,'SUCCEEDED');assert.deepEqual(first.task.steps.map(s=>s.stage),['ASSET_CHECK','GENERATE','FINALIZE']);assert(first.task.steps.every(s=>s.status==='SUCCEEDED'));
   const evidence=[];for(const stage of ['ASSET_CHECK','GENERATE','FINALIZE']){const created=await task(a,assetA,{failAt:stage}),done=await terminal(a,created.id);assert.equal(done.task.status,'FAILED');assert.equal(done.task.failedStage,stage);const index=done.task.steps.findIndex(s=>s.stage===stage);assert(done.task.steps.slice(index+1).every(s=>s.status==='NOT_STARTED'));const again=(await call(a,'/api/tasks/'+created.id)).json;assert.equal(again.status,'FAILED');assert.equal(again.version,done.task.version);evidence.push({stage,id:created.id,timeline:done.timeline,reason:done.task.failureReason})}return evidence;
  });
-}catch(e){failed={name:activeCheck,status:'fail',message:e.message};checks.push(failed)}finally{
+}catch(e){failed={name:activeCheck,status:'fail',message:e.message.split('\n')[0].replaceAll(password,'[synthetic-secret-redacted]').replaceAll(newPassword,'[synthetic-secret-redacted]')};checks.push(failed)}finally{
  await fs.writeFile(output+'/accounts-api.json',JSON.stringify({testedCommit,capturedAt:new Date().toISOString(),base,origin,checks,scope:'Independent frontend-origin account/core HTTP acceptance; synthetic credentials and cookies stay memory-only; current-source unexecuted until frozen candidate dispatch.'},null,2));for(const c of contexts)await c.dispose();await env.close();
 }
 console.log(JSON.stringify({passed:checks.filter(c=>c.status==='pass').length,failed}));if(failed)process.exitCode=1;
