@@ -6,10 +6,7 @@ import {
   act,
 } from "@testing-library/react";
 import { afterEach, beforeEach, describe, it, expect, vi } from "vitest";
-import {
-  MotionPreferences,
-  useMotionPreferences,
-} from "./motion/preferences";
+import { MotionPreferences, useMotionPreferences } from "./motion/preferences";
 import { Modal } from "./shell";
 let reduced = false;
 let listeners: Set<() => void>;
@@ -41,7 +38,11 @@ describe("motion preferences", () => {
   it("ignores the legacy visual preference without clearing identity data", () => {
     localStorage.setItem("yingzuo-static", "true");
     localStorage.setItem("identity-fixture", "preserved");
-    render(<MotionPreferences><Probe /></MotionPreferences>);
+    render(
+      <MotionPreferences>
+        <Probe />
+      </MotionPreferences>,
+    );
     expect(screen.getByText("moving")).toBeInTheDocument();
     expect(screen.queryByRole("button")).not.toBeInTheDocument();
     expect(localStorage.getItem("identity-fixture")).toBe("preserved");

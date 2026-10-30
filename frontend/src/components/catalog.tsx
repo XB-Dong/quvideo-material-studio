@@ -5,6 +5,7 @@ import Link from "next/link";
 import { api } from "../lib/api";
 import type { Template } from "../lib/types";
 import { Shell } from "./shell";
+import { AnimatedBorder, CardVisual, cardKind } from "./creative/visuals";
 import { CreativeShowcase, PublicImage } from "./creative/showcase";
 export function Catalog() {
   const [category, setCategory] = useState("");
@@ -80,11 +81,15 @@ export function Catalog() {
                 className="template-card"
                 key={t.id}
               >
-                <PublicImage
-                  src={t.coverUrl}
-                  alt={t.title}
-                  className="template-cover"
-                />
+                <div className="template-image">
+                  <PublicImage
+                    src={t.coverUrl}
+                    alt={t.title}
+                    className="template-cover"
+                  />
+                  <CardVisual id={t.id} src={t.coverUrl} />
+                </div>
+                {cardKind(t.id) && <AnimatedBorder kind={cardKind(t.id)} />}
                 <span className="template-tag">
                   {t.requiredImageCount} 张图片
                 </span>

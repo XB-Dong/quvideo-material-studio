@@ -47,11 +47,7 @@ export function MotionPreferences({ children }: { children: ReactNode }) {
       }}
     >
       <div
-        className={
-          !ready || systemReduced || !visible
-            ? "motion-static"
-            : ""
-        }
+        className={!ready || systemReduced || !visible ? "motion-static" : ""}
       >
         {children}
       </div>
