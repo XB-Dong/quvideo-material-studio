@@ -568,3 +568,7 @@ body:has(dialog[open]) .p12-scene-current {
     opacity: 0;
   }
 }
+
+.p12-upload.empty .upload-plus {
+  animation: p12-status-in 0.16s both;
+}

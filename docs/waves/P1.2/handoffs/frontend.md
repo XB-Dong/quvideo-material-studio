@@ -26,3 +26,8 @@
 ## 未验证与下一步
 
 作者未自签G01/G02；实际页面、多帧、导航/chooser时序、三页三轮成本、truecoarse与后台由独立Acceptance/Reviewer审。主服务未由作者重启，未push。Root发现原pet结果PNG卡片成本超过固定样例预算，拟冻结认证thumbnail=true变体；待契约后Frontend仅卡片消费，预览保原PNG，不擅自降质/换样例。任何同根因修正保留原任务ID与失败证据。
+
+
+## 缩略图契约消费
+
+Leader于e9becdb冻结P1.2-1.0.1/决定0014后，仅History结果卡片的img src加thumbnail=true（保留既有query连接规则）及loading=lazy；Modal preview.resultUrl仍无改动，原PNG完整字节用于实际预览。私有图不进入公共桥缓存，Java认证/no-store/nosniff与512px/JPEG编码由Leader实现和验收。删除上传图后只让无数据空图标短入场，原blob仍立即回收。

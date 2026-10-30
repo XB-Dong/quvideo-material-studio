@@ -121,7 +121,15 @@ function HistoryContent({
                     }}
                     aria-label={"预览" + t.templateTitle}
                   >
-                    <img src={t.resultUrl} alt={t.templateTitle + "制作结果"} />
+                    <img
+                      src={
+                        t.resultUrl +
+                        (t.resultUrl.includes("?") ? "&" : "?") +
+                        "thumbnail=true"
+                      }
+                      loading="lazy"
+                      alt={t.templateTitle + "制作结果"}
+                    />
                     <span>查看作品 ↗</span>
                   </button>
                 ) : (
