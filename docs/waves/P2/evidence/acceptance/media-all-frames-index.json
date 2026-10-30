@@ -1,0 +1,2079 @@
+{
+  "capturedAt": "2026-10-30T10:36:44.462Z",
+  "scope": "Every actual delivered GIF frame in chronological6x6 boards; external audit only, no GIF modification. Full-frame sequence inspection is not native realtime playback or hardware smoothness validation.",
+  "framesPerBoard": 36,
+  "thumbnail": {
+    "width": 240,
+    "height": 150
+  },
+  "results": [
+    {
+      "kind": "home-ink",
+      "gifSha256": "e0f1b133bd9389bb1b42de470308c49bc18553b1e82b71cc41e21075d030e63d",
+      "fullDecodeExitCode": 0,
+      "totalFrames": 192,
+      "boardCount": 6,
+      "coveredFrames": 192,
+      "boards": [
+        {
+          "path": "home-ink/board-01.png",
+          "firstFrame": 0,
+          "lastFrame": 35,
+          "actualFrames": 36,
+          "firstTimeSeconds": 0,
+          "lastTimeSeconds": 2.92,
+          "blankTrailingSlots": 0,
+          "layout": "Row major, left-to-right/top-to-bottom; fN label uses original sequential frame index; t is actual GIF presentation timestamp",
+          "bytes": 921881,
+          "sha256": "3066d125814883e594f8adf8c0f5ad6bcb153fde78d74fd43c2e721f75d12154"
+        },
+        {
+          "path": "home-ink/board-02.png",
+          "firstFrame": 36,
+          "lastFrame": 71,
+          "actualFrames": 36,
+          "firstTimeSeconds": 3,
+          "lastTimeSeconds": 5.92,
+          "blankTrailingSlots": 0,
+          "layout": "Row major, left-to-right/top-to-bottom; fN label uses original sequential frame index; t is actual GIF presentation timestamp",
+          "bytes": 623236,
+          "sha256": "2e4d5b161a06bcb575b2cec321ba685a0839f2f4c862a39883d5e479af854d86"
+        },
+        {
+          "path": "home-ink/board-03.png",
+          "firstFrame": 72,
+          "lastFrame": 107,
+          "actualFrames": 36,
+          "firstTimeSeconds": 6,
+          "lastTimeSeconds": 8.92,
+          "blankTrailingSlots": 0,
+          "layout": "Row major, left-to-right/top-to-bottom; fN label uses original sequential frame index; t is actual GIF presentation timestamp",
+          "bytes": 606161,
+          "sha256": "59832332c6d73b1f43ff91cbd5e686f4503d7e832d017ba590f5c6f7d9f7309b"
+        },
+        {
+          "path": "home-ink/board-04.png",
+          "firstFrame": 108,
+          "lastFrame": 143,
+          "actualFrames": 36,
+          "firstTimeSeconds": 9,
+          "lastTimeSeconds": 11.92,
+          "blankTrailingSlots": 0,
+          "layout": "Row major, left-to-right/top-to-bottom; fN label uses original sequential frame index; t is actual GIF presentation timestamp",
+          "bytes": 574226,
+          "sha256": "5e4fd88800be17dbce33df5abd25d8181f1beae0309cd656b200a4f4ed3e09a5"
+        },
+        {
+          "path": "home-ink/board-05.png",
+          "firstFrame": 144,
+          "lastFrame": 179,
+          "actualFrames": 36,
+          "firstTimeSeconds": 12,
+          "lastTimeSeconds": 14.92,
+          "blankTrailingSlots": 0,
+          "layout": "Row major, left-to-right/top-to-bottom; fN label uses original sequential frame index; t is actual GIF presentation timestamp",
+          "bytes": 691605,
+          "sha256": "b85c8ea39c9869e67959d8ea091ef9dbb0d6d24379d696b150e3267d89a7939f"
+        },
+        {
+          "path": "home-ink/board-06.png",
+          "firstFrame": 180,
+          "lastFrame": 191,
+          "actualFrames": 12,
+          "firstTimeSeconds": 15,
+          "lastTimeSeconds": 15.92,
+          "blankTrailingSlots": 24,
+          "layout": "Row major, left-to-right/top-to-bottom; fN label uses original sequential frame index; t is actual GIF presentation timestamp",
+          "bytes": 210427,
+          "sha256": "792d895e90fa60a9f969ce886271e5cbc8a336d7b868a495484dfdbb21d61144"
+        }
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "timeSeconds": 0,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 1,
+          "timeSeconds": 0.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 2,
+          "timeSeconds": 0.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 3,
+          "timeSeconds": 0.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 4,
+          "timeSeconds": 0.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 5,
+          "timeSeconds": 0.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 6,
+          "timeSeconds": 0.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 7,
+          "timeSeconds": 0.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 8,
+          "timeSeconds": 0.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 9,
+          "timeSeconds": 0.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 10,
+          "timeSeconds": 0.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 11,
+          "timeSeconds": 0.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 12,
+          "timeSeconds": 1,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 13,
+          "timeSeconds": 1.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 14,
+          "timeSeconds": 1.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 15,
+          "timeSeconds": 1.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 16,
+          "timeSeconds": 1.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 17,
+          "timeSeconds": 1.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 18,
+          "timeSeconds": 1.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 19,
+          "timeSeconds": 1.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 20,
+          "timeSeconds": 1.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 21,
+          "timeSeconds": 1.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 22,
+          "timeSeconds": 1.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 23,
+          "timeSeconds": 1.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 24,
+          "timeSeconds": 2,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 25,
+          "timeSeconds": 2.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 26,
+          "timeSeconds": 2.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 27,
+          "timeSeconds": 2.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 28,
+          "timeSeconds": 2.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 29,
+          "timeSeconds": 2.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 30,
+          "timeSeconds": 2.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 31,
+          "timeSeconds": 2.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 32,
+          "timeSeconds": 2.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 33,
+          "timeSeconds": 2.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 34,
+          "timeSeconds": 2.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 35,
+          "timeSeconds": 2.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 36,
+          "timeSeconds": 3,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 37,
+          "timeSeconds": 3.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 38,
+          "timeSeconds": 3.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 39,
+          "timeSeconds": 3.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 40,
+          "timeSeconds": 3.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 41,
+          "timeSeconds": 3.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 42,
+          "timeSeconds": 3.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 43,
+          "timeSeconds": 3.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 44,
+          "timeSeconds": 3.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 45,
+          "timeSeconds": 3.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 46,
+          "timeSeconds": 3.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 47,
+          "timeSeconds": 3.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 48,
+          "timeSeconds": 4,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 49,
+          "timeSeconds": 4.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 50,
+          "timeSeconds": 4.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 51,
+          "timeSeconds": 4.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 52,
+          "timeSeconds": 4.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 53,
+          "timeSeconds": 4.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 54,
+          "timeSeconds": 4.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 55,
+          "timeSeconds": 4.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 56,
+          "timeSeconds": 4.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 57,
+          "timeSeconds": 4.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 58,
+          "timeSeconds": 4.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 59,
+          "timeSeconds": 4.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 60,
+          "timeSeconds": 5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 61,
+          "timeSeconds": 5.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 62,
+          "timeSeconds": 5.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 63,
+          "timeSeconds": 5.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 64,
+          "timeSeconds": 5.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 65,
+          "timeSeconds": 5.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 66,
+          "timeSeconds": 5.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 67,
+          "timeSeconds": 5.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 68,
+          "timeSeconds": 5.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 69,
+          "timeSeconds": 5.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 70,
+          "timeSeconds": 5.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 71,
+          "timeSeconds": 5.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 72,
+          "timeSeconds": 6,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 73,
+          "timeSeconds": 6.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 74,
+          "timeSeconds": 6.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 75,
+          "timeSeconds": 6.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 76,
+          "timeSeconds": 6.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 77,
+          "timeSeconds": 6.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 78,
+          "timeSeconds": 6.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 79,
+          "timeSeconds": 6.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 80,
+          "timeSeconds": 6.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 81,
+          "timeSeconds": 6.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 82,
+          "timeSeconds": 6.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 83,
+          "timeSeconds": 6.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 84,
+          "timeSeconds": 7,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 85,
+          "timeSeconds": 7.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 86,
+          "timeSeconds": 7.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 87,
+          "timeSeconds": 7.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 88,
+          "timeSeconds": 7.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 89,
+          "timeSeconds": 7.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 90,
+          "timeSeconds": 7.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 91,
+          "timeSeconds": 7.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 92,
+          "timeSeconds": 7.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 93,
+          "timeSeconds": 7.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 94,
+          "timeSeconds": 7.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 95,
+          "timeSeconds": 7.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 96,
+          "timeSeconds": 8,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 97,
+          "timeSeconds": 8.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 98,
+          "timeSeconds": 8.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 99,
+          "timeSeconds": 8.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 100,
+          "timeSeconds": 8.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 101,
+          "timeSeconds": 8.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 102,
+          "timeSeconds": 8.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 103,
+          "timeSeconds": 8.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 104,
+          "timeSeconds": 8.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 105,
+          "timeSeconds": 8.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 106,
+          "timeSeconds": 8.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 107,
+          "timeSeconds": 8.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 108,
+          "timeSeconds": 9,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 109,
+          "timeSeconds": 9.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 110,
+          "timeSeconds": 9.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 111,
+          "timeSeconds": 9.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 112,
+          "timeSeconds": 9.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 113,
+          "timeSeconds": 9.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 114,
+          "timeSeconds": 9.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 115,
+          "timeSeconds": 9.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 116,
+          "timeSeconds": 9.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 117,
+          "timeSeconds": 9.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 118,
+          "timeSeconds": 9.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 119,
+          "timeSeconds": 9.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 120,
+          "timeSeconds": 10,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 121,
+          "timeSeconds": 10.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 122,
+          "timeSeconds": 10.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 123,
+          "timeSeconds": 10.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 124,
+          "timeSeconds": 10.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 125,
+          "timeSeconds": 10.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 126,
+          "timeSeconds": 10.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 127,
+          "timeSeconds": 10.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 128,
+          "timeSeconds": 10.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 129,
+          "timeSeconds": 10.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 130,
+          "timeSeconds": 10.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 131,
+          "timeSeconds": 10.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 132,
+          "timeSeconds": 11,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 133,
+          "timeSeconds": 11.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 134,
+          "timeSeconds": 11.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 135,
+          "timeSeconds": 11.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 136,
+          "timeSeconds": 11.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 137,
+          "timeSeconds": 11.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 138,
+          "timeSeconds": 11.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 139,
+          "timeSeconds": 11.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 140,
+          "timeSeconds": 11.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 141,
+          "timeSeconds": 11.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 142,
+          "timeSeconds": 11.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 143,
+          "timeSeconds": 11.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 144,
+          "timeSeconds": 12,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 145,
+          "timeSeconds": 12.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 146,
+          "timeSeconds": 12.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 147,
+          "timeSeconds": 12.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 148,
+          "timeSeconds": 12.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 149,
+          "timeSeconds": 12.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 150,
+          "timeSeconds": 12.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 151,
+          "timeSeconds": 12.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 152,
+          "timeSeconds": 12.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 153,
+          "timeSeconds": 12.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 154,
+          "timeSeconds": 12.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 155,
+          "timeSeconds": 12.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 156,
+          "timeSeconds": 13,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 157,
+          "timeSeconds": 13.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 158,
+          "timeSeconds": 13.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 159,
+          "timeSeconds": 13.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 160,
+          "timeSeconds": 13.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 161,
+          "timeSeconds": 13.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 162,
+          "timeSeconds": 13.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 163,
+          "timeSeconds": 13.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 164,
+          "timeSeconds": 13.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 165,
+          "timeSeconds": 13.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 166,
+          "timeSeconds": 13.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 167,
+          "timeSeconds": 13.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 168,
+          "timeSeconds": 14,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 169,
+          "timeSeconds": 14.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 170,
+          "timeSeconds": 14.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 171,
+          "timeSeconds": 14.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 172,
+          "timeSeconds": 14.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 173,
+          "timeSeconds": 14.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 174,
+          "timeSeconds": 14.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 175,
+          "timeSeconds": 14.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 176,
+          "timeSeconds": 14.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 177,
+          "timeSeconds": 14.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 178,
+          "timeSeconds": 14.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 179,
+          "timeSeconds": 14.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 180,
+          "timeSeconds": 15,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 181,
+          "timeSeconds": 15.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 182,
+          "timeSeconds": 15.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 183,
+          "timeSeconds": 15.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 184,
+          "timeSeconds": 15.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 185,
+          "timeSeconds": 15.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 186,
+          "timeSeconds": 15.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 187,
+          "timeSeconds": 15.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 188,
+          "timeSeconds": 15.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 189,
+          "timeSeconds": 15.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 190,
+          "timeSeconds": 15.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 191,
+          "timeSeconds": 15.92,
+          "durationSeconds": 0.08
+        }
+      ]
+    },
+    {
+      "kind": "creation-history",
+      "gifSha256": "a9f294456dbcae08114712e58cd89581ea0bad131d1b8a30ab5b643923a8a9f6",
+      "fullDecodeExitCode": 0,
+      "totalFrames": 188,
+      "boardCount": 6,
+      "coveredFrames": 188,
+      "boards": [
+        {
+          "path": "creation-history/board-01.png",
+          "firstFrame": 0,
+          "lastFrame": 35,
+          "actualFrames": 36,
+          "firstTimeSeconds": 0,
+          "lastTimeSeconds": 2.92,
+          "blankTrailingSlots": 0,
+          "layout": "Row major, left-to-right/top-to-bottom; fN label uses original sequential frame index; t is actual GIF presentation timestamp",
+          "bytes": 412862,
+          "sha256": "5efad50c98896d2095d0a50763451d8d824373f5033756019c38cd74c93b2ee6"
+        },
+        {
+          "path": "creation-history/board-02.png",
+          "firstFrame": 36,
+          "lastFrame": 71,
+          "actualFrames": 36,
+          "firstTimeSeconds": 3,
+          "lastTimeSeconds": 5.92,
+          "blankTrailingSlots": 0,
+          "layout": "Row major, left-to-right/top-to-bottom; fN label uses original sequential frame index; t is actual GIF presentation timestamp",
+          "bytes": 288339,
+          "sha256": "11bd7bffc604eaa6a3ac4914f20f1d5cf62e8fbabb29ebcc65b15813efdfd095"
+        },
+        {
+          "path": "creation-history/board-03.png",
+          "firstFrame": 72,
+          "lastFrame": 107,
+          "actualFrames": 36,
+          "firstTimeSeconds": 6,
+          "lastTimeSeconds": 8.92,
+          "blankTrailingSlots": 0,
+          "layout": "Row major, left-to-right/top-to-bottom; fN label uses original sequential frame index; t is actual GIF presentation timestamp",
+          "bytes": 221104,
+          "sha256": "9cc8c95a1319d8a798fc6ee466b6c3a327547cde452ed2cf21a2e9b22b20c853"
+        },
+        {
+          "path": "creation-history/board-04.png",
+          "firstFrame": 108,
+          "lastFrame": 143,
+          "actualFrames": 36,
+          "firstTimeSeconds": 9,
+          "lastTimeSeconds": 11.92,
+          "blankTrailingSlots": 0,
+          "layout": "Row major, left-to-right/top-to-bottom; fN label uses original sequential frame index; t is actual GIF presentation timestamp",
+          "bytes": 894570,
+          "sha256": "7b05870ab7d137ddfe86ad9567e48fa57f77975a52b3612365a6f5cc4fc7e346"
+        },
+        {
+          "path": "creation-history/board-05.png",
+          "firstFrame": 144,
+          "lastFrame": 179,
+          "actualFrames": 36,
+          "firstTimeSeconds": 12,
+          "lastTimeSeconds": 14.92,
+          "blankTrailingSlots": 0,
+          "layout": "Row major, left-to-right/top-to-bottom; fN label uses original sequential frame index; t is actual GIF presentation timestamp",
+          "bytes": 625887,
+          "sha256": "5f3023fb710085fd314873b6e4e5c7b0af19d5e019b45bc01e7745efc98d0cfe"
+        },
+        {
+          "path": "creation-history/board-06.png",
+          "firstFrame": 180,
+          "lastFrame": 187,
+          "actualFrames": 8,
+          "firstTimeSeconds": 15,
+          "lastTimeSeconds": 15.58,
+          "blankTrailingSlots": 28,
+          "layout": "Row major, left-to-right/top-to-bottom; fN label uses original sequential frame index; t is actual GIF presentation timestamp",
+          "bytes": 136678,
+          "sha256": "401e87b22325b504c6fb32045bebc18746e485e27fb9bbc4d7b30612a4ce17fd"
+        }
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "timeSeconds": 0,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 1,
+          "timeSeconds": 0.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 2,
+          "timeSeconds": 0.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 3,
+          "timeSeconds": 0.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 4,
+          "timeSeconds": 0.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 5,
+          "timeSeconds": 0.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 6,
+          "timeSeconds": 0.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 7,
+          "timeSeconds": 0.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 8,
+          "timeSeconds": 0.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 9,
+          "timeSeconds": 0.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 10,
+          "timeSeconds": 0.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 11,
+          "timeSeconds": 0.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 12,
+          "timeSeconds": 1,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 13,
+          "timeSeconds": 1.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 14,
+          "timeSeconds": 1.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 15,
+          "timeSeconds": 1.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 16,
+          "timeSeconds": 1.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 17,
+          "timeSeconds": 1.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 18,
+          "timeSeconds": 1.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 19,
+          "timeSeconds": 1.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 20,
+          "timeSeconds": 1.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 21,
+          "timeSeconds": 1.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 22,
+          "timeSeconds": 1.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 23,
+          "timeSeconds": 1.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 24,
+          "timeSeconds": 2,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 25,
+          "timeSeconds": 2.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 26,
+          "timeSeconds": 2.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 27,
+          "timeSeconds": 2.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 28,
+          "timeSeconds": 2.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 29,
+          "timeSeconds": 2.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 30,
+          "timeSeconds": 2.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 31,
+          "timeSeconds": 2.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 32,
+          "timeSeconds": 2.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 33,
+          "timeSeconds": 2.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 34,
+          "timeSeconds": 2.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 35,
+          "timeSeconds": 2.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 36,
+          "timeSeconds": 3,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 37,
+          "timeSeconds": 3.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 38,
+          "timeSeconds": 3.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 39,
+          "timeSeconds": 3.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 40,
+          "timeSeconds": 3.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 41,
+          "timeSeconds": 3.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 42,
+          "timeSeconds": 3.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 43,
+          "timeSeconds": 3.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 44,
+          "timeSeconds": 3.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 45,
+          "timeSeconds": 3.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 46,
+          "timeSeconds": 3.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 47,
+          "timeSeconds": 3.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 48,
+          "timeSeconds": 4,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 49,
+          "timeSeconds": 4.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 50,
+          "timeSeconds": 4.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 51,
+          "timeSeconds": 4.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 52,
+          "timeSeconds": 4.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 53,
+          "timeSeconds": 4.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 54,
+          "timeSeconds": 4.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 55,
+          "timeSeconds": 4.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 56,
+          "timeSeconds": 4.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 57,
+          "timeSeconds": 4.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 58,
+          "timeSeconds": 4.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 59,
+          "timeSeconds": 4.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 60,
+          "timeSeconds": 5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 61,
+          "timeSeconds": 5.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 62,
+          "timeSeconds": 5.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 63,
+          "timeSeconds": 5.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 64,
+          "timeSeconds": 5.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 65,
+          "timeSeconds": 5.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 66,
+          "timeSeconds": 5.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 67,
+          "timeSeconds": 5.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 68,
+          "timeSeconds": 5.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 69,
+          "timeSeconds": 5.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 70,
+          "timeSeconds": 5.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 71,
+          "timeSeconds": 5.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 72,
+          "timeSeconds": 6,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 73,
+          "timeSeconds": 6.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 74,
+          "timeSeconds": 6.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 75,
+          "timeSeconds": 6.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 76,
+          "timeSeconds": 6.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 77,
+          "timeSeconds": 6.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 78,
+          "timeSeconds": 6.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 79,
+          "timeSeconds": 6.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 80,
+          "timeSeconds": 6.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 81,
+          "timeSeconds": 6.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 82,
+          "timeSeconds": 6.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 83,
+          "timeSeconds": 6.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 84,
+          "timeSeconds": 7,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 85,
+          "timeSeconds": 7.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 86,
+          "timeSeconds": 7.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 87,
+          "timeSeconds": 7.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 88,
+          "timeSeconds": 7.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 89,
+          "timeSeconds": 7.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 90,
+          "timeSeconds": 7.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 91,
+          "timeSeconds": 7.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 92,
+          "timeSeconds": 7.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 93,
+          "timeSeconds": 7.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 94,
+          "timeSeconds": 7.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 95,
+          "timeSeconds": 7.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 96,
+          "timeSeconds": 8,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 97,
+          "timeSeconds": 8.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 98,
+          "timeSeconds": 8.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 99,
+          "timeSeconds": 8.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 100,
+          "timeSeconds": 8.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 101,
+          "timeSeconds": 8.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 102,
+          "timeSeconds": 8.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 103,
+          "timeSeconds": 8.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 104,
+          "timeSeconds": 8.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 105,
+          "timeSeconds": 8.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 106,
+          "timeSeconds": 8.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 107,
+          "timeSeconds": 8.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 108,
+          "timeSeconds": 9,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 109,
+          "timeSeconds": 9.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 110,
+          "timeSeconds": 9.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 111,
+          "timeSeconds": 9.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 112,
+          "timeSeconds": 9.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 113,
+          "timeSeconds": 9.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 114,
+          "timeSeconds": 9.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 115,
+          "timeSeconds": 9.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 116,
+          "timeSeconds": 9.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 117,
+          "timeSeconds": 9.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 118,
+          "timeSeconds": 9.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 119,
+          "timeSeconds": 9.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 120,
+          "timeSeconds": 10,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 121,
+          "timeSeconds": 10.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 122,
+          "timeSeconds": 10.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 123,
+          "timeSeconds": 10.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 124,
+          "timeSeconds": 10.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 125,
+          "timeSeconds": 10.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 126,
+          "timeSeconds": 10.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 127,
+          "timeSeconds": 10.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 128,
+          "timeSeconds": 10.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 129,
+          "timeSeconds": 10.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 130,
+          "timeSeconds": 10.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 131,
+          "timeSeconds": 10.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 132,
+          "timeSeconds": 11,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 133,
+          "timeSeconds": 11.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 134,
+          "timeSeconds": 11.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 135,
+          "timeSeconds": 11.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 136,
+          "timeSeconds": 11.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 137,
+          "timeSeconds": 11.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 138,
+          "timeSeconds": 11.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 139,
+          "timeSeconds": 11.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 140,
+          "timeSeconds": 11.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 141,
+          "timeSeconds": 11.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 142,
+          "timeSeconds": 11.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 143,
+          "timeSeconds": 11.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 144,
+          "timeSeconds": 12,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 145,
+          "timeSeconds": 12.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 146,
+          "timeSeconds": 12.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 147,
+          "timeSeconds": 12.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 148,
+          "timeSeconds": 12.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 149,
+          "timeSeconds": 12.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 150,
+          "timeSeconds": 12.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 151,
+          "timeSeconds": 12.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 152,
+          "timeSeconds": 12.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 153,
+          "timeSeconds": 12.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 154,
+          "timeSeconds": 12.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 155,
+          "timeSeconds": 12.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 156,
+          "timeSeconds": 13,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 157,
+          "timeSeconds": 13.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 158,
+          "timeSeconds": 13.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 159,
+          "timeSeconds": 13.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 160,
+          "timeSeconds": 13.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 161,
+          "timeSeconds": 13.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 162,
+          "timeSeconds": 13.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 163,
+          "timeSeconds": 13.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 164,
+          "timeSeconds": 13.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 165,
+          "timeSeconds": 13.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 166,
+          "timeSeconds": 13.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 167,
+          "timeSeconds": 13.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 168,
+          "timeSeconds": 14,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 169,
+          "timeSeconds": 14.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 170,
+          "timeSeconds": 14.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 171,
+          "timeSeconds": 14.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 172,
+          "timeSeconds": 14.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 173,
+          "timeSeconds": 14.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 174,
+          "timeSeconds": 14.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 175,
+          "timeSeconds": 14.58,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 176,
+          "timeSeconds": 14.67,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 177,
+          "timeSeconds": 14.75,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 178,
+          "timeSeconds": 14.83,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 179,
+          "timeSeconds": 14.92,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 180,
+          "timeSeconds": 15,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 181,
+          "timeSeconds": 15.08,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 182,
+          "timeSeconds": 15.17,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 183,
+          "timeSeconds": 15.25,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 184,
+          "timeSeconds": 15.33,
+          "durationSeconds": 0.09
+        },
+        {
+          "frame": 185,
+          "timeSeconds": 15.42,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 186,
+          "timeSeconds": 15.5,
+          "durationSeconds": 0.08
+        },
+        {
+          "frame": 187,
+          "timeSeconds": 15.58,
+          "durationSeconds": 0.08
+        }
+      ]
+    }
+  ]
+}

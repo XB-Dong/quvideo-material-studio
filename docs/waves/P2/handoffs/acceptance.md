@@ -58,3 +58,5 @@ Leader确认所有原有性能步骤结束后，才用p2-cleanroom3302精确81a 
 制作片为真实chooser仓库fixture→上传→真实202→Java普通默认成功三阶段，另排指定GENERATE失败(delay每步500ms)，原PNG预览/ESC→个人历史两结果。没有假切阶段、改变app效果或用户数据。两片pageerror0，原录制/metadata在仓库外private-validation/media/81a3de8，成片仅规定docs/submission/media两文件。
 
 inspect-media.mjs对实际最终GIF全周期解码exit0，ffprobe确认帧数/尺寸/fps/时长，并生成每秒4×5 chronological storyboard和关键fog/clear/refog/制作结果PNG，放外部inspection-final。本角色已实读全时段board与关键清晰帧，未冒称human播放或独立美学签署；Reviewer仍需最终整段时序/全秒board与关键帧核验。摘要/原WebM与首GIFhash/原动作/trim/工具命令见media-manifest.json，成片未自动提交考试或公开发布。
+
+MEDIA补充全帧审核：按Leader同root要求，只对两最终GIF做工具解码/缩略分镜，不重录或改GIF。home192帧→6板，creation188帧→6板，每板6×6/36帧、每帧240×150，fN连续原帧号+实际GIF PTS标签；末板home12真帧+24空格，creation8真帧+28空格。两片共380/380覆盖、总12板，全部cycle decode0，原成片SHA未变。外部inspection-final/all-frames/{home-ink,creation-history}/board-01..06.png，index含逐帧时间/板起止/空格/文件hash。独立Reviewer应逐板看全帧及已有fullsize关键帧；准确称“全帧序列审阅”，不是原生实时播放/硬件流畅实测。外部板不增加提交附件，脱敏索引media-all-frames-index.json可追溯。
