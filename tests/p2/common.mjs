@@ -9,7 +9,7 @@ export async function start({browser=false}={}){
   const url=new URL(base);assert(['localhost','127.0.0.1'].includes(url.hostname),'Relay BASE_URL must use local hostname');
   relay=net.createServer(c=>{const u=net.connect(Number(process.env.RELAY_PORT||3000),process.env.RELAY_HOST||'host.docker.internal');c.pipe(u);u.pipe(c);c.on('error',()=>u.destroy());u.on('error',()=>c.destroy())});await new Promise((resolve,reject)=>{relay.once('error',reject);relay.listen(Number(url.port||(url.protocol==='https:'?443:80)),'127.0.0.1',resolve)});
  }
- const instance=browser?await chromium.launch({executablePath:process.env.CHROMIUM_EXECUTABLE_PATH,headless:true,args:['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']}):null;
+ const instance=browser?await chromium.launch({executablePath:process.env.CHROMIUM_EXECUTABLE_PATH,headless:process.env.MEDIA_HEADED!=='1',args:['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']}):null;
  return {browser:instance,api:options=>request.newContext(options),close:async()=>{await instance?.close();await new Promise(r=>relay?relay.close(r):r())}};
 }
 export async function call(c,path,{method='GET',data,multipart,expected=200,code,requestOrigin=origin}={}){

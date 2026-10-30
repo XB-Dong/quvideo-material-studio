@@ -1,0 +1,318 @@
+{
+  "capturedAt": "2026-10-30T10:55:53.982Z",
+  "sourceCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+  "scope": "Read-only same-coordinate decoded WebM/GIF patches; original files and application untouched, no new recording. Areas from actual calibration; encoder timing lead not assumed measured.",
+  "webm": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1440,
+        "height": 900
+      }
+    ],
+    "format": {
+      "duration": "21.120000"
+    }
+  },
+  "gif": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1200,
+        "height": 750
+      }
+    ],
+    "format": {
+      "duration": "18.900000"
+    }
+  },
+  "originalActions": [
+    {
+      "name": "Load genuine homepage",
+      "startMs": 0,
+      "endMs": 1137
+    },
+    {
+      "name": "Establish paper and landscape",
+      "startMs": 1666,
+      "endMs": 2873
+    },
+    {
+      "name": "Real pointer stroke across first exposed high-ink path",
+      "startMs": 2873,
+      "endMs": 6727
+    },
+    {
+      "name": "Hold and observe natural fog return",
+      "startMs": 6727,
+      "endMs": 8527
+    },
+    {
+      "name": "Real pointer stroke across second exposed high-ink path",
+      "startMs": 8527,
+      "endMs": 12261
+    },
+    {
+      "name": "Natural tail6000ms, cursor at excluded header10,10",
+      "startMs": 12540,
+      "endMs": 18539
+    },
+    {
+      "name": "One ordinary viewport render opportunity, animations allow",
+      "startMs": 18811,
+      "endMs": 19218
+    },
+    {
+      "name": "Actual video capture flush1500ms with no input",
+      "startMs": 19218,
+      "endMs": 20720
+    }
+  ],
+  "trimInSeconds": 2.2,
+  "results": [
+    {
+      "area": 1,
+      "kind": "webm",
+      "sourceCenter": {
+        "x": 1120,
+        "y": 460,
+        "originalEnergy": 48.46877551020408,
+        "visibleFogEnergy": 2.6446938775510205,
+        "score": 128.18507384423157
+      },
+      "crop": {
+        "x": 904,
+        "y": 354,
+        "width": 58,
+        "height": 58
+      },
+      "samples": [
+        {
+          "time": 2.2,
+          "edgeEnergy": 2.1415816326530637,
+          "meanAbsoluteDiffFromInitialFog": 0,
+          "meanAbsoluteDiffFromSelectedClear": 12.459274673008323
+        },
+        {
+          "time": 5.5,
+          "edgeEnergy": 14.084396258503407,
+          "meanAbsoluteDiffFromInitialFog": 12.459274673008323,
+          "meanAbsoluteDiffFromSelectedClear": 0
+        },
+        {
+          "time": 18.12,
+          "edgeEnergy": 1.829400510204082,
+          "meanAbsoluteDiffFromInitialFog": 1.6886642885453824,
+          "meanAbsoluteDiffFromSelectedClear": 12.53913991280222
+        },
+        {
+          "time": 19.12,
+          "edgeEnergy": 1.892750850340131,
+          "meanAbsoluteDiffFromInitialFog": 1.6231668648434403,
+          "meanAbsoluteDiffFromSelectedClear": 12.456995640110978
+        },
+        {
+          "time": 20.12,
+          "edgeEnergy": 1.893601190476184,
+          "meanAbsoluteDiffFromInitialFog": 1.6192033293697978,
+          "meanAbsoluteDiffFromSelectedClear": 12.464724534284581
+        },
+        {
+          "time": 20.62,
+          "edgeEnergy": 1.6125637755102036,
+          "meanAbsoluteDiffFromInitialFog": 1.6664684898929845,
+          "meanAbsoluteDiffFromSelectedClear": 12.53260007927071
+        },
+        {
+          "time": 20.82,
+          "edgeEnergy": 1.7191751700680262,
+          "meanAbsoluteDiffFromInitialFog": 1.5933412604042807,
+          "meanAbsoluteDiffFromSelectedClear": 12.42360285374554
+        }
+      ]
+    },
+    {
+      "area": 1,
+      "kind": "gif",
+      "sourceCenter": {
+        "x": 1120,
+        "y": 460,
+        "originalEnergy": 48.46877551020408,
+        "visibleFogEnergy": 2.6446938775510205,
+        "score": 128.18507384423157
+      },
+      "crop": {
+        "x": 904,
+        "y": 354,
+        "width": 58,
+        "height": 58
+      },
+      "samples": [
+        {
+          "time": 0,
+          "edgeEnergy": 7.440369897959193,
+          "meanAbsoluteDiffFromInitialFog": 0,
+          "meanAbsoluteDiffFromSelectedClear": 12.466805390408243
+        },
+        {
+          "time": 3.3,
+          "edgeEnergy": 15.83450255102041,
+          "meanAbsoluteDiffFromInitialFog": 12.466805390408243,
+          "meanAbsoluteDiffFromSelectedClear": 0
+        },
+        {
+          "time": 15.9,
+          "edgeEnergy": 6.593005952380942,
+          "meanAbsoluteDiffFromInitialFog": 2.2821046373365044,
+          "meanAbsoluteDiffFromSelectedClear": 12.594926674593738
+        },
+        {
+          "time": 16.9,
+          "edgeEnergy": 6.824192176870737,
+          "meanAbsoluteDiffFromInitialFog": 2.2074910820451845,
+          "meanAbsoluteDiffFromSelectedClear": 12.514962346413
+        },
+        {
+          "time": 17.9,
+          "edgeEnergy": 6.727572278911544,
+          "meanAbsoluteDiffFromInitialFog": 2.184898929845422,
+          "meanAbsoluteDiffFromSelectedClear": 12.50743162901308
+        },
+        {
+          "time": 18.4,
+          "edgeEnergy": 5.754464285714263,
+          "meanAbsoluteDiffFromInitialFog": 2.2367221561632977,
+          "meanAbsoluteDiffFromSelectedClear": 12.521997621878716
+        },
+        {
+          "time": 18.6,
+          "edgeEnergy": 6.391687925170072,
+          "meanAbsoluteDiffFromInitialFog": 2.178557273087594,
+          "meanAbsoluteDiffFromSelectedClear": 12.452536662703132
+        }
+      ]
+    },
+    {
+      "area": 2,
+      "kind": "webm",
+      "sourceCenter": {
+        "x": 850,
+        "y": 370,
+        "originalEnergy": 27.428367346938774,
+        "visibleFogEnergy": 4.1689795918367345,
+        "score": 114.34830370678883
+      },
+      "crop": {
+        "x": 679,
+        "y": 279,
+        "width": 58,
+        "height": 58
+      },
+      "samples": [
+        {
+          "time": 2.2,
+          "edgeEnergy": 2.3413052721088423,
+          "meanAbsoluteDiffFromInitialFog": 0,
+          "meanAbsoluteDiffFromSelectedClear": 9.345323028141102
+        },
+        {
+          "time": 11.5,
+          "edgeEnergy": 7.943558673469398,
+          "meanAbsoluteDiffFromInitialFog": 9.345323028141102,
+          "meanAbsoluteDiffFromSelectedClear": 0
+        },
+        {
+          "time": 18.12,
+          "edgeEnergy": 2.0689838435374166,
+          "meanAbsoluteDiffFromInitialFog": 1.8108402695204122,
+          "meanAbsoluteDiffFromSelectedClear": 9.384066587395957
+        },
+        {
+          "time": 19.12,
+          "edgeEnergy": 2.0611181972789137,
+          "meanAbsoluteDiffFromInitialFog": 1.6916369401506144,
+          "meanAbsoluteDiffFromSelectedClear": 9.212940943321442
+        },
+        {
+          "time": 20.12,
+          "edgeEnergy": 2.06026785714286,
+          "meanAbsoluteDiffFromInitialFog": 1.6906460562822037,
+          "meanAbsoluteDiffFromSelectedClear": 9.213139120095125
+        },
+        {
+          "time": 20.62,
+          "edgeEnergy": 1.9583333333333313,
+          "meanAbsoluteDiffFromInitialFog": 1.837594133967499,
+          "meanAbsoluteDiffFromSelectedClear": 9.341854934601665
+        },
+        {
+          "time": 20.82,
+          "edgeEnergy": 2.031462585034012,
+          "meanAbsoluteDiffFromInitialFog": 1.7543598890210068,
+          "meanAbsoluteDiffFromSelectedClear": 9.263376932223544
+        }
+      ]
+    },
+    {
+      "area": 2,
+      "kind": "gif",
+      "sourceCenter": {
+        "x": 850,
+        "y": 370,
+        "originalEnergy": 27.428367346938774,
+        "visibleFogEnergy": 4.1689795918367345,
+        "score": 114.34830370678883
+      },
+      "crop": {
+        "x": 679,
+        "y": 279,
+        "width": 58,
+        "height": 58
+      },
+      "samples": [
+        {
+          "time": 0,
+          "edgeEnergy": 7.042729591836725,
+          "meanAbsoluteDiffFromInitialFog": 0,
+          "meanAbsoluteDiffFromSelectedClear": 9.446393182718985
+        },
+        {
+          "time": 9.3,
+          "edgeEnergy": 10.699723639455767,
+          "meanAbsoluteDiffFromInitialFog": 9.446393182718985,
+          "meanAbsoluteDiffFromSelectedClear": 0
+        },
+        {
+          "time": 15.9,
+          "edgeEnergy": 5.924107142857125,
+          "meanAbsoluteDiffFromInitialFog": 1.8698969480776853,
+          "meanAbsoluteDiffFromSelectedClear": 9.401704320253666
+        },
+        {
+          "time": 16.9,
+          "edgeEnergy": 6.36766581632654,
+          "meanAbsoluteDiffFromInitialFog": 1.8838684106222752,
+          "meanAbsoluteDiffFromSelectedClear": 9.303309552120492
+        },
+        {
+          "time": 17.9,
+          "edgeEnergy": 6.382546768707493,
+          "meanAbsoluteDiffFromInitialFog": 1.8704914783987316,
+          "meanAbsoluteDiffFromSelectedClear": 9.306579468886246
+        },
+        {
+          "time": 18.4,
+          "edgeEnergy": 5.533056972789109,
+          "meanAbsoluteDiffFromInitialFog": 2.000396353547364,
+          "meanAbsoluteDiffFromSelectedClear": 9.40675782798256
+        },
+        {
+          "time": 18.6,
+          "edgeEnergy": 6.279443027210871,
+          "meanAbsoluteDiffFromInitialFog": 1.9562029330162505,
+          "meanAbsoluteDiffFromSelectedClear": 9.393083630598493
+        }
+      ]
+    }
+  ]
+}

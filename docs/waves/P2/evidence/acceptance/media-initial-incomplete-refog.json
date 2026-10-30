@@ -1,0 +1,415 @@
+{
+  "taskId": "P2-MEDIA",
+  "rootTaskId": "P2-MEDIA",
+  "sourceCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+  "performanceBeforeCapture": "Leader released MEDIA after all required performance stages finished; capture not used as performance evidence.",
+  "toolImage": "sha256:cb51b21ab05075171b47d5fe5aa8e9641e0d7181abbc5d2b3220c87a09a78655",
+  "targetEachBytes": 20000000,
+  "officialAttachmentHardLimitBytes": 100000000,
+  "files": [
+    {
+      "path": "docs/submission/media/home-ink.gif",
+      "bytes": 12441767,
+      "sha256": "e0f1b133bd9389bb1b42de470308c49bc18553b1e82b71cc41e21075d030e63d",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1200,
+            "height": 750,
+            "r_frame_rate": "12/1",
+            "nb_read_frames": "192"
+          }
+        ],
+        "format": {
+          "duration": "16.000000",
+          "size": "12441767"
+        }
+      },
+      "fullCycleDecoderExit": 0,
+      "sourceVideo": {
+        "name": "6c6e7d2e9aa50015359c6ea1764af253.webm",
+        "bytes": 1771037,
+        "sha256": "109b7722d8415882a2804eae3018a596df2092f464f54c851f2447a32403987e"
+      },
+      "recording": {
+        "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+        "capturedAt": "2026-10-30T10:27:15.086Z",
+        "kind": "home-ink",
+        "base": "http://localhost:3302",
+        "origin": "http://localhost:3302",
+        "browser": "145.0.7632.6",
+        "node": "v24.13.0",
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "media": "No-preference, genuine foreground pointer/chooser and server. Bundled media Chromium; not performance evidence.",
+        "pointer": "Tool-only SVG cursor follows actual pointermove; no change to product fog/clear/effect/stages; no text annotation.",
+        "actions": [
+          {
+            "name": "Load genuine homepage",
+            "startMs": 0,
+            "endMs": 928
+          },
+          {
+            "name": "Establish paper and landscape",
+            "startMs": 2359,
+            "endMs": 3560
+          },
+          {
+            "name": "Real pointer stroke across first exposed high-ink path",
+            "startMs": 3560,
+            "endMs": 6754
+          },
+          {
+            "name": "Hold and observe natural fog return",
+            "startMs": 6754,
+            "endMs": 8551
+          },
+          {
+            "name": "Real pointer stroke across second exposed high-ink path",
+            "startMs": 8551,
+            "endMs": 13966
+          },
+          {
+            "name": "Natural trailing clarity fades back to original fog",
+            "startMs": 13971,
+            "endMs": 18172
+          }
+        ],
+        "fixtureInfo": null,
+        "inkCalibration": {
+          "source": "http://localhost:3302/ink/landscape.webp",
+          "sourceDimensions": {
+            "width": 1600,
+            "height": 560
+          },
+          "mapping": {
+            "scale": 0.9,
+            "left": 0,
+            "top": 96,
+            "reason": "Read-only exact production static image placement at81a; no paint/filter/alpha/mask mutation"
+          },
+          "candidateCount": 110,
+          "paths": [
+            {
+              "from": {
+                "x": 1070,
+                "y": 460
+              },
+              "to": {
+                "x": 1170,
+                "y": 460
+              },
+              "center": {
+                "x": 1120,
+                "y": 460,
+                "originalEnergy": 48.46877551020408,
+                "visibleFogEnergy": 2.6446938775510205,
+                "score": 128.18507384423157
+              }
+            },
+            {
+              "from": {
+                "x": 800,
+                "y": 370
+              },
+              "to": {
+                "x": 900,
+                "y": 370
+              },
+              "center": {
+                "x": 850,
+                "y": 370,
+                "originalEnergy": 27.428367346938774,
+                "visibleFogEnergy": 4.1689795918367345,
+                "score": 114.34830370678883
+              }
+            }
+          ]
+        },
+        "rawSource": "6c6e7d2e9aa50015359c6ea1764af253.webm",
+        "output": "home-ink.gif",
+        "bytes": 16755805,
+        "sha256": "06cb329db1d18a2e39d4df1ef4b6a077b58f46c56f1c7b818127a6729cf328ca",
+        "target20MB": true,
+        "probe": {
+          "programs": [],
+          "streams": [
+            {
+              "width": 1200,
+              "height": 750,
+              "r_frame_rate": "12/1",
+              "nb_read_frames": "228"
+            }
+          ],
+          "format": {
+            "duration": "19.000000",
+            "size": "16755805"
+          }
+        },
+        "errors": [],
+        "command": [
+          "ffmpeg",
+          "-y",
+          "-i",
+          "<actual raw webm>",
+          "-filter_complex",
+          "[0:v]fps=12,scale=1200:-2:flags=lanczos,split[a][b];[a]palettegen=stats_mode=diff[p];[b][p]paletteuse=dither=sierra2_4a",
+          "-loop",
+          "0",
+          "<assigned gif>"
+        ],
+        "toolImage": "sha256:cb51b21ab05075171b47d5fe5aa8e9641e0d7181abbc5d2b3220c87a09a78655",
+        "recorderSha256": "94c38ff11e3284df955a7c4288bc39c2f350021e09744bb7a6e1e343f39e131f",
+        "calibrationSha256": "afab11b1d4dc5e19186b8693ed2671ce98bd857a1fe715ce5a62c43038024db9"
+      },
+      "deliveryEncoding": {
+        "trimInSeconds": 3.0,
+        "reason": "Only leading no-input normal bootstrap/calibration removed; all actual pointer strokes, pauses and4200ms natural refog retained. No splice/rate/filter/effect modification.",
+        "originalGifSha256": "06cb329db1d18a2e39d4df1ef4b6a077b58f46c56f1c7b818127a6729cf328ca",
+        "originalGifBytes": 16755805,
+        "nominalScriptActionsOffsetMs": -3000,
+        "minimumOriginalFogBeforeFirstPointerMs": 560,
+        "actionClockLimits": "Actions are wallclock from script start, video recording starts earlier; exact encoder-to-wallclock lead not measured. Nominal action offsets minus3000 are conservative earliest GIF offsets, not exact frame timestamps. Keyframes confirm fog/clear/refog in delivered GIF.",
+        "originalActionsUnchanged": [
+          {
+            "name": "Load genuine homepage",
+            "startMs": 0,
+            "endMs": 928
+          },
+          {
+            "name": "Establish paper and landscape",
+            "startMs": 2359,
+            "endMs": 3560
+          },
+          {
+            "name": "Real pointer stroke across first exposed high-ink path",
+            "startMs": 3560,
+            "endMs": 6754
+          },
+          {
+            "name": "Hold and observe natural fog return",
+            "startMs": 6754,
+            "endMs": 8551
+          },
+          {
+            "name": "Real pointer stroke across second exposed high-ink path",
+            "startMs": 8551,
+            "endMs": 13966
+          },
+          {
+            "name": "Natural trailing clarity fades back to original fog",
+            "startMs": 13971,
+            "endMs": 18172
+          }
+        ],
+        "command": "ffmpeg -ss 3 -i <original WebM> -filter_complex fps=12,scale=1200:-2:flags=lanczos,palettegen/paletteuse -loop0 <assigned home-ink.gif>"
+      }
+    },
+    {
+      "path": "docs/submission/media/creation-history.gif",
+      "bytes": 12086707,
+      "sha256": "a9f294456dbcae08114712e58cd89581ea0bad131d1b8a30ab5b643923a8a9f6",
+      "probe": {
+        "programs": [],
+        "streams": [
+          {
+            "width": 1200,
+            "height": 750,
+            "r_frame_rate": "12/1",
+            "nb_read_frames": "188"
+          }
+        ],
+        "format": {
+          "duration": "15.660000",
+          "size": "12086707"
+        }
+      },
+      "fullCycleDecoderExit": 0,
+      "sourceVideo": {
+        "name": "3a59bebcad0d9efd6944d16a34c29e90.webm",
+        "bytes": 1439373,
+        "sha256": "f5ae653d52a0dd25b066522f955ce9f79116aa32bf949fa986f031cfb8186c61"
+      },
+      "recording": {
+        "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+        "capturedAt": "2026-10-30T10:28:01.424Z",
+        "kind": "creation-history",
+        "base": "http://localhost:3302",
+        "origin": "http://localhost:3302",
+        "browser": "145.0.7632.6",
+        "node": "v24.13.0",
+        "ffmpeg": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "media": "No-preference, genuine foreground pointer/chooser and server. Bundled media Chromium; not performance evidence.",
+        "pointer": "Tool-only SVG cursor follows actual pointermove; no change to product fog/clear/effect/stages; no text annotation.",
+        "actions": [
+          {
+            "name": "Open real maker as synthetic guest",
+            "startMs": 0,
+            "endMs": 766
+          },
+          {
+            "name": "Real chooser and local example upload",
+            "startMs": 1120,
+            "endMs": 1288
+          },
+          {
+            "name": "Real submit accepted202, ordinary default simulation",
+            "startMs": 1288,
+            "endMs": 1370
+          },
+          {
+            "name": "Observe actual Java task stages without fabricated client text",
+            "startMs": 1393,
+            "endMs": 10189
+          },
+          {
+            "name": "Preview genuine original result then Escape",
+            "startMs": 10189,
+            "endMs": 11875
+          },
+          {
+            "name": "Independent personal history preserves both outcomes",
+            "startMs": 11875,
+            "endMs": 14749
+          }
+        ],
+        "fixtureInfo": {
+          "firstTask": "055320cd-4ecd-428f-8965-de97cf22158f",
+          "secondTask": "0840a630-bb0b-49a3-93e2-2bc5ef94a9b2",
+          "secondSimulation": {
+            "failAt": "GENERATE",
+            "delayMs": {
+              "assetCheck": 500,
+              "generate": 500,
+              "finalize": 500
+            }
+          },
+          "firstSimulation": "Application default, unmodified; actual server stages visible"
+        },
+        "inkCalibration": null,
+        "rawSource": "3a59bebcad0d9efd6944d16a34c29e90.webm",
+        "output": "creation-history.gif",
+        "bytes": 12086707,
+        "sha256": "a9f294456dbcae08114712e58cd89581ea0bad131d1b8a30ab5b643923a8a9f6",
+        "target20MB": true,
+        "probe": {
+          "programs": [],
+          "streams": [
+            {
+              "width": 1200,
+              "height": 750,
+              "r_frame_rate": "12/1",
+              "nb_read_frames": "188"
+            }
+          ],
+          "format": {
+            "duration": "15.660000",
+            "size": "12086707"
+          }
+        },
+        "errors": [],
+        "command": [
+          "ffmpeg",
+          "-y",
+          "-i",
+          "<actual raw webm>",
+          "-filter_complex",
+          "[0:v]fps=12,scale=1200:-2:flags=lanczos,split[a][b];[a]palettegen=stats_mode=diff[p];[b][p]paletteuse=dither=sierra2_4a",
+          "-loop",
+          "0",
+          "<assigned gif>"
+        ],
+        "toolImage": "sha256:cb51b21ab05075171b47d5fe5aa8e9641e0d7181abbc5d2b3220c87a09a78655",
+        "recorderSha256": "94c38ff11e3284df955a7c4288bc39c2f350021e09744bb7a6e1e343f39e131f",
+        "calibrationSha256": "afab11b1d4dc5e19186b8693ed2671ce98bd857a1fe715ce5a62c43038024db9"
+      },
+      "deliveryEncoding": {
+        "trimInSeconds": 0,
+        "originalCompleteRecordingRetained": true
+      }
+    }
+  ],
+  "inspection": {
+    "capturedAt": "2026-10-30T10:33:20.719Z",
+    "scope": "Actual delivered GIF full-cycle decode and whole-duration chronological storyboard; not a claim that a human watched playback or aesthetics signed.",
+    "results": [
+      {
+        "kind": "home-ink",
+        "bytes": 12441767,
+        "sha256": "e0f1b133bd9389bb1b42de470308c49bc18553b1e82b71cc41e21075d030e63d",
+        "wholeCycleDecoded": true,
+        "decoderExitCode": 0,
+        "probe": {
+          "programs": [],
+          "streams": [
+            {
+              "width": 1200,
+              "height": 750,
+              "r_frame_rate": "12/1",
+              "nb_read_frames": "192"
+            }
+          ],
+          "format": {
+            "duration": "16.000000",
+            "size": "12441767"
+          }
+        },
+        "storyboard": "One frame per second in chronological row-major4x5; blank trailing slots are not video frames.",
+        "keyFrameSeconds": [
+          0,
+          0.5,
+          2.5,
+          5.5,
+          8.5,
+          11.5,
+          15.5
+        ]
+      },
+      {
+        "kind": "creation-history",
+        "bytes": 12086707,
+        "sha256": "a9f294456dbcae08114712e58cd89581ea0bad131d1b8a30ab5b643923a8a9f6",
+        "wholeCycleDecoded": true,
+        "decoderExitCode": 0,
+        "probe": {
+          "programs": [],
+          "streams": [
+            {
+              "width": 1200,
+              "height": 750,
+              "r_frame_rate": "12/1",
+              "nb_read_frames": "188"
+            }
+          ],
+          "format": {
+            "duration": "15.660000",
+            "size": "12086707"
+          }
+        },
+        "storyboard": "One frame per second in chronological row-major4x5; blank trailing slots are not video frames.",
+        "keyFrameSeconds": [
+          0.8,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14.5
+        ]
+      }
+    ]
+  },
+  "rawRelativeLocation": "private-validation/media/81a3de8/ outside repository; includes original WebM/untrimmedGIF/metadata/all-second storyboards/keyframes",
+  "independentReview": "pending Reviewer actual whole-duration review; decode success is not human playback/aesthetic approval",
+  "actualModel": null,
+  "actualProvider": null
+}

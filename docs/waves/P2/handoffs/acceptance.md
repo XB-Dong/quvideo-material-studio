@@ -60,3 +60,15 @@ Leader确认所有原有性能步骤结束后，才用p2-cleanroom3302精确81a 
 inspect-media.mjs对实际最终GIF全周期解码exit0，ffprobe确认帧数/尺寸/fps/时长，并生成每秒4×5 chronological storyboard和关键fog/clear/refog/制作结果PNG，放外部inspection-final。本角色已实读全时段board与关键清晰帧，未冒称human播放或独立美学签署；Reviewer仍需最终整段时序/全秒board与关键帧核验。摘要/原WebM与首GIFhash/原动作/trim/工具命令见media-manifest.json，成片未自动提交考试或公开发布。
 
 MEDIA补充全帧审核：按Leader同root要求，只对两最终GIF做工具解码/缩略分镜，不重录或改GIF。home192帧→6板，creation188帧→6板，每板6×6/36帧、每帧240×150，fN连续原帧号+实际GIF PTS标签；末板home12真帧+24空格，creation8真帧+28空格。两片共380/380覆盖、总12板，全部cycle decode0，原成片SHA未变。外部inspection-final/all-frames/{home-ink,creation-history}/board-01..06.png，index含逐帧时间/板起止/空格/文件hash。独立Reviewer应逐板看全帧及已有fullsize关键帧；准确称“全帧序列审阅”，不是原生实时播放/硬件流畅实测。外部板不增加提交附件，脱敏索引media-all-frames-index.json可追溯。
+
+## P2-FINAL-02：初稿回雾证据缺口与唯一有界重录
+
+本节覆盖上文初稿“回雾已充分展示”的不准确结论，不删除原失败。Reviewer逐380帧与关键大图发现首页末尾第二处仍清晰；同坐标原WebM末edge10.07/初始2.33、GIF末edge13.46/MAE10.80，确认初稿不足以证明完整回雾。原尾不是全帧完全冻结，编码时钟相对JS动作未准确测量，不判产品故障或全renderer冻结。原manifest另存media-initial-incomplete-refog.json，原数据诊断media-initial-tail-diagnosis.json；raw初片/所有旧板仍仓库外保留，rootTaskId始终P2-MEDIA。
+
+Leader授权唯一实际首页重录：同81a产品/3302/两条原路径，headed Chromium145+Xvfb。先前xvfb-run基础设施启动未产生Node/Chromium/录制，停止仅自己容器后改明确socket-ready wrapper；不算产品失败或另一次实际app录制。实际录制report capturedAt为2026-10-30T10:51:09Z（18:51:09+08），最终decode/index于18:57+08完成，所有完成命令exit0；工具image cb51b21ab05075171b47d5fe5aa8e9641e0d7181abbc5d2b3220c87a09a78655。docker run --init --entrypoint sh，MEDIA_HEADED=1、PERFORMANCE_FINISHED=1、MEDIA_KIND=home-ink、TESTED_COMMIT=81a3de8、BASE_URL/Origin3302、RELAY_HOST=frontend、RELAY_PORT3000，挂own tests/p2只读+外部R2证据+规定GIF输出，执行run-media-headed.sh /checks/new/record-media.mjs。未改产品或creation片，没有再跑性能。
+
+真实尾指针移到header10,10（排除区，不新增背景笔触），自然6000ms；两区canvas在普通viewport截图前即精确恢复初始像素（MAE0/maxDiff0及SHA相同），截图allow后再无输入flush1500ms仍相同。记录见media-headed-ink-recovery.json。原WebM21.12秒，纯前缀trim2.2秒、正常时间采样10fps不变速；首stroke JS2.873秒，保守保留至少673ms初雾，但不杜撰JS/video恒定clockoffset。全动作、6000ms尾、一次render机会与flush均留片，无拼接、复制静帧或效果参数改动。
+
+最终home-ink.gif现在1200×750/10fps/189帧/18.9秒，18367297B，SHA256e78acdca36ea21535222ce4188629351afd9a064940d98a32979dcbfec78c119。creation原SHA a9f294456dbcae08114712e58cd89581ea0bad131d1b8a30ab5b643923a8a9f6、188帧/15.66秒/12086707B完全不变。两片均小于20MB。新decoded末同区WebM edge2.03/初2.34/clear7.94、MAE1.75；GIF edge6.28/初7.04/clear10.70、MAE1.96（palette压缩与canvas算法不同不跨量纲比较）。只读诊断脚本曾用WebM时长推GIF末帧越界，无完整frame数据；改各格式自身duration取点后exit0，未再次录制。诊断结果media-headed-tail-diagnosis.json。
+
+新inspection-headed-r2全周期decode两片exit0，逐377/377帧12板，home189/6板、creation188/6板。media-all-frames-index.json更新精确GIF/板hash与逐帧PTS。外部private-validation/media/81a3de8/inspection-headed-r2/all-frames/{home-ink,creation-history}/board-01..06.png；关键大图home frame0/0.5/3.3/5.5/9.3/12.8/18.5.png。Acceptance实读最终18.5大图可见尾指针header及原雾；Reviewer新全帧审核待签，不把像素/全decode冒称独立美学或原生实时播放。actualModel/provider/reasoning仍null。此工作无push/公开/交卷/产品重启。

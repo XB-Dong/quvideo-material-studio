@@ -1,0 +1,118 @@
+{
+  "initial": {
+    "at": 1447.300000011921,
+    "hasFocus": true,
+    "hidden": false,
+    "pointer": "translate(-50px, -50px)",
+    "areas": [
+      {
+        "edgeEnergy": 0.9306122448979591,
+        "pixelSha256": "0f651e846bd6f07fdd20961ac7383ff21daf5627222793e66688f0c22aedc018"
+      },
+      {
+        "edgeEnergy": 1.4869387755102041,
+        "pixelSha256": "c37b5bc14cc975ab8cdd7f856ab96757fec005c1aa711a59a309aebbbdb7e685"
+      }
+    ]
+  },
+  "clear": {
+    "at": 12260.60000000894,
+    "hasFocus": true,
+    "hidden": false,
+    "pointer": "translate(900px, 370px)",
+    "areas": [
+      {
+        "edgeEnergy": 0.9306122448979591,
+        "pixelSha256": "0f651e846bd6f07fdd20961ac7383ff21daf5627222793e66688f0c22aedc018"
+      },
+      {
+        "edgeEnergy": 5.860204081632653,
+        "pixelSha256": "cce2ea12496075602a6055c9720034084b936ad3c2673192da42209077094952"
+      }
+    ]
+  },
+  "beforeRender": {
+    "at": 18542.60000000894,
+    "hasFocus": true,
+    "hidden": false,
+    "pointer": "translate(10px, 10px)",
+    "areas": [
+      {
+        "edgeEnergy": 0.9306122448979591,
+        "pixelSha256": "0f651e846bd6f07fdd20961ac7383ff21daf5627222793e66688f0c22aedc018"
+      },
+      {
+        "edgeEnergy": 1.4869387755102041,
+        "pixelSha256": "c37b5bc14cc975ab8cdd7f856ab96757fec005c1aa711a59a309aebbbdb7e685"
+      }
+    ]
+  },
+  "after": {
+    "at": 20722.40000000596,
+    "hasFocus": true,
+    "hidden": false,
+    "pointer": "translate(10px, 10px)",
+    "areas": [
+      {
+        "edgeEnergy": 0.9306122448979591,
+        "pixelSha256": "0f651e846bd6f07fdd20961ac7383ff21daf5627222793e66688f0c22aedc018"
+      },
+      {
+        "edgeEnergy": 1.4869387755102041,
+        "pixelSha256": "c37b5bc14cc975ab8cdd7f856ab96757fec005c1aa711a59a309aebbbdb7e685"
+      }
+    ]
+  },
+  "clearVsInitial": [
+    {
+      "area": 1,
+      "initialEdge": 0.9306122448979591,
+      "currentEdge": 0.9306122448979591,
+      "mae": 0,
+      "maxDiff": 0
+    },
+    {
+      "area": 2,
+      "initialEdge": 1.4869387755102041,
+      "currentEdge": 5.860204081632653,
+      "mae": 9.041020408163265,
+      "maxDiff": 58
+    }
+  ],
+  "beforeRenderVsInitial": [
+    {
+      "area": 1,
+      "initialEdge": 0.9306122448979591,
+      "currentEdge": 0.9306122448979591,
+      "mae": 0,
+      "maxDiff": 0
+    },
+    {
+      "area": 2,
+      "initialEdge": 1.4869387755102041,
+      "currentEdge": 1.4869387755102041,
+      "mae": 0,
+      "maxDiff": 0
+    }
+  ],
+  "afterVsInitial": [
+    {
+      "area": 1,
+      "initialEdge": 0.9306122448979591,
+      "currentEdge": 0.9306122448979591,
+      "mae": 0,
+      "maxDiff": 0
+    },
+    {
+      "area": 2,
+      "initialEdge": 1.4869387755102041,
+      "currentEdge": 1.4869387755102041,
+      "mae": 0,
+      "maxDiff": 0
+    }
+  ],
+  "mediaHeaded": true,
+  "tailMs": 6000,
+  "flushMs": 1500,
+  "renderOpportunities": 1
+}

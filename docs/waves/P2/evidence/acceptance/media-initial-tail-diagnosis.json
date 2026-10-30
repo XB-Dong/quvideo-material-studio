@@ -1,0 +1,308 @@
+{
+  "capturedAt": "2026-10-30T10:42:31.119Z",
+  "sourceCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+  "scope": "Read-only same-coordinate decoded WebM/GIF patches; original files and application untouched, no new recording. Areas from actual calibration; encoder timing lead not assumed measured.",
+  "webm": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1440,
+        "height": 900
+      }
+    ],
+    "format": {
+      "duration": "19.000000"
+    }
+  },
+  "gif": {
+    "programs": [],
+    "streams": [
+      {
+        "width": 1200,
+        "height": 750
+      }
+    ],
+    "format": {
+      "duration": "16.000000"
+    }
+  },
+  "originalActions": [
+    {
+      "name": "Load genuine homepage",
+      "startMs": 0,
+      "endMs": 928
+    },
+    {
+      "name": "Establish paper and landscape",
+      "startMs": 2359,
+      "endMs": 3560
+    },
+    {
+      "name": "Real pointer stroke across first exposed high-ink path",
+      "startMs": 3560,
+      "endMs": 6754
+    },
+    {
+      "name": "Hold and observe natural fog return",
+      "startMs": 6754,
+      "endMs": 8551
+    },
+    {
+      "name": "Real pointer stroke across second exposed high-ink path",
+      "startMs": 8551,
+      "endMs": 13966
+    },
+    {
+      "name": "Natural trailing clarity fades back to original fog",
+      "startMs": 13971,
+      "endMs": 18172
+    }
+  ],
+  "trimInSeconds": 3,
+  "results": [
+    {
+      "area": 1,
+      "kind": "webm",
+      "sourceCenter": {
+        "x": 1120,
+        "y": 460,
+        "originalEnergy": 48.46877551020408,
+        "visibleFogEnergy": 2.6446938775510205,
+        "score": 128.18507384423157
+      },
+      "crop": {
+        "x": 904,
+        "y": 354,
+        "width": 58,
+        "height": 58
+      },
+      "samples": [
+        {
+          "time": 3,
+          "edgeEnergy": 2.0954506802721036,
+          "meanAbsoluteDiffFromInitialFog": 0,
+          "meanAbsoluteDiffFromSelectedClear": 15.526555687673405
+        },
+        {
+          "time": 5.5,
+          "edgeEnergy": 21.767750850340146,
+          "meanAbsoluteDiffFromInitialFog": 15.526555687673405,
+          "meanAbsoluteDiffFromSelectedClear": 0
+        },
+        {
+          "time": 16,
+          "edgeEnergy": 1.854379251700679,
+          "meanAbsoluteDiffFromInitialFog": 1.3778240190249702,
+          "meanAbsoluteDiffFromSelectedClear": 15.569460959175585
+        },
+        {
+          "time": 17,
+          "edgeEnergy": 1.9017857142857146,
+          "meanAbsoluteDiffFromInitialFog": 1.3778240190249702,
+          "meanAbsoluteDiffFromSelectedClear": 15.583531510107015
+        },
+        {
+          "time": 18,
+          "edgeEnergy": 1.9106079931972784,
+          "meanAbsoluteDiffFromInitialFog": 1.3882282996432818,
+          "meanAbsoluteDiffFromSelectedClear": 15.596710265556876
+        },
+        {
+          "time": 18.5,
+          "edgeEnergy": 1.9157100340136024,
+          "meanAbsoluteDiffFromInitialFog": 1.390210067380103,
+          "meanAbsoluteDiffFromSelectedClear": 15.609591755846214
+        },
+        {
+          "time": 18.9,
+          "edgeEnergy": 1.9067814625850297,
+          "meanAbsoluteDiffFromInitialFog": 1.3746531906460562,
+          "meanAbsoluteDiffFromSelectedClear": 15.603745541022592
+        }
+      ]
+    },
+    {
+      "area": 1,
+      "kind": "gif",
+      "sourceCenter": {
+        "x": 1120,
+        "y": 460,
+        "originalEnergy": 48.46877551020408,
+        "visibleFogEnergy": 2.6446938775510205,
+        "score": 128.18507384423157
+      },
+      "crop": {
+        "x": 904,
+        "y": 354,
+        "width": 58,
+        "height": 58
+      },
+      "samples": [
+        {
+          "time": 0,
+          "edgeEnergy": 7.1714498299319835,
+          "meanAbsoluteDiffFromInitialFog": 0,
+          "meanAbsoluteDiffFromSelectedClear": 15.301922314704717
+        },
+        {
+          "time": 2.5,
+          "edgeEnergy": 23.156675170068034,
+          "meanAbsoluteDiffFromInitialFog": 15.301922314704717,
+          "meanAbsoluteDiffFromSelectedClear": 0
+        },
+        {
+          "time": 13,
+          "edgeEnergy": 5.572066326530612,
+          "meanAbsoluteDiffFromInitialFog": 1.974633372968688,
+          "meanAbsoluteDiffFromSelectedClear": 15.425980975029727
+        },
+        {
+          "time": 14,
+          "edgeEnergy": 5.731398809523808,
+          "meanAbsoluteDiffFromInitialFog": 2.0168450257629806,
+          "meanAbsoluteDiffFromSelectedClear": 15.466805390408243
+        },
+        {
+          "time": 15,
+          "edgeEnergy": 5.6117134353741625,
+          "meanAbsoluteDiffFromInitialFog": 1.9870194213238208,
+          "meanAbsoluteDiffFromSelectedClear": 15.441339674990092
+        },
+        {
+          "time": 15.5,
+          "edgeEnergy": 5.78805272108843,
+          "meanAbsoluteDiffFromInitialFog": 2.0599484740388427,
+          "meanAbsoluteDiffFromSelectedClear": 15.464328180737217
+        },
+        {
+          "time": 15.9,
+          "edgeEnergy": 5.711309523809537,
+          "meanAbsoluteDiffFromInitialFog": 2.0132778438367023,
+          "meanAbsoluteDiffFromSelectedClear": 15.452140309155768
+        }
+      ]
+    },
+    {
+      "area": 2,
+      "kind": "webm",
+      "sourceCenter": {
+        "x": 850,
+        "y": 370,
+        "originalEnergy": 27.428367346938774,
+        "visibleFogEnergy": 4.1689795918367345,
+        "score": 114.34830370678883
+      },
+      "crop": {
+        "x": 679,
+        "y": 279,
+        "width": 58,
+        "height": 58
+      },
+      "samples": [
+        {
+          "time": 3,
+          "edgeEnergy": 2.3319515306122414,
+          "meanAbsoluteDiffFromInitialFog": 0,
+          "meanAbsoluteDiffFromSelectedClear": 1.4088386841062228
+        },
+        {
+          "time": 11.5,
+          "edgeEnergy": 2.035607993197276,
+          "meanAbsoluteDiffFromInitialFog": 1.4088386841062228,
+          "meanAbsoluteDiffFromSelectedClear": 0
+        },
+        {
+          "time": 16,
+          "edgeEnergy": 16.577168367346925,
+          "meanAbsoluteDiffFromInitialFog": 14.272691240586603,
+          "meanAbsoluteDiffFromSelectedClear": 14.353745541022592
+        },
+        {
+          "time": 17,
+          "edgeEnergy": 12.290497448979604,
+          "meanAbsoluteDiffFromInitialFog": 13.271204914783988,
+          "meanAbsoluteDiffFromSelectedClear": 13.339179548156956
+        },
+        {
+          "time": 18,
+          "edgeEnergy": 10.011585884353737,
+          "meanAbsoluteDiffFromInitialFog": 11.073226317875545,
+          "meanAbsoluteDiffFromSelectedClear": 11.136841062227507
+        },
+        {
+          "time": 18.5,
+          "edgeEnergy": 10.105123299319715,
+          "meanAbsoluteDiffFromInitialFog": 11.061335711454618,
+          "meanAbsoluteDiffFromSelectedClear": 11.119203329369798
+        },
+        {
+          "time": 18.9,
+          "edgeEnergy": 10.073979591836734,
+          "meanAbsoluteDiffFromInitialFog": 11.046868806975823,
+          "meanAbsoluteDiffFromSelectedClear": 11.109492667459374
+        }
+      ]
+    },
+    {
+      "area": 2,
+      "kind": "gif",
+      "sourceCenter": {
+        "x": 850,
+        "y": 370,
+        "originalEnergy": 27.428367346938774,
+        "visibleFogEnergy": 4.1689795918367345,
+        "score": 114.34830370678883
+      },
+      "crop": {
+        "x": 679,
+        "y": 279,
+        "width": 58,
+        "height": 58
+      },
+      "samples": [
+        {
+          "time": 0,
+          "edgeEnergy": 7.040922619047604,
+          "meanAbsoluteDiffFromInitialFog": 0,
+          "meanAbsoluteDiffFromSelectedClear": 1.850178359096314
+        },
+        {
+          "time": 8.5,
+          "edgeEnergy": 6.54549319727893,
+          "meanAbsoluteDiffFromInitialFog": 1.850178359096314,
+          "meanAbsoluteDiffFromSelectedClear": 0
+        },
+        {
+          "time": 13,
+          "edgeEnergy": 19.696215986394577,
+          "meanAbsoluteDiffFromInitialFog": 14.017241379310345,
+          "meanAbsoluteDiffFromSelectedClear": 14.270114942528735
+        },
+        {
+          "time": 14,
+          "edgeEnergy": 15.611500850340116,
+          "meanAbsoluteDiffFromInitialFog": 12.997919143876338,
+          "meanAbsoluteDiffFromSelectedClear": 13.209175584621482
+        },
+        {
+          "time": 15,
+          "edgeEnergy": 13.447597789115608,
+          "meanAbsoluteDiffFromInitialFog": 10.831747919143876,
+          "meanAbsoluteDiffFromSelectedClear": 11.030519223147047
+        },
+        {
+          "time": 15.5,
+          "edgeEnergy": 13.20227465986392,
+          "meanAbsoluteDiffFromInitialFog": 10.806579468886246,
+          "meanAbsoluteDiffFromSelectedClear": 11.007728894173603
+        },
+        {
+          "time": 15.9,
+          "edgeEnergy": 13.460459183673448,
+          "meanAbsoluteDiffFromInitialFog": 10.802120491478398,
+          "meanAbsoluteDiffFromSelectedClear": 11.020709472849783
+        }
+      ]
+    }
+  ]
+}

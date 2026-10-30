@@ -29,3 +29,9 @@ verify-archive.py可选--source-tree-index <JSON>，格式sourceCommit=精确候
 ZIP自身package-policy由精确Git blob对照约束；expected为Git所有非政策排除文件，导出不准缺文件/多未跟踪文件/改字节。硬性禁止政策排掉frontend/backend/tests/.github/assets及根运行/许可入口；私有协调/题面/邮件图/用户报告、原RB许可、本地demo/ink、素材重做输入与来源分别检查。curated来源不含cachePath/本机Windows路径，合法https不能误报成本机路径。无索引仅结构检查，报告completeSourceComparedToGit=false，不能称完整源码验证。标准Git archive README-only数据探针实读40字节commit comment；不是最终候选或CLEAN。
 
 archive_checks_test.py仅合成ZIP/JSON数据，容器stdlib unittest测试正常导出、字节篡改、少资产、夹私有文件、错commit、政策擅排tests与cachePath七类行为及entries/oid索引schema兼容，实际8/8 exit0；不运行任何应用/浏览器。最终候选到来后仍需真实校验+新解压空卷运行，不能用这些数据测试替代。
+
+## 已执行状态与最终媒体取证
+
+前文待运行是历史设计：冻结81a3de8候选已完成独立ZIP逐blob比对、新解压空卷API8/浏览器8及V3→V4升级。实际失败/命令见P2 handoff。首页初稿全帧审核发现尾段第二处未充分回雾（P2-FINAL-02），原WebM/GIF及诊断保留。仅重录首页一次：MEDIA_HEADED=1，run-media-headed.sh在官方工具镜像启动Xvfb并等socket就绪，Chromium使用镜像捆绑版本。真实两路径不变，尾指针移到排除区header10,10，自然等待6000ms；只读canvas同坐标初始/清晰/尾部像素与edge，普通viewport截图animations=allow提供一次实际render机会，再无输入flush1500ms。没有更改产品fog/blur/alpha或复制静帧。common默认headless不变，账户CI不受媒体变量影响。
+
+同一WebM仅trim前2.2秒无输入段，10fps、1200×750；home最终18.9秒/189帧/18367297B，creation仍15.66秒/188帧/12086707B。inspect-media.mjs全周期decode，media-all-frames.mjs逐帧连续6×6分镜；diagnose-media-tail.mjs只读比较同坐标WebM/GIF压缩前后，不把编码时钟与JS时钟假设为固定偏移。两片合计377帧12板，审阅称全帧序列审核，不称原生实时播放/硬件流畅实测。所有原视频/分镜只存仓库外，最终两GIF及脱敏清单在规定路径。
