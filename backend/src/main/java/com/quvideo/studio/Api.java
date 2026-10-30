@@ -125,10 +125,18 @@ public class Api {
   }
 
   @GetMapping("/media/results/{id}")
-  public ResponseEntity<byte[]> result(HttpServletRequest req, @PathVariable String id)
+  public ResponseEntity<byte[]> result(
+      HttpServletRequest req,
+      @PathVariable String id,
+      @RequestParam(defaultValue = "false") boolean thumbnail)
       throws IOException {
     var task = db.taskOwned(id, user(req));
     if (task == null || !"SUCCEEDED".equals(task.get("status"))) throw Problem.missing();
-    return image(files.read((String) task.get("resultKey")), "image/png");
+    byte[] original = files.read((String) task.get("resultKey"));
+    return ResponseEntity.ok()
+        .contentType(thumbnail ? MediaType.IMAGE_JPEG : MediaType.IMAGE_PNG)
+        .cacheControl(CacheControl.noStore())
+        .header("X-Content-Type-Options", "nosniff")
+        .body(thumbnail ? ResultThumbnail.create(original) : original);
   }
 }

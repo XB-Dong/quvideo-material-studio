@@ -12,3 +12,5 @@ Leader+最多三子。准备已于71bccc5通过，用户条件式执行授权现
 无需新Asset或Backend角色：沿用已认可素材和Java业务。Frontend、Acceptance并行；Reviewer在首个真实子页可审时启用，最多三子，不占空闲角色。套用docs/agents/PROTOCOL.md的精确SHA/specVersion/rootTaskId/有界修复与交接字段。准备文本不授权执行。
 
 保护frontend/src/lib/{api,types,use-tasks,session-generation}.ts和原upload/submission/session/use-tasks测试；Maker/UploadSlot与History虽为视觉owner文件，其业务锁/版本/取消/身份协议不能重写。QueryClient/Identity位置与实例不变。package/lock由Leader修改，若临时转交须记录唯一owner后收回。
+
+执行扩展：2026-10-30固定样例基线发现结果PNG成本超预算，依决策0014，Leader唯一持有backend/src/main/java/com/quvideo/studio/{Api,ResultThumbnail}.java及ResultThumbnailTest；仅增加认证显示缩略图，不改DB/生成/原图/上传/身份协议。Frontend仍独占history.tsx卡片src，Acceptance只做独立验收。规格修订P1.2-1.0.1已由消费者和Reviewer审查，预算不变。

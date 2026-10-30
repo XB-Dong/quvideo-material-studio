@@ -43,3 +43,5 @@ P1.1真实Canvas2D/SVG/有限RAF与公共图缓存；已有upload-label img160ms
 - [x] 路由退出动画不能保留旧用户DOM/轮询；快速连点、返回/前进、404与会话变化必须取消视觉桥。
 - [x] CSS全局级联影响已认可首页；页面作用域与首页截图/动态基线共同防回归。
 - [x] P1.1减少动态CI曾有1帧来源未知，追踪修复/验收必须在P1.2启动前继承真实结论，不隐藏原失败。
+
+执行扩展：2026-10-30固定样例基线发现结果PNG成本超预算，依决策0014，Leader唯一持有backend/src/main/java/com/quvideo/studio/{Api,ResultThumbnail}.java及ResultThumbnailTest；仅增加认证显示缩略图，不改DB/生成/原图/上传/身份协议。Frontend仍独占history.tsx卡片src，Acceptance只做独立验收。规格修订P1.2-1.0.1已由消费者和Reviewer审查，预算不变。

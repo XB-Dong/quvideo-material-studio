@@ -1,6 +1,6 @@
 # P1.2 动效实现与业务边界
 
-版本P1.2-1.0.0。选定原Link+CSS/WAAPI公共图层为完整路由基线路径，CSS负责页面/状态入场和低频细边，少量SVG/WAAPI负责局部点击/图标/结果预览；React19.3原生ViewTransition仅在BASE实测取消/卸载及时性通过的安全场景启用增强；没有新增Motion运行依赖计划。Next16.4.3官方当前文档说明AppRouter无需配置支持原生转场，开发类型拟从19.2.14/19.2.3精确补为@types/react与react-dom19.3.0。NPM元数据已只读核对；启动BASE在容器验证并更新锁，不在准备阶段安装。
+版本P1.2-1.0.1。选定原Link+CSS/WAAPI公共图层为完整路由基线路径，CSS负责页面/状态入场和低频细边，少量SVG/WAAPI负责局部点击/图标/结果预览；React19.3原生ViewTransition仅在BASE实测取消/卸载及时性通过的安全场景启用增强；没有新增Motion运行依赖计划。Next16.4.3官方当前文档说明AppRouter无需配置支持原生转场，开发类型拟从19.2.14/19.2.3精确补为@types/react与react-dom19.3.0。NPM元数据已只读核对；启动BASE在容器验证并更新锁，不在准备阶段安装。
 
 ## 路由
 
@@ -31,3 +31,7 @@ UploadSlot现有version/controller/mounted/preview回收、Maker locked/epoch/su
 React官方ViewTransition说明useEffect可能延迟到转场finished之后执行。当前上传/提交/useTasks依赖effect cleanup，因此公共封面命名/root快照关闭本身不能证明旧业务取消时机不变。BASE在原生路径逐时记录导航触发、旧组件unmount/cleanup、上传/提交AbortController、旧轮询停止、转场finished，比较普通Link基线，覆盖快连点/慢图/后台/身份切换。旧业务清理不能等220–280ms动画结束才执行。
 
 若原生路径延期且不修改受保护协议无法保证，则该路径直接选Link+CSS/WAAPI公共图层兜底，原生仅保留实测安全场景；所有视觉效果仍需成立，不能削弱取消/旧响应断言或为共享封面保留旧业务树。此为执行BASE中有界兼容验证，不在准备期运行或先声称兼容通过。
+
+## 认证结果显示变体（P1.2-1.0.1）
+
+固定样例结果图片超过原预算，按[决策0014](../../docs/decisions/0014-p12-authenticated-result-thumbnails.md)冻结认证缩略图扩展。GET /media/results/{id}?thumbnail=true返回等比最长边512px、不放大、白底、质量0.88的JPEG，仅用于卡片；无query/false及预览始终原PNG字节。owner/会话/SUCCEEDED授权、no-store/nosniff保持；不持久化衍生文件、不改DB/任务/上传。Leader专有Api/ResultThumbnail及其测试，Frontend仅消费卡片src，Acceptance独立验认证/完整原图/逐页成本。预算与固定样例保持。

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "waveId": "P1.2",
-  "specVersion": "P1.2-1.0.0",
+  "specVersion": "P1.2-1.0.1",
   "status": "executing",
   "executionAuthorized": true,
   "preparationBaseCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
@@ -14,7 +14,8 @@
   "deadline": null,
   "activeDevelopmentAgents": [
     "/root/p11_frontend",
-    "/root/p11_acceptance"
+    "/root/p11_acceptance",
+    "/root/p11_design_review"
   ],
   "activePreparationReviewers": [],
   "maxNativeWorkers": 3,
@@ -28,9 +29,9 @@
   "actualProvider": null,
   "actualModel": null,
   "actualReasoningEffort": null,
-  "productImplemented": false,
+  "productImplemented": true,
   "dependenciesInstalledForP12": true,
-  "productRestartedForP12": false,
+  "productRestartedForP12": true,
   "developmentWorktreesCreatedForP12": false,
   "productChecks": "not_run_for_P1.2",
   "aestheticGate": "not_run",

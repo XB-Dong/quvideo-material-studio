@@ -8,7 +8,7 @@
 - role: Frontend
 - baseCommit: 33170a5ae33cc63882f73c329dbd88eda6f5e70c
 - baseCommitMeaning: authorized P12-R1 source baseline; later integration SHA recorded separately
-- specVersion: P1.2-1.0.0
+- specVersion: P1.2-1.0.1
 - requirementIds: P12-SCENE-01, P12-UPLOAD-01, P12-TASK-01
 - dependencies: P12-ROUTE
 - runtimeDependencies: none
