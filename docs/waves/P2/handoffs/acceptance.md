@@ -72,3 +72,13 @@ Leader授权唯一实际首页重录：同81a产品/3302/两条原路径，heade
 最终home-ink.gif现在1200×750/10fps/189帧/18.9秒，18367297B，SHA256e78acdca36ea21535222ce4188629351afd9a064940d98a32979dcbfec78c119。creation原SHA a9f294456dbcae08114712e58cd89581ea0bad131d1b8a30ab5b643923a8a9f6、188帧/15.66秒/12086707B完全不变。两片均小于20MB。新decoded末同区WebM edge2.03/初2.34/clear7.94、MAE1.75；GIF edge6.28/初7.04/clear10.70、MAE1.96（palette压缩与canvas算法不同不跨量纲比较）。只读诊断脚本曾用WebM时长推GIF末帧越界，无完整frame数据；改各格式自身duration取点后exit0，未再次录制。诊断结果media-headed-tail-diagnosis.json。
 
 新inspection-headed-r2全周期decode两片exit0，逐377/377帧12板，home189/6板、creation188/6板。media-all-frames-index.json更新精确GIF/板hash与逐帧PTS。外部private-validation/media/81a3de8/inspection-headed-r2/all-frames/{home-ink,creation-history}/board-01..06.png；关键大图home frame0/0.5/3.3/5.5/9.3/12.8/18.5.png。Acceptance实读最终18.5大图可见尾指针header及原雾；Reviewer新全帧审核待签，不把像素/全decode冒称独立美学或原生实时播放。actualModel/provider/reasoning仍null。此工作无push/公开/交卷/产品重启。
+
+## 最终Source A：独立数据校验与运行证据等价
+
+Source A为110894f926d64816d5a8b5d9e5bcabd2554412ed。Acceptance独立宿主Git读取ls-tree -r --full-tree -z，共775条，逐mode/type/oid/path对Root索引完全一致；没有拿Root索引作为独立来源。以自身索引在容器p2-candidate-browser-p2-check运行verify-archive.py，源码ZIP37315734B，SHA256a4a133692d0e804408ceeb6de12b87569df3eefccb71acb19c09afc885e98f92；306/306导出文件逐Git blob字节匹配，18项检查全部pass/exit0（含40字节Git archive commit comment、完整expected集合、私有排除、许可与本地素材输入）。外部独立索引/全entries报告在P2/acceptance-final-evidence/110894f...，不是新增运行证据。
+
+另逐Git对象比较已实际cleanroom验证的81a3de8→A：frontend/backend/assets/.github/Compose两入口/.env.example/.editorconfig/.gitignore/旧三波测试与P2 API/browser/gates、锁/迁移等共23对象完全相同，涵盖整个产品树与构建、初始化、CI执行入口。此前81a空卷3302 API8+browser8、独立V3→V4数据保留、完整CI41038592540可按同执行源链引用，不冒称本次重启了最终ZIP/再次全性能或独立轮询CI。
+
+tests/p2新增/更新部分是已实际使用的独立ZIP/迁移/媒体/取证工具；common.mjs唯一运行差异为MEDIA_HEADED显式字符串1才启headed，默认仍headless，Compose/CI环境无此变化；账户API/browser/gates原对象相同。文件清单与具体对象hash见110894f-final-source-equivalence.json。本次仅Git/JSON/ZIP数据检查，无应用/浏览器/性能执行、无生产重启或卷操作。
+
+这份新证据在Source A冻结之后产生，只合并到后续reportCommit，不声称A的ZIP已含自身新增报告。若最终只改报告/metadata/导出policy，应再作data-only范围/导出完整性比对。actualModel/provider仍null，正式交卷/公开/邮箱工作未启动。

@@ -1,0 +1,300 @@
+{
+  "taskId": "P2-VERIFY",
+  "rootTaskId": "P2-VERIFY",
+  "sourceCommit": "110894f926d64816d5a8b5d9e5bcabd2554412ed",
+  "validatedRuntimeSource": "81a3de8da97790744cbc7e4540a568e697093fd6",
+  "capturedAt": "2026-10-30T11:07:31.5161571Z",
+  "actualModel": null,
+  "actualProvider": null,
+  "scope": "Independent final source ZIP bytes and executable tree equivalence only; no repeated app/browser/performance execution.",
+  "independentGitIndex": {
+    "command": "git -c core.quotepath=false ls-tree -r --full-tree -z 110894f926d64816d5a8b5d9e5bcabd2554412ed",
+    "entries": 775,
+    "rootIndexIdentical": true,
+    "exitCode": 0
+  },
+  "archive": {
+    "bytes": 37315734,
+    "sha256": "a4a133692d0e804408ceeb6de12b87569df3eefccb71acb19c09afc885e98f92",
+    "files": 306,
+    "gitCommentMatched": true,
+    "allExportedFilesMatchExactGitBlob": true,
+    "allChecksPassed": true,
+    "verifierSha256": "3ab2b99fec54557bebdc6f810118e71521dd69f4818fca36c29c95d1883bdbc1",
+    "container": "p2-candidate-browser-p2-check",
+    "command": "docker run --rm --entrypoint python3 <tests/p2 ro,candidate ro,external evidence rw> p2-candidate-browser-p2-check /checks/new/verify-archive.py --archive /candidate/source-candidate.zip --source-sha 110894f926d64816d5a8b5d9e5bcabd2554412ed --source-tree-index /evidence/source-tree-index-independent.json --output /evidence/final-archive-pass.json",
+    "exitCode": 0,
+    "checks": [
+      {
+        "name": "attachment under100MB",
+        "pass": true,
+        "details": {
+          "bytes": 37315734
+        }
+      },
+      {
+        "name": "git ZIP comment equals declared source commit",
+        "pass": true,
+        "details": {
+          "commentBytes": 40,
+          "matchesSource": true
+        }
+      },
+      {
+        "name": "no duplicate or case-colliding paths",
+        "pass": true,
+        "details": {}
+      },
+      {
+        "name": "safe archive paths, regular files",
+        "pass": true,
+        "details": []
+      },
+      {
+        "name": "no dependencies, credentials, cookie state or runtime volumes",
+        "pass": true,
+        "details": []
+      },
+      {
+        "name": "no recognized private keys or GitHub tokens",
+        "pass": true,
+        "details": []
+      },
+      {
+        "name": "no private coordination, official reference or user report files",
+        "pass": true,
+        "details": []
+      },
+      {
+        "name": "declared flat-root package policy included",
+        "pass": true,
+        "details": {}
+      },
+      {
+        "name": "policy exclusions absent from ZIP",
+        "pass": true,
+        "details": []
+      },
+      {
+        "name": "complete runtime, lock, CI, license and provenance entrypoints",
+        "pass": true,
+        "details": []
+      },
+      {
+        "name": "local demo, ink and original migrations retained",
+        "pass": true,
+        "details": {}
+      },
+      {
+        "name": "declared asset reproduction inputs retained",
+        "pass": true,
+        "details": []
+      },
+      {
+        "name": "curated provenance has no cachePath or local Windows path",
+        "pass": true,
+        "details": {}
+      },
+      {
+        "name": "independent Git tree index is bound to declared commit",
+        "pass": true,
+        "details": {}
+      },
+      {
+        "name": "tree index has unique regular blobs",
+        "pass": true,
+        "details": {}
+      },
+      {
+        "name": "policy never excludes product, tests, assets or root entrypoints",
+        "pass": true,
+        "details": []
+      },
+      {
+        "name": "all expected source files exported, no untracked additions",
+        "pass": true,
+        "details": {
+          "missing": [],
+          "unexpected": []
+        }
+      },
+      {
+        "name": "every exported byte matches exact committed Git blob",
+        "pass": true,
+        "details": []
+      }
+    ]
+  },
+  "executionObjects": [
+    {
+      "path": ".editorconfig",
+      "baselineObject": "be575665fb3815487d6e44077a884540d70fb075",
+      "candidateObject": "be575665fb3815487d6e44077a884540d70fb075",
+      "equal": true
+    },
+    {
+      "path": ".env.example",
+      "baselineObject": "a6118342fda83242621ced543a8587b1f8d993ff",
+      "candidateObject": "a6118342fda83242621ced543a8587b1f8d993ff",
+      "equal": true
+    },
+    {
+      "path": ".github",
+      "baselineObject": "df68c05147711ed274270715e56cc00be6c32255",
+      "candidateObject": "df68c05147711ed274270715e56cc00be6c32255",
+      "equal": true
+    },
+    {
+      "path": ".gitignore",
+      "baselineObject": "50737501e8bd950199f7f325098c3d424a7a460a",
+      "candidateObject": "50737501e8bd950199f7f325098c3d424a7a460a",
+      "equal": true
+    },
+    {
+      "path": "assets",
+      "baselineObject": "59b895ca5bd892dc48c7915ffd6be2e2d1849d9d",
+      "candidateObject": "59b895ca5bd892dc48c7915ffd6be2e2d1849d9d",
+      "equal": true
+    },
+    {
+      "path": "backend",
+      "baselineObject": "140a69025c8e1cce99d3e7756c80f472a922c1d4",
+      "candidateObject": "140a69025c8e1cce99d3e7756c80f472a922c1d4",
+      "equal": true
+    },
+    {
+      "path": "backend/pom.xml",
+      "baselineObject": "c2048d52cf8d73b08c76d1276202170856ea0f85",
+      "candidateObject": "c2048d52cf8d73b08c76d1276202170856ea0f85",
+      "equal": true
+    },
+    {
+      "path": "backend/src/main/resources/db/migration/V1__schema.sql",
+      "baselineObject": "1bca6c3674a3ec315b6fe88dc601e745a14402af",
+      "candidateObject": "1bca6c3674a3ec315b6fe88dc601e745a14402af",
+      "equal": true
+    },
+    {
+      "path": "backend/src/main/resources/db/migration/V2__templates.sql",
+      "baselineObject": "da9a21edb589f4aa8190684757512b6815276f4a",
+      "candidateObject": "da9a21edb589f4aa8190684757512b6815276f4a",
+      "equal": true
+    },
+    {
+      "path": "backend/src/main/resources/db/migration/V3__p1_visual_assets.sql",
+      "baselineObject": "e89fc031b6c5c09b006f5347b4d6a7b4f82bc78d",
+      "candidateObject": "e89fc031b6c5c09b006f5347b4d6a7b4f82bc78d",
+      "equal": true
+    },
+    {
+      "path": "backend/src/main/resources/db/migration/V4__accounts.sql",
+      "baselineObject": "baca591fef423118b432ab3530eabf4d6c7b789d",
+      "candidateObject": "baca591fef423118b432ab3530eabf4d6c7b789d",
+      "equal": true
+    },
+    {
+      "path": "compose.test.yaml",
+      "baselineObject": "b8159a106dd4249a80ed5bf3be433470d41e9d18",
+      "candidateObject": "b8159a106dd4249a80ed5bf3be433470d41e9d18",
+      "equal": true
+    },
+    {
+      "path": "compose.yaml",
+      "baselineObject": "fd8d1cd5cb8caf0b5f1cbc0b922fe778aff5b700",
+      "candidateObject": "fd8d1cd5cb8caf0b5f1cbc0b922fe778aff5b700",
+      "equal": true
+    },
+    {
+      "path": "frontend",
+      "baselineObject": "431834d57cfb6a4371e4e1d6277c028200c35696",
+      "candidateObject": "431834d57cfb6a4371e4e1d6277c028200c35696",
+      "equal": true
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "baselineObject": "27883f4e2499bed88933aa9b0249ed74faf28be5",
+      "candidateObject": "27883f4e2499bed88933aa9b0249ed74faf28be5",
+      "equal": true
+    },
+    {
+      "path": "frontend/src/components/react-bits/ADAPTATIONS.md",
+      "baselineObject": "edc014b3e6501397c95112f9efdb9e6a1282ebbe",
+      "candidateObject": "edc014b3e6501397c95112f9efdb9e6a1282ebbe",
+      "equal": true
+    },
+    {
+      "path": "tests/p1",
+      "baselineObject": "496d562624a2d13f7aa5b05a5ce292b935fba9c5",
+      "candidateObject": "496d562624a2d13f7aa5b05a5ce292b935fba9c5",
+      "equal": true
+    },
+    {
+      "path": "tests/p1.1",
+      "baselineObject": "fed761af728387eae0fecc5905d8517e5a5a0736",
+      "candidateObject": "fed761af728387eae0fecc5905d8517e5a5a0736",
+      "equal": true
+    },
+    {
+      "path": "tests/p1.2",
+      "baselineObject": "1fa98d817e7a97f257495aa5128743d593f69946",
+      "candidateObject": "1fa98d817e7a97f257495aa5128743d593f69946",
+      "equal": true
+    },
+    {
+      "path": "tests/p1/package-lock.json",
+      "baselineObject": "55f0d637e2bc7aa7a69bb829eb3da910ba3efc03",
+      "candidateObject": "55f0d637e2bc7aa7a69bb829eb3da910ba3efc03",
+      "equal": true
+    },
+    {
+      "path": "tests/p2/accounts-api.mjs",
+      "baselineObject": "d2b766485351e9658f48fcdc8688b0e9d83e75f8",
+      "candidateObject": "d2b766485351e9658f48fcdc8688b0e9d83e75f8",
+      "equal": true
+    },
+    {
+      "path": "tests/p2/accounts-browser.mjs",
+      "baselineObject": "b7ef1c5520ca17acef5c57e91f30bac2e02a08d6",
+      "candidateObject": "b7ef1c5520ca17acef5c57e91f30bac2e02a08d6",
+      "equal": true
+    },
+    {
+      "path": "tests/p2/gates.mjs",
+      "baselineObject": "d00850cf6d6e36b4247b8cbdc4f536b3d962400f",
+      "candidateObject": "d00850cf6d6e36b4247b8cbdc4f536b3d962400f",
+      "equal": true
+    }
+  ],
+  "testToolChanges": [
+    "M\ttests/p2/README.md",
+    "A\ttests/p2/archive_checks_test.py",
+    "M\ttests/p2/common.mjs",
+    "A\ttests/p2/diagnose-media-tail.mjs",
+    "A\ttests/p2/inspect-media.mjs",
+    "A\ttests/p2/media-all-frames.mjs",
+    "A\ttests/p2/media-ink-paths.mjs",
+    "M\ttests/p2/record-media.mjs",
+    "A\ttests/p2/run-media-headed.sh",
+    "M\ttests/p2/verify-archive.py",
+    "A\ttests/p2/verify-upgrade.mjs"
+  ],
+  "commonMediaOptIn": {
+    "onlyBehaviorDiff": "headless:true becomes headless unless MEDIA_HEADED is exactly the string 1",
+    "defaultHeadlessUnchanged": true,
+    "ciComposeUnchanged": true,
+    "headedOnlyWhenExplicitMediaFlagIsString1": true,
+    "actualUse": "Only bounded home media rerecord enabled MEDIA_HEADED=1; original account/P11/P12 test entrypoints and CI unchanged."
+  },
+  "evidenceInheritance": {
+    "cleanroom": "81a source ZIP independently extracted to a new directory, fresh p2-cleanroom3302 volumes; API8 and browser8 passed; no-cache reinstall not claimed.",
+    "upgrade": "Separate synthetic V3 project7bb ->81a backend; V1-V4 successful, same guest/task/file bytes; product3000 untouched.",
+    "requiredCI": "Leader confirmed full successful run41038592540 on81a; this source-equivalence check does not independently rerun/poll CI.",
+    "media": "Actual headed home recovery and unchanged creation media, tools and377-frame decode stored in preceding e377b0f handoff; Reviewer remains separate signatory."
+  },
+  "limits": [
+    "This evidence is created after frozen Source A, merged only into reportCommit; Source A ZIP does not self-reference this new evidence.",
+    "No legal audit, public release, exam submission or wholly cold dependency build is inferred.",
+    "Later source may require another data-only comparison for changed report/policy export files; no runtime rerun inferred for unchanged executable tree."
+  ],
+  "rawRelativeLocation": "P2/acceptance-final-evidence/110894f926d64816d5a8b5d9e5bcabd2554412ed outside Git: independent tree index and complete archive verifier entries"
+}
