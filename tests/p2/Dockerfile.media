@@ -1,0 +1,8 @@
+FROM mcr.microsoft.com/playwright:v1.58.2-noble@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d
+RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk && rm -rf /var/lib/apt/lists/*
+WORKDIR /checks
+COPY p1/package*.json ./
+RUN npm ci --ignore-scripts
+COPY p2/*.mjs ./
+ENV BASE_URL=http://localhost:3000 OUTPUT_DIR=/evidence
+ENTRYPOINT ["node"]
