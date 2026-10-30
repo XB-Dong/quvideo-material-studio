@@ -23,9 +23,9 @@
 
 四张具体Unsplash许可照片已接入本地Java资源：Shutter Speed雪山（2026-01-04）、Joe Caione白犬（2018-08-15）、Tiko Giorgadze霓虹人像（2018-02-25）、Pawel Czerwinski蓝紫流体（2020-12-08）。原始资源页、下载URL、作者、获取日期和源SHA见[原图清单](docs/waves/P1/references/manifest.json)，生产JPEG/PNG的实际尺寸、字节、裁切焦点与hash见[生产清单](docs/waves/P1/evidence/assets/production-manifest.json)。各具体页已核对[Unsplash License](https://unsplash.com/license)，未采用Unsplash+；作者不代表代言本项目。产品运行不外链。转换开发工具Pillow11.3.0（MIT-CMU）只在工具容器，不进入Java依赖。P0原创四PNG与V1/V2仍保留。
 
-七项React Bits组件已按TS-CSS源码接入frontend/src/components/react-bits/，版权David Haz，完整[MIT + Commons Clause License Condition v1.0](frontend/src/components/react-bits/LICENSE.md)随源码保留，不能简称纯MIT。原始14文件hash、registry源URL及独立GitHub许可提交见[源冻结](docs/waves/P1/evidence/leader-baseline/source-freeze.json)，本地适配见[ADAPTATIONS](frontend/src/components/react-bits/ADAPTATIONS.md)。registry与GitHub内容等价性没有自动断言；本项目将组件集成为应用，不单独分发组件/工具库。
+P1历史上七项React Bits组件曾按TS-CSS源码接入frontend/src/components/react-bits/，版权David Haz，完整[MIT + Commons Clause License Condition v1.0](frontend/src/components/react-bits/LICENSE.md)随源码保留，不能简称纯MIT。原始14文件hash、registry源URL及独立GitHub许可提交见[源冻结](docs/waves/P1/evidence/leader-baseline/source-freeze.json)，本地适配见[ADAPTATIONS](frontend/src/components/react-bits/ADAPTATIONS.md)。registry与GitHub内容等价性没有自动断言；本项目将组件集成为应用，不单独分发组件/工具库。
 
-实际图形依赖OGL1.0.11为Unlicense，准确版本/完整包完整性在frontend/package-lock.json及原NPM包。普通动效采用CSS+React；曾验证的Motion候选已因无实际import而移除。验收用Playwright1.58.2（Apache-2.0）、Alpine Chromium/SwiftShader及Noto CJK等包在独立工具镜像安装，不作为前端产品包或外链资源；准确浏览器和driver按各次报告记录，包许可随原发行包提供。
+P1历史图形依赖OGL1.0.11为Unlicense，P2因清理未使用组件已从当前package/lock删除，准确版本/完整包完整性在frontend/package-lock.json及原NPM包。普通动效采用CSS+React；曾验证的Motion候选已因无实际import而移除。验收用Playwright1.58.2（Apache-2.0）、Alpine Chromium/SwiftShader及Noto CJK等包在独立工具镜像安装，不作为前端产品包或外链资源；准确浏览器和driver按各次报告记录，包许可随原发行包提供。
 
 ## P1.1水墨与创意适配
 
@@ -44,3 +44,5 @@ P1.1默认使用原生Canvas2D/CSS/SVG实现擦雾、光晕、点阵/网点/水�
 注册/登录/账户设置由本项目实现，密码派生使用Java21自带PBKDF2WithHmacSHA256；没有复制外部身份系统。根LICENSE只适用于原创代码/文档，明确排除React Bits第三方部分、照片与其衍生、原题/参考截图等，不能把全仓称为纯MIT。保留的React Bits许可证SHA256为4bdd1fa59a6b7d5954bc3b213dbc34e455c635a94bbcecf9293553797d0fad02，与源冻结记录一致。
 
 P2独立验收沿用Playwright1.58.2及原工具锁，媒体工具采用官方mcr.microsoft.com/playwright:v1.58.2-noble镜像（固定manifest digest6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d）、工具容器内FFmpeg/Noto CJK进行真实页面录制转码。工具不进入前端/Java应用运行依赖；具体构建/录制版本、动作与文件哈希随实际媒体证据记录，不将工具镜像名当作已录制证明。
+
+P2来源处置：当前交付树只保留实际应用集成的OrbitImages及必要生命周期适配/原许可证，删除未mounted的DitherVeil、GlowCursor、RippleDistortion、HalftoneReveal、PixelTrail、ElectricBorder十二个tsx/css文件及仅其使用的OGL依赖。原视觉角色仍由项目Canvas2D/CSS/SVG实现，未改动已认可效果。历史原始哈希/来源记录保留并明确是历史，不随当前包附送未用组件源码集合；原Git历史仍需在将来公开前单独审计处理。

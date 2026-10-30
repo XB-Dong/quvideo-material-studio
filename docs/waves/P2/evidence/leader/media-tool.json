@@ -1,0 +1,12 @@
+{
+  "output": [
+    "v24.13.0",
+    "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+    "{\"browserPath\":\"/ms-playwright/chromium-1208/chrome-linux64/chrome\",\"browserBinaryPresent\":true,\"browserCache\":[\".docker-info\",\".links\",\"chromium-1208\",\"chromium_headless_shell-1208\",\"ffmpeg-1011\",\"firefox-1509\",\"webkit-2248\"]}"
+  ],
+  "buildExit": 0,
+  "checkedAt": "2026-10-30T17:30:55.7425692+08:00",
+  "builtImageId": "sha256:cb51b21ab05075171b47d5fe5aa8e9641e0d7181abbc5d2b3220c87a09a78655",
+  "baseImage": "mcr.microsoft.com/playwright:v1.58.2-noble@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d",
+  "purpose": "P2 media tool only, not application runtime or motion performance result"
+}

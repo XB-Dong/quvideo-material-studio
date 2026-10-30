@@ -13,3 +13,9 @@ Leader另修计数字段：总追踪单元87=原题R条款69+提交/验收规则
 准备修订仍不授权P2执行。独立准备审核结论见reviews/preparation-review.md，产品/账户/GIF/最终包均没有借此标为已验收。
 
 最终准备处置：Reviewer实际复核1790a91后3项全部closed，无开放blocking/major/minor。PREP通过，仍停在ready_not_started。新账户/动图/最终包等产品门槛未执行，不因准备签署变为已完成。
+
+## 执行发现
+
+P2-AUTH-01 / P2-BE-USER：作者同guest并发注册用例发现等待user锁后二次require读到MyBatis一级缓存旧session，实际409而预期旧token401。Leader接受major；账户READ_COMMITTED+锁SELECT flushCache强制重读，作者26Java通过，失败保留，独立/CI复验待执行，不冒称准备审核证明运行。
+
+P2-PROV-01 / P2-AUDIT：Reviewer指出六组未挂载上游完整组件源码不应以应用集成名义附送。Leader接受，唯一删除12文件与无引用OGL并更新当前来源范围，实际Orbit/原许可/效果保持；Git历史不改，未来公开审计单列。待独立复核/新构建验证。

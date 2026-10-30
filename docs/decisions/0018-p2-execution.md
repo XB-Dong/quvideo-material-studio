@@ -9,3 +9,4 @@
 源码ZIP采用**项目文件直接位于ZIP根目录**（README.md、compose.yaml等），评估者解压到一个新目录即可运行；不额外加目录前缀。这与独立verify-archive.py的必需entries一致。候选/最终包都绑定精确source SHA、entries与hash；后续纯报告/GIF差异记录清楚，执行文件/运行命令改变则重新验证。
 
 工具媒体镜像固定官方Playwright1.58.2-noble manifest，独立于Alpine资源测量镜像。录制在性能窗口后，原始视频与私有证据在仓库外；两脱敏真实GIF由Acceptance独占写入docs/submission/media，作为源码展示和外部附件。根MIT仅许可原创部分，保留React Bits附加许可与照片/题面等例外；公开/历史重写/交卷不授权。
+执行来源处置：接受Reviewer建议，当前树移除六组未挂载组件的12文件和OGL，保留实际Orbit/必要适配/原许可与历史来源记录。Root通过只读import搜索确认无产品引用；清理后重新执行前端容器检查及完整构建/运行验收，不以无import替代运行证据。

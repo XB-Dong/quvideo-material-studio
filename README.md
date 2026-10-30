@@ -29,7 +29,7 @@ docker compose up --build
 | 前端 | Next.js16.4.3 App Router、React/react-dom19.3.1、TypeScript5.9.3 |
 | 客户端查询 | TanStack Query5.105.0 |
 | 开发类型 | @types/react与react-dom19.3.0 |
-| 动效 | CSS/SVG/WAAPI、Canvas2D；Orbit适配React Bits；OGL1.0.11 |
+| 动效 | CSS/SVG/WAAPI、Canvas2D；Orbit适配React Bits |
 | 前端工具 | Vitest5.0.5、RTL16.3.2、ESLint9.39.2；Node22.22.0-alpine |
 | 后端 | Java21、Spring Boot3.5.16、MyBatis Starter3.0.5 |
 | 构建/数据库 | Maven3.9.11、MySQL8.4.13、Flyway |
