@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { InkBackdrop } from "./creative/visuals";
 import { useState, useRef, useEffect, useId } from "react";
 import { useIdentity } from "./providers";
 import { useMotionPreferences } from "./motion/preferences";
@@ -113,7 +112,6 @@ export function Shell({
   const [open, setOpen] = useState(false);
   return (
     <>
-      <InkBackdrop />
       <header className="site-header">
         <Link href="/" className="brand p12-wordmark" aria-label="疏影">
           <span>疏影</span>
@@ -135,7 +133,13 @@ export function Shell({
       )}
       <main className={mainClass}>{children}</main>
       <footer>
-        疏影工作室 <span>让每一份灵感，都有自己的画面。</span>
+        <a
+          href="https://github.com/XB-Dong"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          阳光魔力小牛马
+        </a>
         <small>模拟制作演示 · 无真实 AI 调用</small>
       </footer>
       {open && (

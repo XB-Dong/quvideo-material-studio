@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { VisualJourney } from "../components/motion/journey";
+import { InkBackdrop } from "../components/creative/visuals";
 import "./journey.css";
 import { Providers } from "../components/providers";
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="zh-CN">
       <body>
         <Providers>
+          <InkBackdrop />
           <VisualJourney />
           {children}
         </Providers>
