@@ -9,3 +9,7 @@
 measure按CDP Image类别或image MIME计算全部真实响应encodedDataLength，包含CSS/fetch/ImageBitmap与重复URL，包含头开销保守计量。内嵌data:image在HTML/CSS/JS中的encoded literal bytes也计入图片预算；载体成本继续保留，不能用inline逃预算。每轮都保存请求明细与JS gzip(level9)，不以中位数代替守卫。所有延后请求单独在interact记录，限122880B。截图/像素读回仅用于visual功能，不冒充舒适性能。
 
 P1旧gallery/手动按钮专属验收不再适用；业务块从原独立验收保留并继续运行。美学评分由另一Reviewer完成；本目录测试通过也不单独代表最终G02，仍需真实后台切换/源审核与邮件作用域实际证据。native-visibility.mjs复用原生CDP真标签切换，在带Xvfb的headed镜像运行（不覆写document.hidden）；仅default路径。预算守卫回归用 `node --test budgets.test.mjs`。
+
+## CI生命周期诊断
+
+visual独立启用audit({traceRaf:true})，最近256个RAF注册/执行/取消事件、pending callback名称/注册stack与媒体change事件有界保存；reduce断言之前先写reduce-before-assert.json，失败也保留a/b、motion-static/Orbit/媒体。其他脚本不启用stack采集，无截图性能仍不使用visual日志。DIAGNOSTIC_CPU_RATE仅用于显式CPU降速的功能诊断，报告记录真实rate，不作为性能通过证据。diagnose-raf.mjs以12次真实resize/离屏/回顶/reduce与0/16/100ms时序诊断；不覆写媒体状态，不增加固定等待或放宽RAF0。

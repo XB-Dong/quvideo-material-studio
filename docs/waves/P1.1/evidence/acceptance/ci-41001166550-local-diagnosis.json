@@ -1,0 +1,149 @@
+{
+  "rootTaskId": "P11-ACCEPT",
+  "ciRun": 41001166550,
+  "diagnosisStatus": "not_reproduced_locally; failure RAF owner unresolved",
+  "productSourceCommit": "64e919aac25cacf7f1193b4a361071e5d03ef635",
+  "candidateProductEquivalent": "95293c1746a86b7c7d78e5306b43d8884bc13c15",
+  "minimalCases": [
+    {
+      "run": 0,
+      "aPending": 0,
+      "bPending": 0,
+      "static": true,
+      "orbit": 0,
+      "reduced": true
+    },
+    {
+      "run": 1,
+      "aPending": 0,
+      "bPending": 0,
+      "static": true,
+      "orbit": 0,
+      "reduced": true
+    },
+    {
+      "run": 2,
+      "aPending": 0,
+      "bPending": 0,
+      "static": true,
+      "orbit": 0,
+      "reduced": true
+    },
+    {
+      "run": 3,
+      "aPending": 0,
+      "bPending": 0,
+      "static": true,
+      "orbit": 0,
+      "reduced": true
+    },
+    {
+      "run": 4,
+      "aPending": 0,
+      "bPending": 0,
+      "static": true,
+      "orbit": 0,
+      "reduced": true
+    },
+    {
+      "run": 5,
+      "aPending": 0,
+      "bPending": 0,
+      "static": true,
+      "orbit": 0,
+      "reduced": true
+    },
+    {
+      "run": 6,
+      "aPending": 0,
+      "bPending": 0,
+      "static": true,
+      "orbit": 0,
+      "reduced": true
+    },
+    {
+      "run": 7,
+      "aPending": 0,
+      "bPending": 0,
+      "static": true,
+      "orbit": 0,
+      "reduced": true
+    },
+    {
+      "run": 8,
+      "aPending": 0,
+      "bPending": 0,
+      "static": true,
+      "orbit": 0,
+      "reduced": true
+    },
+    {
+      "run": 9,
+      "aPending": 0,
+      "bPending": 0,
+      "static": true,
+      "orbit": 0,
+      "reduced": true
+    },
+    {
+      "run": 10,
+      "aPending": 0,
+      "bPending": 0,
+      "static": true,
+      "orbit": 0,
+      "reduced": true
+    },
+    {
+      "run": 11,
+      "aPending": 0,
+      "bPending": 0,
+      "static": true,
+      "orbit": 0,
+      "reduced": true
+    }
+  ],
+  "fullVisualCpu4": [
+    {
+      "name": "default software ink same-coordinate clarity, visible pixels and refog",
+      "status": "pass"
+    },
+    {
+      "name": "three or more real border families and continuous compositor movement",
+      "status": "pass"
+    },
+    {
+      "name": "four real card canvases change pixels independently and release on exit",
+      "status": "pass"
+    },
+    {
+      "name": "offscreen hero stops its RAF after viewport resize and returns",
+      "status": "pass"
+    },
+    {
+      "name": "reduce live change clears RAF and contexts; restore remains usable",
+      "status": "pass"
+    },
+    {
+      "name": "route unmount no residual creative RAF",
+      "status": "pass"
+    }
+  ],
+  "rawFiles": [
+    {
+      "path": "runtime/p11-ci-raf-diagnosis/raf-diagnosis.json",
+      "bytes": 839663,
+      "sha256": "2311ffef83b256b798acde0dcd984886e09c3bd0f04e443b3cf0abb058c57604"
+    },
+    {
+      "path": "runtime/p11-ci-raf-full-cpu4/visual.json",
+      "bytes": 101268,
+      "sha256": "446ccc781649e9af83377e9580a6d919fcbfda6174cb353b4ba2988338fd80e1"
+    },
+    {
+      "path": "runtime/p11-ci-raf-full-cpu4/reduce-before-assert.json",
+      "bytes": 48308,
+      "sha256": "e4836f66acc1065bf8fcf28eb98acad2670adcf625f78405bafa874c669ff4fa"
+    }
+  ],
+  "limits": "No root-cause assertion from local pass; CPU4 is diagnostic functional mode, not performance acceptance; no standards relaxed or product changed."
+}

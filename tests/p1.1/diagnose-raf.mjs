@@ -1,0 +1,7 @@
+import fs from 'node:fs/promises';
+import {start,base,output,testedCommit,audit} from './common.mjs';
+const {browser,relay}=await start();const page=await browser.newPage({viewport:{width:1440,height:1000},deviceScaleFactor:1});await page.addInitScript(audit,{traceRaf:true});await page.goto(base,{waitUntil:'networkidle'});const cases=[];
+for(let run=0;run<12;run++){
+ await page.emulateMedia({reducedMotion:'no-preference'});await page.setViewportSize({width:1440,height:600});await page.evaluate(()=>scrollTo(0,document.documentElement.scrollHeight));await page.mouse.move(10,10);await page.waitForTimeout(600);const hidden=await page.evaluate(()=>window.__audit());await page.setViewportSize({width:1440,height:1000});await page.evaluate(()=>scrollTo(0,0));await page.locator('[data-effect=orbit]').waitFor();if(run%3)await page.waitForTimeout([0,16,100][run%3]);await page.emulateMedia({reducedMotion:'reduce'});await page.waitForTimeout(500);const a=await page.evaluate(()=>window.__audit());await page.waitForTimeout(200);const b=await page.evaluate(()=>window.__audit());cases.push({run,hidden,a,b});await fs.writeFile(output+'/raf-diagnosis.json',JSON.stringify({testedCommit,capturedAt:new Date().toISOString(),cases},null,2));if(b.rafPending||b.rafExecuted!==a.rafExecuted){console.log(JSON.stringify(cases.at(-1),null,2));process.exitCode=1;break;}
+}
+console.log(JSON.stringify({runs:cases.length,failed:cases.some(c=>c.b.rafPending>0)}));await browser.close();relay.close();
