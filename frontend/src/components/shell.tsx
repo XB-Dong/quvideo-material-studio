@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { InkBackdrop } from "./creative/visuals";
 import { useState, useRef, useEffect, useId } from "react";
 import { useIdentity } from "./providers";
 import { useMotionPreferences } from "./motion/preferences";
@@ -67,6 +68,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
     <>
+      <InkBackdrop />
       <header className="site-header">
         <Link href="/" className="brand">
           <span className="brand-mark">疏</span>
