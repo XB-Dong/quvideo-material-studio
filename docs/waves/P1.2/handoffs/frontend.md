@@ -64,3 +64,10 @@ UploadSlot状态class随上传完成而重写，纯class IO标记可能丢失；
 采纳Acceptance实际route错误恢复major：合法JSON中坏title渲染失败后持久Query缓存保坏data，Next reset可循环回错误页。仅app/error“重新加载”改真正window.location.reload()，符合文案并重新获取正常响应，Cookie/Java任务与原记录不清除；global-error已独立通过的reset不变。完整恢复动作由独立浏览器复验。
 
 此收尾小补丁容器05:22:39UTC/13:22:39+08:00 lint/typecheck/39tests再次全部通过，exit0；未改原31业务保护，未削减视觉用例。
+
+
+## P12-ROUTE 实际强制布局归因修复
+
+已读独立route-diagnosis与原trace：54.126ms RunMicrotasks由React29.124ms与connect24.461ms组成，connect读取目标rect强制UpdateLayoutTree4.303ms+Layout15.884ms，不能归因Ink。修正MutationObserver只定位与注册ResizeObserver，目标自然布局RO回调非零尺寸后再读一次rect；disconnect观察者和700ms边界后才写唯一public桥。取消同时清待RO与动画，late callback校验generation/disposed；RO不支持则直接完整Link/CSS反馈，不加等待、不修改业务、不做Ink缓存。
+
+增加未ready不得读几何、ready后创建与disconnect-before-write、身份取消后的迟到RO和无RO回退用例（原39继续+2=41）。先后被prefer-const与测试不完整ROEntry类型阻止，已按精确const和完整typed entry修正；非运行性能失败、不冒充Red行为证据。最终05:58:38UTC/13:58:38+08:00容器lint/typecheck/41tests全通过，exit0。强制Layout是否实际减少及无截图门槛仍待独立同条件trace/性能复验。

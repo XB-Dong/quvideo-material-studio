@@ -15,7 +15,36 @@ import {
   VisualJourney,
   useSceneVisibility,
 } from "./journey";
+let resizeCallbacks: ResizeObserverCallback[];
+let resizeDisconnect: ReturnType<typeof vi.fn>;
+function resizeEntry(
+  target: Element,
+  width: number,
+  height: number,
+): ResizeObserverEntry {
+  const size = { inlineSize: width, blockSize: height };
+  return {
+    target,
+    contentRect: new DOMRect(0, 0, width, height),
+    borderBoxSize: [size],
+    contentBoxSize: [size],
+    devicePixelContentBoxSize: [size],
+  };
+}
 beforeEach(() => {
+  resizeCallbacks = [];
+  resizeDisconnect = vi.fn();
+  vi.stubGlobal(
+    "ResizeObserver",
+    class {
+      constructor(cb: ResizeObserverCallback) {
+        resizeCallbacks.push(cb);
+      }
+      observe = vi.fn();
+      unobserve = vi.fn();
+      disconnect = resizeDisconnect;
+    },
+  );
   state.pathname = "/";
   state.enabled = true;
   vi.stubGlobal("CSS", { escape: (x: string) => x });
@@ -73,6 +102,15 @@ it("cancels the public bridge immediately on identity invalidation", () => {
   act(() => beginCoverTransition("demo-pet"));
   state.pathname = "/templates/demo-pet";
   view.rerender(<VisualJourney />);
+  expect(document.querySelector(".p12-cover-bridge")).toBeNull();
+  expect(img.getBoundingClientRect).toHaveBeenCalledOnce();
+  act(() => resizeCallbacks[0]([resizeEntry(img, 0, 0)], {} as ResizeObserver));
+  expect(document.querySelector(".p12-cover-bridge")).toBeNull();
+  expect(img.getBoundingClientRect).toHaveBeenCalledOnce();
+  act(() =>
+    resizeCallbacks[0]([resizeEntry(img, 100, 140)], {} as ResizeObserver),
+  );
+  expect(resizeDisconnect).toHaveBeenCalled();
   expect(document.querySelector(".p12-cover-bridge")).not.toBeNull();
   const frames = vi.mocked(HTMLElement.prototype.animate).mock
     .calls[0][0] as Keyframe[];
@@ -142,4 +180,48 @@ it("pauses an observed visual scope offscreen, resumes and disconnects without r
   expect(el).not.toHaveAttribute("data-p12-offscreen");
   view.unmount();
   expect(disconnect).toHaveBeenCalledOnce();
+});
+
+it("cancels pending natural-layout observation before a late ResizeObserver delivery", () => {
+  const img = document.createElement("img");
+  img.dataset.publicCover = "demo-pet";
+  img.src = "/media/demo/pet.jpg";
+  document.body.append(img);
+  const rect = vi.spyOn(img, "getBoundingClientRect").mockReturnValue({
+    left: 0,
+    top: 0,
+    width: 100,
+    height: 140,
+    right: 100,
+    bottom: 140,
+    x: 0,
+    y: 0,
+    toJSON: () => ({}),
+  });
+  const view = render(<VisualJourney />);
+  act(() => beginCoverTransition("demo-pet"));
+  state.pathname = "/templates/demo-pet";
+  view.rerender(<VisualJourney />);
+  expect(rect).toHaveBeenCalledOnce();
+  act(() => window.dispatchEvent(new Event("session-expired")));
+  expect(resizeDisconnect).toHaveBeenCalled();
+  act(() =>
+    resizeCallbacks[0]([resizeEntry(img, 100, 140)], {} as ResizeObserver),
+  );
+  expect(rect).toHaveBeenCalledOnce();
+  expect(document.querySelector(".p12-cover-bridge")).toBeNull();
+});
+it("keeps ordinary navigation feedback when ResizeObserver is unavailable", () => {
+  vi.stubGlobal("ResizeObserver", undefined);
+  const img = document.createElement("img");
+  img.dataset.publicCover = "demo-pet";
+  img.src = "/media/demo/pet.jpg";
+  document.body.append(img);
+  const view = render(<VisualJourney />);
+  act(() => beginCoverTransition("demo-pet"));
+  state.pathname = "/templates/demo-pet";
+  view.rerender(<VisualJourney />);
+  expect(document.querySelector(".p12-cover-bridge")).toBeNull();
+  expect(resizeCallbacks).toHaveLength(0);
+  expect(view.container.querySelector(".p12-visual-layer")).not.toBeNull();
 });

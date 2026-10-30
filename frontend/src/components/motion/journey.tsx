@@ -149,25 +149,45 @@ export function VisualJourney() {
   useEffect(() => {
     const cover = pending.current;
     if (!enabled || !cover || cover.from === pathname) return;
-    const gen = generation.current;
-    let observer: MutationObserver | null = null,
-      timer: ReturnType<typeof setTimeout> | undefined;
-    const cancel = () => {
-      observer?.disconnect();
-      if (timer) clearTimeout(timer);
-      cleanup.current();
-    };
-    const connect = () => {
-      if (gen !== generation.current) return;
-      const target = document.querySelector<HTMLImageElement>(
-        `[data-public-cover="${CSS.escape(cover.id)}"]`,
-      );
-      if (!target || !layer.current) return false;
-      const to = target.getBoundingClientRect();
-      if (!to.width || !to.height) return false;
-      observer?.disconnect();
+    if (typeof ResizeObserver === "undefined") {
       pending.current = null;
-      cleanup.current();
+      return;
+    }
+    const gen = generation.current;
+    let mutation: MutationObserver | null = null;
+    let target: HTMLImageElement | null = null;
+    let disposed = false,
+      started = false;
+    let removeVisual = () => {};
+    const stopWatching = () => {
+      mutation?.disconnect();
+      resize.disconnect();
+      if (timer) clearTimeout(timer);
+    };
+    const cancel = () => {
+      disposed = true;
+      stopWatching();
+      removeVisual();
+      if (gen === generation.current) pending.current = null;
+    };
+    const resize = new ResizeObserver((entries) => {
+      if (
+        disposed ||
+        started ||
+        gen !== generation.current ||
+        !target?.isConnected ||
+        !layer.current
+      )
+        return;
+      const entry = entries.find((e) => e.target === target);
+      if (!entry || !entry.contentRect.width || !entry.contentRect.height)
+        return;
+      // ResizeObserver delivers after natural layout. Read once before any overlay DOM writes.
+      const to = target.getBoundingClientRect();
+      if (!to.width || !to.height) return;
+      started = true;
+      stopWatching();
+      pending.current = null;
       const image = document.createElement("img");
       image.src = cover.src;
       image.alt = "";
@@ -176,7 +196,7 @@ export function VisualJourney() {
       layer.current.append(image);
       if (typeof image.animate !== "function") {
         image.remove();
-        return true;
+        return;
       }
       const animation = image.animate(
         [
@@ -200,20 +220,27 @@ export function VisualJourney() {
       const remove = () => image.remove();
       animation.onfinish = remove;
       animation.oncancel = remove;
-      cleanup.current = () => {
+      removeVisual = () => {
         animation.cancel();
         remove();
       };
-      return true;
+    });
+    const locate = () => {
+      if (disposed || started || gen !== generation.current) return;
+      const found = document.querySelector<HTMLImageElement>(
+        `[data-public-cover="${CSS.escape(cover.id)}"]`,
+      );
+      if (!found || found === target) return;
+      if (target) resize.unobserve(target);
+      target = found;
+      resize.observe(found);
     };
-    if (!connect()) {
-      observer = new MutationObserver(connect);
-      observer.observe(document.body, { subtree: true, childList: true });
-      timer = setTimeout(() => {
-        observer?.disconnect();
-        if (gen === generation.current) pending.current = null;
-      }, 700);
-    }
+    cleanup.current();
+    cleanup.current = cancel;
+    mutation = new MutationObserver(locate);
+    mutation.observe(document.body, { subtree: true, childList: true });
+    const timer = setTimeout(cancel, 700);
+    locate();
     return cancel;
   }, [pathname, enabled]);
   return <div ref={layer} className="p12-visual-layer" aria-hidden="true" />;
