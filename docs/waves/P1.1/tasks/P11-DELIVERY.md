@@ -4,7 +4,7 @@
 - rootTaskId: P11-DELIVERY
 - waveId: P1.1
 - roundId: P11-R1
-- status: remote_CI_pending
+- status: completed
 - role: Leader
 - baseCommit: c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef
 - baseCommitMeaning: authorized execution source baseline; record later integrated SHAs separately

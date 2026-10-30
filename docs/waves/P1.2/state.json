@@ -1,0 +1,211 @@
+{
+  "schemaVersion": "1.0.0",
+  "waveId": "P1.2",
+  "specVersion": "P1.2-1.0.0",
+  "status": "prepared",
+  "executionAuthorized": false,
+  "preparationBaseCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+  "p11ProductReferenceCommit": "64e919aac25cacf7f1193b4a361071e5d03ef635",
+  "executionBaseCommit": null,
+  "executionStartedAt": null,
+  "executionCompletedAt": null,
+  "p11CIPrerequisite": "passed_exact_verified_source",
+  "timezone": "Etc/GMT-8",
+  "deadline": null,
+  "activeDevelopmentAgents": [],
+  "activePreparationReviewers": [],
+  "maxNativeWorkers": 3,
+  "roles": [
+    "Leader",
+    "Frontend",
+    "Acceptance",
+    "Reviewer"
+  ],
+  "modelPolicy": "inherit_current_session",
+  "actualProvider": null,
+  "actualModel": null,
+  "actualReasoningEffort": null,
+  "productImplemented": false,
+  "dependenciesInstalledForP12": false,
+  "productRestartedForP12": false,
+  "developmentWorktreesCreatedForP12": false,
+  "productChecks": "not_run_for_P1.2",
+  "aestheticGate": "not_run",
+  "comfortGate": "not_run",
+  "homePolicy": "preserve_approved_layout_palette_assets_and_motion; functional_click_navigation_only",
+  "mailStatus": "deferred_by_user_excluded_from_P1.2",
+  "effortEstimateHours": [
+    6,
+    9
+  ],
+  "fileMapReview": "passed_by_p11_design_review",
+  "independentPreparationReview": "passed_by_p11_design_review",
+  "tasks": [
+    {
+      "taskId": "P12-BASE",
+      "rootTaskId": "P12-BASE",
+      "role": "Leader",
+      "status": "prepared_not_dispatched",
+      "baseCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+      "dependencies": [],
+      "runtimeDependencies": [],
+      "requirements": [
+        "P12-PERF-01",
+        "P12-DEL-01"
+      ],
+      "repairCount": 0
+    },
+    {
+      "taskId": "P12-FOUND",
+      "rootTaskId": "P12-FOUND",
+      "role": "Frontend",
+      "status": "prepared_not_dispatched",
+      "baseCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+      "dependencies": [
+        "P12-BASE"
+      ],
+      "runtimeDependencies": [],
+      "requirements": [
+        "P12-HOME-01",
+        "P12-SCENE-01",
+        "P12-A11Y-01"
+      ],
+      "repairCount": 0
+    },
+    {
+      "taskId": "P12-ROUTE",
+      "rootTaskId": "P12-ROUTE",
+      "role": "Frontend",
+      "status": "prepared_not_dispatched",
+      "baseCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+      "dependencies": [
+        "P12-FOUND"
+      ],
+      "runtimeDependencies": [],
+      "requirements": [
+        "P12-HOME-01",
+        "P12-ROUTE-01"
+      ],
+      "repairCount": 0
+    },
+    {
+      "taskId": "P12-STUDIO",
+      "rootTaskId": "P12-STUDIO",
+      "role": "Frontend",
+      "status": "prepared_not_dispatched",
+      "baseCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+      "dependencies": [
+        "P12-ROUTE"
+      ],
+      "runtimeDependencies": [],
+      "requirements": [
+        "P12-SCENE-01",
+        "P12-UPLOAD-01",
+        "P12-TASK-01"
+      ],
+      "repairCount": 0
+    },
+    {
+      "taskId": "P12-HISTORY",
+      "rootTaskId": "P12-HISTORY",
+      "role": "Frontend",
+      "status": "prepared_not_dispatched",
+      "baseCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+      "dependencies": [
+        "P12-STUDIO"
+      ],
+      "runtimeDependencies": [],
+      "requirements": [
+        "P12-SCENE-01",
+        "P12-TASK-01",
+        "P12-STATE-01"
+      ],
+      "repairCount": 0
+    },
+    {
+      "taskId": "P12-DIALOG",
+      "rootTaskId": "P12-DIALOG",
+      "role": "Frontend",
+      "status": "prepared_not_dispatched",
+      "baseCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+      "dependencies": [
+        "P12-HISTORY"
+      ],
+      "runtimeDependencies": [],
+      "requirements": [
+        "P12-DIALOG-01",
+        "P12-STATE-01",
+        "P12-A11Y-01"
+      ],
+      "repairCount": 0
+    },
+    {
+      "taskId": "P12-ACCEPT",
+      "rootTaskId": "P12-ACCEPT",
+      "role": "Acceptance",
+      "status": "prepared_not_dispatched",
+      "baseCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+      "dependencies": [
+        "P12-BASE"
+      ],
+      "runtimeDependencies": [
+        "P12-DIALOG"
+      ],
+      "requirements": [
+        "P12-UPLOAD-01",
+        "P12-TASK-01",
+        "P12-A11Y-01",
+        "P12-PERF-01"
+      ],
+      "repairCount": 0
+    },
+    {
+      "taskId": "P12-REVIEW",
+      "rootTaskId": "P12-REVIEW",
+      "role": "Reviewer",
+      "status": "prepared_not_dispatched",
+      "baseCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+      "dependencies": [
+        "P12-ROUTE"
+      ],
+      "runtimeDependencies": [
+        "P12-DIALOG"
+      ],
+      "requirements": [
+        "P12-HOME-01",
+        "P12-QUALITY-01"
+      ],
+      "repairCount": 0
+    },
+    {
+      "taskId": "P12-DELIVERY",
+      "rootTaskId": "P12-DELIVERY",
+      "role": "Leader",
+      "status": "prepared_not_dispatched",
+      "baseCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+      "dependencies": [
+        "P12-ACCEPT",
+        "P12-REVIEW"
+      ],
+      "runtimeDependencies": [],
+      "requirements": [
+        "P12-DEL-01"
+      ],
+      "repairCount": 0
+    }
+  ],
+  "preparationRecordedAt": "2026-10-30T12:32:21.079406+08:00",
+  "nextAction": "start_P12_BASE_directly_under_conditional_user_authorization",
+  "p11VerifiedCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+  "p11VerifiedCIRun": 41002700967,
+  "conditionalExecutionAuthorization": {
+    "userInstruction": "1.2准备好了直接启动不用报告了",
+    "prerequisites": [
+      "independent_preparation_review_passed",
+      "data_only_checks_passed"
+    ],
+    "requireAdditionalUserConfirmation": false
+  },
+  "preparationCompletedAt": "2026-10-30T12:43:53.305622+08:00",
+  "preparationValidation": "passed_data_only"
+}

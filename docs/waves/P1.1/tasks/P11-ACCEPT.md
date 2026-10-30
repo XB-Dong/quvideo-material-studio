@@ -4,7 +4,7 @@
 - rootTaskId: P11-ACCEPT
 - waveId: P1.1
 - roundId: P11-R1
-- status: local_checks_passed_scope_review_pending
+- status: completed
 - role: Acceptance
 - baseCommit: c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef
 - baseCommitMeaning: authorized execution source baseline; record later integrated SHAs separately

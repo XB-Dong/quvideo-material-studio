@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-30T12:30:59.431041+08:00",
+  "currentRuntime": {
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "currentDevTypes": {
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3"
+  },
+  "plannedDevTypes": [
+    {
+      "name": "@types/react",
+      "version": "19.3.0",
+      "peerDependencies": {},
+      "dependencies": {
+        "csstype": "^3.2.2"
+      },
+      "integrity": "sha512-N0rFCuH9YoxG9/m61l9MfpJKfmLOVU0em7ipIz6TRgSSkvReLB9vL85GB+yr8Bs5leqpvg96JSwF4ZS1s4viQg==",
+      "registryUrl": "https://registry.npmjs.org/@types/react/19.3.0"
+    },
+    {
+      "name": "@types/react-dom",
+      "version": "19.3.0",
+      "peerDependencies": {
+        "@types/react": "^19.3.0"
+      },
+      "dependencies": {},
+      "integrity": "sha512-ZI7bU42mZXXKHn/qNLEw2IrbiINU7X5+vfgdixBHkCNpYWXjKgfQ/P+uyGb5CjOLB9UcnTeg3rylQtV2hym44Q==",
+      "registryUrl": "https://registry.npmjs.org/@types/react-dom/19.3.0"
+    }
+  ],
+  "runtimeDependenciesAdded": [],
+  "installPerformed": false,
+  "lockModified": false,
+  "validation": "container type/build/native public-cover compatibility in authorized P12-BASE; CSS/WAAPI fallback remains complete"
+}

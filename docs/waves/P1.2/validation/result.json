@@ -1,0 +1,19 @@
+{
+  "result": "pass",
+  "phase": "P1.2_preparation_only",
+  "executionAuthorized": false,
+  "requirements": 11,
+  "tasks": 9,
+  "graph": "acyclic",
+  "relativeLinks": 75,
+  "registryComponents": 2,
+  "candidateSourceFiles": 3,
+  "svgAndPng": "valid",
+  "p11CI": "passed_at_exact_source",
+  "productUnchangedFrom": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+  "p12Runtime": "not_run",
+  "checkedAt": "2026-10-30T12:43:53.305622+08:00",
+  "frozenFiles": 33,
+  "independentPreparationReview": "passed",
+  "nextAction": "automatic_authorized_start"
+}

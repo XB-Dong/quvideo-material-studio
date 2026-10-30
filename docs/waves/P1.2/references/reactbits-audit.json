@@ -1,0 +1,57 @@
+{
+  "checkedAt": "2026-10-30T12:26:17.006234+08:00",
+  "components": [
+    {
+      "name": "ClickSpark",
+      "registryUrl": "https://reactbits.dev/r/ClickSpark-TS-CSS.json",
+      "registrySha256": "bc59f3852c6d73ac8b0ab3442651d0956ee9a8d82f86c1b16ade8b246587333a",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "ClickSpark/ClickSpark.tsx",
+          "bytes": 16796,
+          "sha256": "186b0d4d5820311046b689c12d762be74fa0f380bf81b9b160386a4e178563f0",
+          "imports": [
+            "react"
+          ],
+          "requestsRAF": true
+        }
+      ],
+      "status": "read_only_candidate_not_installed_or_copied_to_product"
+    },
+    {
+      "name": "StarBorder",
+      "registryUrl": "https://reactbits.dev/r/StarBorder-TS-CSS.json",
+      "registrySha256": "683e85e6b1fff4bcb82658e1d025d5ee561a2849a37d289f7e13930557e23339",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "StarBorder.css",
+          "bytes": 1070,
+          "sha256": "128fe0068b2d7964c28488d24465626ff34f3143a66082a6548a1a1f57c987d2",
+          "imports": [],
+          "requestsRAF": false
+        },
+        {
+          "path": "StarBorder.tsx",
+          "bytes": 22699,
+          "sha256": "3da1c1856f3b41fbc9f9a7ecf945e6248de44464f763cd5162bb73fee0f30f17",
+          "imports": [
+            "react"
+          ],
+          "requestsRAF": true
+        }
+      ],
+      "status": "read_only_candidate_not_installed_or_copied_to_product"
+    }
+  ],
+  "license": "MIT + Commons Clause License Condition v1.0",
+  "existingLicenseReference": "frontend/src/components/react-bits/LICENSE.md",
+  "licenseSha256": "4bdd1fa59a6b7d5954bc3b213dbc34e455c635a94bbcecf9293553797d0fad02",
+  "githubLicenseReferenceCommit": "e12c22192ac7b4b452c5e2feb9b586d74765d696",
+  "registryCommitEquivalence": "not_asserted",
+  "installPerformed": false,
+  "productionCodeCopied": false
+}

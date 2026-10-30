@@ -1,0 +1,174 @@
+{
+  "createdAt": "2026-10-30T12:43:53.305622+08:00",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "199aac7f145188f2538ee2565942be26f83e13af4500fd52fb1c4c136733d853",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "CONSTITUTION.md",
+      "sha256": "b4374b46d07ba18461597ab5921ffebdc74cfa2ddc10ce36f10bb9c0267b149c",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "42e7f0f8acaf1e1dd91a9a53fa3eaf965c243095798ae9edfc13193942d6be8a",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/ACCEPTANCE.md",
+      "sha256": "e828d10caf702a7f7e41984e8271c3d1a8171f48613c9ad41c2fec1bab877324",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/CONTEXT-MAP.md",
+      "sha256": "22327ba16bfd82a08e6c3df3c082f2d029928e6d4d1d8a4ad2c841e68014e76d",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/handoffs/TEMPLATE.md",
+      "sha256": "640900988852cb7f98edf79c49322bb032ed1847bc8605a717a7ffada1746480",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/PLAN.md",
+      "sha256": "a33a9fada6468ae958bd071b3b9e73ef172984180328ca5ae004885aad2369b9",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/PREPARATION-REPORT.md",
+      "sha256": "43c27ca734e4ed9c234fe3846c8665ac36cc42a01864bf85708c41c23bc948ac",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/references/dependency-plan.json",
+      "sha256": "d8eec0a7c86376efa9279b811eed531ef71bde5d1618191a1a044559f15257bc",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/references/motion-storyboard.png",
+      "sha256": "a14ce1951c78ed2a64c0c1bc9bab639f370d44ce4165ec445e1fc1bbc96d9faa",
+      "hashMode": "exact_bytes"
+    },
+    {
+      "path": "docs/waves/P1.2/references/motion-storyboard.svg",
+      "sha256": "401bfea2125fc82298204b8f33122d41c48c2bf8aff28fe99098dbfbc41b31b5",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/references/reactbits-audit.json",
+      "sha256": "712ed8211e869e35b375a2ae416d23f63d71e65b08edd09d4b87d42beffb7803",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/references/README.md",
+      "sha256": "4110c8d6bdb75184a86e107bd8340f5cd9412b3167fed03704551174604ee4a5",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/reviews/preparation-review.md",
+      "sha256": "b9434eca32b79daa939602e938e1b37b5b8389bded1773a71749c384b71be38b",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/ROLES.md",
+      "sha256": "fb482868900b52bd5fb4b5e87fcd1b47b909e46d5a61759cc0dc19835951bf4d",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/state.json",
+      "sha256": "09c83ed097427c8336b345237928892c4adc5a59deb63dd7da5fcdcea3e82c76",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/tasks/P12-ACCEPT.md",
+      "sha256": "73870d49a8e94a2dc1ea7f14663dd2af156f13d593d4b7706df8a290f6c178bf",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/tasks/P12-BASE.md",
+      "sha256": "0ac0edf98ea61656eea3233264e82e3015f490ee3a82e3d1cc696ff232b19ae6",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/tasks/P12-DELIVERY.md",
+      "sha256": "e316e255202a225910c6e0470b0074830c2e9395b134cfd439fa90726daac241",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/tasks/P12-DIALOG.md",
+      "sha256": "950b193d85ce2b028a809a06f9d06d91e314eaf0c6e254a9e5e7c859536c35b2",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/tasks/P12-FOUND.md",
+      "sha256": "fb061e11ce38903db3da6ecd668dbbfd1a7519603e17154068d34981b2d56fae",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/tasks/P12-HISTORY.md",
+      "sha256": "e2f61bacd0794c603448329c0cdd65feb56dbb11bae90065b318f859627a3d0c",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/tasks/P12-REVIEW.md",
+      "sha256": "6ee04605c90db5e8b00b71ee25964197838b297f1efac22fc5a39732237d6b68",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/tasks/P12-ROUTE.md",
+      "sha256": "08e0233c3122015e402472d01be86c338922cb288c7ea85030e1c9cbcb58d7c9",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/tasks/P12-STUDIO.md",
+      "sha256": "0bfcf96583864b55711e84141906b969bba0c1a22d95ac607dc6683570de0ba4",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.2/validation/check_preparation.py",
+      "sha256": "a401506356303df04f81795321a4a7956924bdaeebfe783d2408c32ded29b5e2",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/README.md",
+      "sha256": "682c134a2e9d7da4cc4e13a0f8e1d8336ed334d87901dcd6ff2a5dc2c42eeccb",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "NEXT-WAVES.md",
+      "sha256": "5bbb9c148a7a0f9d316ad2e785e5e5c5fd10bd2a6b8db267c404d3917cb3438e",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "README.md",
+      "sha256": "87723d032c2739f755a0daa9d3bd72109e5361ded2d821a399680ec5ed2e6721",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "specs/p1.2/architecture.md",
+      "sha256": "f2c442a0782e1592a20ba739b76727a899a0d86328f6d62fd71b393614464cd3",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "specs/p1.2/comfort.md",
+      "sha256": "9a1986e17a091ec77767406a31cb3c2ff1889f58d624fcc6378f822a3968a2e8",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "specs/p1.2/design.md",
+      "sha256": "d63c70a4d9e3ece3c229341efe1888a0d0fc4c3759d0786d8599c2e820e69af3",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "specs/p1.2/requirements.md",
+      "sha256": "fa2f25e3189cb32d356784628755eeff94a94dea2db8d53cbce84626a91aa631",
+      "hashMode": "CRLF_normalized_to_LF"
+    }
+  ],
+  "excludedGenerated": [
+    "validation/preparation-files.json",
+    "validation/result.json"
+  ]
+}

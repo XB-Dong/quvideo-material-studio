@@ -1,0 +1,52 @@
+{
+  "runId": 41002700967,
+  "testedCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+  "artifactSha256": "91dd5244602fd9fd8e79c78e6b1b4e946ce779b9dc9060da84db1c5976971b0a",
+  "checks": {
+    "acceptance.json": {
+      "testedCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+      "passed": 22
+    },
+    "interaction/interaction-performance.json": {
+      "testedCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+      "passed": true,
+      "longTasks": 0,
+      "lazyGzipBytes": 0
+    },
+    "measure/measurement.json": {
+      "testedCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+      "browser": "149.0.7827.53",
+      "jsBytes": [
+        167230,
+        167230,
+        167230
+      ],
+      "imageBytes": [
+        745064,
+        468060,
+        560911
+      ],
+      "CLS": [
+        0.0001205173972800926,
+        7.558488257137346e-05,
+        0.00011245047863618827
+      ],
+      "budgetsPassed": true
+    },
+    "native/native-visibility.json": {
+      "testedCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+      "results": 1,
+      "hidden": [
+        {
+          "visibility": "hidden",
+          "rafPending": 0,
+          "mainGPU": 0
+        }
+      ]
+    },
+    "visual/visual.json": {
+      "testedCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
+      "passed": 6
+    }
+  }
+}
