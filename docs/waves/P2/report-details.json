@@ -1,0 +1,441 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "evidence_binding_in_progress",
+  "details": [
+    {
+      "id": "R-01.a",
+      "implementation": "App Router分离列表、制作、历史和账户路由，TypeScript全量检查；准确npm版本锁定。",
+      "evidence": "E-FE：lint/type/生产构建；E-CLEAN：包内Docker构建。"
+    },
+    {
+      "id": "R-01.b",
+      "implementation": "Spring Boot提供HTTP接口，MyBatis注解mapper访问真实MySQL8.4，Java21编译。",
+      "evidence": "E-JAVA：mvn verify/26例；E-CLEAN：三服务健康。"
+    },
+    {
+      "id": "R-01.c",
+      "implementation": "Next仅同源转发，Java创建/查询任务并写MySQL及文件卷；不在Next内推进业务。",
+      "evidence": "E-API：test01/03/05/07/08；E-AUTH：owner与任务持久化场景。"
+    },
+    {
+      "id": "R-01.d",
+      "implementation": "README版本表与package-lock/pom/固定digest Dockerfile对应，说明Java单线程队列和前端轮询职责。",
+      "evidence": "E-DOC：README版本/连接/后台执行；E-FE/E-JAVA实际兼容构建。"
+    },
+    {
+      "id": "R-02.a",
+      "implementation": "Java种子提供分类和四张带标题封面的模板卡。",
+      "evidence": "E-API：test01；E-P11：Java cards keep stable IDs。"
+    },
+    {
+      "id": "R-02.b",
+      "implementation": "分类按钮更新接口查询，Link按稳定模板ID进入详情。",
+      "evidence": "E-P11：four card first Enter navigation and classification。"
+    },
+    {
+      "id": "R-02.c",
+      "implementation": "catalog通过/api/categories和/api/templates获取Java数据，页面显示的ID与接口逐张比对。",
+      "evidence": "E-API：test01；E-P11：Java cards keep stable IDs。"
+    },
+    {
+      "id": "R-02.d",
+      "implementation": "V2/V3种子有宠物/人像1图、明信片2图、三格故事3图，固定演示数据无需后台CRUD。",
+      "evidence": "E-API：test01/04；E-CLEAN：空库迁移后可读四模板。"
+    },
+    {
+      "id": "R-02.e",
+      "implementation": "照片/山水/预置结果随包本地提供，来源和适用许可逐项登记，不需运行时外部服务。",
+      "evidence": "E-API：test01；E-PROV：实际许可/包entries审阅；E-CLEAN本地素材。"
+    },
+    {
+      "id": "R-03.a",
+      "implementation": "studio按Java模板绘制标题、描述、封面、MIME/大小和requiredImageCount上传槽。",
+      "evidence": "E-P11：studio fields and overflow；E-P12：1/2图真实制作流程；E-API：test01/04。"
+    },
+    {
+      "id": "R-03.b",
+      "implementation": "真实文件输入支持chooser、blob预览、替换/移除，成功后仍以服务端assetId提交。",
+      "evidence": "E-FE：upload.test.tsx三例；E-P12：actual chooser、parallel slots。"
+    },
+    {
+      "id": "R-03.c",
+      "implementation": "各槽独立UPLOADING/ERROR/READY，失败保留重选入口且不可误当就绪。",
+      "evidence": "E-FE：rejects type and size…never reports READY after failure；E-P12：parallel slots…errors。"
+    },
+    {
+      "id": "R-03.d",
+      "implementation": "前端在上传前校验MIME/单文件字节，提交时要求所有必要槽READY且数量准确。",
+      "evidence": "E-FE：upload及blocks submission until every required upload is ready。"
+    },
+    {
+      "id": "R-03.e",
+      "implementation": "Java校验实际图片解码/尺寸像素/MIME/大小、模板存在、素材数量/归属和simulation参数。",
+      "evidence": "E-JAVA：uploadRejectsSpoofingAndBrokenImage、simulationValidationAndSnapshot；E-API：test03/04。"
+    },
+    {
+      "id": "R-03.f",
+      "implementation": "素材未完成和POST受理中禁用按钮；同步ref锁抵御重复点击，受理后立即解除。",
+      "evidence": "E-FE：submission.test.tsx四例；E-P12：真实快速重复提交。"
+    },
+    {
+      "id": "R-03.g",
+      "implementation": "列表/详情/历史具备loading、空数据、请求异常、404与可操作恢复反馈。",
+      "evidence": "E-P11：history and unknown template；E-P12：boundaries及error/loading反馈；E-FE查询恢复。"
+    },
+    {
+      "id": "R-03.h",
+      "implementation": "上传实际写Java文件卷，assetId与路径入库，受session/owner鉴权；blob仅本地预览。",
+      "evidence": "E-API：test03/08；E-AUTH：register保留上传、跨owner404；E-UPGRADE旧文件保留。"
+    },
+    {
+      "id": "R-04.a",
+      "implementation": "Tasks.create事务提交后派发，POST202返回包含id的任务，不等待延迟生成。",
+      "evidence": "E-JAVA：commitBeforeDispatchAndRollbackDoesNotDispatch；E-API：test05。"
+    },
+    {
+      "id": "R-04.b",
+      "implementation": "Java Processing/Pipeline独立工作线程执行，浏览器关闭不决定处理生命周期。",
+      "evidence": "E-API：test05无查询执行；E-AUI：已受理任务切身份后继续、重登恢复。"
+    },
+    {
+      "id": "R-04.c",
+      "implementation": "有界单线程FIFO承接多任务，队列满时持久化清晰失败而不丢失。",
+      "evidence": "E-JAVA：saturatedQueueFailurePersistsFromAfterCommit；E-API：test07。"
+    },
+    {
+      "id": "R-05.a",
+      "implementation": "Pipeline严格ASSET_CHECK→GENERATE→FINALIZE，顺序来源Java而非前端定时文案。",
+      "evidence": "E-JAVA：orderedBoundariesAndStableTerminal；E-AUTH：Real multi-step order。"
+    },
+    {
+      "id": "R-05.b",
+      "implementation": "每阶段begin/end单独落task_steps，阶段开始/结束有时间、状态和版本边界。",
+      "evidence": "E-JAVA：stagesFailuresHistoryAndOwnership；E-API：test05/06；E-AUTH三阶段快照。"
+    },
+    {
+      "id": "R-05.c",
+      "implementation": "Task和steps保存状态、阶段、失败code/reason、结果URL、创建时间及单调version。",
+      "evidence": "E-API：test05/06/07；E-AUTH：查询历史与任务字段断言。"
+    },
+    {
+      "id": "R-05.d",
+      "implementation": "整理成功后提供同owner结果URL；成功step与Task终态同事务，结果接口可解码。",
+      "evidence": "E-JAVA：finalCompletionRollsBackStepAndPersistsFailure、ResultThumbnailTest；E-API：test05/08。"
+    },
+    {
+      "id": "R-05.e",
+      "implementation": "Tasks.get/history仅查询；Pipeline无需任何查询可到终态。",
+      "evidence": "E-API：test05；E-AUTH：terminal queries do not regress。"
+    },
+    {
+      "id": "R-05.f",
+      "implementation": "持久化QUEUED/RUNNING/SUCCEEDED/FAILED，前端按id/version合并并保护终态。",
+      "evidence": "E-JAVA：orderedBoundariesAndStableTerminal；E-FE：never regresses versions or terminal state。"
+    },
+    {
+      "id": "R-06.a",
+      "implementation": "simulation.failAt可指定三阶段之一，非随机，可重复触发。",
+      "evidence": "E-JAVA：failureStopsFollowingHandlers参数化三例；E-API：test06；E-AUTH三次失败。"
+    },
+    {
+      "id": "R-06.b",
+      "implementation": "失败记录failedStage/code/reason，立刻return，后续step保持NOT_STARTED。",
+      "evidence": "E-JAVA：failureStopsFollowingHandlers、unexpectedActionFailureStopsPipeline；E-API：test06。"
+    },
+    {
+      "id": "R-06.c",
+      "implementation": "每阶段0～30000ms，可由环境默认值或每任务delayMs覆盖，入库保存快照。",
+      "evidence": "E-JAVA：simulationValidationAndSnapshot；E-AUTH控制耗时实际观察；E-DOC可复制请求。"
+    },
+    {
+      "id": "R-06.d",
+      "implementation": "README提供带同源cookie的fetch完整素材/POST示例，说明三failAt和延迟上限/开关。",
+      "evidence": "E-DOC：指定失败与耗时；E-API/E-AUTH使用等价真实请求。"
+    },
+    {
+      "id": "R-07.a",
+      "implementation": "上传、受理POST、后台等待/运行、成功/失败分别使用独立状态和反馈。",
+      "evidence": "E-FE：upload/submission/use-tasks；E-P11：multiple tasks…true failure；E-MEDIA流程。"
+    },
+    {
+      "id": "R-07.b",
+      "implementation": "202后将Task加入当前身份列表并清POST锁，可继续提交第二任务。",
+      "evidence": "E-FE：unlocks after acceptance and allows a second independent task；E-P12实际连续任务。"
+    },
+    {
+      "id": "R-07.c",
+      "implementation": "历史卡读取服务端stage/steps和reason，成功显示缩图及原图预览。",
+      "evidence": "E-P11：multiple tasks…true failure；E-AUTH真实阶段/结果；E-MEDIA流程。"
+    },
+    {
+      "id": "R-07.d",
+      "implementation": "queryError与Task.status分离，查询503保留原任务；恢复按钮重新读取Java。",
+      "evidence": "E-FE：keeps server state on query outage and recovers separately；E-P11实际阻断/恢复GET。"
+    },
+    {
+      "id": "R-08.a",
+      "implementation": "查询key和合并以owner/taskId隔离，多个任务失败、成功、迟到响应不会互相替换。",
+      "evidence": "E-FE：keeps A failure and B success independent under reversed responses；E-API：test07。"
+    },
+    {
+      "id": "R-08.b",
+      "implementation": "活跃任务页自动发现并逐任务轮询，不仅依赖历史第一页。",
+      "evidence": "E-FE：discovers active tasks beyond the first history page；E-API：test07。"
+    },
+    {
+      "id": "R-08.c",
+      "implementation": "终态任务refetchInterval=false；无待处理任务停止，不因查询重回处理中。",
+      "evidence": "E-FE：stops polling ended tasks while another remains active, then stops all；E-P11终态请求计数。"
+    },
+    {
+      "id": "R-08.d",
+      "implementation": "离页取消AbortSignal/计时器，身份变化先清查询和私有预览，认证串行锁跨路由保留。",
+      "evidence": "E-FE：cancels requests and timers on unmount；E-AUI真实Set-Cookie锁/迟到上传。"
+    },
+    {
+      "id": "R-08.e",
+      "implementation": "generation隔绝旧数据/401/finally，持久Provider认证锁防旧cookie覆盖新身份。",
+      "evidence": "E-FE：session/account-lifecycle；E-AUI：旧history/真实撤销token401、上传和已受理POST门控。"
+    },
+    {
+      "id": "R-09.a",
+      "implementation": "个人历史显示本地时区创建时间、状态、阶段、失败原因或成功图。",
+      "evidence": "E-API：test07；E-P12：task-time/跨时区；E-AUI账户历史。"
+    },
+    {
+      "id": "R-09.b",
+      "implementation": "刷新从Java历史与活跃接口重建，不依赖localStorage临时任务；未结束继续跟踪。",
+      "evidence": "E-API：test07；E-P11：refresh；E-AUI：重登录回历史；E-UPGRADE旧记录恢复。"
+    },
+    {
+      "id": "R-09.c",
+      "implementation": "受owner保护的原PNG在原生对话框展示，卡片小JPEG不改变原结果。",
+      "evidence": "E-JAVA：ResultThumbnailTest三例；E-P12：preview显影/冷图；E-API：test08。"
+    },
+    {
+      "id": "R-10.a",
+      "implementation": "HttpOnly随机session访客+本地邮箱密码账户，身份由Java验证，不接受客户端指定owner。",
+      "evidence": "E-JAVA：AccountIntegrationTest/PasswordAndAuthTest；E-AUTH八例；E-UPGRADE访客升级。"
+    },
+    {
+      "id": "R-10.b",
+      "implementation": "任务、上传、结果、缩图均按session.owner鉴权；登录不隐式合并其他访客作品。",
+      "evidence": "E-API：test08；E-AUTH：Second account and guest media/task isolation；E-AUI。"
+    },
+    {
+      "id": "R-10.c",
+      "implementation": "README明确cookie期限/访客丢失、注册保留、登录不合并、退出/改密与双窗口演示。",
+      "evidence": "E-DOC：身份与个人作品/五分钟演示；E-AUTH等价真实操作。"
+    },
+    {
+      "id": "R-11.a",
+      "implementation": "保留用户认可浅色山水首页，制作左配置/右历史，独立作品与账户页；反馈分层。",
+      "evidence": "E-P11/E-P12布局/动态断言；E-REVIEW：账户桌面与375PNG有限美学审核。"
+    },
+    {
+      "id": "R-11.b",
+      "implementation": "桌面主要流程与375px真实touch/chooser/账户流程，布局无横向溢出。",
+      "evidence": "E-P11：mobile真实coarse first tap；E-AUI：375px全账户流程。"
+    },
+    {
+      "id": "R-11.c",
+      "implementation": "Link/input/button/native dialog语义，Escape关闭、焦点返回、键盘上传/导航。",
+      "evidence": "E-P11：identity dialog Escape and focus；E-P12：chooser键盘；E-AUI键盘设置。"
+    },
+    {
+      "id": "R-11.d",
+      "implementation": "槽位选择/替换/移除、预览关闭和账户入口均有可理解label/aria-label。",
+      "evidence": "E-P12真实按accessible role操作；E-AUI按钮/输入label定位。"
+    },
+    {
+      "id": "R-11.e",
+      "implementation": "沿用模板网格、详情/制作并排历史布局，以疏影浅色原创视觉替换品牌；未实现题外会员/计费按钮。",
+      "evidence": "E-SRC：catalog/studio/history/shell；E-REVIEW；E-P11无题外控件。"
+    },
+    {
+      "id": "R-12.a",
+      "implementation": "GitHub Actions同时监听push和pull_request并保留workflow_dispatch，未跳过必需检查。",
+      "evidence": "E-CI：实际run事件/SHA和job/step结果；ci.yml。"
+    },
+    {
+      "id": "R-12.b",
+      "implementation": "frontend容器npm ci→eslint→tsc→Vitest，生产Docker单独next build。",
+      "evidence": "E-CI frontend+integration构建；E-FE58例。"
+    },
+    {
+      "id": "R-12.c",
+      "implementation": "Maven测试镜像连接真实隔离MySQL执行verify并package，生产镜像构建JAR。",
+      "evidence": "E-CI backend；E-JAVA26例；E-CLEAN。"
+    },
+    {
+      "id": "R-12.d",
+      "implementation": "后端覆盖顺序/每阶段中断/事务；前端覆盖多任务反序响应、queryError≠执行失败及生命周期。",
+      "evidence": "E-JAVA：Pipeline/DatabaseIntegrationTest；E-FE：use-tasks及submission/upload/session测试。"
+    },
+    {
+      "id": "R-12.e",
+      "implementation": "源码ZIP保留完整.github/workflows/ci.yml及原检查脚本，逐blob对照。",
+      "evidence": "E-PACK：protectedsource与source-tree-index完整性。"
+    },
+    {
+      "id": "R-13.0",
+      "implementation": "完整应用源码、锁文件、V1～V4结构/种子、CI、Compose、README；外部版本清单分开验收与交付commit。",
+      "evidence": "E-PACK实际entries/blob/ZIPhash；E-CLEAN从ZIP运行。"
+    },
+    {
+      "id": "R-13.1",
+      "implementation": "README列版本、结构、全部容器构建/测试/启动和同源Next→Java→MySQL连接。",
+      "evidence": "E-DOC：技术版本/结构/构建测试/连接；E-CLEAN实际命令。"
+    },
+    {
+      "id": "R-13.2",
+      "implementation": ".env.example无真实凭据，Flyway初始化，包内demo和资源重做输入/来源。",
+      "evidence": "E-PACK敏感项/文件完整性；E-CLEAN空库；E-UPGRADE V3→V4。"
+    },
+    {
+      "id": "R-13.3",
+      "implementation": "README接口表和OpenAPI描述字段、Task/Step状态、快照延迟/单线程后台方式。",
+      "evidence": "E-DOC：specs/api.yaml+README；E-API/E-AUTH逐接口实测。"
+    },
+    {
+      "id": "R-13.4",
+      "implementation": "README五分钟演示及可复制simulation请求覆盖成功、三阶段失败、慢处理、多个任务和刷新。",
+      "evidence": "E-API：test05/06/07；E-AUTH阶段场景；E-MEDIA操作记录。"
+    },
+    {
+      "id": "R-13.5",
+      "implementation": "README阐明访客/注册账户、owner隔离、改昵称/密码及恢复历史的演示方式。",
+      "evidence": "E-DOC身份章节；E-AUTH/E-AUI实测同方案。"
+    },
+    {
+      "id": "R-13.6",
+      "implementation": "完成与限制分列；记录AI墙钟与人工低置信估计；明确重启遗留任务INTERRUPTED且不自动续跑。",
+      "evidence": "E-DOC：effort/README限制；E-JAVA：restartClosesOnlyNonterminalTasks。"
+    },
+    {
+      "id": "R-13.7",
+      "implementation": "提供具体部署、成套DB/文件备份与隔离恢复/匹配schema回滚步骤，不删除产品卷。",
+      "evidence": "E-DOC：docs/delivery.md；E-UPGRADE仅证明升级，不冒称本轮生产恢复演练。"
+    },
+    {
+      "id": "R-13.8",
+      "implementation": "声明Codex多角色任务/契约/所有权、作者测试→独立验证→只读审阅→Leader复验；说明实际缓存/身份竞态修正。",
+      "evidence": "E-DOC：README/effort；E-JAVA并发升级测试及E-AUI真实门控；不交私人聊天。"
+    },
+    {
+      "id": "R-13.9",
+      "implementation": "原创MIT范围与第三方分开，ReactBits保留全文MIT+Commons Clause；照片/山水/Pillow分别登记，不复制参考仓库业务。",
+      "evidence": "E-PROV：源码/entries审阅；THIRD-PARTY-NOTICES、LICENSE、docs/assets/provenance.json。"
+    },
+    {
+      "id": "R-14.a",
+      "implementation": "默认命令docker compose up --build即三服务及健康依赖/持久化卷。",
+      "evidence": "E-CLEAN：从候选ZIP在全新项目/空卷执行同命令带detach/wait选项。"
+    },
+    {
+      "id": "R-14.b",
+      "implementation": "前后端多阶段Dockerfile固定digest、非root应用用户、示例配置和准确命令均随包。",
+      "evidence": "E-PACK全部Dockerfile和envexample；E-CLEAN构建/启动。"
+    },
+    {
+      "id": "R-14.c",
+      "implementation": "空库Flyway V1～V4自动迁移；固定分类/四模板/本地封面和结果无需手动导入。",
+      "evidence": "E-CLEAN空卷初始化与localmedia；E-UPGRADE旧库升级。"
+    },
+    {
+      "id": "R-14.d",
+      "implementation": "源码包可直接读，容器本地启动，无公网地址依赖；实际GIF展示本地页面。",
+      "evidence": "E-PACK/E-CLEAN/E-MEDIA；未部署公网。"
+    },
+    {
+      "id": "SUB.a",
+      "implementation": "提供完整源码ZIP和可复制原渠道提交文字，私库链接仅作为备选。",
+      "evidence": "E-PACK+外部提交说明；实际交卷由作者完成。"
+    },
+    {
+      "id": "SUB.b",
+      "implementation": "原题倒计时作为历史快照，不自行约定截止日；deadline=null。",
+      "evidence": "E-DOC提交说明；本轮未替作者承诺提交日期。"
+    },
+    {
+      "id": "SUB.c",
+      "implementation": "交付清单核对附件总数不超过6且每个严格小于100000000字节，记录SHA256。",
+      "evidence": "E-PACK外部manifest附件列表和实际字节。"
+    },
+    {
+      "id": "SUB.d",
+      "implementation": "交卷前确认commit和附件hash；交卷由作者操作，提交后停止修改约定版本。",
+      "evidence": "E-DOC提交说明；本轮未交卷。"
+    },
+    {
+      "id": "ACC.a",
+      "implementation": "README为独立入口，完整源码/容器入口/锁/素材/测试/许可可读。",
+      "evidence": "E-PACK entries；E-CLEAN实际按包运行；E-REVIEW最终入口审阅。"
+    },
+    {
+      "id": "ACC.b",
+      "implementation": "项目依赖、构建、Java/前端/API/浏览器测试和录制转码均在容器；宿主仅Git/文本/元数据编排。",
+      "evidence": "E-CI/E-CLEAN/E-MEDIA记录镜像/命令；不在宿主安装项目依赖。"
+    },
+    {
+      "id": "ACC.c",
+      "implementation": "报告逐条区分源码、作者测试、独立运行和文档事实，绑定准确版本/环境/时间/结果。",
+      "evidence": "本报告87行+证据索引；E-REVIEW核对。"
+    },
+    {
+      "id": "ACC.d",
+      "implementation": "失败首轮及修复保留，不把环境问题算行为Red；硬件GPU/真实设备/生产安全等未测明确列出。",
+      "evidence": "E-AUI首轮7pass+1 harnessfail、受影响复验；E-CI保留实际失败；E-REVIEW。"
+    },
+    {
+      "id": "U-01",
+      "implementation": "注册将当前guest同userId原子升级、保素材/任务；旧session撤销，重复邮箱不半升级。",
+      "evidence": "E-JAVA：fullLifecycle/duplicateEmail/concurrentGuestUpgrade；E-AUTH1/2；E-AUI375px；E-UPGRADE。"
+    },
+    {
+      "id": "U-02",
+      "implementation": "登录本地账户回同owner历史；密码错误统一AUTH_INVALID，其他访客不被合并。",
+      "evidence": "E-AUTH3/5/6；E-AUI登录/退出/重登历史。"
+    },
+    {
+      "id": "U-03",
+      "implementation": "logout撤销当前会话并签新访客，旧token不能再读私图/任务。",
+      "evidence": "E-JAVA：logoutWithoutLiveCookieStillReturnsFreshGuest；E-AUTH6/7；E-AUI。"
+    },
+    {
+      "id": "U-04",
+      "implementation": "账户页展示昵称/未验证邮箱，支持改昵称、验证旧密码后改密；改密使全部旧会话失效。",
+      "evidence": "E-AUTH4/7；E-AUI375px全流程；E-REVIEW账户图。"
+    },
+    {
+      "id": "U-05",
+      "implementation": "Header清晰标注访客并提供登录/注册入口，账户Link可进入设置和个人作品。",
+      "evidence": "E-AUI真实role/label导航；E-REVIEW桌面/小屏header。"
+    },
+    {
+      "id": "U-06",
+      "implementation": "持久全局认证队列跨对话框/路由序列化，generation隔离查询/旧401/上传/POST，未知结果GET恢复不重复POST。",
+      "evidence": "E-AUI八场景真实网络cookie/已执行响应门控；E-FE account-lifecycle。"
+    },
+    {
+      "id": "U-07",
+      "implementation": "默认仍POSTsession创建guest，不需要注册即可真实上传/制作/历史。",
+      "evidence": "E-API原八例；E-AUTHguest；E-AUI先guest制作再注册。"
+    },
+    {
+      "id": "MEDIA-01",
+      "implementation": "首页真实鼠标移动录制山水局部由雾变清晰及回雾，连续原生动效无需控制按钮。",
+      "evidence": "E-MEDIA：home-ink.gif及原录制元数据；E-REVIEW成片。"
+    },
+    {
+      "id": "MEDIA-02",
+      "implementation": "真实文件chooser→Java上传→202→三阶段→结果/历史，另有指定失败与成功并存。",
+      "evidence": "E-MEDIA：creation-history.gif、任务/步骤快照和原录制元数据。"
+    },
+    {
+      "id": "OPEN-01",
+      "implementation": "审计当前分发与全部可达refs的有限秘密模式/已知资料披露；当前源码包过滤私人参考，保留来源许可，完整历史公开仍需另行处置。",
+      "evidence": "E-PROV历史审阅+E-PACK；不宣称可直接把原仓库切public，不改可见性/不重写历史。"
+    }
+  ]
+}

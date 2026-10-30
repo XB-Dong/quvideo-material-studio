@@ -404,6 +404,36 @@
         "sha256": "7cff2d9b3370badb7b35ac460102a10f8e4f55f63793ccc0bc2543ab285fc6f7",
         "bytes": 30404
       }
+    ],
+    "historicalRegistryUrls": [
+      {
+        "name": "DitherVeil",
+        "registryUrl": "https://reactbits.dev/r/DitherVeil-TS-CSS.json"
+      },
+      {
+        "name": "GlowCursor",
+        "registryUrl": "https://reactbits.dev/r/GlowCursor-TS-CSS.json"
+      },
+      {
+        "name": "RippleDistortion",
+        "registryUrl": "https://reactbits.dev/r/RippleDistortion-TS-CSS.json"
+      },
+      {
+        "name": "HalftoneReveal",
+        "registryUrl": "https://reactbits.dev/r/HalftoneReveal-TS-CSS.json"
+      },
+      {
+        "name": "OrbitImages",
+        "registryUrl": "https://reactbits.dev/r/OrbitImages-TS-CSS.json"
+      },
+      {
+        "name": "PixelTrail",
+        "registryUrl": "https://reactbits.dev/r/PixelTrail-TS-CSS.json"
+      },
+      {
+        "name": "ElectricBorder",
+        "registryUrl": "https://reactbits.dev/r/ElectricBorder-TS-CSS.json"
+      }
     ]
   },
   "historicalSourceMetadata": {
