@@ -25,3 +25,6 @@
 本作者未运行真实页面、生产构建、GPU/软件性能或独立G01/G02；不能由类型检查推断实际动效通过。四卡/电弧/Glow默认为本地native视觉适配，不声称未mounted的上游四shader已执行；Orbit仍为真实上游adapter。背景图需Leader先集成Asset提交再部署。请独立检查同画面清晰度、边缘差异、卡片局部图像/点阵表现、truecoarse首tap、资源与预算及原业务。
 
 已知优先复查：软件Canvas2D混合成本、同图新Image的实际请求/缓存计费、30秒生命周期，以及淡墨在真实视窗中的可见程度。任何视觉/舒适问题仍由原rootTaskId修复，不把未测写成通过。
+
+
+独立Acceptance源码语义提醒已接受并修正：Dither/Halftone不再只叠彩点。基于同源照片亮度创建一次缓存网点/方点纸面，hover以羽化透明窗显露底层真实照片，细方点与粗圆点分别可辨；getImageData仅在图片加载/尺寸变化缓存生成时一次，指针帧无readback。此修正后第三次frontend-check lint/typecheck/31tests通过。真实运行仍待独立验收。

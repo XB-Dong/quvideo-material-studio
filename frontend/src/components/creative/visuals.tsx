@@ -212,6 +212,9 @@ export function CardVisual({ id, src }: { id: string; src: string }) {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
     const image = new Image();
+    const pattern = document.createElement("canvas");
+    pattern.width = 0;
+    const pc = pattern.getContext("2d", { willReadFrequently: true });
     let ready = false,
       dead = false,
       raf = 0,
@@ -222,9 +225,47 @@ export function CardVisual({ id, src }: { id: string; src: string }) {
     const particles: { x: number; y: number; t: number }[] = [];
     let phase = 0;
     const resize = () => {
-      const b = canvas.getBoundingClientRect();
-      canvas.width = Math.round(b.width);
-      canvas.height = Math.round(b.height);
+      const rect = canvas.getBoundingClientRect();
+      const w = Math.round(rect.width),
+        h = Math.round(rect.height);
+      if (canvas.width === w && canvas.height === h && pattern.width === w)
+        return;
+      canvas.width = w;
+      canvas.height = h;
+      if (!ready || !pc || !w || !h) return;
+      pattern.width = w;
+      pattern.height = h;
+      if (kind !== "electric" && kind !== "proximity") return;
+      const scale = Math.max(w / image.width, h / image.height);
+      pc.drawImage(
+        image,
+        (w - image.width * scale) / 2,
+        (h - image.height * scale) / 2,
+        image.width * scale,
+        image.height * scale,
+      );
+      const pixels = pc.getImageData(0, 0, w, h).data;
+      pc.fillStyle = kind === "electric" ? "#e9e6f4" : "#f1edf5";
+      pc.fillRect(0, 0, w, h);
+      const step = kind === "electric" ? 6 : 12;
+      for (let py = step / 2; py < h; py += step)
+        for (let px = step / 2; px < w; px += step) {
+          const offset = (Math.floor(py) * w + Math.floor(px)) * 4;
+          const light =
+            (pixels[offset] * 0.2126 +
+              pixels[offset + 1] * 0.7152 +
+              pixels[offset + 2] * 0.0722) /
+            255;
+          const size = Math.max(0.5, (1 - light) * step * 0.53);
+          pc.fillStyle = kind === "electric" ? "#645789" : "#45405f";
+          if (kind === "electric")
+            pc.fillRect(px - size, py - size, size * 1.8, size * 1.8);
+          else {
+            pc.beginPath();
+            pc.arc(px, py, size, 0, Math.PI * 2);
+            pc.fill();
+          }
+        }
     };
     const frame = (time: number) => {
       raf = 0;
@@ -281,34 +322,22 @@ export function CardVisual({ id, src }: { id: string; src: string }) {
               8,
             );
           }
-        } else {
-          const step = kind === "electric" ? 7 : 14;
-          for (
-            let px = Math.max(0, x - 85);
-            px < Math.min(w, x + 85);
-            px += step
-          ) {
-            for (
-              let py = Math.max(0, y - 85);
-              py < Math.min(h, y + 85);
-              py += step
-            ) {
-              const distance = Math.hypot(px - x, py - y);
-              if (distance > 85) continue;
-              ctx.fillStyle =
-                kind === "electric"
-                  ? "rgba(181,169,247,.42)"
-                  : "rgba(59,53,117,.5)";
-              const size =
-                (1 - distance / 85) * (kind === "electric" ? 3.5 : 5);
-              if (kind === "electric") ctx.fillRect(px, py, size, size);
-              else {
-                ctx.beginPath();
-                ctx.arc(px, py, size, 0, Math.PI * 2);
-                ctx.fill();
-              }
-            }
-          }
+        } else if (pc && pattern.width) {
+          ctx.drawImage(pattern, 0, 0);
+          ctx.globalCompositeOperation = "destination-out";
+          const radius = kind === "electric" ? 95 : 115;
+          const reveal = ctx.createRadialGradient(
+            x,
+            y,
+            radius * 0.3,
+            x,
+            y,
+            radius,
+          );
+          reveal.addColorStop(0, "rgba(255,255,255,1)");
+          reveal.addColorStop(1, "rgba(255,255,255,0)");
+          ctx.fillStyle = reveal;
+          ctx.fillRect(x - radius, y - radius, radius * 2, radius * 2);
         }
         ctx.restore();
       }
@@ -348,6 +377,7 @@ export function CardVisual({ id, src }: { id: string; src: string }) {
     window.addEventListener("shuying-card-active", deactivate);
     image.onload = () => {
       ready = true;
+      resize();
     };
     image.src = src;
     link.addEventListener("pointermove", move, { passive: true });
@@ -365,7 +395,7 @@ export function CardVisual({ id, src }: { id: string; src: string }) {
       link.removeEventListener("focus", enter);
       link.removeEventListener("blur", leave);
       window.removeEventListener("scroll", leave);
-      canvas.width = canvas.height = 0;
+      canvas.width = canvas.height = pattern.width = pattern.height = 0;
     };
   }, [enabled, id, src]);
   return (
