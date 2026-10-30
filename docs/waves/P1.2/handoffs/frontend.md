@@ -36,3 +36,6 @@ Leader于e9becdb冻结P1.2-1.0.1/决定0014后，仅History结果卡片的img sr
 ## P12-ROUTE 首轮美学修复
 
 采纳独立Reviewer实际多帧发现的major：原始FLIP将竖卡片按X/Y分别缩放到横示例图，过程使人脸非等比。修正为一个公共img固定层的left/top/width/height260ms几何衔接，其object-fit:cover始终按自然比例裁切，不再使用各轴scale。此层仍不拦操作，取消入口原样；一个短几何动画的真实交互成本与多帧由独立验收复核。自有生命周期测试额外守卫关键帧含尺寸且无transform非等比缩放，不替代实际美学复验。
+
+
+Reviewer实际ERROR截图minor已采纳：无preview时不渲染hover胶囊，JPEG/PNG/格式错误说明不被覆盖；原label/input和error语义未改。已实际view该截图确认触发。最终对应容器检查继续由实际session输出记录，不改独立故障边界fixture。

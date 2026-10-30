@@ -182,13 +182,15 @@ export function UploadSlot({
         >
           <rect x="2" y="2" width="296" height="146" rx="12" pathLength="100" />
         </svg>
-        <span className="upload-overlay">
-          {slot.status === "UPLOADING"
-            ? "正在上传…"
-            : slot.status === "READY"
-              ? "点击替换"
-              : "选择照片"}
-        </span>
+        {slot.preview && (
+          <span className="upload-overlay">
+            {slot.status === "UPLOADING"
+              ? "正在上传…"
+              : slot.status === "READY"
+                ? "点击替换"
+                : "选择照片"}
+          </span>
+        )}
       </label>
       <div className="p12-upload-status" aria-live="polite" key={slot.status}>
         {slot.status === "READY" ? (
