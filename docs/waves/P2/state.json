@@ -27,7 +27,11 @@
     "estimateNotMeasured": true,
     "recordedPriorWaveWallMinutes": 500.59
   },
-  "activeDevelopmentAgents": [],
+  "activeDevelopmentAgents": [
+    "/root/p2_backend",
+    "/root/p11_frontend",
+    "/root/p11_acceptance"
+  ],
   "activePreparationReviewers": [],
   "maxNativeWorkers": 3,
   "actualProvider": null,
@@ -52,8 +56,8 @@
       "waveId": "P2",
       "role": "Leader",
       "status": "completed",
-      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
-      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
+      "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
+      "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",
       "dependencies": [],
       "runtimeDependencies": [],
@@ -76,9 +80,9 @@
       "rootTaskId": "P2-BE-USER",
       "waveId": "P2",
       "role": "Backend",
-      "status": "ready_after_dependencies",
-      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
-      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
+      "status": "in_progress",
+      "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
+      "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-BASE"
@@ -114,9 +118,9 @@
       "rootTaskId": "P2-FE-USER",
       "waveId": "P2",
       "role": "Frontend",
-      "status": "ready_after_dependencies",
-      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
-      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
+      "status": "in_progress",
+      "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
+      "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-BASE"
@@ -156,8 +160,8 @@
       "waveId": "P2",
       "role": "Reviewer",
       "status": "ready_after_dependencies",
-      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
-      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
+      "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
+      "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-BASE"
@@ -186,8 +190,8 @@
       "waveId": "P2",
       "role": "Leader",
       "status": "ready_after_dependencies",
-      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
-      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
+      "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
+      "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-BASE"
@@ -226,9 +230,9 @@
       "rootTaskId": "P2-VERIFY",
       "waveId": "P2",
       "role": "Acceptance",
-      "status": "ready_after_dependencies",
-      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
-      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
+      "status": "test_design_in_progress_runtime_dependencies_pending",
+      "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
+      "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-BE-USER",
@@ -274,8 +278,8 @@
       "waveId": "P2",
       "role": "Acceptance",
       "status": "ready_after_dependencies",
-      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
-      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
+      "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
+      "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-VERIFY"
@@ -304,8 +308,8 @@
       "waveId": "P2",
       "role": "Leader",
       "status": "ready_after_dependencies",
-      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
-      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
+      "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
+      "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-VERIFY",
@@ -337,8 +341,8 @@
       "waveId": "P2",
       "role": "Reviewer",
       "status": "ready_after_dependencies",
-      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
-      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
+      "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
+      "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-REPORT"
@@ -366,8 +370,8 @@
       "waveId": "P2",
       "role": "Leader",
       "status": "ready_after_dependencies",
-      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
-      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
+      "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
+      "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-REVIEW",
@@ -403,5 +407,6 @@
   "preparationRepairRounds": 1,
   "firstPreparationTimestampObserved": "2026-10-30T16:22:47.4078668+08:00",
   "preparationStartedAt": null,
-  "executionPreparationSeal": "66fdfe40c9977e38d05f9753a60e494cd9901db9"
+  "executionPreparationSeal": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
+  "executionBaseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6"
 }

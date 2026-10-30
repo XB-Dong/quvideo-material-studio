@@ -5,7 +5,7 @@
 - waveId: P2
 - role: Leader
 - status: not_dispatched
-- baseCommit: 66fdfe40c9977e38d05f9753a60e494cd9901db9
+- baseCommit: 8c9f91af73d0ad5203162b504856b9f02b2990d6
 - baseCommitMeaning: Preparation product reference only; Leader must replace with current exact integrated SHA and verify ownership/dependencies before authorized dispatch
 - specVersion: P2-1.0.0
 - requirementIds: P2-REQ-01, P2-USER-01, P2-PACK-01
