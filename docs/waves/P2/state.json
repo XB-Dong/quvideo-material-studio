@@ -36,9 +36,8 @@
   "newDevelopmentWorktreesCreated": false,
   "applicationExecutedDuringPreparation": false,
   "productChangedDuringPreparation": false,
-  "preparationReview": "pending",
+  "preparationReview": "changes_addressed_pending_recheck",
   "preparationChecks": "pending",
-  "officialClauseAuditCount": 87,
   "submissionGate": "pending_execution",
   "publicReadinessGate": "pending_audit",
   "publicVisibilityChangeAuthorized": false,
@@ -144,9 +143,10 @@
         "frontend/src/lib/api.ts (auth-error compatibility transfer only)",
         "frontend/src/lib/session-generation.ts (identity transition transfer only)",
         "frontend/src/components/account*.test.tsx",
-        "docs/waves/P2/handoffs/frontend.md"
+        "docs/waves/P2/handoffs/frontend.md",
+        "frontend/src/app/api/[...path]/route.ts (PATCH export only; original GET/POST and generic proxy unchanged)"
       ],
-      "goal": "Implement explicit guest/login/register/account UI, profile/password and logout. Preserve guest flow and accepted visuals. Persist one global auth mutation lock across modal closure/routes, reconcile unknown outcomes, distinguish AUTH_INVALID from expired session and prevent stale cookie/data/private-view pollution. Add focused behavior tests; preserve original assertions.",
+      "goal": "Implement explicit guest/login/register/account UI, profile/password and logout. Preserve guest flow and accepted visuals. Persist one global auth mutation lock across modal closure/routes, reconcile unknown outcomes, distinguish AUTH_INVALID from expired session and prevent stale cookie/data/private-view pollution. Add focused behavior tests; preserve original assertions. Explicitly export PATCH through the existing Next catch-all proxy so profile updates reach Java.",
       "budgetMinutes": 120,
       "cumulativeRepairCount": 0
     },
@@ -214,9 +214,10 @@
         "docs/audit/effort.md",
         "THIRD-PARTY-NOTICES.md",
         "LICENSE (after provenance disposition)",
-        "specs/api.yaml"
+        "specs/api.yaml",
+        "externalDeliveryRoot/candidate/<exact-sourceSHA>/source-candidate.zip and entries/manifest (Leader only before VERIFY)"
       ],
-      "goal": "Produce one evaluator-friendly entry, accurate versions/API/account behavior, container commands and demos. Separate estimates from measured intervals and historical evidence. Apply provenance dispositions with explicit ownership; no broad relicensing.",
+      "goal": "Produce one evaluator-friendly entry, accurate versions/API/account behavior, container commands and demos. Separate estimates from measured intervals and historical evidence. Apply provenance dispositions with explicit ownership; no broad relicensing. Before VERIFY, Leader generates the frozen candidate ZIP plus entries/manifest at externalDeliveryRoot/candidate/<exactSHA>/source-candidate.zip.",
       "budgetMinutes": 60,
       "cumulativeRepairCount": 0
     },
@@ -263,7 +264,7 @@
         "docs/waves/P2/evidence/acceptance/**",
         "docs/waves/P2/handoffs/acceptance.md"
       ],
-      "goal": "Verify all checklist clauses using exact frozen source. Run old/new core and account checks in containers, independent account/guest isolation, stale response/cookie behavior and V3-to-V4 migration. Test Leader's candidate ZIP in a fresh external directory/isolated Compose project+port+empty volumes. Do not stop production3000 or delete existing volumes. Keep browser/performance exclusive; report actual evidence per clause, not only a green job.",
+      "goal": "Verify all checklist clauses using exact frozen source. Run old/new core and account checks in containers, independent account/guest isolation, stale response/cookie behavior and V3-to-V4 migration. Test Leader's candidate ZIP in a fresh external directory/isolated Compose project+port+empty volumes. Do not stop production3000 or delete existing volumes. Keep browser/performance exclusive; report actual evidence per clause, not only a green job. Verify profile PATCH through the frontend origin (200/400/401/403 and error/cookie pass-through), not only direct Java.",
       "budgetMinutes": 90,
       "cumulativeRepairCount": 0
     },
@@ -289,7 +290,9 @@
       "allowedPaths": [
         "external delivery GIF/source recordings",
         "docs/waves/P2/evidence/acceptance/media-manifest.json",
-        "docs/waves/P2/handoffs/acceptance.md"
+        "docs/waves/P2/handoffs/acceptance.md",
+        "docs/submission/media/home-ink.gif",
+        "docs/submission/media/creation-history.gif"
       ],
       "goal": "After performance browsers exit and source is frozen, record real homepage ink cursor clarity plus upload/task/history GIFs. Container-only capture/encoding; record exact source/actions/fixtures/tool metadata, no private data or effect annotations. Each <100MB, target <=20MB; no fake stages or motion.",
       "budgetMinutes": 45,
@@ -385,9 +388,14 @@
         "root integration and shared delivery documents",
         "external final ZIP/GIF/submission note/user report/manifest"
       ],
-      "goal": "Resolve all required findings, verify final integrated source and required CI, archive source, inspect/extract/test equivalence and record external SHA256 manifest. Keep attachment count <=6 and each <100000000 bytes. Give usable materials and stop. No exam submission, messages, public visibility changes, history rewriting or paid services.",
+      "goal": "Resolve all required findings, verify final integrated source and required CI, archive source, inspect/extract/test equivalence and record external SHA256 manifest. Keep attachment count <=6 and each <100000000 bytes. Give usable materials and stop. No exam submission, messages, public visibility changes, history rewriting or paid services. Compare final versus verified candidate executable trees/commands/migrations/assets and archive entries; executable changes require rerun, documentary-only differences are explicitly recorded.",
       "budgetMinutes": 30,
       "cumulativeRepairCount": 0
     }
-  ]
+  ],
+  "clauseAuditCount": 87,
+  "officialRequirementClauseCount": 69,
+  "submissionAndAcceptanceRuleCount": 8,
+  "userRequirementCount": 10,
+  "externalDeliveryRoot": "C:/Users/dongx/Documents/ChatGPT/quvideo-material-studio-delivery/P2"
 }

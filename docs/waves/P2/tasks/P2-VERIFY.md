@@ -40,3 +40,8 @@ One owner per concurrent file. Root dependencies/CI/Compose/specs/numbering rema
 ## Handoff
 
 Write the assigned handoff under docs/waves/P2/handoffs/ with exact base and implementation SHA, changed paths, spec/requirement IDs, real commands/environment/time/exit codes, evidence references, failures/findings/limits and next steps. Reviewer only writes assigned review files. Leader integrates and signs final completion.
+
+## Candidate and proxy boundary
+
+Leader supplies frozen candidate ZIP before dispatch. Verify profile PATCH through the frontend same-origin URL including200/400/401/403, error code and cookies, while old GET/POST remain. Bind clean-room findings to this exact archive SHA, not a later final archive.
+

@@ -10,7 +10,7 @@
 | USER | 注册/登录/退出/昵称与邮箱/改资料/改密、访客保留、注册作品保留、旧session撤销、未知POST和迟到cookie/数据/401隔离，V4升级 | BE/FE作者测试及Acceptance独立实际场景，不拿旧匿名证据代替 |
 | CORE | 三阶段顺序/边界/失败中断/查询只读/终态；真实上传/受理异步、多任务、查询异常≠失败、停止/取消/身份隔离、刷新/预览 | 现有Java/FE/API及独立实际记录；Acceptance |
 | CI | 精确候选前端lint/type/test/build、Java真实MySQL测试/package及所有现有CI必需项通过，无skip或放宽 | CI URL/SHA/jobs/必要产物/exit；Leader核对 |
-| CLEAN | 从最终ZIP在仓库外全新目录、独立Compose项目/空卷构建并up --build，健康/本地素材/初始化/闭环通过；不依赖现有app/数据库 | 容器版本/命令/源/时间/exit及日志摘要；Acceptance |
+| CLEAN | VERIFY前Leader生成候选ZIP并绑定SHA，先从该包在仓库外全新目录、独立Compose项目/空卷构建并up --build，健康/本地素材/初始化/闭环通过；不依赖现有app/数据库；SEAL再核最终包可执行树/运行命令等价及entries/hash，改变则重验 | 容器版本/命令/源/时间/exit及日志摘要；Acceptance |
 | MEDIA | 两个真实GIF：首页山水鼠标擦雾为重点，另含上传/任务/历史；可播放、不过度压缩、无敏感数据，Reviewer看整段 | MEDIA要求/记录/元数据/hash；Acceptance录，Final Reviewer审 |
 | PACK | ZIP包含源/锁/SQL种子/demo/CI/Compose/README/必要许可，无凭据/缓存/运行数据；每附件<100MB，总<=6；哈希/解压复验 | archive entries/检查/manifest；Leader |
 | READ | 私库链接不冒称可读；默认ZIP实际可读；若改为只交repo则有特定评估者授权验证 | 提交说明与权限事实；Leader |

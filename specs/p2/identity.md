@@ -5,7 +5,7 @@ specVersion：P2-1.0.0，准备规格。用户已明确选择“注册、登录�
 ## 用户可见流程
 
 - 未登录可直接浏览、上传、提交、看本访客历史。顶部清楚显示“访客”及登录/注册入口，不再只藏在“当前身份”说明里。
-- 注册：昵称、邮箱、密码/确认，成功后成为注册账户，当前访客userId不变，已有上传、排队/运行/完成任务保留；会话令牌轮换。注册重复提交由前端锁与DB唯一约束处理。
+- 注册：昵称、邮箱、密码/确认，成功后成为注册账户，当前访客userId不变，已有上传、排队/运行/完成任务保留；会话令牌轮换。注册重复提交由前端锁与DB唯一约束处理，升级撤销该user的全部旧访客sessions后签新token。
 - 登录：邮箱+密码；返回该账户的个人记录。登录已有账户不自动合并当前访客作品，提交前提示这个边界；原访客后台任务仍由Java执行，不因换账户取消。
 - 个人中心/账户设置：昵称、登录邮箱、当前账户状态、个人作品入口、修改昵称、校验当前密码后修改密码、退出。邮箱是本地登录标识，不声称已邮件验证；不显示密码/哈希/token。
 - 退出：服务端撤销当前会话并返回新访客身份，立即清理旧账户界面、缓存/未完成请求及私有预览。重新登录同账户可恢复其后台记录。
@@ -24,6 +24,8 @@ specVersion：P2-1.0.0，准备规格。用户已明确选择“注册、登录�
 | POST /api/auth/logout | 当前cookie，无userId | 200新GUEST Session；旧cookie对应服务端session撤销；未知/过期会话也可安全落到新访客，不恢复旧账户 |
 | PATCH /api/account/profile | displayName | 200 Session；仅ACCOUNT可用，访客403 ACCOUNT_REQUIRED；邮箱只读，昵称不改变owner |
 | POST /api/account/password | currentPassword,newPassword | 200同ACCOUNT新Session；错旧密400可理解原因；撤销此账户全部旧sessions后签新会话；旧密码/旧token均不可用 |
+
+Next同源消费路径：Frontend独占frontend/src/app/api/[...path]/route.ts的PATCH导出扩展，继续调用现有lib/proxy通用method/body转发，不改原GET/POST。Backend实现PATCH /api/account/profile后，Acceptance必须通过localhost前端入口验证账户200、访客403、过期401、非法字段400、Origin403及错误code/cookie透传，不能只测Java直连。此为启动后的开发任务，本轮不修改route。
 
 所有写接口沿用同源Origin检查/HttpOnly/SameSite=Lax/Path=/与配置Secure；凭据不放URL、localStorage、日志或返回JSON。服务端从session识别user，不信请求userId。
 

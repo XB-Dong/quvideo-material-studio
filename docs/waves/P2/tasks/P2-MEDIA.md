@@ -30,6 +30,8 @@ Use every mapped clause's observable criterion in requirement-checklist.json and
 ## Allowed write paths
 
 - external delivery GIF/source recordings
+- docs/submission/media/home-ink.gif (Acceptance exclusive owner)
+- docs/submission/media/creation-history.gif (Acceptance exclusive owner)
 - docs/waves/P2/evidence/acceptance/media-manifest.json
 - docs/waves/P2/handoffs/acceptance.md
 

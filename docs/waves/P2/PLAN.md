@@ -33,7 +33,7 @@ Leader先逐条审REQUIREMENTS-MATRIX，给每项未满足/未验证指定task�
 | P2-BE-USER | Backend | BASE | Java注册/登录/退出/资料/密码、会话与V4、作者行为测试 |
 | P2-FE-USER | Frontend | BASE冻结契约，运行依赖BE | 明确访客/账户入口、全账户流程、个人作品与身份切换安全、作者测试 |
 | P2-AUDIT | Reviewer（Backend释放后） | BASE，运行依赖BE完成 | 来源/许可/当前树与历史、代码只读审阅，Leader处置 |
-| P2-DOCS | Leader | BASE；最终同步BE/FE/AUDIT | README、评估者说明、真实投入与AI流程 |
+| P2-DOCS | Leader | BASE；最终同步BE/FE/AUDIT | README、评估者说明、真实投入与AI流程；VERIFY前Leader生成冻结候选ZIP |
 | P2-VERIFY | Acceptance | BE/FE、DOCS候选冻结、AUDIT影响处置 | 核心/账户/迁移、容器测试CI与独立空卷/ZIP验证 |
 | P2-MEDIA | Acceptance | VERIFY性能窗口结束 | 首页山水、制作/历史真实GIF及录制元数据 |
 | P2-REPORT | Leader | VERIFY、AUDIT、MEDIA | 给用户看的每个原题条款及账户/动图要求的证据报告 |

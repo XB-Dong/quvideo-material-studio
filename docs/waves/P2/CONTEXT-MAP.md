@@ -14,6 +14,7 @@
 | AGENTS.md、NEXT-WAVES.md、CONSTITUTION.md | 当前授权入口 | 记录仅P2准备；不沿用P1.2自动启动授权 |
 | backend账户模块、Identity/Api/Db、V4__accounts.sql（启动后） | 后端账户开发 | 注册/登录/退出/资料/密码/会话事务，V4扩展现有库，原任务/素材owner不改 |
 | frontend账户页面、providers/shell及lib账户兼容（启动后） | 用户入口/生命周期 | 明确访客、表单/个人中心/账户动作与旧请求隔离，保护原上传/提交/轮询 |
+| frontend/src/app/api/[...path]/route.ts（启动后） | Next同源消费 | Frontend唯一owner补PATCH导出，沿用lib/proxy；Acceptance经前端入口验资料更新及错误/鉴权透传，原GET/POST保持 |
 | specs/p2/identity.md | 账户契约 | 已按确认方案冻结API、注册保留作品、登录不合并、退出撤销等语义 |
 | README.md（P2启动后） | 招聘方运行入口 | 以最终版本/命令/接口/演示/限制/投入/AI流程为主，历史阶段下沉至链接 |
 | docs/submission/（P2启动后） | 评估者提交说明与版本清单 | 源码获取、验收commit、Compose启动、演示、限制；不含内部协调信息 |

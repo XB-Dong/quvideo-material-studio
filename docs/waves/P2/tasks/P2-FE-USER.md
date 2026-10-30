@@ -34,6 +34,7 @@ Use every mapped clause's observable criterion in requirement-checklist.json and
 - frontend/src/components/account/**
 - frontend/src/app/account/**
 - frontend/src/app/account.css
+- frontend/src/app/api/[...path]/route.ts (PATCH export only, Frontend exclusive owner)
 - frontend/src/lib/types.ts (identity compatibility transfer only)
 - frontend/src/lib/api.ts (auth-error compatibility transfer only)
 - frontend/src/lib/session-generation.ts (identity transition transfer only)
@@ -47,3 +48,7 @@ One owner per concurrent file. Root dependencies/CI/Compose/specs/numbering rema
 ## Handoff
 
 Write the assigned handoff under docs/waves/P2/handoffs/ with exact base and implementation SHA, changed paths, spec/requirement IDs, real commands/environment/time/exit codes, evidence references, failures/findings/limits and next steps. Reviewer only writes assigned review files. Leader integrates and signs final completion.
+
+## Frozen proxy ownership
+
+Frontend exclusively adds PATCH export to frontend/src/app/api/[...path]/route.ts via existing lib/proxy. Original GET/POST and generic proxy semantics remain. Acceptance verifies through frontend origin including profile200/400/401/403 and code/cookie pass-through. Preparation changes no product route.

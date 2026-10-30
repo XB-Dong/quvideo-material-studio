@@ -35,6 +35,7 @@ Use every mapped clause's observable criterion in requirement-checklist.json and
 - THIRD-PARTY-NOTICES.md
 - LICENSE (after provenance disposition)
 - specs/api.yaml
+- externalDeliveryRoot/candidate/<exact-sourceSHA>/source-candidate.zip and entries/manifest (Leader, before VERIFY)
 
 ## Safeguards
 
@@ -43,3 +44,7 @@ One owner per concurrent file. Root dependencies/CI/Compose/specs/numbering rema
 ## Handoff
 
 Write the assigned handoff under docs/waves/P2/handoffs/ with exact base and implementation SHA, changed paths, spec/requirement IDs, real commands/environment/time/exit codes, evidence references, failures/findings/limits and next steps. Reviewer only writes assigned review files. Leader integrates and signs final completion.
+
+## Candidate ZIP before verification
+
+At the end of DOCS and before VERIFY, Leader produces the exact frozen candidate ZIP plus entries/manifest at externalDeliveryRoot/candidate/<40-character-sourceSHA>/source-candidate.zip. Source SHA is frozen before this step; no final SEAL dependency is required for Acceptance to obtain its candidate.

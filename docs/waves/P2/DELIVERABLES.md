@@ -15,7 +15,7 @@
 
 ## ZIP检查
 
-- 包含前后端完整可编辑源、准确锁/版本、Flyway V1/V2/V3及种子、合法本地demo/结果和水墨图、CI、容器入口、非敏感配置示例、最终README/来源与许可。
+- 包含前后端完整可编辑源、准确锁/版本、Flyway V1/V2/V3/V4账户迁移及种子、合法本地demo/结果和水墨图、CI、容器入口、非敏感配置示例、最终README/来源与许可。
 - 排除.git、node_modules、.next、target、覆盖率、runtime、数据卷/SQL备份、实际.env、token/cookie/storage-state、用户上传、工具缓存和未脱敏日志。
 - 题面参考附件/原始邮件图与内部协调报告按审计分类；为评估必需的初始化与许可不能“精简”掉。删材料若影响引用/工具路径要修正并复验。
 - 从准确deliveryCommit生成，解压新目录运行；核验entries/必需文件/排除项/字节/哈希，保留审计结果。若作合法清理的打包转换，记录精确规则，禁止无说明地与源码版本不符。
@@ -26,3 +26,9 @@
 “董信步｜疏影素材制作工作室。源码附件/仓库：……；验收commit：40位SHA。启动：docker compose up --build，浏览器http://localhost:3000。README包含三阶段可控模拟、指定阶段失败、耗时、多任务/刷新、匿名身份隔离、测试、限制及AI工作流。附件SHA256：……。”
 
 执行后替换为实际信息，未完成字段不能发给招聘方。私库链接目前不等于招聘方可读；没有授权具体账号时以ZIP交付。交卷、邮件/IM发送、邀请评估者和改public均由用户另行决定。
+
+## 候选包与最终包顺序
+
+P2-DOCS末、P2-VERIFY启动前，由Leader在已冻结准确SHA生成候选源码ZIP及entries/manifest，路径为C:/Users/dongx/Documents/ChatGPT/quvideo-material-studio-delivery/P2/candidate/<40位SHA>/source-candidate.zip；该目录在仓库外，BASE确认后才建立。Acceptance只读候选包，在同根下独立解压目录+独立Compose项目/端口/空卷运行，不等待最后SEAL才有包。
+
+P2-SEAL在完整报告/审核/CI之后生成最终ZIP，逐项核对候选与最终的可执行树、依赖锁、迁移/种子、素材、入口/命令和entries差异，以及实际字节/哈希。产品文件或运行命令改变即重新相关验收及必需完整检查；只有脱敏报告等非执行文档变化时，记录差异并核对可执行树等价，不能宣称最终ZIP本身已逐字节在此前跑过。最终包仍重做完整性/解压/清单检查；每个结论标其实际包SHA和版本。
