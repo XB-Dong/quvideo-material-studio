@@ -31,3 +31,8 @@
 ## 缩略图契约消费
 
 Leader于e9becdb冻结P1.2-1.0.1/决定0014后，仅History结果卡片的img src加thumbnail=true（保留既有query连接规则）及loading=lazy；Modal preview.resultUrl仍无改动，原PNG完整字节用于实际预览。私有图不进入公共桥缓存，Java认证/no-store/nosniff与512px/JPEG编码由Leader实现和验收。删除上传图后只让无数据空图标短入场，原blob仍立即回收。
+
+
+## P12-ROUTE 首轮美学修复
+
+采纳独立Reviewer实际多帧发现的major：原始FLIP将竖卡片按X/Y分别缩放到横示例图，过程使人脸非等比。修正为一个公共img固定层的left/top/width/height260ms几何衔接，其object-fit:cover始终按自然比例裁切，不再使用各轴scale。此层仍不拦操作，取消入口原样；一个短几何动画的真实交互成本与多帧由独立验收复核。自有生命周期测试额外守卫关键帧含尺寸且无transform非等比缩放，不替代实际美学复验。

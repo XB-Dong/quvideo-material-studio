@@ -68,6 +68,11 @@ it("cancels the public bridge immediately on identity invalidation", () => {
   state.pathname = "/templates/demo-pet";
   view.rerender(<VisualJourney />);
   expect(document.querySelector(".p12-cover-bridge")).not.toBeNull();
+  const frames = vi.mocked(HTMLElement.prototype.animate).mock
+    .calls[0][0] as Keyframe[];
+  expect(frames[0]).toHaveProperty("width");
+  expect(frames[0]).toHaveProperty("height");
+  expect(frames.every((frame) => !frame.transform)).toBe(true);
   act(() => window.dispatchEvent(new Event("session-expired")));
   expect(cancel).toHaveBeenCalledOnce();
   expect(document.querySelector(".p12-cover-bridge")).toBeNull();

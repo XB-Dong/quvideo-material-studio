@@ -180,10 +180,19 @@ export function VisualJourney() {
       const animation = image.animate(
         [
           {
-            transform: `translate(${cover.rect.left - to.left}px,${cover.rect.top - to.top}px) scale(${cover.rect.width / to.width},${cover.rect.height / to.height})`,
+            left: cover.rect.left + "px",
+            top: cover.rect.top + "px",
+            width: cover.rect.width + "px",
+            height: cover.rect.height + "px",
             opacity: 0.9,
           },
-          { transform: "none", opacity: 0 },
+          {
+            left: to.left + "px",
+            top: to.top + "px",
+            width: to.width + "px",
+            height: to.height + "px",
+            opacity: 0,
+          },
         ],
         { duration: 260, easing: "cubic-bezier(.2,.7,.2,1)" },
       );
