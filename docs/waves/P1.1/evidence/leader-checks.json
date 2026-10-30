@@ -1,0 +1,75 @@
+{
+  "recordedAt": "2026-10-30T11:35:04.537169+08:00",
+  "productSourceCommit": "6f5f156527646eac0adc00c96c641968f0f60017",
+  "checks": [
+    {
+      "name": "Java real MySQL verify",
+      "command": "docker compose -f compose.yaml -f compose.test.yaml run --build --rm backend-check",
+      "sourceCommit": "b6459dfc643770f2c053dddc751e6174f91ffe39",
+      "exitCode": 0,
+      "tests": 15,
+      "failures": 0,
+      "finishedAt": "2026-10-30T11:26:09+08:00",
+      "backendUnchangedThroughProductSource": true
+    },
+    {
+      "name": "Integrated frontend lint/type/behavior",
+      "command": "docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps frontend-check",
+      "sourceCommit": "6f5f156527646eac0adc00c96c641968f0f60017",
+      "exitCode": 0,
+      "testFiles": 6,
+      "tests": 31,
+      "failures": 0
+    },
+    {
+      "name": "Production frontend build and healthy local replacement",
+      "command": "docker compose build frontend; docker compose up --detach --no-deps --wait --wait-timeout 120 frontend",
+      "sourceCommit": "6f5f156527646eac0adc00c96c641968f0f60017",
+      "exitCode": 0,
+      "imageId": "sha256:60e662dafc5377cc1348a3a93157b354d3f44d35e994b2cb81e5cda37f3b6e25",
+      "databaseOrFileVolumeRemoved": false
+    },
+    {
+      "name": "Independent API black-box",
+      "command": "docker compose -f compose.yaml -f compose.test.yaml run --build --rm api-check",
+      "sourceCommit": "6f5f156527646eac0adc00c96c641968f0f60017",
+      "exitCode": 0,
+      "tests": 8,
+      "startedAt": "2026-10-30T11:37:48+08:00",
+      "durationSeconds": 12.008,
+      "limitation": "Leader omitted --no-deps; Compose rebuilt and replaced existing backend/frontend with same source before API checks. No volume removal. Acceptance was notified, affected browser checks repeated on final stable source. Future existing-stack checks must use --no-deps.",
+      "environment": {
+        "TESTED_COMMIT": "6f5f156527646eac0adc00c96c641968f0f60017"
+      }
+    },
+    {
+      "name": "Final paper-scene frontend lint/type/behavior",
+      "command": "docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps frontend-check",
+      "sourceCommit": "64e919aac25cacf7f1193b4a361071e5d03ef635",
+      "exitCode": 0,
+      "testFiles": 6,
+      "tests": 31,
+      "startedAt": "2026-10-30T11:40:57+08:00"
+    },
+    {
+      "name": "Revised scene production build and healthy replacement",
+      "sourceCommit": "64e919aac25cacf7f1193b4a361071e5d03ef635",
+      "command": "docker compose build frontend; docker compose up --detach --no-deps --wait --wait-timeout 120 frontend",
+      "exitCode": 0,
+      "imageId": "sha256:d069a52c91a321bf47bd5c80014e5593ba385d7ae1c9ca4a31248109446336c3",
+      "backendReplaced": false,
+      "databaseOrFileVolumeRemoved": false
+    },
+    {
+      "name": "Deliverable P1.1 default browser tool image rebuild and budget guards",
+      "command": "docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-p11-check --test budgets.test.mjs",
+      "exitCode": 0,
+      "tests": 4,
+      "failures": 0,
+      "imageId": "sha256:a1cb3b91d78f49d8ff4d96fcfb9ac90301af4d958b2b1dc244552a7517a7b08b"
+    }
+  ],
+  "independentGates": "G01 passed; local runtime comfort passed; complete G02 pending MAIL-01",
+  "remoteCI": "not_triggered_pending_repository_scoped_mail_handling",
+  "latestProductSourceCommit": "64e919aac25cacf7f1193b4a361071e5d03ef635"
+}

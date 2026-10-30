@@ -4,7 +4,7 @@
 - rootTaskId: P11-CI-MAIL
 - waveId: P1.1
 - roundId: P11-R1
-- status: prepared_not_dispatched
+- status: waiting_mailbox_connection
 - role: Leader
 - baseCommit: c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef
 - baseCommitMeaning: authorized execution source baseline; record later integrated SHAs separately
@@ -19,7 +19,7 @@
 - actualReasoningEffort: null
 - modelVerificationStatus: not_verified
 - focusedCheckInMinutes: 60_to_90
-- cumulativeRepairCount: 0_preparation_only
+- cumulativeRepairCount: 0
 - sameRootCauseReassessmentAfter: 2_unsuccessful_repairs
 
 ## Context and authorization

@@ -1,0 +1,13 @@
+{
+  "result": "pass",
+  "kind": "data_only_delivery_consistency",
+  "linksChecked": 80,
+  "functionalChecks": 22,
+  "visualChecks": 6,
+  "budgetRuns": 3,
+  "protectedBusinessUnchanged": true,
+  "aestheticGate": "passed",
+  "completeG02": "pending_MAIL_01",
+  "mailRulesApplied": false,
+  "remoteCI": "not_run_for_P1.1"
+}

@@ -1,0 +1,36 @@
+{
+  "applicationSourceCommit": "64e919aac25cacf7f1193b4a361071e5d03ef635",
+  "kind": "Actual independent browser captures, synthetic anonymous test session; no image editing",
+  "files": [
+    {
+      "file": "desktop.png",
+      "sourceFile": "accept/desktop-catalog.png",
+      "bytes": 1198409,
+      "sha256": "ebda4f876ef41a2f19320f16fefb17840ef5704f349b2064380f1771f8836970"
+    },
+    {
+      "file": "mobile.png",
+      "sourceFile": "accept/mobile-catalog.png",
+      "bytes": 378106,
+      "sha256": "c28d52cf0d85f9077fb18d113fc4a9a9bb848d31e0a78f74148e69e43e5d41a3"
+    },
+    {
+      "file": "ink-fog.png",
+      "sourceFile": "visual/ink-fog.png",
+      "bytes": 3891,
+      "sha256": "bbdf220bcf27962bceccabbc527082d2228c62602a9ebff6729b956c5c2f7039"
+    },
+    {
+      "file": "ink-clear.png",
+      "sourceFile": "visual/ink-clear.png",
+      "bytes": 7710,
+      "sha256": "d68880139f519a91f8f7966ce94cecd335b6e603b94b61a8eca7b22141a92953"
+    },
+    {
+      "file": "ink-refog.png",
+      "sourceFile": "visual/ink-refog.png",
+      "bytes": 3853,
+      "sha256": "4eba6ede85d3adc7a849a165d47eb631781e7661108aef0821dc5e9495b54e9b"
+    }
+  ]
+}

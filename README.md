@@ -1,4 +1,4 @@
-# 映作 素材制作工作室
+# 疏影 素材制作工作室
 
 小影科技 2027 校招全栈开发笔试项目，作者董信步。浏览模板、上传图片、提交后台制作任务，在等待期间继续使用网站，最后从个人历史预览结果。制作使用可控的模拟器，不调用真实 AI。
 
@@ -6,7 +6,7 @@ P1已完成浅色界面、蓝紫细节、四套本地照片、七项创意和操
 
 ## 一条命令启动
 
-当前运行的是已封存P1“映作”。[P1.1启动前准备](docs/waves/P1.1/PLAN.md)已整理“疏影”品牌、浅色水墨擦雾、多边框、真实模板卡片互动和本仓库CI邮件治理；[视觉提案](docs/waves/P1.1/references/README.md)为静态示意，产品未改、P1.1尚未启动。准备材料仅本地封存，避免远端文档push额外触发通知；启动后先完成已确认范围的邮件任务。
+当前本地运行P1.1“疏影”，已完成品牌、默认持续动态、浅水墨擦雾、多种蓝紫边框与真实模板卡片互动，独立美学与本地运行检查通过（31前端、15Java、8API、22浏览器、6视觉及三轮预算）；完整阶段仍待邮件治理与远端CI，见[P1.1本地交付报告](docs/waves/P1.1/REPORT.md)。完整计划、角色和任务见[P1.1计划](docs/waves/P1.1/PLAN.md)。本仓库CI邮件定向治理尚待可操作邮箱登录态；未改账号级通知，尚未推送本轮提交。
 
 需要可用的 Linux Docker Engine 与 Docker Compose（支持 --wait）。无需宿主机 Node、Java、Maven 或 MySQL。
 
@@ -39,7 +39,9 @@ tests/                 独立 API 黑盒验收及容器入口
 specs/                 OpenAPI、数据、状态机、前端生命周期、UI 与验收规格
 docs/requirements/     题目 R-01～R-14 和参考图
 docs/waves/P0/         P0历史记录
-docs/waves/P1/         当前计划、任务包、状态、交接、审核与实际证据
+docs/waves/P1/         P1历史计划、交接、审核与实际证据
+docs/waves/P1.1/       当前计划、角色、任务、独立审核与运行证据
+assets/p1.1/           固定容器的水墨衍生转换
 compose.yaml           frontend、backend、mysql 与持久卷
 compose.test.yaml      前端检查、Java/MySQL 检查、独立 API 验收
 .github/workflows/     push / pull_request / 手动 CI
@@ -71,27 +73,25 @@ frontend-check 实际执行 npm ci（镜像构建）及 npm run lint、npm run t
 
 [GitHub Actions](https://github.com/XB-Dong/quvideo-material-studio/actions) 对 push/PR 执行前端检查/生产构建、Java verify，以及完整三服务 API 验收。具体运行是否通过以对应 commit 的实际记录为准，不把配置存在当作执行通过。
 
-## P1视觉与浏览器验收
+## P1.1视觉与浏览器验收
 
-以瓷白/白色面板和炭灰文字为主，蓝紫用于细线、图标、选中态及少量操作。正常硬件绘图路径使用七项React Bits创意；软件/未知renderer、Worker不可用、减少动态效果或手动静态时安全降级。页面保留“动态效果/静态模式”开关和可运行时的环绕暂停，不展示组件技术名或鼠标体验说明。
+浅纸白、水墨山水与蓝紫细线；正常可视区边缘和Orbit持续动态，鼠标移动擦出同一幅画的清晰笔触，四张真实模板卡分别呈现点阵、网点显影、水波与像素互动。没有动态/静态/暂停按钮或技术特效标签，旧yingzuo-static视觉键不再影响体验；身份Cookie与其他本地数据保持。
 
-GPU能力预检使用一次有界Worker+OffscreenCanvas，确认probe释放后才启用主GPU；软件绘图默认不创建六个主线程GPU装饰，保留图片、SVG环绕和CSS反馈。这个选择来自实际测得的软件driver释放卡顿；[决定0009](docs/decisions/0009-gpu-comfort-policy.md)保留原因和测试边界，不将功能强制模式冒充软件舒适通过。真实硬件性能及真实OS后台切换未覆盖时在报告标未验证。
+默认Canvas2D/CSS/SVG路径在软件renderer也实际运行；Orbit沿用React Bits适配。未mounted的上游shader不算运行能力，实际复用与自写基础实现见[ADAPTATIONS](frontend/src/components/react-bits/ADAPTATIONS.md)。系统reduce、后台、离屏和路由卸载自动处理；触屏背景为可辨山水静态纸面，首次点击模板直接进入详情。原P1的GPU策略与手动模式仅作[历史记录](docs/waves/P1/REPORT.md)。
 
 ```sh
-# 以实际部署源码SHA替换，验收应用必须已健康
 export TESTED_COMMIT='<exact-40-character-deployed-sha>'
-# 默认真实能力策略：页面、键盘、业务与软件降级
-docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-check accept.mjs
-# 明确的独立软件功能fixture：模拟硬件允许消息，执行真实七图形路径/互斥/释放
-docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e FORCE_GPU_FUNCTIONAL=1 -e OUTPUT_DIR=/evidence/functional browser-check accept.mjs
-# 单独采集Electric合法600ms窗口五帧；与常规功能读回分开
-docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e FORCE_GPU_FUNCTIONAL=1 -e EXACT_ELECTRIC_SEQUENCE=1 -e OUTPUT_DIR=/evidence/exact browser-check accept.mjs
-# 默认交互性能及同环境三轮startup；不强制软件绘图
-docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/interaction browser-check interact.mjs
-docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps browser-check measure.mjs
+docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-p11-check accept.mjs
+docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/visual browser-p11-check visual.mjs
+docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/interaction browser-p11-check interact.mjs
+docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/measure browser-p11-check measure.mjs
+docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps browser-p11-check --test budgets.test.mjs
+docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-p11-headed
 ```
 
-PowerShell设置环境用`$env:TESTED_COMMIT='<exact-sha>'`。默认证据写runtime/p1-browser（Git忽略），可用P1_EVIDENCE_DIR指定绝对目录。trace ZIP可能包含本次合成匿名会话，不入Git或普通CI源码工件。运行工具时Chromium/字体/SwiftShader均在容器；前后比较复用同一浏览器依赖镜像，实际driver、默认/fixture、编码传输与gzip归一值分别记录。[工具说明](tests/p1/README.md)提供准确条件。
+PowerShell设置环境用`$env:TESTED_COMMIT='<exact-sha>'`；P11_EVIDENCE_DIR可指定绝对证据目录，默认runtime/p11-browser（Git忽略）。[工具说明](tests/p1.1/README.md)列出实际条件；截图/像素读回与无截图性能采样分开。每轮图片计量覆盖CDP图片/MIME、CSS/fetch与内嵌载体成本，重复请求不去重，三轮分别守卫。真实硬件与物理Windows后台未测时如实标未验证。
+
+水墨背景是The Met公开领域吴云《仙霞新霁图》的本地衍生，1600×560、63202B，清晰/雾层共用图片；[来源/哈希](docs/waves/P1.1/evidence/assets/production-manifest.json)、[容器重做](assets/p1.1/README.md)。未增加前端运行依赖或修改Java素材/数据库。
 
 四模板生产JPEG封面与真PNG结果已内置Java资源，图片运行不外链。原图、作者/许可及转换hash见[生产清单](docs/waves/P1/evidence/assets/production-manifest.json)。重做衍生图可在容器运行：
 

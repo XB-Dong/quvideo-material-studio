@@ -1,6 +1,6 @@
 # 本仓库CI邮件治理
 
-版本P1.1-1.0.0。用户已确认仅处理XB-Dong/quvideo-material-studio的CI邮件，必要时使用邮箱定向规则；不授权关闭账号全部Actions邮件。当前只准备，未改GitHub/邮箱设置，未读其他邮件或发送测试邮件。
+版本P1.1-1.0.0。用户已确认仅处理XB-Dong/quvideo-material-studio的CI邮件，必要时使用邮箱定向规则；不授权关闭账号全部Actions邮件。P1.1已启动，实际邮箱接入/生效状态见evidence/ci-mail-execution.json；不发送测试邮件。
 
 ## 已核实事实
 
@@ -18,4 +18,4 @@ GitHub官方说明Actions可为触发的运行发送邮件，失败/成功/取�
 
 首次远端push前完成定向规则或明确需要的连接；前端/素材本地开发可并行。最终P1.1完成需要该任务实际验收。账号级停邮件、其他仓库、营销/安全/人工PR邮件均不在范围。
 
-官方依据：[Actions运行通知](https://docs.github.com/en/actions/concepts/workflows-and-actions/notifications-for-workflow-runs)、[通知配置](https://docs.github.com/en/subscriptions-and-notifications/get-started/configuring-notifications)。本轮准备只本地提交，不推远端触发新的CI/邮件；CI文件仍原样保留。
+官方依据：[Actions运行通知](https://docs.github.com/en/actions/concepts/workflows-and-actions/notifications-for-workflow-runs)、[通知配置](https://docs.github.com/en/subscriptions-and-notifications/get-started/configuring-notifications)。通知治理核实前仅本地提交；CI检查入口可随新视觉契约更新，不修改账号通知开关，不关闭必要检查。
