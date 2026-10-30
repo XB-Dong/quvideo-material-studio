@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { ResultPreview, type PreviewOrigin } from "./motion/result-preview";
-import { SceneEdge, clickFeedback, useSceneVisibility } from "./motion/journey";
+import { SceneEdge, useSceneVisibility } from "./motion/journey";
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { useIdentity } from "./providers";
 import { useTasks } from "../lib/use-tasks";
@@ -104,7 +104,6 @@ function HistoryContent({
                 {t.status === "SUCCEEDED" && t.resultUrl ? (
                   <button
                     className="result-button"
-                    onPointerDown={(e) => clickFeedback(e.currentTarget)}
                     onClick={(event) => {
                       const rect = event.currentTarget.getBoundingClientRect();
                       const thumb = event.currentTarget.querySelector("img");
