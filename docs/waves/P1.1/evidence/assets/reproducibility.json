@@ -1,0 +1,22 @@
+{
+  "taskId": "P11-ASSET",
+  "sourceBase": "c1d3efc8b5710e1f99c0d45e09c7023aa95b99ef",
+  "verifiedAt": "2026-10-30T11:25:29.7809838+08:00",
+  "command": "docker run --rm --mount type=bind,source=<worktree>,target=/workspace material-p11-assets-tools python assets/p1.1/prepare_ink.py",
+  "exitCodes": [
+    0,
+    0
+  ],
+  "sha256Runs": [
+    "0296ab7afba92c21bb53e9558b599881ce05f9607ff0485dbaa370bff35ccd96",
+    "0296ab7afba92c21bb53e9558b599881ce05f9607ff0485dbaa370bff35ccd96",
+    "0296ab7afba92c21bb53e9558b599881ce05f9607ff0485dbaa370bff35ccd96"
+  ],
+  "repeatByteIdentical": true,
+  "toolImageId": "sha256:7a181ff8f776a00c7e697e2d8f1388b1b1ba1bb9c10f95607202113257885789",
+  "bytes": 63202,
+  "visualReview": "actual source and production derivative viewed via view_image; no inscription/mount/colorchart; light cool ink strokes visible",
+  "productionScenePerformance": "not_tested_by_asset_owner",
+  "productG01": "not_run",
+  "productG02": "not_run"
+}
