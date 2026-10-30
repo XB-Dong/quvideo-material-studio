@@ -71,6 +71,28 @@ jobs:
         env:
           TESTED_COMMIT: ${{ github.sha }}
         run: docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-p11-headed
+      - name: Independent P1.2 navigation, upload and task acceptance
+        env:
+          TESTED_COMMIT: ${{ github.sha }}
+        run: docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-p12-check accept.mjs
+      - name: Subpage and interaction visible motion
+        env:
+          TESTED_COMMIT: ${{ github.sha }}
+        run: docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/visual browser-p12-check visual.mjs
+      - name: Subpage continuous interaction without screenshots
+        env:
+          TESTED_COMMIT: ${{ github.sha }}
+        run: docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/interaction browser-p12-check interact.mjs
+      - name: Three-page per-run resource budgets
+        env:
+          TESTED_COMMIT: ${{ github.sha }}
+        run: docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/measure browser-p12-check measure.mjs
+      - name: P1.2 per-run budget guard tests
+        run: docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps browser-p12-check --test budgets.test.mjs
+      - name: Three-page browser-native background cleanup
+        env:
+          TESTED_COMMIT: ${{ github.sha }}
+        run: docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-p12-headed
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -78,6 +100,8 @@ jobs:
           path: |
             runtime/p11-browser/**/*.json
             runtime/p11-browser/**/*.png
+            runtime/p12-browser/**/*.json
+            runtime/p12-browser/**/*.png
           retention-days: 7
       - name: Collect service logs
         if: always()

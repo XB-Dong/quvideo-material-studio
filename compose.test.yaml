@@ -99,3 +99,34 @@ services:
     depends_on:
       frontend:
         condition: service_healthy
+
+  browser-p12-check:
+    profiles: [test]
+    build:
+      context: ./tests
+      dockerfile: p1.2/Dockerfile
+    environment:
+      BASE_URL: http://localhost:3000
+      RELAY_HOST: frontend
+      OUTPUT_DIR: /evidence
+      TESTED_COMMIT: ${TESTED_COMMIT:-working-tree}
+    volumes:
+      - ${P12_EVIDENCE_DIR:-./runtime/p12-browser}:/evidence
+    depends_on:
+      frontend:
+        condition: service_healthy
+
+  browser-p12-headed:
+    profiles: [test]
+    build:
+      context: ./tests
+      dockerfile: p1.2/Dockerfile.headed
+    environment:
+      RELAY_HOST: frontend
+      OUTPUT_DIR: /evidence/native
+      TESTED_COMMIT: ${TESTED_COMMIT:-working-tree}
+    volumes:
+      - ${P12_EVIDENCE_DIR:-./runtime/p12-browser}:/evidence
+    depends_on:
+      frontend:
+        condition: service_healthy

@@ -207,9 +207,15 @@ paths:
       - $ref: '#/components/parameters/TaskId'
     get:
       operationId: getMyResultImage
-      description: Own SUCCEEDED task only, private no-store
+        description: Own SUCCEEDED task only, private no-store. Default is unchanged original PNG. Thumbnail is a white-background, quality 0.88 JPEG with maximum edge 512px, aspect preserved, never upscaled or persisted.
+        parameters:
+          - in: query
+            name: thumbnail
+            required: false
+            schema: { type: boolean, default: false }
       responses:
         '200': { $ref: '#/components/responses/Image' }
+          '400': { $ref: '#/components/responses/Error' }
         '401': { $ref: '#/components/responses/Error' }
         '404': { $ref: '#/components/responses/Error' }
 components:
