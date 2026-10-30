@@ -4,6 +4,7 @@ export class ApiError extends Error {
   constructor(
     public status: number,
     message: string,
+    public code?: string,
   ) {
     super(message);
   }
@@ -19,6 +20,7 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
     const body = await response.json().catch(() => ({}));
     if (
       response.status === 401 &&
+      body.code !== "AUTH_INVALID" &&
       typeof window !== "undefined" &&
       !init.signal?.aborted &&
       requestGeneration === currentSessionGeneration()
@@ -31,6 +33,7 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
     throw new ApiError(
       response.status,
       body.message || "请求暂时不可用，请稍后重试",
+      typeof body.code === "string" ? body.code : undefined,
     );
   }
   return response.json();

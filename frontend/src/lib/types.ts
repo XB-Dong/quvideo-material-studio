@@ -2,6 +2,9 @@ export type Session = {
   userId: string;
   displayName: string;
   expiresAt: string;
+  kind?: "GUEST" | "ACCOUNT";
+  email?: string | null;
+  emailVerified?: boolean;
 };
 export type Template = {
   id: string;
