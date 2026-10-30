@@ -26,3 +26,5 @@ fixtures用原API验收35秒全任务有界deadline，并记录每ID状态/阶�
 interact的4MiB样例先存真实容器磁盘，再由同一真实filechooser选择路径，浏览器走本地文件机制而非Playwright小buffer转base64/atob注入。A/B实测原buffer方式在createObjectURL前611–729ms，磁盘路径0longtask；上传实际4194304B、480×640 JPEG保持。原失败不删除，禁止因此删除大文件测试。
 
 diagnose-upload-transport.mjs与diagnose-route.mjs仅诊断，trace不算舒适通过。measure可用P12_MEASURE_PAGES=studio、P12_TRACE_LAYOUT=1限定3轮并记录节点rect/API时序/DOMready定位CLS；正式默认仍三页九轮、所有原阈值。不得用筛选诊断代替完整预算验收。
+
+affected-review.mjs只在全部无截图采样结束后运行，供有界差异审图：真实延迟模板响应的loading/ready、产品原260ms公共桥WAAPI暂停于70/150/230ms观察后恢复并清理、真正coarse上下文首次触摸chooser与取消保图。相位截图明确属于受控审图，不证明默认时序性能。稳态main对比等待真实p12-page-in有限动画结束，规定8px入场不能误报成布局塌陷；原CLS逐轮门槛仍由measure独立执行。此辅助入口不加入六项CI聚合重复执行。
