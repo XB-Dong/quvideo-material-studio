@@ -1,0 +1,680 @@
+{
+  "rootTaskId": "P2-VERIFY",
+  "finding": "P2-FINAL-03",
+  "status": "Independent local visual6 passed; final remoteCI still required",
+  "capturedAt": "2026-10-30T11:32:07.192Z",
+  "applicationSource": "81a3de8da97790744cbc7e4540a568e697093fd6",
+  "frozenSourceB": "111fe8a57202a8794cbfe9bc7eac6dcf27308944",
+  "executableEquivalence": "Independent prior source receipts show entire frontend/backend/assets and originalP11 common helpers unchanged between81a andB",
+  "browser": "149.0.7827.53",
+  "actualModel": null,
+  "actualProvider": null,
+  "containerImage": "material-studio-browser-p11-check",
+  "command": "docker run --rm --network p2-cleanroom_default --entrypoint node -e TESTED_COMMIT=81a3de8da97790744cbc7e4540a568e697093fd6 -e BASE_URL=http://localhost:3302 -e OUTPUT_DIR=/evidence -e RELAY_HOST=frontend -e RELAY_PORT=3000 <own visual+3302 relay wrapper read-only, external evidence> material-studio-browser-p11-check /p2/run-p11-visual.mjs",
+  "processExitCode": 0,
+  "checks": [
+    {
+      "name": "default software ink same-coordinate clarity, visible pixels and refog",
+      "status": "pass",
+      "message": null
+    },
+    {
+      "name": "three or more real border families and continuous compositor movement",
+      "status": "pass",
+      "message": null
+    },
+    {
+      "name": "four real card canvases change pixels independently and release on exit",
+      "status": "pass",
+      "message": null
+    },
+    {
+      "name": "offscreen hero stops its RAF after viewport resize and returns",
+      "status": "pass",
+      "message": null
+    },
+    {
+      "name": "reduce live change clears RAF and contexts; restore remains usable",
+      "status": "pass",
+      "message": null
+    },
+    {
+      "name": "route unmount no residual creative RAF",
+      "status": "pass",
+      "message": null
+    }
+  ],
+  "setup": {
+    "description": "Genuine excluded footer pointer and one ordinary native viewport render precede the600ms assertion clock. Full global RAF0 and Orbit0 unchanged; no failure-then-extra-frame fallback or synthetic events.",
+    "triggerStart": 17851.5,
+    "footerBounds": {
+      "x": 40,
+      "y": 554.671875,
+      "width": 77,
+      "height": 16
+    },
+    "renderStart": 17962.59999999404,
+    "renderEnd": 18304.59999999404,
+    "assertionClockStart": 18304.59999999404,
+    "checkpointAt": 18928.5,
+    "actualPostRenderIntervalMs": 623.9000000059605,
+    "globalRAFThreshold": 0,
+    "orbitThreshold": 0,
+    "syntheticIOEvents": 0,
+    "modifiedProductPreferences": false,
+    "offscreenRenderOpportunities": 1,
+    "fallbackAfterFailed600ms": false,
+    "finallyRestoreViewportAndScroll": true
+  },
+  "snapshots": [
+    {
+      "phase": "before",
+      "at": 17824.5,
+      "hero": {
+        "x": 40,
+        "y": -168,
+        "width": 1360,
+        "height": 433.5,
+        "top": -168,
+        "right": 1400,
+        "bottom": 265.5,
+        "left": 40
+      },
+      "hidden": false,
+      "focus": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1000,
+        "scrollX": 0,
+        "scrollY": 260
+      },
+      "cardActive": 0,
+      "lastPointer": {
+        "at": 17719.89999999106,
+        "x": 10,
+        "y": 10,
+        "trusted": true,
+        "type": "mouse",
+        "target": {
+          "tag": "MAIN",
+          "classes": null,
+          "effect": null,
+          "inkExcluded": false
+        }
+      },
+      "orbit": 1,
+      "rafPending": 2,
+      "rafExecuted": 706,
+      "pendingCallbacks": [
+        {
+          "id": 721,
+          "at": 17815.70000000298,
+          "callback": "f",
+          "stack": "Error\n    at window.requestAnimationFrame (<anonymous>:5:261)\n    at f (http://localhost:3302/_next/static/chunks/0wn0r87ywrmd_.js:1:7284)\n    at <anonymous>:5:145"
+        },
+        {
+          "id": 722,
+          "at": 17816,
+          "callback": "x",
+          "stack": "Error\n    at window.requestAnimationFrame (<anonymous>:5:261)\n    at x (http://localhost:3302/_next/static/chunks/0pbzpja-18rks.js:1:28487)\n    at <anonymous>:5:145"
+        }
+      ],
+      "heroIO": [
+        {
+          "sequence": 6,
+          "id": 3,
+          "at": 252.70000000298023,
+          "entryTime": 223.70000000298023,
+          "isIntersecting": true,
+          "ratio": 1,
+          "target": {
+            "tag": "SECTION",
+            "classes": "intro",
+            "effect": null,
+            "inkExcluded": false
+          },
+          "rect": {
+            "x": 40,
+            "y": 92,
+            "width": 1360,
+            "height": 433.5,
+            "top": 92,
+            "right": 1400,
+            "bottom": 525.5,
+            "left": 40
+          },
+          "stack": "Error\n    at new window.IntersectionObserver (<anonymous>:5:105)\n    at http://localhost:3302/_next/static/chunks/0-xb08pw7r6ur.js:1:10036\n    at ix (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:103210)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129441)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)"
+        }
+      ]
+    },
+    {
+      "phase": "geometricTrigger",
+      "at": 17861.09999999404,
+      "hero": {
+        "x": 40,
+        "y": -733,
+        "width": 1360,
+        "height": 433.5,
+        "top": -733,
+        "right": 1400,
+        "bottom": -299.5,
+        "left": 40
+      },
+      "hidden": false,
+      "focus": true,
+      "viewport": {
+        "width": 1440,
+        "height": 600,
+        "scrollX": 0,
+        "scrollY": 825
+      },
+      "cardActive": 0,
+      "lastPointer": {
+        "at": 17719.89999999106,
+        "x": 10,
+        "y": 10,
+        "trusted": true,
+        "type": "mouse",
+        "target": {
+          "tag": "MAIN",
+          "classes": null,
+          "effect": null,
+          "inkExcluded": false
+        }
+      },
+      "orbit": 1,
+      "rafPending": 2,
+      "rafExecuted": 708,
+      "pendingCallbacks": [
+        {
+          "id": 723,
+          "at": 17854.79999999702,
+          "callback": "f",
+          "stack": "Error\n    at window.requestAnimationFrame (<anonymous>:5:261)\n    at f (http://localhost:3302/_next/static/chunks/0wn0r87ywrmd_.js:1:7284)\n    at <anonymous>:5:145"
+        },
+        {
+          "id": 724,
+          "at": 17855.29999999702,
+          "callback": "x",
+          "stack": "Error\n    at window.requestAnimationFrame (<anonymous>:5:261)\n    at x (http://localhost:3302/_next/static/chunks/0pbzpja-18rks.js:1:28487)\n    at <anonymous>:5:145"
+        }
+      ],
+      "heroIO": [
+        {
+          "sequence": 6,
+          "id": 3,
+          "at": 252.70000000298023,
+          "entryTime": 223.70000000298023,
+          "isIntersecting": true,
+          "ratio": 1,
+          "target": {
+            "tag": "SECTION",
+            "classes": "intro",
+            "effect": null,
+            "inkExcluded": false
+          },
+          "rect": {
+            "x": 40,
+            "y": 92,
+            "width": 1360,
+            "height": 433.5,
+            "top": 92,
+            "right": 1400,
+            "bottom": 525.5,
+            "left": 40
+          },
+          "stack": "Error\n    at new window.IntersectionObserver (<anonymous>:5:105)\n    at http://localhost:3302/_next/static/chunks/0-xb08pw7r6ur.js:1:10036\n    at ix (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:103210)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129441)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)"
+        }
+      ]
+    },
+    {
+      "phase": "preRender",
+      "at": 17941.29999999702,
+      "hero": {
+        "x": 40,
+        "y": -733,
+        "width": 1360,
+        "height": 433.5,
+        "top": -733,
+        "right": 1400,
+        "bottom": -299.5,
+        "left": 40
+      },
+      "hidden": false,
+      "focus": true,
+      "viewport": {
+        "width": 1440,
+        "height": 600,
+        "scrollX": 0,
+        "scrollY": 825
+      },
+      "cardActive": 0,
+      "lastPointer": {
+        "at": 17938.09999999404,
+        "x": 78.5,
+        "y": 562.671875,
+        "trusted": true,
+        "type": "mouse",
+        "target": {
+          "tag": "A",
+          "classes": null,
+          "effect": null,
+          "inkExcluded": true
+        }
+      },
+      "orbit": 0,
+      "rafPending": 0,
+      "rafExecuted": 710,
+      "pendingCallbacks": [],
+      "heroIO": [
+        {
+          "sequence": 6,
+          "id": 3,
+          "at": 252.70000000298023,
+          "entryTime": 223.70000000298023,
+          "isIntersecting": true,
+          "ratio": 1,
+          "target": {
+            "tag": "SECTION",
+            "classes": "intro",
+            "effect": null,
+            "inkExcluded": false
+          },
+          "rect": {
+            "x": 40,
+            "y": 92,
+            "width": 1360,
+            "height": 433.5,
+            "top": 92,
+            "right": 1400,
+            "bottom": 525.5,
+            "left": 40
+          },
+          "stack": "Error\n    at new window.IntersectionObserver (<anonymous>:5:105)\n    at http://localhost:3302/_next/static/chunks/0-xb08pw7r6ur.js:1:10036\n    at ix (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:103210)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129441)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)"
+        },
+        {
+          "sequence": 23,
+          "id": 3,
+          "at": 17895.29999999702,
+          "entryTime": 17894.89999999106,
+          "isIntersecting": false,
+          "ratio": 0,
+          "target": {
+            "tag": "SECTION",
+            "classes": "intro",
+            "effect": null,
+            "inkExcluded": false
+          },
+          "rect": {
+            "x": 40,
+            "y": -733,
+            "width": 1360,
+            "height": 433.5,
+            "top": -733,
+            "right": 1400,
+            "bottom": -299.5,
+            "left": 40
+          },
+          "stack": "Error\n    at new window.IntersectionObserver (<anonymous>:5:105)\n    at http://localhost:3302/_next/static/chunks/0-xb08pw7r6ur.js:1:10036\n    at ix (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:103210)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129441)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)"
+        }
+      ]
+    },
+    {
+      "phase": "afterSingleRender",
+      "at": 18304.59999999404,
+      "hero": {
+        "x": 40,
+        "y": -733,
+        "width": 1360,
+        "height": 433.5,
+        "top": -733,
+        "right": 1400,
+        "bottom": -299.5,
+        "left": 40
+      },
+      "hidden": false,
+      "focus": true,
+      "viewport": {
+        "width": 1440,
+        "height": 600,
+        "scrollX": 0,
+        "scrollY": 825
+      },
+      "cardActive": 0,
+      "lastPointer": {
+        "at": 17938.09999999404,
+        "x": 78.5,
+        "y": 562.671875,
+        "trusted": true,
+        "type": "mouse",
+        "target": {
+          "tag": "A",
+          "classes": null,
+          "effect": null,
+          "inkExcluded": true
+        }
+      },
+      "orbit": 0,
+      "rafPending": 0,
+      "rafExecuted": 710,
+      "pendingCallbacks": [],
+      "heroIO": [
+        {
+          "sequence": 6,
+          "id": 3,
+          "at": 252.70000000298023,
+          "entryTime": 223.70000000298023,
+          "isIntersecting": true,
+          "ratio": 1,
+          "target": {
+            "tag": "SECTION",
+            "classes": "intro",
+            "effect": null,
+            "inkExcluded": false
+          },
+          "rect": {
+            "x": 40,
+            "y": 92,
+            "width": 1360,
+            "height": 433.5,
+            "top": 92,
+            "right": 1400,
+            "bottom": 525.5,
+            "left": 40
+          },
+          "stack": "Error\n    at new window.IntersectionObserver (<anonymous>:5:105)\n    at http://localhost:3302/_next/static/chunks/0-xb08pw7r6ur.js:1:10036\n    at ix (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:103210)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129441)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)"
+        },
+        {
+          "sequence": 23,
+          "id": 3,
+          "at": 17895.29999999702,
+          "entryTime": 17894.89999999106,
+          "isIntersecting": false,
+          "ratio": 0,
+          "target": {
+            "tag": "SECTION",
+            "classes": "intro",
+            "effect": null,
+            "inkExcluded": false
+          },
+          "rect": {
+            "x": 40,
+            "y": -733,
+            "width": 1360,
+            "height": 433.5,
+            "top": -733,
+            "right": 1400,
+            "bottom": -299.5,
+            "left": 40
+          },
+          "stack": "Error\n    at new window.IntersectionObserver (<anonymous>:5:105)\n    at http://localhost:3302/_next/static/chunks/0-xb08pw7r6ur.js:1:10036\n    at ix (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:103210)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129441)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)"
+        }
+      ]
+    },
+    {
+      "phase": "checkpoint600",
+      "at": 18928.5,
+      "hero": {
+        "x": 40,
+        "y": -733,
+        "width": 1360,
+        "height": 433.5,
+        "top": -733,
+        "right": 1400,
+        "bottom": -299.5,
+        "left": 40
+      },
+      "hidden": false,
+      "focus": true,
+      "viewport": {
+        "width": 1440,
+        "height": 600,
+        "scrollX": 0,
+        "scrollY": 825
+      },
+      "cardActive": 0,
+      "lastPointer": {
+        "at": 17938.09999999404,
+        "x": 78.5,
+        "y": 562.671875,
+        "trusted": true,
+        "type": "mouse",
+        "target": {
+          "tag": "A",
+          "classes": null,
+          "effect": null,
+          "inkExcluded": true
+        }
+      },
+      "orbit": 0,
+      "rafPending": 0,
+      "rafExecuted": 710,
+      "pendingCallbacks": [],
+      "heroIO": [
+        {
+          "sequence": 6,
+          "id": 3,
+          "at": 252.70000000298023,
+          "entryTime": 223.70000000298023,
+          "isIntersecting": true,
+          "ratio": 1,
+          "target": {
+            "tag": "SECTION",
+            "classes": "intro",
+            "effect": null,
+            "inkExcluded": false
+          },
+          "rect": {
+            "x": 40,
+            "y": 92,
+            "width": 1360,
+            "height": 433.5,
+            "top": 92,
+            "right": 1400,
+            "bottom": 525.5,
+            "left": 40
+          },
+          "stack": "Error\n    at new window.IntersectionObserver (<anonymous>:5:105)\n    at http://localhost:3302/_next/static/chunks/0-xb08pw7r6ur.js:1:10036\n    at ix (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:103210)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129441)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)"
+        },
+        {
+          "sequence": 23,
+          "id": 3,
+          "at": 17895.29999999702,
+          "entryTime": 17894.89999999106,
+          "isIntersecting": false,
+          "ratio": 0,
+          "target": {
+            "tag": "SECTION",
+            "classes": "intro",
+            "effect": null,
+            "inkExcluded": false
+          },
+          "rect": {
+            "x": 40,
+            "y": -733,
+            "width": 1360,
+            "height": 433.5,
+            "top": -733,
+            "right": 1400,
+            "bottom": -299.5,
+            "left": 40
+          },
+          "stack": "Error\n    at new window.IntersectionObserver (<anonymous>:5:105)\n    at http://localhost:3302/_next/static/chunks/0-xb08pw7r6ur.js:1:10036\n    at ix (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:103210)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129441)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)"
+        }
+      ]
+    },
+    {
+      "phase": "restored",
+      "at": 19634,
+      "hero": {
+        "x": 40,
+        "y": 92,
+        "width": 1360,
+        "height": 433.5,
+        "top": 92,
+        "right": 1400,
+        "bottom": 525.5,
+        "left": 40
+      },
+      "hidden": false,
+      "focus": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1000,
+        "scrollX": 0,
+        "scrollY": 0
+      },
+      "cardActive": 0,
+      "lastPointer": {
+        "at": 17938.09999999404,
+        "x": 78.5,
+        "y": 562.671875,
+        "trusted": true,
+        "type": "mouse",
+        "target": {
+          "tag": "A",
+          "classes": null,
+          "effect": null,
+          "inkExcluded": true
+        }
+      },
+      "orbit": 1,
+      "rafPending": 1,
+      "rafExecuted": 722,
+      "pendingCallbacks": [
+        {
+          "id": 738,
+          "at": 19606.29999999702,
+          "callback": "f",
+          "stack": "Error\n    at window.requestAnimationFrame (<anonymous>:5:261)\n    at f (http://localhost:3302/_next/static/chunks/0wn0r87ywrmd_.js:1:7284)\n    at <anonymous>:5:145"
+        }
+      ],
+      "heroIO": [
+        {
+          "sequence": 23,
+          "id": 3,
+          "at": 17895.29999999702,
+          "entryTime": 17894.89999999106,
+          "isIntersecting": false,
+          "ratio": 0,
+          "target": {
+            "tag": "SECTION",
+            "classes": "intro",
+            "effect": null,
+            "inkExcluded": false
+          },
+          "rect": {
+            "x": 40,
+            "y": -733,
+            "width": 1360,
+            "height": 433.5,
+            "top": -733,
+            "right": 1400,
+            "bottom": -299.5,
+            "left": 40
+          },
+          "stack": "Error\n    at new window.IntersectionObserver (<anonymous>:5:105)\n    at http://localhost:3302/_next/static/chunks/0-xb08pw7r6ur.js:1:10036\n    at ix (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:103210)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129441)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)"
+        },
+        {
+          "sequence": 29,
+          "id": 3,
+          "at": 18970,
+          "entryTime": 18968.70000000298,
+          "isIntersecting": true,
+          "ratio": 1,
+          "target": {
+            "tag": "SECTION",
+            "classes": "intro",
+            "effect": null,
+            "inkExcluded": false
+          },
+          "rect": {
+            "x": 40,
+            "y": 92,
+            "width": 1360,
+            "height": 433.5,
+            "top": 92,
+            "right": 1400,
+            "bottom": 525.5,
+            "left": 40
+          },
+          "stack": "Error\n    at new window.IntersectionObserver (<anonymous>:5:105)\n    at http://localhost:3302/_next/static/chunks/0-xb08pw7r6ur.js:1:10036\n    at ix (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:103210)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129441)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129686)\n    at e (http://localhost:3302/_next/static/chunks/0-5v9e-irmykv.js:31:129428)"
+        }
+      ]
+    }
+  ],
+  "rawFiles": [
+    {
+      "name": "border-a.png",
+      "bytes": 177261,
+      "sha256": "c0fa14c6a6d6de69ce5f0329b5e1e49e16fca4611b46c310a0b1609d0b5c8c40"
+    },
+    {
+      "name": "border-b.png",
+      "bytes": 176939,
+      "sha256": "a48db6995b13faf780b79289e872f6fcd548b19d897ce57a716310f159378a9a"
+    },
+    {
+      "name": "exit-code.txt",
+      "bytes": 1,
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "name": "hero-offscreen-diagnostic.json",
+      "bytes": 575622,
+      "sha256": "83bb313def4f51db320b26cff959a6317faf3e368262961b4f966385711b69f1"
+    },
+    {
+      "name": "hero-offscreen-native.png",
+      "bytes": 708835,
+      "sha256": "2d11c62e9b278d6a9d8d4d379e1390d10fcc0d19dcaeff760c94e0f23de7bcf5"
+    },
+    {
+      "name": "hero-restore-native.png",
+      "bytes": 957182,
+      "sha256": "1b448a30b39e66457e26c69bbe4a70e07c995769762019ac25aa3551f6ddea5c"
+    },
+    {
+      "name": "ink-clear.png",
+      "bytes": 7710,
+      "sha256": "d68880139f519a91f8f7966ce94cecd335b6e603b94b61a8eca7b22141a92953"
+    },
+    {
+      "name": "ink-fog.png",
+      "bytes": 3891,
+      "sha256": "bbdf220bcf27962bceccabbc527082d2228c62602a9ebff6729b956c5c2f7039"
+    },
+    {
+      "name": "ink-refog.png",
+      "bytes": 3853,
+      "sha256": "4eba6ede85d3adc7a849a165d47eb631781e7661108aef0821dc5e9495b54e9b"
+    },
+    {
+      "name": "reduce-before-assert.json",
+      "bytes": 258904,
+      "sha256": "336bad152a780c10142f07f37c8cdb706e120e8312291557c8f93a4baa0ecde8"
+    },
+    {
+      "name": "reduce-native-frame.png",
+      "bytes": 967756,
+      "sha256": "1d22dc4535d13e6b376bea01f89f5d94446e4f2b376b006000d1a578264e830c"
+    },
+    {
+      "name": "reduce-render-delivery.json",
+      "bytes": 150918,
+      "sha256": "69ce04f1b21829956d79b64fa1bca4fb5fceccb0553b307ee7063d7595108166"
+    },
+    {
+      "name": "visual.json",
+      "bytes": 416279,
+      "sha256": "86cd949ba7633aa214e90ea2e80d3e7f2b17e339d2a99111e04df0d5a7880996"
+    }
+  ],
+  "originalFailure": "CI41046555176 originalfail and diagnostic dd6c3e0 retained; successful corrected setup does not replace original failures",
+  "limitations": [
+    "One ordinary native render precedes the formal600ms clock; not claimed equivalent to old no-render-before-timer protocol.",
+    "Purely functional screenshot/RAF/IO evidence; no performance sampling, native visibility simulation or product change.",
+    "No repeated CI rerun for chance green, source package remains pending final mandatory CI and re-seal."
+  ],
+  "rawRelativeLocation": "P2/private-validation/g02-41046555176/formal-r1 outside Git"
+}

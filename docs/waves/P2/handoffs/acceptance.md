@@ -82,3 +82,15 @@ Source A为110894f926d64816d5a8b5d9e5bcabd2554412ed。Acceptance独立宿主Git�
 tests/p2新增/更新部分是已实际使用的独立ZIP/迁移/媒体/取证工具；common.mjs唯一运行差异为MEDIA_HEADED显式字符串1才启headed，默认仍headless，Compose/CI环境无此变化；账户API/browser/gates原对象相同。文件清单与具体对象hash见110894f-final-source-equivalence.json。本次仅Git/JSON/ZIP数据检查，无应用/浏览器/性能执行、无生产重启或卷操作。
 
 这份新证据在Source A冻结之后产生，只合并到后续reportCommit，不声称A的ZIP已含自身新增报告。若最终只改报告/metadata/导出policy，应再作data-only范围/导出完整性比对。actualModel/provider仍null，正式交卷/公开/邮箱工作未启动。
+
+## P2-FINAL-03：最终CI离屏场景前置与清理修复（同P2-VERIFY）
+
+最终Source B的CI41046555176在原P11 visual失败：前三项pass，离屏“1 !== 0”，其后reduce为Hero left viewport；最终包保持pending，不凭先前CI当新CI已过。Leader将tests/p1.1/visual.mjs唯一owner明确转移给Acceptance做诊断/cleanup，后追加正式setup修复授权；未改产品、shared common、阈值、预算、原生媒体/IO或CI配置。新分支codex/p2-g02-acceptance从精确B111fe8a创建，同root未重置失败。
+
+实际CI审计表明Orbit已0、Orbit f回调取消，残留333是0pbzpja-18rks.js:28487的x。对实际3302的同chunk只读取excerpt，确认x为InkBackdrop frame（3500ms尾），P为真实pointer handler。唯一诊断run（脚本dd6c3e0）可信pointer在滚底后10,10真实落MAIN、InkExcludedfalse，不是header；本机原600ms没有复现RAF失败（6检查通过但独立docker wait收据未留，exit字段null），不声称重复出原CI。原生introIO false已投递/Orbit0；全局Ink不属hero离屏范围，这个setup自己会合法唤起Ink。CI首assert throw跳过原restore，让后续reduce虽RAF0仍hero离屏，属于场景级联。原CI与诊断telemetry/raw完整保留，41046555176-hero-diagnosis.json记录事实与限制，不判产品泄漏。
+
+正式修复经Leader批准：scroll到底后仅取已经可见footer a的bbox（不scrollIntoView），真实mouse.move到a中心；必须本轮trusted pointer落A、InkExcludedtrue、cardActive0。随后一张普通viewport screenshot animations=allow提供真实native render前置，记录pre/post IO与trigger；这之后启动600ms计时，直接对checkpoint断言本轮真实introIO false、hero仍离屏、前台/无reduce、全局RAF0与Orbit0。没有“600ms失败再补帧/加等到通过”的fallback，不手工取消RAF/触发IO/改偏好。finally无论失败都恢复1440×1000与scroll0并正常render，避免污染reduce。原旧600ms诊断留存；正式协议明确是trigger/render后600ms，不冒称未渲染旧协议绝对时限相同。
+
+正式首次完整visual6/6 pass，docker exec session76138最终process exit0，外部exit-code.txt=0。实际应用source仍81a3de8（p2-cleanroom3302，先前独立数据比对已证明与B执行树完全同）；harness为本次正式工作树，不虚称新B已部署。实际Chromium149.0.7827.53；footer原生IO false于render前已投递，after-render orbit0/raf0，实测600ms后checkpoint间隔623.9ms仍orbit0/raf0，hero bottom-299.5，可信A/排除true、无active card。finally真实回顶hero bottom525.5、Orbit1；reduce/route cleanup继续pass。命令为docker run --rm --network p2-cleanroom_default、TESTED_COMMIT81a、BASE_URL3302、RELAY_HOSTfrontend、OUTPUT仓库外，挂own visual到/checks/visual.mjs与tests/p2/run-p11-visual.mjs，调用material-studio-browser-p11-check /p2/run-p11-visual.mjs。wrapper仅补继承P11固定3000relay的隔离3302入口，生产/CI原3000不变，shared common只读。
+
+结果及精确6项/前后快照/原生IO/pointer/RAF/rawhash在41046555176-hero-formal-pass.json；完整raw为外部P2/private-validation/g02-41046555176/{diagnostic-r1,formal-r1}。没有新性能采样或应用重启、生产卷/账户数据修改、push/交卷。实际model/provider仍null。此刻仅本地功能修复通过，仍需独立Reviewer源审、Leader整合与新完整远端CI成功、最终包等价再封存；不称本轮交付已经通过。

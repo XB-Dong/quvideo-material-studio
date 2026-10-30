@@ -35,3 +35,5 @@ archive_checks_test.py仅合成ZIP/JSON数据，容器stdlib unittest测试正�
 前文待运行是历史设计：冻结81a3de8候选已完成独立ZIP逐blob比对、新解压空卷API8/浏览器8及V3→V4升级。实际失败/命令见P2 handoff。首页初稿全帧审核发现尾段第二处未充分回雾（P2-FINAL-02），原WebM/GIF及诊断保留。仅重录首页一次：MEDIA_HEADED=1，run-media-headed.sh在官方工具镜像启动Xvfb并等socket就绪，Chromium使用镜像捆绑版本。真实两路径不变，尾指针移到排除区header10,10，自然等待6000ms；只读canvas同坐标初始/清晰/尾部像素与edge，普通viewport截图animations=allow提供一次实际render机会，再无输入flush1500ms。没有更改产品fog/blur/alpha或复制静帧。common默认headless不变，账户CI不受媒体变量影响。
 
 同一WebM仅trim前2.2秒无输入段，10fps、1200×750；home最终18.9秒/189帧/18367297B，creation仍15.66秒/188帧/12086707B。inspect-media.mjs全周期decode，media-all-frames.mjs逐帧连续6×6分镜；diagnose-media-tail.mjs只读比较同坐标WebM/GIF压缩前后，不把编码时钟与JS时钟假设为固定偏移。两片合计377帧12板，审阅称全帧序列审核，不称原生实时播放/硬件流畅实测。所有原视频/分镜只存仓库外，最终两GIF及脱敏清单在规定路径。
+
+P2-FINAL-03补充入口run-p11-visual.mjs：只为外部3302 Origin提供额外本地relay，随后执行原P11 visual；P11继承common未改，默认3000 CI无需wrapper。只读IO/pointer/RAF遥测用于visual，不混入无截图perf。正式离屏前置是可见footer/a可信排除点→一次普通viewport allow render→600ms→原全局RAF0/Orbit0，finally恢复viewport/scroll；原失败与修复证据见P2 Acceptance handoff。
