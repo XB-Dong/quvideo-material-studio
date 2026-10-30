@@ -1,0 +1,272 @@
+{
+  "testedCommit": "6f5f156527646eac0adc00c96c641968f0f60017",
+  "capturedAt": "2026-10-30T03:37:16.894Z",
+  "browser": "149.0.7827.53",
+  "checks": [
+    {
+      "name": "desktop: brand, controls, gallery and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: Java cards keep stable IDs",
+      "status": "pass",
+      "details": [
+        {
+          "id": "demo-postcard",
+          "cover": "/media/demo/postcard-p1-cover.jpg",
+          "count": 2
+        },
+        {
+          "id": "demo-pet",
+          "cover": "/media/demo/pet-p1-cover.jpg",
+          "count": 1
+        },
+        {
+          "id": "demo-story",
+          "cover": "/media/demo/story-p1-cover.jpg",
+          "count": 3
+        },
+        {
+          "id": "demo-portrait",
+          "cover": "/media/demo/portrait-p1-cover.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "desktop: Orbit continuous despite legacy static key and hover",
+      "status": "pass",
+      "details": {
+        "before": {
+          "x": 1065.800048828125,
+          "y": 288.95001220703125,
+          "width": 84.03125,
+          "height": 84.03125
+        },
+        "after": {
+          "x": 1072.300048828125,
+          "y": 296.2699890136719,
+          "width": 84.03125,
+          "height": 84.03125
+        }
+      }
+    },
+    {
+      "name": "desktop: four card first Enter navigation and classification",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: multiple tasks, request error recovery, true failure and refresh",
+      "status": "pass",
+      "details": {
+        "taskIds": [
+          "48dcb0ba-b4ca-4a2a-a951-2ac049ac4d51",
+          "3b8a1095-7aee-4450-ada9-6131fd7802d3",
+          "e2f3e31e-2281-4981-ab9e-8bb596a59dda"
+        ],
+        "outcomes": [
+          {
+            "id": "48dcb0ba-b4ca-4a2a-a951-2ac049ac4d51",
+            "status": "SUCCEEDED",
+            "stage": "FINALIZE",
+            "failedStage": null
+          },
+          {
+            "id": "3b8a1095-7aee-4450-ada9-6131fd7802d3",
+            "status": "SUCCEEDED",
+            "stage": "FINALIZE",
+            "failedStage": null
+          },
+          {
+            "id": "e2f3e31e-2281-4981-ab9e-8bb596a59dda",
+            "status": "FAILED",
+            "stage": "GENERATE",
+            "failedStage": "GENERATE"
+          }
+        ],
+        "injectedQueryFailures": 1,
+        "stoppedTaskPollCount": 15
+      }
+    },
+    {
+      "name": "desktop: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: runtime errors",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: brand, controls, gallery and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: Java cards keep stable IDs",
+      "status": "pass",
+      "details": [
+        {
+          "id": "demo-postcard",
+          "cover": "/media/demo/postcard-p1-cover.jpg",
+          "count": 2
+        },
+        {
+          "id": "demo-pet",
+          "cover": "/media/demo/pet-p1-cover.jpg",
+          "count": 1
+        },
+        {
+          "id": "demo-story",
+          "cover": "/media/demo/story-p1-cover.jpg",
+          "count": 3
+        },
+        {
+          "id": "demo-portrait",
+          "cover": "/media/demo/portrait-p1-cover.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "reduce: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: runtime errors",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: brand, controls, gallery and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: Java cards keep stable IDs",
+      "status": "pass",
+      "details": [
+        {
+          "id": "demo-postcard",
+          "cover": "/media/demo/postcard-p1-cover.jpg",
+          "count": 2
+        },
+        {
+          "id": "demo-pet",
+          "cover": "/media/demo/pet-p1-cover.jpg",
+          "count": 1
+        },
+        {
+          "id": "demo-story",
+          "cover": "/media/demo/story-p1-cover.jpg",
+          "count": 3
+        },
+        {
+          "id": "demo-portrait",
+          "cover": "/media/demo/portrait-p1-cover.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "mobile: true coarse first tap direct navigation",
+      "status": "pass",
+      "details": {
+        "rafPending": 1,
+        "rafExecuted": 43,
+        "gpuAllocated": 0,
+        "gpuLive": 0,
+        "coarse": true,
+        "fine": false,
+        "hover": false,
+        "reduce": false,
+        "hidden": false,
+        "animations": [
+          {
+            "name": "edge-flow",
+            "state": "running",
+            "target": {},
+            "iterations": null
+          },
+          {
+            "name": "card-in",
+            "state": "finished",
+            "target": "template-card",
+            "iterations": 1
+          },
+          {
+            "name": "edge-flow",
+            "state": "running",
+            "target": {},
+            "iterations": null
+          },
+          {
+            "name": "card-in",
+            "state": "finished",
+            "target": "template-card",
+            "iterations": 1
+          },
+          {
+            "name": "edge-flow",
+            "state": "running",
+            "target": {},
+            "iterations": null
+          },
+          {
+            "name": "card-in",
+            "state": "finished",
+            "target": "template-card",
+            "iterations": 1
+          },
+          {
+            "name": "edge-flow",
+            "state": "paused",
+            "target": {},
+            "iterations": null
+          },
+          {
+            "name": "card-in",
+            "state": "finished",
+            "target": "template-card",
+            "iterations": 1
+          },
+          {
+            "name": "edge-breathe",
+            "state": "paused",
+            "target": {},
+            "iterations": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "mobile: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: runtime errors",
+      "status": "pass"
+    }
+  ],
+  "scope": "Independent functional checks; no aesthetic score, final G02 also requires visual lifecycle, performance and scoped-mail evidence"
+}

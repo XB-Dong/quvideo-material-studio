@@ -1,0 +1,206 @@
+{
+  "testedCommit": "6f5f156527646eac0adc00c96c641968f0f60017",
+  "capturedAt": "2026-10-30T03:35:48.831Z",
+  "browser": "149.0.7827.53",
+  "checks": [
+    {
+      "name": "desktop: brand, controls, gallery and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: Java cards keep stable IDs",
+      "status": "pass",
+      "details": [
+        {
+          "id": "demo-postcard",
+          "cover": "/media/demo/postcard-p1-cover.jpg",
+          "count": 2
+        },
+        {
+          "id": "demo-pet",
+          "cover": "/media/demo/pet-p1-cover.jpg",
+          "count": 1
+        },
+        {
+          "id": "demo-story",
+          "cover": "/media/demo/story-p1-cover.jpg",
+          "count": 3
+        },
+        {
+          "id": "demo-portrait",
+          "cover": "/media/demo/portrait-p1-cover.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "desktop: Orbit continuous despite legacy static key and hover",
+      "status": "pass",
+      "details": {
+        "before": {
+          "x": 1069.4100341796875,
+          "y": 293.5400085449219,
+          "width": 84.03125,
+          "height": 84.03125
+        },
+        "after": {
+          "x": 1073.18994140625,
+          "y": 297.0199890136719,
+          "width": 84.03125,
+          "height": 84.03125
+        }
+      }
+    },
+    {
+      "name": "desktop: four card first Enter navigation and classification",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: multiple tasks, request error recovery, true failure and refresh",
+      "status": "pass",
+      "details": {
+        "taskIds": [
+          "90b13891-0021-4470-93a6-80b617ac8121",
+          "e3bb62ad-ec50-4104-a8b1-0a9bd6122c92",
+          "846a507b-d861-4cc7-8c6d-678e3de10257"
+        ],
+        "outcomes": [
+          {
+            "id": "90b13891-0021-4470-93a6-80b617ac8121",
+            "status": "SUCCEEDED",
+            "stage": "FINALIZE",
+            "failedStage": null
+          },
+          {
+            "id": "e3bb62ad-ec50-4104-a8b1-0a9bd6122c92",
+            "status": "SUCCEEDED",
+            "stage": "FINALIZE",
+            "failedStage": null
+          },
+          {
+            "id": "846a507b-d861-4cc7-8c6d-678e3de10257",
+            "status": "FAILED",
+            "stage": "GENERATE",
+            "failedStage": "GENERATE"
+          }
+        ],
+        "injectedQueryFailures": 1,
+        "stoppedTaskPollCount": 15
+      }
+    },
+    {
+      "name": "desktop: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "desktop: runtime errors",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: brand, controls, gallery and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: Java cards keep stable IDs",
+      "status": "pass",
+      "details": [
+        {
+          "id": "demo-postcard",
+          "cover": "/media/demo/postcard-p1-cover.jpg",
+          "count": 2
+        },
+        {
+          "id": "demo-pet",
+          "cover": "/media/demo/pet-p1-cover.jpg",
+          "count": 1
+        },
+        {
+          "id": "demo-story",
+          "cover": "/media/demo/story-p1-cover.jpg",
+          "count": 3
+        },
+        {
+          "id": "demo-portrait",
+          "cover": "/media/demo/portrait-p1-cover.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "reduce: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "reduce: runtime errors",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: brand, controls, gallery and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: Java cards keep stable IDs",
+      "status": "pass",
+      "details": [
+        {
+          "id": "demo-postcard",
+          "cover": "/media/demo/postcard-p1-cover.jpg",
+          "count": 2
+        },
+        {
+          "id": "demo-pet",
+          "cover": "/media/demo/pet-p1-cover.jpg",
+          "count": 1
+        },
+        {
+          "id": "demo-story",
+          "cover": "/media/demo/story-p1-cover.jpg",
+          "count": 3
+        },
+        {
+          "id": "demo-portrait",
+          "cover": "/media/demo/portrait-p1-cover.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "mobile: true coarse first tap direct navigation",
+      "status": "fail",
+      "message": "The expression evaluated to a falsy value:\n\n  assert(state.coarse&&!state.fine&&!state.hover)\n"
+    },
+    {
+      "name": "mobile: identity dialog Escape and focus",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: studio fields and overflow",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: history and unknown template",
+      "status": "pass"
+    },
+    {
+      "name": "mobile: runtime errors",
+      "status": "pass"
+    }
+  ],
+  "scope": "Independent functional checks; no aesthetic score, final G02 also requires visual lifecycle, performance and scoped-mail evidence"
+}

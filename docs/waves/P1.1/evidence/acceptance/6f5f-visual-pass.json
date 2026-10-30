@@ -1,0 +1,158 @@
+{
+  "testedCommit": "6f5f156527646eac0adc00c96c641968f0f60017",
+  "capturedAt": "2026-10-30T03:35:16.509Z",
+  "browser": "149.0.7827.53",
+  "mode": "Unmodified production policy; no capability fixture",
+  "checks": [
+    {
+      "name": "default software ink same-coordinate clarity, visible pixels and refog",
+      "status": "pass",
+      "details": {
+        "point": {
+          "x": 920,
+          "y": 480,
+          "energy": 4453
+        },
+        "before": {
+          "edgeEnergy": 0.6872116493656307,
+          "mean": 213.74567474048376,
+          "width": 70,
+          "height": 70
+        },
+        "clear": {
+          "edgeEnergy": 4.100346020761248,
+          "mean": 191.60661764705856,
+          "width": 70,
+          "height": 70
+        },
+        "refog": {
+          "edgeEnergy": 0.6816608996539864,
+          "mean": 213.7037197231829,
+          "width": 70,
+          "height": 70
+        },
+        "diff": {
+          "changedPixels": 4722,
+          "edgeRatio": 5.9666421902863584
+        },
+        "limits": "Compositor screenshots perturb time; this is functional clarity evidence, not performance"
+      }
+    },
+    {
+      "name": "three or more real border families and continuous compositor movement",
+      "status": "pass",
+      "details": {
+        "families": [
+          {
+            "kind": "electric",
+            "style": "18px, 3px, 2px, 5px, 28px, 44px"
+          },
+          {
+            "kind": "flow",
+            "style": "13px, 87px"
+          },
+          {
+            "kind": "pixel",
+            "style": "0.5px, 1.5px, 0.5px, 4px, 2px, 91.5px"
+          },
+          {
+            "kind": "electric",
+            "style": "18px, 3px, 2px, 5px, 28px, 44px"
+          },
+          {
+            "kind": "proximity",
+            "style": "none"
+          }
+        ],
+        "diff": {
+          "changedPixels": 1038,
+          "edgeRatio": 0.9851415668472984
+        }
+      }
+    },
+    {
+      "name": "four real card canvases change pixels independently and release on exit",
+      "status": "pass",
+      "details": [
+        {
+          "id": "demo-postcard",
+          "width": 310,
+          "height": 413,
+          "colored": 16779,
+          "centerAlpha": 107,
+          "cornerAlpha": 0
+        },
+        {
+          "id": "demo-pet",
+          "width": 310,
+          "height": 413,
+          "colored": 128,
+          "centerAlpha": 0,
+          "cornerAlpha": 0
+        },
+        {
+          "id": "demo-story",
+          "width": 310,
+          "height": 413,
+          "colored": 125454,
+          "centerAlpha": 0,
+          "cornerAlpha": 255
+        },
+        {
+          "id": "demo-portrait",
+          "width": 310,
+          "height": 413,
+          "colored": 124254,
+          "centerAlpha": 0,
+          "cornerAlpha": 255
+        }
+      ]
+    },
+    {
+      "name": "reduce live change clears RAF and contexts; restore remains usable",
+      "status": "pass",
+      "details": {
+        "a": {
+          "rafPending": 0,
+          "rafExecuted": 632,
+          "gpuAllocated": 0,
+          "gpuLive": 0,
+          "coarse": false,
+          "fine": true,
+          "hover": true,
+          "reduce": true,
+          "hidden": false,
+          "animations": []
+        },
+        "b": {
+          "rafPending": 0,
+          "rafExecuted": 632,
+          "gpuAllocated": 0,
+          "gpuLive": 0,
+          "coarse": false,
+          "fine": true,
+          "hover": true,
+          "reduce": true,
+          "hidden": false,
+          "animations": []
+        }
+      }
+    },
+    {
+      "name": "route unmount no residual creative RAF",
+      "status": "pass",
+      "details": {
+        "rafPending": 0,
+        "rafExecuted": 0,
+        "gpuAllocated": 0,
+        "gpuLive": 0,
+        "coarse": false,
+        "fine": true,
+        "hover": true,
+        "reduce": false,
+        "hidden": false,
+        "animations": []
+      }
+    }
+  ]
+}
