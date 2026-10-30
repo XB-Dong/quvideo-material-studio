@@ -218,6 +218,82 @@ paths:
           '400': { $ref: '#/components/responses/Error' }
         '401': { $ref: '#/components/responses/Error' }
         '404': { $ref: '#/components/responses/Error' }
+  /api/auth/register:
+    post:
+      operationId: registerAccount
+      description: Upgrade the current guest without changing its userId or task ownership. Revoke all old guest sessions and set a new account session cookie.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/RegisterAccount' }
+      responses:
+        '201': { $ref: '#/components/responses/AccountSession' }
+        '400': { $ref: '#/components/responses/Error' }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+        '409': { $ref: '#/components/responses/Error' }
+  /api/auth/login:
+    post:
+      operationId: loginAccount
+      security: []
+      description: Revoke the current cookie session and sign in to the requested account. Never merge guest records automatically. AUTH_INVALID does not mean the current guest session has expired.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/LoginAccount' }
+      responses:
+        '200': { $ref: '#/components/responses/AccountSession' }
+        '400': { $ref: '#/components/responses/Error' }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+        '429': { $ref: '#/components/responses/Error' }
+  /api/auth/logout:
+    post:
+      operationId: logoutAccount
+      security: []
+      description: Revoke the current session and return a newly created guest session. Expired or missing cookies also lead safely to a new guest.
+      responses:
+        '200': { $ref: '#/components/responses/AccountSession' }
+        '403': { $ref: '#/components/responses/Error' }
+  /api/account/profile:
+    patch:
+      operationId: updateAccountProfile
+      description: Account-only display name update through the Next same-origin PATCH proxy. Email remains read-only.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [displayName]
+              properties:
+                displayName: { type: string, minLength: 1, maxLength: 30 }
+      responses:
+        '200': { $ref: '#/components/responses/AccountSession' }
+        '400': { $ref: '#/components/responses/Error' }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+  /api/account/password:
+    post:
+      operationId: changeAccountPassword
+      description: Verify the current password, replace its salted password hash, revoke every old account session and return a fresh session. Accepted tasks continue in Java.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [currentPassword, newPassword]
+              properties:
+                currentPassword: { type: string, minLength: 12, maxLength: 128, writeOnly: true }
+                newPassword: { type: string, minLength: 12, maxLength: 128, writeOnly: true }
+      responses:
+        '200': { $ref: '#/components/responses/AccountSession' }
+        '400': { $ref: '#/components/responses/Error' }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
 components:
   securitySchemes:
     sessionCookie:
@@ -236,6 +312,14 @@ components:
       required: true
       schema: { type: string, format: uuid }
   responses:
+    AccountSession:
+      description: Current session with a safe profile; no credential/hash/token fields in JSON. No-store; authentication changes set an HttpOnly session cookie.
+      headers:
+        Set-Cookie:
+          schema: { type: string }
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Session' }
     Error:
       description: Standard request error; must not be interpreted as task execution failure
       content:
@@ -251,11 +335,27 @@ components:
   schemas:
     Session:
       type: object
-      required: [userId, displayName, expiresAt]
+      required: [userId, displayName, expiresAt, kind, email, emailVerified]
       properties:
         userId: { type: string, format: uuid }
         displayName: { type: string }
         expiresAt: { type: string, format: date-time }
+        kind: { type: string, enum: [GUEST, ACCOUNT] }
+        email: { type: string, nullable: true, description: Normalized account login email; null for guests }
+        emailVerified: { type: boolean, enum: [false], description: Local login identifier; ownership has not been verified by email }
+    RegisterAccount:
+      type: object
+      required: [displayName, email, password]
+      properties:
+        displayName: { type: string, minLength: 1, maxLength: 30 }
+        email: { type: string, format: email, maxLength: 254 }
+        password: { type: string, minLength: 12, maxLength: 128, writeOnly: true }
+    LoginAccount:
+      type: object
+      required: [email, password]
+      properties:
+        email: { type: string, format: email, maxLength: 254 }
+        password: { type: string, minLength: 12, maxLength: 128, writeOnly: true }
     Template:
       type: object
       required: [id, title, categoryId, coverUrl, description, requiredImageCount, acceptedMimeTypes, maxFileSizeBytes]
