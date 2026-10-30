@@ -1,0 +1,126 @@
+{
+  "scope": "Isolated CSS geometry verification, not full app CLS acceptance",
+  "results": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "pending": {
+        "main": {
+          "x": 0,
+          "y": 92,
+          "width": 1440,
+          "height": 908,
+          "top": 92,
+          "right": 1440,
+          "bottom": 1000,
+          "left": 0
+        },
+        ".p12-boundary": {
+          "x": 410,
+          "y": 148,
+          "width": 620,
+          "height": 380,
+          "top": 148,
+          "right": 1030,
+          "bottom": 528,
+          "left": 410
+        },
+        "footer": {
+          "x": 40,
+          "y": 1056,
+          "width": 1360,
+          "height": 75.140625,
+          "top": 1056,
+          "right": 1400,
+          "bottom": 1131.140625,
+          "left": 40
+        }
+      },
+      "ready": {
+        "main": {
+          "x": 0,
+          "y": 92,
+          "width": 1440,
+          "height": 908,
+          "top": 92,
+          "right": 1440,
+          "bottom": 1000,
+          "left": 0
+        },
+        "footer": {
+          "x": 40,
+          "y": 1056,
+          "width": 1360,
+          "height": 75.140625,
+          "top": 1056,
+          "right": 1400,
+          "bottom": 1131.140625,
+          "left": 40
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "pending": {
+        "main": {
+          "x": 0,
+          "y": 76,
+          "width": 375,
+          "height": 736,
+          "top": 76,
+          "right": 375,
+          "bottom": 812,
+          "left": 0
+        },
+        ".p12-boundary": {
+          "x": 16,
+          "y": 106,
+          "width": 343,
+          "height": 330,
+          "top": 106,
+          "right": 359,
+          "bottom": 436,
+          "left": 16
+        },
+        "footer": {
+          "x": 16,
+          "y": 848,
+          "width": 343,
+          "height": 75.140625,
+          "top": 848,
+          "right": 359,
+          "bottom": 923.140625,
+          "left": 16
+        }
+      },
+      "ready": {
+        "main": {
+          "x": 0,
+          "y": 76,
+          "width": 375,
+          "height": 908,
+          "top": 76,
+          "right": 375,
+          "bottom": 984,
+          "left": 0
+        },
+        "footer": {
+          "x": 16,
+          "y": 1020,
+          "width": 343,
+          "height": 75.140625,
+          "top": 1020,
+          "right": 359,
+          "bottom": 1095.140625,
+          "left": 16
+        }
+      }
+    }
+  ],
+  "limitations": "Production CSS in isolated DOM skeleton; ready content uses fixed 908px geometry to match independent diagnostic height. This is not real API loading or CLS acceptance."
+}

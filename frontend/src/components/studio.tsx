@@ -22,7 +22,7 @@ export function Studio({ id }: { id: string }) {
       api<Template>("/api/templates/" + encodeURIComponent(id), { signal }),
   });
   return (
-    <Shell>
+    <Shell mainClass="p12-studio-main">
       {template.isPending ? (
         <StatePanel
           loading

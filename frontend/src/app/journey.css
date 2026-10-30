@@ -635,3 +635,13 @@ body:has(dialog[open]) .p12-studio .primary-button {
 .p12-studio[data-p12-offscreen] .primary-button {
   animation-play-state: paused !important;
 }
+
+.p12-studio-main {
+  display: flow-root;
+  min-height: calc(100svh - 92px);
+}
+@media (max-width: 600px) {
+  .p12-studio-main {
+    min-height: calc(100svh - 76px);
+  }
+}

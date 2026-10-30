@@ -102,7 +102,13 @@ export function Modal({
     </dialog>
   );
 }
-export function Shell({ children }: { children: React.ReactNode }) {
+export function Shell({
+  children,
+  mainClass,
+}: {
+  children: React.ReactNode;
+  mainClass?: string;
+}) {
   const { session, error, retry } = useIdentity();
   const [open, setOpen] = useState(false);
   return (
@@ -130,7 +136,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <button onClick={retry}>重新连接</button>
         </div>
       )}
-      <main>{children}</main>
+      <main className={mainClass}>{children}</main>
       <footer>
         疏影工作室 <span>让每一份灵感，都有自己的画面。</span>
         <small>模拟制作演示 · 无真实 AI 调用</small>

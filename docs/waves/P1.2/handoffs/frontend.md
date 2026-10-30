@@ -71,3 +71,10 @@ UploadSlot状态class随上传完成而重写，纯class IO标记可能丢失；
 已读独立route-diagnosis与原trace：54.126ms RunMicrotasks由React29.124ms与connect24.461ms组成，connect读取目标rect强制UpdateLayoutTree4.303ms+Layout15.884ms，不能归因Ink。修正MutationObserver只定位与注册ResizeObserver，目标自然布局RO回调非零尺寸后再读一次rect；disconnect观察者和700ms边界后才写唯一public桥。取消同时清待RO与动画，late callback校验generation/disposed；RO不支持则直接完整Link/CSS反馈，不加等待、不修改业务、不做Ink缓存。
 
 增加未ready不得读几何、ready后创建与disconnect-before-write、身份取消后的迟到RO和无RO回退用例（原39继续+2=41）。先后被prefer-const与测试不完整ROEntry类型阻止，已按精确const和完整typed entry修正；非运行性能失败、不冒充Red行为证据。最终05:58:38UTC/13:58:38+08:00容器lint/typecheck/41tests全通过，exit0。强制Layout是否实际减少及无截图门槛仍待独立同条件trace/性能复验。
+
+
+## P12-STATE Studio CLS归因修复
+
+已读独立studio-layout-diagnosis实际.179281 sources：MAIN从y148→92恰好56px，为StatePanel外margin塌陷，height720→908，Footer由视窗内移出；非200ms入场结束，不归因Ink。仅Studio给Shell可选mainClass=p12-studio-main，flow-root阻止margin塌陷，min-height按视窗减当前header92/小屏76预留，初始footer就在折下。首页/历史/通用main及加载可见位置不改。
+
+隔离真实Chromium使用实际CSS验证：1440×1000 pending与ready骨架MAIN均y92/h908，loading面板仍y148，Footer均y1056；375×812 MAIN均y76，Footer初始848已折下。ready骨架固定908px用于复现诊断几何，不冒充真实API或CLS通过，报告见evidence/frontend/studio-geometry.json。06:00:27UTC/14:00:27+08:00容器lint/typecheck/41tests全部通过，完整三轮app CLS与route成本需独立复验。
