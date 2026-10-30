@@ -1,0 +1,16 @@
+{
+  "testedCommit": "5e2af4c7c89f7a4374e7d6ce947af6ff7070f95c",
+  "capturedAt": "2026-10-30T05:11:03.089Z",
+  "pass": true,
+  "originalBytes": 664653,
+  "thumbnailBytes": 34325,
+  "originalSha256": "767bad36607f21adc40c2bcefbe1a5e970ccba43da822d92b487e18ddb66699c",
+  "sourceSha256": "767bad36607f21adc40c2bcefbe1a5e970ccba43da822d92b487e18ddb66699c",
+  "dimensions": {
+    "w": 512,
+    "h": 341
+  },
+  "unauthorized": 401,
+  "stranger": 404,
+  "originalUnchanged": true
+}

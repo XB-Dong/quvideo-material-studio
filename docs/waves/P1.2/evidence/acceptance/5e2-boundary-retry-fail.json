@@ -1,0 +1,20 @@
+{
+  "testedCommit": "5e2af4c7c89f7a4374e7d6ce947af6ff7070f95c",
+  "capturedAt": "2026-10-30T05:19:36.431Z",
+  "scope": "Controlled real JSON response corruption triggers React render boundary, not DOM replacement/query404; isolated contexts; expected fault errors kept separate.",
+  "checks": [
+    {
+      "name": "route error real React render fault and retry",
+      "status": "fail",
+      "message": "locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator('input[type=file]').first()\n",
+      "intercepts": 1,
+      "expectedFaultErrors": []
+    },
+    {
+      "name": "global error real React render fault and retry",
+      "status": "pass",
+      "intercepts": 1,
+      "expectedFaultErrors": []
+    }
+  ]
+}

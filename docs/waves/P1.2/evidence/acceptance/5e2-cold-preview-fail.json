@@ -1,0 +1,117 @@
+{
+  "testedCommit": "5e2af4c7c89f7a4374e7d6ce947af6ff7070f95c",
+  "capturedAt": "2026-10-30T05:14:53.878Z",
+  "controlledResponseDelayMs": 600,
+  "intercepted": 1,
+  "snapshots": [
+    {
+      "label": "open-pending",
+      "at": 1952.4000000059605,
+      "naturalWidth": 0,
+      "complete": false,
+      "imageRect": {
+        "x": 720,
+        "y": 547.2000122070312,
+        "width": 0,
+        "height": 0,
+        "top": 547.2000122070312,
+        "right": 720,
+        "bottom": 547.2000122070312,
+        "left": 720
+      },
+      "dialogRect": {
+        "x": 622.489990234375,
+        "y": 440.3800048828125,
+        "width": 195.02001953125,
+        "height": 135.239990234375,
+        "top": 440.3800048828125,
+        "right": 817.510009765625,
+        "bottom": 575.6199951171875,
+        "left": 622.489990234375
+      },
+      "animations": []
+    },
+    {
+      "label": "before-response",
+      "at": 3367.7000000029802,
+      "naturalWidth": 0,
+      "complete": false,
+      "imageRect": {
+        "x": 720,
+        "y": 540,
+        "width": 0,
+        "height": 0,
+        "top": 540,
+        "right": 720,
+        "bottom": 540,
+        "left": 720
+      },
+      "dialogRect": {
+        "x": 620.5,
+        "y": 431,
+        "width": 199,
+        "height": 138,
+        "top": 431,
+        "right": 819.5,
+        "bottom": 569,
+        "left": 620.5
+      },
+      "animations": []
+    },
+    {
+      "label": "image-load",
+      "at": 3755,
+      "naturalWidth": 960,
+      "complete": true,
+      "imageRect": {
+        "x": 369,
+        "y": 306,
+        "width": 702,
+        "height": 468,
+        "top": 306,
+        "right": 1071,
+        "bottom": 774,
+        "left": 369
+      },
+      "dialogRect": {
+        "x": 340,
+        "y": 197,
+        "width": 760,
+        "height": 606,
+        "top": 197,
+        "right": 1100,
+        "bottom": 803,
+        "left": 340
+      },
+      "animations": []
+    },
+    {
+      "label": "after-load-100ms",
+      "at": 4220.600000008941,
+      "naturalWidth": 960,
+      "complete": true,
+      "imageRect": {
+        "x": 369,
+        "y": 306,
+        "width": 702,
+        "height": 468,
+        "top": 306,
+        "right": 1071,
+        "bottom": 774,
+        "left": 369
+      },
+      "dialogRect": {
+        "x": 340,
+        "y": 197,
+        "width": 760,
+        "height": 606,
+        "top": 197,
+        "right": 1100,
+        "bottom": 803,
+        "left": 340
+      },
+      "animations": []
+    }
+  ],
+  "scope": "Functional cold-image fixture; screenshot overhead not performance evidence"
+}

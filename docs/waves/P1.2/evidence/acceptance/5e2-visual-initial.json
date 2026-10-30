@@ -1,0 +1,144 @@
+{
+  "testedCommit": "5e2af4c7c89f7a4374e7d6ce947af6ff7070f95c",
+  "capturedAt": "2026-10-30T05:07:47.980Z",
+  "browser": "149.0.7827.53",
+  "checks": [
+    {
+      "name": "continuous scene /templates/demo-pet",
+      "status": "pass",
+      "details": {
+        "clip": {
+          "x": 65,
+          "y": 470.34375,
+          "width": 340,
+          "height": 24
+        },
+        "a": {
+          "edgeEnergy": 3.9007530930607874,
+          "mean": 253.530258203335,
+          "width": 340,
+          "height": 24
+        },
+        "b": {
+          "edgeEnergy": 3.9330285099515883,
+          "mean": 253.52245831091977,
+          "width": 340,
+          "height": 24
+        },
+        "diff": {
+          "changedPixels": 119,
+          "edgeRatio": 1.0082741501758254
+        }
+      }
+    },
+    {
+      "name": "continuous scene /history",
+      "status": "pass",
+      "details": {
+        "clip": {
+          "x": 170,
+          "y": 402.53125,
+          "width": 900,
+          "height": 24
+        },
+        "a": {
+          "edgeEnergy": 4.933606668016475,
+          "mean": 253.1044577174867,
+          "width": 900,
+          "height": 24
+        },
+        "b": {
+          "edgeEnergy": 4.8596207059458845,
+          "mean": 253.11205034757393,
+          "width": 900,
+          "height": 24
+        },
+        "diff": {
+          "changedPixels": 377,
+          "edgeRatio": 0.985003676407723
+        }
+      }
+    },
+    {
+      "name": "history refetch does not repeat terminal celebration",
+      "status": "pass",
+      "details": []
+    },
+    {
+      "name": "result and identity dialogs real pixels, original result and focus",
+      "status": "pass",
+      "details": {
+        "src": "/media/results/c6b91487-2c2d-4825-bd24-3668577dd0da"
+      }
+    },
+    {
+      "name": "runtime reduce and route cancel RAF WAAPI public overlays",
+      "status": "pass",
+      "details": {
+        "a": {
+          "observedAt": 1823.9000000059605,
+          "rafPending": 0,
+          "rafExecuted": 0,
+          "pendingCallbacks": [],
+          "rafHistory": [
+            {
+              "kind": "cancel",
+              "id": 0,
+              "at": 413
+            }
+          ],
+          "motionStatic": false,
+          "orbit": 0,
+          "gpuAllocated": 0,
+          "gpuLive": 0,
+          "coarse": false,
+          "fine": true,
+          "hover": true,
+          "reduce": true,
+          "hidden": false,
+          "animations": []
+        },
+        "b": {
+          "observedAt": 2084,
+          "rafPending": 0,
+          "rafExecuted": 0,
+          "pendingCallbacks": [],
+          "rafHistory": [
+            {
+              "kind": "cancel",
+              "id": 0,
+              "at": 413
+            },
+            {
+              "kind": "media-change",
+              "matches": true,
+              "trusted": true,
+              "at": 1920.2000000029802
+            },
+            {
+              "kind": "cancel",
+              "id": 0,
+              "at": 1923
+            }
+          ],
+          "motionStatic": true,
+          "orbit": 0,
+          "gpuAllocated": 0,
+          "gpuLive": 0,
+          "coarse": false,
+          "fine": true,
+          "hover": true,
+          "reduce": true,
+          "hidden": false,
+          "animations": []
+        }
+      }
+    }
+  ],
+  "sampleTaskIds": [
+    "e81c41c3-5671-41c5-8e9a-349196eebccb",
+    "c6b91487-2c2d-4825-bd24-3668577dd0da",
+    "dac7848c-1fa2-4019-9967-eecb295bee53"
+  ],
+  "limits": "Screenshot/pixel observation is functional evidence, not performance; default production policy no GPU fixture"
+}
