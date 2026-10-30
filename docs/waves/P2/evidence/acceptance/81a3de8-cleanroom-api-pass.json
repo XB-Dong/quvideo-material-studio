@@ -1,0 +1,183 @@
+{
+  "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+  "capturedAt": "2026-10-30T10:13:45.808Z",
+  "base": "http://localhost:3302",
+  "origin": "http://localhost:3302",
+  "checks": [
+    {
+      "name": "Guest works; register upgrades owner, rotates token and preserves uploaded task",
+      "status": "pass",
+      "began": "2026-10-30T10:13:37.621Z",
+      "completedAt": "2026-10-30T10:13:38.631Z",
+      "details": {
+        "ownerPreserved": true,
+        "oldGuestRevoked": true,
+        "taskId": "d8122ef1-1d22-47dc-bf9f-d27c8e3f1dca",
+        "cookie": [
+          {
+            "present": true,
+            "httpOnly": true,
+            "sameSite": "SameSite=Lax",
+            "path": "Path=/",
+            "secure": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "Registration invalid fields, normalized duplicate and concurrent unique email rollback",
+      "status": "pass",
+      "began": "2026-10-30T10:13:38.631Z",
+      "completedAt": "2026-10-30T10:13:39.996Z",
+      "details": {
+        "concurrentStatuses": [
+          201,
+          409
+        ],
+        "duplicateDoesNotPartiallyUpgrade": true
+      }
+    },
+    {
+      "name": "Second account and guest media/task isolation; login never merges guest history",
+      "status": "pass",
+      "began": "2026-10-30T10:13:39.996Z",
+      "completedAt": "2026-10-30T10:13:41.216Z",
+      "details": {
+        "ownersDistinct": true,
+        "guestNotMerged": true,
+        "foreignTaskAndAsset404": true
+      }
+    },
+    {
+      "name": "Profile PATCH same-origin proxy200/400/401/403 and code/cookie continuity",
+      "status": "pass",
+      "began": "2026-10-30T10:13:41.216Z",
+      "completedAt": "2026-10-30T10:13:41.544Z",
+      "details": {
+        "profileCookie": [],
+        "guestErrorCookie": [],
+        "frontendOrigin": "http://localhost:3302",
+        "statuses": [
+          200,
+          400,
+          401,
+          403
+        ],
+        "ownerUnchanged": true
+      }
+    },
+    {
+      "name": "AUTH_INVALID is a credential error; valid guest session remains valid",
+      "status": "pass",
+      "began": "2026-10-30T10:13:41.544Z",
+      "completedAt": "2026-10-30T10:13:41.804Z",
+      "details": {
+        "guestPreserved": true
+      }
+    },
+    {
+      "name": "Running task survives logout/login; old token cannot read private result",
+      "status": "pass",
+      "began": "2026-10-30T10:13:41.804Z",
+      "completedAt": "2026-10-30T10:13:43.584Z",
+      "details": {
+        "id": "f9c28378-c4ff-4d28-83ed-a61dc536c54d",
+        "timeline": [
+          {
+            "status": "RUNNING",
+            "stage": "ASSET_CHECK",
+            "version": 2
+          },
+          {
+            "status": "RUNNING",
+            "stage": "GENERATE",
+            "version": 4
+          },
+          {
+            "status": "RUNNING",
+            "stage": "FINALIZE",
+            "version": 6
+          },
+          {
+            "status": "SUCCEEDED",
+            "stage": "FINALIZE",
+            "version": 7
+          }
+        ],
+        "originalMime": "image/png",
+        "oldTokenRevoked": true
+      }
+    },
+    {
+      "name": "Change password rejects wrong current, revokes all old sessions, signs fresh same owner",
+      "status": "pass",
+      "began": "2026-10-30T10:13:43.584Z",
+      "completedAt": "2026-10-30T10:13:44.956Z",
+      "details": {
+        "sameOwner": true,
+        "allOldSessions401": true,
+        "oldPasswordRejected": true
+      }
+    },
+    {
+      "name": "Real multi-step order, specified failure stops later steps, terminal queries do not regress",
+      "status": "pass",
+      "began": "2026-10-30T10:13:44.956Z",
+      "completedAt": "2026-10-30T10:13:45.808Z",
+      "details": [
+        {
+          "stage": "ASSET_CHECK",
+          "id": "091fd567-fe2e-4c04-8283-136527d8b173",
+          "timeline": [
+            {
+              "status": "RUNNING",
+              "stage": "ASSET_CHECK",
+              "version": 2
+            },
+            {
+              "status": "FAILED",
+              "stage": "ASSET_CHECK",
+              "version": 3
+            }
+          ],
+          "reason": "素材检查阶段按演示配置失败"
+        },
+        {
+          "stage": "GENERATE",
+          "id": "5343adc5-3518-470d-8cca-f536258e5771",
+          "timeline": [
+            {
+              "status": "RUNNING",
+              "stage": "ASSET_CHECK",
+              "version": 2
+            },
+            {
+              "status": "FAILED",
+              "stage": "GENERATE",
+              "version": 5
+            }
+          ],
+          "reason": "模拟生成阶段按演示配置失败"
+        },
+        {
+          "stage": "FINALIZE",
+          "id": "0bf92dc2-abe8-437e-a922-fd524b9fb84a",
+          "timeline": [
+            {
+              "status": "RUNNING",
+              "stage": "ASSET_CHECK",
+              "version": 2
+            },
+            {
+              "status": "FAILED",
+              "stage": "FINALIZE",
+              "version": 7
+            }
+          ],
+          "reason": "结果整理阶段按演示配置失败"
+        }
+      ]
+    }
+  ],
+  "scope": "Independent frontend-origin account/core HTTP acceptance; synthetic credentials and cookies stay memory-only; actual source per testedCommit; preliminary integrated runtime is separate from final ZIP CLEAN gate."
+}

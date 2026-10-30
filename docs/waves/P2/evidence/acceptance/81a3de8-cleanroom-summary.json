@@ -1,0 +1,40 @@
+{
+  "sourceCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+  "zipSha256": "499656253158ba15ef91d5910e22637ba897cd1e09293dc030a7bd2516ca5cf7",
+  "zipBytes": 6780082,
+  "sourceIndexGitEntries": 725,
+  "exportedFiles": 261,
+  "structureAndExactGitBlobChecksPass": true,
+  "extractionStillByteIdenticalAfterBuildAndRuntime": true,
+  "noGitDirectory": true,
+  "project": "p2-cleanroom",
+  "base": "http://localhost:3302",
+  "newVolumes": [
+    "p2-cleanroom_mysql-data",
+    "p2-cleanroom_material-files"
+  ],
+  "volumesCreatedAt": "2026-10-30T10:12:40Z",
+  "buildAndUpExitCode": 0,
+  "buildCacheDisclosure": "Existing Docker dependency/Java packaging layers were reused, keyed by verified exact input contexts; Next production build actually executed. This proves new extracted source/new volumes, not a fully cache-disabled dependency reinstall. Remote CI separately required.",
+  "containers": {
+    "frontend": "sha256:0c23e908554ad123d55b46972a9305a48b7ecac217ed376205e94149ef8403ae",
+    "backend": "sha256:2bcb3612a036d6d4f7594e43761239755be316f46223c8c9af1d8bb0f56ee8f4",
+    "mysql": "sha256:a0225d1ea6631c8bc2385dc4c2faba17bbf1834ecf369e1659a9a382bd8d5dd7"
+  },
+  "api": {
+    "pass": 8,
+    "fail": 0,
+    "exitCode": 0
+  },
+  "browser": {
+    "pass": 8,
+    "fail": 0,
+    "exitCode": 0,
+    "selection": null
+  },
+  "limits": [
+    "Early candidate ZIP excludes final GIFs/report additions; final executable/package equivalence still required.",
+    "Full original performance/remote CI remain separate gates.",
+    "No production3000 or candidate3301 volumes modified."
+  ]
+}

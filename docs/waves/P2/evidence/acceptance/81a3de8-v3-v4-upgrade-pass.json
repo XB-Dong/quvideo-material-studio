@@ -1,0 +1,78 @@
+{
+  "baselineCommit": "7bbfd027758002cc519fc889cea3c8a2b5233717",
+  "newBackendCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+  "project": "p2-v3-upgrade",
+  "base": "http://localhost:3304",
+  "oldFrontendUnchanged": true,
+  "originalMysqlContainer": "35f6cdd924417f3fd91ef7159cb8dd50768fbf05187ef5316b388d6205dda832",
+  "originalFrontendContainer": "1da1051cf2c96c11217e05d34282a61b6eec355043bcbe8fc0570f46242bcb64",
+  "volumesCreatedAt": "2026-10-30T10:13:01Z",
+  "materialFilesMount": "p2-v3-upgrade_material-files -> /data/materials",
+  "mysqlVolume": "p2-v3-upgrade_mysql-data",
+  "postUpgradeReadOnlySQL": {
+    "flywayVersionsSuccess": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    "taskStatusCounts": {
+      "FAILED": 1,
+      "SUCCEEDED": 2
+    },
+    "accountCredentialsCount": 1
+  },
+  "independentKeeper": {
+    "baselineCommit": "7bbfd027758002cc519fc889cea3c8a2b5233717",
+    "newBackendCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "base": "http://localhost:3304",
+    "scope": "Separate synthetic V3-to-V4 volume upgrade; old guest cookie stays only in the running API context RAM. Existing V3 frontend proxy stays, only backend upgraded after ready signal.",
+    "phases": [
+      {
+        "name": "V3 seeded",
+        "at": "2026-10-30T10:17:33.517Z",
+        "userId": "a2b69322-f0eb-4df9-b552-639f456c4553",
+        "taskIds": [
+          "127a1b5a-4795-43e4-89a8-879b03e0f525",
+          "235a2a5a-5f3a-4cea-9f83-2790ed14101b",
+          "2e80b315-9b0f-461d-bc4e-5bfc62d54983"
+        ],
+        "statuses": [
+          "SUCCEEDED",
+          "SUCCEEDED",
+          "FAILED"
+        ],
+        "assetSha256": "b7b9edefaa2b7155e4e07806f4479f3b471ebf0e748a55a9ef31b393a65cf84b"
+      },
+      {
+        "name": "V4 retains old guest, exact terminal task snapshots and uploaded/result bytes",
+        "at": "2026-10-30T10:18:54.605Z",
+        "pass": true
+      },
+      {
+        "name": "Old V3 guest upgrades to account without losing records, old token revoked",
+        "at": "2026-10-30T10:18:55.035Z",
+        "pass": true
+      }
+    ],
+    "pass": true,
+    "capturedAt": "2026-10-30T10:18:55.035Z"
+  },
+  "limits": [
+    "Synthetic V3 data only; does not use production3000 DB/files.",
+    "Only backend changed; V3 frontend proxy retained for migration HTTP, not claimed full81 frontend.",
+    "Session token lived only in running request jar RAM; control flag is empty/nonsecret."
+  ]
+}

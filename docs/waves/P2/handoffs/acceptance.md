@@ -32,3 +32,17 @@ API8/8实际exit0：注册保owner/原任务、重复/并发唯一失败不半�
 实际截图：raw account-375.png及account-review/desktop-register.png、desktop-account.png、desktop-header.png、mobile-account.png、mobile-header.png。额外account-review入口为本树新增脚本只读挂到工具（同1b产品），真实桌面空注册表单/合成账户设置、375header及ESC还焦点、无横溢出，exit0；仅功能/审图用途，不冒称性能或本角色独立G01。Reviewer已收到精确路径。
 
 所有预验raw在own runtime/p2-1b38655，脱敏hash/环境/来源汇总1b38655-preliminary-summary.json。所有Chrome已退出；媒体未录，旧整套必需性能/最终CI、最终ZIP解压空卷、V3升级和GIF/报告还未完成，不签最终VERIFY/CLEAN。
+
+## 冻结候选ZIP、独立cleanroom与V3升级
+
+候选source81a3de8da97790744cbc7e4540a568e697093fd6（应用树相对预验1b相同），Root提供源码ZIP6780082B/SHA256499656253158ba15ef91d5910e22637ba897cd1e09293dc030a7bd2516ca5cf7。Acceptance独立git ls-tree -r --full-tree -z读取725条路径/模式/blobOID，与Root索引全等；强化checker214实际逐个验证261个导出文件的Git blob/来源comment、完整expected集合、policy不删code/tests/assets/入口、私文档/题面/邮件图排除、根及RB许可、demo/ink/重做输入/curated来源，全部exit0。索引与原始报告保存在仓库外acceptance-cleanroom-evidence/81a...。
+
+先确认p2-cleanroom无旧容器/卷，解压原ZIP到全新外部cleanroom/81a...，无.git。仅在该目录用FRONTEND_PORT3302/APP_PUBLIC_ORIGIN3302执行docker compose -p p2-cleanroom up --build --detach --wait --wait-timeout240，exit0/三服务healthy，18:12:40+08创建新mysql-data/material-files。Docker已有依赖与Java包装缓存层被复用（输入已逐Git blob核对），Next生产构建实际执行；本项不冒称完全--no-cache重新下载/Java冷编译。最终远端完整构建/测试另行门槛。
+
+在解压包内同Compose入口设置TESTED_COMMIT=81a、P2_BASE_URL/Origin3302、仓库外OUTPUT，API完整8/8 exit0（18:13:45+08），browser默认未筛选完整8/8 exit0（18:16:20+08）。这次确为一次完整browser8通过，首次1b的工具失败仍保留。构建/运行后再次比对宿主解压目录261文件，全部与ZIP字节一致，未产生.git或宿主依赖/构建缓存。完整旧性能/远端CI/最后媒体与封存仍未用本项替代。
+
+V3升级：Root另从精确7bbfd027758002cc519fc889cea3c8a2b5233717在外部private-validation/v3-source构建p2-v3-upgrade3304，新卷18:13:01+08创建。Acceptance实际只读核V1/V2/V3无V4，用f9769e0 keeper工具经原V3 Next代理在18:17:33种合成guest/上传/三终态(2success+1GENERATEfail)，保留canonical任务语义hash与图片原bytes SHA；cookie只在持续运行的API jar RAM，未写token文件。随后Leader按明确协作仅将backend切至81a，新backend18:18:54 healthy，MySQL/旧前端原容器和文件卷保持，写非secret空控制标记。keeper18:18:55完成：旧userId/session仍GUEST，三份终态完整语义（只规范JSON对象键序、数组顺序保持）及上传/结果字节不变；旧访客再注册账户仍同owner/原历史，旧token401。实际exit0。
+
+独立docker exec MySQL只读SELECT证明Flyway1/2/3/4全部success、任务SUCCEEDED2/FAILED1、账户凭据1。docker inspect核旧mysql/前端创建时间和实际material-files挂载仍p2-v3-upgrade原卷；不使用或复制生产3000数据库。升级保留旧V3前端代理，明确不冒称3304完整81前端。相关curated与原始仓库外位置见81a3de8-cleanroom-summary.json及81a3de8-v3-v4-upgrade-pass.json。
+
+媒体仅新增只读同源原landscape/实际fog edgeEnergy采样脚本和两段无遮挡路径选择（metadata保点/来源/映射），仅容器parse；未运行采样/录制，等全部性能结束。未改变产品paint/mask/alpha/位置。当前尚不签最终P2 G02/CI/MEDIA/SEAL。
