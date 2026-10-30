@@ -1,0 +1,11 @@
+export function ioAudit(){
+ const Native=window.IntersectionObserver;let observerId=0,sequence=0;const events=[];
+ window.__ioAudit=()=>events.slice();
+ window.IntersectionObserver=class extends Native{
+  constructor(callback,options){const id=++observerId;super((entries,observer)=>{
+   for(const e of entries){const t=e.target;events.push({sequence:++sequence,observerId:id,at:performance.now(),entryTime:e.time,isIntersecting:e.isIntersecting,ratio:e.intersectionRatio,tag:t.tagName,classes:t.getAttribute('class'),taskId:t.getAttribute('data-task-id'),offscreen:t.hasAttribute('data-p12-offscreen'),rect:e.boundingClientRect.toJSON(),intersection:e.intersectionRect.toJSON(),root:e.rootBounds?.toJSON()});}
+   callback.call(observer,entries,observer);
+  },options)}
+ };
+}
+export async function state(locator){return locator.evaluate(async el=>{const animations=el.getAnimations({subtree:true});window.__animationReadiness??=new WeakMap();for(const a of animations)if(!window.__animationReadiness.has(a)){const value={state:'pending'};window.__animationReadiness.set(a,value);a.ready.then(()=>value.state='resolved',()=>value.state='rejected')}await Promise.resolve();return {at:performance.now(),rect:el.getBoundingClientRect().toJSON(),classes:el.getAttribute('class'),dataOffscreen:el.hasAttribute('data-p12-offscreen'),emphasis:el.getAttribute('data-emphasis'),uploadState:el.getAttribute('data-upload-state'),focusWithin:el.contains(document.activeElement),reduce:matchMedia('(prefers-reduced-motion: reduce)').matches,dialogs:document.querySelectorAll('dialog[open]').length,hidden:document.hidden,hasFocus:document.hasFocus(),visibility:document.visibilityState,viewport:{w:innerWidth,h:innerHeight,scrollY},focus:{tag:document.activeElement?.tagName,classes:document.activeElement?.getAttribute('class')},animations:animations.map(a=>({name:a.animationName,state:a.playState,pending:a.pending,currentTime:a.currentTime,ready:window.__animationReadiness.get(a).state,iterations:a.effect?.getTiming().iterations===Infinity?'infinite':a.effect?.getTiming().iterations,target:a.effect?.target?.getAttribute?.('class'),cssPlayState:a.effect?.target?getComputedStyle(a.effect.target).animationPlayState:null})),io:window.__ioAudit()}})}

@@ -57,3 +57,11 @@ headed命令按 Leader 明确授权仅在 primary 读取/执行，未写共享�
 限制：本地软件渲染不代表硬件 GPU 或 Windows/IAB 实体最小化；chooser以 Chromium intercepted chooser 与空选文件模拟取消，未控制 OS 对话框窗口；截图中的桥相位为真实原动画受控暂停观察，不宣称默认时序；大JPEG是尾padding传输，不宣称20MP解码。独立 G01 由 Reviewer 实读图单独签，不把作者/本角色自查冒称美学审核。
 
 raw位于本 worktree `runtime/p12-*`，manifest为 p12-raw-manifest.json；完整trace/PNG/4MiB测试输入不进Git，synthetic.storage-state认证文件默认禁写、显式调试产生的旧文件只留ignored且不进manifest/CI普通artifact。归档worktree前请Leader将raw安全保存到其受控证据目录并复核hash；不要手动删除工作树。后续只等待完整远端CI与Leader签收，不启动新工作。
+
+## 远端 CI 41012646536 的离屏前置诊断与复验
+
+首轮最终CI c7f2af6 的前后端、旧P1.1检查已过，新P1.2视觉14通过/2离屏失败，完整原visual与lifecycle失败保留。原harness失败时未存IO/属性快照，不能先断言产品漏停。随后只读native IO诊断240e59e7a8710195aaf4e55daad56b1066a9279d实际复现：slot几何bottom -561.59、hidden=false、原200ms仍无新false/data=false/动画running；恰一次viewport render后真实false交付，data=true、CSS/动画paused，恢复真实true后running。第二轮带真实bringToFront前后记录，两项原checkpoint本来已暂停。无证据支持持续CSS漏停，未改产品。
+
+Leader实读诊断后授权唯一正式harness修正：只读nativeIO审计；保留原200/250 checkpoint；几何确认后恰一次viewport screenshot allow；shot后500ms内必须有本轮目标false，立即原0running无限动画标准，恢复必须有本轮true并running。缺事件明示trigger prerequisite failure且exit1，不靠超时放宽或反复补帧。新增焦点/可见/非reduce/dialog0/active emphasis与服务端仍RUNNING守卫；只将活动mock延长至4+10+2=16s防自然结束假绿，seed35s不变。observer回调this/entries/observer与原生一致，不覆值/不dispatch假事件；25ms定时只读轮询不申请补充RAF。
+
+局部正式两项最终代码实际exit0，证据8a-lifecycle-native-trigger-pass.json，应用8a不变。中间两次相同功能pass属于增加callback this忠实转发、显式allow、无RAF轮询后的必要局部复验，不是失败重试求偶然绿。原无截图interaction、九轮measure和native入口未改、结果继续有效。远端最新失败保持事实，等待新harness完整CI，不能据此提前声称远端通过。

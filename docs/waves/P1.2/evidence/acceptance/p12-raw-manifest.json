@@ -209,11 +209,6 @@
       "sha256": "97674c5525dfd3d729ac6a527ea4e1db431b58fbe87238438e721126094ed1d8"
     },
     {
-      "path": "runtime/p12-8a/affected-review/studio-pending.png",
-      "bytes": 240534,
-      "sha256": "55493ffdc3d103c94efc191938e98a8a59d825e290e6d80501328beedbf8ac45"
-    },
-    {
       "path": "runtime/p12-8a/affected-review-r2/studio-pending.png",
       "bytes": 240574,
       "sha256": "c5530d30ed635d3a77796f38939efc21820167821952bd8b00be21dd499e45ed"
@@ -269,6 +264,11 @@
       "sha256": "0590b36b89b6dd78a5fb401859a670d45762bfa40d74a0bba6d9aaff30987265"
     },
     {
+      "path": "runtime/p12-8a/affected-review/studio-pending.png",
+      "bytes": 240534,
+      "sha256": "55493ffdc3d103c94efc191938e98a8a59d825e290e6d80501328beedbf8ac45"
+    },
+    {
       "path": "runtime/p12-8a/interact/interaction-performance.json",
       "bytes": 6036,
       "sha256": "6a4947bc483825eb9f6df07359bbf23ac57b34f0e77945bc5674cd09858e30fb"
@@ -277,6 +277,131 @@
       "path": "runtime/p12-8a/interact/valid-large-jpeg.jpg",
       "bytes": 4194304,
       "sha256": "1c3aa236c6e39892730336ed86df4f93bedc392efe151412171239edb0dd43ff"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-diagnosis-r2/lifecycle-diagnosis.json",
+      "bytes": 216821,
+      "sha256": "712590fbf3f1be129f98f5951d8b07a356a0f51c355d77f70020bc5e3cddf2e6"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-diagnosis-r2/slot-offscreen.png",
+      "bytes": 44506,
+      "sha256": "371a692f7a29d26780ffc032bbe98e15421bc64b2f318dca352b79504c76f5dc"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-diagnosis-r2/slot-restored.png",
+      "bytes": 107051,
+      "sha256": "f65bc2b66c8aa2b0029709a168abd9e9a64ad6378332ff484f367a0e79052e8c"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-diagnosis-r2/task-offscreen.png",
+      "bytes": 47771,
+      "sha256": "82875826aa30a2024c54315d067a80b9ba2ad2368b174ee20e6ca8639f3a8295"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-diagnosis-r2/task-restored.png",
+      "bytes": 30111,
+      "sha256": "8a03a3e1321748f1d268639eaf601438074fe49d2dad57dfaec1f7e926847e48"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-diagnosis/lifecycle-diagnosis.json",
+      "bytes": 215160,
+      "sha256": "0454a5c60c2a61874f834e5789c9d161161aa95cb06b194bca194cd0ead5483a"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-diagnosis/slot-offscreen.png",
+      "bytes": 44540,
+      "sha256": "4fcfecd94c3abc300faa235cc6d31c6bb693441d1f181ed5a440ce9b89f434ea"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-diagnosis/slot-restored.png",
+      "bytes": 20841,
+      "sha256": "df3ed4b5211f949baeff7f8a9481a8ddb0cf30ec470e36b82c10313946c6a9c8"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-diagnosis/task-offscreen.png",
+      "bytes": 47557,
+      "sha256": "1c266f2f20dd533fd63e4c11805d72083a25797ec99618008409bdefaac2083f"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-diagnosis/task-restored.png",
+      "bytes": 30376,
+      "sha256": "073a30e33b64a853867728092cdf6e9a98a9dca82b12a8f54ad25403721d0048"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-formal-final/lifecycle.json",
+      "bytes": 486860,
+      "sha256": "a67c7681eae3dd41c80a78b54500dcb6e8883421c33aee097388a978744dbfc0"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-formal-final/slot-offscreen.png",
+      "bytes": 44376,
+      "sha256": "5dcace52699369e3685bfb38c5bbe780c933f3a54af8fa4ba862b4df8f2d9039"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-formal-final/slot-restored.png",
+      "bytes": 113618,
+      "sha256": "fb51ae23b19508d38b98e73dc90db63f275fc54993bdc79da866e7ca5f2eabc2"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-formal-final/task-offscreen.png",
+      "bytes": 47644,
+      "sha256": "5b50557de5b839992ceede260a12872bd84b60d8381a834869a8572c5ef3cc50"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-formal-final/task-restored.png",
+      "bytes": 30065,
+      "sha256": "66222be6edad2bfeb620cdb90e263dab85a3db8765222100db8891b673f50b72"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-formal-r2/lifecycle.json",
+      "bytes": 481302,
+      "sha256": "6115d418719ace605e0b23e3943f6861d0fd253678ca36dadf5f150d71c78986"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-formal-r2/slot-offscreen.png",
+      "bytes": 44640,
+      "sha256": "58ccdd71db54aea5b014c1c98f52dcf9c98a78ce386a655bca5cef1f448aa75a"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-formal-r2/slot-restored.png",
+      "bytes": 113618,
+      "sha256": "8a8d739b65a7dc27f82b8d81aea67e364e7fd7668b4d2108f9c3a36a533de263"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-formal-r2/task-offscreen.png",
+      "bytes": 47736,
+      "sha256": "abae896c5404cb5d4e408f11e8655fe8941772514d08dd1977a74ac53033a42c"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-formal-r2/task-restored.png",
+      "bytes": 43505,
+      "sha256": "917482a4e52eb75ee8de661661de1d6e84ae375095b033d848aa7d83ceef63fb"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-formal/lifecycle.json",
+      "bytes": 521695,
+      "sha256": "2e9c190506906f42e3b64ac942b3a02822eb06a5f4bc5ffb9981bb74c5f1c886"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-formal/slot-offscreen.png",
+      "bytes": 44373,
+      "sha256": "3770a0ff66c9de9f58e5d38ea951c22ff89d2fd4d7412a83110acf1bbf74fd20"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-formal/slot-restored.png",
+      "bytes": 113603,
+      "sha256": "9be4f24dad1742c136328d1235195aaa48eb7773b2e52d5243abe2a54489e0a3"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-formal/task-offscreen.png",
+      "bytes": 47795,
+      "sha256": "d509f857cffb394dc6e0766a4b38a33aca0cacbeadc955d60ab0c22b2bec2e3d"
+    },
+    {
+      "path": "runtime/p12-8a/lifecycle-formal/task-restored.png",
+      "bytes": 43233,
+      "sha256": "da4ed4ebd536545c8ee32a4e666fd78978ccf413c3b2c746a4db30384b1a68c8"
     },
     {
       "path": "runtime/p12-8a/measure/history-run-1.png",

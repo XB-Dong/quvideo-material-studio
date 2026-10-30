@@ -28,3 +28,7 @@ interact的4MiB样例先存真实容器磁盘，再由同一真实filechooser选
 diagnose-upload-transport.mjs与diagnose-route.mjs仅诊断，trace不算舒适通过。measure可用P12_MEASURE_PAGES=studio、P12_TRACE_LAYOUT=1限定3轮并记录节点rect/API时序/DOMready定位CLS；正式默认仍三页九轮、所有原阈值。不得用筛选诊断代替完整预算验收。
 
 affected-review.mjs只在全部无截图采样结束后运行，供有界差异审图：真实延迟模板响应的loading/ready、产品原260ms公共桥WAAPI暂停于70/150/230ms观察后恢复并清理、真正coarse上下文首次触摸chooser与取消保图。相位截图明确属于受控审图，不证明默认时序性能。稳态main对比等待真实p12-page-in有限动画结束，规定8px入场不能误报成布局塌陷；原CLS逐轮门槛仍由measure独立执行。此辅助入口不加入六项CI聚合重复执行。
+
+## 原生离屏事件前置
+
+lifecycle.mjs只在像素功能检查使用只读lifecycle-observer审计，不用于无截图性能。保留原200/250ms快照；确认几何离屏后，恰一次普通viewport screenshot（fullPage=false、animations=allow），随后500ms内必须收到本轮该真实产品observer的false事件，立即保留data/CSS/Animation.pending/currentTime/ready并执行0个running无限动画断言。restore同样要求本轮true且恢复动画。定时器25ms只读轮询，不请求补充RAF帧；缺事件明确是trigger prerequisite失败，仍exit1，无循环截图/手工暂停。slot焦点、前台/非reduce/dialog0和task emphasis/服务端仍RUNNING|QUEUED都须真实成立。仅该活动任务模拟fixture调整为4+10+2=16秒，防自然终态假绿；seed35秒deadline、原预算/业务路径不变。diagnose-lifecycle.mjs保留原checkpoint前后证据供复现。
