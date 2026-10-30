@@ -4,12 +4,28 @@ import {start,base,output,testedCommit,audit,raster,compare,compact} from './com
 const forbidden=/Dither Veil|Glow Cursor|Ripple Distortion|Halftone Reveal|Orbit Images|Pixel Trail|Electric Border|移动鼠标体验|悬停查看效果/;
 const {browser,relay}=await start(),checks=[];
 async function check(name,fn){try{checks.push({name,status:'pass',details:await fn()});}catch(e){checks.push({name,status:'fail',message:e.message});}}
+async function waitForImage(image,timeout=5000){
+ await image.scrollIntoViewIfNeeded();
+ await image.evaluate((el,ms)=>new Promise((resolve,reject)=>{
+  let timer;const clean=()=>{clearTimeout(timer);el.removeEventListener('load',loaded);el.removeEventListener('error',failed)};
+  const loaded=()=>{clean();el.complete&&el.naturalWidth>0?resolve():reject(Error('Image finished without valid pixels'))};
+  const failed=()=>{clean();reject(Error('Image failed to load: '+el.currentSrc))};
+  if(el.complete){loaded();return;}el.addEventListener('load',loaded,{once:true});el.addEventListener('error',failed,{once:true});timer=setTimeout(()=>{clean();reject(Error('Image readiness timeout'))},ms);
+ }),timeout);
+}
+if(process.env.IMAGE_READINESS_SELF_CHECK==='1'){
+ const page=await browser.newPage(),photo=await page.request.get(base+'/media/demo/pet-p1-cover.jpg'),bytes=await photo.body();let release;const gate=new Promise(r=>release=r);
+ await page.route('**/probe-image.jpg',async route=>{await gate;await new Promise(r=>setTimeout(r,500));await route.fulfill({status:200,contentType:'image/jpeg',body:bytes})});
+ await page.setContent('<img src="'+base+'/probe-image.jpg">',{waitUntil:'domcontentloaded'});const image=page.locator('img');const oldImmediate=await image.evaluate(el=>el.complete&&el.naturalWidth>0);assert.equal(oldImmediate,false,'Controlled pending image must expose old premature assertion');release();await waitForImage(image);const ready=await image.evaluate(el=>({complete:el.complete,width:el.naturalWidth}));
+ await page.route('**/broken-image.jpg',route=>route.fulfill({status:200,contentType:'image/jpeg',body:'not-image'}));await page.setContent('<img src="'+base+'/broken-image.jpg">',{waitUntil:'domcontentloaded'});let brokenRejected=false;try{await waitForImage(page.locator('img'))}catch{brokenRejected=true}assert(brokenRejected,'Broken image must still fail');
+ await fs.writeFile(output+'/image-readiness-check.json',JSON.stringify({testedCommit,capturedAt:new Date().toISOString(),oldImmediate,controlledResponseDelayMs:500,ready,brokenRejected},null,2));await browser.close();relay.close();process.exit(0);
+}
 async function inspect(page){return page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,bodyText:document.body.innerText}));}
 for(const scenario of [{name:'desktop',width:1440,height:1000,motion:'no-preference',touch:false},{name:'reduce',width:1440,height:1000,motion:'reduce',touch:false},{name:'mobile',width:375,height:812,motion:'no-preference',touch:true}]){
  const context=await browser.newContext({viewport:{width:scenario.width,height:scenario.height},deviceScaleFactor:1,reducedMotion:scenario.motion,hasTouch:scenario.touch,isMobile:scenario.touch});const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.addInitScript(audit);await page.addInitScript(()=>{localStorage.setItem('yingzuo-static','true');localStorage.setItem('p11-session-sentinel','keep')});
  await page.goto(base,{waitUntil:'networkidle'});await page.locator('.template-card').first().waitFor();
  await check(`${scenario.name}: brand, controls, gallery and overflow`,async()=>{const d=await inspect(page);assert(d.bodyText.includes('疏影'));assert(!/映作|灵感作品|动态效果|静态模式|暂停|继续播放|Dither Veil|Electric Border|移动鼠标体验/.test(d.bodyText));assert.equal(await page.locator('#gallery-panel,[aria-label="作品题材"]').count(),0);assert(d.scrollWidth<=scenario.width);assert((await page.title()).includes('疏影'));assert.equal(await page.evaluate(()=>localStorage.getItem('p11-session-sentinel')),'keep');});
- await check(`${scenario.name}: Java cards keep stable IDs`,async()=>{const templates=await(await context.request.get(base+'/api/templates')).json();for(const t of templates){const link=page.locator('a.template-card[href="/templates/'+t.id+'"]');assert.equal(await link.count(),1);assert((await link.innerText()).includes(t.title));assert.equal(await link.locator('a,button').count(),0);assert(await link.locator('img').first().evaluate(i=>i.complete&&i.naturalWidth>0));}return templates.map(t=>({id:t.id,cover:t.coverUrl,count:t.requiredImageCount}));});
+ await check(`${scenario.name}: Java cards keep stable IDs`,async()=>{const templates=await(await context.request.get(base+'/api/templates')).json();for(const t of templates){const link=page.locator('a.template-card[href="/templates/'+t.id+'"]');assert.equal(await link.count(),1);assert((await link.innerText()).includes(t.title));assert.equal(await link.locator('a,button').count(),0);await waitForImage(link.locator('img').first());assert(await link.locator('img').first().evaluate(i=>i.complete&&i.naturalWidth>0));}return templates.map(t=>({id:t.id,cover:t.coverUrl,count:t.requiredImageCount}));});
  if(scenario.touch)await check('mobile: true coarse first tap direct navigation',async()=>{const state=await page.evaluate(()=>window.__audit());assert(state.coarse&&!state.fine&&!state.hover,'Actual touch media: '+JSON.stringify(state));const l=page.locator('a.template-card').first();await l.scrollIntoViewIfNeeded();const b=await l.boundingBox();await page.touchscreen.tap(b.x+b.width/2,b.y+b.height/2);await page.locator('input[type=file]').first().waitFor({state:'attached'});assert.equal(await page.locator('.maker-action button').count(),1);await page.goto(base,{waitUntil:'networkidle'});return state;});
  await page.screenshot({path:`${output}/${scenario.name}-catalog.png`,fullPage:true});
  if(scenario.name==='desktop'){

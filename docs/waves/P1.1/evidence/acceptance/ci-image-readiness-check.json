@@ -1,0 +1,11 @@
+{
+  "testedCommit": "64e919aac25cacf7f1193b4a361071e5d03ef635",
+  "capturedAt": "2026-10-30T04:53:51.681Z",
+  "oldImmediate": false,
+  "controlledResponseDelayMs": 500,
+  "ready": {
+    "complete": true,
+    "width": 480
+  },
+  "brokenRejected": true
+}
