@@ -33,9 +33,9 @@
   "dependenciesInstalledForP12": true,
   "productRestartedForP12": true,
   "developmentWorktreesCreatedForP12": false,
-  "productChecks": "author_39FE_18Java_8API_passed; independent_final_and_CI_pending",
-  "aestheticGate": "passed_at_b2d0a6a_with_explicit_review_evidence",
-  "comfortGate": "independent_final_runtime_in_progress",
+  "productChecks": "author_41FE_18Java_8API_passed; final_runtime_and_CI_pending",
+  "aestheticGate": "b2d_passed; bounded_8a_review_pending",
+  "comfortGate": "repair_trace_verified_changes_pending_independent_retest",
   "homePolicy": "preserve_approved_layout_palette_assets_and_motion; functional_click_navigation_only",
   "mailStatus": "deferred_by_user_excluded_from_P1.2",
   "effortEstimateHours": [
@@ -199,7 +199,7 @@
     }
   ],
   "preparationRecordedAt": "2026-10-30T12:32:21.079406+08:00",
-  "nextAction": "Final_independent_runtime_and_full_remote_CI",
+  "nextAction": "Retest_8a_RO_CLS_interaction_nine_runs_native; full_CI",
   "p11VerifiedCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
   "p11VerifiedCIRun": 41002700967,
   "conditionalExecutionAuthorization": {
