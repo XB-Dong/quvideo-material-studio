@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { SceneEdge, clickFeedback } from "./motion/journey";
+import { SceneEdge, clickFeedback, useSceneVisibility } from "./motion/journey";
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { useIdentity } from "./providers";
 import { useTasks } from "../lib/use-tasks";
@@ -244,6 +244,8 @@ function TaskFrame({
   emphasis: boolean;
   children: ReactNode;
 }) {
+  const visual = useRef<HTMLElement>(null);
+  useSceneVisibility(visual);
   const before = useRef(task.status + ":" + task.stage);
   const [transition, setTransition] = useState("");
   useEffect(() => {
@@ -262,6 +264,7 @@ function TaskFrame({
   }, [task.status, task.stage]);
   return (
     <article
+      ref={visual}
       className="task-card p12-task"
       data-task-id={task.id}
       data-emphasis={emphasis}

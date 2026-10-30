@@ -1,0 +1,101 @@
+{
+  "setup": {
+    "upload": 201,
+    "task": 202
+  },
+  "focused": {
+    "slot": {
+      "top": 663.40625,
+      "bottom": 835.40625
+    },
+    "task": {
+      "top": 286.734375,
+      "bottom": 689.3125
+    },
+    "slotClass": "upload-slot p12-upload empty",
+    "taskClass": "task-card p12-task",
+    "slotAnimations": [
+      {
+        "class": {},
+        "name": "p12-flow",
+        "state": "running"
+      }
+    ],
+    "taskAnimations": [
+      {
+        "class": "orbit",
+        "name": "none",
+        "state": "running"
+      },
+      {
+        "class": "",
+        "name": "p12-node",
+        "state": "running"
+      }
+    ]
+  },
+  "offscreen": {
+    "slot": {
+      "top": -532.59375,
+      "bottom": -360.59375
+    },
+    "task": {
+      "top": -909.265625,
+      "bottom": -506.6875
+    },
+    "slotClass": "upload-slot p12-upload empty",
+    "taskClass": "task-card p12-task",
+    "slotAnimations": [
+      {
+        "class": {},
+        "name": "p12-flow",
+        "state": "running"
+      }
+    ],
+    "taskAnimations": [
+      {
+        "class": "orbit",
+        "name": "none",
+        "state": "running"
+      },
+      {
+        "class": "",
+        "name": "p12-node",
+        "state": "running"
+      }
+    ]
+  },
+  "dialog": {
+    "slot": {
+      "top": 663.40625,
+      "bottom": 835.40625
+    },
+    "task": {
+      "top": 276.734375,
+      "bottom": 679.3125
+    },
+    "slotClass": "upload-slot p12-upload empty",
+    "taskClass": "task-card p12-task",
+    "slotAnimations": [
+      {
+        "class": {},
+        "name": "none",
+        "state": "running"
+      }
+    ],
+    "taskAnimations": [
+      {
+        "class": "orbit",
+        "name": "none",
+        "state": "running"
+      },
+      {
+        "class": "",
+        "name": "p12-node",
+        "state": "running"
+      }
+    ]
+  },
+  "note": "Owner browser diagnostic; real Java task, focus via native DOM focus; extra blank bottom padding only ensures both visual regions actually scroll offscreen.",
+  "testedApplication": "Shared local deployed app; exact deployment SHA maintained by Leader, not asserted from current working-tree HEAD"
+}

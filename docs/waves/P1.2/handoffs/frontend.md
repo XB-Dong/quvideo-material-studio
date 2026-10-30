@@ -39,3 +39,12 @@ Leader于e9becdb冻结P1.2-1.0.1/决定0014后，仅History结果卡片的img sr
 
 
 Reviewer实际ERROR截图minor已采纳：无preview时不渲染hover胶囊，JPEG/PNG/格式错误说明不被覆盖；原label/input和error语义未改。已实际view该截图确认触发。最终对应容器检查继续由实际session输出记录，不改独立故障边界fixture。
+
+
+## P12-FOUND/SCENE 离屏与弹窗暂停修复
+
+真实容器浏览器复现：匿名会话上传201/提交慢任务202，在focus上传位后滚出视窗，slot与task的bottom均小于0，p12-flow和p12-node仍running；身份dialog打开后task node也仍running。复现仅为保证两个区域真正离屏加入底部1000px空白滚动脚手架，没有改业务或伪造任务状态。原始报告位于忽略的runtime/p12-offscreen-owner/repro.json。
+
+给UploadSlot/TaskFrame/Maker根节点接现有纯视觉IntersectionObserver，CSS以足够specificity暂停离屏上传边、任务node/orbit、提交操作反馈；dialog打开时暂停这些背景循环，dialog自身正常入出保留。上传请求/轮询/组件挂载/slot版本等业务不随离屏取消。新聚焦测试验证IO失交/恢复、断开与业务子节点仍保留。backdrop伪元素单独覆盖motion-static与系统reduce，避免仅通配后代遗漏。实际集成浏览器复验仍由独立Acceptance执行。
+
+离屏修自测首轮新测试漏导入hook被TypeScript阻止，改精确import后05:12:47UTC/13:12:47+08:00容器lint/typecheck/35tests全部通过（原31+4视觉行为）。未弱化检查。脱敏修前实际浏览器报告见evidence/frontend/offscreen-before.json，报告明确部署SHA由Leader日志记录，不能将当前worktree HEAD冒充共享运行源。

@@ -572,3 +572,17 @@ body:has(dialog[open]) .p12-scene-current {
 .p12-upload.empty .upload-plus {
   animation: p12-status-in 0.16s both;
 }
+
+.p12-upload.p12-offscreen .p12-upload-edge rect,
+.p12-history .p12-task.p12-offscreen .orbit,
+.p12-history .p12-task.p12-offscreen .p12-stage-path i,
+.p12-studio.p12-offscreen .primary-button,
+body:has(dialog[open]) .p12-upload-edge rect,
+body:has(dialog[open]) .p12-history .orbit,
+body:has(dialog[open]) .p12-history .p12-stage-path i,
+body:has(dialog[open]) .p12-studio .primary-button {
+  animation-play-state: paused !important;
+}
+
+.motion-static .p12-dialog::backdrop{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){.p12-dialog::backdrop{animation:none!important;transition:none!important}}

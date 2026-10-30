@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { render, cleanup, act } from "@testing-library/react";
 import { afterEach, beforeEach, it, expect, vi } from "vitest";
 const state = vi.hoisted(() => ({ pathname: "/", enabled: true }));
@@ -8,7 +9,7 @@ vi.mock("../providers", () => ({
 vi.mock("./preferences", () => ({
   useMotionPreferences: () => ({ enabled: state.enabled }),
 }));
-import { beginCoverTransition, clickFeedback, VisualJourney } from "./journey";
+import { beginCoverTransition, clickFeedback, VisualJourney, useSceneVisibility } from "./journey";
 beforeEach(() => {
   state.pathname = "/";
   state.enabled = true;
@@ -87,4 +88,49 @@ it("clears short click particles when system motion becomes unavailable", () => 
   state.enabled = false;
   view.rerender(<VisualJourney />);
   expect(document.querySelector(".p12-click-bloom")).toBeNull();
+});
+
+it("pauses an observed visual scope offscreen, resumes and disconnects without removing its business children", () => {
+  let callback: IntersectionObserverCallback = () => {};
+  const disconnect = vi.fn();
+  const observe = vi.fn();
+  vi.stubGlobal(
+    "IntersectionObserver",
+    class {
+      constructor(cb: IntersectionObserverCallback) {
+        callback = cb;
+      }
+      observe = observe;
+      disconnect = disconnect;
+    },
+  );
+  function Probe() {
+    const ref = useRef<HTMLDivElement>(null);
+    useSceneVisibility(ref);
+    return (
+      <div ref={ref} data-testid="visual">
+        <input aria-label="still available" />
+      </div>
+    );
+  }
+  const view = render(<Probe />);
+  const el = view.getByTestId("visual");
+  expect(observe).toHaveBeenCalledWith(el);
+  act(() =>
+    callback(
+      [{ isIntersecting: false }] as IntersectionObserverEntry[],
+      {} as IntersectionObserver,
+    ),
+  );
+  expect(el).toHaveClass("p12-offscreen");
+  expect(view.getByLabelText("still available")).toBeInTheDocument();
+  act(() =>
+    callback(
+      [{ isIntersecting: true }] as IntersectionObserverEntry[],
+      {} as IntersectionObserver,
+    ),
+  );
+  expect(el).not.toHaveClass("p12-offscreen");
+  view.unmount();
+  expect(disconnect).toHaveBeenCalledOnce();
 });

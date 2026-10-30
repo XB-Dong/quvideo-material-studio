@@ -10,6 +10,7 @@ import { History } from "./history";
 import { StatePanel } from "./motion/state-panel";
 import {
   SceneEdge,
+  useSceneVisibility,
   beginCoverTransition,
   clickFeedback,
 } from "./motion/journey";
@@ -70,6 +71,8 @@ export function UploadSlot({
   disabled?: boolean;
 }) {
   const [slot, setSlot] = useState<Slot>({ status: "EMPTY" });
+  const visual = useRef<HTMLDivElement>(null);
+  useSceneVisibility(visual);
   const version = useRef(0);
   const controller = useRef<AbortController | null>(null);
   const preview = useRef<string | undefined>(undefined);
@@ -142,6 +145,7 @@ export function UploadSlot({
   };
   return (
     <div
+      ref={visual}
       data-upload-state={slot.status}
       className={"upload-slot p12-upload " + slot.status.toLowerCase()}
     >
@@ -229,6 +233,8 @@ export function UploadSlot({
   );
 }
 export function Maker({ template: t }: { template: Template }) {
+  const visual = useRef<HTMLElement>(null);
+  useSceneVisibility(visual);
   const { session, epoch } = useIdentity();
   const client = useQueryClient();
   const [slots, setSlots] = useState<Slot[]>(() =>
@@ -316,7 +322,7 @@ export function Maker({ template: t }: { template: Template }) {
     }
   };
   return (
-    <aside className="maker-panel p12-studio">
+    <aside ref={visual} className="maker-panel p12-studio">
       <Link
         href="/"
         className="back-link"
