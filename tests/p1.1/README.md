@@ -6,6 +6,6 @@
 
 示例：`docker run --rm -e TESTED_COMMIT=<exact-sha> -v <absolute-runtime-dir>:/evidence material-p11-browser accept.mjs`。Docker启动后内部localhost:3000 TCP转发到产品3000，以保持同源与原业务Origin校验。不要并发多个脚本到同一证据目录；无需修改共享服务。
 
-measure按CDP Image类别或image MIME计算全部真实响应encodedDataLength，包含CSS/fetch/ImageBitmap与重复URL，包含头开销保守计量。内嵌data图通过所属HTML/CSS/JS传输成本登记，不能用inline逃预算。每轮都保存请求明细与JS gzip(level9)，不以中位数代替守卫。所有延后请求单独在interact记录，限122880B。截图/像素读回仅用于visual功能，不冒充舒适性能。
+measure按CDP Image类别或image MIME计算全部真实响应encodedDataLength，包含CSS/fetch/ImageBitmap与重复URL，包含头开销保守计量。内嵌data:image在HTML/CSS/JS中的encoded literal bytes也计入图片预算；载体成本继续保留，不能用inline逃预算。每轮都保存请求明细与JS gzip(level9)，不以中位数代替守卫。所有延后请求单独在interact记录，限122880B。截图/像素读回仅用于visual功能，不冒充舒适性能。
 
-P1旧gallery/手动按钮专属验收不再适用；业务块从原独立验收保留并继续运行。美学评分由另一Reviewer完成；本目录测试通过也不单独代表最终G02，仍需真实后台切换/源审核与邮件作用域实际证据。
+P1旧gallery/手动按钮专属验收不再适用；业务块从原独立验收保留并继续运行。美学评分由另一Reviewer完成；本目录测试通过也不单独代表最终G02，仍需真实后台切换/源审核与邮件作用域实际证据。native-visibility.mjs复用原生CDP真标签切换，在带Xvfb的headed镜像运行（不覆写document.hidden）；仅default路径。预算守卫回归用 `node --test budgets.test.mjs`。
