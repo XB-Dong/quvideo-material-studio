@@ -1,0 +1,17 @@
+import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import {gzipSync} from 'node:zlib';
+import {start,base,output,testedCommit,audit} from './common.mjs';
+const {browser,relay}=await start();const page=await browser.newPage({viewport:{width:1440,height:1000},deviceScaleFactor:1,reducedMotion:'no-preference'}),errors=[],scriptBodies=[];
+page.on('pageerror',e=>errors.push(e.message));let tracking=false;
+page.on('response',r=>{if(tracking&&r.request().resourceType()==='script')scriptBodies.push(r.body().then(b=>({url:r.url(),gzipBytes:gzipSync(b,{level:9}).length})).catch(e=>({error:e.message})));});
+await page.addInitScript(audit);await page.addInitScript(()=>{window.__longTasks=[];new PerformanceObserver(l=>{for(const e of l.getEntries())window.__longTasks.push({at:e.startTime,duration:e.duration,attribution:e.attribution.map(a=>({name:a.name,containerType:a.containerType,containerSrc:a.containerSrc}))});}).observe({type:'longtask',buffered:true});});
+await page.goto(base,{waitUntil:'networkidle'});await page.waitForTimeout(2500);tracking=true;const phases=[];
+async function phase(label,operation){const begin=await page.evaluate(()=>performance.now());await operation();const end=await page.evaluate(()=>performance.now());phases.push({label,begin,end});}
+await phase('ink pointer',async()=>{await page.evaluate(()=>scrollTo(0,0));for(let i=0;i<60;i++){await page.mouse.move(800+i%15*18,250+Math.floor(i/15)*28);await page.waitForTimeout(30);}});
+for(const id of ['demo-postcard','demo-pet','demo-story','demo-portrait'])await phase('card '+id,async()=>{const l=page.locator('a.template-card[href="/templates/'+id+'"]');await l.scrollIntoViewIfNeeded();const b=await l.boundingBox();for(let i=0;i<25;i++){await page.mouse.move(b.x+b.width*(.3+i%6*.06),b.y+100+i%4*20);await page.waitForTimeout(30);}await page.mouse.move(10,10);await page.waitForTimeout(250);});
+await phase('classification',async()=>{await page.getByRole('button',{name:'宠物',exact:true}).click();await page.waitForTimeout(300);await page.getByRole('button',{name:'全部模板',exact:true}).click();await page.waitForTimeout(300);});
+await phase('continuous idle 30s',async()=>{await page.mouse.move(10,10);await page.evaluate(()=>scrollTo(0,0));await page.waitForTimeout(30000);});
+const data=await page.evaluate(()=>({longTasks:window.__longTasks,audit:window.__audit()}));const lazy=await Promise.all(scriptBodies);const interactionLongTasks=data.longTasks.filter(t=>phases.some(p=>t.at>=p.begin&&t.at<p.end));const result={testedCommit,capturedAt:new Date().toISOString(),browser:await browser.version(),conditions:'Default software policy, actual pointer/scroll/category; no screenshot, tracing, readPixels or capability fixture. Initialization retained separately. Longtask overlap is conservative candidate attribution, failures require source review.',phases,...data,interactionLongTasks,initialLongTasks:data.longTasks.filter(t=>!interactionLongTasks.includes(t)),lazyScripts:lazy,lazyGzipBytes:lazy.reduce((s,r)=>s+(r.gzipBytes||0),0),errors};
+result.pass=errors.length===0&&interactionLongTasks.length===0&&result.audit.gpuLive<=1&&result.lazyGzipBytes<=122880&&lazy.every(r=>!r.error);
+await fs.writeFile(output+'/interaction-performance.json',JSON.stringify(result,null,2));await browser.close();relay.close();console.log(JSON.stringify({pass:result.pass,interactionLongTasks,lazyGzipBytes:result.lazyGzipBytes,errors}));assert(result.pass,'Interaction performance/resource gate failed; see preserved evidence');
