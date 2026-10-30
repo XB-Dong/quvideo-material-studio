@@ -29,7 +29,7 @@
 
 ## P1.1水墨与创意适配
 
-水墨装饰取自吴云（1811–1883）1854《仙霞新霁图》/Landscape，The Metropolitan Museum of Art藏品737785/2024.549.47。[藏品页](https://www.metmuseum.org/art/collection/search/737785)及[Open Access/CC0](https://www.metmuseum.org/hubs/open-access)提供公开领域依据。原始DP-42597-004.jpg裁掉摄影边框、色卡和题跋，调为冷浅纸色并编码为frontend/public/ink/landscape.webp。来源/裁切/源与产图哈希见[P1.1清单](docs/waves/P1.1/evidence/assets/production-manifest.json)，[容器转换](assets/p1.1/README.md)固定Pillow11.3.0（[HPND许可](https://github.com/python-pillow/Pillow/blob/11.3.0/LICENSE)），不增加产品运行依赖。
+水墨装饰取自吴云（1811–1883）1854《仙霞新霁图》/Landscape，The Metropolitan Museum of Art藏品737785/2024.549.47。[藏品页](https://www.metmuseum.org/art/collection/search/737785)及[Open Access/CC0](https://www.metmuseum.org/hubs/open-access)提供公开领域依据。原始DP-42597-004.jpg裁掉摄影边框、色卡和题跋，调为冷浅纸色并编码为frontend/public/ink/landscape.webp。来源/裁切/源与产图哈希见[P1.1清单](docs/waves/P1.1/evidence/assets/production-manifest.json)，[容器转换](assets/p1.1/README.md)固定Pillow11.3.0（原项目[MIT-CMU许可正文](https://github.com/python-pillow/Pillow/blob/11.3.0/LICENSE)），不增加产品运行依赖。
 
 P1.1默认使用原生Canvas2D/CSS/SVG实现擦雾、光晕、点阵/网点/水波/像素及边框；Orbit使用已有上游适配。未运行的上游shader与实际采用代码、Glare Hover/Magic Bento的边缘设计参考在[适配说明](frontend/src/components/react-bits/ADAPTATIONS.md)分别登记，不将保留源码等同实际运行。
 
@@ -38,3 +38,9 @@ P1.1默认使用原生Canvas2D/CSS/SVG实现擦雾、光晕、点阵/网点/水�
 跳转封面桥、六点点击反馈、上传/阶段/弹窗使用项目自行实现的CSS/SVG/WAAPI；Next Link/useLinkStatus与原生dialog保留语义。React官方ViewTransition/Next Frames、React Aria FileTrigger、Aceternity File Upload、Motion布局与React Bits ClickSpark/StarBorder仅借鉴交互思路，未复制新组件源码或安装Motion/Aceternity。逐项来源与registry审计见[P1.2参考](docs/waves/P1.2/references/README.md)，原有React Bits许可证继续保留。开发类型@types/react及react-dom更新至19.3.0，未新增产品运行依赖。
 
 认证结果卡片的512px白底JPEG由Java标准ImageIO按已有本地结果生成显示衍生，不增加第三方图片或外链。原PNG及用户上传不修改，弹窗预览使用完整原图；源照片许可与归属沿用P1素材清单。
+
+## P2账户与交付工具
+
+注册/登录/账户设置由本项目实现，密码派生使用Java21自带PBKDF2WithHmacSHA256；没有复制外部身份系统。根LICENSE只适用于原创代码/文档，明确排除React Bits第三方部分、照片与其衍生、原题/参考截图等，不能把全仓称为纯MIT。保留的React Bits许可证SHA256为4bdd1fa59a6b7d5954bc3b213dbc34e455c635a94bbcecf9293553797d0fad02，与源冻结记录一致。
+
+P2独立验收沿用Playwright1.58.2及原工具锁，媒体工具采用官方mcr.microsoft.com/playwright:v1.58.2-noble镜像（固定manifest digest6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d）、工具容器内FFmpeg/Noto CJK进行真实页面录制转码。工具不进入前端/Java应用运行依赖；具体构建/录制版本、动作与文件哈希随实际媒体证据记录，不将工具镜像名当作已录制证明。

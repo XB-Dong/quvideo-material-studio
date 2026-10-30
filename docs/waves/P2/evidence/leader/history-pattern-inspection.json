@@ -1,0 +1,13 @@
+{
+  "limitations": "Pattern inspection only, not comprehensive secret scanning or review of unreachable objects, remote cached artifacts/PRs or uncommitted worker files. No raw matched content printed.",
+  "sourceAt": "cd19387bd822e397e1f358395c2e1a5ad3457339",
+  "matchMetadata": [],
+  "rules": [
+    "GitHub token formats",
+    "private key header",
+    "AWS access-key ID",
+    "literal material_session token"
+  ],
+  "capturedAt": "2026-10-30T17:16:34.3691425+08:00",
+  "scope": "Reachable all-ref text diffs only; filenames/commit IDs returned, never matched contents"
+}

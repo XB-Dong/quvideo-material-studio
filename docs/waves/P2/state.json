@@ -28,16 +28,15 @@
     "recordedPriorWaveWallMinutes": 500.59
   },
   "activeDevelopmentAgents": [
-    "/root/p2_backend",
     "/root/p11_frontend",
-    "/root/p11_acceptance"
+    "/root/p11_design_review"
   ],
   "activePreparationReviewers": [],
   "maxNativeWorkers": 3,
   "actualProvider": null,
   "actualModel": null,
   "actualReasoningEffort": null,
-  "newDevelopmentWorktreesCreated": false,
+  "newDevelopmentWorktreesCreated": true,
   "applicationExecutedDuringPreparation": false,
   "productChangedDuringPreparation": false,
   "preparationReview": "passed_at_1790a91df75852ddcb3b823f37d8a1bb7c7dd1fc",
@@ -48,7 +47,7 @@
   "historyRewriteAuthorized": false,
   "examSubmissionAuthorized": false,
   "mailStatus": "deferred_by_user",
-  "nextAction": "Dispatch Backend/Frontend/Acceptance on precise frozen source; no user questions",
+  "nextAction": "Integrate account UI, review source/provenance, freeze candidate for independent acceptance",
   "tasks": [
     {
       "taskId": "P2-BASE",
@@ -80,7 +79,7 @@
       "rootTaskId": "P2-BE-USER",
       "waveId": "P2",
       "role": "Backend",
-      "status": "in_progress",
+      "status": "implemented_author26_passed_pending_independent",
       "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
       "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",
@@ -159,7 +158,7 @@
       "rootTaskId": "P2-AUDIT",
       "waveId": "P2",
       "role": "Reviewer",
-      "status": "ready_after_dependencies",
+      "status": "ready_released_backend_slot",
       "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
       "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",
@@ -189,7 +188,7 @@
       "rootTaskId": "P2-DOCS",
       "waveId": "P2",
       "role": "Leader",
-      "status": "ready_after_dependencies",
+      "status": "in_progress",
       "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
       "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",

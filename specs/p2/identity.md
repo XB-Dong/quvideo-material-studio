@@ -33,7 +33,7 @@ Next同源消费路径：Frontend独占frontend/src/app/api/[...path]/route.ts�
 
 计划Flyway V4新增一对一account_credentials：user_id外键、唯一规范化邮箱、password_algorithm/iterations/salt/hash、updated_at；users.display_name沿用。旧V1～V3和已有访客/任务无破坏性重建。Leader先冻结V4编号再明确转交Backend独占该文件。所有SQL由MyBatis参数绑定，邮箱唯一冲突正确回滚，不能留下半注册状态。
 
-邮箱trim/lowercase，最大254字符并作基本格式校验；昵称trim后1～30字符；密码12～128字符，服务端限制请求长度且不静默截断，确认密码在前端验证。邮箱所有权未验证必须在说明与界面语义中准确呈现。
+邮箱trim/lowercase，最大254字符并作基本格式校验；昵称trim后1～30字符；密码12～128字符，服务端限制请求长度且不静默截断，确认密码在前端验证。昵称/密码的“字符”按Unicode code point计数，Java用codePointCount，前端用Array.from(value).length；不得由HTML或JS UTF16长度误拒合法emoji。此为双方校验一致性澄清，未改变字段/接口。邮箱所有权未验证必须在说明与界面语义中准确呈现。
 
 密码拟采用JDK PBKDF2WithHmacSHA256、600000迭代、至少16随机盐字节、32字节派生值；算法参数随hash存储，比较用constant-time方法。绝不能用当前session用的单次SHA256来存密码。未知邮箱执行等价dummy校验；登录失败按规范化标识与来源作有界单实例节流（5次失败/5分钟，TTL清理及容量上限），成功不误计失败。新cookie使用现有安全随机32字节token，DB仅存其SHA256。实现阶段记录实际算法成本，不在主线程UI做密码派生。
 

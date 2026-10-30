@@ -32,3 +32,4 @@
 P2-DOCS末、P2-VERIFY启动前，由Leader在已冻结准确SHA生成候选源码ZIP及entries/manifest，路径为C:/Users/dongx/Documents/ChatGPT/quvideo-material-studio-delivery/P2/candidate/<40位SHA>/source-candidate.zip；该目录在仓库外，BASE确认后才建立。Acceptance只读候选包，在同根下独立解压目录+独立Compose项目/端口/空卷运行，不等待最后SEAL才有包。
 
 P2-SEAL在完整报告/审核/CI之后生成最终ZIP，逐项核对候选与最终的可执行树、依赖锁、迁移/种子、素材、入口/命令和entries差异，以及实际字节/哈希。产品文件或运行命令改变即重新相关验收及必需完整检查；只有脱敏报告等非执行文档变化时，记录差异并核对可执行树等价，不能宣称最终ZIP本身已逐字节在此前跑过。最终包仍重做完整性/解压/清单检查；每个结论标其实际包SHA和版本。
+P2执行选择：源码ZIP内直接以README.md/compose.yaml为根，不增加外层文件夹前缀；独立结构检查与解压启动使用同一结构。详见决定0018。
