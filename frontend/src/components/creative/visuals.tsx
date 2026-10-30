@@ -63,14 +63,34 @@ export function InkBackdrop() {
       h = canvas.height = innerHeight;
       fog.width = clear.width = w;
       fog.height = clear.height = h;
-      const scale = Math.max(w / image.width, h / image.height);
+      // Keep the horizontal scroll at its intended scale instead of filling viewport height.
+      const scale = Math.min(Math.max(w, 680) / image.width, 1);
       const iw = image.width * scale,
         ih = image.height * scale;
-      cc.drawImage(image, (w - iw) / 2, (h - ih) / 2, iw, ih);
-      fc.filter = "blur(9px)";
+      const top = 96;
+      cc.fillStyle = "#f8f9f7";
+      cc.fillRect(0, 0, w, h);
+      cc.globalAlpha = 0.78;
+      cc.drawImage(image, (w - iw) / 2, top, iw, ih);
+      cc.globalAlpha = 1;
+      const vertical = cc.createLinearGradient(0, top, 0, top + ih);
+      vertical.addColorStop(0, "rgba(248,249,247,1)");
+      vertical.addColorStop(0.16, "rgba(248,249,247,0)");
+      vertical.addColorStop(0.72, "rgba(248,249,247,0)");
+      vertical.addColorStop(1, "rgba(248,249,247,1)");
+      cc.fillStyle = vertical;
+      cc.fillRect(0, top, w, ih);
+      const paper = cc.createLinearGradient(0, 0, w, 0);
+      paper.addColorStop(0, "rgba(248,249,247,1)");
+      paper.addColorStop(0.26, "rgba(248,249,247,.98)");
+      paper.addColorStop(0.56, "rgba(248,249,247,.18)");
+      paper.addColorStop(1, "rgba(248,249,247,.04)");
+      cc.fillStyle = paper;
+      cc.fillRect(0, 0, w, h);
+      fc.filter = "blur(4px)";
       fc.drawImage(clear, 0, 0);
       fc.filter = "none";
-      fc.fillStyle = "rgba(248,249,247,.40)";
+      fc.fillStyle = "rgba(248,249,247,.22)";
       fc.fillRect(0, 0, w, h);
       ctx.drawImage(fog, 0, 0);
       points = [];

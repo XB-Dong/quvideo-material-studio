@@ -1679,7 +1679,7 @@ body {
   height: 100%;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 .site-header {
   background: rgba(255, 255, 255, 0.94);
@@ -1694,12 +1694,7 @@ body {
 .intro-copy {
   position: relative;
   padding: 20px 24px 20px 0;
-  background: linear-gradient(
-    90deg,
-    rgba(248, 249, 247, 0.98) 75%,
-    rgba(248, 249, 247, 0)
-  );
-  border-radius: 24px;
+  background: transparent;
 }
 .intro h1 {
   font-size: clamp(36px, 4.2vw, 60px);
@@ -1728,7 +1723,7 @@ body {
 }
 .section-top h2,
 .section-top .muted {
-  background: rgba(248, 249, 247, 0.94);
+  background: transparent;
 }
 .categories {
   width: fit-content;
@@ -1842,7 +1837,7 @@ footer {
 @media (max-width: 600px) {
   .intro-copy {
     padding: 12px 0;
-    background: rgba(248, 249, 247, 0.88);
+    background: transparent;
   }
   .intro {
     min-height: 0;
