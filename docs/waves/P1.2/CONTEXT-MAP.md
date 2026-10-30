@@ -45,3 +45,5 @@ P1.1真实Canvas2D/SVG/有限RAF与公共图缓存；已有upload-label img160ms
 - [x] P1.1减少动态CI曾有1帧来源未知，追踪修复/验收必须在P1.2启动前继承真实结论，不隐藏原失败。
 
 执行扩展：2026-10-30固定样例基线发现结果PNG成本超预算，依决策0014，Leader唯一持有backend/src/main/java/com/quvideo/studio/{Api,ResultThumbnail}.java及ResultThumbnailTest；仅增加认证显示缩略图，不改DB/生成/原图/上传/身份协议。Frontend仍独占history.tsx卡片src，Acceptance只做独立验收。规格修订P1.2-1.0.1已由消费者和Reviewer审查，预算不变。
+
+执行收尾：此地图开头是准备时快照；当前P1.2已完成，精确执行源、用户指定品牌例外、实际新增路径与CI见REPORT/state/决定0014–0017，不将准备文本当作当前未实施状态。

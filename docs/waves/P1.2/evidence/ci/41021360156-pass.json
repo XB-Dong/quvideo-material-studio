@@ -1,0 +1,136 @@
+{
+  "apiTests": 8,
+  "functionalVisual": [
+    {
+      "passed": 22,
+      "entry": "p11-browser/acceptance.json"
+    },
+    {
+      "passed": 6,
+      "entry": "p11-browser/visual/visual.json"
+    },
+    {
+      "passed": 25,
+      "entry": "p12-browser/acceptance.json"
+    },
+    {
+      "passed": 16,
+      "entry": "p12-browser/visual/visual.json"
+    }
+  ],
+  "frontendTests": 48,
+  "limits": "Container Chromium/SwiftShader/Xvfb; not physical Windows/IAB minimize or hardware GPU; full original failures retained; 12KiB planning target not met",
+  "url": "https://github.com/XB-Dong/quvideo-material-studio/actions/runs/41021360156",
+  "productTreeComparison": "git diff --quiet 3008c09 ff8a896 -- frontend backend compose.yaml exit0",
+  "jobs": [
+    {
+      "id": 123949184114,
+      "name": "backend",
+      "conclusion": "success"
+    },
+    {
+      "id": 123949184419,
+      "name": "frontend",
+      "conclusion": "success"
+    },
+    {
+      "id": 123949750588,
+      "name": "integration",
+      "conclusion": "success"
+    }
+  ],
+  "interaction": {
+    "pass": true,
+    "longTasks": [],
+    "lazyGzipBytes": 3381,
+    "errors": [],
+    "largeLegalUpload": {
+      "selectedBytes": 4194304,
+      "serverAssetBytes": 4194304,
+      "width": 480,
+      "height": 640,
+      "kind": "Valid local JPEG plus trailing padding selected from actual container filesystem path; original upload unmodified; transport test, not 20MP device performance"
+    }
+  },
+  "native": [
+    null,
+    null,
+    null
+  ],
+  "testedCommit": "ff8a896b4c730fabd9ac4a5f4a0b391019afa07a",
+  "runId": 41021360156,
+  "perRun": [
+    {
+      "run": "home-1",
+      "jsGzipBytes": 186789,
+      "imageEncodedBytes": 745072,
+      "cls": 0.00011561809775270062,
+      "errors": 0
+    },
+    {
+      "run": "home-2",
+      "jsGzipBytes": 186789,
+      "imageEncodedBytes": 745063,
+      "cls": 0,
+      "errors": 0
+    },
+    {
+      "run": "home-3",
+      "jsGzipBytes": 186789,
+      "imageEncodedBytes": 560925,
+      "cls": 0,
+      "errors": 0
+    },
+    {
+      "run": "studio-1",
+      "jsGzipBytes": 184386,
+      "imageEncodedBytes": 176925,
+      "cls": 0.00011561809775270062,
+      "errors": 0
+    },
+    {
+      "run": "studio-2",
+      "jsGzipBytes": 184386,
+      "imageEncodedBytes": 176910,
+      "cls": 0,
+      "errors": 0
+    },
+    {
+      "run": "studio-3",
+      "jsGzipBytes": 184386,
+      "imageEncodedBytes": 176934,
+      "cls": 0.00011319580078124999,
+      "errors": 0
+    },
+    {
+      "run": "history-1",
+      "jsGzipBytes": 181005,
+      "imageEncodedBytes": 133554,
+      "cls": 0.016702581452734677,
+      "errors": 0
+    },
+    {
+      "run": "history-2",
+      "jsGzipBytes": 181005,
+      "imageEncodedBytes": 133585,
+      "cls": 0.016648642198539076,
+      "errors": 0
+    },
+    {
+      "run": "history-3",
+      "jsGzipBytes": 181005,
+      "imageEncodedBytes": 133546,
+      "cls": 0.016511574827594522,
+      "errors": 0
+    }
+  ],
+  "verifiedAt": "2026-10-30T15:56:36.6953568+08:00",
+  "artifact": {
+    "id": 12962721021,
+    "sha256": "d91cd02b441bf0b44355727b62b6c577f7a021327545ef6d7e4c47346466f9ed",
+    "bytes": 23069139
+  },
+  "deployedProductSource": "3008c09f16bf2b29d23191e88c4db8062b17a99e",
+  "javaTests": 18,
+  "conclusion": "success"
+}

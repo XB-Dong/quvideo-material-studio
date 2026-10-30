@@ -1,23 +1,23 @@
 # P1.2 验收矩阵
 
-版本P1.2-1.0.1。本地G01/G02已通过，完整远端CI和最终交付核对中；精确版本继承见handoffs/acceptance.md，不能把不同版本合称一次运行。每项证据必须有应用/测试SHA、浏览器/driver、媒体/时序、命令/动作、实际结果、失败和边界。
+版本P1.2-1.0.1。本地G01/G02及最终完整远端CI41021360156已通过，验收ff8a896；精确版本继承见handoffs/acceptance.md，不能把不同版本合称一次运行。每项证据必须有应用/测试SHA、浏览器/driver、媒体/时序、命令/动作、实际结果、失败和边界。
 
 | ID | 场景 | 条件 | 当前 |
 | --- | --- | --- | --- |
-| HOME | 首页前后对比/四卡/水墨/Orbit | 布局配色素材与节奏保持；只新增点击/功能衔接，无全局样式污染 | passed_local; full_CI_pending |
-| SCENE | 制作/独立历史/嵌入历史、空/有任务 | 默认真实软件路径可见低频子页动态，纸面/文字/原图稳定，不只首载淡入 | passed_local; full_CI_pending |
-| NAV | 主页模板/返回/前进/直达/快连点/404/慢快加载 | 公共封面衔接+新页入场，Link语义/焦点/滚动正确，无await exit/黑屏/过期overlay；对比原Link逐时记录旧请求/轮询清理，不等转场finished | passed_local; full_CI_pending |
-| FILE | 真实filechooser事件、取消/同图重选/非法图/大合法图 | 同事件同步打开，无延迟click；取消保留、旧响应不串，业务类型/大小原规则保持 | passed_local; full_CI_pending |
-| UPLOAD | 多slot并发/快速替换/移除/失败重选/离页 | EMPTY/UPLOADING/READY/ERROR动效可辨，服务端READY真实，无假进度或旧blob残影、URL泄漏 | passed_local; full_CI_pending |
-| SUBMIT | 快双击/提交中/请求未知/受理/用户切换 | 锁/POST时机不变，受理才新增记录，动画不重发提交或延迟可继续制作 | passed_local; full_CI_pending |
-| TASK | 两成功+指定阶段失败/查询503/刷新/分页 | 真阶段动效、查询异常≠执行失败；不每poll庆祝/重排，终态停止，多任务/用户隔离 | passed_local; full_CI_pending |
-| DIALOG | 成功结果/身份打开与关闭/ESC/resize/路由/身份变更 | 原生焦点陷阱/恢复；私有图不跨路由快照、不延迟清除；取消幂等，原图不扭曲 | passed_local; full_CI_pending |
-| EDGES | route-level loading/error/not-found和模板query404/空态 | 真加载/失败触发、重试/返回可用，样式/反馈完整；不人为插等待 | passed_local; full_CI_pending |
-| LIFE | reduce运行中切换/原生后台/离屏/卸载/快速重入 | RAF/WAAPI/VT/SVG句柄无残留，隐藏RAF0/GPU0；恢复不回放旧业务，默认不全静态；原生转场effect延迟不能改变旧业务清理，失败选完整兜底 | passed_local; full_CI_pending |
-| PERF | 三页三轮、无截图真实连续路径/30秒 | 192215/122880/819200/CLS.1/pageerror0/无归因>50ms长任务；全部实际请求/实例与失败保留 | passed_local; full_CI_pending |
-| REG | 原31FE/15Java/8API及对应保护 | 受理/取消/旧响应/version/epoch/401/刷新/终态保护不减；全部容器执行 | passed_local; full_CI_pending |
-| G01 | 制作/独立历史/嵌入历史/两dialog/边界+首页回归 | 每页五维各≥4/5；关键路径多帧或真实动作，独立Reviewer签署 | passed_local; full_CI_pending |
-| G02 | 实际舒适与功能/资源/原业务 | 所有必需场景通过，真实coarse/键盘/默认软件/回退，独立Acceptance签署 | passed_local; full_CI_pending |
-| DEL | 完整CI/来源/报告/源码/回滚/投入 | 精确验收SHA、真实通过/未测和来源/AI流程，完成后停止 | pending_full_CI_and_seal |
+| HOME | 首页前后对比/四卡/水墨/Orbit | 布局配色素材与节奏保持；新增点击/功能衔接，用户直接指定的简洁中文品牌字标为局部例外，无全局样式污染 | passed; CI41021360156 |
+| SCENE | 制作/独立历史/嵌入历史、空/有任务 | 默认真实软件路径可见低频子页动态，纸面/文字/原图稳定，不只首载淡入 | passed; CI41021360156 |
+| NAV | 主页模板/返回/前进/直达/快连点/404/慢快加载 | 公共封面衔接+新页入场，Link语义/焦点/滚动正确，无await exit/黑屏/过期overlay；对比原Link逐时记录旧请求/轮询清理，不等转场finished | passed; CI41021360156 |
+| FILE | 真实filechooser事件、取消/同图重选/非法图/大合法图 | 同事件同步打开，无延迟click；取消保留、旧响应不串，业务类型/大小原规则保持 | passed; CI41021360156 |
+| UPLOAD | 多slot并发/快速替换/移除/失败重选/离页 | EMPTY/UPLOADING/READY/ERROR动效可辨，服务端READY真实，无假进度或旧blob残影、URL泄漏 | passed; CI41021360156 |
+| SUBMIT | 快双击/提交中/请求未知/受理/用户切换 | 锁/POST时机不变，受理才新增记录，动画不重发提交或延迟可继续制作 | passed; CI41021360156 |
+| TASK | 两成功+指定阶段失败/查询503/刷新/分页 | 真阶段动效、查询异常≠执行失败；不每poll庆祝/重排，终态停止，多任务/用户隔离 | passed; CI41021360156 |
+| DIALOG | 成功结果/身份打开与关闭/ESC/resize/路由/身份变更 | 原生焦点陷阱/恢复；私有图不跨路由快照、不延迟清除；取消幂等，原图不扭曲 | passed; CI41021360156 |
+| EDGES | route-level loading/error/not-found和模板query404/空态 | 真加载/失败触发、重试/返回可用，样式/反馈完整；不人为插等待 | passed; CI41021360156 |
+| LIFE | reduce运行中切换/原生后台/离屏/卸载/快速重入 | RAF/WAAPI/VT/SVG句柄无残留，隐藏RAF0/GPU0；恢复不回放旧业务，默认不全静态；原生转场effect延迟不能改变旧业务清理，失败选完整兜底 | passed; CI41021360156 |
+| PERF | 三页三轮、无截图真实连续路径/30秒 | 192215/122880/819200/CLS.1/pageerror0/无归因>50ms长任务；全部实际请求/实例与失败保留 | passed; CI41021360156 |
+| REG | 原31FE/15Java/8API及对应保护 | 受理/取消/旧响应/version/epoch/401/刷新/终态保护不减；全部容器执行 | passed; CI41021360156 |
+| G01 | 制作/独立历史/嵌入历史/两dialog/边界+首页回归 | 每页五维各≥4/5；关键路径多帧或真实动作，独立Reviewer签署 | passed; CI41021360156 |
+| G02 | 实际舒适与功能/资源/原业务 | 所有必需场景通过，真实coarse/键盘/默认软件/回退，独立Acceptance签署 | passed; CI41021360156 |
+| DEL | 完整CI/来源/报告/源码/回滚/投入 | 精确验收SHA、真实通过/未测和来源/AI流程，完成后停止 | passed; accepted ff8a896; docs seal/source archive verified separately |
 
 Visual读取像素或文件chooser事件不冒充无截图性能，模拟coarse/原生标签与真实硬件/手机分清；未验证的设备不写通过。计划不包含邮件治理，遵循用户暂缓指令。

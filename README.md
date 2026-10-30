@@ -6,7 +6,7 @@ P1已完成浅色界面、蓝紫细节、四套本地照片、七项创意和操
 
 ## 一条命令启动
 
-当前运行P1.2“疏影”：浅色水墨首页、中文品牌字标、制作/历史持续动效，以及导航、上传、真实任务阶段和原图弹窗的连续反馈。实现与本地独立G01/G02已通过，完整远端CI核对中，实际版本/数据/限制见[P1.2报告](docs/waves/P1.2/REPORT.md)。默认持续动态，系统reduce、离屏及真实后台自动保护；没有手动动态/暂停控件。
+当前运行P1.2“疏影”：浅色水墨首页、中文品牌字标、制作/历史持续动效，以及导航、上传、真实任务阶段和原图弹窗的连续反馈。本轮已完成，独立G01/G02及[完整CI41021360156](https://github.com/XB-Dong/quvideo-material-studio/actions/runs/41021360156)通过，验收commit为ff8a896b4c730fabd9ac4a5f4a0b391019afa07a（后续仅文档封存提交的产品树相同），实际版本/数据/限制见[P1.2报告](docs/waves/P1.2/REPORT.md)。默认持续动态，系统reduce、离屏及真实后台自动保护；没有手动动态/暂停控件。
 
 [P1.2计划](docs/waves/P1.2/PLAN.md)、[角色](docs/waves/P1.2/ROLES.md)、[独立美学](docs/waves/P1.2/reviews/product-review.md)与[独立验收交接](docs/waves/P1.2/handoffs/acceptance.md)记录本轮。历史P1.1验收a7cdcdf的远端三项通过，见[P1.1报告](docs/waves/P1.1/REPORT.md)。邮件按用户指令暂缓，邮箱和账号通知未改；不自动交卷或进入下一阶段。
 
@@ -43,7 +43,7 @@ specs/                 OpenAPI、数据、状态机、前端生命周期、UI �
 docs/requirements/     题目 R-01～R-14 和参考图
 docs/waves/P0/         P0历史记录
 docs/waves/P1/         P1历史计划、交接、审核与实际证据
-docs/waves/P1.1/       当前计划、角色、任务、独立审核与运行证据
+docs/waves/P1.1/       历史计划、角色、任务、独立审核与运行证据
 docs/waves/P1.2/       子页动效、全流程交互、独立审核与逐页资源证据
 assets/p1.1/           固定容器的水墨衍生转换
 compose.yaml           frontend、backend、mysql 与持久卷
@@ -161,7 +161,7 @@ docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps browser-p
 docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-p12-headed
 ```
 
-visual统一执行子页/离屏/冷原图/框架错误恢复/缩略图授权，不重复跑四个独立诊断helper；性能入口不截图/不读像素/不采栈，4MiB合法JPEG通过真实磁盘文件进入原生chooser（不把自动化buffer转码算成产品开销）。measure每页3轮，固定两成功一失败，全部真实图片请求逐轮计量，单轮不达标即失败。原生后台用容器Xvfb+CDP真实标签，不能冒充物理设备验证。原P1.1功能/视觉、前端/Java/API门槛继续保留于CI。
+visual统一执行子页/离屏/冷原图/框架错误恢复/缩略图授权，不重复跑四个独立诊断helper；interaction及正式采样窗口不截图/不读像素/不采栈，measure读取指标后才截图。4MiB合法JPEG通过真实磁盘文件进入原生chooser（不把自动化buffer转码算成产品开销）。measure每页3轮，固定两成功一失败，全部真实图片请求逐轮计量，单轮不达标即失败。原生后台用容器Xvfb+CDP真实标签，不能冒充物理设备验证。原P1.1功能/视觉、前端/Java/API门槛继续保留于CI。
 
 ## 五分钟演示
 

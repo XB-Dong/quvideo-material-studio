@@ -2,13 +2,13 @@
   "schemaVersion": "1.0.0",
   "waveId": "P1.2",
   "specVersion": "P1.2-1.0.1",
-  "status": "executing",
+  "status": "completed",
   "executionAuthorized": true,
   "preparationBaseCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
   "p11ProductReferenceCommit": "64e919aac25cacf7f1193b4a361071e5d03ef635",
   "executionBaseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
   "executionStartedAt": "2026-10-30T12:44:33.221513+08:00",
-  "executionCompletedAt": null,
+  "executionCompletedAt": "2026-10-30T15:57:22.1622578+08:00",
   "p11CIPrerequisite": "passed_exact_verified_source",
   "timezone": "Etc/GMT-8",
   "deadline": null,
@@ -29,9 +29,9 @@
   "dependenciesInstalledForP12": true,
   "productRestartedForP12": true,
   "developmentWorktreesCreatedForP12": true,
-  "productChecks": "48FE_18Java_8API_and_independent_local_G01_G02_passed; full_remote_CI_pending",
+  "productChecks": "48FE_18Java_8API_P11_all_P12_25functional_16visual_interaction_9runs_4budgetguards_native3_full_CI_passed",
   "aestheticGate": "passed_at_3008_with_independent_actual_frames",
-  "comfortGate": "passed_local_at_3008; full_remote_CI_pending",
+  "comfortGate": "passed_local_at_3008_and_full_CI_41021360156_at_ff8a896",
   "homePolicy": "preserve_approved_home_except_user_requested_minimal_Chinese_wordmark",
   "mailStatus": "deferred_by_user_excluded_from_P1.2",
   "effortEstimateHours": [
@@ -59,7 +59,7 @@
       "taskId": "P12-FOUND",
       "rootTaskId": "P12-FOUND",
       "role": "Frontend",
-      "status": "implemented_pending_final_gates",
+      "status": "completed",
       "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
       "dependencies": [
         "P12-BASE"
@@ -76,7 +76,7 @@
       "taskId": "P12-ROUTE",
       "rootTaskId": "P12-ROUTE",
       "role": "Frontend",
-      "status": "implemented_pending_final_gates",
+      "status": "completed",
       "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
       "dependencies": [
         "P12-FOUND"
@@ -92,7 +92,7 @@
       "taskId": "P12-STUDIO",
       "rootTaskId": "P12-STUDIO",
       "role": "Frontend",
-      "status": "implemented_pending_final_gates",
+      "status": "completed",
       "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
       "dependencies": [
         "P12-ROUTE"
@@ -109,7 +109,7 @@
       "taskId": "P12-HISTORY",
       "rootTaskId": "P12-HISTORY",
       "role": "Frontend",
-      "status": "implemented_pending_final_gates",
+      "status": "completed",
       "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
       "dependencies": [
         "P12-STUDIO"
@@ -126,7 +126,7 @@
       "taskId": "P12-DIALOG",
       "rootTaskId": "P12-DIALOG",
       "role": "Frontend",
-      "status": "implemented_pending_final_gates",
+      "status": "completed",
       "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
       "dependencies": [
         "P12-HISTORY"
@@ -143,7 +143,7 @@
       "taskId": "P12-ACCEPT",
       "rootTaskId": "P12-ACCEPT",
       "role": "Acceptance",
-      "status": "local_passed_remote_CI_pending",
+      "status": "completed",
       "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
       "dependencies": [
         "P12-BASE"
@@ -157,7 +157,40 @@
         "P12-A11Y-01",
         "P12-PERF-01"
       ],
-      "repairCount": 0
+      "repairCount": 5,
+      "repairCountScope": "Distinct repaired harness root-cause groups, not invocation count; raw failed runs retained and no rootTaskId reset",
+      "repairLedger": [
+        {
+          "reassessment": "use unique navigation and full expiry banner after distinct locator failures",
+          "evidence": "b2d-cold-first-selector-fail.json and b2d-visual-first-14-pass-2-selector-fail.json",
+          "cause": "cold-preview ambiguous selector",
+          "repair": "e4e3234"
+        },
+        {
+          "reassessment": "same bytes and chooser, actual file path rather than Buffer transport",
+          "evidence": "b2d-upload-transport-ab.json",
+          "cause": "large file buffer automation CPU",
+          "repair": "42a9336"
+        },
+        {
+          "reassessment": "equivalent boolean predicate",
+          "evidence": "b2d-native-predicate-fail.json",
+          "cause": "native readiness DOM serialization",
+          "repair": "ed13f01"
+        },
+        {
+          "reassessment": "two unsuccessful immediate equality checks; then inspect source and await actual finite animation completion",
+          "evidence": "8a-affected-review-harness-failures.json",
+          "cause": "affected screenshot sampling during finite entry",
+          "repair": "00acb2a"
+        },
+        {
+          "reassessment": "independent native callback diagnostics then one real rendering opportunity with trusted target callback and unchanged pause guard",
+          "evidence": "8a-lifecycle-native-trigger-pass.json and preserved CI41012646536",
+          "cause": "native intersection event prerequisite absent",
+          "repair": "6883a55"
+        }
+      ]
     },
     {
       "taskId": "P12-REVIEW",
@@ -181,7 +214,7 @@
       "taskId": "P12-DELIVERY",
       "rootTaskId": "P12-DELIVERY",
       "role": "Leader",
-      "status": "ready_after_dependencies",
+      "status": "completed",
       "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
       "dependencies": [
         "P12-ACCEPT",
@@ -195,7 +228,7 @@
     }
   ],
   "preparationRecordedAt": "2026-10-30T12:32:21.079406+08:00",
-  "nextAction": "Full_remote_CI_with_native_render_trigger_preconditions_then_delivery_seal",
+  "nextAction": "Stop; no next wave, mailbox changes, public deployment or exam submission authorized",
   "p11VerifiedCommit": "a7cdcdfe4a0dd38db1763b436ed67c6cedf76d76",
   "p11VerifiedCIRun": 41002700967,
   "conditionalExecutionAuthorization": {
@@ -215,5 +248,8 @@
   "worktreeBindings": {
     "Frontend": "C:/Users/dongx/.codex/worktrees/p12-submit-frontend/杭州小影AIcoding",
     "Acceptance": "C:/Users/dongx/.codex/worktrees/p11-acceptance/杭州小影AIcoding"
-  }
+  },
+  "acceptedCommit": "ff8a896b4c730fabd9ac4a5f4a0b391019afa07a",
+  "acceptedCIRun": 41021360156,
+  "deployedProductSource": "3008c09f16bf2b29d23191e88c4db8062b17a99e"
 }

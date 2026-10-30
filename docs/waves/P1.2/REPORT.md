@@ -1,6 +1,6 @@
 # P1.2执行与交付报告
 
-状态：产品已本地部署，独立本地G01/G02通过；本轮完整CI进行中，尚未签最终交付完成。
+状态：P1.2完成。Leader已核对集成验收提交`ff8a896b4c730fabd9ac4a5f4a0b391019afa07a`的[完整CI41021360156](https://github.com/XB-Dong/quvideo-material-studio/actions/runs/41021360156)：frontend/backend/integration全部success。实际产品树与本地已部署3008相同；后续封存提交只更新交付文档，源码包由封存提交生成并在仓库外记录SHA256。
 
 ## 实际范围
 
@@ -18,22 +18,24 @@ Next16.4.3/React19.3.1不改运行版本，开发类型精确19.3.0。采用原L
 
 ## 检查与真实失败
 
-作者容器lint/type/48FE通过（原31未修改，日期新增7）；Leader18Java真实MySQL verify及生产构建、8API通过。独立版本继承与命令见[Acceptance交接](handoffs/acceptance.md)：5e2的25功能；b2d16项的首14通过与修正定位器后的严格cold6；8a的真实RO/布局修复、正式九轮、无截图30秒、三页原生后台与真coarse首触上传分别有实际证据。没有把继承案例合称3008一次本地全量运行。3008重新执行原无截图交互、正式九轮、品牌实际截图和三个时区18条日期比较，独立G01/G02均已更新；完整远端仍待核验。
+作者容器lint/type/48FE通过（原31未修改，日期新增7）；Leader18Java真实MySQL verify及生产构建、8API通过。独立版本继承与命令见[Acceptance交接](handoffs/acceptance.md)：5e2的25功能；b2d16项的首14通过与修正定位器后的严格cold6；8a的真实RO/布局修复、正式九轮、无截图30秒、三页原生后台与真coarse首触上传分别有实际证据。没有把继承案例合称3008一次本地全量运行。3008重新执行原无截图交互、正式九轮、品牌实际截图和三个时区18条日期比较，独立G01/G02均已更新；随后完整远端已核验通过，见下方最终结果。
 
 3008本地九轮每轮均过：首JS最大186789B/上限192215B、图片最大588726B/上限819200B、CLS最大.016538102/上限.1、pageerror0；制作页三个正式CLS为0/.000094291/.000115432。无截图所有实际操作和30秒longtask0，延后JS3381B；真实4MiB JPEG到后端4194304B且原PNG预览保留。相较P1.1首页167230B，本轮首载增加19559B（约19.1KiB），超过12KiB规划目标，原绝对JS门槛仍通过；不将规划目标写成已达到。
 
-CI4cda/41009128406因新测试定位修正被后续运行取消；e4e/41009662714前后端成功，旧P11visual的reduce再现单RAF并在init trace里没有原生media-change、所有RAF也未前进。独立只读审查后，Leader仅给像素功能测试一次真实viewport渲染机会，要求本次trusted MQL真实交付，再保留500/200采样及RAF0/GPU0/执行不增并加强Provider/Orbit/可见性断言。事件等待上限500ms从截图完成后计算，截图耗时单列；不能冒称CDP调用到清理的绝对时限不变。8a本机6视觉通过（截图957ms、真实事件、RAF0），远端复验仍待执行，底层浏览器停帧原因未被证明。
+CI4cda/41009128406因新测试定位修正被后续运行取消；e4e/41009662714前后端成功，旧P11visual的reduce再现单RAF并在init trace里没有原生media-change、所有RAF也未前进。独立只读审查后，Leader仅给像素功能测试一次真实viewport渲染机会，要求本次trusted MQL真实交付，再保留500/200采样及RAF0/GPU0/执行不增并加强Provider/Orbit/可见性断言。事件等待上限500ms从截图完成后计算，截图耗时单列；不能冒称CDP调用到清理的绝对时限不变。8a本机6视觉通过（截图957ms、真实事件、RAF0），该项后在c7/fab远端通过；当时待复验的记录保留，底层浏览器停帧原因未被证明。
 
-c7/41012646536前后端、全部旧P11及P12功能通过，P12视觉14过/2离屏失败。独立只读IO诊断实际重现slot：几何已在屏外但200ms时原生false未交付，单次普通viewport渲染后真实产品observer false→data→CSS暂停；task本机并未复现同因，不倒推远端根因。正式像素功能helper据此要求真实交付的本target false/恢复true，保持焦点/active/非reduce/可见/无dialog与0运行无限动画，缺事件仍失败；本机局部2项通过。此改动不进入无截图性能或产品代码，完整新CI待结果。
+c7/41012646536前后端、全部旧P11及P12功能通过，P12视觉14过/2离屏失败。独立只读IO诊断实际重现slot：几何已在屏外但200ms时原生false未交付，单次普通viewport渲染后真实产品observer false→data→CSS暂停；task本机并未复现同因，不倒推远端根因。正式像素功能helper据此要求真实交付的本target false/恢复true，保持焦点/active/非reduce/可见/无dialog与0运行无限动画，缺事件仍失败；本机局部2项通过，随后fab完整16视觉通过。此改动不进入无截图性能或产品代码；最终源码的完整新CI现已通过，见下方最终结果。
 
 实际发现与处置见[FINDINGS](FINDINGS.md)：路由图片非等比拉伸、错误上传胶囊重叠、离屏循环未停、冷PNG弹窗坍缩后跳大、框架错误仅reset无法恢复、结果点击短点与弹窗重复强调，均沿原任务修复并保留失败。P11原CI图片load前即时断言的独立修正与受控500ms/坏图证据保留；更早一次reduce待执行RAF根因仍未确认，不能声称图片修复解决它。
 
-fab/41016072989远端原P11全部检查、P12完整25功能/16视觉通过，正式无截图首次提交出现76ms。保留该失败与两次限定诊断；CPU采样在任务卡日期toLocaleString有29–32ms热点，按决定0017以本地Date字段格式化保持文字/时区语义。3008独立相同fresh交互longtask0，跨UTC/上海/纽约18条实际React日期比较通过；没有预热Intl、缩短路径或放宽阈值，新完整CI待核对。
+fab/41016072989远端原P11全部检查、P12完整25功能/16视觉通过，正式无截图首次提交出现76ms。保留该失败与两次限定诊断；CPU采样在任务卡日期toLocaleString有29–32ms热点，按决定0017以本地Date字段格式化保持文字/时区语义。3008独立相同fresh交互longtask0，跨UTC/上海/纽约18条实际React日期比较通过；没有预热Intl、缩短路径或放宽阈值。
+
+最终完整CI41021360156实际通过48FE、18Java（含真实MySQL）、8API，原P1.1的22功能/6视觉/交互/三轮/预算守卫/原生后台全部成功，P1.2在同一精确验收SHA完整25功能/16视觉、原无截图交互、三页九轮、4预算守卫与三页原生后台全部成功。远端九轮逐轮最大JS186789B、图片745072B、CLS .016702582、errors0；无截图操作longtask候选0/lazy3381B，真实4MiB上传和原PNG保持。原生三页hidden RAF/GPU/运行动画均0且真实恢复；未冒称实体设备。实际jobs、artifact ID/哈希、每轮数据见[CI摘要](evidence/ci/41021360156-pass.json)，原失败仍保留。
 
 ## 验证边界与交付
 
-研究借鉴官方文档/示例而非复制额外运行库；ClickSpark/StarBorder等仅设计参考，来源见references与根THIRD-PARTY-NOTICES。真实软件Chromium/SwiftShader、触屏媒体/键盘、容器Xvfb原生标签分别记录，不冒充实体手机/物理Windows最小化或硬件GPU性能。路由相位pause/seek用于观感，不冒充默认时序或性能；性能测量不截图/读像素/采栈。
+研究借鉴官方文档/示例而非复制额外运行库；ClickSpark/StarBorder等仅设计参考，来源见references与根THIRD-PARTY-NOTICES。真实软件Chromium/SwiftShader、触屏媒体/键盘、容器Xvfb原生标签分别记录，不冒充实体手机/物理Windows最小化或硬件GPU性能。路由相位pause/seek用于观感，不冒充默认时序或性能；interaction及正式采样窗口不截图/读像素/采栈，measure读取指标后才截图。
 
-执行从2026-10-30T12:44:33.221513+08:00开始，结束/墙钟待最终签署；不把并行Agent时间累加为人类工时，用户人工投入未知。Leader集成、唯一Frontend顺序写入、Acceptance独立、Reviewer只写审核；实际模型信息无可验证证据为null。AI工作流与真实修正例见docs/audit/effort.md，未提交私人会话/凭据。
+执行从2026-10-30T12:44:33.221513+08:00开始，开发、独立验收及首轮完整绿CI后的封存签署时间见state.executionCompletedAt（约3小时13分钟墙钟，含等待/诊断）；后续仅文档封存提交自动触发的CI结果另记仓库外delivery manifest，不把并行Agent时间累加为人类工时，用户人工投入未知。Leader集成、唯一Frontend顺序写入、Acceptance独立、Reviewer只写审核；实际模型信息无可验证证据为null。AI工作流与真实修正例见docs/audit/effort.md，未提交私人会话/凭据。
 
 部署仍`docker compose up --build`。本轮无迁移，回滚前备份MySQL与文件卷、停止受理，切回同一P1.1配套前后端版本后用原卷重建服务；不删除卷、不只回退单侧镜像。当前邮件依用户指令暂缓，无邮箱/全局通知变更；不自动进行下一阶段、公开发布或交卷。
