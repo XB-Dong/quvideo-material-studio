@@ -1,0 +1,373 @@
+[
+  {
+    "path": "p11-browser/acceptance.json",
+    "bytes": 7030,
+    "sha256": "b9572bb613ab0f6b58b5e8fe9c32bd3904d1caf911ca39caaa50cf266f549ee1",
+    "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "checks": 22,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "testedCommit",
+      "capturedAt",
+      "browser",
+      "checks",
+      "scope"
+    ]
+  },
+  {
+    "path": "p11-browser/interaction/interaction-performance.json",
+    "bytes": 3711,
+    "sha256": "a51aca01809f4ac18b2d09a03919ffd0c406e47ab7d40a6ab148aefc0afe239b",
+    "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "checks": null,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "testedCommit",
+      "capturedAt",
+      "browser",
+      "conditions",
+      "phases",
+      "longTasks",
+      "audit",
+      "interactionLongTasks",
+      "initialLongTasks",
+      "lazyScripts",
+      "lazyGzipBytes",
+      "errors",
+      "pass"
+    ]
+  },
+  {
+    "path": "p11-browser/measure/measurement.json",
+    "bytes": 83012,
+    "sha256": "ccef32244c3b2131f244c4e433492e5bb399e2d2b7bd2a6393f6812f550a90a4",
+    "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "checks": null,
+    "failures": 0,
+    "runs": 3,
+    "budgetsPass": true,
+    "keys": [
+      "capturedAt",
+      "testedCommit",
+      "browser",
+      "conditions",
+      "median",
+      "runs",
+      "budgets"
+    ]
+  },
+  {
+    "path": "p11-browser/native/native-visibility.json",
+    "bytes": 2169,
+    "sha256": "9423dc173b335e346371dd73d246919cb5217c34ed5ae21a2d80d42f5ae6642e",
+    "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "checks": null,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "testedCommit",
+      "capturedAt",
+      "browser",
+      "environment",
+      "results",
+      "limits"
+    ]
+  },
+  {
+    "path": "p11-browser/visual/reduce-before-assert.json",
+    "bytes": 257269,
+    "sha256": "76922592c7343326d3cc22de7f1134e0e4fbe59d78f86263a0306ec31a222e74",
+    "testedCommit": null,
+    "checks": null,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "a",
+      "b",
+      "delivery",
+      "hero"
+    ]
+  },
+  {
+    "path": "p11-browser/visual/reduce-render-delivery.json",
+    "bytes": 150085,
+    "sha256": "001104725fe13b855e77ac46ed4a33928c39cfa1bcec89d42e343805e4129cbc",
+    "testedCommit": null,
+    "checks": null,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "sequenceStart",
+      "beforeEmulate",
+      "beforeRender",
+      "afterRender",
+      "renderDurationMs",
+      "renderOpportunities",
+      "syntheticMediaEvents"
+    ]
+  },
+  {
+    "path": "p11-browser/visual/visual.json",
+    "bytes": 369038,
+    "sha256": "afd24f4d2054358d69ba36c0fe9933981814de554b825783f8f0db1b443f455c",
+    "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "checks": 6,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "testedCommit",
+      "capturedAt",
+      "browser",
+      "mode",
+      "diagnosticCpuRate",
+      "checks"
+    ]
+  },
+  {
+    "path": "p12-browser/acceptance.json",
+    "bytes": 18388,
+    "sha256": "61bc4aa0f58f273db76e6a0ebf179d41ce5316c5a0305f666c771d1493a83397",
+    "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "checks": 25,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "testedCommit",
+      "capturedAt",
+      "browser",
+      "checks",
+      "scope"
+    ]
+  },
+  {
+    "path": "p12-browser/interaction/interaction-performance.json",
+    "bytes": 6164,
+    "sha256": "b2c0d47be35d477b135ef7a3c94886718a3e262878f264803b66d32cf682921c",
+    "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "checks": null,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "testedCommit",
+      "capturedAt",
+      "browser",
+      "conditions",
+      "phases",
+      "longTasks",
+      "audit",
+      "gesture",
+      "interactionLongTasks",
+      "lazyScripts",
+      "lazyGzipBytes",
+      "largeLegalUpload",
+      "taskIds",
+      "errors",
+      "pass"
+    ]
+  },
+  {
+    "path": "p12-browser/measure/measurement.json",
+    "bytes": 269797,
+    "sha256": "7a70b411e1ec30527249613af6a6ba677810a8b513b415dcec3a9a6df9c3b732",
+    "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "checks": null,
+    "failures": 0,
+    "runs": 9,
+    "budgetsPass": true,
+    "keys": [
+      "capturedAt",
+      "pageKinds",
+      "diagnosticLayout",
+      "testedCommit",
+      "browser",
+      "conditions",
+      "median",
+      "runs",
+      "budgets"
+    ]
+  },
+  {
+    "path": "p12-browser/native/native-visibility.json",
+    "bytes": 6217,
+    "sha256": "e2e5c60ab92797c2f38f6376e5df692aaf9544d8429c95f9b0b2f8a700e8e51d",
+    "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "checks": null,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "testedCommit",
+      "capturedAt",
+      "browser",
+      "environment",
+      "results",
+      "limits"
+    ]
+  },
+  {
+    "path": "p12-browser/visual/boundaries.json",
+    "bytes": 610,
+    "sha256": "a1633d89bb48f7b9ac9b50ddf122a6e0e7cb26b1fe506854796298cca7914e94",
+    "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "checks": 2,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "testedCommit",
+      "capturedAt",
+      "scope",
+      "checks"
+    ]
+  },
+  {
+    "path": "p12-browser/visual/cold-preview.json",
+    "bytes": 19548,
+    "sha256": "045af1d39ee56fe9efca7a2a08aafc9e477879572cc19af31a1737bd43f1b531",
+    "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "checks": 6,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "testedCommit",
+      "capturedAt",
+      "strict",
+      "intercepts",
+      "expectedCanceled",
+      "checks",
+      "scope"
+    ]
+  },
+  {
+    "path": "p12-browser/visual/lifecycle.json",
+    "bytes": 431168,
+    "sha256": "7a014127a279a54c5827152679c2a526da36142d5634e3be97a7afa087d3d390",
+    "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "checks": 2,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "testedCommit",
+      "capturedAt",
+      "foreground",
+      "simulation",
+      "fixtureTimeline",
+      "checks",
+      "snapshots",
+      "scope"
+    ]
+  },
+  {
+    "path": "p12-browser/visual/reduce-before-assert.json",
+    "bytes": 1336,
+    "sha256": "33e9e9c93a0e02b845243eb10f74275a6349f2c3f278aaf86b11e8f191600533",
+    "testedCommit": null,
+    "checks": null,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "a",
+      "b"
+    ]
+  },
+  {
+    "path": "p12-browser/visual/thumbnail.json",
+    "bytes": 880,
+    "sha256": "f641faa7bf2e377cb032aa43b65057633462a2a804926ffc06d68115cacd519a",
+    "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "checks": null,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "testedCommit",
+      "capturedAt",
+      "pass",
+      "originalBytes",
+      "thumbnailBytes",
+      "originalSha256",
+      "sourceSha256",
+      "dimensions",
+      "thumbnailResponseMs",
+      "responseTimingScope",
+      "invalidBoolean",
+      "unknownId",
+      "unfinished",
+      "pendingInitialStatus",
+      "clientExpiredCookie",
+      "expiryScope",
+      "unauthorized",
+      "stranger",
+      "originalUnchanged"
+    ]
+  },
+  {
+    "path": "p12-browser/visual/visual.json",
+    "bytes": 239816,
+    "sha256": "1f1e64faf82e6a9dc203f36edeedf65437aa2878333d0a8f93cfe0686fbe1fe0",
+    "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "checks": 16,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "testedCommit",
+      "capturedAt",
+      "browser",
+      "checks",
+      "sampleTaskIds",
+      "limits"
+    ]
+  },
+  {
+    "path": "p2-browser/accounts-api.json",
+    "bytes": 5509,
+    "sha256": "d796d649d697944d30e941601c22a89b2608f78acba3cf93a95bca8daa3b792b",
+    "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "checks": 8,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "testedCommit",
+      "capturedAt",
+      "base",
+      "origin",
+      "checks",
+      "scope"
+    ]
+  },
+  {
+    "path": "p2-browser/browser/accounts-browser.json",
+    "bytes": 5718,
+    "sha256": "86ea5e7378b81eddf16f8eab11af05d0fa4de4db1caa8442087cf8fd48acadf0",
+    "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+    "checks": 8,
+    "failures": 0,
+    "runs": null,
+    "budgetsPass": null,
+    "keys": [
+      "testedCommit",
+      "capturedAt",
+      "browser",
+      "base",
+      "origin",
+      "selection",
+      "checks",
+      "scope"
+    ]
+  }
+]

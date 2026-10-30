@@ -1,0 +1,19 @@
+{
+  "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+  "capturedAt": "2026-10-30T10:21:19.441Z",
+  "scope": "Controlled real JSON response corruption triggers React render boundary, not DOM replacement/query404; isolated contexts; expected fault errors kept separate.",
+  "checks": [
+    {
+      "name": "route error real React render fault and retry",
+      "status": "pass",
+      "intercepts": 1,
+      "expectedFaultErrors": []
+    },
+    {
+      "name": "global error real React render fault and retry",
+      "status": "pass",
+      "intercepts": 1,
+      "expectedFaultErrors": []
+    }
+  ]
+}

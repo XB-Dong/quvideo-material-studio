@@ -1,0 +1,24 @@
+{
+  "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+  "capturedAt": "2026-10-30T10:20:50.009Z",
+  "pass": true,
+  "originalBytes": 664653,
+  "thumbnailBytes": 34325,
+  "originalSha256": "767bad36607f21adc40c2bcefbe1a5e970ccba43da822d92b487e18ddb66699c",
+  "sourceSha256": "767bad36607f21adc40c2bcefbe1a5e970ccba43da822d92b487e18ddb66699c",
+  "dimensions": {
+    "w": 512,
+    "h": 341
+  },
+  "thumbnailResponseMs": 118.10917899999913,
+  "responseTimingScope": "End-to-end authenticated thumbnail response/body, not isolated server conversion CPU",
+  "invalidBoolean": 400,
+  "unknownId": 404,
+  "unfinished": 404,
+  "pendingInitialStatus": "QUEUED",
+  "clientExpiredCookie": 401,
+  "expiryScope": "Real cookie expiration removes browser credential; server-side DB expiry remains Java test scope",
+  "unauthorized": 401,
+  "stranger": 404,
+  "originalUnchanged": true
+}

@@ -1,0 +1,259 @@
+{
+  "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+  "capturedAt": "2026-10-30T10:22:13.088Z",
+  "browser": "149.0.7827.53",
+  "conditions": "No screenshots, pixel readback, tracing or RAF stacks; default software driver. Original full-result request and large legal upload not erased; startup recorded separately.",
+  "phases": [
+    {
+      "label": "real Link navigation",
+      "begin": 2760.0999999999767,
+      "end": 3957.3000000000466
+    },
+    {
+      "label": "real chooser upload cancel same-file replace remove",
+      "begin": 4305.900000000023,
+      "end": 5530.099999999977
+    },
+    {
+      "label": "large legal JPEG transport and preview",
+      "begin": 5531.099999999977,
+      "end": 6571.099999999977
+    },
+    {
+      "label": "submit 0",
+      "begin": 6572.099999999977,
+      "end": 6865.599999999977
+    },
+    {
+      "label": "submit 1",
+      "begin": 6868.400000000023,
+      "end": 7133.199999999953
+    },
+    {
+      "label": "task updates and original result dialog",
+      "begin": 7134,
+      "end": 15422.099999999977
+    },
+    {
+      "label": "history refresh and identity dialog",
+      "begin": 15426.199999999953,
+      "end": 18054.099999999977
+    },
+    {
+      "label": "continuous child scene 30s",
+      "begin": 18057.099999999977,
+      "end": 48062.19999999995
+    }
+  ],
+  "longTasks": [
+    {
+      "at": 91.69999999995343,
+      "duration": 114,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 226.30000000004657,
+      "duration": 60,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 421.80000000004657,
+      "duration": 89,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 921.4000000000233,
+      "duration": 176,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    }
+  ],
+  "audit": {
+    "observedAt": 48065.19999999995,
+    "rafPending": 0,
+    "rafExecuted": 2,
+    "gpuAllocated": 0,
+    "gpuLive": 0,
+    "coarse": false,
+    "fine": true,
+    "hover": true,
+    "reduce": false,
+    "hidden": false,
+    "animations": [
+      {
+        "name": "p12-page-in",
+        "state": "finished",
+        "target": "p12-route-surface",
+        "iterations": 1
+      },
+      {
+        "name": "p12-flow",
+        "state": "running",
+        "target": {},
+        "iterations": null
+      },
+      {
+        "name": "card-in",
+        "state": "finished",
+        "target": "task-card p12-task",
+        "iterations": 1
+      },
+      {
+        "name": "label-in",
+        "state": "finished",
+        "target": "status succeeded",
+        "iterations": 1
+      },
+      {
+        "name": "card-in",
+        "state": "finished",
+        "target": "task-card p12-task",
+        "iterations": 1
+      },
+      {
+        "name": "label-in",
+        "state": "finished",
+        "target": "status succeeded",
+        "iterations": 1
+      }
+    ]
+  },
+  "gesture": {
+    "events": [
+      {
+        "kind": "click",
+        "turn": 1,
+        "at": 4430.900000000023,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 1,
+        "active": true,
+        "trusted": true,
+        "at": 4431
+      },
+      {
+        "kind": "create-url",
+        "url": "blob:http://localhost:3000/3ecabf0c-062e-46b8-a6fd-50fe899042e2",
+        "bytes": 42971,
+        "at": 4477.099999999977
+      },
+      {
+        "kind": "click",
+        "turn": 2,
+        "at": 5017.699999999953,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 2,
+        "active": true,
+        "trusted": true,
+        "at": 5017.800000000047
+      },
+      {
+        "kind": "click",
+        "turn": 3,
+        "at": 5203,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 3,
+        "active": true,
+        "trusted": true,
+        "at": 5203
+      },
+      {
+        "kind": "revoke-url",
+        "url": "blob:http://localhost:3000/3ecabf0c-062e-46b8-a6fd-50fe899042e2",
+        "at": 5230.099999999977
+      },
+      {
+        "kind": "create-url",
+        "url": "blob:http://localhost:3000/78204510-7ae9-4ead-a87b-db8d3b742a09",
+        "bytes": 42971,
+        "at": 5232.300000000047
+      },
+      {
+        "kind": "revoke-url",
+        "url": "blob:http://localhost:3000/78204510-7ae9-4ead-a87b-db8d3b742a09",
+        "at": 5521.599999999977
+      },
+      {
+        "kind": "click",
+        "turn": 4,
+        "at": 5668.800000000047,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 4,
+        "active": true,
+        "trusted": true,
+        "at": 5668.900000000023
+      },
+      {
+        "kind": "create-url",
+        "url": "blob:http://localhost:3000/610c3397-510f-46c7-be4c-450e3f306001",
+        "bytes": 4194304,
+        "at": 5702
+      },
+      {
+        "kind": "revoke-url",
+        "url": "blob:http://localhost:3000/610c3397-510f-46c7-be4c-450e3f306001",
+        "at": 16425.800000000047
+      }
+    ],
+    "liveUrls": []
+  },
+  "interactionLongTasks": [],
+  "lazyScripts": [
+    {
+      "url": "http://localhost:3000/_next/static/chunks/1ot9azd3qliw_.js",
+      "gzipBytes": 3469
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/1ia3ez4_c-gpu.js",
+      "gzipBytes": 1806
+    }
+  ],
+  "lazyGzipBytes": 5275,
+  "largeLegalUpload": {
+    "selectedBytes": 4194304,
+    "serverAssetBytes": 4194304,
+    "width": 480,
+    "height": 640,
+    "kind": "Valid local JPEG plus trailing padding selected from actual container filesystem path; original upload unmodified; transport test, not 20MP device performance"
+  },
+  "taskIds": [
+    "4111a761-fdb6-414f-babb-4a83c8c836ea",
+    "17f53388-2fb9-44be-8dfe-a1a323cc101f"
+  ],
+  "errors": [],
+  "pass": true
+}

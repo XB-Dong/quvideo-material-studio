@@ -1,0 +1,70 @@
+{
+  "a": {
+    "observedAt": 1241.3000000000466,
+    "rafPending": 0,
+    "rafExecuted": 0,
+    "pendingCallbacks": [],
+    "rafHistory": [
+      {
+        "kind": "cancel",
+        "id": 0,
+        "at": 94.60000000009313
+      },
+      {
+        "kind": "media-change",
+        "matches": true,
+        "trusted": true,
+        "at": 752.1000000000931
+      },
+      {
+        "kind": "cancel",
+        "id": 0,
+        "at": 752.9000000000233
+      }
+    ],
+    "motionStatic": true,
+    "orbit": 0,
+    "gpuAllocated": 0,
+    "gpuLive": 0,
+    "coarse": false,
+    "fine": true,
+    "hover": true,
+    "reduce": true,
+    "hidden": false,
+    "animations": []
+  },
+  "b": {
+    "observedAt": 1448.1000000000931,
+    "rafPending": 0,
+    "rafExecuted": 0,
+    "pendingCallbacks": [],
+    "rafHistory": [
+      {
+        "kind": "cancel",
+        "id": 0,
+        "at": 94.60000000009313
+      },
+      {
+        "kind": "media-change",
+        "matches": true,
+        "trusted": true,
+        "at": 752.1000000000931
+      },
+      {
+        "kind": "cancel",
+        "id": 0,
+        "at": 752.9000000000233
+      }
+    ],
+    "motionStatic": true,
+    "orbit": 0,
+    "gpuAllocated": 0,
+    "gpuLive": 0,
+    "coarse": false,
+    "fine": true,
+    "hover": true,
+    "reduce": true,
+    "hidden": false,
+    "animations": []
+  }
+}

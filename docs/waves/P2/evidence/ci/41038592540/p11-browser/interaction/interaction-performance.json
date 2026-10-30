@@ -1,0 +1,170 @@
+{
+  "testedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+  "capturedAt": "2026-10-30T10:17:21.871Z",
+  "browser": "149.0.7827.53",
+  "conditions": "Default software policy, actual pointer/scroll/category; no screenshot, tracing, readPixels or capability fixture. Initialization retained separately. Longtask overlap is conservative candidate attribution, failures require source review.",
+  "phases": [
+    {
+      "label": "ink pointer",
+      "begin": 3716.7999999999884,
+      "end": 18951.20000000001
+    },
+    {
+      "label": "card demo-postcard",
+      "begin": 18956.20000000001,
+      "end": 25693.29999999999
+    },
+    {
+      "label": "card demo-pet",
+      "begin": 25696.20000000001,
+      "end": 30724
+    },
+    {
+      "label": "card demo-story",
+      "begin": 30725.599999999977,
+      "end": 35627.29999999999
+    },
+    {
+      "label": "card demo-portrait",
+      "begin": 35629.09999999998,
+      "end": 41230.40000000002
+    },
+    {
+      "label": "classification",
+      "begin": 41232.5,
+      "end": 42404.20000000001
+    },
+    {
+      "label": "continuous idle 30s",
+      "begin": 42408.20000000001,
+      "end": 72619.79999999999
+    }
+  ],
+  "longTasks": [
+    {
+      "at": 142.29999999998836,
+      "duration": 71,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 761,
+      "duration": 220,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    }
+  ],
+  "audit": {
+    "observedAt": 72621.59999999998,
+    "rafPending": 1,
+    "rafExecuted": 663,
+    "gpuAllocated": 0,
+    "gpuLive": 0,
+    "coarse": false,
+    "fine": true,
+    "hover": true,
+    "reduce": false,
+    "hidden": false,
+    "animations": [
+      {
+        "name": "p12-page-in",
+        "state": "finished",
+        "target": "p12-route-surface",
+        "iterations": 1
+      },
+      {
+        "name": "edge-flow",
+        "state": "running",
+        "target": {},
+        "iterations": null
+      },
+      {
+        "name": "card-in",
+        "state": "finished",
+        "target": "template-card",
+        "iterations": 1
+      },
+      {
+        "name": "edge-flow",
+        "state": "running",
+        "target": {},
+        "iterations": null
+      },
+      {
+        "name": "card-in",
+        "state": "finished",
+        "target": "template-card",
+        "iterations": 1
+      },
+      {
+        "name": "edge-flow",
+        "state": "running",
+        "target": {},
+        "iterations": null
+      },
+      {
+        "name": "card-in",
+        "state": "finished",
+        "target": "template-card",
+        "iterations": 1
+      },
+      {
+        "name": "edge-flow",
+        "state": "running",
+        "target": {},
+        "iterations": null
+      },
+      {
+        "name": "card-in",
+        "state": "finished",
+        "target": "template-card",
+        "iterations": 1
+      },
+      {
+        "name": "edge-breathe",
+        "state": "running",
+        "target": {},
+        "iterations": null
+      }
+    ]
+  },
+  "interactionLongTasks": [],
+  "initialLongTasks": [
+    {
+      "at": 142.29999999998836,
+      "duration": 71,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 761,
+      "duration": 220,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    }
+  ],
+  "lazyScripts": [],
+  "lazyGzipBytes": 0,
+  "errors": [],
+  "pass": true
+}

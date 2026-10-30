@@ -1,0 +1,367 @@
+{
+  "id": 41038592540,
+  "sourceCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+  "url": "https://github.com/XB-Dong/quvideo-material-studio/actions/runs/41038592540",
+  "event": "push",
+  "status": "completed",
+  "conclusion": "success",
+  "createdAt": "2026-10-30T10:08:53Z",
+  "updatedAt": "2026-10-30T10:26:49Z",
+  "capturedAt": "2026-10-30T18:27:42.5181254+08:00",
+  "jobs": [
+    {
+      "id": 124005462809,
+      "name": "backend",
+      "conclusion": "success",
+      "startedAt": "2026-10-30T10:08:55Z",
+      "completedAt": "2026-10-30T10:10:42Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:08:56Z",
+          "completed_at": "2026-10-30T10:08:57Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:08:57Z",
+          "completed_at": "2026-10-30T10:09:00Z"
+        },
+        {
+          "name": "Java tests, real MySQL integration and package in container",
+          "number": 3,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:09:00Z",
+          "completed_at": "2026-10-30T10:10:39Z"
+        },
+        {
+          "name": "Preserve test database logs",
+          "number": 4,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:10:39Z",
+          "completed_at": "2026-10-30T10:10:39Z"
+        },
+        {
+          "name": "Clean test services",
+          "number": 5,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:10:39Z",
+          "completed_at": "2026-10-30T10:10:39Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "number": 10,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:10:39Z",
+          "completed_at": "2026-10-30T10:10:39Z"
+        },
+        {
+          "name": "Complete job",
+          "number": 11,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:10:39Z",
+          "completed_at": "2026-10-30T10:10:39Z"
+        }
+      ]
+    },
+    {
+      "id": 124005463233,
+      "name": "frontend",
+      "conclusion": "success",
+      "startedAt": "2026-10-30T10:08:56Z",
+      "completedAt": "2026-10-30T10:10:21Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:08:56Z",
+          "completed_at": "2026-10-30T10:08:57Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:08:57Z",
+          "completed_at": "2026-10-30T10:09:00Z"
+        },
+        {
+          "name": "Lint, typecheck and behavior tests in container",
+          "number": 3,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:09:00Z",
+          "completed_at": "2026-10-30T10:10:02Z"
+        },
+        {
+          "name": "Production build in container",
+          "number": 4,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:10:02Z",
+          "completed_at": "2026-10-30T10:10:19Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "number": 8,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:10:19Z",
+          "completed_at": "2026-10-30T10:10:19Z"
+        },
+        {
+          "name": "Complete job",
+          "number": 9,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:10:19Z",
+          "completed_at": "2026-10-30T10:10:19Z"
+        }
+      ]
+    },
+    {
+      "id": 124006205799,
+      "name": "integration",
+      "conclusion": "success",
+      "startedAt": "2026-10-30T10:10:45Z",
+      "completedAt": "2026-10-30T10:26:47Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:10:46Z",
+          "completed_at": "2026-10-30T10:10:48Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:10:48Z",
+          "completed_at": "2026-10-30T10:10:53Z"
+        },
+        {
+          "name": "Start clean full stack",
+          "number": 3,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:10:53Z",
+          "completed_at": "2026-10-30T10:13:16Z"
+        },
+        {
+          "name": "Independent API acceptance through frontend proxy",
+          "number": 4,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:13:16Z",
+          "completed_at": "2026-10-30T10:13:48Z"
+        },
+        {
+          "name": "Independent P1.1 browser and business acceptance",
+          "number": 5,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:13:48Z",
+          "completed_at": "2026-10-30T10:15:25Z"
+        },
+        {
+          "name": "Default software visible ink, borders and card effects",
+          "number": 6,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:15:25Z",
+          "completed_at": "2026-10-30T10:16:07Z"
+        },
+        {
+          "name": "Continuous interaction and resource measurements",
+          "number": 7,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:16:07Z",
+          "completed_at": "2026-10-30T10:17:22Z"
+        },
+        {
+          "name": "Browser performance measurements",
+          "number": 8,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:17:22Z",
+          "completed_at": "2026-10-30T10:18:00Z"
+        },
+        {
+          "name": "Per-run budget guard behavior tests",
+          "number": 9,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:18:00Z",
+          "completed_at": "2026-10-30T10:18:00Z"
+        },
+        {
+          "name": "Browser-native background cleanup and recovery",
+          "number": 10,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:18:00Z",
+          "completed_at": "2026-10-30T10:18:26Z"
+        },
+        {
+          "name": "Independent P1.2 navigation, upload and task acceptance",
+          "number": 11,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:18:26Z",
+          "completed_at": "2026-10-30T10:19:57Z"
+        },
+        {
+          "name": "Subpage and interaction visible motion",
+          "number": 12,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:19:57Z",
+          "completed_at": "2026-10-30T10:21:22Z"
+        },
+        {
+          "name": "Subpage continuous interaction without screenshots",
+          "number": 13,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:21:22Z",
+          "completed_at": "2026-10-30T10:22:13Z"
+        },
+        {
+          "name": "Three-page per-run resource budgets",
+          "number": 14,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:22:13Z",
+          "completed_at": "2026-10-30T10:24:05Z"
+        },
+        {
+          "name": "P1.2 per-run budget guard tests",
+          "number": 15,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:24:05Z",
+          "completed_at": "2026-10-30T10:24:06Z"
+        },
+        {
+          "name": "Three-page browser-native background cleanup",
+          "number": 16,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:24:06Z",
+          "completed_at": "2026-10-30T10:24:18Z"
+        },
+        {
+          "name": "Independent P2 accounts, ownership and server-stage acceptance",
+          "number": 17,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:24:18Z",
+          "completed_at": "2026-10-30T10:24:50Z"
+        },
+        {
+          "name": "Account UI, stale cookies and request lifecycle acceptance",
+          "number": 18,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:24:50Z",
+          "completed_at": "2026-10-30T10:26:39Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "number": 19,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:26:39Z",
+          "completed_at": "2026-10-30T10:26:42Z"
+        },
+        {
+          "name": "Collect service logs",
+          "number": 20,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:26:42Z",
+          "completed_at": "2026-10-30T10:26:42Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "number": 21,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:26:42Z",
+          "completed_at": "2026-10-30T10:26:44Z"
+        },
+        {
+          "name": "Clean isolated CI services",
+          "number": 22,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:26:44Z",
+          "completed_at": "2026-10-30T10:26:45Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "number": 44,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:26:45Z",
+          "completed_at": "2026-10-30T10:26:45Z"
+        },
+        {
+          "name": "Complete job",
+          "number": 45,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-30T10:26:45Z",
+          "completed_at": "2026-10-30T10:26:45Z"
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 12970117625,
+      "name": "browser-evidence",
+      "size_in_bytes": 23273109,
+      "expired": false
+    },
+    {
+      "id": 12969613004,
+      "name": "integration-logs",
+      "size_in_bytes": 2583,
+      "expired": false
+    }
+  ],
+  "logs": [
+    {
+      "file": "backend.log",
+      "bytes": 530664,
+      "sha256": "28a3978cd8a3fbe4fbc3a5dc27a267836299bb72ff53d38dc3e57822310f3461"
+    },
+    {
+      "file": "frontend.log",
+      "bytes": 26843,
+      "sha256": "4f40f172224a1dff674ab41cf9f7506e5681264a72a64174b82fe63822be64a3"
+    },
+    {
+      "file": "integration.log",
+      "bytes": 643630,
+      "sha256": "578d7ad670aae7b1926a4f6ebe7c66c6b7264727756f62d7a60ea54e8bfaf240"
+    }
+  ]
+}

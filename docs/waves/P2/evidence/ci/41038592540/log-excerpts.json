@@ -1,0 +1,41 @@
+{
+  "sourceCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+  "runId": 41038592540,
+  "scope": "Selected exact non-sensitive log lines; full original logs retained privately, hashes in run.json",
+  "frontend": [
+    "2026-10-30T10:09:36.4914924Z > eslint .",
+    "2026-10-30T10:09:43.9687169Z > tsc --noEmit",
+    "2026-10-30T10:10:01.3268601Z \u001b[2m Test Files \u001b[22m \u001b[1m\u001b[32m12 passed\u001b[39m\u001b[22m\u001b[90m (12)\u001b[39m",
+    "2026-10-30T10:10:02.6465734Z #12 0.344 > next build",
+    "2026-10-30T10:10:09.2840298Z #12 6.979 ✓ Compiled successfully in 6.0s"
+  ],
+  "backend": [
+    "2026-10-30T10:10:11.2021063Z #10 35.08 [INFO] BUILD SUCCESS",
+    "2026-10-30T10:10:20.6416007Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.128 s -- in com.quvideo.studio.PipelineTest",
+    "2026-10-30T10:10:21.7563807Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.151 s -- in com.quvideo.studio.PasswordAndAuthTest",
+    "2026-10-30T10:10:23.3689626Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.608 s -- in com.quvideo.studio.ResultThumbnailTest",
+    "2026-10-30T10:10:23.6350111Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.260 s -- in com.quvideo.studio.DemoAssetsTest",
+    "2026-10-30T10:10:33.4277401Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.768 s -- in com.quvideo.studio.DatabaseIntegrationTest",
+    "2026-10-30T10:10:37.7929141Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.358 s -- in com.quvideo.studio.AccountIntegrationTest",
+    "2026-10-30T10:10:37.8619145Z [INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0",
+    "2026-10-30T10:10:38.4917704Z [INFO] BUILD SUCCESS"
+  ],
+  "api": [
+    "2026-10-30T10:13:35.9749484Z test_01_public_catalog_categories_and_local_images (test_api.ApiAcceptance.test_01_public_catalog_categories_and_local_images) ... ok",
+    "2026-10-30T10:13:36.0796373Z test_02_identity_is_backend_cookie_and_reused (test_api.ApiAcceptance.test_02_identity_is_backend_cookie_and_reused) ... ok",
+    "2026-10-30T10:13:36.3294303Z test_03_upload_actual_file_validation_and_private_read (test_api.ApiAcceptance.test_03_upload_actual_file_validation_and_private_read) ... ok",
+    "2026-10-30T10:13:36.4553420Z test_04_submit_parameter_validation_and_origin (test_api.ApiAcceptance.test_04_submit_parameter_validation_and_origin) ... ok",
+    "2026-10-30T10:13:41.5133874Z test_05_accepts_before_generation_and_executes_without_queries (test_api.ApiAcceptance.test_05_accepts_before_generation_and_executes_without_queries) ... ok",
+    "2026-10-30T10:13:42.0099620Z test_06_each_failure_stops_subsequent_steps (test_api.ApiAcceptance.test_06_each_failure_stops_subsequent_steps) ... ok",
+    "2026-10-30T10:13:47.9435703Z test_07_multiple_tasks_active_pagination_and_history_refresh (test_api.ApiAcceptance.test_07_multiple_tasks_active_pagination_and_history_refresh) ... ok",
+    "2026-10-30T10:13:48.3145205Z test_08_foreign_tasks_assets_results_are_private (test_api.ApiAcceptance.test_08_foreign_tasks_assets_results_are_private) ... ok",
+    "2026-10-30T10:13:48.3147061Z Ran 8 tests in 12.763s",
+    "2026-10-30T10:13:48.3147588Z OK"
+  ],
+  "budgetGuard": [
+    "2026-10-30T10:18:00.8675558Z # tests 4",
+    "2026-10-30T10:18:00.8678957Z # pass 4",
+    "2026-10-30T10:24:06.3301824Z # tests 4",
+    "2026-10-30T10:24:06.3305966Z # pass 4"
+  ]
+}
