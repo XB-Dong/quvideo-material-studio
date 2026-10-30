@@ -1,0 +1,696 @@
+{
+  "testedCommit": "b2d0a6aa16a4a6890e58b2b92d6f672bfc466c9c",
+  "capturedAt": "2026-10-30T05:39:33.672Z",
+  "strict": true,
+  "intercepts": 6,
+  "expectedCanceled": [],
+  "checks": [
+    {
+      "name": "cold PNG reserves geometry and reveals once after actual load",
+      "status": "pass",
+      "details": {
+        "before": {
+          "at": 1889.5999999940395,
+          "naturalWidth": 0,
+          "complete": false,
+          "imageRect": {
+            "x": 377,
+            "y": 319.08966064453125,
+            "width": 686,
+            "height": 456.22064208984375,
+            "top": 319.08966064453125,
+            "right": 1063,
+            "bottom": 775.310302734375,
+            "left": 377
+          },
+          "dialogRect": {
+            "x": 347.6000061035156,
+            "y": 211.2896728515625,
+            "width": 744.800048828125,
+            "height": 593.420654296875,
+            "top": 211.2896728515625,
+            "right": 1092.4000549316406,
+            "bottom": 804.7103271484375,
+            "left": 347.6000061035156
+          },
+          "imageLayout": {
+            "w": 700,
+            "h": 466
+          },
+          "dialogLayout": {
+            "w": 760,
+            "h": 606
+          },
+          "state": "loading",
+          "shortOverlaps": [],
+          "events": [],
+          "audit": {
+            "observedAt": 1890.3999999910593,
+            "rafPending": 0,
+            "rafExecuted": 0,
+            "gpuAllocated": 0,
+            "gpuLive": 0,
+            "coarse": false,
+            "fine": true,
+            "hover": true,
+            "reduce": false,
+            "hidden": false,
+            "animations": [
+              {
+                "name": "p12-page-in",
+                "state": "finished",
+                "target": "p12-route-surface",
+                "iterations": 1
+              },
+              {
+                "name": "p12-flow",
+                "state": "paused",
+                "target": {},
+                "iterations": null
+              },
+              {
+                "name": "card-in",
+                "state": "finished",
+                "target": "task-card p12-task",
+                "iterations": 1
+              },
+              {
+                "name": "label-in",
+                "state": "finished",
+                "target": "status failed",
+                "iterations": 1
+              },
+              {
+                "name": "card-in",
+                "state": "finished",
+                "target": "task-card p12-task",
+                "iterations": 1
+              },
+              {
+                "name": "label-in",
+                "state": "finished",
+                "target": "status succeeded",
+                "iterations": 1
+              },
+              {
+                "name": "card-in",
+                "state": "finished",
+                "target": "task-card p12-task",
+                "iterations": 1
+              },
+              {
+                "name": "label-in",
+                "state": "finished",
+                "target": "status succeeded",
+                "iterations": 1
+              },
+              {
+                "name": "p12-dialog-in",
+                "state": "running",
+                "target": "p12-dialog",
+                "iterations": 1
+              },
+              {
+                "name": "p12-backdrop",
+                "state": "running",
+                "target": "p12-dialog",
+                "iterations": 1
+              }
+            ]
+          },
+          "animations": [
+            {
+              "state": "running",
+              "target": "p12-dialog",
+              "duration": 200
+            },
+            {
+              "state": "running",
+              "target": "p12-dialog",
+              "duration": 180
+            }
+          ]
+        },
+        "pending": {
+          "at": 3141.7000000029802,
+          "naturalWidth": 0,
+          "complete": false,
+          "imageRect": {
+            "x": 370,
+            "y": 307.234375,
+            "width": 700,
+            "height": 465.53125,
+            "top": 307.234375,
+            "right": 1070,
+            "bottom": 772.765625,
+            "left": 370
+          },
+          "dialogRect": {
+            "x": 340,
+            "y": 197.234375,
+            "width": 760,
+            "height": 605.53125,
+            "top": 197.234375,
+            "right": 1100,
+            "bottom": 802.765625,
+            "left": 340
+          },
+          "imageLayout": {
+            "w": 700,
+            "h": 466
+          },
+          "dialogLayout": {
+            "w": 760,
+            "h": 606
+          },
+          "state": "loading",
+          "shortOverlaps": [],
+          "events": [],
+          "audit": {
+            "observedAt": 3141.7999999970198,
+            "rafPending": 0,
+            "rafExecuted": 0,
+            "gpuAllocated": 0,
+            "gpuLive": 0,
+            "coarse": false,
+            "fine": true,
+            "hover": true,
+            "reduce": false,
+            "hidden": false,
+            "animations": [
+              {
+                "name": "p12-page-in",
+                "state": "finished",
+                "target": "p12-route-surface",
+                "iterations": 1
+              },
+              {
+                "name": "p12-flow",
+                "state": "paused",
+                "target": {},
+                "iterations": null
+              },
+              {
+                "name": "card-in",
+                "state": "finished",
+                "target": "task-card p12-task",
+                "iterations": 1
+              },
+              {
+                "name": "label-in",
+                "state": "finished",
+                "target": "status failed",
+                "iterations": 1
+              },
+              {
+                "name": "card-in",
+                "state": "finished",
+                "target": "task-card p12-task",
+                "iterations": 1
+              },
+              {
+                "name": "label-in",
+                "state": "finished",
+                "target": "status succeeded",
+                "iterations": 1
+              },
+              {
+                "name": "card-in",
+                "state": "finished",
+                "target": "task-card p12-task",
+                "iterations": 1
+              },
+              {
+                "name": "label-in",
+                "state": "finished",
+                "target": "status succeeded",
+                "iterations": 1
+              },
+              {
+                "name": "p12-dialog-in",
+                "state": "finished",
+                "target": "p12-dialog",
+                "iterations": 1
+              },
+              {
+                "name": "p12-backdrop",
+                "state": "finished",
+                "target": "p12-dialog",
+                "iterations": 1
+              }
+            ]
+          },
+          "animations": [
+            {
+              "state": "finished",
+              "target": "p12-dialog",
+              "duration": 200
+            },
+            {
+              "state": "finished",
+              "target": "p12-dialog",
+              "duration": 180
+            }
+          ]
+        },
+        "after": {
+          "at": 3668.2999999970198,
+          "naturalWidth": 960,
+          "complete": true,
+          "imageRect": {
+            "x": 370,
+            "y": 307.234375,
+            "width": 700,
+            "height": 465.53125,
+            "top": 307.234375,
+            "right": 1070,
+            "bottom": 772.765625,
+            "left": 370
+          },
+          "dialogRect": {
+            "x": 340,
+            "y": 197.234375,
+            "width": 760,
+            "height": 605.53125,
+            "top": 197.234375,
+            "right": 1100,
+            "bottom": 802.765625,
+            "left": 340
+          },
+          "imageLayout": {
+            "w": 700,
+            "h": 466
+          },
+          "dialogLayout": {
+            "w": 760,
+            "h": 606
+          },
+          "state": "ready",
+          "shortOverlaps": [],
+          "events": [
+            {
+              "kind": "animate",
+              "target": "preview-image",
+              "at": 3194.7000000029802,
+              "duration": 200
+            }
+          ],
+          "audit": {
+            "observedAt": 3668.5,
+            "rafPending": 0,
+            "rafExecuted": 0,
+            "gpuAllocated": 0,
+            "gpuLive": 0,
+            "coarse": false,
+            "fine": true,
+            "hover": true,
+            "reduce": false,
+            "hidden": false,
+            "animations": [
+              {
+                "name": "p12-page-in",
+                "state": "finished",
+                "target": "p12-route-surface",
+                "iterations": 1
+              },
+              {
+                "name": "p12-flow",
+                "state": "paused",
+                "target": {},
+                "iterations": null
+              },
+              {
+                "name": "card-in",
+                "state": "finished",
+                "target": "task-card p12-task",
+                "iterations": 1
+              },
+              {
+                "name": "label-in",
+                "state": "finished",
+                "target": "status failed",
+                "iterations": 1
+              },
+              {
+                "name": "card-in",
+                "state": "finished",
+                "target": "task-card p12-task",
+                "iterations": 1
+              },
+              {
+                "name": "label-in",
+                "state": "finished",
+                "target": "status succeeded",
+                "iterations": 1
+              },
+              {
+                "name": "card-in",
+                "state": "finished",
+                "target": "task-card p12-task",
+                "iterations": 1
+              },
+              {
+                "name": "label-in",
+                "state": "finished",
+                "target": "status succeeded",
+                "iterations": 1
+              },
+              {
+                "name": "p12-dialog-in",
+                "state": "finished",
+                "target": "p12-dialog",
+                "iterations": 1
+              },
+              {
+                "name": "p12-backdrop",
+                "state": "finished",
+                "target": "p12-dialog",
+                "iterations": 1
+              }
+            ]
+          },
+          "animations": [
+            {
+              "state": "finished",
+              "target": "p12-dialog",
+              "duration": 200
+            },
+            {
+              "state": "finished",
+              "target": "p12-dialog",
+              "duration": 180
+            }
+          ]
+        },
+        "controlledResponseDelayMs": 600,
+        "strict": true
+      }
+    },
+    {
+      "name": "cancel before image response removes private nodes without resurrection",
+      "status": "pass",
+      "details": {
+        "at": 4637.0999999940395,
+        "imageLayout": null,
+        "dialogLayout": null,
+        "shortOverlaps": [],
+        "events": [
+          {
+            "kind": "animate",
+            "target": "preview-image",
+            "at": 3194.7000000029802,
+            "duration": 200
+          }
+        ],
+        "audit": {
+          "observedAt": 4637.29999999702,
+          "rafPending": 0,
+          "rafExecuted": 0,
+          "gpuAllocated": 0,
+          "gpuLive": 0,
+          "coarse": false,
+          "fine": true,
+          "hover": true,
+          "reduce": false,
+          "hidden": false,
+          "animations": [
+            {
+              "state": "running",
+              "target": "result-button",
+              "iterations": 1
+            },
+            {
+              "state": "running",
+              "target": "result-button",
+              "iterations": 1
+            },
+            {
+              "state": "running",
+              "target": "result-button",
+              "iterations": 1
+            },
+            {
+              "name": "p12-page-in",
+              "state": "finished",
+              "target": "p12-route-surface",
+              "iterations": 1
+            },
+            {
+              "name": "p12-flow",
+              "state": "running",
+              "target": {},
+              "iterations": null
+            },
+            {
+              "name": "card-in",
+              "state": "finished",
+              "target": "task-card p12-task",
+              "iterations": 1
+            },
+            {
+              "name": "label-in",
+              "state": "finished",
+              "target": "status failed",
+              "iterations": 1
+            },
+            {
+              "name": "card-in",
+              "state": "finished",
+              "target": "task-card p12-task",
+              "iterations": 1
+            },
+            {
+              "name": "label-in",
+              "state": "finished",
+              "target": "status succeeded",
+              "iterations": 1
+            },
+            {
+              "name": "card-in",
+              "state": "finished",
+              "target": "task-card p12-task",
+              "iterations": 1
+            },
+            {
+              "name": "label-in",
+              "state": "finished",
+              "target": "status succeeded",
+              "iterations": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cold image error remains understandable and closable",
+      "status": "pass",
+      "details": {
+        "at": 5169.5999999940395,
+        "naturalWidth": 0,
+        "complete": true,
+        "imageRect": {
+          "x": 370.3104248046875,
+          "y": 307.7601623535156,
+          "width": 699.3790283203125,
+          "height": 465.1183166503906,
+          "top": 307.7601623535156,
+          "right": 1069.689453125,
+          "bottom": 772.8784790039062,
+          "left": 370.3104248046875
+        },
+        "dialogRect": {
+          "x": 340.3370361328125,
+          "y": 197.85772705078125,
+          "width": 759.325927734375,
+          "height": 604.994140625,
+          "top": 197.85772705078125,
+          "right": 1099.6629638671875,
+          "bottom": 802.8518676757812,
+          "left": 340.3370361328125
+        },
+        "imageLayout": {
+          "w": 700,
+          "h": 466
+        },
+        "dialogLayout": {
+          "w": 760,
+          "h": 606
+        },
+        "state": "error",
+        "shortOverlaps": [],
+        "events": [
+          {
+            "kind": "animate",
+            "target": "preview-image",
+            "at": 3194.7000000029802,
+            "duration": 200
+          }
+        ],
+        "audit": {
+          "observedAt": 5170,
+          "rafPending": 0,
+          "rafExecuted": 0,
+          "gpuAllocated": 0,
+          "gpuLive": 0,
+          "coarse": false,
+          "fine": true,
+          "hover": true,
+          "reduce": false,
+          "hidden": false,
+          "animations": [
+            {
+              "name": "p12-page-in",
+              "state": "finished",
+              "target": "p12-route-surface",
+              "iterations": 1
+            },
+            {
+              "name": "p12-flow",
+              "state": "paused",
+              "target": {},
+              "iterations": null
+            },
+            {
+              "name": "card-in",
+              "state": "finished",
+              "target": "task-card p12-task",
+              "iterations": 1
+            },
+            {
+              "name": "label-in",
+              "state": "finished",
+              "target": "status failed",
+              "iterations": 1
+            },
+            {
+              "name": "card-in",
+              "state": "finished",
+              "target": "task-card p12-task",
+              "iterations": 1
+            },
+            {
+              "name": "label-in",
+              "state": "finished",
+              "target": "status succeeded",
+              "iterations": 1
+            },
+            {
+              "name": "card-in",
+              "state": "finished",
+              "target": "task-card p12-task",
+              "iterations": 1
+            },
+            {
+              "name": "label-in",
+              "state": "finished",
+              "target": "status succeeded",
+              "iterations": 1
+            },
+            {
+              "name": "p12-dialog-in",
+              "state": "running",
+              "target": "p12-dialog",
+              "iterations": 1
+            },
+            {
+              "name": "p12-backdrop",
+              "state": "running",
+              "target": "p12-dialog",
+              "iterations": 1
+            }
+          ]
+        },
+        "animations": [
+          {
+            "state": "running",
+            "target": "p12-dialog",
+            "duration": 200
+          },
+          {
+            "state": "running",
+            "target": "p12-dialog",
+            "duration": 180
+          }
+        ]
+      }
+    },
+    {
+      "name": "reduce during cold load cancels animation and still shows original",
+      "status": "pass",
+      "details": {
+        "at": 6383.20000000298,
+        "naturalWidth": 960,
+        "complete": true,
+        "imageRect": {
+          "x": 370,
+          "y": 307.234375,
+          "width": 700,
+          "height": 465.53125,
+          "top": 307.234375,
+          "right": 1070,
+          "bottom": 772.765625,
+          "left": 370
+        },
+        "dialogRect": {
+          "x": 340,
+          "y": 197.234375,
+          "width": 760,
+          "height": 605.53125,
+          "top": 197.234375,
+          "right": 1100,
+          "bottom": 802.765625,
+          "left": 340
+        },
+        "imageLayout": {
+          "w": 700,
+          "h": 466
+        },
+        "dialogLayout": {
+          "w": 760,
+          "h": 606
+        },
+        "state": "ready",
+        "shortOverlaps": [],
+        "events": [
+          {
+            "kind": "animate",
+            "target": "preview-image",
+            "at": 3194.7000000029802,
+            "duration": 200
+          }
+        ],
+        "audit": {
+          "observedAt": 6383.899999991059,
+          "rafPending": 0,
+          "rafExecuted": 0,
+          "gpuAllocated": 0,
+          "gpuLive": 0,
+          "coarse": false,
+          "fine": true,
+          "hover": true,
+          "reduce": true,
+          "hidden": false,
+          "animations": []
+        },
+        "animations": []
+      }
+    },
+    {
+      "name": "route during cold load clears private visual before late response",
+      "status": "pass",
+      "details": {
+        "privateNodes": 0
+      }
+    },
+    {
+      "name": "real 401 consumer clears cold private preview and identity data",
+      "status": "pass",
+      "details": {
+        "privateNodes": 0,
+        "oldTasksVisible": 0,
+        "method": "Original history refresh handler gets real controlled HTTP401 while dialog open; normal generation-aware API consumer executes, no forged session-expired event"
+      }
+    }
+  ],
+  "scope": "Functional response gating, screenshots not performance. No cookie/state artifact written unless explicit local SAVE_SYNTHETIC_STORAGE_STATE=1."
+}

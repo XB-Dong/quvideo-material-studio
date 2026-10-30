@@ -1,0 +1,300 @@
+{
+  "testedCommit": "b2d0a6aa16a4a6890e58b2b92d6f672bfc466c9c",
+  "capturedAt": "2026-10-30T05:41:52.360Z",
+  "browser": "149.0.7827.53",
+  "conditions": "No screenshots, pixel readback, tracing or RAF stacks; default software driver. Original full-result request and large legal upload not erased; startup recorded separately.",
+  "phases": [
+    {
+      "label": "real Link navigation",
+      "begin": 3141.199999988079,
+      "end": 3976.199999988079
+    },
+    {
+      "label": "real chooser upload cancel same-file replace remove",
+      "begin": 4344.899999991059,
+      "end": 6088
+    },
+    {
+      "label": "large legal JPEG transport and preview",
+      "begin": 6090.29999999702,
+      "end": 7619.899999991059
+    },
+    {
+      "label": "submit 0",
+      "begin": 7621.5999999940395,
+      "end": 7925.0999999940395
+    },
+    {
+      "label": "submit 1",
+      "begin": 7929.899999991059,
+      "end": 8315.89999999106
+    },
+    {
+      "label": "task updates and original result dialog",
+      "begin": 8321.39999999106,
+      "end": 17445.89999999106
+    },
+    {
+      "label": "history refresh and identity dialog",
+      "begin": 17449.5,
+      "end": 18704.19999998808
+    },
+    {
+      "label": "continuous child scene 30s",
+      "begin": 18707.5,
+      "end": 48717.19999998808
+    }
+  ],
+  "longTasks": [
+    {
+      "at": 90,
+      "duration": 133,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 247.79999999701977,
+      "duration": 57,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 481.29999999701977,
+      "duration": 59,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 895.5999999940395,
+      "duration": 118,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 3883.7999999970198,
+      "duration": 54,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 6440.199999988079,
+      "duration": 729,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    }
+  ],
+  "audit": {
+    "observedAt": 48721.19999998808,
+    "rafPending": 0,
+    "rafExecuted": 17,
+    "gpuAllocated": 0,
+    "gpuLive": 0,
+    "coarse": false,
+    "fine": true,
+    "hover": true,
+    "reduce": false,
+    "hidden": false,
+    "animations": [
+      {
+        "name": "p12-page-in",
+        "state": "finished",
+        "target": "p12-route-surface",
+        "iterations": 1
+      },
+      {
+        "name": "p12-flow",
+        "state": "running",
+        "target": {},
+        "iterations": null
+      },
+      {
+        "name": "card-in",
+        "state": "finished",
+        "target": "task-card p12-task",
+        "iterations": 1
+      },
+      {
+        "name": "label-in",
+        "state": "finished",
+        "target": "status succeeded",
+        "iterations": 1
+      },
+      {
+        "name": "card-in",
+        "state": "finished",
+        "target": "task-card p12-task",
+        "iterations": 1
+      },
+      {
+        "name": "label-in",
+        "state": "finished",
+        "target": "status succeeded",
+        "iterations": 1
+      }
+    ]
+  },
+  "gesture": {
+    "events": [
+      {
+        "kind": "click",
+        "turn": 1,
+        "at": 4979.399999991059,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 1,
+        "active": true,
+        "trusted": true,
+        "at": 4980.699999988079
+      },
+      {
+        "kind": "create-url",
+        "url": "blob:http://localhost:3000/fe58e112-0bd5-420a-96a0-10afe0fd2c27",
+        "bytes": 42971,
+        "at": 5078.5
+      },
+      {
+        "kind": "click",
+        "turn": 2,
+        "at": 5434.399999991059,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 2,
+        "active": true,
+        "trusted": true,
+        "at": 5434.5
+      },
+      {
+        "kind": "click",
+        "turn": 3,
+        "at": 5590.899999991059,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 3,
+        "active": true,
+        "trusted": true,
+        "at": 5591.0999999940395
+      },
+      {
+        "kind": "revoke-url",
+        "url": "blob:http://localhost:3000/fe58e112-0bd5-420a-96a0-10afe0fd2c27",
+        "at": 5647.0999999940395
+      },
+      {
+        "kind": "create-url",
+        "url": "blob:http://localhost:3000/3e87786e-561c-48fb-a514-e1429ea6fce8",
+        "bytes": 42971,
+        "at": 5649.699999988079
+      },
+      {
+        "kind": "revoke-url",
+        "url": "blob:http://localhost:3000/3e87786e-561c-48fb-a514-e1429ea6fce8",
+        "at": 6059.79999999702
+      },
+      {
+        "kind": "click",
+        "turn": 4,
+        "at": 6215.199999988079,
+        "trusted": true
+      },
+      {
+        "kind": "file-input-click",
+        "turn": 4,
+        "active": true,
+        "trusted": true,
+        "at": 6215.29999999702
+      },
+      {
+        "kind": "create-url",
+        "url": "blob:http://localhost:3000/95b240e1-bff5-47b3-acf9-60f62a9c2626",
+        "bytes": 4194304,
+        "at": 7158.699999988079
+      },
+      {
+        "kind": "revoke-url",
+        "url": "blob:http://localhost:3000/95b240e1-bff5-47b3-acf9-60f62a9c2626",
+        "at": 17840.89999999106
+      }
+    ],
+    "liveUrls": []
+  },
+  "interactionLongTasks": [
+    {
+      "at": 3883.7999999970198,
+      "duration": 54,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    },
+    {
+      "at": 6440.199999988079,
+      "duration": 729,
+      "attribution": [
+        {
+          "name": "unknown",
+          "containerType": "window",
+          "containerSrc": ""
+        }
+      ]
+    }
+  ],
+  "lazyScripts": [
+    {
+      "url": "http://localhost:3000/_next/static/chunks/3nmi6wvltx3nz.js",
+      "gzipBytes": 3367
+    }
+  ],
+  "lazyGzipBytes": 3367,
+  "largeLegalUpload": {
+    "selectedBytes": 4194304,
+    "serverAssetBytes": 4194304,
+    "width": 480,
+    "height": 640,
+    "kind": "Valid local JPEG plus trailing padding, original upload unmodified; transport test, not 20MP device performance"
+  },
+  "taskIds": [
+    "6f636d62-a20b-496f-aa8a-5c9738eac1b1",
+    "3c40df44-4da2-4adc-8e4d-961bf762286c"
+  ],
+  "errors": [],
+  "pass": false
+}

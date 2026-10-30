@@ -1,0 +1,522 @@
+{
+  "testedCommit": "b2d0a6aa16a4a6890e58b2b92d6f672bfc466c9c",
+  "capturedAt": "2026-10-30T05:51:47.190Z",
+  "scope": "Diagnostic tracing perturbs execution, not comfort acceptance",
+  "begin": 3233.7000000029802,
+  "end": 4449.899999991059,
+  "longTasks": [
+    {
+      "at": 3949.2000000029802,
+      "duration": 54
+    }
+  ],
+  "costly": [
+    {
+      "name": "TimerFire",
+      "pid": 114,
+      "tid": 114,
+      "at": 3952.5460000029802,
+      "duration": 54.375,
+      "args": {
+        "data": {
+          "frame": "3478839840F08AC5C897FD8A06F2339B",
+          "timerId": 16
+        }
+      }
+    },
+    {
+      "name": "RunMicrotasks",
+      "pid": 114,
+      "tid": 114,
+      "at": 3952.7360000029803,
+      "duration": 54.126,
+      "args": {
+        "microtask_count": 3
+      }
+    },
+    {
+      "name": "FunctionCall",
+      "pid": 114,
+      "tid": 114,
+      "at": 3952.74000000298,
+      "duration": 29.124,
+      "args": {
+        "data": {
+          "columnNumber": 159729,
+          "frame": "3478839840F08AC5C897FD8A06F2339B",
+          "functionName": "",
+          "isolate": "15867216295585737885",
+          "lineNumber": 31,
+          "sampleTraceId": 8865193361753274,
+          "scriptId": "11",
+          "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+        }
+      }
+    },
+    {
+      "name": "FunctionCall",
+      "pid": 114,
+      "tid": 114,
+      "at": 3982.00500000298,
+      "duration": 24.461,
+      "args": {
+        "data": {
+          "columnNumber": 28431,
+          "frame": "3478839840F08AC5C897FD8A06F2339B",
+          "functionName": "a",
+          "isolate": "15867216295585737885",
+          "lineNumber": 1,
+          "sampleTraceId": 8865193361753226,
+          "scriptId": "9",
+          "url": "http://localhost:3000/_next/static/chunks/3ptss1hm5l3km.js"
+        }
+      }
+    },
+    {
+      "name": "EventDispatch",
+      "pid": 114,
+      "tid": 114,
+      "at": 3491.4350000029804,
+      "duration": 18.498,
+      "args": {
+        "data": {
+          "sampleTraceId": 8865193361753716,
+          "type": "click"
+        }
+      }
+    },
+    {
+      "name": "FunctionCall",
+      "pid": 114,
+      "tid": 114,
+      "at": 3579.12300000298,
+      "duration": 16.178,
+      "args": {
+        "data": {
+          "columnNumber": 214488,
+          "frame": "3478839840F08AC5C897FD8A06F2339B",
+          "functionName": "z",
+          "isolate": "15867216295585737885",
+          "lineNumber": 31,
+          "sampleTraceId": 8865193361753525,
+          "scriptId": "11",
+          "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+        }
+      }
+    },
+    {
+      "name": "TimerFire",
+      "pid": 114,
+      "tid": 114,
+      "at": 3892.1790000029805,
+      "duration": 16.104,
+      "args": {
+        "data": {
+          "frame": "3478839840F08AC5C897FD8A06F2339B",
+          "timerId": 15
+        }
+      }
+    },
+    {
+      "name": "Layout",
+      "pid": 114,
+      "tid": 114,
+      "at": 3986.7770000029805,
+      "duration": 15.884,
+      "args": {
+        "beginData": {
+          "dirtyObjects": 78,
+          "frame": "3478839840F08AC5C897FD8A06F2339B",
+          "partialLayout": false,
+          "sampleTraceId": 8865193361753228,
+          "stackTrace": [
+            {
+              "columnNumber": 28569,
+              "functionName": "a",
+              "lineNumber": 1,
+              "scriptId": "9",
+              "url": "http://localhost:3000/_next/static/chunks/3ptss1hm5l3km.js"
+            }
+          ],
+          "totalObjects": 108
+        },
+        "endData": {
+          "layoutRoots": [
+            {
+              "depth": 1,
+              "nodeId": 2,
+              "nodeName": "#document",
+              "quads": [
+                [
+                  0,
+                  0,
+                  1440,
+                  0,
+                  1440,
+                  1000,
+                  0,
+                  1000
+                ]
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "FunctionCall",
+      "pid": 114,
+      "tid": 114,
+      "at": 3892.3050000029803,
+      "duration": 15.495,
+      "args": {
+        "data": {
+          "columnNumber": 136754,
+          "frame": "3478839840F08AC5C897FD8A06F2339B",
+          "functionName": "ss",
+          "isolate": "15867216295585737885",
+          "lineNumber": 31,
+          "sampleTraceId": 8865193361753290,
+          "scriptId": "11",
+          "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+        }
+      }
+    },
+    {
+      "name": "FunctionCall",
+      "pid": 114,
+      "tid": 114,
+      "at": 3491.6270000029804,
+      "duration": 13.323,
+      "args": {
+        "data": {
+          "columnNumber": 203303,
+          "frame": "3478839840F08AC5C897FD8A06F2339B",
+          "functionName": "fW",
+          "isolate": "15867216295585737885",
+          "lineNumber": 31,
+          "sampleTraceId": 8865193361753720,
+          "scriptId": "11",
+          "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+        }
+      }
+    },
+    {
+      "name": "RunMicrotasks",
+      "pid": 114,
+      "tid": 114,
+      "at": 3548.7950000029805,
+      "duration": 7.77,
+      "args": {
+        "microtask_count": 15
+      }
+    },
+    {
+      "name": "EventDispatch",
+      "pid": 114,
+      "tid": 114,
+      "at": 3474.0760000029804,
+      "duration": 6.804,
+      "args": {
+        "data": {
+          "sampleTraceId": 8865193361753743,
+          "type": "pointerdown"
+        }
+      }
+    },
+    {
+      "name": "FunctionCall",
+      "pid": 114,
+      "tid": 114,
+      "at": 3909.69900000298,
+      "duration": 6.593,
+      "args": {
+        "data": {
+          "columnNumber": 214488,
+          "frame": "3478839840F08AC5C897FD8A06F2339B",
+          "functionName": "z",
+          "isolate": "15867216295585737885",
+          "lineNumber": 31,
+          "sampleTraceId": 8865193361753297,
+          "scriptId": "11",
+          "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+        }
+      }
+    },
+    {
+      "name": "FunctionCall",
+      "pid": 114,
+      "tid": 114,
+      "at": 3603.6420000029802,
+      "duration": 6.576,
+      "args": {
+        "data": {
+          "columnNumber": 214488,
+          "frame": "3478839840F08AC5C897FD8A06F2339B",
+          "functionName": "z",
+          "isolate": "15867216295585737885",
+          "lineNumber": 31,
+          "sampleTraceId": 8865193361753491,
+          "scriptId": "11",
+          "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+        }
+      }
+    },
+    {
+      "name": "Layout",
+      "pid": 114,
+      "tid": 114,
+      "at": 4080.38500000298,
+      "duration": 5.428,
+      "args": {
+        "beginData": {
+          "dirtyObjects": 22,
+          "frame": "3478839840F08AC5C897FD8A06F2339B",
+          "partialLayout": false,
+          "sampleTraceId": 8865193361753213,
+          "totalObjects": 118
+        },
+        "endData": {
+          "layoutRoots": [
+            {
+              "depth": 1,
+              "nodeId": 2,
+              "nodeName": "#document",
+              "quads": [
+                [
+                  0,
+                  0,
+                  1440,
+                  0,
+                  1440,
+                  1000,
+                  0,
+                  1000
+                ]
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "FunctionCall",
+      "pid": 114,
+      "tid": 114,
+      "at": 3625.4930000029804,
+      "duration": 5.379,
+      "args": {
+        "data": {
+          "columnNumber": 214488,
+          "frame": "3478839840F08AC5C897FD8A06F2339B",
+          "functionName": "z",
+          "isolate": "15867216295585737885",
+          "lineNumber": 31,
+          "sampleTraceId": 8865193361753469,
+          "scriptId": "11",
+          "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+        }
+      }
+    },
+    {
+      "name": "FunctionCall",
+      "pid": 114,
+      "tid": 114,
+      "at": 3571.33100000298,
+      "duration": 5.34,
+      "args": {
+        "data": {
+          "columnNumber": 214488,
+          "frame": "3478839840F08AC5C897FD8A06F2339B",
+          "functionName": "z",
+          "isolate": "15867216295585737885",
+          "lineNumber": 31,
+          "sampleTraceId": 8865193361753511,
+          "scriptId": "11",
+          "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+        }
+      }
+    },
+    {
+      "name": "FunctionCall",
+      "pid": 114,
+      "tid": 114,
+      "at": 3534.94700000298,
+      "duration": 5.31,
+      "args": {
+        "data": {
+          "columnNumber": 214488,
+          "frame": "3478839840F08AC5C897FD8A06F2339B",
+          "functionName": "z",
+          "isolate": "15867216295585737885",
+          "lineNumber": 31,
+          "sampleTraceId": 8865193361753629,
+          "scriptId": "11",
+          "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js"
+        }
+      }
+    }
+  ],
+  "snippets": [
+    {
+      "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js",
+      "functionName": "",
+      "lineNumber": 31,
+      "column": 159729,
+      "candidates": [
+        {
+          "index": 31,
+          "around": ""
+        },
+        {
+          "index": 30,
+          "around": "H&&null===e.next&&(null===sH?sB=sH=e:sH=sH.next=e),s$=!0,sV||(sV=!0,cC(function(){0!=(6&uL)?eh(eS,sG):sY()}))}function sK(e,t){if(!sW&&s$){sW=!0;do for(var n=!1,r=sB;null!==r;){if(!t)if(0!==e){var l=r.pendingLanes;if(0===l)var a=0;else{var o=r.suspendedLanes,i=r.pingedLanes;a=0xc000095&(a=(1<<31-eC(42|e)+1)-1&(l&~(o&~i)))?0xc000095&a|1:a?2|a:0}0!==a&&(n=!0,sZ(r,a))}else a=uI,0==(3&(a=eI(r,r===uM?a:0,null!==r.cancelPendingCommit||-1!==r.timeoutHandle)))||eF(r,a)||(n=!0,sZ(r,a));r=r.next}while(n)sW=!1}}function sG(){sY()}function sY(){s$=sV=!1;var e,t=0;0===sQ||((e=window.event)&&\"popstate\"===e.type?e===cx||(cx=e,0):(cx=null,1))||(t=sQ);for(var n=eb(),r=null,l=sB;null!==l;){var a=l.next,o=sX(l,n);0===o?(l.next=null,null===r?sB=a:r.next=a,null===a&&(sH=r)):(r=l,(0!==t||0!=(3&o))&&(s$=!0)),l=a}0!==u2&&5!==u2||sK(t,!1),0!==sQ&&(sQ=0)}function sX(e,t){for(var n=e.suspendedLanes,r=e.pingedLanes,l=e.expirationTimes,a=-0x3c00001&e.pendingLanes;0<a;){var o=31-eC(a),i=1<<o,u=l[o];-1===u?(0==(i&n)||0!=(i&r))&&(l[o]=function(e,t){switch(e){case 1:case 2:case 4:case 8:case 64:return t+250;case 16:case 32:case 128:case 256:case 512:case 1024:case 2048:case 4096:case 8192:case 16384:case 32768:case 65536:case 131072:case 262144:case 524288:case 1048576:case 2097152:return t+5"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/3ptss1hm5l3km.js",
+      "functionName": "a",
+      "lineNumber": 1,
+      "column": 28431,
+      "candidates": [
+        {
+          "index": 1,
+          "around": ""
+        },
+        {
+          "index": 0,
+          "around": ")(()=>{let t=c.current;if(!s||!t||t.from===e)return;let i=h.current,r=null,n,a=()=>{if(i!==h.current)return;let e=document.querySelector(`[data-public-cover=\"${CSS.escape(t.id)}\"]`);if(!e||!u.current)return!1;let s=e.getBoundingClientRect();if(!s.width||!s.height)return!1;r?.disconnect(),c.current=null,l.current();let n=document.createElement(\"img\");if(n.src=t.src,n.alt=\"\",n.className=\"p12-cover-bridge\",n.style.cssText+=`;left:${s.left}px;top:${s.top}px;width:${s.width}px;height:${s.height}px`,u.current.append(n),\"function\"!=typeof n.animate)return n.remove(),!0;let a=n.animate([{left:t.rect.left+\"px\",top:t.rect.top+\"px\",width:t.rect.width+\"px\",height:t.rect.height+\"px\",opacity:.9},{left:s.left+\"px\",top:s.top+\"px\",width:s.width+\"px\",height:s.height+\"px\",opacity:0}],{duration:260,easing:\"cubic-bezier(.2,.7,.2,1)\"}),o=()=>n.remove();return a.onfinish=o,a.oncancel=o,l.current=()=>{a.cancel(),o()},!0};return a()||((r=new MutationObserver(a)).observe(document.body,{subtree:!0,childList:!0}),n=setTimeout(()=>{r?.disconnect(),i===h.current&&(c.current=null)},700)),()=>{r?.disconnect(),n&&clearTimeout(n),l.current()}},[e,s]),(0,t.jsx)(\"div\",{ref:u,className:\"p12-visual-layer\",\"aria-hidden\":\"true\"})},\"beginCoverTransition\",0,function(e){let t=document.querySelector(`[d"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js",
+      "functionName": "z",
+      "lineNumber": 31,
+      "column": 214488,
+      "candidates": [
+        {
+          "index": 31,
+          "around": ""
+        },
+        {
+          "index": 30,
+          "around": "r _=!1,P=-1,N=5,C=-1;function T(){return!!b||!(n.unstable_now()-C<N)}function z(){if(b=!1,_){var e=n.unstable_now();C=e;var t=!0;try{e:{v=!1,y&&(y=!1,S(P),P=-1),g=!0;var r=h;try{t:{for(x(e),m=l(f);null!==m&&!(m.expirationTime>e&&T());){var o=m.callback;if(\"function\"==typeof o){m.callback=null,h=m.priorityLevel;var u=o(m.expirationTime<=e);if(e=n.unstable_now(),\"function\"==typeof u){m.callback=u,x(e),t=!0;break t}m===l(f)&&a(f),x(e)}else a(f);m=l(f)}if(null!==m)t=!0;else{var s=l(d);null!==s&&M(E,s.startTime-e),t=!1}}break e}finally{m=null,h=r,g=!1}}}finally{t?i():_=!1}}}if(\"function\"==typeof k)i=function(){k(z)};else if(\"u\">typeof MessageChannel){var O=new MessageChannel,L=O.port2;O.port1.onmessage=z,i=function(){L.postMessage(null)}}else i=function(){w(z,0)};function M(e,t){P=w(function(){e(n.unstable_now())},t)}n.unstable_IdlePriority=5,n.unstable_ImmediatePriority=1,n.unstable_LowPriority=4,n.unstable_NormalPriority=3,n.unstable_Profiling=null,n.unstable_UserBlockingPriority=2,n.unstable_cancelCallback=function(e){e.callback=null},n.unstable_forceFrameRate=function(e){0>e||125<e?console.error(\"forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported\"):N=0<e?Math.floor(1e3/e):5},n.unstable_getCurrentPrior"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js",
+      "functionName": "ss",
+      "lineNumber": 31,
+      "column": 136754,
+      "candidates": [
+        {
+          "index": 31,
+          "around": ""
+        },
+        {
+          "index": 30,
+          "around": ",l);break e}ss(r,n,uG,u0,uY,t,uQ,u$,uq,uA,a,null,-0,0)}}break}sq(e)}function ss(e,t,n,r,l,a,o,i,u,s,c,f,d,p){e.timeoutHandle=-1;var m,h,g=t.subtreeFlags,v=(0x13ffff00&a)===a;if(f=null,(v||8192&g||0x1002000==(0x1002000&g))&&(iB=null,u_(t,a,f={stylesheets:null,count:0,imgCount:0,imgBytes:0,suspenseyImages:[],waitingForImages:!0,waitingForViewTransition:!1,unsuspend:tM}),v&&(g=f,null!=(v=(9===(v=e.containerInfo).nodeType?v:v.ownerDocument).__reactViewTransition)&&(g.count++,g.waitingForViewTransition=!0,g=fO.bind(g),v.finished.then(g,g))),null!==(m=f,h=g=(0x3c00000&a)===a?uX-eb():(4194048&a)===a?uJ-eb():0,m.stylesheets&&0===m.count&&fR(m,m.stylesheets),g=0<m.count||0<m.imgCount?function(e){var t=setTimeout(function(){if(m.stylesheets&&fR(m,m.stylesheets),m.unsuspend){var e=m.unsuspend;m.unsuspend=null,e()}},6e4+h);0<m.imgBytes&&0===fT&&(fT=62500*function(){if(\"function\"==typeof performance.getEntriesByType){for(var e=0,t=0,n=performance.getEntriesByType(\"resource\"),r=0;r<n.length;r++){var l=n[r],a=l.transferSize,o=l.initiatorType,i=l.duration;if(a&&i&&ch(o)){for(o=0,i=l.responseEnd,r+=1;r<n.length;r++){var u=n[r],s=u.startTime;if(s>i)break;var c=u.transferSize,f=u.initiatorType;c&&ch(f)&&(o+=c*((u=u.responseEnd)<i?1:(i-s)/(u-s)))}if(--r,t+=8*(a+o)/(l.duration/1e3"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js",
+      "functionName": "fW",
+      "lineNumber": 31,
+      "column": 203303,
+      "candidates": [
+        {
+          "index": 31,
+          "around": ""
+        },
+        {
+          "index": 30,
+          "around": "){var t=sl(),n=rb(e,t=e$(t));null!==n&&si(n,e,t),fB(e,t)}}var f$=!0;function fW(e,t,n,r){var l=K.T;K.T=null;var a=G.p;try{G.p=2,fq(e,t,n,r)}finally{G.p=a,K.T=l}}function fQ(e,t,n,r){var l=K.T;K.T=null;var a=G.p;try{G.p=8,fq(e,t,n,r)}finally{G.p=a,K.T=l}}function fq(e,t,n,r){if(f$){var l=fK(r);if(null===l)cn(e,t,r,fG,n),f5(e,r);else if(function(e,t,n,r,l){switch(t){case\"focusin\":return fZ=f8(fZ,e,t,n,r,l),!0;case\"dragenter\":return f0=f8(f0,e,t,n,r,l),!0;case\"mouseover\":return f1=f8(f1,e,t,n,r,l),!0;case\"pointerover\":var a=l.pointerId;return f2.set(a,f8(f2.get(a)||null,e,t,n,r,l)),!0;case\"gotpointercapture\":return a=l.pointerId,f3.set(a,f8(f3.get(a)||null,e,t,n,r,l)),!0}return!1}(l,e,t,n,r))r.stopPropagation();else if(f5(e,r),4&t&&-1<f6.indexOf(e)){for(;null!==l;){var a=e5(l);if(null!==a)switch(a.tag){case 3:if((a=a.stateNode).current.memoizedState.isDehydrated){var o=eR(a.pendingLanes);if(0!==o){var i=a;for(i.pendingLanes|=2,i.entangledLanes|=2;o;){var u=1<<31-eC(o);i.entanglements[1]|=u,o&=~u}sq(a),0==(6&uL)&&(uZ=eb()+500,sK(0,!1))}}break;case 31:case 13:null!==(i=rb(a,2))&&si(i,a,2),sf(),fB(a,2)}if(null===(a=fK(r))&&cn(e,t,r,fG,n),a===l)break;l=a}null!==l&&r.stopPropagation()}else cn(e,t,r,null,n)}}function fK(e){return fY(e=tI(e))}var fG=null;function fY(e){"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js",
+      "functionName": "z",
+      "lineNumber": 31,
+      "column": 214488,
+      "candidates": [
+        {
+          "index": 31,
+          "around": ""
+        },
+        {
+          "index": 30,
+          "around": "r _=!1,P=-1,N=5,C=-1;function T(){return!!b||!(n.unstable_now()-C<N)}function z(){if(b=!1,_){var e=n.unstable_now();C=e;var t=!0;try{e:{v=!1,y&&(y=!1,S(P),P=-1),g=!0;var r=h;try{t:{for(x(e),m=l(f);null!==m&&!(m.expirationTime>e&&T());){var o=m.callback;if(\"function\"==typeof o){m.callback=null,h=m.priorityLevel;var u=o(m.expirationTime<=e);if(e=n.unstable_now(),\"function\"==typeof u){m.callback=u,x(e),t=!0;break t}m===l(f)&&a(f),x(e)}else a(f);m=l(f)}if(null!==m)t=!0;else{var s=l(d);null!==s&&M(E,s.startTime-e),t=!1}}break e}finally{m=null,h=r,g=!1}}}finally{t?i():_=!1}}}if(\"function\"==typeof k)i=function(){k(z)};else if(\"u\">typeof MessageChannel){var O=new MessageChannel,L=O.port2;O.port1.onmessage=z,i=function(){L.postMessage(null)}}else i=function(){w(z,0)};function M(e,t){P=w(function(){e(n.unstable_now())},t)}n.unstable_IdlePriority=5,n.unstable_ImmediatePriority=1,n.unstable_LowPriority=4,n.unstable_NormalPriority=3,n.unstable_Profiling=null,n.unstable_UserBlockingPriority=2,n.unstable_cancelCallback=function(e){e.callback=null},n.unstable_forceFrameRate=function(e){0>e||125<e?console.error(\"forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported\"):N=0<e?Math.floor(1e3/e):5},n.unstable_getCurrentPrior"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js",
+      "functionName": "z",
+      "lineNumber": 31,
+      "column": 214488,
+      "candidates": [
+        {
+          "index": 31,
+          "around": ""
+        },
+        {
+          "index": 30,
+          "around": "r _=!1,P=-1,N=5,C=-1;function T(){return!!b||!(n.unstable_now()-C<N)}function z(){if(b=!1,_){var e=n.unstable_now();C=e;var t=!0;try{e:{v=!1,y&&(y=!1,S(P),P=-1),g=!0;var r=h;try{t:{for(x(e),m=l(f);null!==m&&!(m.expirationTime>e&&T());){var o=m.callback;if(\"function\"==typeof o){m.callback=null,h=m.priorityLevel;var u=o(m.expirationTime<=e);if(e=n.unstable_now(),\"function\"==typeof u){m.callback=u,x(e),t=!0;break t}m===l(f)&&a(f),x(e)}else a(f);m=l(f)}if(null!==m)t=!0;else{var s=l(d);null!==s&&M(E,s.startTime-e),t=!1}}break e}finally{m=null,h=r,g=!1}}}finally{t?i():_=!1}}}if(\"function\"==typeof k)i=function(){k(z)};else if(\"u\">typeof MessageChannel){var O=new MessageChannel,L=O.port2;O.port1.onmessage=z,i=function(){L.postMessage(null)}}else i=function(){w(z,0)};function M(e,t){P=w(function(){e(n.unstable_now())},t)}n.unstable_IdlePriority=5,n.unstable_ImmediatePriority=1,n.unstable_LowPriority=4,n.unstable_NormalPriority=3,n.unstable_Profiling=null,n.unstable_UserBlockingPriority=2,n.unstable_cancelCallback=function(e){e.callback=null},n.unstable_forceFrameRate=function(e){0>e||125<e?console.error(\"forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported\"):N=0<e?Math.floor(1e3/e):5},n.unstable_getCurrentPrior"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js",
+      "functionName": "z",
+      "lineNumber": 31,
+      "column": 214488,
+      "candidates": [
+        {
+          "index": 31,
+          "around": ""
+        },
+        {
+          "index": 30,
+          "around": "r _=!1,P=-1,N=5,C=-1;function T(){return!!b||!(n.unstable_now()-C<N)}function z(){if(b=!1,_){var e=n.unstable_now();C=e;var t=!0;try{e:{v=!1,y&&(y=!1,S(P),P=-1),g=!0;var r=h;try{t:{for(x(e),m=l(f);null!==m&&!(m.expirationTime>e&&T());){var o=m.callback;if(\"function\"==typeof o){m.callback=null,h=m.priorityLevel;var u=o(m.expirationTime<=e);if(e=n.unstable_now(),\"function\"==typeof u){m.callback=u,x(e),t=!0;break t}m===l(f)&&a(f),x(e)}else a(f);m=l(f)}if(null!==m)t=!0;else{var s=l(d);null!==s&&M(E,s.startTime-e),t=!1}}break e}finally{m=null,h=r,g=!1}}}finally{t?i():_=!1}}}if(\"function\"==typeof k)i=function(){k(z)};else if(\"u\">typeof MessageChannel){var O=new MessageChannel,L=O.port2;O.port1.onmessage=z,i=function(){L.postMessage(null)}}else i=function(){w(z,0)};function M(e,t){P=w(function(){e(n.unstable_now())},t)}n.unstable_IdlePriority=5,n.unstable_ImmediatePriority=1,n.unstable_LowPriority=4,n.unstable_NormalPriority=3,n.unstable_Profiling=null,n.unstable_UserBlockingPriority=2,n.unstable_cancelCallback=function(e){e.callback=null},n.unstable_forceFrameRate=function(e){0>e||125<e?console.error(\"forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported\"):N=0<e?Math.floor(1e3/e):5},n.unstable_getCurrentPrior"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js",
+      "functionName": "z",
+      "lineNumber": 31,
+      "column": 214488,
+      "candidates": [
+        {
+          "index": 31,
+          "around": ""
+        },
+        {
+          "index": 30,
+          "around": "r _=!1,P=-1,N=5,C=-1;function T(){return!!b||!(n.unstable_now()-C<N)}function z(){if(b=!1,_){var e=n.unstable_now();C=e;var t=!0;try{e:{v=!1,y&&(y=!1,S(P),P=-1),g=!0;var r=h;try{t:{for(x(e),m=l(f);null!==m&&!(m.expirationTime>e&&T());){var o=m.callback;if(\"function\"==typeof o){m.callback=null,h=m.priorityLevel;var u=o(m.expirationTime<=e);if(e=n.unstable_now(),\"function\"==typeof u){m.callback=u,x(e),t=!0;break t}m===l(f)&&a(f),x(e)}else a(f);m=l(f)}if(null!==m)t=!0;else{var s=l(d);null!==s&&M(E,s.startTime-e),t=!1}}break e}finally{m=null,h=r,g=!1}}}finally{t?i():_=!1}}}if(\"function\"==typeof k)i=function(){k(z)};else if(\"u\">typeof MessageChannel){var O=new MessageChannel,L=O.port2;O.port1.onmessage=z,i=function(){L.postMessage(null)}}else i=function(){w(z,0)};function M(e,t){P=w(function(){e(n.unstable_now())},t)}n.unstable_IdlePriority=5,n.unstable_ImmediatePriority=1,n.unstable_LowPriority=4,n.unstable_NormalPriority=3,n.unstable_Profiling=null,n.unstable_UserBlockingPriority=2,n.unstable_cancelCallback=function(e){e.callback=null},n.unstable_forceFrameRate=function(e){0>e||125<e?console.error(\"forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported\"):N=0<e?Math.floor(1e3/e):5},n.unstable_getCurrentPrior"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:3000/_next/static/chunks/0-5v9e-irmykv.js",
+      "functionName": "z",
+      "lineNumber": 31,
+      "column": 214488,
+      "candidates": [
+        {
+          "index": 31,
+          "around": ""
+        },
+        {
+          "index": 30,
+          "around": "r _=!1,P=-1,N=5,C=-1;function T(){return!!b||!(n.unstable_now()-C<N)}function z(){if(b=!1,_){var e=n.unstable_now();C=e;var t=!0;try{e:{v=!1,y&&(y=!1,S(P),P=-1),g=!0;var r=h;try{t:{for(x(e),m=l(f);null!==m&&!(m.expirationTime>e&&T());){var o=m.callback;if(\"function\"==typeof o){m.callback=null,h=m.priorityLevel;var u=o(m.expirationTime<=e);if(e=n.unstable_now(),\"function\"==typeof u){m.callback=u,x(e),t=!0;break t}m===l(f)&&a(f),x(e)}else a(f);m=l(f)}if(null!==m)t=!0;else{var s=l(d);null!==s&&M(E,s.startTime-e),t=!1}}break e}finally{m=null,h=r,g=!1}}}finally{t?i():_=!1}}}if(\"function\"==typeof k)i=function(){k(z)};else if(\"u\">typeof MessageChannel){var O=new MessageChannel,L=O.port2;O.port1.onmessage=z,i=function(){L.postMessage(null)}}else i=function(){w(z,0)};function M(e,t){P=w(function(){e(n.unstable_now())},t)}n.unstable_IdlePriority=5,n.unstable_ImmediatePriority=1,n.unstable_LowPriority=4,n.unstable_NormalPriority=3,n.unstable_Profiling=null,n.unstable_UserBlockingPriority=2,n.unstable_cancelCallback=function(e){e.callback=null},n.unstable_forceFrameRate=function(e){0>e||125<e?console.error(\"forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported\"):N=0<e?Math.floor(1e3/e):5},n.unstable_getCurrentPrior"
+        }
+      ]
+    }
+  ]
+}

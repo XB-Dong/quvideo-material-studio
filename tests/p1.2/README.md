@@ -20,3 +20,9 @@
 预计上述一次5–7分钟，不含首次镜像网络构建。独立lifecycle.mjs、thumbnail.mjs、cold-preview.mjs入口只供有界复现；正常统一由visual调用。cold独立CLI默认诊断，REQUIRE_COLD_CHECKS=1开启与聚合器相同的严格几何/显影检查。所有harness版本/应用SHA与失败需分开记录。synthetic.storage-state.json仅显式本地SAVE_SYNTHETIC_STORAGE_STATE=1才写，默认CI不写认证状态，不可进入Git/CI普通artifact。
 
 fixtures用原API验收35秒全任务有界deadline，并记录每ID状态/阶段/version/steps时间线，避免把共享单队列其他会话的长任务阻塞当成自身模拟耗时；不因此改变预算或业务等待规则。
+
+## 性能诊断与大文件选择方法
+
+interact的4MiB样例先存真实容器磁盘，再由同一真实filechooser选择路径，浏览器走本地文件机制而非Playwright小buffer转base64/atob注入。A/B实测原buffer方式在createObjectURL前611–729ms，磁盘路径0longtask；上传实际4194304B、480×640 JPEG保持。原失败不删除，禁止因此删除大文件测试。
+
+diagnose-upload-transport.mjs与diagnose-route.mjs仅诊断，trace不算舒适通过。measure可用P12_MEASURE_PAGES=studio、P12_TRACE_LAYOUT=1限定3轮并记录节点rect/API时序/DOMready定位CLS；正式默认仍三页九轮、所有原阈值。不得用筛选诊断代替完整预算验收。

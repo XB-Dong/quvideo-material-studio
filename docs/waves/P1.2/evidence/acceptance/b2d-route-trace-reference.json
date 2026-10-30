@@ -1,0 +1,6 @@
+{
+  "path": "runtime\\p12-b2d\\route-diagnosis\\route-trace.json",
+  "bytes": 1384268,
+  "sha256": "cc36f1b9dccdeaa0dbfb7fb099550c1483bb86f850caaf2bbec841c9c694d11d",
+  "scope": "Ignored full diagnostic trace, not performance acceptance. Preserve externally before archiving worktree."
+}

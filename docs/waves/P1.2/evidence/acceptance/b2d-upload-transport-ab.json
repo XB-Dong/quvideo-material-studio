@@ -1,0 +1,88 @@
+{
+  "testedCommit": "b2d0a6aa16a4a6890e58b2b92d6f672bfc466c9c",
+  "capturedAt": "2026-10-30T05:48:27.724Z",
+  "scope": "Diagnostic A/B of automation buffer injection versus OS file path, not full comfort pass",
+  "results": [
+    {
+      "method": "buffer",
+      "begin": 3212.2000000029802,
+      "end": 4652.399999991059,
+      "asset": {
+        "sizeBytes": 4194304,
+        "width": 480,
+        "height": 640,
+        "mimeType": "image/jpeg"
+      },
+      "longTasks": [
+        {
+          "at": 3698.7000000029802,
+          "duration": 611
+        }
+      ],
+      "gesture": {
+        "events": [
+          {
+            "kind": "click",
+            "turn": 1,
+            "at": 3461.7000000029802,
+            "trusted": true
+          },
+          {
+            "kind": "file-input-click",
+            "turn": 1,
+            "active": true,
+            "trusted": true,
+            "at": 3462.0999999940395
+          },
+          {
+            "kind": "create-url",
+            "url": "blob:http://localhost:3000/99cb8872-c554-492e-84ae-9ea1f730e4bb",
+            "bytes": 4194304,
+            "at": 4296.29999999702
+          }
+        ],
+        "liveUrls": [
+          "blob:http://localhost:3000/99cb8872-c554-492e-84ae-9ea1f730e4bb"
+        ]
+      }
+    },
+    {
+      "method": "file-path",
+      "begin": 2726.6000000089407,
+      "end": 3506.4000000059605,
+      "asset": {
+        "sizeBytes": 4194304,
+        "width": 480,
+        "height": 640,
+        "mimeType": "image/jpeg"
+      },
+      "longTasks": [],
+      "gesture": {
+        "events": [
+          {
+            "kind": "click",
+            "turn": 1,
+            "at": 2933.4000000059605,
+            "trusted": true
+          },
+          {
+            "kind": "file-input-click",
+            "turn": 1,
+            "active": true,
+            "trusted": true,
+            "at": 2933.6000000089407
+          },
+          {
+            "kind": "create-url",
+            "url": "blob:http://localhost:3000/22c930da-7819-4520-928e-ee0dd22efe28",
+            "bytes": 4194304,
+            "at": 3018.2000000029802
+          }
+        ],
+        "liveUrls": [
+          "blob:http://localhost:3000/22c930da-7819-4520-928e-ee0dd22efe28"
+        ]
+      }
+    }
+  ]
+}
