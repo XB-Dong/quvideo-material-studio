@@ -1,0 +1,111 @@
+{
+  "scope": "Isolated Chromium locale pattern check, no application warm-up or performance claim",
+  "browser": "149.0.7827.53",
+  "results": [
+    {
+      "timezoneId": "UTC",
+      "samples": [
+        {
+          "iso": "2026-01-02T03:04:00Z",
+          "original": "01/02 03:04",
+          "getters": "01/02 03:04"
+        },
+        {
+          "iso": "2026-12-31T23:59:00Z",
+          "original": "12/31 23:59",
+          "getters": "12/31 23:59"
+        },
+        {
+          "iso": "2027-01-01T00:00:00Z",
+          "original": "01/01 00:00",
+          "getters": "01/01 00:00"
+        },
+        {
+          "iso": "2026-02-28T23:59:00Z",
+          "original": "02/28 23:59",
+          "getters": "02/28 23:59"
+        },
+        {
+          "iso": "2026-03-08T07:00:00Z",
+          "original": "03/08 07:00",
+          "getters": "03/08 07:00"
+        },
+        {
+          "iso": "bad-date",
+          "original": "Invalid Date",
+          "getters": "Invalid Date"
+        }
+      ]
+    },
+    {
+      "timezoneId": "Asia/Shanghai",
+      "samples": [
+        {
+          "iso": "2026-01-02T03:04:00Z",
+          "original": "01/02 11:04",
+          "getters": "01/02 11:04"
+        },
+        {
+          "iso": "2026-12-31T23:59:00Z",
+          "original": "01/01 07:59",
+          "getters": "01/01 07:59"
+        },
+        {
+          "iso": "2027-01-01T00:00:00Z",
+          "original": "01/01 08:00",
+          "getters": "01/01 08:00"
+        },
+        {
+          "iso": "2026-02-28T23:59:00Z",
+          "original": "03/01 07:59",
+          "getters": "03/01 07:59"
+        },
+        {
+          "iso": "2026-03-08T07:00:00Z",
+          "original": "03/08 15:00",
+          "getters": "03/08 15:00"
+        },
+        {
+          "iso": "bad-date",
+          "original": "Invalid Date",
+          "getters": "Invalid Date"
+        }
+      ]
+    },
+    {
+      "timezoneId": "America/New_York",
+      "samples": [
+        {
+          "iso": "2026-01-02T03:04:00Z",
+          "original": "01/01 22:04",
+          "getters": "01/01 22:04"
+        },
+        {
+          "iso": "2026-12-31T23:59:00Z",
+          "original": "12/31 18:59",
+          "getters": "12/31 18:59"
+        },
+        {
+          "iso": "2027-01-01T00:00:00Z",
+          "original": "12/31 19:00",
+          "getters": "12/31 19:00"
+        },
+        {
+          "iso": "2026-02-28T23:59:00Z",
+          "original": "02/28 18:59",
+          "getters": "02/28 18:59"
+        },
+        {
+          "iso": "2026-03-08T07:00:00Z",
+          "original": "03/08 03:00",
+          "getters": "03/08 03:00"
+        },
+        {
+          "iso": "bad-date",
+          "original": "Invalid Date",
+          "getters": "Invalid Date"
+        }
+      ]
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import { useIdentity } from "./providers";
 import { useTasks } from "../lib/use-tasks";
 import { stageLabel, type Task } from "../lib/types";
 import { Modal, Shell } from "./shell";
+import { formatTaskTime } from "./visual/task-time";
 import { StudioIcon } from "./visual/icons";
 export function HistoryPage() {
   return (
@@ -183,12 +184,7 @@ function HistoryContent({
                   </span>
                 </div>
                 <time dateTime={t.createdAt}>
-                  {new Date(t.createdAt).toLocaleString("zh-CN", {
-                    month: "2-digit",
-                    day: "2-digit",
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })}
+                  {formatTaskTime(t.createdAt)}
                 </time>
                 <p className="task-id" title={t.id}>
                   任务 {t.id.slice(0, 8)}
