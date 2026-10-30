@@ -1,5 +1,7 @@
 "use client";
-import { useState } from "react";
+import Link from "next/link";
+import { SceneEdge, clickFeedback } from "./motion/journey";
+import { useState, useEffect, useRef, type ReactNode } from "react";
 import { useIdentity } from "./providers";
 import { useTasks } from "../lib/use-tasks";
 import { stageLabel, type Task } from "../lib/types";
@@ -8,7 +10,7 @@ import { StudioIcon } from "./visual/icons";
 export function HistoryPage() {
   return (
     <Shell>
-      <section className="history-page">
+      <section className="history-page p12-history-page">
         <p className="eyebrow">YOUR CREATIVE JOURNEY</p>
         <h1>我的作品</h1>
         <p className="muted">每一次创作，都在这里留下记录。</p>
@@ -42,10 +44,11 @@ function HistoryContent({
 }) {
   const model = useTasks(userId);
   const [preview, setPreview] = useState<Task | null>(null);
+  const previewOrigin=useRef<{left:number;top:number;width:number;height:number}|null>(null);
   // The parent uses the shared query cache for accepted tasks; no lifecycle callbacks needed.
   void onReady;
   return (
-    <section className="history-panel">
+    <section className="history-panel p12-history">
       <div className="section-top">
         <div>
           <h2>
@@ -61,6 +64,7 @@ function HistoryContent({
           <StudioIcon name="refresh" />
         </button>
       </div>
+      <SceneEdge/>
       {(model.history.isError || model.active.isError) && (
         <div className="query-error" role="alert">
           状态暂时无法更新，已有记录已保留。
@@ -76,16 +80,18 @@ function HistoryContent({
           </span>
           <h3>你的下一份作品，从这里开始</h3>
           <p>选择模板并上传照片，制作记录会出现在这里。</p>
+          <Link className="p12-text-link" href="/">探索模板 ↗</Link>
         </div>
       ) : (
         <div className="task-grid">
           {model.tasks.map(({ task: t, queryError, refresh }) => (
-            <article className="task-card" key={t.id}>
+            <TaskFrame task={t} key={t.id} emphasis={t.id===model.tasks.find(item=>item.task.status==="RUNNING"||item.task.status==="QUEUED")?.task.id}>
               <div className="task-visual">
                 {t.status === "SUCCEEDED" && t.resultUrl ? (
                   <button
                     className="result-button"
-                    onClick={() => setPreview(t)}
+                    onPointerDown={e=>clickFeedback(e.currentTarget)}
+                    onClick={(event) => {const rect=event.currentTarget.getBoundingClientRect();previewOrigin.current={left:rect.left,top:rect.top,width:rect.width,height:rect.height};setPreview(t)}}
                     aria-label={"预览" + t.templateTitle}
                   >
                     <img src={t.resultUrl} alt={t.templateTitle + "制作结果"} />
@@ -123,6 +129,7 @@ function HistoryContent({
                   </div>
                 )}
               </div>
+              <StagePath task={t}/>
               <div className="task-info">
                 <div>
                   <h3>{t.templateTitle}</h3>
@@ -163,7 +170,7 @@ function HistoryContent({
                   </div>
                 )}
               </div>
-            </article>
+            </TaskFrame>
           ))}
         </div>
       )}
@@ -177,7 +184,7 @@ function HistoryContent({
         </button>
       )}
       {preview?.resultUrl && (
-        <Modal title={preview.templateTitle} onClose={() => setPreview(null)}>
+        <Modal title={preview.templateTitle} origin={previewOrigin.current} onClose={() => setPreview(null)}>
           <img
             className="preview-image"
             src={preview.resultUrl}
@@ -187,4 +194,14 @@ function HistoryContent({
       )}
     </section>
   );
+}
+
+function TaskFrame({task,emphasis,children}:{task:Task;emphasis:boolean;children:ReactNode}){
+ const before=useRef(task.status+":"+task.stage);const [transition,setTransition]=useState("");
+ useEffect(()=>{const now=task.status+":"+task.stage;if(now===before.current)return;before.current=now;setTransition(task.status==="SUCCEEDED"?"success":task.status==="FAILED"?"failure":"stage");const timer=setTimeout(()=>setTransition(""),220);return()=>clearTimeout(timer);},[task.status,task.stage]);
+ return <article className="task-card p12-task" data-task-id={task.id} data-emphasis={emphasis} data-task-transition={transition}>{children}</article>;
+}
+function StagePath({task}:{task:Task}){
+ const stages=["ASSET_CHECK","GENERATE","FINALIZE"] as const;
+ return <ol className="p12-stage-path" aria-label="制作阶段">{stages.map(stage=><li key={stage} data-current={task.stage===stage&&task.status==="RUNNING"} data-finished={task.status==="SUCCEEDED"||task.steps.some(s=>s.stage===stage&&s.status==="SUCCEEDED")}><i aria-hidden="true"/><span>{stageLabel[stage]}</span></li>)}</ol>;
 }
