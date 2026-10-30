@@ -12,10 +12,7 @@
   "p11CIPrerequisite": "passed_exact_verified_source",
   "timezone": "Etc/GMT-8",
   "deadline": null,
-  "activeDevelopmentAgents": [
-    "/root/p11_acceptance",
-    "/root/p11_design_review"
-  ],
+  "activeDevelopmentAgents": [],
   "activePreparationReviewers": [],
   "maxNativeWorkers": 3,
   "roles": [
@@ -31,11 +28,11 @@
   "productImplemented": true,
   "dependenciesInstalledForP12": true,
   "productRestartedForP12": true,
-  "developmentWorktreesCreatedForP12": false,
-  "productChecks": "41FE_18Java_8API_local_and_independent_gates_passed; full_remote_CI_pending",
-  "aestheticGate": "passed_at_8a_with_independent_actual_frames",
-  "comfortGate": "passed_local; full_remote_CI_pending",
-  "homePolicy": "preserve_approved_layout_palette_assets_and_motion; functional_click_navigation_only",
+  "developmentWorktreesCreatedForP12": true,
+  "productChecks": "48FE_18Java_8API_and_independent_local_G01_G02_passed; full_remote_CI_pending",
+  "aestheticGate": "passed_at_3008_with_independent_actual_frames",
+  "comfortGate": "passed_local_at_3008; full_remote_CI_pending",
+  "homePolicy": "preserve_approved_home_except_user_requested_minimal_Chinese_wordmark",
   "mailStatus": "deferred_by_user_excluded_from_P1.2",
   "effortEstimateHours": [
     6,
@@ -146,7 +143,7 @@
       "taskId": "P12-ACCEPT",
       "rootTaskId": "P12-ACCEPT",
       "role": "Acceptance",
-      "status": "in_progress",
+      "status": "local_passed_remote_CI_pending",
       "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
       "dependencies": [
         "P12-BASE"
@@ -166,7 +163,7 @@
       "taskId": "P12-REVIEW",
       "rootTaskId": "P12-REVIEW",
       "role": "Reviewer",
-      "status": "ready_after_dependencies",
+      "status": "completed",
       "baseCommit": "33170a5ae33cc63882f73c329dbd88eda6f5e70c",
       "dependencies": [
         "P12-ROUTE"
@@ -216,7 +213,7 @@
   "routeImplementationDecision": "Link_CSS_WAAPI_public_cover; native_not_enabled_without_cleanup_evidence",
   "managedWorktreesReusedForP12": true,
   "worktreeBindings": {
-    "Frontend": "C:/Users/dongx/.codex/worktrees/p11-frontend/杭州小影AIcoding",
+    "Frontend": "C:/Users/dongx/.codex/worktrees/p12-submit-frontend/杭州小影AIcoding",
     "Acceptance": "C:/Users/dongx/.codex/worktrees/p11-acceptance/杭州小影AIcoding"
   }
 }

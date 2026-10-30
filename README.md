@@ -6,9 +6,9 @@ P1已完成浅色界面、蓝紫细节、四套本地照片、七项创意和操
 
 ## 一条命令启动
 
-当前本地运行P1.1“疏影”，已完成品牌、默认持续动态、浅水墨擦雾、多种蓝紫边框与真实模板卡片互动，独立美学与本地运行检查通过（31前端、15Java、8API、22浏览器、6视觉及三轮预算）；邮件按用户最新指令暂缓；验收a7cdcdf的远端frontend/backend/integration全部通过，见[P1.1本地交付报告](docs/waves/P1.1/REPORT.md)。完整计划、角色和任务见[P1.1计划](docs/waves/P1.1/PLAN.md)。用户已明确暂缓本仓库CI邮件治理，邮箱与账号通知设置未改；P1.1当前范围已完成。
+当前运行P1.2“疏影”：浅色水墨首页、中文品牌字标、制作/历史持续动效，以及导航、上传、真实任务阶段和原图弹窗的连续反馈。实现与本地独立G01/G02已通过，完整远端CI核对中，实际版本/数据/限制见[P1.2报告](docs/waves/P1.2/REPORT.md)。默认持续动态，系统reduce、离屏及真实后台自动保护；没有手动动态/暂停控件。
 
-[P1.2计划](docs/waves/P1.2/PLAN.md)覆盖子页持续动效、跳转/上传/历史/弹窗，准备审阅与检查已通过，按用户已给授权进入P1.2执行；新功能结果以实际验收为准。
+[P1.2计划](docs/waves/P1.2/PLAN.md)、[角色](docs/waves/P1.2/ROLES.md)、[独立美学](docs/waves/P1.2/reviews/product-review.md)与[独立验收交接](docs/waves/P1.2/handoffs/acceptance.md)记录本轮。历史P1.1验收a7cdcdf的远端三项通过，见[P1.1报告](docs/waves/P1.1/REPORT.md)。邮件按用户指令暂缓，邮箱和账号通知未改；不自动交卷或进入下一阶段。
 
 需要可用的 Linux Docker Engine 与 Docker Compose（支持 --wait）。无需宿主机 Node、Java、Maven 或 MySQL。
 

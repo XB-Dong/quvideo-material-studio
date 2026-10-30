@@ -9,3 +9,5 @@
 独立Reviewer真实530首稿发现route非等比拉伸major及无图上传ERROR胶囊遮字minor，Leader接受，Frontend35c53df/e71a3ba已修，集成e04fb75/5e2af4c，复验中。CI旧71bccc5失败为卡片图片未load完成的即时断言，P11原root修b073已集成0d75，受控500ms有效图和坏图证据保留；绝不标旧71CI通过。P12原生ReactVT未启用，Link/CSS/WAAPI路径保持业务即时卸载。
 
 2026-10-30执行追补：完整CI fab的25功能/16视觉通过，firstsubmit出现76ms。两次独立诊断定位新卡Reactcommit中的toLocaleString约29–32ms热点，唯一Frontend在新托管worktree p12-submit-frontend（精确basefabdb38）作轻量本地时间显示修正；原树先归档后restore工具报snapshot missing，但全部源码已集成Git、ignored证据已逐hash备份，未手动删除，通过新managed树继续。用户随后直接要求精简左上品牌角标，决定0016规定首页局部例外与独立审核。
+
+2026-10-30T15:37+08:00 产品3008已于15:25:46部署，中文品牌精简和本地Date时间显示修正完成。Acceptance重新正式三页九轮及原fresh无截图路径通过，maxJS186789/img588726/CLS.016538102/errors0；Reviewer实际四张品牌截图G01通过。48FE作者通过，完整远端CI仍待跑，保留此前fab首次提交76ms失败。
