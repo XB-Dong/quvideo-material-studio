@@ -1,0 +1,104 @@
+{
+  "rootTaskId": "P2-VERIFY",
+  "specVersion": "P2-1.0.0",
+  "applicationSource": "1b38655d71a8f9c9001d7402d4adf12ee7d35cf4",
+  "harnessFirst": "c10dddedecc2663e8c568cdaa9a1df57696a5f0f",
+  "harnessAffected": "3d883db575777dc450355ac9d5bbbad7e334a8c2",
+  "kind": "preliminary_integrated_functionality_only_not_final_ZIP_CLEAN",
+  "environment": {
+    "project": "p2-candidate",
+    "base": "http://localhost:3301",
+    "origin": "http://localhost:3301",
+    "network": "p2-candidate_default",
+    "initialVolumes": "new empty mysql-data and material-files initialized by Leader; original product3000 untouched",
+    "driver": "Chromium149.0.7827.53/Playwright1.58.2/Node22.22.0-Alpine"
+  },
+  "results": [
+    {
+      "entry": "accounts-api.mjs",
+      "pass": 8,
+      "fail": 0,
+      "exit": 0
+    },
+    {
+      "entry": "accounts-browser.mjs first",
+      "pass": 7,
+      "fail": 1,
+      "exit": 1,
+      "cause": "const history shadowed navigation helper in last case; harness defect, no product failure inferred"
+    },
+    {
+      "entry": "accounts-browser.mjs P2_CASE=Accepted old task",
+      "pass": 1,
+      "fail": 0,
+      "exit": 0,
+      "meaning": "Affected unique eighth scenario passes after one bounded fix; not claimed one unbroken8pass run; default finalCI still full8"
+    },
+    {
+      "entry": "account-review.mjs",
+      "scenes": 3,
+      "exit": 0,
+      "meaning": "Bounded screenshots before performance; not aesthetics self-signoff"
+    }
+  ],
+  "actualModel": null,
+  "actualProvider": null,
+  "remaining": [
+    "Final frozen ZIP structure and independent extracted empty-volume build/start/runtime",
+    "All original mandatory checks/performance/full remoteCI",
+    "V3-to-V4 upgrade data copy verification",
+    "Real GIF capture after all performance, review and final packaging"
+  ],
+  "rawFiles": [
+    {
+      "path": "runtime/p2-1b38655/account-375.png",
+      "bytes": 68586,
+      "sha256": "e5d0e1510583bab90f324f0ef45b7fe6b4e9d9bbcbdc63f0dfb2078bbfdc75c1"
+    },
+    {
+      "path": "runtime/p2-1b38655/account-review/account-review.json",
+      "bytes": 1223,
+      "sha256": "840a57de476585a6726f5d58e9e39c17a7728b6df709e8cea6388304806602b2"
+    },
+    {
+      "path": "runtime/p2-1b38655/account-review/desktop-account.png",
+      "bytes": 205203,
+      "sha256": "e3ff1c3907b9b1a73c2523cf40c7aa83da64cd05578d4b7b7397e11adfe0e946"
+    },
+    {
+      "path": "runtime/p2-1b38655/account-review/desktop-header.png",
+      "bytes": 7915,
+      "sha256": "ee7542a7f7f3a76cd4c3f56a2b4774990d7c6892e68de5719e422789de9ae9d4"
+    },
+    {
+      "path": "runtime/p2-1b38655/account-review/desktop-register.png",
+      "bytes": 447683,
+      "sha256": "c1740213e3827c4f4e620965da2c5291fa8ec4698bc3e3bf6429f0c20bbce276"
+    },
+    {
+      "path": "runtime/p2-1b38655/account-review/mobile-account.png",
+      "bytes": 83200,
+      "sha256": "0bd3a4b1499ad652744c793e91fca6465ebe286f51b0d852053a311c6703f64d"
+    },
+    {
+      "path": "runtime/p2-1b38655/account-review/mobile-header.png",
+      "bytes": 4378,
+      "sha256": "1ddd715a89c35d3277d54ff0b9292cf43beeaf1827c401ff20b19084ff96e6a7"
+    },
+    {
+      "path": "runtime/p2-1b38655/accounts-api.json",
+      "bytes": 5456,
+      "sha256": "489a1380195e9454bb6d85318c75bfe413460ee284b94e763edb6916edabc10e"
+    },
+    {
+      "path": "runtime/p2-1b38655/accounts-browser.json",
+      "bytes": 5164,
+      "sha256": "4ba8eef8529de125f26fbb180a9d2f6d927c9e0353ee4854ae6e268c577d61b0"
+    },
+    {
+      "path": "runtime/p2-1b38655/task-affected-r2/accounts-browser.json",
+      "bytes": 1277,
+      "sha256": "dcf7985afe19a325758d1d6a0422f1e86814c1c8b11030bf6d970e58f4656ad3"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "testedCommit": "1b38655d71a8f9c9001d7402d4adf12ee7d35cf4",
+  "capturedAt": "2026-10-30T09:54:05.231Z",
+  "scope": "Bounded functional screenshot review before performance; synthetic example.test account, blank password inputs, cookies memory-only. Not performance or independent aesthetics signoff.",
+  "results": [
+    {
+      "scene": "desktop-register",
+      "escapeFocusReturned": true
+    },
+    {
+      "scene": "desktop-account",
+      "geometry": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 92,
+          "top": 0,
+          "right": 1440,
+          "bottom": 92,
+          "left": 0
+        },
+        "coarse": false
+      },
+      "kind": "ACCOUNT",
+      "emailVerified": false
+    },
+    {
+      "scene": "mobile-account",
+      "geometry": {
+        "width": 375,
+        "scrollWidth": 375,
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 76,
+          "top": 0,
+          "right": 375,
+          "bottom": 76,
+          "left": 0
+        },
+        "coarse": true
+      },
+      "kind": "ACCOUNT",
+      "emailVerified": false
+    }
+  ]
+}

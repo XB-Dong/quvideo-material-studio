@@ -1,0 +1,38 @@
+{
+  "testedCommit": "1b38655d71a8f9c9001d7402d4adf12ee7d35cf4",
+  "capturedAt": "2026-10-30T09:52:51.925Z",
+  "browser": "149.0.7827.53",
+  "base": "http://localhost:3301",
+  "origin": "http://localhost:3301",
+  "selection": "Accepted old task",
+  "checks": [
+    {
+      "name": "Accepted old task continues in Java while UI switches users; late POST never inserts into new history",
+      "status": "pass",
+      "startedAt": "2026-10-30T09:52:41.694Z",
+      "details": {
+        "acceptedId": "7a9096a2-48a3-4f5c-bd91-a561e8a96055",
+        "taskContinued": true,
+        "newHistoryNotPolluted": true,
+        "events": [
+          {
+            "kind": "request-held",
+            "method": "POST",
+            "at": 1793353964523
+          },
+          {
+            "kind": "real-server-completed",
+            "at": 1793353964567,
+            "status": 202,
+            "hasSetCookie": false
+          },
+          {
+            "kind": "real-response-released",
+            "at": 1793353966145
+          }
+        ]
+      }
+    }
+  ],
+  "scope": "Independent real UI and same-origin server acceptance. Auth response gates use isolated request cookie jars. No cookies/passwords/snapshots written to evidence. Each scenario synthetic identity, no production volumes."
+}
