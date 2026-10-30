@@ -19,3 +19,5 @@ Leader+最多三个原生worker，默认继承模型/推理，实际无可验证
 录制在性能窗口后。Acceptance测性能时其他角色不跑浏览器/构建。安装/构建/测试/应用与GIF工具只在容器，宿主只做Git/文件/元数据和打包。启动后按用户要求自主决定，不提问；未授权公开/改历史/交卷留用户操作说明。
 
 媒体文件唯一owner明确转交Acceptance：docs/submission/media/home-ink.gif与creation-history.gif；Leader仍持有docs/submission其余说明文本/README引用。两成片可纳入最终ZIP并同字节复制为附件，原始录制只在仓库外。
+
+执行owner冻结：2026-10-30T17:07:41.6287747+08:00 Leader将V4__accounts.sql编号与唯一写权转交Backend；将Next api/[...path]/route.ts PATCH扩展及types/api/session-generation/providers的账户兼容范围唯一转交Frontend。两GIF成片仍Acceptance专属，其余共享契约/依赖/CI/Compose/说明/报告由Leader持有。注册升级撤销全部旧guest sessions，API与密码参数按identity.md冻结。

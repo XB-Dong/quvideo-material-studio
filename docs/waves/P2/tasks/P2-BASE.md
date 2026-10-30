@@ -5,7 +5,7 @@
 - waveId: P2
 - role: Leader
 - status: not_dispatched
-- baseCommit: 7bbfd027758002cc519fc889cea3c8a2b5233717
+- baseCommit: 66fdfe40c9977e38d05f9753a60e494cd9901db9
 - baseCommitMeaning: Preparation product reference only; Leader must replace with current exact integrated SHA and verify ownership/dependencies before authorized dispatch
 - specVersion: P2-1.0.0
 - requirementIds: P2-REQ-01, P2-USER-01, P2-PACK-01
@@ -19,7 +19,7 @@
 
 ## Authorization and context
 
-Preparation only. The user has not started P2. Read AGENTS, CONSTITUTION, docs/agents/PROTOCOL, P2 PLAN/ROLES/CONTEXT-MAP/ACCEPTANCE/REQUIREMENTS-MATRIX/state and specs/p2/{delivery,identity}. Preparation packets do not authorize work. After explicit start the Leader refreshes exact SHA/ownership/dependencies before dispatch. The user requires autonomous decisions with no follow-up questions during P2 execution.
+The user explicitly started P2 on2026-10-30. Execution within this packet is authorized without further questions. Read AGENTS, CONSTITUTION, docs/agents/PROTOCOL, P2 PLAN/ROLES/CONTEXT-MAP/ACCEPTANCE/REQUIREMENTS-MATRIX/state and specs/p2/{delivery,identity}. Preparation packets do not authorize work. After explicit start the Leader refreshes exact SHA/ownership/dependencies before dispatch. The user requires autonomous decisions with no follow-up questions during P2 execution.
 
 ## Goal and observable acceptance
 

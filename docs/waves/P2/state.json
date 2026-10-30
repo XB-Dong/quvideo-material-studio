@@ -2,10 +2,10 @@
   "schemaVersion": "1.0.0",
   "waveId": "P2",
   "specVersion": "P2-1.0.0",
-  "status": "ready_not_started",
+  "status": "executing",
   "preparationAuthorized": true,
-  "executionAuthorized": false,
-  "executionStartedAt": null,
+  "executionAuthorized": true,
+  "executionStartedAt": "2026-10-30T17:07:41.6287747+08:00",
   "executionCompletedAt": null,
   "preparationBaseCommit": "7bbfd027758002cc519fc889cea3c8a2b5233717",
   "baselineCIRun": 41024631245,
@@ -44,16 +44,16 @@
   "historyRewriteAuthorized": false,
   "examSubmissionAuthorized": false,
   "mailStatus": "deferred_by_user",
-  "nextAction": "Await explicit P2 start; then refresh exact dispatch SHAs/ownership and execute autonomously without user questions",
+  "nextAction": "Dispatch Backend/Frontend/Acceptance on precise frozen source; no user questions",
   "tasks": [
     {
       "taskId": "P2-BASE",
       "rootTaskId": "P2-BASE",
       "waveId": "P2",
       "role": "Leader",
-      "status": "not_dispatched",
-      "baseCommit": "7bbfd027758002cc519fc889cea3c8a2b5233717",
-      "baseCommitMeaning": "Preparation product reference only; Leader must replace with current exact integrated SHA and verify ownership/dependencies before authorized dispatch",
+      "status": "completed",
+      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
+      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
       "specVersion": "P2-1.0.0",
       "dependencies": [],
       "runtimeDependencies": [],
@@ -76,9 +76,9 @@
       "rootTaskId": "P2-BE-USER",
       "waveId": "P2",
       "role": "Backend",
-      "status": "not_dispatched",
-      "baseCommit": "7bbfd027758002cc519fc889cea3c8a2b5233717",
-      "baseCommitMeaning": "Preparation product reference only; Leader must replace with current exact integrated SHA and verify ownership/dependencies before authorized dispatch",
+      "status": "ready_after_dependencies",
+      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
+      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-BASE"
@@ -114,9 +114,9 @@
       "rootTaskId": "P2-FE-USER",
       "waveId": "P2",
       "role": "Frontend",
-      "status": "not_dispatched",
-      "baseCommit": "7bbfd027758002cc519fc889cea3c8a2b5233717",
-      "baseCommitMeaning": "Preparation product reference only; Leader must replace with current exact integrated SHA and verify ownership/dependencies before authorized dispatch",
+      "status": "ready_after_dependencies",
+      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
+      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-BASE"
@@ -155,9 +155,9 @@
       "rootTaskId": "P2-AUDIT",
       "waveId": "P2",
       "role": "Reviewer",
-      "status": "not_dispatched",
-      "baseCommit": "7bbfd027758002cc519fc889cea3c8a2b5233717",
-      "baseCommitMeaning": "Preparation product reference only; Leader must replace with current exact integrated SHA and verify ownership/dependencies before authorized dispatch",
+      "status": "ready_after_dependencies",
+      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
+      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-BASE"
@@ -185,9 +185,9 @@
       "rootTaskId": "P2-DOCS",
       "waveId": "P2",
       "role": "Leader",
-      "status": "not_dispatched",
-      "baseCommit": "7bbfd027758002cc519fc889cea3c8a2b5233717",
-      "baseCommitMeaning": "Preparation product reference only; Leader must replace with current exact integrated SHA and verify ownership/dependencies before authorized dispatch",
+      "status": "ready_after_dependencies",
+      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
+      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-BASE"
@@ -226,9 +226,9 @@
       "rootTaskId": "P2-VERIFY",
       "waveId": "P2",
       "role": "Acceptance",
-      "status": "not_dispatched",
-      "baseCommit": "7bbfd027758002cc519fc889cea3c8a2b5233717",
-      "baseCommitMeaning": "Preparation product reference only; Leader must replace with current exact integrated SHA and verify ownership/dependencies before authorized dispatch",
+      "status": "ready_after_dependencies",
+      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
+      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-BE-USER",
@@ -273,9 +273,9 @@
       "rootTaskId": "P2-MEDIA",
       "waveId": "P2",
       "role": "Acceptance",
-      "status": "not_dispatched",
-      "baseCommit": "7bbfd027758002cc519fc889cea3c8a2b5233717",
-      "baseCommitMeaning": "Preparation product reference only; Leader must replace with current exact integrated SHA and verify ownership/dependencies before authorized dispatch",
+      "status": "ready_after_dependencies",
+      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
+      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-VERIFY"
@@ -303,9 +303,9 @@
       "rootTaskId": "P2-REPORT",
       "waveId": "P2",
       "role": "Leader",
-      "status": "not_dispatched",
-      "baseCommit": "7bbfd027758002cc519fc889cea3c8a2b5233717",
-      "baseCommitMeaning": "Preparation product reference only; Leader must replace with current exact integrated SHA and verify ownership/dependencies before authorized dispatch",
+      "status": "ready_after_dependencies",
+      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
+      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-VERIFY",
@@ -336,9 +336,9 @@
       "rootTaskId": "P2-REVIEW",
       "waveId": "P2",
       "role": "Reviewer",
-      "status": "not_dispatched",
-      "baseCommit": "7bbfd027758002cc519fc889cea3c8a2b5233717",
-      "baseCommitMeaning": "Preparation product reference only; Leader must replace with current exact integrated SHA and verify ownership/dependencies before authorized dispatch",
+      "status": "ready_after_dependencies",
+      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
+      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-REPORT"
@@ -365,9 +365,9 @@
       "rootTaskId": "P2-SEAL",
       "waveId": "P2",
       "role": "Leader",
-      "status": "not_dispatched",
-      "baseCommit": "7bbfd027758002cc519fc889cea3c8a2b5233717",
-      "baseCommitMeaning": "Preparation product reference only; Leader must replace with current exact integrated SHA and verify ownership/dependencies before authorized dispatch",
+      "status": "ready_after_dependencies",
+      "baseCommit": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
+      "baseCommitMeaning": "Reachable P2 preparation seal; exact dispatch source refreshed by Leader before worker starts",
       "specVersion": "P2-1.0.0",
       "dependencies": [
         "P2-REVIEW",
@@ -402,5 +402,6 @@
   "preparationCompletedAt": "2026-10-30T17:05:29.7749663+08:00",
   "preparationRepairRounds": 1,
   "firstPreparationTimestampObserved": "2026-10-30T16:22:47.4078668+08:00",
-  "preparationStartedAt": null
+  "preparationStartedAt": null,
+  "executionPreparationSeal": "66fdfe40c9977e38d05f9753a60e494cd9901db9"
 }
