@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { ResultPreview, type PreviewOrigin } from "./motion/result-preview";
 import { SceneEdge, clickFeedback, useSceneVisibility } from "./motion/journey";
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { useIdentity } from "./providers";
@@ -44,12 +45,7 @@ function HistoryContent({
 }) {
   const model = useTasks(userId);
   const [preview, setPreview] = useState<Task | null>(null);
-  const previewOrigin = useRef<{
-    left: number;
-    top: number;
-    width: number;
-    height: number;
-  } | null>(null);
+  const previewOrigin = useRef<PreviewOrigin | null>(null);
   // The parent uses the shared query cache for accepted tasks; no lifecycle callbacks needed.
   void onReady;
   return (
@@ -111,7 +107,12 @@ function HistoryContent({
                     onPointerDown={(e) => clickFeedback(e.currentTarget)}
                     onClick={(event) => {
                       const rect = event.currentTarget.getBoundingClientRect();
+                      const thumb = event.currentTarget.querySelector("img");
                       previewOrigin.current = {
+                        aspectRatio:
+                          thumb?.naturalWidth && thumb?.naturalHeight
+                            ? thumb.naturalWidth / thumb.naturalHeight
+                            : undefined,
                         left: rect.left,
                         top: rect.top,
                         width: rect.width,
@@ -224,10 +225,11 @@ function HistoryContent({
           origin={previewOrigin.current}
           onClose={() => setPreview(null)}
         >
-          <img
-            className="preview-image"
+          <ResultPreview
+            key={preview.id}
             src={preview.resultUrl}
             alt={preview.templateTitle + "制作结果预览"}
+            origin={previewOrigin.current}
           />
         </Modal>
       )}

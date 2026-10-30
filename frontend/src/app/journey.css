@@ -584,5 +584,47 @@ body:has(dialog[open]) .p12-studio .primary-button {
   animation-play-state: paused !important;
 }
 
-.motion-static .p12-dialog::backdrop{animation:none!important;transition:none!important}
-@media(prefers-reduced-motion:reduce){.p12-dialog::backdrop{animation:none!important;transition:none!important}}
+.motion-static .p12-dialog::backdrop {
+  animation: none !important;
+  transition: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .p12-dialog::backdrop {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.p12-preview-frame {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  background: #f8f7fc;
+  border: 1px solid #eeeaf5;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.p12-dialog .p12-preview-frame .preview-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+  animation: none;
+}
+.p12-preview-frame:not([data-preview-state="ready"]) .preview-image {
+  opacity: 0;
+}
+.p12-preview-message {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 24px;
+  text-align: center;
+  color: #82788f;
+  font-size: 12px;
+  line-height: 1.8;
+}

@@ -22,11 +22,11 @@ export function Modal({
   const latestClose = useRef(onClose);
   latestClose.current = onClose;
   const { enabled } = useMotionPreferences();
-  const entry = useRef({ enabled, origin });
   const [closing, setClosing] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const close = () => {
     if (closing) return;
+    ref.current?.dispatchEvent(new Event("shuying-preview-close"));
     if (!enabled) {
       onClose();
       return;
@@ -35,7 +35,12 @@ export function Modal({
     animation.current?.cancel();
     const image =
       ref.current?.querySelector<HTMLImageElement>(".preview-image");
-    if (image && origin && typeof image.animate === "function") {
+    if (
+      image &&
+      image.naturalWidth &&
+      origin &&
+      typeof image.animate === "function"
+    ) {
       const b = image.getBoundingClientRect();
       animation.current = image.animate(
         [
@@ -71,39 +76,6 @@ export function Modal({
       }
     }
   }, [enabled, closing]);
-  useEffect(() => {
-    const { enabled, origin } = entry.current;
-    const media =
-      typeof matchMedia === "function"
-        ? matchMedia("(prefers-reduced-motion: reduce)")
-        : null;
-    const cancel = () => {
-      animation.current?.cancel();
-    };
-    media?.addEventListener("change", cancel);
-    document.addEventListener("visibilitychange", cancel);
-    const image =
-      ref.current?.querySelector<HTMLImageElement>(".preview-image");
-    if (enabled && image && origin && typeof image.animate === "function") {
-      const b = image.getBoundingClientRect();
-      if (b.width && b.height)
-        animation.current = image.animate(
-          [
-            {
-              transform: `translate(${origin.left + origin.width / 2 - b.left - b.width / 2}px,${origin.top + origin.height / 2 - b.top - b.height / 2}px) scale(${Math.min(0.95, origin.width / b.width)})`,
-              opacity: 0.45,
-            },
-            { transform: "none", opacity: 1 },
-          ],
-          { duration: 200, easing: "cubic-bezier(.2,.7,.2,1)" },
-        );
-    }
-    return () => {
-      cancel();
-      media?.removeEventListener("change", cancel);
-      document.removeEventListener("visibilitychange", cancel);
-    };
-  }, []);
   return (
     <dialog
       ref={ref}
@@ -111,6 +83,7 @@ export function Modal({
       className={closing ? "p12-dialog modal-closing" : "p12-dialog"}
       onCancel={(event) => {
         event.preventDefault();
+        ref.current?.dispatchEvent(new Event("shuying-preview-close"));
         animation.current?.cancel();
         ref.current?.close();
         onClose();

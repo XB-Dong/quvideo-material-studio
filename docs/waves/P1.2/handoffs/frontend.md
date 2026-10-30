@@ -48,3 +48,10 @@ Reviewer实际ERROR截图minor已采纳：无preview时不渲染hover胶囊，JP
 给UploadSlot/TaskFrame/Maker根节点接现有纯视觉IntersectionObserver，CSS以足够specificity暂停离屏上传边、任务node/orbit、提交操作反馈；dialog打开时暂停这些背景循环，dialog自身正常入出保留。上传请求/轮询/组件挂载/slot版本等业务不随离屏取消。新聚焦测试验证IO失交/恢复、断开与业务子节点仍保留。backdrop伪元素单独覆盖motion-static与系统reduce，避免仅通配后代遗漏。实际集成浏览器复验仍由独立Acceptance执行。
 
 离屏修自测首轮新测试漏导入hook被TypeScript阻止，改精确import后05:12:47UTC/13:12:47+08:00容器lint/typecheck/35tests全部通过（原31+4视觉行为）。未弱化检查。脱敏修前实际浏览器报告见evidence/frontend/offscreen-before.json，报告明确部署SHA由Leader日志记录，不能将当前worktree HEAD冒充共享运行源。
+
+
+## P12-DIALOG 冷原图major修复
+
+独立Acceptance对5e2原PNG延迟600ms复现：img0×0/小dialog在load后跳为702×468/760×606且无图动画。作者实际view cold-open图后采纳。新增ResultPreview：从当前缩略图只取自然宽高比作为元数据，固定702px/视窗限宽高比例画框，原PNG未加载时即占最终空间；同步showModal不变。真实load/缓存complete后只对当前真实img节点做一次200ms等比轻显影，不克隆或缓存私有像素。媒体/隐藏、身份失效、开始关闭/ESC和卸载取消待load动画监听和Animation；普通加载状态仍能落到真实就绪/错误静态内容。失败文案保留同框和可用关闭。
+
+首轮新测试在身份失效后用默认accessible role找已隐藏img而失败，改为失效前持有节点再验证隐藏/不动画，未改变产品保护。最终05:19:21UTC/13:19:21+08:00容器lint/typecheck/39tests全通过，包含冷load单次显影/预留、媒体提前取消、身份隐去与失败、close起点取消4新用例；原35不减。隔离Chromium实际CSS支持验证为true，1440×1000画框在图片未加载时702×468；完整dialog冷延迟多帧仍待独立复验。
