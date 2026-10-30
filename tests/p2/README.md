@@ -28,4 +28,4 @@ verify-archive.py可选--source-tree-index <JSON>，格式sourceCommit=精确候
 
 ZIP自身package-policy由精确Git blob对照约束；expected为Git所有非政策排除文件，导出不准缺文件/多未跟踪文件/改字节。硬性禁止政策排掉frontend/backend/tests/.github/assets及根运行/许可入口；私有协调/题面/邮件图/用户报告、原RB许可、本地demo/ink、素材重做输入与来源分别检查。curated来源不含cachePath/本机Windows路径，合法https不能误报成本机路径。无索引仅结构检查，报告completeSourceComparedToGit=false，不能称完整源码验证。标准Git archive README-only数据探针实读40字节commit comment；不是最终候选或CLEAN。
 
-archive_checks_test.py仅合成ZIP/JSON数据，容器stdlib unittest测试正常导出、字节篡改、少资产、夹私有文件、错commit、政策擅排tests与cachePath七种行为，实际7/7 exit0；不运行任何应用/浏览器。最终候选到来后仍需真实校验+新解压空卷运行，不能用这些数据测试替代。
+archive_checks_test.py仅合成ZIP/JSON数据，容器stdlib unittest测试正常导出、字节篡改、少资产、夹私有文件、错commit、政策擅排tests与cachePath七类行为及entries/oid索引schema兼容，实际8/8 exit0；不运行任何应用/浏览器。最终候选到来后仍需真实校验+新解压空卷运行，不能用这些数据测试替代。

@@ -46,3 +46,15 @@ V3升级：Root另从精确7bbfd027758002cc519fc889cea3c8a2b5233717在外部priv
 独立docker exec MySQL只读SELECT证明Flyway1/2/3/4全部success、任务SUCCEEDED2/FAILED1、账户凭据1。docker inspect核旧mysql/前端创建时间和实际material-files挂载仍p2-v3-upgrade原卷；不使用或复制生产3000数据库。升级保留旧V3前端代理，明确不冒称3304完整81前端。相关curated与原始仓库外位置见81a3de8-cleanroom-summary.json及81a3de8-v3-v4-upgrade-pass.json。
 
 媒体仅新增只读同源原landscape/实际fog edgeEnergy采样脚本和两段无遮挡路径选择（metadata保点/来源/映射），仅容器parse；未运行采样/录制，等全部性能结束。未改变产品paint/mask/alpha/位置。当前尚不签最终P2 G02/CI/MEDIA/SEAL。
+
+## 两份真实媒体成片（独立审核待签）
+
+Leader确认所有原有性能步骤结束后，才用p2-cleanroom3302精确81a source开始MEDIA；未与性能重叠。官方工具镜像sha256cb51b21ab05075171b47d5fe5aa8e9641e0d7181abbc5d2b3220c87a09a78655，实际Node24.13.0/Chromium145.0.7632.6/ffmpeg6.1.1-3ubuntu5；与账户/性能工具Chromium149分开记录，不冒称同driver。
+
+首页通过只读原landscape+实际fog能量，在110个可见候选中选无遮挡两路径1070,460→1170,460及800,370→900,370，真实鼠标逐点移动/停留/最终无输入4200ms自然回雾。只加工具指针SVG显示真实pointer位置，不改app图/alpha/blur/mask/位置/阶段，不叠技术注释。源WebM与首19秒GIF保留外部。经Leader明确采纳，仅裁前3秒无输入正常bootstrap：严格早于首stroke脚本start3.560s，保守保留≥560ms原fog，且视频记录起点早于该脚本时钟；全部stroke/停留/4200ms尾段保留，无拼接/变速/倒放。元数据列原action、nominal -3000ms offset和编码时钟lead未精确计量限制，不把脚本时钟冒称精确逐帧时戳。
+
+最终home-ink.gif：1200×750/12fps/192帧/16秒，12441767B，SHA256e0f1b133bd9389bb1b42de470308c49bc18553b1e82b71cc41e21075d030e63d。creation-history.gif：1200×750/12fps/188帧/15.66秒，12086707B，SHA256a9f294456dbcae08114712e58cd89581ea0bad131d1b8a30ab5b643923a8a9f6。两份均低于20MB目标/100MB硬限。
+
+制作片为真实chooser仓库fixture→上传→真实202→Java普通默认成功三阶段，另排指定GENERATE失败(delay每步500ms)，原PNG预览/ESC→个人历史两结果。没有假切阶段、改变app效果或用户数据。两片pageerror0，原录制/metadata在仓库外private-validation/media/81a3de8，成片仅规定docs/submission/media两文件。
+
+inspect-media.mjs对实际最终GIF全周期解码exit0，ffprobe确认帧数/尺寸/fps/时长，并生成每秒4×5 chronological storyboard和关键fog/clear/refog/制作结果PNG，放外部inspection-final。本角色已实读全时段board与关键清晰帧，未冒称human播放或独立美学签署；Reviewer仍需最终整段时序/全秒board与关键帧核验。摘要/原WebM与首GIFhash/原动作/trim/工具命令见media-manifest.json，成片未自动提交考试或公开发布。
