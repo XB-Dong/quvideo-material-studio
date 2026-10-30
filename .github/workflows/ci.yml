@@ -93,6 +93,14 @@ jobs:
         env:
           TESTED_COMMIT: ${{ github.sha }}
         run: docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-p12-headed
+      - name: Independent P2 accounts, ownership and server-stage acceptance
+        env:
+          TESTED_COMMIT: ${{ github.sha }}
+        run: docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-p2-check accounts-api.mjs
+      - name: Account UI, stale cookies and request lifecycle acceptance
+        env:
+          TESTED_COMMIT: ${{ github.sha }}
+        run: docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps -e OUTPUT_DIR=/evidence/browser browser-p2-check accounts-browser.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -102,6 +110,8 @@ jobs:
             runtime/p11-browser/**/*.png
             runtime/p12-browser/**/*.json
             runtime/p12-browser/**/*.png
+            runtime/p2-browser/**/*.json
+            runtime/p2-browser/**/*.png
           retention-days: 7
       - name: Collect service logs
         if: always()

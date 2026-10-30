@@ -173,7 +173,7 @@ docker compose -f compose.yaml -f compose.test.yaml stop mysql-test
 
 ## 已完成范围、限制与取舍
 
-最终每条完成/未完成/未验证见[用户符合性报告](docs/reports/小影要求逐条符合性报告.md)和验收说明；本轮报告尚在按实际运行补齐。
+最终每条完成/未完成/未验证在给作者单独提供的逐条符合性报告中说明；评估者可直接阅读[验收说明](docs/submission/VERIFICATION.md)。本轮报告尚在按实际运行补齐。
 
 生成器使用预置本地结果，不真实使用上传图生成。单后端实例、有界单线程队列，不做集群/消息队列；服务重启不自动续跑，启动就绪前将遗留QUEUED/RUNNING标为FAILED/INTERRUPTED，保留既有终态。没有受理幂等、自动重试或断点续跑，未知POST需先确认历史。孤立上传尚无自动清理/配额。
 
@@ -183,7 +183,7 @@ docker compose -f compose.yaml -f compose.test.yaml stop mysql-test
 
 无需公网部署。选定验收commit后在Docker构建启动，确认健康与成功/失败、多任务/身份。备份要同时包含MySQL和文件卷，并保留配套镜像。先停止受理/后端，再导出DB与文件，可保证一致性；具体Bash容器命令见[交付与恢复说明](docs/delivery.md)。
 
-回滚先保存当前证据和成套备份，使用与schema版本匹配的前后端及SQL/文件恢复；V4账户迁移不能用删除卷或只退一个镜像来回滚。P0/P1图片key升级也要求匹配数据库与文件快照，历史隔离实测见[P1升级恢复](docs/waves/P1/evidence/assets/UPGRADE-VERIFICATION.md)。不是生产演练。
+回滚先保存当前证据和成套备份，使用与schema版本匹配的前后端及SQL/文件恢复；V4账户迁移不能用删除卷或只退一个镜像来回滚。P0/P1图片key升级也要求匹配数据库与文件快照，历史隔离恢复记录由作者保留，本轮实际验证与边界见验收说明；不是生产演练。
 
 ## 实际投入与AI工作流
 

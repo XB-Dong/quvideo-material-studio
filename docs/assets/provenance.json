@@ -1,0 +1,502 @@
+{
+  "capturedAt": "2026-10-30T17:54:30.7923617+08:00",
+  "photoProduction": {
+    "tool": "Pillow 11.3.0",
+    "coverEncoding": {
+      "format": "JPEG",
+      "quality": 82,
+      "subsampling": "4:2:0",
+      "progressive": true,
+      "optimize": true
+    },
+    "imagePolicy": "RGB; no recolor; results preserve full framing",
+    "baseCommit": "7997279301ce28c1bf1ee5e15d971aa7243a645c",
+    "assets": [
+      {
+        "templateId": "demo-postcard",
+        "kind": "cover",
+        "key": "postcard-p1-cover.jpg",
+        "mimeType": "image/jpeg",
+        "width": 480,
+        "height": 640,
+        "bytes": 46077,
+        "sha256": "c7a1e1f22bc676091a7e65537af2ea5752f6d9bb3ea8d06fb417e4af919ed4be",
+        "sourceSha256": "2633727e37fd865835089a11f56d2e19e37f5c4e8e35b7148490e9dc373d4d44",
+        "sourceUrl": "https://unsplash.com/photos/snow-covered-mountains-under-a-pink-sky-gH2wZOYK-KQ",
+        "author": "Shutter Speed",
+        "license": "Unsplash License",
+        "cropCenter": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "templateId": "demo-postcard",
+        "kind": "result",
+        "key": "postcard-p1-result.png",
+        "mimeType": "image/png",
+        "width": 960,
+        "height": 640,
+        "bytes": 612429,
+        "sha256": "fe1fc5c546b26b2f87aabdade9cd7633a59f391ee7e3299ebe29d4e23ee0f136",
+        "sourceSha256": "2633727e37fd865835089a11f56d2e19e37f5c4e8e35b7148490e9dc373d4d44",
+        "sourceUrl": "https://unsplash.com/photos/snow-covered-mountains-under-a-pink-sky-gH2wZOYK-KQ",
+        "author": "Shutter Speed",
+        "license": "Unsplash License",
+        "cropCenter": null
+      },
+      {
+        "templateId": "demo-pet",
+        "kind": "cover",
+        "key": "pet-p1-cover.jpg",
+        "mimeType": "image/jpeg",
+        "width": 480,
+        "height": 640,
+        "bytes": 42971,
+        "sha256": "b7b9edefaa2b7155e4e07806f4479f3b471ebf0e748a55a9ef31b393a65cf84b",
+        "sourceSha256": "be26f3bc9edb9a3abeb29c092ffbf3a88fa12ab8c038156d24cafaae7dde889d",
+        "sourceUrl": "https://unsplash.com/photos/shallow-focus-photography-of-white-shih-tzu-puppy-running-on-the-grass-qO-PIF84Vxg",
+        "author": "Joe Caione",
+        "license": "Unsplash License",
+        "cropCenter": [
+          0.84,
+          0.5
+        ]
+      },
+      {
+        "templateId": "demo-pet",
+        "kind": "result",
+        "key": "pet-p1-result.png",
+        "mimeType": "image/png",
+        "width": 960,
+        "height": 640,
+        "bytes": 664653,
+        "sha256": "767bad36607f21adc40c2bcefbe1a5e970ccba43da822d92b487e18ddb66699c",
+        "sourceSha256": "be26f3bc9edb9a3abeb29c092ffbf3a88fa12ab8c038156d24cafaae7dde889d",
+        "sourceUrl": "https://unsplash.com/photos/shallow-focus-photography-of-white-shih-tzu-puppy-running-on-the-grass-qO-PIF84Vxg",
+        "author": "Joe Caione",
+        "license": "Unsplash License",
+        "cropCenter": null
+      },
+      {
+        "templateId": "demo-portrait",
+        "kind": "cover",
+        "key": "portrait-p1-cover.jpg",
+        "mimeType": "image/jpeg",
+        "width": 480,
+        "height": 640,
+        "bytes": 27440,
+        "sha256": "8ace67bd30233787de0a87fd3c923fac52ba339e2a7b5f0870456980bdeff207",
+        "sourceSha256": "fb8dbf07ee48e2bc7780002cc8c3cebd5b60f34ca15318dc469c9975257d6434",
+        "sourceUrl": "https://unsplash.com/photos/woman-face-with-purple-lights-N19l9MJCpFQ",
+        "author": "Tiko Giorgadze",
+        "license": "Unsplash License",
+        "cropCenter": [
+          0.85,
+          0.5
+        ]
+      },
+      {
+        "templateId": "demo-portrait",
+        "kind": "result",
+        "key": "portrait-p1-result.png",
+        "mimeType": "image/png",
+        "width": 960,
+        "height": 639,
+        "bytes": 357471,
+        "sha256": "9f9ad530fa14e28762aa258d1e43f8096d96c5a97f461fbe39a47c1d106490dd",
+        "sourceSha256": "fb8dbf07ee48e2bc7780002cc8c3cebd5b60f34ca15318dc469c9975257d6434",
+        "sourceUrl": "https://unsplash.com/photos/woman-face-with-purple-lights-N19l9MJCpFQ",
+        "author": "Tiko Giorgadze",
+        "license": "Unsplash License",
+        "cropCenter": null
+      },
+      {
+        "templateId": "demo-story",
+        "kind": "cover",
+        "key": "story-p1-cover.jpg",
+        "mimeType": "image/jpeg",
+        "width": 480,
+        "height": 640,
+        "bytes": 66128,
+        "sha256": "8ea2c133b92ef9145eeafee3b0e7e702d0bf326e9f6ac202f9a11466bcc02435",
+        "sourceSha256": "e38185f8f05dbbd882afd8a058488ad8fb9d3ff2e8f104a97ae801420ff6b2bf",
+        "sourceUrl": "https://unsplash.com/photos/purple-and-blue-abstract-painting-vBc7xy65us8",
+        "author": "Pawel Czerwinski",
+        "license": "Unsplash License",
+        "cropCenter": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "templateId": "demo-story",
+        "kind": "result",
+        "key": "story-p1-result.png",
+        "mimeType": "image/png",
+        "width": 640,
+        "height": 960,
+        "bytes": 1012019,
+        "sha256": "f9ff1ca6eb6bd67669f0029062cd2071e21532cdd4364f0f254fddd2c4aebff5",
+        "sourceSha256": "e38185f8f05dbbd882afd8a058488ad8fb9d3ff2e8f104a97ae801420ff6b2bf",
+        "sourceUrl": "https://unsplash.com/photos/purple-and-blue-abstract-painting-vBc7xy65us8",
+        "author": "Pawel Czerwinski",
+        "license": "Unsplash License",
+        "cropCenter": null
+      }
+    ]
+  },
+  "schemaVersion": "1.0.0",
+  "photoInputRoot": "docs/waves/P1/references",
+  "photoSources": [
+    {
+      "id": "travel",
+      "file": "assets/travel.jpg",
+      "author": "Shutter Speed",
+      "sourceUrl": "https://unsplash.com/photos/snow-covered-mountains-under-a-pink-sky-gH2wZOYK-KQ",
+      "downloadUrl": "https://images.unsplash.com/photo-1767536472182-6e7142d5fb7a?auto=format&fit=max&w=960&q=80&fm=jpg",
+      "publishedAt": "2026-01-04",
+      "retrievedAt": "2026-10-29",
+      "license": "Unsplash License (individual source page verified free)",
+      "bytes": 100258,
+      "width": 960,
+      "height": 640,
+      "sha256": "2633727e37fd865835089a11f56d2e19e37f5c4e8e35b7148490e9dc373d4d44",
+      "templateId": "demo-postcard"
+    },
+    {
+      "id": "pet",
+      "file": "assets/pet.jpg",
+      "author": "Joe Caione",
+      "sourceUrl": "https://unsplash.com/photos/shallow-focus-photography-of-white-shih-tzu-puppy-running-on-the-grass-qO-PIF84Vxg",
+      "downloadUrl": "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=max&w=960&q=80&fm=jpg",
+      "publishedAt": "2018-08-15",
+      "retrievedAt": "2026-10-29",
+      "license": "Unsplash License (individual source page verified free)",
+      "bytes": 86304,
+      "width": 960,
+      "height": 640,
+      "sha256": "be26f3bc9edb9a3abeb29c092ffbf3a88fa12ab8c038156d24cafaae7dde889d",
+      "templateId": "demo-pet"
+    },
+    {
+      "id": "portrait",
+      "file": "assets/portrait.jpg",
+      "author": "Tiko Giorgadze",
+      "sourceUrl": "https://unsplash.com/photos/woman-face-with-purple-lights-N19l9MJCpFQ",
+      "downloadUrl": "https://images.unsplash.com/photo-1519595151212-422633d0832e?auto=format&fit=max&w=960&q=80&fm=jpg",
+      "publishedAt": "2018-02-25",
+      "retrievedAt": "2026-10-29",
+      "license": "Unsplash License (individual source page verified free)",
+      "bytes": 45627,
+      "width": 960,
+      "height": 639,
+      "sha256": "fb8dbf07ee48e2bc7780002cc8c3cebd5b60f34ca15318dc469c9975257d6434",
+      "templateId": "demo-portrait"
+    },
+    {
+      "id": "abstract",
+      "file": "assets/abstract.jpg",
+      "author": "Pawel Czerwinski",
+      "sourceUrl": "https://unsplash.com/photos/purple-and-blue-abstract-painting-vBc7xy65us8",
+      "downloadUrl": "https://images.unsplash.com/photo-1607457597191-8ed4e870ceca?auto=format&fit=max&w=960&q=80&fm=jpg",
+      "publishedAt": "2020-12-08",
+      "retrievedAt": "2026-10-29",
+      "license": "Unsplash License (individual source page verified free)",
+      "bytes": 301808,
+      "width": 960,
+      "height": 1440,
+      "sha256": "e38185f8f05dbbd882afd8a058488ad8fb9d3ff2e8f104a97ae801420ff6b2bf",
+      "templateId": "demo-story"
+    }
+  ],
+  "productSource": "1b38655d71a8f9c9001d7402d4adf12ee7d35cf4",
+  "ink": {
+    "toolchain": {
+      "python": "3.12.12",
+      "pillow": "11.3.0",
+      "libwebp": "1.5.0",
+      "libjpeg": "6.2",
+      "baseImage": "python:3.12.12-slim@sha256:f3fa41d74a768c2fce8016b98c191ae8c1bacd8f1152870a3f9f87d350920b7c"
+    },
+    "source": {
+      "path": "docs/waves/P1.1/references/assets/ink-wu-yun-landscape.jpg",
+      "sha256": "846674ae63b4e6a51e8b60079120861711dc62afbd0d585bffb6e2e0dbad1e60",
+      "bytes": 2880880,
+      "author": "Wu Yun / 吴云 (1811–1883)",
+      "title": "Landscape / 仙霞新霁图",
+      "date": "1854",
+      "objectId": 737785,
+      "accession": "2024.549.47",
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/737785",
+      "downloadUrl": "https://images.metmuseum.org/CRDImages/as/original/DP-42597-004.jpg",
+      "license": "Public Domain / CC0",
+      "licenseUrl": "https://www.metmuseum.org/hubs/open-access",
+      "obtainedDate": "2026-10-30"
+    },
+    "processing": {
+      "cropLeftTopRightBottom": [
+        0,
+        1050,
+        3000,
+        2100
+      ],
+      "resampling": "LANCZOS",
+      "grayscale": "Pillow ImageOps.grayscale",
+      "paperTextureFilter": {
+        "type": "GaussianBlur",
+        "radius": 0.4
+      },
+      "autocontrastCutoffPercent": 1,
+      "gamma": 0.88,
+      "gammaFormula": "round(255*(v/255)**0.88)",
+      "colorizeBlack": [
+        105,
+        117,
+        136
+      ],
+      "colorizeWhite": [
+        249,
+        250,
+        248
+      ],
+      "encoding": {
+        "format": "WEBP",
+        "quality": 40,
+        "method": 6,
+        "exact": true,
+        "metadata": "none"
+      }
+    },
+    "output": {
+      "path": "frontend/public/ink/landscape.webp",
+      "url": "/ink/landscape.webp",
+      "width": 1600,
+      "height": 560,
+      "bytes": 63202,
+      "sha256": "0296ab7afba92c21bb53e9558b599881ce05f9607ff0485dbaa370bff35ccd96",
+      "mimeType": "image/webp",
+      "grayscaleExtrema": [
+        90,
+        255
+      ],
+      "targetBytes": 65536,
+      "capBytes": 81920
+    }
+  },
+  "scope": "Current application provenance selected from preserved private historical records; no local cache paths or original user screenshots",
+  "reactBits": {
+    "registryAndGitHubEquivalence": "not_asserted; registry content frozen independently by 14 matching hashes",
+    "distribution": "Only Orbit is actually integrated; six unused components and OGL removed. No standalone component collection.",
+    "licenseUrl": "https://raw.githubusercontent.com/DavidHDev/react-bits/e12c22192ac7b4b452c5e2feb9b586d74765d696/LICENSE.md",
+    "historicalRegistryFileHashes": [
+      {
+        "component": "DitherVeil",
+        "path": "DitherVeil.css",
+        "sha256": "e26d3a59edcabc0b117f832abff3b3d99ac5855e1275a842c6d58bf0f585fc76",
+        "bytes": 113
+      },
+      {
+        "component": "DitherVeil",
+        "path": "DitherVeil.tsx",
+        "sha256": "e46b5c99d3b68c7309571a10dcef9ed3584739a8cad6f551d79296ecc3c73529",
+        "bytes": 26903
+      },
+      {
+        "component": "GlowCursor",
+        "path": "GlowCursor.css",
+        "sha256": "02bec034b47fd7f43d20f74845fb24c332a4353a48d44e9150ad0759327e5654",
+        "bytes": 338
+      },
+      {
+        "component": "GlowCursor",
+        "path": "GlowCursor.tsx",
+        "sha256": "4fdf8b2357f4aa012d7eafb6f8297642307c3df4fb02ae4b4c18e641e5c63312",
+        "bytes": 34766
+      },
+      {
+        "component": "RippleDistortion",
+        "path": "RippleDistortion.css",
+        "sha256": "3a7ecc6d99d604a7ee29f8a6ff3f84aece179a5cdc85d981b81179532170c852",
+        "bytes": 196
+      },
+      {
+        "component": "RippleDistortion",
+        "path": "RippleDistortion.tsx",
+        "sha256": "74a750b3a1b06dd40cadb35ad636b703af5c80845ae68c0e15ed0b99c8bc9671",
+        "bytes": 15007
+      },
+      {
+        "component": "HalftoneReveal",
+        "path": "HalftoneReveal.css",
+        "sha256": "51c09de2dcbaee1810a55a4784ce0f1c328c063cc9bf8c267c9b6cdcfb8392e1",
+        "bytes": 206
+      },
+      {
+        "component": "HalftoneReveal",
+        "path": "HalftoneReveal.tsx",
+        "sha256": "9dcca3775a6496fb9cc29448cf17161c37c4aec0a711887e7f44e6f0392015c1",
+        "bytes": 30668
+      },
+      {
+        "component": "OrbitImages",
+        "path": "OrbitImages.css",
+        "sha256": "e648040230adb6f08d51fd91583b009e8d9b577c7128c42354cbee1fc4191643",
+        "bytes": 1788
+      },
+      {
+        "component": "OrbitImages",
+        "path": "OrbitImages.tsx",
+        "sha256": "f039a4d33198e98f24e84ac161ffb1449ffebdde135c9079fcac7768746401db",
+        "bytes": 30322
+      },
+      {
+        "component": "PixelTrail",
+        "path": "PixelTrail.css",
+        "sha256": "17dc6aee5d947c1f8f34d2a15ff8c50b8dd51b2dbb643f50c6e6106ee38d1cfa",
+        "bytes": 54
+      },
+      {
+        "component": "PixelTrail",
+        "path": "PixelTrail.tsx",
+        "sha256": "5b0b2b717087154b3b77fc0974978bfe09ab925ba03900115c61ef9114f6af03",
+        "bytes": 26060
+      },
+      {
+        "component": "ElectricBorder",
+        "path": "ElectricBorder.css",
+        "sha256": "3ac01db2b8d158c653c9f726c208326818b3b29c7187dc310064fe5a15310979",
+        "bytes": 173
+      },
+      {
+        "component": "ElectricBorder",
+        "path": "ElectricBorder.tsx",
+        "sha256": "afec82d8e44c009f3aabd940b75825273266400068a1e3e1830d62b356b781dc",
+        "bytes": 29319
+      }
+    ],
+    "licenseSha256": "4bdd1fa59a6b7d5954bc3b213dbc34e455c635a94bbcecf9293553797d0fad02",
+    "copyright": "David Haz",
+    "license": "MIT + Commons Clause License Condition v1.0",
+    "currentRetained": [
+      {
+        "file": "ADAPTATIONS.md",
+        "sha256": "4bfcb7609812c131544885b5f6a9822bb5dca3c48b900b9d4c53fd8a3c30885c",
+        "bytes": 4181
+      },
+      {
+        "file": "context-lifecycle.ts",
+        "sha256": "bac48555918b75a2eb49fe71a8fd692f3ffd3823a21c301c6cd190c9885bde69",
+        "bytes": 726
+      },
+      {
+        "file": "LICENSE.md",
+        "sha256": "4bdd1fa59a6b7d5954bc3b213dbc34e455c635a94bbcecf9293553797d0fad02",
+        "bytes": 2060
+      },
+      {
+        "file": "OrbitImages.css",
+        "sha256": "e648040230adb6f08d51fd91583b009e8d9b577c7128c42354cbee1fc4191643",
+        "bytes": 1788
+      },
+      {
+        "file": "OrbitImages.tsx",
+        "sha256": "7cff2d9b3370badb7b35ac460102a10f8e4f55f63793ccc0bc2543ab285fc6f7",
+        "bytes": 30404
+      }
+    ]
+  },
+  "historicalSourceMetadata": {
+    "checkedAt": "2026-10-29T22:55:02+08:00",
+    "baseCommit": "eb8df6661bc4da4f4946e1eb79d730e43200844a",
+    "licenseUrl": "https://raw.githubusercontent.com/DavidHDev/react-bits/e12c22192ac7b4b452c5e2feb9b586d74765d696/LICENSE.md",
+    "licenseSha256": "4bdd1fa59a6b7d5954bc3b213dbc34e455c635a94bbcecf9293553797d0fad02",
+    "registryAndGitHubCommitEquivalence": "not_asserted; registry content frozen independently by 14 matching hashes",
+    "files": [
+      {
+        "component": "DitherVeil",
+        "path": "DitherVeil.css",
+        "sha256": "e26d3a59edcabc0b117f832abff3b3d99ac5855e1275a842c6d58bf0f585fc76",
+        "bytes": 113
+      },
+      {
+        "component": "DitherVeil",
+        "path": "DitherVeil.tsx",
+        "sha256": "e46b5c99d3b68c7309571a10dcef9ed3584739a8cad6f551d79296ecc3c73529",
+        "bytes": 26903
+      },
+      {
+        "component": "GlowCursor",
+        "path": "GlowCursor.css",
+        "sha256": "02bec034b47fd7f43d20f74845fb24c332a4353a48d44e9150ad0759327e5654",
+        "bytes": 338
+      },
+      {
+        "component": "GlowCursor",
+        "path": "GlowCursor.tsx",
+        "sha256": "4fdf8b2357f4aa012d7eafb6f8297642307c3df4fb02ae4b4c18e641e5c63312",
+        "bytes": 34766
+      },
+      {
+        "component": "RippleDistortion",
+        "path": "RippleDistortion.css",
+        "sha256": "3a7ecc6d99d604a7ee29f8a6ff3f84aece179a5cdc85d981b81179532170c852",
+        "bytes": 196
+      },
+      {
+        "component": "RippleDistortion",
+        "path": "RippleDistortion.tsx",
+        "sha256": "74a750b3a1b06dd40cadb35ad636b703af5c80845ae68c0e15ed0b99c8bc9671",
+        "bytes": 15007
+      },
+      {
+        "component": "HalftoneReveal",
+        "path": "HalftoneReveal.css",
+        "sha256": "51c09de2dcbaee1810a55a4784ce0f1c328c063cc9bf8c267c9b6cdcfb8392e1",
+        "bytes": 206
+      },
+      {
+        "component": "HalftoneReveal",
+        "path": "HalftoneReveal.tsx",
+        "sha256": "9dcca3775a6496fb9cc29448cf17161c37c4aec0a711887e7f44e6f0392015c1",
+        "bytes": 30668
+      },
+      {
+        "component": "OrbitImages",
+        "path": "OrbitImages.css",
+        "sha256": "e648040230adb6f08d51fd91583b009e8d9b577c7128c42354cbee1fc4191643",
+        "bytes": 1788
+      },
+      {
+        "component": "OrbitImages",
+        "path": "OrbitImages.tsx",
+        "sha256": "f039a4d33198e98f24e84ac161ffb1449ffebdde135c9079fcac7768746401db",
+        "bytes": 30322
+      },
+      {
+        "component": "PixelTrail",
+        "path": "PixelTrail.css",
+        "sha256": "17dc6aee5d947c1f8f34d2a15ff8c50b8dd51b2dbb643f50c6e6106ee38d1cfa",
+        "bytes": 54
+      },
+      {
+        "component": "PixelTrail",
+        "path": "PixelTrail.tsx",
+        "sha256": "5b0b2b717087154b3b77fc0974978bfe09ab925ba03900115c61ef9114f6af03",
+        "bytes": 26060
+      },
+      {
+        "component": "ElectricBorder",
+        "path": "ElectricBorder.css",
+        "sha256": "3ac01db2b8d158c653c9f726c208326818b3b29c7187dc310064fe5a15310979",
+        "bytes": 173
+      },
+      {
+        "component": "ElectricBorder",
+        "path": "ElectricBorder.tsx",
+        "sha256": "afec82d8e44c009f3aabd940b75825273266400068a1e3e1830d62b356b781dc",
+        "bytes": 29319
+      }
+    ]
+  }
+}

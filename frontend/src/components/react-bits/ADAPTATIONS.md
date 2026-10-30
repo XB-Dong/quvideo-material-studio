@@ -2,7 +2,7 @@
 
 当前P2交付：只保留实际使用的OrbitImages及必要context-lifecycle/原许可。六组未mounted组件源码和OGL依赖已清理，页面仍使用自写Canvas2D/CSS/SVG视觉基础。以下P1/P1.1段落是当时历史适配记录，不是当前文件清单；来源哈希保留供审计，不提供独立组件包。
 
-官方TS-CSS registry源码；14文件原始哈希和源URL见docs/waves/P1/evidence/leader-baseline/source-freeze.json，GitHub许可提交e12c22192ac7b4b452c5e2feb9b586d74765d696。registry与GitHub内容等价性不作断言。版权David Haz，完整MIT + Commons Clause见LICENSE.md。
+官方TS-CSS registry源码；历史14文件原始哈希、源URL与当前保留文件见`docs/assets/provenance.json`，GitHub许可提交e12c22192ac7b4b452c5e2feb9b586d74765d696。registry与GitHub内容等价性不作断言。版权David Haz，完整MIT + Commons Clause见LICENSE.md。
 
 适配：外层独立偏好/可见性/互斥/idle控制；WebGL卸载主动loseContext；DPR上限1.5、Electric像素预算1MP；Pixel点数上限24；浅色颜色与props由产品适配层提供。原源码保留，第三方文件独立关闭lint规则，产品控制器正常lint/测试。实际运行验收由独立Acceptance完成。
 
@@ -15,7 +15,7 @@ Electric额外首帧适配：resize/首次完整draw前透明，产品层外缘�
 
 ## P1.1: functional card and software-base integration
 
-The P1.1 default path deliberately uses the new local `creative/visuals.tsx` Canvas2D/SVG implementations. These are inspired adaptations, not claims that upstream WebGL shaders execute. Dither's small square veil, Halftone's larger ink circles, Ripple's localized image displacement/rings and Pixel's bounded short square trail now follow stable template IDs on functional Link covers. The original four shader sources remain vendored for provenance; they are not mounted by the P1.1 default catalog. No WebGL context is allocated by these base effects.
+The P1.1 default path deliberately uses the new local `creative/visuals.tsx` Canvas2D/SVG implementations. These are inspired adaptations, not claims that upstream WebGL shaders execute. Dither's small square veil, Halftone's larger ink circles, Ripple's localized image displacement/rings and Pixel's bounded short square trail now follow stable template IDs on functional Link covers. Those unused shader sources were retained in P1.1 and removed in P2. No WebGL context is allocated by these base effects.
 
 OrbitImages is still the actual upstream adapter, with 42s duration and hoverSpeed=1/hoverScale=1; user controls and hover pause were removed. Glow Cursor's visual role is a subtle violet shadow on the feathered ink clarity trail using the same local painting, not another full-screen shader. Electric Border's visual role uses a locally authored jagged SVG perimeter with a traveling dash; it is continuous rather than P1's 600ms shader pulse.
 

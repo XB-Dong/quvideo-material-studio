@@ -15,6 +15,6 @@ POSIX shell将mount换为`--mount "type=bind,source=$(pwd),target=/workspace"`�
 
 ## 来源与取舍
 
-吴云（1811–1883），1854《仙霞新霁图》/Landscape，The Met藏品737785，2024.549.47。[官方资源页](https://www.metmuseum.org/art/collection/search/737785)标Public Domain，[Open Access](https://www.metmuseum.org/hubs/open-access)采用CC0。画心裁切为原4000×3000中的`(0,1050,3000,2100)`，去摄影黑边、色卡、上方题跋；去黄转冷浅纸色。源码和衍生来源详见`docs/waves/P1.1/evidence/assets/production-manifest.json`。
+吴云（1811–1883），1854《仙霞新霁图》/Landscape，The Met藏品737785，2024.549.47。[官方资源页](https://www.metmuseum.org/art/collection/search/737785)标Public Domain，[Open Access](https://www.metmuseum.org/hubs/open-access)采用CC0。画心裁切为原4000×3000中的`(0,1050,3000,2100)`，去摄影黑边、色卡、上方题跋；去黄转冷浅纸色。源码和衍生来源详见[交付来源清单](../../docs/assets/provenance.json)。转换脚本重做后仍输出阶段记录`docs/waves/P1.1/evidence/assets/production-manifest.json`；该记录不作为应用启动依赖。
 
 首轮1800px/quality70为139282B，超过80KiB已留失败证据；随后有界试验选1600px、0.4px纸纹平滑与quality40，保留山石/树木笔触，低于64KiB目标。三次实际容器转换输出逐字节一致。原图与最终衍生已实际查看；资产自查不代表真实页面动效、首屏总预算或独立G01/G02通过。

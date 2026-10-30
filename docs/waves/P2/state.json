@@ -28,7 +28,6 @@
     "recordedPriorWaveWallMinutes": 500.59
   },
   "activeDevelopmentAgents": [
-    "/root/p11_frontend",
     "/root/p11_design_review"
   ],
   "activePreparationReviewers": [],
@@ -47,7 +46,7 @@
   "historyRewriteAuthorized": false,
   "examSubmissionAuthorized": false,
   "mailStatus": "deferred_by_user",
-  "nextAction": "Integrate account UI, review source/provenance, freeze candidate for independent acceptance",
+  "nextAction": "Freeze privacy-safe candidate source ZIP, review provenance, full CI and independent clean-room/upgrade; record GIFs after performance",
   "tasks": [
     {
       "taskId": "P2-BASE",
@@ -117,7 +116,7 @@
       "rootTaskId": "P2-FE-USER",
       "waveId": "P2",
       "role": "Frontend",
-      "status": "in_progress",
+      "status": "implemented_author58_passed_pending_full_CI",
       "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
       "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",
@@ -229,7 +228,7 @@
       "rootTaskId": "P2-VERIFY",
       "waveId": "P2",
       "role": "Acceptance",
-      "status": "test_design_in_progress_runtime_dependencies_pending",
+      "status": "preflight_API8_and_browser7plus1_passed_final_zip_CI_pending",
       "baseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
       "baseCommitMeaning": "Exact frozen authorized source checked out by workers; latest Leader packet under primary checkout controls dispatch",
       "specVersion": "P2-1.0.0",
@@ -407,5 +406,15 @@
   "firstPreparationTimestampObserved": "2026-10-30T16:22:47.4078668+08:00",
   "preparationStartedAt": null,
   "executionPreparationSeal": "66fdfe40c9977e38d05f9753a60e494cd9901db9",
-  "executionBaseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6"
+  "executionBaseCommit": "8c9f91af73d0ad5203162b504856b9f02b2990d6",
+  "initialIntegratedProductSource": "1b38655d71a8f9c9001d7402d4adf12ee7d35cf4",
+  "initialIntegratedFrontendCheck": "58tests_lint_type_pass_after_licensed_source_cleanup",
+  "candidateEnvironment": {
+    "freshVolumes": true,
+    "production3000Unchanged": true,
+    "source": "1b38655d71a8f9c9001d7402d4adf12ee7d35cf4",
+    "port": 3301,
+    "origin": "http://localhost:3301",
+    "project": "p2-candidate"
+  }
 }
