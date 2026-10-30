@@ -1,0 +1,29 @@
+{
+  "capturedAt": "2026-10-30T18:35:00.9727980+08:00",
+  "businessTestedCommit": "81a3de8da97790744cbc7e4540a568e697093fd6",
+  "project": "material-studio",
+  "base": "http://localhost:3000",
+  "preUpgradeConsistentDatabaseAndFilesBackup": "completed privately outside Git and submission",
+  "previousImageTags": [
+    "material-studio-backend:pre-p2",
+    "material-studio-frontend:pre-p2"
+  ],
+  "existingMysqlAndNamedVolumesRetained": true,
+  "buildUpExitCode": 0,
+  "health": {
+    "frontend": "healthy",
+    "backend": "healthy",
+    "mysql": "healthy"
+  },
+  "smoke": {
+    "executedIn": "frontend container Node22 through same-origin proxy",
+    "templates": 4,
+    "exitCode": 0,
+    "newGuestKind": "GUEST",
+    "categories": 3,
+    "invalidLoginCode": "AUTH_INVALID",
+    "guestPreserved": true,
+    "invalidLoginStatus": 401
+  },
+  "scope": "Preview promotion and bounded synthetic smoke only; not production backup restoration or exact old production data byte comparison. Independent V3 upgrade and cleanroom evidence separate."
+}

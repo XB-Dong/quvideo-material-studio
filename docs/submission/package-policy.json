@@ -457,6 +457,7 @@
     "docs/waves/P2/evidence/leader/history-inventory.json",
     "docs/waves/P2/evidence/leader/history-pattern-inspection.json",
     "docs/waves/P2/evidence/leader/media-tool.json",
+    "docs/waves/P2/evidence/leader/production-preview-smoke.json",
     "docs/waves/P2/evidence/preparation/ci-baseline.json",
     "docs/waves/P2/evidence/preparation/data-check.json",
     "docs/waves/P2/FINDINGS.md",
@@ -468,9 +469,11 @@
     "docs/waves/P2/MEDIA.md",
     "docs/waves/P2/PLAN.md",
     "docs/waves/P2/PREPARATION.md",
+    "docs/waves/P2/report-details.json",
     "docs/waves/P2/REPORT-DRAFT.md",
     "docs/waves/P2/requirement-checklist.json",
     "docs/waves/P2/REQUIREMENTS-MATRIX.md",
+    "docs/waves/P2/reviews/final-review.md",
     "docs/waves/P2/reviews/implementation-review.md",
     "docs/waves/P2/reviews/preparation-review.md",
     "docs/waves/P2/reviews/provenance-review.md",
@@ -488,5 +491,5 @@
     "docs/waves/P2/tasks/P2-VERIFY.md",
     "docs/waves/README.md"
   ],
-  "generatedAt": "2026-10-30T18:08:25.8388719+08:00"
+  "generatedAt": "2026-10-30T18:39:51.3251192+08:00"
 }

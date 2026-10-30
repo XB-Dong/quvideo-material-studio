@@ -2,7 +2,7 @@
 
 小影科技2027校招全栈开发笔试项目，作者董信步。浏览模板、上传图片、提交Java后台制作任务，在等待期间继续使用网站，从个人作品查看阶段、失败原因和成功图片。制作使用可控模拟生成器。
 
-P2为最后一轮开发与交付验收，账户功能和最终材料正在核验。最终版本、实际检查与附件清单见[验收说明](docs/submission/VERIFICATION.md)；本段在正式封存时更新，不将历史绿CI冒称本轮已通过。
+已实现访客制作与注册、登录、退出、账户设置。业务验收版本为`81a3de8da97790744cbc7e4540a568e697093fd6`，完整CI与源码包空卷检查通过；交付版本、实际证据、附件与边界见[验收说明](docs/submission/VERIFICATION.md)。
 
 ## 启动
 
@@ -20,7 +20,11 @@ docker compose up --build
 
 浅色纸面、蓝紫线条，首页山水随鼠标移动由雾变清晰；模板卡、制作页、任务阶段和预览使用连续且受控的动态。系统减少动态效果、后台与离屏时自动保护资源，不设置手动暂停控件。桌面完成主要布局，375px小屏可完成核心流程。
 
-正式交付提供首页山水交互和制作/历史流程两份真实GIF；录制文件与版本待验收后放入`docs/submission/media/`并在此展示。动图只展示真实页面操作，不替代功能测试或硬件性能证据。
+以下两份GIF展示真实页面操作，录制版本与动作记录随验收说明提供；动图不替代功能测试或硬件性能证据。
+
+![首页山水交互](docs/submission/media/home-ink.gif)
+
+![制作与历史流程](docs/submission/media/creation-history.gif)
 
 ## 技术版本与结构
 
@@ -43,8 +47,7 @@ backend/               Java服务、MyBatis、Flyway、离线图片、JUnit
 specs/                 API、任务/前端状态、数据模型与本轮账户契约
 tests/                 独立API、浏览器、账户及资源验收容器入口
 docs/submission/       最终验收、演示与提交说明
-docs/reports/          给作者看的逐条符合性报告
-docs/waves/            需求追踪、历史阶段、独立审阅与实际证据
+docs/waves/P2/evidence/ 脱敏实际验收证据
 compose.yaml           frontend、backend、mysql及持久卷
 compose.test.yaml      隔离前端/Java/MySQL/独立检查
 .github/workflows/     push、pull_request与手动CI
@@ -52,7 +55,7 @@ compose.test.yaml      隔离前端/Java/MySQL/独立检查
 
 ## 身份与个人作品
 
-保留访客直接体验，并提供注册、登录、退出和账户设置。账户接口/界面以P2最终验证结果为准：
+保留访客直接体验，并提供注册、登录、退出和账户设置：
 
 - 访客可浏览、上传、制作和查看自己的作品；清cookie/到期后不能找回未注册访客身份。
 - 注册使用昵称、邮箱和密码，将当前访客升级为账户，保留现有素材与任务；邮箱是本地登录标识，未进行邮件所有权验证。
@@ -66,7 +69,7 @@ compose.test.yaml      隔离前端/Java/MySQL/独立检查
 
 ## 模板、素材与初始化
 
-Flyway负责空库结构/种子初始化和版本升级：V1结构，V2分类/四模板，V3本地照片key，V4账户凭据扩展（本轮实现与验收中）；既有迁移不重写。模板覆盖1/2/3张图，图片数量/MIME/最大字节数从Java接口读取。
+Flyway负责空库结构/种子初始化和版本升级：V1结构，V2分类/四模板，V3本地照片key，V4账户凭据扩展；既有迁移不重写。模板覆盖1/2/3张图，图片数量/MIME/最大字节数从Java接口读取。
 
 `backend/src/main/resources/demo/`包含可直接选择上传的`postcard.png`、`pet.png`、`story.png`、`portrait.png`及生产封面/预置结果。图片限制为JPEG/PNG、单文件5MiB、最多2000万像素；服务端校验实际内容、大小和数量并写文件卷，浏览器预览blob不能代替上传。
 
@@ -167,13 +170,22 @@ docker compose -f compose.yaml -f compose.test.yaml run --build --rm api-check
 docker compose -f compose.yaml -f compose.test.yaml stop mysql-test
 ```
 
-[GitHub Actions](https://github.com/XB-Dong/quvideo-material-studio/actions)在push/PR执行前端lint/type/test/build、Java真实MySQL verify/package、三服务集成及现有P1.1/P1.2浏览器/视觉/资源/真实后台检查。P2新增账户独立入口集成后在验收说明列出；每条结果绑定真实SHA/命令/exit，不把配置存在当执行通过。
+[GitHub Actions](https://github.com/XB-Dong/quvideo-material-studio/actions)在push/PR执行前端lint/type/test/build、Java真实MySQL verify/package、三服务集成、P1.1/P1.2浏览器/视觉/资源/真实后台检查，以及P2账户接口和浏览器竞态验收。业务验收CI[41038592540](https://github.com/XB-Dong/quvideo-material-studio/actions/runs/41038592540)三job成功：58前端、26Java、8原API、账户API8/浏览器8，原有检查全部保留。详细场景与软件测量边界见验收说明。
 
 浏览器验收使用实际部署40位TESTED_COMMIT，Bash `export TESTED_COMMIT=$(git rev-parse HEAD)`，PowerShell `$env:TESTED_COMMIT=(git rev-parse HEAD)`；源码ZIP没有.git时采用外部manifest的源码SHA。原P1.1/P1.2命令与边界保存在[工具说明](tests/p1.1/README.md)、[子页工具](tests/p1.2/README.md)。截图/录制与无截图性能分开，measure读取指标后才截图；真实物理设备和硬件GPU未测不冒称通过。
 
+设置TESTED_COMMIT后，账户独立命令：
+
+```sh
+docker compose -f compose.yaml -f compose.test.yaml run --build --rm --no-deps browser-p2-check accounts-api.mjs
+docker compose -f compose.yaml -f compose.test.yaml run --rm --no-deps browser-p2-check accounts-browser.mjs
+```
+
+源码包范围和实际Git blob核对见[归档说明](docs/submission/SOURCE-PACKAGE.md)。给作者的87条逐条报告单独交付；原题原图、邮件参考图与内部协调材料不随官方源码ZIP分发。
+
 ## 已完成范围、限制与取舍
 
-最终每条完成/未完成/未验证在给作者单独提供的逐条符合性报告中说明；评估者可直接阅读[验收说明](docs/submission/VERIFICATION.md)。本轮报告尚在按实际运行补齐。
+逐条实现、证据和边界在给作者单独提供的报告中说明；评估者可直接阅读[验收说明](docs/submission/VERIFICATION.md)，其中区分业务验收commit、最终归档commit及文档/媒体差异。
 
 生成器使用预置本地结果，不真实使用上传图生成。单后端实例、有界单线程队列，不做集群/消息队列；服务重启不自动续跑，启动就绪前将遗留QUEUED/RUNNING标为FAILED/INTERRUPTED，保留既有终态。没有受理幂等、自动重试或断点续跑，未知POST需先确认历史。孤立上传尚无自动清理/配额。
 

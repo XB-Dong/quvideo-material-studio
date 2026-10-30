@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "status": "evidence_binding_in_progress",
+  "status": "implemented_bound_to_actual_CI_cleanroom_upgrade_media_pending_final_package_review",
   "details": [
     {
       "id": "R-01.a",
@@ -200,7 +200,7 @@
     {
       "id": "R-09.a",
       "implementation": "个人历史显示本地时区创建时间、状态、阶段、失败原因或成功图。",
-      "evidence": "E-API：test07；E-P12：task-time/跨时区；E-AUI账户历史。"
+      "evidence": "E-API：test07；E-FE：task-time本地日历、午夜/跨年/闰日与无效日期测试；E-AUI账户历史。"
     },
     {
       "id": "R-09.b",

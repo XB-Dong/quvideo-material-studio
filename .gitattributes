@@ -431,6 +431,7 @@
 /docs/waves/P2/evidence/leader/history-inventory.json export-ignore
 /docs/waves/P2/evidence/leader/history-pattern-inspection.json export-ignore
 /docs/waves/P2/evidence/leader/media-tool.json export-ignore
+/docs/waves/P2/evidence/leader/production-preview-smoke.json export-ignore
 /docs/waves/P2/evidence/preparation/ci-baseline.json export-ignore
 /docs/waves/P2/evidence/preparation/data-check.json export-ignore
 /docs/waves/P2/FINDINGS.md export-ignore
@@ -442,9 +443,11 @@
 /docs/waves/P2/MEDIA.md export-ignore
 /docs/waves/P2/PLAN.md export-ignore
 /docs/waves/P2/PREPARATION.md export-ignore
+/docs/waves/P2/report-details.json export-ignore
 /docs/waves/P2/REPORT-DRAFT.md export-ignore
 /docs/waves/P2/requirement-checklist.json export-ignore
 /docs/waves/P2/REQUIREMENTS-MATRIX.md export-ignore
+/docs/waves/P2/reviews/final-review.md export-ignore
 /docs/waves/P2/reviews/implementation-review.md export-ignore
 /docs/waves/P2/reviews/preparation-review.md export-ignore
 /docs/waves/P2/reviews/provenance-review.md export-ignore
