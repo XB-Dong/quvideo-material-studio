@@ -1,0 +1,101 @@
+{
+  "rootTaskId": "P12-ACCEPT",
+  "applicationSource": "3008c09f16bf2b29d23191e88c4db8062b17a99e",
+  "harnessSourceMainSix": "e14153121128dcea5250705ab8f2cc38c1bfebe9",
+  "localG02": "pass_updated_after_date_hotspot_and_user_brand_change",
+  "remoteCI": "pending_leader_actual_verification",
+  "actualModel": null,
+  "actualProvider": null,
+  "actualReasoningEffort": null,
+  "perRun": [
+    {
+      "name": "home-1",
+      "startupJsGzipBytes": 186789,
+      "allImageEncodedBytes": 588726,
+      "cls": 0,
+      "errors": []
+    },
+    {
+      "name": "home-2",
+      "startupJsGzipBytes": 186789,
+      "allImageEncodedBytes": 447935,
+      "cls": 9.364535108024692e-05,
+      "errors": []
+    },
+    {
+      "name": "home-3",
+      "startupJsGzipBytes": 186789,
+      "allImageEncodedBytes": 447942,
+      "cls": 0.00011095983434606479,
+      "errors": []
+    },
+    {
+      "name": "studio-1",
+      "startupJsGzipBytes": 184386,
+      "allImageEncodedBytes": 176916,
+      "cls": 0,
+      "errors": []
+    },
+    {
+      "name": "studio-2",
+      "startupJsGzipBytes": 184386,
+      "allImageEncodedBytes": 176894,
+      "cls": 9.429054542824075e-05,
+      "errors": []
+    },
+    {
+      "name": "studio-3",
+      "startupJsGzipBytes": 184386,
+      "allImageEncodedBytes": 176902,
+      "cls": 0.00011543176721643518,
+      "errors": []
+    },
+    {
+      "name": "history-1",
+      "startupJsGzipBytes": 181005,
+      "allImageEncodedBytes": 133554,
+      "cls": 0.01653810100790895,
+      "errors": []
+    },
+    {
+      "name": "history-2",
+      "startupJsGzipBytes": 181005,
+      "allImageEncodedBytes": 133562,
+      "cls": 0.013122079957561728,
+      "errors": []
+    },
+    {
+      "name": "history-3",
+      "startupJsGzipBytes": 181005,
+      "allImageEncodedBytes": 133562,
+      "cls": 0.016536327220775464,
+      "errors": []
+    }
+  ],
+  "individualBudgetsPass": true,
+  "interaction": {
+    "pass": true,
+    "candidateLongTasks": [],
+    "lazyGzipBytes": 3381,
+    "largeLegalUpload": {
+      "selectedBytes": 4194304,
+      "serverAssetBytes": 4194304,
+      "width": 480,
+      "height": 640,
+      "kind": "Valid local JPEG plus trailing padding selected from actual container filesystem path; original upload unmodified; transport test, not 20MP device performance"
+    },
+    "errors": []
+  },
+  "brand": "1440/375, header92/76, x32/16, native keyboard/touchLink, no old box/caption, screenshots independently supplied Reviewer",
+  "dateDisplay": "3 actual records plus18 declared legal ISO fixture comparisons acrossUTC/AsiaShanghai/AmericaNewYork including rollover/springDST; browser fully separate after original performance",
+  "inherited": [
+    "Remote41016072989 one complete25functional and16visual pass on fab product tree=8a; later product changes only pure date formatter and user-authorized wordmark.",
+    "8a native3 trusted hidden/cold PNG, lifecycle corrected checks and creative business checks retained; corresponding source unchanged."
+  ],
+  "limitations": [
+    "No hardware/physical Windows minimize or OS dialog automation claim.",
+    "Local complete performance pass does not mean remoteCI passed.",
+    "Date fixture browser does not warm the independent original interaction browser.",
+    "Old CI76ms failure and diagnostic traces remain preserved."
+  ]
+}

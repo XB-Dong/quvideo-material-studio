@@ -2,7 +2,7 @@
 
 - taskId/rootTaskId: P12-ACCEPT；roundId: P12-R1；waveId: P1.2。
 - 派发精确 base: `33170a5ae33cc63882f73c329dbd88eda6f5e70c`；当前契约 P1.2-1.0.1（认证缩略图契约扩展）。原准备包的 prepared 状态、旧 base 由 Leader 的授权派发覆盖。
-- 最终实际应用源码：`8a3f8bd12c1fc889566e82f9c2ad95cd96544524`；最后六项主验收 harness：`b3b214945a6432dcfafdfc450fe87d2691de178f`；性能结束后的差异截图 CLI：`d793346268154221b02b6027fd6888eee285c2ab`。源码版本与脚本版本分别记录，未把后续文档提交冒充部署。
+- 最新实际应用源码：`3008c09f16bf2b29d23191e88c4db8062b17a99e`；当前六项主验收 harness：`e14153121128dcea5250705ab8f2cc38c1bfebe9`。下方原阶段证据保留当时应用8a3f8bd、主harness b3b2149、相位审图CLI d793346的准确来源；最新结果见本文末更新。源码版本与脚本版本分别记录，未把后续文档提交冒充部署。
 - 角色 Acceptance；requestedModel/reasoning 继承；实际 provider/model/reasoning 均 null，未验证。未创建子 agent。
 - 写入仅 tests/p1.2/、本 evidence/acceptance/ 与本交接。P1.1 的 accept.mjs 图片就绪修复曾获单文件转交，独立提交 b07366e；未改其它旧 helper、产品、根 CI、Compose、锁或契约。
 
@@ -73,3 +73,15 @@ Leader实读诊断后授权唯一正式harness修正：只读nativeIO审计；�
 有界诊断第一次只trace首次提交，发现响应后Reactcommit69ms、CPU31.906ms在history tasks.map日期toLocaleString；第二次根据Leader要求将trace起点提前至大图选择前，保留READY→立即submit顺序，仍在API202后Reactcommit61ms复现，CPU29.241ms精确script24/column19943，对应部署chunk2jhh2aiuzz49e.js列19942与history.tsx185–191的createdAt.toLocaleString(zh-CN,month/day/hour/minute)。API POST8411.866→2028505.493，Reactcommit8513.8–8574.8，首卡DOM8575.6；普通Layout8583.5之后11.46ms，无旧connect强制布局/Ink主导证据。另有click复合54/80ms含Playwright hit-test与提交状态React，诊断开销如实保留。
 
 这些是有时间线和CPU源位置的首次日期格式化成本候选，不能将无trace的CI76ms全量归因冒称已证实；已交Leader决定针对实际源的有界优化与后续无截图复验。当前未改产品/门槛/无截图interact，整体远端仍失败，后续正式九轮/native尚未在该CI运行，不宣称整体通过。
+
+## 最终3008源码：日期热点修复与用户直接授权品牌corner
+
+Leader已部署3008c09f16bf2b29d23191e88c4db8062b17a99e，明确health=healthy后开始本轮检查。8a→3008仅history日期纯helper及用户直接要求wordmark角标（去方框/重复字/英文caption）；身份/API/controller/轮询/creative/Ink/globals无差异。旧8a与CI失败证据不覆盖。
+
+首先独立真图：1440 header92/x32、375 header76/x16，可访问名和唯一可见词为疏影，真实键盘Enter/true coarse首tap原生Link返回首页4稳定ID、无溢出。Reviewer已实际view desktop-home/header与mobile-home/header并明确局部G01通过（本角色不代签）。用户可查看raw runtime/p12-3008/brand-review/。原25内品牌check同步保护这些属性；单独CLI验证相同实际语义，不重新跑已通过的完整25业务。
+
+截图浏览器彻底close后，新容器/新Chrome运行原磁盘path interaction，未改代码/50ms标准/大图READY立即submit顺序，无Intl warming：全部真实阶段及30秒常态longtask候选0、errors0、lazy3381B，4MiB真实4194304B480×640保持，exit0。随后同一原measure新代码三页各3轮全部逐轮pass：最大首JS186789B≤192215、图片588726B≤819200、CLS .016538101≤.1、errors0。具体每轮在3008-measure-nine-pass.json，不以中位数替代单轮。
+
+性能全部结束后，独立日期显示检查：3条真实记录与原zh-CN本地calendar一致；另以声明的合法ISO响应fixture覆盖UTC/AsiaShanghai/AmericaNewYork共6个context/18条真实React日期文本比较（年/闰日跨界与美国spring DST），全部等于原Intl形状。仅GET历史响应createdAt变更，后端未改，状态仅内存不落cookie；Intl比较绝不发生在原performance浏览器，不声称预热收益。
+
+本地G02更新为3008源码通过，摘要3008-local-g02-summary.json。继承远端41016072989已实际一次全25/16通过及8a未变模块native3/离屏/身份业务证据；新的品牌断言和最终源码仍待Leader完整远端CI核验。不声称已经远端全绿、不改邮件暂缓、不启动下一波。最新raw及hash已入manifest，归档前仍需Leader安全保存ignored证据。

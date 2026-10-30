@@ -4,6 +4,96 @@
   "warning": "Raw ignored synthetic diagnostics must be preserved outside Git before worktree archive; no cookie state in this manifest or curated artifacts.",
   "files": [
     {
+      "path": "runtime/p12-3008/brand-review/brand-review.json",
+      "bytes": 3218,
+      "sha256": "8f10caf9b54c93068618a4a2cd32060e7aacc086a041b578e1bcf0f6df97663f"
+    },
+    {
+      "path": "runtime/p12-3008/brand-review/desktop-header.png",
+      "bytes": 9280,
+      "sha256": "248a342a8a85e346f127196adc173332f459147abe6d822184dd652050e1912c"
+    },
+    {
+      "path": "runtime/p12-3008/brand-review/desktop-home.png",
+      "bytes": 946911,
+      "sha256": "d2b21d7430761cb65ee73f39c3d82b210fa69686c092dece045e5822775c24d8"
+    },
+    {
+      "path": "runtime/p12-3008/brand-review/mobile-header.png",
+      "bytes": 5453,
+      "sha256": "5d12fde6c5496c5c18b273921fba142d3b75c1027ef1459804b5254da1477a4e"
+    },
+    {
+      "path": "runtime/p12-3008/brand-review/mobile-home.png",
+      "bytes": 148534,
+      "sha256": "dfbe03b71c8c19547d0e7c1688647044aea528e8a97f86d932a2ad22ca5c45a3"
+    },
+    {
+      "path": "runtime/p12-3008/date-review/date-review.json",
+      "bytes": 4255,
+      "sha256": "c45f6866963fba22adddc851ad4672ebbeb2d6c8f038c5d88da05f4327d989ca"
+    },
+    {
+      "path": "runtime/p12-3008/interact/interaction-performance.json",
+      "bytes": 5593,
+      "sha256": "6c6d24442cd93c3160adf07770688acbb54c33a5cc788f1e0a1f5c60dac207ce"
+    },
+    {
+      "path": "runtime/p12-3008/interact/valid-large-jpeg.jpg",
+      "bytes": 4194304,
+      "sha256": "1c3aa236c6e39892730336ed86df4f93bedc392efe151412171239edb0dd43ff"
+    },
+    {
+      "path": "runtime/p12-3008/measure/history-run-1.png",
+      "bytes": 483154,
+      "sha256": "c1bd2a9037c465f34d28ad665b75421b314c729ec8b2b96c37d11bf57507d57c"
+    },
+    {
+      "path": "runtime/p12-3008/measure/history-run-2.png",
+      "bytes": 483476,
+      "sha256": "4444b0467cc1c60d72e8a1540822deeb78beb56a25e8801ec32555f8e6c8ef57"
+    },
+    {
+      "path": "runtime/p12-3008/measure/history-run-3.png",
+      "bytes": 483567,
+      "sha256": "390618008d0f7a924c48417f16c072e27d026f0354be2052f31baf84b662dd3d"
+    },
+    {
+      "path": "runtime/p12-3008/measure/home-run-1.png",
+      "bytes": 1203335,
+      "sha256": "fe9ecfd7f7ff716e4c400ff9548a84e911b2006cb0772cbe9ca133456923bae9"
+    },
+    {
+      "path": "runtime/p12-3008/measure/home-run-2.png",
+      "bytes": 1200091,
+      "sha256": "b3f4d557792cd828f190dd1597919b64355002428c512c4eb3d3c5f54fcce6ef"
+    },
+    {
+      "path": "runtime/p12-3008/measure/home-run-3.png",
+      "bytes": 1202624,
+      "sha256": "c328c48112222d94b3766a4bf4925c0c527df5155d611d30b3961ce00e9b2f4c"
+    },
+    {
+      "path": "runtime/p12-3008/measure/measurement.json",
+      "bytes": 331784,
+      "sha256": "843365de7ad4fa27129b3315a4d12e1c7d90cc5cfdd130782f4c43ba2d43a512"
+    },
+    {
+      "path": "runtime/p12-3008/measure/studio-run-1.png",
+      "bytes": 527935,
+      "sha256": "baa08d9afc307ab3b803e6de9b0963685b343376e1ae11cab1c2037c3d06c27b"
+    },
+    {
+      "path": "runtime/p12-3008/measure/studio-run-2.png",
+      "bytes": 527964,
+      "sha256": "726d12ba3af8ecb9c92cd9cb74d493504bbcfa2db6e37d2c9c189bfb8a04e6b6"
+    },
+    {
+      "path": "runtime/p12-3008/measure/studio-run-3.png",
+      "bytes": 528181,
+      "sha256": "27ae9dafb9f4ad5b71609c6e79091776c610b44d9c9edd196438e84016c3f10e"
+    },
+    {
       "path": "runtime/p12-5275/error-probe/error-probe-1.png",
       "bytes": 138596,
       "sha256": "bdcbcf3437875fc30a1cae85fbe049179942a50f96309b7efd9d3470cc1b513c"

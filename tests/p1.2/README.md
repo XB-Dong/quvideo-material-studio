@@ -40,3 +40,5 @@ diagnose-submit.mjs严格保留原chooser/取消/替换/移除、4MiB真实路�
 ## 品牌与日期显示
 
 brand-review.mjs只用于用户授权品牌corner的有界审图：桌面/375，纯中文唯一疏影Link、键盘/真coarse首tap、header92/76、原x32/16与无溢出。随后另context核对3条日期与原zh-CN本地calendar显示一致；整个浏览器退出后才启动全新原interaction浏览器，不给性能预热Intl。原25项accept的品牌check内同步固定这些语义/几何，不增加重复完整测试。品牌独立G01由Reviewer实读截图，未替代日期/性能G02。
+
+date-review.mjs仅在正式性能全部结束后，在独立浏览器中用声明的合法ISO历史响应fixture验证三个浏览器timezone的实际React日期文本（年/闰日跨界与美国spring DST），与原zh-CN输出比较。后端不变、合成session只在内存，比较Intl不用于原interaction/browser预热；不另加重复完整CI入口。

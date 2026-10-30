@@ -1,0 +1,164 @@
+{
+  "testedCommit": "3008c09f16bf2b29d23191e88c4db8062b17a99e",
+  "capturedAt": "2026-10-30T07:34:51.824Z",
+  "browser": "149.0.7827.53",
+  "scope": "Post-performance independent displayed-date comparison. Only GET history JSON createdAt fields replaced with declared legal ISO fixtures; actual frontend renders, database untouched; session state memory-only. Intl comparison occurs after actual DOM and never in original performance browser. Includes local calendar/year/leap rollover and US spring-forward inputs.",
+  "results": [
+    {
+      "timezoneId": "UTC",
+      "createdAt": [
+        "2026-12-31T23:59:00Z",
+        "2027-01-01T00:01:00Z",
+        "2024-02-29T23:59:00Z"
+      ],
+      "intercepted": 1,
+      "dates": [
+        {
+          "iso": "2027-01-01T00:01:00Z",
+          "actual": "01/01 00:01",
+          "expected": "01/01 00:01"
+        },
+        {
+          "iso": "2026-12-31T23:59:00Z",
+          "actual": "12/31 23:59",
+          "expected": "12/31 23:59"
+        },
+        {
+          "iso": "2024-02-29T23:59:00Z",
+          "actual": "02/29 23:59",
+          "expected": "02/29 23:59"
+        }
+      ]
+    },
+    {
+      "timezoneId": "UTC",
+      "createdAt": [
+        "2026-03-08T06:59:00Z",
+        "2026-03-08T07:01:00Z",
+        "2026-11-01T06:01:00Z"
+      ],
+      "intercepted": 1,
+      "dates": [
+        {
+          "iso": "2026-11-01T06:01:00Z",
+          "actual": "11/01 06:01",
+          "expected": "11/01 06:01"
+        },
+        {
+          "iso": "2026-03-08T07:01:00Z",
+          "actual": "03/08 07:01",
+          "expected": "03/08 07:01"
+        },
+        {
+          "iso": "2026-03-08T06:59:00Z",
+          "actual": "03/08 06:59",
+          "expected": "03/08 06:59"
+        }
+      ]
+    },
+    {
+      "timezoneId": "Asia/Shanghai",
+      "createdAt": [
+        "2026-12-31T23:59:00Z",
+        "2027-01-01T00:01:00Z",
+        "2024-02-29T23:59:00Z"
+      ],
+      "intercepted": 1,
+      "dates": [
+        {
+          "iso": "2027-01-01T00:01:00Z",
+          "actual": "01/01 08:01",
+          "expected": "01/01 08:01"
+        },
+        {
+          "iso": "2026-12-31T23:59:00Z",
+          "actual": "01/01 07:59",
+          "expected": "01/01 07:59"
+        },
+        {
+          "iso": "2024-02-29T23:59:00Z",
+          "actual": "03/01 07:59",
+          "expected": "03/01 07:59"
+        }
+      ]
+    },
+    {
+      "timezoneId": "Asia/Shanghai",
+      "createdAt": [
+        "2026-03-08T06:59:00Z",
+        "2026-03-08T07:01:00Z",
+        "2026-11-01T06:01:00Z"
+      ],
+      "intercepted": 1,
+      "dates": [
+        {
+          "iso": "2026-11-01T06:01:00Z",
+          "actual": "11/01 14:01",
+          "expected": "11/01 14:01"
+        },
+        {
+          "iso": "2026-03-08T07:01:00Z",
+          "actual": "03/08 15:01",
+          "expected": "03/08 15:01"
+        },
+        {
+          "iso": "2026-03-08T06:59:00Z",
+          "actual": "03/08 14:59",
+          "expected": "03/08 14:59"
+        }
+      ]
+    },
+    {
+      "timezoneId": "America/New_York",
+      "createdAt": [
+        "2026-12-31T23:59:00Z",
+        "2027-01-01T00:01:00Z",
+        "2024-02-29T23:59:00Z"
+      ],
+      "intercepted": 1,
+      "dates": [
+        {
+          "iso": "2027-01-01T00:01:00Z",
+          "actual": "12/31 19:01",
+          "expected": "12/31 19:01"
+        },
+        {
+          "iso": "2026-12-31T23:59:00Z",
+          "actual": "12/31 18:59",
+          "expected": "12/31 18:59"
+        },
+        {
+          "iso": "2024-02-29T23:59:00Z",
+          "actual": "02/29 18:59",
+          "expected": "02/29 18:59"
+        }
+      ]
+    },
+    {
+      "timezoneId": "America/New_York",
+      "createdAt": [
+        "2026-03-08T06:59:00Z",
+        "2026-03-08T07:01:00Z",
+        "2026-11-01T06:01:00Z"
+      ],
+      "intercepted": 1,
+      "dates": [
+        {
+          "iso": "2026-11-01T06:01:00Z",
+          "actual": "11/01 01:01",
+          "expected": "11/01 01:01"
+        },
+        {
+          "iso": "2026-03-08T07:01:00Z",
+          "actual": "03/08 03:01",
+          "expected": "03/08 03:01"
+        },
+        {
+          "iso": "2026-03-08T06:59:00Z",
+          "actual": "03/08 01:59",
+          "expected": "03/08 01:59"
+        }
+      ]
+    }
+  ]
+}
