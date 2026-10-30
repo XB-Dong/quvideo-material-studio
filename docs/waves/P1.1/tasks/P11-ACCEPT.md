@@ -1,0 +1,48 @@
+# P11-ACCEPT
+
+- taskId: P11-ACCEPT
+- rootTaskId: P11-ACCEPT
+- waveId: P1.1
+- roundId: assigned_at_dispatch
+- status: prepared_not_dispatched
+- role: Acceptance
+- baseCommit: e485792839d6c3af1a6587a8964f983250366b39
+- baseCommitMeaning: P1 sealed preparation anchor; refresh exact integrated SHA at authorized dispatch
+- specVersion: P1.1-1.0.0
+- requirementIds: P11-QUALITY-01, P11-REG-01, P11-MAIL-01
+- dependencies: P11-BASE
+- runtimeDependencies: P11-CARDS, P11-CI-MAIL
+- requestedModel: inherit_current_session
+- requestedReasoningEffort: inherit_current_session
+- actualProvider: null
+- actualModel: null
+- actualReasoningEffort: null
+- modelVerificationStatus: not_verified
+- focusedCheckInMinutes: 60_to_90
+- cumulativeRepairCount: 0_preparation_only
+- sameRootCauseReassessmentAfter: 2_unsuccessful_repairs
+
+## Context and authorization
+
+Read AGENTS.md, CONSTITUTION.md, docs/agents/PROTOCOL.md, docs/waves/P1.1/PLAN.md, ROLES.md, CONTEXT-MAP.md, ACCEPTANCE.md, state.json and specs/p1.1/{requirements,design,effects,assets,ci-mail}.md. This preparation packet is not execution authorization. Leader refreshes precise base before dispatch.
+
+## Goal
+
+Independently verify default dynamics, all-image per-request budgets, true background/coarse, card navigation and P0 business; audit scoped-mail evidence.
+
+Visual and business verification may start when P11-CARDS is integrated. Final acceptance sign-off also requires completed P11-CI-MAIL evidence; an unfinished mailbox subitem cannot be reported as a fully completed task.
+
+## Allowed write paths
+
+- tests/p1.1/
+- explicitly transferred shared measurement helpers
+- docs/waves/P1.1/evidence/acceptance/
+- docs/waves/P1.1/handoffs/acceptance.md
+
+## Observable acceptance
+
+Independent G02 and exact-source raw reports, preserve failures, no product fixes by test author and no fixture substituted for default software visibility.
+
+## Handoff and limits
+
+Use docs/waves/P1.1/handoffs/TEMPLATE.md. All product install/build/test/runtime commands in containers after authorization. Keep P0 protected API/query/session code and data unchanged; no global-mail setting, real-email send, credentials in Git, public deployment or automatic next wave. Single file owner; stop and transfer before touching shared paths.

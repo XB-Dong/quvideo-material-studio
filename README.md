@@ -6,6 +6,8 @@ P1已完成浅色界面、蓝紫细节、四套本地照片、七项创意和操
 
 ## 一条命令启动
 
+当前运行的是已封存P1“映作”。[P1.1启动前准备](docs/waves/P1.1/PLAN.md)已整理“疏影”品牌、浅色水墨擦雾、多边框、真实模板卡片互动和本仓库CI邮件治理；[视觉提案](docs/waves/P1.1/references/README.md)为静态示意，产品未改、P1.1尚未启动。准备材料仅本地封存，避免远端文档push额外触发通知；启动后先完成已确认范围的邮件任务。
+
 需要可用的 Linux Docker Engine 与 Docker Compose（支持 --wait）。无需宿主机 Node、Java、Maven 或 MySQL。
 
 ```sh

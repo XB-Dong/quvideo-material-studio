@@ -1,0 +1,90 @@
+{
+  "checkedAt": "2026-10-30T11:03:39.140356+08:00",
+  "upstreamGitHubHead": "e12c22192ac7b4b452c5e2feb9b586d74765d696",
+  "license": "MIT + Commons Clause License Condition v1.0",
+  "licenseUrl": "https://raw.githubusercontent.com/DavidHDev/react-bits/e12c22192ac7b4b452c5e2feb9b586d74765d696/LICENSE.md",
+  "licenseSha256": "4bdd1fa59a6b7d5954bc3b213dbc34e455c635a94bbcecf9293553797d0fad02",
+  "existingLicenseReference": "frontend/src/components/react-bits/LICENSE.md",
+  "registryGitHubCommitEquivalence": "not_asserted; each registry source hash frozen independently",
+  "components": [
+    {
+      "name": "MagicBento",
+      "registryUrl": "https://reactbits.dev/r/MagicBento-TS-CSS.json",
+      "dependencies": [
+        "@hugeicons/react@^1.1.10",
+        "@hugeicons/core-free-icons@^4.3.3"
+      ],
+      "files": [
+        {
+          "path": "MagicBento.css",
+          "bytes": 23349,
+          "sha256": "5ccc3d3d1a9eb9899635eef390a524428622a66e190e573e1d212e71fb1d1cb6",
+          "imports": [],
+          "mentionsWebGL": false
+        },
+        {
+          "path": "MagicBento.tsx",
+          "bytes": 43028,
+          "sha256": "e0b422ca17c1494b905fb8483413823a3215d5ee65d7cfc9c71c4116fd3c69f4",
+          "imports": [
+            "react",
+            "@hugeicons/react",
+            "@hugeicons/core-free-icons"
+          ],
+          "mentionsWebGL": false
+        }
+      ],
+      "status": "read_only_candidate_not_installed_or_copied_to_product"
+    },
+    {
+      "name": "GlareHover",
+      "registryUrl": "https://reactbits.dev/r/GlareHover-TS-CSS.json",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "GlareHover.css",
+          "bytes": 1045,
+          "sha256": "556debf36792dd1a774b27f96c120494b7d2a1ed19c188f2b30faf5df31f2b35",
+          "imports": [],
+          "mentionsWebGL": false
+        },
+        {
+          "path": "GlareHover.tsx",
+          "bytes": 10848,
+          "sha256": "0d9acea382c7a56cebcea377749e2a2fd902088b1a1147e79d87859f225acd51",
+          "imports": [
+            "react"
+          ],
+          "mentionsWebGL": false
+        }
+      ],
+      "status": "read_only_candidate_not_installed_or_copied_to_product"
+    },
+    {
+      "name": "ElectricBorder",
+      "registryUrl": "https://reactbits.dev/r/ElectricBorder-TS-CSS.json",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "ElectricBorder.css",
+          "bytes": 173,
+          "sha256": "3ac01db2b8d158c653c9f726c208326818b3b29c7187dc310064fe5a15310979",
+          "imports": [],
+          "mentionsWebGL": false
+        },
+        {
+          "path": "ElectricBorder.tsx",
+          "bytes": 29319,
+          "sha256": "afec82d8e44c009f3aabd940b75825273266400068a1e3e1830d62b356b781dc",
+          "imports": [
+            "react"
+          ],
+          "mentionsWebGL": true
+        }
+      ],
+      "status": "read_only_candidate_not_installed_or_copied_to_product"
+    }
+  ],
+  "dependencyPlan": "No new runtime package planned. MagicBento edge-only adaptation excludes its icon packages; confirm standalone import surface before execution. Existing OGL1.0.11 retained only for optional enhancements.",
+  "installPerformed": false
+}

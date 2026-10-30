@@ -1,0 +1,55 @@
+{
+  "recordedAt": "2026-10-30T11:03:39.140356+08:00",
+  "mode": "read_only_preparation",
+  "repository": "XB-Dong/quvideo-material-studio",
+  "emailScreenshot": {
+    "providedBy": "human",
+    "jobDurationsSeconds": {
+      "frontend": 63,
+      "backend": 135,
+      "integration": 414
+    },
+    "strongMatchRun": 40915531767,
+    "rawEmailHeadersOrMessageIdRead": false,
+    "limit": "Exact job timings match historical run; no assertion about a specific mailbox message ID"
+  },
+  "observedRuns": [
+    {
+      "id": 40925928248,
+      "sha": "e485792839d6c3af1a6587a8964f983250366b39",
+      "conclusion": "success"
+    },
+    {
+      "id": 40923131462,
+      "sha": "a2505ecdedf04ad432476d5bdfb1eda02e0fe926",
+      "conclusion": "success"
+    },
+    {
+      "id": 40919563180,
+      "sha": "e62444d104f2e4e58a497103ad8865cafb5f4948",
+      "conclusion": "success"
+    },
+    {
+      "id": 40915531767,
+      "sha": "43213a799893a60f8335d2f52fc30c91ed431ce3",
+      "conclusion": "failure",
+      "actualJobDurationsSeconds": {
+        "frontend": 63,
+        "backend": 135,
+        "integration": 414
+      }
+    }
+  ],
+  "notificationOrigin": "GitHub Actions built-in workflow-run notification; not website SMTP",
+  "userConfirmedScope": "this_repository_CI_only_optional_mailbox_filter",
+  "mailProvider": "not_assumed; identify actual receiving connected mailbox at execution",
+  "githubAccountSettingsChanged": false,
+  "mailRulesApplied": false,
+  "mailReadOrSent": false,
+  "workflowModified": false,
+  "remotePushPerformed": false,
+  "officialSources": [
+    "https://docs.github.com/en/actions/concepts/workflows-and-actions/notifications-for-workflow-runs",
+    "https://docs.github.com/en/subscriptions-and-notifications/get-started/configuring-notifications"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-10-30T11:03:39.140356+08:00",
+  "status": "preparation_references_only",
+  "assets": [
+    {
+      "file": "assets/ink-wu-yun-landscape.jpg",
+      "kind": "public_domain_art_reference",
+      "bytes": 2880880,
+      "sha256": "846674ae63b4e6a51e8b60079120861711dc62afbd0d585bffb6e2e0dbad1e60",
+      "productionDerivativeStatus": "not_created",
+      "author": "Wu Yun / 吴云",
+      "title": "Landscape / 仙霞新霁图",
+      "date": "1854",
+      "objectID": 737785,
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/737785",
+      "downloadUrl": "https://images.metmuseum.org/CRDImages/as/original/DP-42597-004.jpg",
+      "license": "Public Domain / The Met Open Access CC0",
+      "licenseUrl": "https://www.metmuseum.org/hubs/open-access",
+      "metadataPublicDomain": true,
+      "width": 4000,
+      "height": 3000,
+      "visuallyReviewed": true,
+      "intendedCrop": {
+        "left": 0,
+        "top": 0.35,
+        "right": 0.75,
+        "bottom": 0.7
+      },
+      "cropStatus": "starting_proposal_not_production_asset"
+    },
+    {
+      "file": "assets/user-template-reference.png",
+      "kind": "human_layout_reference",
+      "bytes": 651632,
+      "sha256": "eaf450d722b9ee5bb7e6a292ea784a10f3b5bc556e564e6d9901c9ff9b6dd88c",
+      "productionDerivativeStatus": "not_created"
+    },
+    {
+      "file": "assets/user-ci-mail-reference.png",
+      "kind": "human_issue_reference",
+      "bytes": 62565,
+      "sha256": "b7edf6a7d15a5a6c9a271144f9f731487379bc84bd8ec7124958de75666e4819",
+      "productionDerivativeStatus": "not_created"
+    }
+  ],
+  "documentPreview": "direction-board.svg and PNG; artwork transformed only inside a preparation illustration, not a production derivative"
+}

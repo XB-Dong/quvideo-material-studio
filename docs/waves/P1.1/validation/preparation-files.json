@@ -1,0 +1,211 @@
+{
+  "phase": "preparation_only",
+  "createdAt": "2026-10-30T11:15:31.967901+08:00",
+  "baseCommit": "e485792839d6c3af1a6587a8964f983250366b39",
+  "excludedGeneratedFiles": [
+    "docs/waves/P1.1/validation/preparation-files.json",
+    "docs/waves/P1.1/validation/result.json"
+  ],
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "68a3ccd01523edfcb43f907a1c9f0d29283665047a5a8e07d800e6c20d69ff6b",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "CONSTITUTION.md",
+      "sha256": "9675808c8c99db13be9ecd332ef42779c18751b8c623fe0a8c22dfb08b6d4f23",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/agents/README.md",
+      "sha256": "9384ff971ec81fc751cfe06fd51a4da0fee57c0fc6c55a011def59cb36c387fc",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/decisions/0010-p11-preparation.md",
+      "sha256": "0d6ba2fd322527f4655c777ff239f9f620f379fc210f3477384cabeaf39a4ab4",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "e00cdf48bda76cfdf2f0cce5dbeeaee40775327382ab91db282b0c00ae3c7a38",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/ACCEPTANCE.md",
+      "sha256": "bf880837b2cd5671724211f7f1b80951f17fceca5ab58fd2f041b4df45ac7347",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/CONTEXT-MAP.md",
+      "sha256": "b1f38884aa1f3a76cee0c5bbe45faeb93eca46109712552d07a01be1c90cfe7e",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/evidence/ci-mail-readonly-audit.json",
+      "sha256": "5678c9351d76adeed4a94f49ec7f122c731a4d054516cbad1bf8173c1b990d34",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/handoffs/TEMPLATE.md",
+      "sha256": "e1d1deb119fd36b8407a72cd553e9c7b3307796cc279003ddb1f4cc0376b5e85",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/PLAN.md",
+      "sha256": "2665a8f23a05bf00845a0de5d9c3809841335f945269d2b3f2cbd1438edb92e1",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/PREPARATION-REPORT.md",
+      "sha256": "ae24f7164ae8a0b131808cd59d83f1a5b87786541899316033beb4ae67de086b",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/references/assets/ink-wu-yun-landscape.jpg",
+      "sha256": "846674ae63b4e6a51e8b60079120861711dc62afbd0d585bffb6e2e0dbad1e60",
+      "hashMode": "exact_bytes"
+    },
+    {
+      "path": "docs/waves/P1.1/references/assets/user-ci-mail-reference.png",
+      "sha256": "b7edf6a7d15a5a6c9a271144f9f731487379bc84bd8ec7124958de75666e4819",
+      "hashMode": "exact_bytes"
+    },
+    {
+      "path": "docs/waves/P1.1/references/assets/user-template-reference.png",
+      "sha256": "eaf450d722b9ee5bb7e6a292ea784a10f3b5bc556e564e6d9901c9ff9b6dd88c",
+      "hashMode": "exact_bytes"
+    },
+    {
+      "path": "docs/waves/P1.1/references/direction-board.png",
+      "sha256": "a1fa205e0cbf74abafd8f4d85a1878333bcb60cc909c3971b3081cfe02b4851a",
+      "hashMode": "exact_bytes"
+    },
+    {
+      "path": "docs/waves/P1.1/references/direction-board.svg",
+      "sha256": "685334621e9d226e7b8090aff05ec5a8f3f3ca070b45ad01139bbae01f489ebe",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/references/manifest.json",
+      "sha256": "ae2ff5c447321e28a2e7f1d3b0ca24b7a71891b59f903d023051acd935732fb8",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/references/reactbits-audit.json",
+      "sha256": "ac528475ce735cee2d889a028ad4983eb124d2ba51ddb5a06a10c6c22d1ddc28",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/references/README.md",
+      "sha256": "eaf5366bdd8c93bd326302beace84ab17f518d5617586105113c893bec29996d",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/reviews/preparation-review.md",
+      "sha256": "9eea4128c331fbc5e2aeb0adb2eb63a06aa8fe3137034ec95d1ce8779dc8bd1c",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/ROLES.md",
+      "sha256": "d6faba817a1a62f88e20e44f35c9ae3288f9a801c440ea69cbb0eaf9eb695786",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/state.json",
+      "sha256": "860bf1f4bd06a80b67db8cbc57dfb9b26dfa4d6fbe1b470a3c84048931f792cd",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/tasks/P11-ACCEPT.md",
+      "sha256": "e665345b4462a95d852e88626d11c4af9220f664a346db02b7ef9560e38ae3ee",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/tasks/P11-ASSET.md",
+      "sha256": "c827061a5fd42ff8a22b9770631eaa509fab5b7a379d7910df171d11cfac702c",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/tasks/P11-BASE.md",
+      "sha256": "c08e990f4ffa24b825a85e32751ce9a556e541819f815c056972bc2d193139ab",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/tasks/P11-BRAND.md",
+      "sha256": "5aaa92f2c28d643fe506d152c80a25efd4d48fe7616200bfe2f0218d79ff9ee5",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/tasks/P11-CARDS.md",
+      "sha256": "2627f870d69ddd9001c68a4e8b14eba581c05f67dfdadda0de531b33bce6c62f",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/tasks/P11-CI-MAIL.md",
+      "sha256": "4aa860644e404b250cd5286cc13d1306dc56af1248483f667292ed84e3dd4b56",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/tasks/P11-DELIVERY.md",
+      "sha256": "b4fe870952b202770957098cb6a9abb6965fda77b391e416d2b218e90f0ce3e9",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/tasks/P11-REVIEW.md",
+      "sha256": "e2499a6ea7c52b1c69160682cb8ed93e36965ceb023dd671c436efb655820bb4",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/tasks/P11-SCENE.md",
+      "sha256": "45afa490388bd102ba35d1e74bb765ba863f9970dc1735f461150796c0f59dd0",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/P1.1/validation/check_preparation.py",
+      "sha256": "e55b6e22a1a7a493c75674dd7e4ad146ef76b4af7d13a051c9d54f5a52545bbd",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "docs/waves/README.md",
+      "sha256": "43e5772b981aa7e3fee6b7405a3943614fe3553831d7665ff509a3de50556d0a",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "NEXT-WAVES.md",
+      "sha256": "f80d48dccec6955fae84f3ee80560b5ea4c69b795a7333f3c158d4108049ba94",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "README.md",
+      "sha256": "7d7d9452c49c3abb7574a1601506e3ffaa57c6a6c9e8023d25b4269eb1e89fea",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "specs/p1.1/assets.md",
+      "sha256": "06800574b7b35089ff69cc1613a876f293a7430b836870e1587159f54ec1c598",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "specs/p1.1/ci-mail.md",
+      "sha256": "51447df8157eae69d7514693d4820973c8e1d23b4cd5702edb554827b01ee946",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "specs/p1.1/design.md",
+      "sha256": "fca016b97f9ae2cc5433db76e76ad35079eab162c1b49eb7d99d6de2e15252db",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "specs/p1.1/effects.md",
+      "sha256": "8d9970596588147144a56c59d0332e7a72bf3e853f4de8a1a2bc1065e9000d22",
+      "hashMode": "CRLF_normalized_to_LF"
+    },
+    {
+      "path": "specs/p1.1/requirements.md",
+      "sha256": "ff082f58c4f4e8cacb7f9ba672222a4ced85f83cf0226debd3ffc417923cc048",
+      "hashMode": "CRLF_normalized_to_LF"
+    }
+  ]
+}
